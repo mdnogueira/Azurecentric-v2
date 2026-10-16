@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import PostCard from '../../components/PostCard.astro';
+import PostRow from '../../components/PostRow.astro';
+import { categories } from '../../../site.config.mjs';
+import { getLang, useTranslations, localePath } from '../../i18n/utils';
+import { postsFor, categoryName, allPosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  // Only categories that have at least one post get a page.
+  const posts = await allPosts();
+  const keys = new Set<string>(posts.map((p) => p.data.category));
+  return [...keys].map((category) => ({ params: { category } }));
+}
+
+const { category } = Astro.params;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const name = categoryName(category!, lang);
+const posts = (await postsFor(lang)).filter((p) => p.data.category === category);
+const [first, ...rest] = posts;
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+const icon = (categories as Record<string, { icon: string }>)[category!]?.icon ?? 'posts';
+---
+<Base title={name} active="posts" back={localePath(lang, '/posts')}>
+  <main class="page container">
+    <section class="section">
+      <nav aria-label="Breadcrumb" class="crumb muted">
+        <a href={localePath(lang, '/posts')}>{t('posts.title')}</a><span aria-hidden="true">/</span><span>{name}</span>
+      </nav>
+      <div class="title-row">
+        <span class="cat-icon card" aria-hidden="true"><Icon name={icon} size={26} /></span>
+        <h1>{name}</h1>
+      </div>
+      <p class="lead">{posts.length === 1 ? t('posts.count.one') : t('posts.count', { count: posts.length })}, {t('category.newest')}.</p>
+      <div class="filters">
+        <div class="chips hs">
+          {tags.map((tag) => <a href={localePath(lang, `/posts?tag=${tag}`)} class="chip small">#{tag}</a>)}
+        </div>
+        <a href={`/rss/${category}.xml`} class="feed" aria-label={t('category.feed')}><Icon name="rss" size={16} stroke={2} /></a>
+      </div>
+    </section>
+
+    {first ? (
+      <section class="section">
+        <PostCard post={first} featured />
+        {rest.length > 0 && <div class="rows">{rest.map((p) => <PostRow post={p} showCategory={false} />)}</div>}
+      </section>
+    ) : (
+      <p class="muted">—</p>
+    )}
+  </main>
+</Base>
+
+<style>
+  .crumb { font-size: 13px; display: flex; gap: 6px; }
+  .crumb a { color: var(--muted); }
+  .title-row { display: flex; align-items: center; gap: 12px; }
+  .cat-icon { width: 48px; height: 48px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; color: var(--link); flex-shrink: 0; }
+  .filters { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .filters .chips { min-width: 0; flex: 1; }
+  .chip.small { padding: 6px 11px; font-size: 13px; background: transparent; }
+  .feed { width: 36px; height: 36px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+</style>

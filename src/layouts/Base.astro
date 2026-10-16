@@ -1,0 +1,149 @@
+---
+import '@fontsource/manrope/700.css';
+import '@fontsource/manrope/800.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../../site.config.mjs';
+import { getLang, useTranslations, switchLangPath, localePath } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  active: 'home' | 'posts' | 'podcast' | 'videos' | 'about';
+  back?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  noindex?: boolean;
+  /** True when a /pt/ page is showing untranslated EN content: canonical then points at the EN URL. */
+  fallback?: boolean;
+}
+const { title, description, image, active, back, type = 'website', publishedTime, noindex, fallback = false } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const desc = description ?? site.description[lang];
+// With fallbackType 'rewrite', Astro.url.pathname on a /pt/ page is the EN path; put the prefix back.
+const pathname = lang === 'pt' && !Astro.url.pathname.startsWith('/pt') ? localePath('pt', Astro.url.pathname) : Astro.url.pathname;
+const altPath = switchLangPath(lang, pathname);
+const enPath = lang === 'en' ? pathname : altPath;
+const ptPath = lang === 'pt' ? pathname : altPath;
+const canonical = new URL(fallback ? enPath : pathname, site.url).toString();
+const ogImage = new URL(image ?? '/images/og-default.jpg', site.url).toString();
+const fullTitle = title === site.name ? `${site.name} — ${site.tagline[lang]}` : `${title} · ${site.name}`;
+---
+<!doctype html>
+<html lang={lang === 'pt' ? 'pt-PT' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, site.url)} />
+    <link rel="alternate" hreflang="pt-PT" href={new URL(ptPath, site.url)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(enPath, site.url)} />
+    <link rel="alternate" type="application/rss+xml" title={site.name} href="/rss.xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#17325a" />
+    <meta name="color-scheme" content="dark light" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'pt' ? 'pt_PT' : 'en_US'} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@azurecentric" />
+    <script is:inline>
+      // Theme: navy by default; "light" is opt-in and remembered per device.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <Header back={back} />
+    <slot />
+    <Footer />
+    <BottomNav active={active} />
+
+    <dialog class="search-dialog" id="search" aria-label={t('nav.search')}>
+      <div class="search-inner">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+          <strong>{t('nav.search')}</strong>
+          <button type="button" class="icon-btn" data-close-search aria-label="Close"><Icon name="close" /></button>
+        </div>
+        <div id="pagefind" class="pagefind-ui"></div>
+        <p class="muted" id="search-note" hidden>Search index is built on <code>npm run build</code>; it is not available in dev mode.</p>
+      </div>
+    </dialog>
+
+    <script>
+      // Theme toggle
+      const root = document.documentElement;
+      document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+        const sync = () => {
+          const light = root.getAttribute('data-theme') === 'light';
+          btn.setAttribute('aria-label', light ? btn.dataset.labelDark! : btn.dataset.labelLight!);
+        };
+        sync();
+        btn.addEventListener('click', () => {
+          const light = root.getAttribute('data-theme') === 'light';
+          if (light) root.removeAttribute('data-theme');
+          else root.setAttribute('data-theme', 'light');
+          try { localStorage.setItem('theme', light ? 'navy' : 'light'); } catch {}
+          sync();
+        });
+      });
+
+      // Search (Pagefind, static index generated at build time)
+      const dialog = document.getElementById('search') as HTMLDialogElement | null;
+      let loaded = false;
+      async function openSearch() {
+        if (!dialog) return;
+        dialog.showModal();
+        if (loaded) return;
+        loaded = true;
+        try {
+          const css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = '/pagefind/pagefind-ui.css';
+          document.head.appendChild(css);
+          await new Promise<void>((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = '/pagefind/pagefind-ui.js';
+            s.onload = () => resolve();
+            s.onerror = () => reject(new Error('pagefind missing'));
+            document.head.appendChild(s);
+          });
+          // @ts-ignore
+          new PagefindUI({ element: '#pagefind', showSubResults: true, showImages: false, autofocus: true });
+        } catch {
+          document.getElementById('search-note')?.removeAttribute('hidden');
+        }
+      }
+      document.querySelectorAll('[data-open-search]').forEach((b) => b.addEventListener('click', openSearch));
+      document.querySelectorAll('[data-close-search]').forEach((b) => b.addEventListener('click', () => dialog?.close()));
+      dialog?.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && !(e.target instanceof HTMLInputElement) && !(e.target instanceof HTMLTextAreaElement)) {
+          e.preventDefault();
+          openSearch();
+        }
+      });
+    </script>
+  </body>
+</html>

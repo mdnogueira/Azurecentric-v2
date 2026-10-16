@@ -1,0 +1,47 @@
+---
+import Icon from './Icon.astro';
+import { getLang, useTranslations, localePath } from '../i18n/utils';
+
+interface Props { active: 'home' | 'posts' | 'podcast' | 'videos' | 'about' }
+const { active } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const items = [
+  { key: 'home', href: localePath(lang, '/'), icon: 'home', label: t('nav.home') },
+  { key: 'posts', href: localePath(lang, '/posts'), icon: 'posts', label: t('nav.posts') },
+  { key: 'podcast', href: localePath(lang, '/podcast'), icon: 'mic', label: t('nav.podcast') },
+  { key: 'videos', href: localePath(lang, '/videos'), icon: 'video', label: t('nav.videos') },
+  { key: 'about', href: localePath(lang, '/about'), icon: 'user', label: t('nav.about') },
+];
+---
+<nav class="bottom-nav" aria-label="Primary">
+  {items.map((i) => (
+    <a href={i.href} aria-current={i.key === active ? 'page' : undefined}>
+      <Icon name={i.icon} stroke={i.key === active ? 2 : 1.8} />
+      <span>{i.label}</span>
+    </a>
+  ))}
+</nav>
+
+<style>
+  .bottom-nav {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 10;
+    height: calc(var(--nav-h) + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--bar);
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .bottom-nav a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    font-size: 11px; font-weight: 500; color: var(--muted); min-height: 44px;
+  }
+  .bottom-nav a[aria-current='page'] { color: var(--accent-text); font-weight: 600; }
+  @media (min-width: 900px) {
+    .bottom-nav { display: none; }
+  }
+</style>

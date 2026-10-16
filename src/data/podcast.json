@@ -1,0 +1,40 @@
+{
+  "title": "Azure Centric Podcast",
+  "source": "seeded from Apple Podcasts / SoundCloud on 2026-10-16; replaced by the Spotify RSS once podcast.rss is set in site.config.mjs",
+  "lastSynced": null,
+  "episodes": [
+    {
+      "guid": "soundcloud:azure-podcast-52-all-about-network-updates-on-azure",
+      "number": 52,
+      "title": "All about network updates on Azure",
+      "pubDate": "2022-03-28T03:45:43Z",
+      "durationSeconds": 2700,
+      "audioUrl": "",
+      "link": "https://soundcloud.com/azurecentric/azure-podcast-52-all-about-network-updates-on-azure",
+      "youtubeId": "UJSjV91ldzM",
+      "description": "Five Azure classic networking services will be retired on 31 August 2024, the planned Finland Central region, and the rest of the week's networking announcements. Marcos Nogueira and Andrew Lowes."
+    },
+    {
+      "guid": "soundcloud:azure-podcast-51",
+      "number": 51,
+      "title": "From Azure Site Recovery to Azure VM and Azure AD",
+      "pubDate": "2022-03-23T02:27:11Z",
+      "durationSeconds": 4380,
+      "audioUrl": "",
+      "link": "https://soundcloud.com/azurecentric",
+      "youtubeId": "log4QfAkJLY",
+      "description": "General availability: support for Private Link in Azure Digital Twins; public preview: trusted launch updates; Azure VM and Azure AD news. Marcos Nogueira and Andrew Lowes."
+    },
+    {
+      "guid": "soundcloud:azure-podcast-50",
+      "number": 50,
+      "title": "From Azure Monitor to Cost Management updates",
+      "pubDate": "2022-03-23T02:24:46Z",
+      "durationSeconds": 2940,
+      "audioUrl": "",
+      "link": "https://soundcloud.com/azurecentric",
+      "youtubeId": "-FMZekGtcN4",
+      "description": "General availability: Application Gateway mutual authentication; public preview: Cost Management updates. Marcos Nogueira and Andrew Lowes."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+---
+import { site } from '../../site.config.mjs';
+import { getLang, useTranslations, localePath } from '../i18n/utils';
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+---
+<footer class="site-footer">
+  <div class="container inner">
+    <span>© {new Date().getFullYear()} {site.name} · {site.author}</span>
+    <div class="links">
+      <a href="/rss.xml">{t('footer.rss')}</a>
+      <a href={localePath(lang, '/privacy')}>{t('footer.privacy')}</a>
+      <a href={localePath(lang, '/about')}>{t('nav.about')}</a>
+      <span class="muted">{t('footer.built')}</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--bar); border-top: 1px solid var(--line); margin-top: auto; }
+  .inner {
+    padding-block: 20px; display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center;
+    justify-content: space-between; font-size: 13px; color: var(--muted);
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 14px; }
+  .links a { color: var(--muted); font-weight: 500; }
+</style>

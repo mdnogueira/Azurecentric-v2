@@ -1,0 +1,29 @@
+{
+  "name": "azurecentric-v2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Azure Centric — field notes, podcast and videos. Astro static site for Azure Static Web Apps.",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview --host",
+    "sync": "node scripts/sync-feeds.mjs",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "astro": "^5.18.2",
+    "fast-xml-parser": "^5.11.2"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

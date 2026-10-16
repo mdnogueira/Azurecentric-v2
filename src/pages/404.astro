@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLang, useTranslations, localePath } from '../i18n/utils';
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+---
+<Base title={t('notFound.title')} active="home" noindex>
+  <main class="page container" style="align-items: flex-start">
+    <img src="/images/logo-symbol.png" alt="" width="120" height="92" />
+    <h1>{t('notFound.title')}</h1>
+    <p class="lead">{t('notFound.body')}</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href={localePath(lang, '/')} class="btn btn-accent">{t('notFound.home')}</a>
+      <button type="button" class="btn" data-open-search>{t('nav.search')}</button>
+    </div>
+  </main>
+</Base>

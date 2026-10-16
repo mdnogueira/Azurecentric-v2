@@ -1,0 +1,31 @@
+---
+// Sidebar list of categories with counts (desktop) — also used on the phone posts index.
+import { getLang, useTranslations, localePath } from '../i18n/utils';
+import { categoryCounts } from '../lib/posts';
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const cats = await categoryCounts(lang);
+---
+<section class="section">
+  <div class="section-head">
+    <h2>{t('home.categories')}</h2>
+    <a href={localePath(lang, '/posts')}>{t('home.all')} →</a>
+  </div>
+  <div class="list card">
+    {cats.map((c) => (
+      <a href={localePath(lang, `/categories/${c.key}`)}>
+        <span>{c.name}</span><span class="muted">{c.count}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .list { display: flex; flex-direction: column; border: 1px solid var(--line-strong); }
+  .list a {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 0 16px;
+    color: var(--text); font-size: 15px; font-weight: 600; border-top: 1px solid var(--line-strong);
+  }
+  .list a:first-child { border-top: 0; }
+  .list .muted { font-size: 13px; font-weight: 500; }
+</style>

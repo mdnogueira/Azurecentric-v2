@@ -1,0 +1,106 @@
+---
+import Icon from './Icon.astro';
+import { getLang, useTranslations, localePath, switchLangPath } from '../i18n/utils';
+
+interface Props { back?: string }
+const { back } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const other = switchLangPath(lang, Astro.url.pathname);
+const nav = [
+  { href: localePath(lang, '/posts'), label: t('nav.posts') },
+  { href: localePath(lang, '/podcast'), label: t('nav.podcast') },
+  { href: localePath(lang, '/videos'), label: t('nav.videos') },
+  { href: localePath(lang, '/about'), label: t('nav.about') },
+];
+---
+<header class="site-header">
+  <div class="container inner">
+    {back && (
+      <a href={back} class="icon-btn back" aria-label={lang === 'pt' ? 'Voltar' : 'Back'}>
+        <Icon name="back" stroke={2} />
+      </a>
+    )}
+    <a href={localePath(lang, '/')} class="brand" aria-label="Azure Centric">
+      <img src="/images/logo.png" alt="Azure Centric" width="2257" height="325" />
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      {nav.map((n) => (
+        <a href={n.href} aria-current={Astro.url.pathname === n.href ? 'page' : undefined}>{n.label}</a>
+      ))}
+    </nav>
+    <div class="tools">
+      <button type="button" class="search-btn" data-open-search aria-label={t('nav.search')}>
+        <Icon name="search" />
+        <span class="search-label">{t('nav.search.placeholder')}</span>
+        <kbd>/</kbd>
+      </button>
+      <a href={other} class="lang" aria-label={t('nav.lang')} hreflang={lang === 'pt' ? 'en' : 'pt'}>
+        <span class:list={['pill', { active: lang === 'en' }]}>EN</span>
+        <span class:list={['pill', { active: lang === 'pt' }]}>PT</span>
+      </a>
+      <button type="button" class="icon-btn" data-theme-toggle aria-label={t('nav.theme.light')} data-label-light={t('nav.theme.light')} data-label-dark={t('nav.theme.dark')}>
+        <span class="only-dark"><Icon name="sun" /></span>
+        <span class="only-light"><Icon name="moon" /></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bar);
+    border-bottom: 1px solid var(--line);
+  }
+  .inner {
+    min-height: var(--header-h);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .back { margin-left: -12px; }
+  .brand { display: flex; align-items: center; height: 44px; margin-right: auto; }
+  .brand img { height: 24px; width: auto; }
+  .top-nav { display: none; gap: 4px; margin-left: 8px; margin-right: auto; }
+  .top-nav a {
+    display: inline-flex; align-items: center; height: 44px; padding: 0 12px;
+    border-radius: 10px; font-size: 15px; font-weight: 600; color: var(--text);
+  }
+  .top-nav a[aria-current='page'] { background: var(--card); }
+  .tools { display: flex; align-items: center; gap: 2px; margin-right: -8px; }
+  .search-btn {
+    display: inline-flex; align-items: center; gap: 8px; height: 44px; min-width: 44px;
+    padding: 0; border: 0; background: transparent; color: var(--text); cursor: pointer; justify-content: center;
+    border-radius: 10px;
+  }
+  .search-label, .search-btn kbd { display: none; }
+  .lang {
+    display: inline-flex; align-items: center; gap: 4px; height: 44px; padding: 0 10px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--muted);
+  }
+  .pill { padding: 4px 8px; border-radius: 999px; }
+  .pill.active { background: var(--card-strong); color: var(--card-strong-text); }
+  .only-light { display: none; }
+  :global(:root[data-theme='light']) .only-light { display: inline-flex; }
+  :global(:root[data-theme='light']) .only-dark { display: none; }
+
+  @media (min-width: 900px) {
+    .inner { min-height: 64px; gap: 24px; }
+    .brand { height: 64px; margin-right: 0; }
+    .brand img { height: 30px; }
+    .top-nav { display: flex; }
+    .tools { margin-left: auto; gap: 4px; }
+    .search-btn {
+      padding: 0 12px; border-radius: 10px; border: 1px solid var(--line-strong);
+      background: var(--card); color: var(--muted); font-size: 14px; justify-content: flex-start;
+    }
+    .search-label { display: inline; width: 200px; text-align: left; }
+    .search-btn kbd {
+      display: inline; font-family: var(--font-mono); font-size: 11px; padding: 2px 6px; border-radius: 5px;
+      border: 1px solid var(--line-strong); background: var(--bg); color: var(--muted);
+    }
+  }
+</style>

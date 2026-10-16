@@ -1,0 +1,75 @@
+---
+// One page per YouTube channel: /videos/<slug>. Same layout as the index, scoped to the channel.
+import Base from '../../layouts/Base.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import { youtubeChannels } from '../../../site.config.mjs';
+import { getLang, useTranslations, localePath } from '../../i18n/utils';
+import { videosFor } from '../../lib/feeds';
+
+export function getStaticPaths() {
+  return youtubeChannels.map((c) => ({ params: { channel: c.slug }, props: { channel: c } }));
+}
+const { channel } = Astro.props as { channel: (typeof youtubeChannels)[number] };
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const videos = videosFor(channel.slug);
+const [first, ...rest] = videos;
+---
+<Base title={`${channel.name} · ${t('videos.title')}`} active="videos" back={localePath(lang, '/videos')}>
+  <main class="page container">
+    <section class="section">
+      <h1>{channel.name}</h1>
+      <p class="lead">{t('videos.intro')} <a href={channel.url} target="_blank" rel="noopener">{t('videos.watch')} →</a></p>
+      <div class="chips hs">
+        {youtubeChannels.map((c) => (
+          <a href={localePath(lang, `/videos/${c.slug}`)} class="chip channel" aria-current={c.slug === channel.slug ? 'page' : undefined}>
+            <span class="dot" aria-hidden="true"></span>{c.name}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {channel.series.length > 0 && (
+      <div class="tabs hs" role="tablist" aria-label="Series">
+        <button type="button" role="tab" aria-selected="true" data-series="">{t('videos.all')}</button>
+        {channel.series.map((s) => <button type="button" role="tab" aria-selected="false" data-series={s.key}>{s.name}</button>)}
+      </div>
+    )}
+
+    {videos.length === 0 && <p class="muted">{t('videos.empty')}</p>}
+    <section class="section list" data-list>
+      {first && <div data-series={first.series ?? ''}><VideoCard video={first} channel={channel} layout="hero" isNew /></div>}
+      {rest.map((v) => <div data-series={v.series ?? ''}><VideoCard video={v} channel={channel} layout="row" /></div>)}
+    </section>
+    <p class="muted small">{t('videos.archive')}</p>
+  </main>
+</Base>
+
+<style>
+  .channel { gap: 8px; padding-left: 8px; }
+  .channel .dot { width: 24px; height: 24px; border-radius: 999px; background: var(--azure); display: inline-block; }
+  .tabs { display: flex; gap: 6px; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); border-bottom: 1px solid var(--line); }
+  .tabs button { flex-shrink: 0; height: 44px; padding: 0 12px; border: 0; background: transparent; font-size: 14px; font-weight: 500; color: var(--muted); border-bottom: 2px solid transparent; cursor: pointer; }
+  .tabs button[aria-selected='true'] { color: var(--text); font-weight: 600; border-bottom-color: var(--accent); }
+  .list { gap: 18px; }
+  .small { font-size: 12px; }
+  @media (min-width: 900px) {
+    .tabs { margin-inline: 0; padding-inline: 0; }
+    .list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .list > div:first-child { grid-column: 1 / -1; }
+    .list :global(.video.row) { flex-direction: column; gap: 8px; }
+    .list :global(.video.row .thumb) { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; }
+    .list :global(.video.row .play) { width: 44px; height: 44px; }
+    .list :global(.video.row .title) { font-size: 15px; }
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('[role="tab"][data-series]');
+  const items = document.querySelectorAll<HTMLElement>('[data-list] > [data-series]');
+  tabs.forEach((tab) => tab.addEventListener('click', () => {
+    tabs.forEach((x) => x.setAttribute('aria-selected', String(x === tab)));
+    const key = tab.dataset.series ?? '';
+    items.forEach((el) => { el.hidden = key !== '' && el.dataset.series !== key; });
+  }));
+</script>

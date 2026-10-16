@@ -1,0 +1,20 @@
+---
+import PostThumb from './PostThumb.astro';
+import { getLang, useTranslations, localePath, formatDate } from '../i18n/utils';
+import { postSlug, categoryName, readingTime, type Post } from '../lib/posts';
+
+interface Props { post: Post; showCategory?: boolean }
+const { post, showCategory = true } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+---
+<a href={localePath(lang, `/posts/${postSlug(post)}`)} class="row" data-tags={post.data.tags.join(',')}>
+  <PostThumb post={post} width={152} height={152} />
+  <span class="row-text">
+    <span class="row-title">{post.data.title}</span>
+    <span class="row-meta">
+      {showCategory && <>{categoryName(post.data.category, lang)} · </>}
+      {readingTime(post)} {t('post.minRead')} · {formatDate(post.data.pubDate, lang)}{post.data.legacy && <> · {t('post.migrated')}</>}
+    </span>
+  </span>
+</a>

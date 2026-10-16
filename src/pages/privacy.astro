@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLang } from '../i18n/utils';
+const lang = getLang(Astro.currentLocale);
+---
+<Base title={lang === 'pt' ? 'Privacidade' : 'Privacy'} active="about" noindex>
+  <main class="page container article">
+    <h1>{lang === 'pt' ? 'Privacidade' : 'Privacy'}</h1>
+    <div class="prose">
+      {lang === 'pt' ? (
+        <>
+          <p>Este site é estático e não usa cookies de rastreio nem analytics de terceiros. A pesquisa corre no seu browser. O leitor de podcast é nativo; as miniaturas dos vídeos são carregadas a partir do YouTube, que pode registar esse pedido.</p>
+          <p>Se abrir links para o YouTube, Spotify ou Apple Podcasts, aplicam-se as políticas desses serviços.</p>
+        </>
+      ) : (
+        <>
+          <p>This site is static and uses no tracking cookies and no third-party analytics. Search runs in your browser. The podcast player is native; video thumbnails are loaded from YouTube, which may log that request.</p>
+          <p>If you open links to YouTube, Spotify or Apple Podcasts, their policies apply.</p>
+        </>
+      )}
+    </div>
+  </main>
+</Base>
+
+<style>
+  .article { max-width: 820px; }
+</style>

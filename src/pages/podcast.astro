@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import EpisodeCard from '../components/EpisodeCard.astro';
+import PlayIcon from '../components/PlayIcon.astro';
+import { podcast } from '../../site.config.mjs';
+import { getLang, useTranslations, formatDate, formatDuration } from '../i18n/utils';
+import { episodes } from '../lib/feeds';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const list = episodes();
+const [latest, ...rest] = list;
+---
+<Base title={podcast.title} description={podcast.description[lang]} active="podcast">
+  <section class="podcast-hero">
+    <div class="container inner">
+      <div class="head">
+        <span class="art" aria-hidden="true"><Icon name="mic" size={40} stroke={1.6} /></span>
+        <div>
+          <h1>{podcast.title}</h1>
+          <p class="lead">{podcast.description[lang]}</p>
+        </div>
+      </div>
+      <div class="platforms">
+        <a href={podcast.links.spotify} class="btn" target="_blank" rel="noopener">Spotify</a>
+        <a href={podcast.links.apple} class="btn" target="_blank" rel="noopener">Apple</a>
+        <a href={podcast.links.youtube} class="btn" target="_blank" rel="noopener">YouTube</a>
+        <a href={podcast.rss || '/rss.xml'} class="btn btn-accent">RSS</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="page container">
+    {latest && (
+      <section class="section">
+        <div class="section-head">
+          <h2>{t('podcast.nowPlaying')}</h2>
+          <span class="muted small">{t('podcast.native')}</span>
+        </div>
+        <div class="now card-strong">
+          <EpisodeCard episode={latest} compact />
+          {latest.description && (
+            <details class="notes">
+              <summary>{t('podcast.showNotes')}</summary>
+              <p class="muted">{latest.description}</p>
+            </details>
+          )}
+        </div>
+      </section>
+    )}
+
+    <section class="section">
+      <div class="section-head">
+        <h2>{t('podcast.all')}</h2>
+        <span class="muted small">{t('podcast.synced')}</span>
+      </div>
+      <div class="rows">
+        {list.map((e) => (
+          <a href={e.audioUrl || e.link || '#'} class="row" target={e.audioUrl ? undefined : '_blank'} rel="noopener">
+            <span class="ep-play" aria-hidden="true"><PlayIcon size={18} color="#fff" /></span>
+            <span class="row-text">
+              <span class="row-title">{e.number ? `#${e.number} — ` : ''}{e.title}</span>
+              <span class="row-meta">{formatDate(new Date(e.pubDate), lang)}{e.durationSeconds ? ` · ${formatDuration(e.durationSeconds, lang)}` : ''}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+      <p class="muted small">{t('podcast.missing')}</p>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .podcast-hero { background: var(--bar); border-bottom: 1px solid var(--line); }
+  .inner { padding-block: 24px 20px; display: flex; flex-direction: column; gap: 16px; }
+  .head { display: flex; gap: 14px; align-items: flex-start; }
+  .head h1 { font-size: 24px; margin-bottom: 6px; }
+  .art { width: 88px; height: 88px; border-radius: 18px; background: var(--azure); color: #fff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .platforms { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .platforms .btn { font-size: 13px; padding: 0 8px; }
+  .now { padding: 0; }
+  .now :global(.episode) { background: transparent; color: var(--card-strong-text); }
+  .now :global(.episode .muted) { color: var(--card-strong-muted); }
+  .now :global(.episode .bar) { background: var(--card-strong-line); }
+  .now :global(.eyebrow) { color: #b9501f; }
+  .notes { padding: 0 16px 16px; }
+  .notes summary { font-size: 14px; font-weight: 600; color: #2b6ca3; cursor: pointer; min-height: 44px; display: flex; align-items: center; list-style: none; }
+  .notes p { margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: var(--card-strong-muted); }
+  .small { font-size: 12px; }
+  .ep-play { width: 44px; height: 44px; border-radius: 999px; background: var(--azure); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  @media (min-width: 900px) {
+    .inner { padding-block: 40px 32px; }
+    .head h1 { font-size: 36px; }
+    .platforms { max-width: 520px; }
+  }
+</style>

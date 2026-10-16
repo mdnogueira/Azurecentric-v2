@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+import { podcast } from '../../site.config.mjs';
+import { getLang, useTranslations } from '../i18n/utils';
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+interface Props { stacked?: boolean }
+const { stacked = false } = Astro.props;
+---
+<section class="card listen">
+  <h2>{t('home.listen')}</h2>
+  <div class:list={['links', { stacked }]}>
+    <a href={podcast.links.spotify} class="btn btn-white" target="_blank" rel="noopener"><Icon name="headphones" size={18} />Spotify</a>
+    <a href={podcast.links.apple} class="btn btn-white" target="_blank" rel="noopener"><Icon name="mic" size={18} />Apple Podcasts</a>
+    <a href={podcast.links.youtube} class="btn btn-white" target="_blank" rel="noopener"><Icon name="video" size={18} />YouTube</a>
+    <a href="/rss.xml" class="btn btn-accent"><Icon name="rss" size={18} />RSS</a>
+  </div>
+</section>
+
+<style>
+  .listen { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .listen h2 { font-size: 16px; }
+  .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .links.stacked { grid-template-columns: 1fr; }
+  .links .btn { font-size: 13px; padding: 0 10px; }
+  .links.stacked .btn { justify-content: flex-start; padding: 0 14px; font-size: 14px; }
+</style>

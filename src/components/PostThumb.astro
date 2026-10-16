@@ -1,0 +1,16 @@
+---
+// Post thumbnail: the front-matter `cover` when present, otherwise the logo symbol on navy.
+import { Image } from 'astro:assets';
+import type { Post } from '../lib/posts';
+
+interface Props { post: Post; width: number; height: number; class?: string; sizes?: string }
+const { post, width, height, class: cls, sizes } = Astro.props;
+const cover = post.data.cover;
+---
+<span class:list={['thumb', cls]} aria-hidden={cover ? undefined : 'true'}>
+  {cover ? (
+    <Image src={cover} alt={post.data.coverAlt ?? ''} width={width} height={height} format="webp" sizes={sizes} loading="lazy" />
+  ) : (
+    <img src="/images/logo-symbol.png" alt="" class="symbol" width="217" height="166" loading="lazy" />
+  )}
+</span>

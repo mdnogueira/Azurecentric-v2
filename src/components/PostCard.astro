@@ -1,0 +1,61 @@
+---
+// White card used for the featured post (horizontal on desktop) and the small cards.
+import PostThumb from './PostThumb.astro';
+import { getLang, useTranslations, localePath, formatDate } from '../i18n/utils';
+import { postSlug, categoryName, readingTime, translationOf, type Post } from '../lib/posts';
+import { site } from '../../site.config.mjs';
+
+interface Props { post: Post; featured?: boolean }
+const { post, featured = false } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const other = await translationOf(post, lang === 'pt' ? 'en' : 'pt');
+const href = localePath(lang, `/posts/${postSlug(post)}`);
+---
+<a href={href} class:list={['card-strong', 'post-card', { featured }]}>
+  <PostThumb post={post} width={featured ? 960 : 640} height={featured ? 540 : 360} class="cover" sizes={featured ? '(min-width: 900px) 480px, 100vw' : '(min-width: 900px) 320px, 100vw'} />
+  <span class="body">
+    <span class="meta muted">
+      <span class="tag">{categoryName(post.data.category, lang)}</span>
+      <span>{readingTime(post)} {t('post.minRead')}</span>
+      <span aria-hidden="true">·</span>
+      <span>{formatDate(post.data.pubDate, lang)}</span>
+      {other && <span class="langs">EN · PT</span>}
+    </span>
+    <span class="title">{post.data.title}</span>
+    {featured && <span class="desc muted">{post.data.description}</span>}
+    {featured && (
+      <span class="author">
+        <span class="avatar">{site.author.split(' ').map((w) => w[0]).join('').slice(0, 2)}</span>
+        <span class="muted">{site.author}</span>
+        <span class="read">{t('post.read')} →</span>
+      </span>
+    )}
+  </span>
+</a>
+
+<style>
+  .post-card { display: flex; flex-direction: column; color: var(--card-strong-text); }
+  .post-card :global(.cover) { width: 100%; aspect-ratio: 16 / 9; }
+  .post-card :global(.cover img) { width: 100%; height: 100%; object-fit: cover; }
+  .post-card :global(.cover .symbol) { width: 64px; height: auto; object-fit: contain; }
+  .body { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px 18px; }
+  .meta { display: flex; align-items: center; gap: 8px; font-size: 13px; flex-wrap: wrap; }
+  .langs { margin-left: auto; font-size: 12px; font-weight: 600; }
+  .title { font-family: var(--font-display); font-size: 18px; line-height: 1.3; font-weight: 700; letter-spacing: -0.015em; }
+  .featured .title { font-size: 21px; }
+  .desc { font-size: 15px; line-height: 1.5; }
+  .author { display: flex; align-items: center; gap: 10px; margin-top: 4px; font-size: 13px; }
+  .avatar {
+    width: 28px; height: 28px; border-radius: 999px; background: #1e3c62; color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;
+  }
+  .read { margin-left: auto; font-weight: 600; color: #b9501f; }
+  @media (min-width: 900px) {
+    .featured { flex-direction: row; flex-wrap: wrap; }
+    .featured :global(.cover) { flex: 1 1 280px; width: auto; min-width: 0; max-width: 480px; aspect-ratio: auto; min-height: 220px; }
+    .featured .body { flex: 1.4 1 320px; min-width: 0; padding: 26px; gap: 12px; }
+    .featured .title { font-size: 28px; max-width: 26ch; }
+    .desc { font-size: 16px; max-width: 68ch; }
+  }
+</style>

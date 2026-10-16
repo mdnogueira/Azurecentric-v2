@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://azurecentric.com/sitemap-index.xml

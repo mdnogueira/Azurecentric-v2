@@ -1,0 +1,54 @@
+---
+import PlayIcon from './PlayIcon.astro';
+import { getLang, useTranslations, formatDate } from '../i18n/utils';
+import { seriesName, type Video, type Channel } from '../lib/feeds';
+
+interface Props { video: Video; channel: Channel; layout?: 'tile' | 'row' | 'hero'; isNew?: boolean }
+const { video, channel, layout = 'row', isNew = false } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const series = seriesName(channel, video.series);
+---
+<a href={video.url} target="_blank" rel="noopener" class:list={['video', layout]}>
+  <span class="thumb">
+    <img src={video.thumbnail} alt="" loading="lazy" width="480" height="360" />
+    <span class="play" aria-hidden="true"><PlayIcon size={layout === 'hero' ? 24 : 16} color="#1e3c62" /></span>
+    {isNew && <span class="new">{t('videos.new')}</span>}
+  </span>
+  <span class="text">
+    {series && <span class="series">{series}</span>}
+    <span class="title">{video.title}</span>
+    <span class="meta muted">{formatDate(new Date(video.published), lang)}</span>
+  </span>
+</a>
+
+<style>
+  .video { display: flex; gap: 12px; color: var(--text); }
+  .thumb { position: relative; border-radius: 10px; overflow: hidden; background: var(--thumb); flex-shrink: 0; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 36px; height: 36px; border-radius: 999px; background: #fff; display: inline-flex; align-items: center; justify-content: center;
+  }
+  .new {
+    position: absolute; left: 10px; top: 10px; padding: 3px 8px; border-radius: 6px; background: var(--accent); color: var(--accent-ink);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .series { font-size: 12px; font-weight: 600; color: var(--accent-text); }
+  .title { font-size: 15px; font-weight: 600; line-height: 1.35; }
+  .meta { font-size: 13px; }
+
+  .row .thumb { width: 150px; height: 84px; }
+  .tile { flex-direction: column; flex-shrink: 0; width: 240px; gap: 8px; }
+  .tile .thumb { width: 240px; height: 135px; border-radius: 12px; }
+  .tile .play { width: 44px; height: 44px; }
+  .hero { flex-direction: column; gap: 10px; }
+  .hero .thumb { width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; }
+  .hero .play { width: 56px; height: 56px; }
+  .hero .title { font-size: 17px; font-family: var(--font-display); font-weight: 700; }
+  @media (min-width: 900px) {
+    .row .thumb { width: 128px; height: 72px; }
+    .row .title { font-size: 14px; }
+  }
+</style>
