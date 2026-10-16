@@ -1,22 +1,141 @@
 {
   "channel": "azure-centric",
   "channelId": "UCNT2hI8HsyWyvp_Sg_9cf5w",
-  "lastSynced": "2026-10-16T17:20:00Z",
+  "lastSynced": "2026-10-16T22:32:27.055Z",
   "videos": [
-    { "id": "3DqQ5kt6E0g", "title": "Azure Podcast #56 - Last time for Classic VM and Azure Storage", "published": "2023-01-30T20:16:11+00:00", "url": "https://www.youtube.com/watch?v=3DqQ5kt6E0g", "thumbnail": "https://i.ytimg.com/vi/3DqQ5kt6E0g/hqdefault.jpg", "series": "podcast", "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira brings his point of view on these new Azure features: Classic VM retirement: extending retirement date to September 1st 2023; Public Preview: Container insights support for AKS hybrid clusters." },
-    { "id": "jReCD8zHnfc", "title": "Azure Podcast #55 - AzAcSnap Tool and Azure Managed Disk", "published": "2023-01-16T23:29:18+00:00", "url": "https://www.youtube.com/watch?v=jReCD8zHnfc", "thumbnail": "https://i.ytimg.com/vi/jReCD8zHnfc/hqdefault.jpg", "series": "podcast", "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. General Availability: AzAcSnap 7 — Azure Application Consistent Snapshot tool updates." },
-    { "id": "NJO-cscdFSs", "title": "Azure Podcast #54 - All about Azure VM Backup updates", "published": "2023-01-10T23:39:49+00:00", "url": "https://www.youtube.com/watch?v=NJO-cscdFSs", "thumbnail": "https://i.ytimg.com/vi/NJO-cscdFSs/hqdefault.jpg", "series": "podcast", "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Azure Backup for SAP HANA: General availability updates for Dec 2022." },
-    { "id": "VTV-2AgfZ2s", "title": "Azure Podcast #53 - Azure Grafana, Azure App Service and Azure Archived Storage", "published": "2022-04-26T23:44:37+00:00", "url": "https://www.youtube.com/watch?v=VTV-2AgfZ2s", "thumbnail": "https://i.ytimg.com/vi/VTV-2AgfZ2s/hqdefault.jpg", "series": "podcast", "description": "Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: Public preview: Azure Monitor and Azure Managed Grafana integrations; General availability: Azure Archive Storage." },
-    { "id": "UJSjV91ldzM", "title": "Azure Podcast #52 - All about network updates on Azure", "published": "2022-03-28T15:15:01+00:00", "url": "https://www.youtube.com/watch?v=UJSjV91ldzM", "thumbnail": "https://i.ytimg.com/vi/UJSjV91ldzM/hqdefault.jpg", "series": "podcast", "description": "Five Azure classic networking services will be retired on 31 August 2024, plus the rest of the week's networking announcements. With Andrew Lowes." },
-    { "id": "log4QfAkJLY", "title": "Azure Podcast #51 - From Azure Site Recovery to Azure VM and Azure AD", "published": "2022-03-23T02:15:06+00:00", "url": "https://www.youtube.com/watch?v=log4QfAkJLY", "thumbnail": "https://i.ytimg.com/vi/log4QfAkJLY/hqdefault.jpg", "series": "podcast", "description": "General availability: Support for Private Link in Azure Digital Twins; Public preview: Trusted launch updates. With Andrew Lowes." },
-    { "id": "-FMZekGtcN4", "title": "Azure Podcast #50 - From Azure Monitor to Cost Management updates", "published": "2022-02-28T16:43:39+00:00", "url": "https://www.youtube.com/watch?v=-FMZekGtcN4", "thumbnail": "https://i.ytimg.com/vi/-FMZekGtcN4/hqdefault.jpg", "series": "podcast", "description": "General availability: Application Gateway mutual authentication; Public preview: Cost Management updates. With Andrew Lowes." },
-    { "id": "rFLzk8j_Lko", "title": "Azure Podcast #49 - How Azure improve the BCDR, Azure NetApp Files updates and Azure Key Vault", "published": "2022-02-02T16:15:03+00:00", "url": "https://www.youtube.com/watch?v=rFLzk8j_Lko", "thumbnail": "https://i.ytimg.com/vi/rFLzk8j_Lko/hqdefault.jpg", "series": "podcast", "description": "Generally available: Azure Site Recovery support for ZRS Managed Disks, Azure NetApp Files updates and Key Vault." },
-    { "id": "FK37DVEamsw", "title": "Azure Podcast #48 - All about Azure Monitor, Azure DevOps and Certificate", "published": "2022-01-29T21:15:09+00:00", "url": "https://www.youtube.com/watch?v=FK37DVEamsw", "thumbnail": "https://i.ytimg.com/vi/FK37DVEamsw/hqdefault.jpg", "series": "podcast", "description": "Generally available: a new and improved alert rule creation experience, Azure DevOps and certificate updates." },
-    { "id": "Lntq8fUgxSE", "title": "Azure Podcast #47 - First updates of 2022 - From Azure Policy to Azure Confidential Computing", "published": "2022-01-17T16:15:01+00:00", "url": "https://www.youtube.com/watch?v=Lntq8fUgxSE", "thumbnail": "https://i.ytimg.com/vi/Lntq8fUgxSE/hqdefault.jpg", "series": "podcast", "description": "Generally available: Azure Policy support for Azure Site Recovery; Azure Backup automation updates; Confidential Computing." },
-    { "id": "eHGVhND16wk", "title": "Azure Podcast #46 - Microsoft Defender for Cloud and Azure Storage", "published": "2021-12-13T16:15:05+00:00", "url": "https://www.youtube.com/watch?v=eHGVhND16wk", "thumbnail": "https://i.ytimg.com/vi/eHGVhND16wk/hqdefault.jpg", "series": "podcast", "description": "Microsoft Defender for Cloud: public preview updates for November 2021, and Azure Storage news." },
-    { "id": "_yyAhlQX7xY", "title": "Azure Podcast #45 - From Azure VPN and Azure Monitor to FSLogix supporting Azure AD on AVD", "published": "2021-12-08T01:55:08+00:00", "url": "https://www.youtube.com/watch?v=_yyAhlQX7xY", "thumbnail": "https://i.ytimg.com/vi/_yyAhlQX7xY/hqdefault.jpg", "series": "podcast", "description": "General availability: wildcard listener on Application Gateways; Azure VPN, Azure Monitor and FSLogix on AVD." },
-    { "id": "AuGtuUCLwLk", "title": "Microsoft Ignite 2021 - Book of News", "published": "2021-11-05T02:38:30+00:00", "url": "https://www.youtube.com/watch?v=AuGtuUCLwLk", "thumbnail": "https://i.ytimg.com/vi/AuGtuUCLwLk/hqdefault.jpg", "series": "podcast", "description": "The Microsoft MVPs Marcos Nogueira, Armando Lacerda and Jorge Maia bring their point of view on the Azure releases at Microsoft Ignite 2021." },
-    { "id": "-tqmDUGPHMM", "title": "Azure Podcast #44 - From Azure Backup and Azure Vmware Solution to Azure Networks", "published": "2021-11-01T23:43:09+00:00", "url": "https://www.youtube.com/watch?v=-tqmDUGPHMM", "thumbnail": "https://i.ytimg.com/vi/-tqmDUGPHMM/hqdefault.jpg", "series": "podcast", "description": "Azure Monitor Log Analytics and Application Insights support for Availability Zones, Azure Backup, Azure VMware Solution and networking." },
-    { "id": "qSLWkUElCRE", "title": "Azure Podcast #43 - Azure NetApp Files, Visual Studio Code Web and Azure Spring Cloud", "published": "2021-10-26T02:07:57+00:00", "url": "https://www.youtube.com/watch?v=qSLWkUElCRE", "thumbnail": "https://i.ytimg.com/vi/qSLWkUElCRE/hqdefault.jpg", "series": "podcast", "description": "General availability: cross region replication for Azure NetApp Files; Visual Studio Code for the Web; Azure Spring Cloud." }
+    {
+      "id": "3DqQ5kt6E0g",
+      "title": "Azure Podcast #56 - Last time for Classic VM and Azure Storage",
+      "published": "2023-01-30T20:16:11+00:00",
+      "url": "https://www.youtube.com/watch?v=3DqQ5kt6E0g",
+      "thumbnail": "https://i4.ytimg.com/vi/3DqQ5kt6E0g/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira brings his point of view on these new Azure features: \n • Classic VM retirement: extending retirement date to September 1st 2023\n • Public Preview: Container insights support for AKS hybrid cl"
+    },
+    {
+      "id": "jReCD8zHnfc",
+      "title": "Azure Podcast #55 - AzAcSnap Tool and Azure Managed Disk",
+      "published": "2023-01-16T23:29:18+00:00",
+      "url": "https://www.youtube.com/watch?v=jReCD8zHnfc",
+      "thumbnail": "https://i3.ytimg.com/vi/jReCD8zHnfc/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira brings his point of view on these new Azure features: \n00:00 - Intro\n01:33 - General Availability: AzAcSnap 7 — Azure Application Consistent Snapshot tool updates\n07:14 - Generally available: "
+    },
+    {
+      "id": "NJO-cscdFSs",
+      "title": "Azure Podcast #54 - All about Azure VM Backup updates",
+      "published": "2023-01-10T23:39:49+00:00",
+      "url": "https://www.youtube.com/watch?v=NJO-cscdFSs",
+      "thumbnail": "https://i3.ytimg.com/vi/NJO-cscdFSs/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira brings his point of view on these new Azure features: \n00:00 - Intro\n01:35 - Private Preview: Featured Clothing\n03:58 - Azure Backup for SAP HANA: General availability updates for Dec 2022\n08:"
+    },
+    {
+      "id": "VTV-2AgfZ2s",
+      "title": "Azure Podcast #53 - Azure Grafana, Azure App Service and Azure Archived Storage",
+      "published": "2022-04-26T23:44:37+00:00",
+      "url": "https://www.youtube.com/watch?v=VTV-2AgfZ2s",
+      "thumbnail": "https://i3.ytimg.com/vi/VTV-2AgfZ2s/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n • Public preview: Azure Monitor and Azure Managed Grafana integrations\n • General availability: Azure Archive Storage "
+    },
+    {
+      "id": "UJSjV91ldzM",
+      "title": "Azure Podcast #52 -All about network updates on Azure",
+      "published": "2022-03-28T15:15:01+00:00",
+      "url": "https://www.youtube.com/watch?v=UJSjV91ldzM",
+      "thumbnail": "https://i2.ytimg.com/vi/UJSjV91ldzM/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\n03:52 - Five Azure classic networking services will be retired on 31 August 2024\n12:58 - General availabi"
+    },
+    {
+      "id": "log4QfAkJLY",
+      "title": "Azure Podcast #51 - From Azure Site Recovery to Azure VM and Azure AD",
+      "published": "2022-03-23T02:15:06+00:00",
+      "url": "https://www.youtube.com/watch?v=log4QfAkJLY",
+      "thumbnail": "https://i1.ytimg.com/vi/log4QfAkJLY/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\n03:56 - General availability: Support for Private Link in Azure Digital Twins\n16:44 - Public preview: Tru"
+    },
+    {
+      "id": "-FMZekGtcN4",
+      "title": "Azure Podcast #50 - From Azure Monitor to Cost Management updates",
+      "published": "2022-02-28T16:43:39+00:00",
+      "url": "https://www.youtube.com/watch?v=-FMZekGtcN4",
+      "thumbnail": "https://i2.ytimg.com/vi/-FMZekGtcN4/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro \n05:14 - General availability: Application Gateway mutual authentication\n10:55 - Public preview: Cost Man"
+    },
+    {
+      "id": "rFLzk8j_Lko",
+      "title": "Azure Podcast #49 - How Azure improve the BCDR, Azure NetApp Files updates and Azure Key Vault",
+      "published": "2022-02-02T16:15:03+00:00",
+      "url": "https://www.youtube.com/watch?v=rFLzk8j_Lko",
+      "thumbnail": "https://i3.ytimg.com/vi/rFLzk8j_Lko/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\n04:02 - Generally available: Azure Site Recovery support for ZRS Managed Disks\n09:47 - Generally availabl"
+    },
+    {
+      "id": "FK37DVEamsw",
+      "title": "Azure Podcast #48 - All about Azure Monitor, Azure DevOps and Certificate",
+      "published": "2022-01-29T21:15:09+00:00",
+      "url": "https://www.youtube.com/watch?v=FK37DVEamsw",
+      "thumbnail": "https://i3.ytimg.com/vi/FK37DVEamsw/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view and their field experience on these new Azure features: \n00:00 - Intro\n03:36 - Generally available: A new and improved alert rule creation experience"
+    },
+    {
+      "id": "Lntq8fUgxSE",
+      "title": "Azure Podcast #47 - First updates of 2022 - From Azure Policy to Azure Confidential Computing",
+      "published": "2022-01-17T16:15:01+00:00",
+      "url": "https://www.youtube.com/watch?v=Lntq8fUgxSE",
+      "thumbnail": "https://i1.ytimg.com/vi/Lntq8fUgxSE/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we talk about the newest Azure features announced this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\n07:30 - Generally available: Azure Policy support for Azure Site Recovery\n16:14 - Azure Backup - Automati"
+    },
+    {
+      "id": "eHGVhND16wk",
+      "title": "Azure Podcast #46 - Microsoft Defender for Cloud and Azure Storage",
+      "published": "2021-12-13T16:15:05+00:00",
+      "url": "https://www.youtube.com/watch?v=eHGVhND16wk",
+      "thumbnail": "https://i2.ytimg.com/vi/eHGVhND16wk/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we are talking about the newest Azure features announced during this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\nMicrosoft Defender for Cloud: Public preview updates for November 2021\n • Microsoft Defende"
+    },
+    {
+      "id": "_yyAhlQX7xY",
+      "title": "Azure Podcast #45 - From Azure VPN and Azure Monitor to FSLogix supporting Azure AD on AVD",
+      "published": "2021-12-08T01:55:08+00:00",
+      "url": "https://www.youtube.com/watch?v=_yyAhlQX7xY",
+      "thumbnail": "https://i4.ytimg.com/vi/_yyAhlQX7xY/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we are talking about the newest Azure features announced during this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features:\n00:00 - Intro \n06:04 - General availability: Wildcard listener on Application Gateways\n11:57 - General ava"
+    },
+    {
+      "id": "AuGtuUCLwLk",
+      "title": "Microsoft Ignite 2021 - Book of News",
+      "published": "2021-11-05T02:38:30+00:00",
+      "url": "https://www.youtube.com/watch?v=AuGtuUCLwLk",
+      "thumbnail": "https://i2.ytimg.com/vi/AuGtuUCLwLk/hqdefault.jpg",
+      "description": "In this Azure Centric Podcast, we are talking about the new and enhanced features that were announced on Ignite 2021 and the respective book of news. The Microsoft MVP's Marcos Nogueira, Armando Lacerda and Jorge Maia will bring their point of view on the Azure releases at Microsoft Ignite 2021.\n\nYo"
+    },
+    {
+      "id": "-tqmDUGPHMM",
+      "title": "Azure Podcast #44 - From Azure Backup and Azure Vmware Solution to Azure Networks",
+      "published": "2021-11-01T23:43:09+00:00",
+      "url": "https://www.youtube.com/watch?v=-tqmDUGPHMM",
+      "thumbnail": "https://i2.ytimg.com/vi/-tqmDUGPHMM/hqdefault.jpg",
+      "series": "podcast",
+      "description": "In this Azure Centric Podcast, we are talking about the newest Azure features announced during this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\n04:52 - Azure Monitor Log Analytics and Application Insights support for Availability Zones"
+    },
+    {
+      "id": "qSLWkUElCRE",
+      "title": "Azure Podcast #43 - Azure NetApp Files, Visual Studio Code Web and Azure Spring Cloud",
+      "published": "2021-10-26T02:07:57+00:00",
+      "url": "https://www.youtube.com/watch?v=qSLWkUElCRE",
+      "thumbnail": "https://i2.ytimg.com/vi/qSLWkUElCRE/hqdefault.jpg",
+      "series": "podcast",
+      "description": "On this Azure Centric Podcast, we are talking about the newest Azure features announced during this week. Marcos Nogueira and Andrew Lowes bring their point of view on these new Azure features: \n00:00 - Intro\n05:28 - General availability: Cross region replication for Azure NetApp Files\n12:12 - Gener"
+    }
   ]
 }
