@@ -199,10 +199,22 @@ main.page {
   line-height: 1.5;
   color: var(--muted);
 }
+/* Line length grows with the viewport: ~60ch on a laptop, ~75ch on a desktop, never the full width of a wide screen. */
+@media (min-width: 700px) {
+  .lead {
+    max-width: 62ch;
+  }
+}
 @media (min-width: 900px) {
   .lead {
+    font-size: 17px;
+    max-width: 68ch;
+  }
+}
+@media (min-width: 1200px) {
+  .lead {
     font-size: 18px;
-    max-width: 52ch;
+    max-width: 76ch;
   }
 }
 

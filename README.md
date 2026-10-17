@@ -53,12 +53,12 @@ The 226 posts of the Jekyll blog were imported by `scripts/migrate-jekyll.py` (o
 - Each old post became `src/content/posts/en/<slug>.md` with `legacy: true` and `legacyUrl: /YYYY/MM/Old-Title.html`. The `legacyUrl` is what keeps old links alive: `src/pages/[year]/[month]/[legacy].html.ts` builds a redirect page at every old address. Other old pages (`/podcast.html`, `/youtube.html`, `/category-*.html`, `/feed.xml`) are 301-redirected in `public/staticwebapp.config.json`.
 - Images moved to `src/assets/old/posts/YYYY/MM/` so Astro optimizes them (AVIF/WebP, responsive sizes). Screenshots wider than 1600 px were downscaled.
 - Jekyll had 66 free-text labels, several per post; the new site has one `category` per post out of 10. The script assigns it by keyword rules plus a hand-checked override list (`CATEGORY_OVERRIDES`). To re-file a post, edit `category:` in its front-matter; nothing else depends on it.
-- The old labels were normalised into one tag vocabulary (`TAG_MAP` in the script: merges like `asr` → `azure-site-recovery`, drops generic ones like `azure`, `cloud`, `best-practices`, `tutorial`, `arm`) and capped at 6 per post. Tags are free text; `/posts?tag=<tag>` lists a tag.
+- The old labels were normalised into one tag vocabulary (`TAG_MAP` in the script: merges like `asr` → `azure-site-recovery`, drops generic ones like `azure`, `cloud`, `best-practices`, `tutorial`, `arm`) and capped at 6 per post. Tags are free text; every tag gets a static page at `/tags/<tag>`.
 - File names (= URLs, `/posts/<slug>`) come from the post title, not the old WordPress file names. Old permalinks redirect by `legacyUrl`, so the old links keep working; renaming a file after publishing breaks the *new* link, so don't.
 - `description` is the first paragraph of the post, cut to 180 characters. Worth rewriting on the posts you care about: it is what Google, social previews and the cards show.
 - Two image references pointed at files that no longer existed in the old repo and were dropped (`2013/05 image.png`, `2013/10 sconfig.png`).
 
-To stop showing "migrated from the old blog" on a post, remove `legacy: true` (keep `legacyUrl`).
+`legacy: true` is informational only (nothing is shown to readers); `legacyUrl` is what drives the redirect, so keep it.
 
 ## 3. Push to GitHub
 
@@ -87,19 +87,21 @@ Azure portal → *Create a resource* → **Static Web App**:
 
 | Field | Value |
 |---|---|
-| Plan | **Free** |
-| Region | West Europe (or closest) |
-| Source | GitHub → your repo → branch `main` |
-| Build preset | Custom |
-| App location | `/` |
-| Api location | *(empty)* |
-| Output location | `dist` |
+| Subscription / Resource group | yours (a new RG such as `rg-azurecentric` keeps it tidy) |
+| Name | `azurecentric` (becomes `azurecentric.azurestaticapps.net` plus a random suffix) |
+| Plan type | **Free** |
+| Region | West Europe (closest to readers; only matters for the managed Functions, which we don't use) |
+| Deployment source | **Other** |
 
-The portal commits a workflow file of its own (`.github/workflows/azure-static-web-apps-<name>.yml`) and adds a repo secret named `AZURE_STATIC_WEB_APPS_API_TOKEN_<NAME>`. Then:
+Choose **Other**, not GitHub. The GitHub option makes the portal commit its own workflow file into the repo and create a secret with a random suffix; you would then have two workflows deploying on every push and have to delete one. With **Other**, the portal creates nothing in the repo and our `.github/workflows/site.yml` is the only deployer.
 
-1. In the repo → *Settings → Secrets and variables → Actions*: open that secret's value (or portal → the SWA → *Manage deployment token*) and create a second secret **`AZURE_STATIC_WEB_APPS_API_TOKEN`** with the same value.
-2. Delete the portal-generated workflow file, keep `.github/workflows/site.yml` (ours syncs feeds, builds, and deploys in one run; two workflows would deploy twice per push).
-3. Push. The *Sync feeds, build and deploy* workflow runs and the site is live at `https://<name>.azurestaticapps.net`.
+After *Create*:
+
+1. Portal → the Static Web App → *Overview* → **Manage deployment token** → copy the token.
+2. GitHub → the repo → *Settings → Secrets and variables → Actions → New repository secret*: name **`AZURE_STATIC_WEB_APPS_API_TOKEN`**, value = the token.
+3. Push a commit (or *Actions → Sync feeds, build and deploy → Run workflow*). The run takes 4–6 minutes; the site is then live at the URL shown on the SWA *Overview* page.
+
+There is nothing else to configure on the SWA itself. Build settings do not apply (the workflow builds and uploads `dist`), routing, headers and redirects come from `public/staticwebapp.config.json`, and HTTPS is automatic. If you ever pick the GitHub source by mistake: delete the generated `.github/workflows/azure-static-web-apps-*.yml`, and copy the value of the generated `AZURE_STATIC_WEB_APPS_API_TOKEN_<NAME>` secret into a secret named exactly `AZURE_STATIC_WEB_APPS_API_TOKEN`.
 
 ## 5. Custom domain
 
