@@ -1,6 +1,7 @@
 ---
 // One page per YouTube channel: /videos/<slug>. Same layout as the index, scoped to the channel.
 import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
 import VideoCard from '../../components/VideoCard.astro';
 import { youtubeChannels } from '../../../site.config.mjs';
 import { getLang, useTranslations, localePath } from '../../i18n/utils';
@@ -14,12 +15,20 @@ const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 const videos = videosFor(channel.slug);
 const [first, ...rest] = videos;
+const intro = channel.description?.[lang] ?? channel.description?.en ?? [];
+const paragraphs = (Array.isArray(intro) ? intro : String(intro).split(/\n\s*\n/)).filter(Boolean);
 ---
 <Base title={`${channel.name} · ${t('videos.title')}`} active="videos" back={localePath(lang, '/videos')}>
   <main class="page container">
     <section class="section">
       <h1>{channel.name}</h1>
-      <p class="lead wide">{channel.description?.[lang] ?? ''} <a href={channel.url} target="_blank" rel="noopener">{t('videos.watch')} →</a></p>
+      <div class="intro">
+        {paragraphs.map((p) => <p class="lead wide">{p}</p>)}
+      </div>
+      <div class="actions">
+        <a href={`${channel.url}?sub_confirmation=1`} class="btn btn-accent" target="_blank" rel="noopener"><Icon name="video" size={18} />{t('videos.subscribe')}</a>
+      </div>
+      {youtubeChannels.length > 1 && (
       <div class="chips hs">
         {youtubeChannels.map((c) => (
           <a href={localePath(lang, `/videos/${c.slug}`)} class="chip channel" aria-current={c.slug === channel.slug ? 'page' : undefined}>
@@ -27,6 +36,7 @@ const [first, ...rest] = videos;
           </a>
         ))}
       </div>
+      )}
     </section>
 
     {channel.series.length > 0 && (
@@ -45,6 +55,7 @@ const [first, ...rest] = videos;
 </Base>
 
 <style>
+  .intro { display: flex; flex-direction: column; gap: 12px; }
   .channel { gap: 8px; padding-left: 8px; }
   .channel .dot { width: 24px; height: 24px; border-radius: 999px; background: var(--azure); display: inline-block; }
   .tabs { display: flex; gap: 6px; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); border-bottom: 1px solid var(--line); }

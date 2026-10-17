@@ -36,4 +36,10 @@ const posts = defineCollection({
     }),
 });
 
-export const collections = { posts };
+// The About page bio: src/content/about/en.md and pt.md. Edit the markdown, nothing else.
+const about = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/about' }),
+  schema: z.object({ title: z.string() }),
+});
+
+export const collections = { posts, about };

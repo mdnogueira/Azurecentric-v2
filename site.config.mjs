@@ -28,8 +28,8 @@ export const podcast = {
   // Until it is set, the site keeps using src/data/podcast.json as-is.
   rss: '',
   description: {
-    en: 'Very informal conversations about Azure, certifications and cloud, with guests. Hosted by Marcos Nogueira and Andrew Lowes.',
-    pt: 'Conversas muito informais sobre Azure, certificações e cloud, com convidados. Com Marcos Nogueira e Andrew Lowes.',
+    en: 'Informal conversations about Azure, certifications and cloud. Marcos Nogueira and a guest, once a week.',
+    pt: 'Conversas informais sobre Azure, certificações e cloud. Marcos Nogueira e um convidado, todas as semanas.',
   },
   links: {
     spotify: 'https://open.spotify.com/show/REPLACE_ME',
@@ -48,8 +48,19 @@ export const youtubeChannels = [
     channelId: 'UCNT2hI8HsyWyvp_Sg_9cf5w',
     url: 'https://www.youtube.com/@azurecentric',
     description: {
-      en: 'Azure, explained from the field. The Azure Centric Podcast is the backbone of the channel: Marcos Nogueira and Andrew Lowes go through what actually changed in Azure that week — new services, previews, retirements — and say what it means for the people running the platform. Around it sit the Concept Series, which takes one Azure building block at a time (subscriptions, management groups, VM high availability) and explains how it really works, the Ignite Book of News recaps, and a few sessions on Microsoft certifications and the IT career they open. Hands-on, opinionated, no marketing.',
-      pt: 'Azure, explicado a partir do terreno. O Azure Centric Podcast é a espinha dorsal do canal: Marcos Nogueira e Andrew Lowes percorrem o que mudou de facto no Azure nessa semana — novos serviços, previews, retirements — e dizem o que isso significa para quem gere a plataforma. À volta dele estão o Concept Series, que pega num bloco do Azure de cada vez (subscrições, management groups, alta disponibilidade de VMs) e explica como funciona na prática, os resumos do Ignite Book of News e algumas sessões sobre certificações Microsoft e a carreira em IT que elas abrem. Prático, com opinião, sem marketing.',
+      // One string per paragraph.
+      en: [
+        "I'm Marcos, and this is where I talk about Azure.",
+        "Most of the videos are the Azure Centric Podcast. I sit down with a guest, we go through what changed in Azure that week, and we try to work out what it means for the people who actually run it. Some of my guests are MVPs, some work at Microsoft, some just solved a problem in a way I found interesting.",
+        "The Concept Series is for when you want one thing explained properly, like subscriptions, management groups, or how to make a VM highly available. I also do a recap of the Ignite Book of News, because nobody has time to read all of it, and a few videos on certifications and whether they are worth your time.",
+        "If any of that sounds useful, subscribe and say hi in the comments.",
+      ],
+      pt: [
+        'Sou o Marcos e é aqui que falo de Azure.',
+        'A maior parte dos vídeos é o Azure Centric Podcast. Sento-me com um convidado, passamos pelo que mudou no Azure nessa semana e tentamos perceber o que isso significa para quem gere a plataforma no dia a dia. Alguns dos convidados são MVPs, outros trabalham na Microsoft, outros simplesmente resolveram um problema de uma forma que achei interessante.',
+        'O Concept Series é para quando quer uma coisa bem explicada, como subscrições, management groups ou como tornar uma VM altamente disponível. Faço também um resumo do Ignite Book of News, porque ninguém tem tempo para ler aquilo tudo, e alguns vídeos sobre certificações e se valem ou não o seu tempo.',
+        'Se algo disto lhe for útil, subscreva e deixe um olá nos comentários.',
+      ],
     },
     // Series are matched against video titles (case-insensitive, first match wins). Unmatched videos only show under "All".
     series: [
@@ -64,7 +75,7 @@ export const youtubeChannels = [
   //   name: 'Second channel',
   //   channelId: 'UC...........',
   //   url: 'https://www.youtube.com/@...',
-  //   description: { en: '', pt: '' },
+  //   description: { en: [''], pt: [''] },
   //   series: [],
   // },
 ];

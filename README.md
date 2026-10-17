@@ -44,7 +44,9 @@ Scheduling: set `pubDate` in the future. The post is excluded from production bu
 
 A Portuguese version is optional: copy the file to `src/content/posts/pt/<slug>.md`, keep the same `translationKey`, translate the rest. Posts without a PT version are served in English under `/pt/…` with a small notice.
 
-Categories, the podcast links, the YouTube channels and the site texts live in **`site.config.mjs`**.
+Categories, the podcast links, the YouTube channels (including the channel description shown on `/videos`) and the site texts live in **`site.config.mjs`**.
+
+The About page bio is markdown: `src/content/about/en.md` and `src/content/about/pt.md` (the `title` in the front-matter is the page heading). The picture is `src/assets/about.png`; replace the file to change it (a PNG with a transparent background, portrait orientation, ideally 600 px wide or more so it stays sharp on high-density screens).
 
 ### Posts migrated from the old blog
 
