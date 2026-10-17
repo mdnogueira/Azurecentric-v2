@@ -217,6 +217,17 @@ main.page {
     max-width: 76ch;
   }
 }
+/* .lead.wide spans the full content width (same edge as the cards below) and flows into two
+   columns on wide screens so each line stays a readable length. */
+.lead.wide {
+  max-width: none;
+}
+@media (min-width: 900px) {
+  .lead.wide {
+    column-count: 2;
+    column-gap: 40px;
+  }
+}
 
 /* chips & buttons */
 .chips {
