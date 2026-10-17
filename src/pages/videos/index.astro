@@ -15,7 +15,7 @@ const [first, ...rest] = videos;
   <main class="page container">
     <section class="section">
       <h1>{t('videos.title')}</h1>
-      <p class="lead">{t('videos.intro')}</p>
+      <p class="lead">{channel.description?.[lang] ?? ''} <a href={channel.url} target="_blank" rel="noopener">{t('videos.watch')} →</a></p>
       <div class="chips hs">
         {youtubeChannels.map((c, i) => (
           <a href={localePath(lang, `/videos/${c.slug}`)} class="chip channel" aria-current={i === 0 ? 'page' : undefined}>
@@ -35,7 +35,6 @@ const [first, ...rest] = videos;
       {first && <div data-series={first.series ?? ''}><VideoCard video={first} channel={channel} layout="hero" isNew /></div>}
       {rest.map((v) => <div data-series={v.series ?? ''}><VideoCard video={v} channel={channel} layout="row" /></div>)}
     </section>
-    <p class="muted small">{t('videos.archive')}</p>
   </main>
 </Base>
 

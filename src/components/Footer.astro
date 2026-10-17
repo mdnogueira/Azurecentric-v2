@@ -6,12 +6,11 @@ const t = useTranslations(lang);
 ---
 <footer class="site-footer">
   <div class="container inner">
-    <span>© {new Date().getFullYear()} {site.name} · {site.author}</span>
+    <span>© {new Date().getFullYear()} {site.name}</span>
     <div class="links">
       <a href="/rss.xml">{t('footer.rss')}</a>
       <a href={localePath(lang, '/privacy')}>{t('footer.privacy')}</a>
       <a href={localePath(lang, '/about')}>{t('nav.about')}</a>
-      <span class="muted">{t('footer.built')}</span>
     </div>
   </div>
 </footer>

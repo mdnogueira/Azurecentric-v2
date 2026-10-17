@@ -47,10 +47,16 @@ export const youtubeChannels = [
     name: 'Azure Centric',
     channelId: 'UCNT2hI8HsyWyvp_Sg_9cf5w',
     url: 'https://www.youtube.com/@azurecentric',
+    description: {
+      en: 'Azure, explained from the field. The Azure Centric Podcast is the backbone of the channel: Marcos Nogueira and Andrew Lowes go through what actually changed in Azure that week — new services, previews, retirements — and say what it means for the people running the platform. Around it sit the Concept Series, which takes one Azure building block at a time (subscriptions, management groups, VM high availability) and explains how it really works, the Ignite Book of News recaps, and a few sessions on Microsoft certifications and the IT career they open. Hands-on, opinionated, no marketing.',
+      pt: 'Azure, explicado a partir do terreno. O Azure Centric Podcast é a espinha dorsal do canal: Marcos Nogueira e Andrew Lowes percorrem o que mudou de facto no Azure nessa semana — novos serviços, previews, retirements — e dizem o que isso significa para quem gere a plataforma. À volta dele estão o Concept Series, que pega num bloco do Azure de cada vez (subscrições, management groups, alta disponibilidade de VMs) e explica como funciona na prática, os resumos do Ignite Book of News e algumas sessões sobre certificações Microsoft e a carreira em IT que elas abrem. Prático, com opinião, sem marketing.',
+    },
+    // Series are matched against video titles (case-insensitive, first match wins). Unmatched videos only show under "All".
     series: [
-      { key: 'weekly-news', name: 'Azure Weekly News', match: ['weekly news', 'azure news'] },
-      { key: 'concepts', name: 'Azure Concept Series', match: ['concept'] },
-      { key: 'podcast', name: 'Podcast Series', match: ['podcast'] },
+      { key: 'podcast', name: 'Azure Centric Podcast', match: ['podcast'] },
+      { key: 'concepts', name: 'Concept Series', match: ['concept'] },
+      { key: 'events', name: 'Ignite Book of News', match: ['ignite'] },
+      { key: 'certifications', name: 'Certifications', match: ['certification', 'az-'] },
     ],
   },
   // {
@@ -58,6 +64,7 @@ export const youtubeChannels = [
   //   name: 'Second channel',
   //   channelId: 'UC...........',
   //   url: 'https://www.youtube.com/@...',
+  //   description: { en: '', pt: '' },
   //   series: [],
   // },
 ];

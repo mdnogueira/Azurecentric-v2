@@ -82,7 +82,7 @@ const cover = post.data.cover;
 
       <footer class="section post-footer">
         <div class="tags">
-          {post.data.tags.map((tag) => <a href={localePath(lang, `/posts?tag=${tag}`)} class="chip small">#{tag}</a>)}
+          {post.data.tags.map((tag) => <a href={localePath(lang, `/tags/${tag}`)} class="chip small">#{tag}</a>)}
         </div>
         {episode && (
           <section class="card listen">

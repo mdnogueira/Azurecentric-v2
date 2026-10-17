@@ -2,9 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import PostRow from '../../components/PostRow.astro';
-import { categories } from '../../../site.config.mjs';
+import CategoryList from '../../components/CategoryList.astro';
 import { getLang, useTranslations, localePath } from '../../i18n/utils';
 import { postsFor, categoryCounts, allTags } from '../../lib/posts';
+import { categories } from '../../../site.config.mjs';
 
 const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
@@ -15,47 +16,44 @@ const iconOf = (key: string) => (categories as Record<string, { icon: string }>)
 ---
 <Base title={t('posts.title')} active="posts">
   <main class="page container">
-    <section class="section">
-      <h1>{t('posts.title')}</h1>
-      <p class="lead">{t('posts.intro', { count: posts.length, cats: cats.length })}</p>
-      <button type="button" class="search-field" data-open-search>
-        <Icon name="search" size={20} />
-        <span>{t('nav.search.placeholder')}</span>
-      </button>
-    </section>
-
-    <div class="tabs" role="tablist" aria-label="View">
-      <button type="button" role="tab" aria-selected="true" aria-controls="panel-cats" id="tab-cats">{t('posts.categories')}</button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="panel-latest" id="tab-latest">{t('posts.latest')}</button>
-    </div>
-
-    <section id="panel-cats" role="tabpanel" aria-labelledby="tab-cats" class="section">
-      <div class="grid">
-        {cats.map((c) => (
-          <a href={localePath(lang, `/categories/${c.key}`)} class="cat card">
-            <Icon name={iconOf(c.key)} size={24} class="cat-icon" />
-            <span class="cat-text">
-              <span class="cat-name">{c.name}</span>
-              <span class="muted">{c.count === 1 ? t('posts.count.one') : t('posts.count', { count: c.count })}</span>
-            </span>
-          </a>
-        ))}
-      </div>
-      {tags.length > 0 && (
-        <div class="section" style="padding-top: 8px">
-          <span class="eyebrow" style="color: var(--muted)">{t('posts.tags')}</span>
-          <div class="tags">
-            {tags.map((tag) => <a href={localePath(lang, `/posts?tag=${tag}`)} class="chip" data-tag={tag}>#{tag}</a>)}
+    <div class="cols">
+      <div class="main">
+        <section class="section">
+          <h1>{t('posts.title')}</h1>
+          <p class="lead">{t('posts.intro', { count: posts.length, cats: cats.length })}</p>
+          <button type="button" class="search-field" data-open-search>
+            <Icon name="search" size={20} />
+            <span>{t('nav.search.placeholder')}</span>
+          </button>
+          <div class="cat-strip">
+            {cats.map((c) => (
+              <a href={localePath(lang, `/categories/${c.key}`)} class="chip"><Icon name={iconOf(c.key)} size={16} /> {c.name} <span class="muted">{c.count}</span></a>
+            ))}
           </div>
-        </div>
-      )}
-    </section>
+        </section>
 
-    <section id="panel-latest" role="tabpanel" aria-labelledby="tab-latest" class="section" hidden>
-      <div class="rows">
-        {posts.map((p) => <PostRow post={p} />)}
+        <section class="section" id="latest">
+          <div class="section-head">
+            <h2>{t('posts.latest')}</h2>
+          </div>
+          <div class="rows">
+            {posts.map((p) => <PostRow post={p} />)}
+          </div>
+        </section>
       </div>
-    </section>
+
+      <aside class="side">
+        <CategoryList showAll={false} />
+        {tags.length > 0 && (
+          <section class="section">
+            <div class="section-head"><h2>{t('posts.tags')}</h2></div>
+            <div class="tags">
+              {tags.map((tag) => <a href={localePath(lang, `/tags/${tag}`)} class="chip" data-tag={tag}>#{tag}</a>)}
+            </div>
+          </section>
+        )}
+      </aside>
+    </div>
   </main>
 </Base>
 
@@ -64,40 +62,11 @@ const iconOf = (key: string) => (categories as Record<string, { icon: string }>)
     display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 14px; border-radius: 12px;
     background: var(--card); border: 1px solid var(--line-strong); color: var(--muted); font-size: 16px; cursor: pointer; text-align: left;
   }
-  .tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); }
-  .tabs button {
-    height: 44px; padding: 0 12px; border: 0; background: transparent; font-size: 14px; font-weight: 500; color: var(--muted);
-    border-bottom: 2px solid transparent; cursor: pointer;
-  }
-  .tabs button[aria-selected='true'] { color: var(--text); font-weight: 600; border-bottom-color: var(--accent); }
-  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  @media (min-width: 700px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  .cat { display: flex; flex-direction: column; gap: 10px; padding: 16px; min-height: 120px; color: var(--text); border: 1px solid var(--line-strong); }
-  .cat-icon { color: var(--link); }
-  .cat-text { display: flex; flex-direction: column; gap: 4px; margin-top: auto; }
-  .cat-name { font-size: 16px; font-weight: 700; font-family: var(--font-display); }
-  .cat .muted { font-size: 13px; }
+  .cat-strip { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scrollbar-width: none; }
+  .cat-strip::-webkit-scrollbar { display: none; }
+  .cat-strip .chip { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; white-space: nowrap; }
+  .cat-strip .muted { font-size: 12px; }
+  @media (min-width: 900px) { .cat-strip { display: none; } }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tags .chip { padding: 7px 12px; font-size: 13px; background: transparent; }
+  .tags .chip { padding: 6px 10px; font-size: 13px; background: transparent; }
 </style>
-
-<script>
-  const tabs = document.querySelectorAll<HTMLButtonElement>('[role="tab"]');
-  tabs.forEach((tab) => tab.addEventListener('click', () => {
-    tabs.forEach((x) => {
-      const on = x === tab;
-      x.setAttribute('aria-selected', String(on));
-      const panel = document.getElementById(x.getAttribute('aria-controls')!);
-      if (panel) panel.hidden = !on;
-    });
-  }));
-  // ?tag= filter on the Latest tab (tags are static chips; filtering happens client-side)
-  const tag = new URLSearchParams(location.search).get('tag');
-  if (tag) {
-    document.getElementById('tab-latest')?.click();
-    document.querySelectorAll<HTMLElement>('#panel-latest .row').forEach((row) => {
-      const tags = row.dataset.tags?.split(',') ?? [];
-      if (!tags.includes(tag)) row.hidden = true;
-    });
-  }
-</script>

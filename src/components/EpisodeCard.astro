@@ -40,7 +40,7 @@ const watch = episode.audioUrl ? undefined : (episode as any).youtubeId ? `https
     {!episode.audioUrl && <span class="muted small">{t('videos.watch')} →</span>}
   </div>
   {!compact && (
-    <p class="muted small">{t('podcast.synced')} · <a href={localePath(lang, '/podcast')}>{t('podcast.all')} →</a></p>
+    <p class="muted small"><a href={localePath(lang, '/podcast')}>{t('podcast.all')} →</a></p>
   )}
 </article>
 

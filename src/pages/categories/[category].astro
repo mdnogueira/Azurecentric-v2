@@ -19,7 +19,10 @@ const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 const name = categoryName(category!, lang);
 const posts = (await postsFor(lang)).filter((p) => p.data.category === category);
-const [first, ...rest] = posts;
+// Same shape as the home page: one featured card, two cards, then the rest as rows.
+const [first, ...others] = posts;
+const cards = others.slice(0, 2);
+const rest = others.slice(2);
 const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
 const icon = (categories as Record<string, { icon: string }>)[category!]?.icon ?? 'posts';
 ---
@@ -36,17 +39,29 @@ const icon = (categories as Record<string, { icon: string }>)[category!]?.icon ?
       <p class="lead">{posts.length === 1 ? t('posts.count.one') : t('posts.count', { count: posts.length })}, {t('category.newest')}.</p>
       <div class="filters">
         <div class="chips hs">
-          {tags.map((tag) => <a href={localePath(lang, `/posts?tag=${tag}`)} class="chip small">#{tag}</a>)}
+          {tags.map((tag) => <a href={localePath(lang, `/tags/${tag}`)} class="chip small">#{tag}</a>)}
         </div>
         <a href={`/rss/${category}.xml`} class="feed" aria-label={t('category.feed')}><Icon name="rss" size={16} stroke={2} /></a>
       </div>
     </section>
 
     {first ? (
-      <section class="section">
-        <PostCard post={first} featured />
-        {rest.length > 0 && <div class="rows">{rest.map((p) => <PostRow post={p} showCategory={false} />)}</div>}
-      </section>
+      <>
+        <section class="section">
+          <PostCard post={first} featured />
+        </section>
+        {cards.length > 0 && (
+          <div class="cards">
+            {cards.map((p) => <PostCard post={p} />)}
+          </div>
+        )}
+        {rest.length > 0 && (
+          <section class="section">
+            <div class="section-head"><h2>{t('category.more')}</h2></div>
+            <div class="rows">{rest.map((p) => <PostRow post={p} showCategory={false} />)}</div>
+          </section>
+        )}
+      </>
     ) : (
       <p class="muted">—</p>
     )}
@@ -61,5 +76,10 @@ const icon = (categories as Record<string, { icon: string }>)[category!]?.icon ?
   .filters { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .filters .chips { min-width: 0; flex: 1; }
   .chip.small { padding: 6px 11px; font-size: 13px; background: transparent; }
+  .cards { display: flex; flex-direction: column; gap: 16px; }
+  @media (min-width: 700px) {
+    .cards { flex-direction: row; flex-wrap: wrap; }
+    .cards > :global(*) { flex: 1 1 240px; min-width: 0; }
+  }
   .feed { width: 36px; height: 36px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 </style>

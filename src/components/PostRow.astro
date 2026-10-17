@@ -14,7 +14,15 @@ const t = useTranslations(lang);
     <span class="row-title">{post.data.title}</span>
     <span class="row-meta">
       {showCategory && <>{categoryName(post.data.category, lang)} · </>}
-      {readingTime(post)} {t('post.minRead')} · {formatDate(post.data.pubDate, lang)}{post.data.legacy && <> · {t('post.migrated')}</>}
+      {readingTime(post)} {t('post.minRead')} · {formatDate(post.data.pubDate, lang)}
     </span>
+    {post.data.tags.length > 0 && (
+      <span class="row-tags">{post.data.tags.map((tag) => <span class="row-tag">#{tag}</span>)}</span>
+    )}
   </span>
 </a>
+
+<style>
+  .row-tags { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 2px; }
+  .row-tag { font-size: 12px; color: var(--link); }
+</style>

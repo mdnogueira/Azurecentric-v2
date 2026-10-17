@@ -53,7 +53,6 @@ const [latest, ...rest] = list;
     <section class="section">
       <div class="section-head">
         <h2>{t('podcast.all')}</h2>
-        <span class="muted small">{t('podcast.synced')}</span>
       </div>
       <div class="rows">
         {list.map((e) => (
@@ -66,7 +65,7 @@ const [latest, ...rest] = list;
           </a>
         ))}
       </div>
-      <p class="muted small">{t('podcast.missing')}</p>
+      {!podcast.rss && <p class="muted small">{t('podcast.missing')}</p>}
     </section>
   </main>
 </Base>

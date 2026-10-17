@@ -1,0 +1,37 @@
+---
+// One static page per tag: /tags/<tag>. Same list layout as a category, no client-side filtering.
+import Base from '../../layouts/Base.astro';
+import PostRow from '../../components/PostRow.astro';
+import { getLang, useTranslations, localePath } from '../../i18n/utils';
+import { postsFor, allPosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await allPosts();
+  const tags = new Set<string>(posts.flatMap((p) => p.data.tags));
+  return [...tags].map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const posts = (await postsFor(lang)).filter((p) => p.data.tags.includes(tag!));
+---
+<Base title={`#${tag}`} description={t('tag.intro', { tag: tag!, count: posts.length })} active="posts" back={localePath(lang, '/posts')} noindex={posts.length < 2}>
+  <main class="page container">
+    <section class="section">
+      <nav aria-label="Breadcrumb" class="crumb muted">
+        <a href={localePath(lang, '/posts')}>{t('posts.title')}</a><span aria-hidden="true">/</span><span>{t('posts.tags')}</span>
+      </nav>
+      <h1>#{tag}</h1>
+      <p class="lead">{posts.length === 1 ? t('posts.count.one') : t('posts.count', { count: posts.length })}, {t('category.newest')}.</p>
+    </section>
+    <section class="section">
+      <div class="rows">{posts.map((p) => <PostRow post={p} />)}</div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .crumb { font-size: 13px; display: flex; gap: 6px; }
+  .crumb a { color: var(--muted); }
+</style>

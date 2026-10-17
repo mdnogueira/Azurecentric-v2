@@ -2,6 +2,8 @@
 // Sidebar list of categories with counts (desktop) — also used on the phone posts index.
 import { getLang, useTranslations, localePath } from '../i18n/utils';
 import { categoryCounts } from '../lib/posts';
+interface Props { showAll?: boolean }
+const { showAll = true } = Astro.props;
 const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 const cats = await categoryCounts(lang);
@@ -9,7 +11,7 @@ const cats = await categoryCounts(lang);
 <section class="section">
   <div class="section-head">
     <h2>{t('home.categories')}</h2>
-    <a href={localePath(lang, '/posts')}>{t('home.all')} →</a>
+    {showAll && <a href={localePath(lang, '/posts')}>{t('home.all')} →</a>}
   </div>
   <div class="list card">
     {cats.map((c) => (
