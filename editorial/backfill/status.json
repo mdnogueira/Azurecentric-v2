@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T22:23:09.925843+00:00",
+  "generated_at": "2026-10-23T22:42:56.039799+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 20,
-  "remaining": 346,
+  "written": 22,
+  "remaining": 344,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -24,19 +24,11 @@
     "AZC-017",
     "AZC-018",
     "AZC-019",
-    "AZC-020"
+    "AZC-020",
+    "AZC-021",
+    "AZC-022"
   ],
   "missing": [
-    {
-      "id": "AZC-021",
-      "title": "Connect Windows security events using Azure Monitor Agent",
-      "historical_date": "2024-02-27"
-    },
-    {
-      "id": "AZC-022",
-      "title": "Deploy an App Service application with a staging slot",
-      "historical_date": "2024-03-01"
-    },
     {
       "id": "AZC-023",
       "title": "Choose a VM size using workload requirements",

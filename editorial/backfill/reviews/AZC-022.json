@@ -1,0 +1,52 @@
+{
+  "id": "AZC-022",
+  "title": "Deploy an App Service application with a staging slot",
+  "historical_date": "2024-03-01",
+  "file": "src/content/posts/en/deploy-an-app-service-application-with-a-staging-slot.md",
+  "created_at": "2026-10-23T22:42:34.178014+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/deploy-staging-slots.md",
+      "revision": "c8d31b56660f841a887c55ca01ea5ff243571e5a",
+      "revision_date": "2024-01-09T21:19:18Z",
+      "title": "Set up staging environments in Azure App Service",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c8d31b56660f841a887c55ca01ea5ff243571e5a/articles/app-service/deploy-staging-slots.md",
+      "checked_at": "2026-10-23T22:40:54.430Z"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/scripts/powershell-deploy-staging-environment.md",
+      "revision": "bac70541d2ed4fa6ef8a19e1738ad9d135afd4e0",
+      "revision_date": "2022-12-06T20:59:30Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "PowerShell: Deploy code to staging slot",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/scripts/powershell-deploy-staging-environment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bac70541d2ed4fa6ef8a19e1738ad9d135afd4e0/articles/app-service/scripts/powershell-deploy-staging-environment.md",
+      "rank_score": 99
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-022-create-staging-slot.png",
+      "alt": "App Service staging slot creation in the Azure portal",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c8d31b56660f841a887c55ca01ea5ff243571e5a/articles/app-service/media/web-sites-staged-publishing/configure-new-slot.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-01-09T21:19:18Z",
+      "sha256": "ce3bea502295c22a74a1fb94eac36bc8aaf7f5f7af61bb27729e33ad177c47ac",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft demo screenshot inspected; illustrates slot creation and configuration-cloning options"
+    }
+  ]
+}
