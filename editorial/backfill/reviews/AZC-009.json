@@ -1,0 +1,41 @@
+{
+  "id": "AZC-009",
+  "title": "Choose Logic Apps Consumption or Standard for an integration",
+  "historical_date": "2024-01-25",
+  "file": "src/content/posts/en/choose-logic-apps-consumption-or-standard-for-an-integration.md",
+  "created_at": "2026-10-23T12:28:05.967638+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/logic-apps-overview.md",
+      "revision": "343639a2fef6fc1d2188a03b6de2f110dc58d797",
+      "revision_date": "2024-01-10T23:20:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/343639a2fef6fc1d2188a03b6de2f110dc58d797/articles/logic-apps/logic-apps-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/azure-integration-services-choose-capabilities.md",
+      "revision": "90c55a076e9edf257b197f1b56da83a4fedc1f29",
+      "revision_date": "2024-01-05T00:52:13Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Choose the best Azure integration services for your scenarios",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/azure-integration-services-choose-capabilities",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/90c55a076e9edf257b197f1b56da83a4fedc1f29/articles/logic-apps/azure-integration-services-choose-capabilities.md",
+      "rank_score": 99
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

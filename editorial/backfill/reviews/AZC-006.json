@@ -1,0 +1,52 @@
+{
+  "id": "AZC-006",
+  "title": "Start an Azure HPC design with the workload requirements",
+  "historical_date": "2024-01-17",
+  "file": "src/content/posts/en/start-an-azure-hpc-design-with-the-workload-requirements.md",
+  "created_at": "2026-10-23T12:29:26.052762+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-hpc.md",
+      "revision": "6acff28eacab9c1fc771d1f998b9381d6e3d4ce6",
+      "revision_date": "2023-12-08T01:01:20Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure VM sizes - HPC | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-hpc",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6acff28eacab9c1fc771d1f998b9381d6e3d4ce6/articles/virtual-machines/sizes-hpc.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-gpu.md",
+      "revision": "a9276dce9affa704ddc521d24639164eaae323e7",
+      "revision_date": "2024-01-09T19:19:15Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure VM sizes - GPU | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9276dce9affa704ddc521d24639164eaae323e7/articles/virtual-machines/sizes-gpu.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-technical-overview.md",
+      "revision": "e2ce7cec57e0ac08ed8d1f9775279cf9042e12c5",
+      "revision_date": "2021-12-14T20:44:11Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure Batch runs large parallel jobs in the cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e2ce7cec57e0ac08ed8d1f9775279cf9042e12c5/articles/batch/batch-technical-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "AZC-012",
+  "title": "Create a Storage account with private access in mind",
+  "historical_date": "2024-02-02",
+  "file": "src/content/posts/en/create-a-storage-account-with-private-access-in-mind.md",
+  "created_at": "2026-10-23T12:18:37.647951+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-account-create.md",
+      "revision": "b0f26729c9a3e5435d221cc05198c88026acd248",
+      "revision_date": "2024-01-03T09:29:24Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a storage account",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b0f26729c9a3e5435d221cc05198c88026acd248/articles/storage/common/storage-account-create.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-private-endpoints.md",
+      "revision": "c55c0e40d9d588d18a7fe5b46526718c9f524a60",
+      "revision_date": "2023-10-19T07:23:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use private endpoints",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c55c0e40d9d588d18a7fe5b46526718c9f524a60/articles/storage/common/storage-private-endpoints.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
