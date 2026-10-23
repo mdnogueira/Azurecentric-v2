@@ -1,0 +1,62 @@
+{
+  "id": "AZC-025",
+  "title": "Check outbound network requirements for Azure Arc agents",
+  "historical_date": "2024-03-09",
+  "file": "src/content/posts/en/check-outbound-network-requirements-for-azure-arc-agents.md",
+  "created_at": "2026-10-23T21:58:02.190963+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/network-requirements.md",
+      "revision": "4bcc0ebe90e4fbac98b8e132c92b135f036b9687",
+      "revision_date": "2024-01-10T18:26:48Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connected Machine agent network requirements",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/network-requirements",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4bcc0ebe90e4fbac98b8e132c92b135f036b9687/articles/azure-arc/servers/network-requirements.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/private-link-security.md",
+      "revision": "17d9a36cc878257b3d2213b03755195335953fcc",
+      "revision_date": "2024-02-26T15:46:54Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Azure Private Link to securely connect servers to Azure Arc",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/private-link-security",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/17d9a36cc878257b3d2213b03755195335953fcc/articles/azure-arc/servers/private-link-security.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/agent-overview.md",
+      "revision": "09db1360d4f683f66d9bbb3b3a5e9848a9ecd72d",
+      "revision_date": "2023-12-12T19:01:16Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview of the Azure Connected Machine agent",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/09db1360d4f683f66d9bbb3b3a5e9848a9ecd72d/articles/azure-arc/servers/agent-overview.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/azcmagent-check.md",
+      "revision": "bf9f0d2621c40823c751c706dabd91e76a7c3458",
+      "revision_date": "2023-07-27T15:51:26Z",
+      "title": "azcmagent check",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/azcmagent-check",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bf9f0d2621c40823c751c706dabd91e76a7c3458/articles/azure-arc/servers/azcmagent-check.md",
+      "checked_at": "2026-10-23T23:01:43.849Z"
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
