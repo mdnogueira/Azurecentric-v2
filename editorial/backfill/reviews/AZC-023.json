@@ -1,0 +1,62 @@
+{
+  "id": "AZC-023",
+  "title": "Choose a VM size using workload requirements",
+  "historical_date": "2024-03-04",
+  "file": "src/content/posts/en/choose-a-vm-size-using-workload-requirements.md",
+  "created_at": "2026-10-23T12:42:30.013879+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes.md",
+      "revision": "69c05c67d2a8d9d811e7ec0e7feb1ead39f00849",
+      "revision_date": "2024-02-08T00:39:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "VM sizes",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/69c05c67d2a8d9d811e7ec0e7feb1ead39f00849/articles/virtual-machines/sizes.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-compute.md",
+      "revision": "69c05c67d2a8d9d811e7ec0e7feb1ead39f00849",
+      "revision_date": "2024-02-08T00:39:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure VM sizes - Compute optimized | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-compute",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/69c05c67d2a8d9d811e7ec0e7feb1ead39f00849/articles/virtual-machines/sizes-compute.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-memory.md",
+      "revision": "69c05c67d2a8d9d811e7ec0e7feb1ead39f00849",
+      "revision_date": "2024-02-08T00:39:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure VM sizes - Memory | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-memory",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/69c05c67d2a8d9d811e7ec0e7feb1ead39f00849/articles/virtual-machines/sizes-memory.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/quotas.md",
+      "revision": "a05c1b8ba6cfac34ec1c991067df40dc65c29444",
+      "revision_date": "2024-02-08T00:39:08Z",
+      "title": "Check vCPU quotas in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/quotas",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a05c1b8ba6cfac34ec1c991067df40dc65c29444/articles/virtual-machines/quotas.md",
+      "checked_at": "2026-10-23T22:55:13.412Z"
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

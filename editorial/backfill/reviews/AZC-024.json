@@ -1,0 +1,62 @@
+{
+  "id": "AZC-024",
+  "title": "Choose CPU or GPU infrastructure for an AI workload",
+  "historical_date": "2024-03-06",
+  "file": "src/content/posts/en/choose-cpu-or-gpu-infrastructure-for-an-ai-workload.md",
+  "created_at": "2026-10-23T12:44:15.825019+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-gpu.md",
+      "revision": "69c05c67d2a8d9d811e7ec0e7feb1ead39f00849",
+      "revision_date": "2024-02-08T00:39:29Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure VM sizes - GPU | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/69c05c67d2a8d9d811e7ec0e7feb1ead39f00849/articles/virtual-machines/sizes-gpu.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-hpc.md",
+      "revision": "01e6000a4fce8bedfb216d303eaa75368c80ddd3",
+      "revision_date": "2024-02-16T15:59:18Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure VM sizes - HPC | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-hpc",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/01e6000a4fce8bedfb216d303eaa75368c80ddd3/articles/virtual-machines/sizes-hpc.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-technical-overview.md",
+      "revision": "e2ce7cec57e0ac08ed8d1f9775279cf9042e12c5",
+      "revision_date": "2021-12-14T20:44:11Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure Batch runs large parallel jobs in the cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e2ce7cec57e0ac08ed8d1f9775279cf9042e12c5/articles/batch/batch-technical-overview.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/quotas.md",
+      "revision": "a05c1b8ba6cfac34ec1c991067df40dc65c29444",
+      "revision_date": "2024-02-08T00:39:08Z",
+      "title": "Check vCPU quotas in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/quotas",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a05c1b8ba6cfac34ec1c991067df40dc65c29444/articles/virtual-machines/quotas.md",
+      "checked_at": "2026-10-23T22:55:13.412Z"
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

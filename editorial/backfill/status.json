@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T22:42:56.039799+00:00",
+  "generated_at": "2026-10-23T22:57:45.313158+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 22,
-  "remaining": 344,
+  "written": 24,
+  "remaining": 342,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -26,19 +26,11 @@
     "AZC-019",
     "AZC-020",
     "AZC-021",
-    "AZC-022"
+    "AZC-022",
+    "AZC-023",
+    "AZC-024"
   ],
   "missing": [
-    {
-      "id": "AZC-023",
-      "title": "Choose a VM size using workload requirements",
-      "historical_date": "2024-03-04"
-    },
-    {
-      "id": "AZC-024",
-      "title": "Choose CPU or GPU infrastructure for an AI workload",
-      "historical_date": "2024-03-06"
-    },
     {
       "id": "AZC-025",
       "title": "Check outbound network requirements for Azure Arc agents",
