@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T22:57:45.313158+00:00",
+  "generated_at": "2026-10-23T23:03:23.134904+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 24,
-  "remaining": 342,
+  "written": 26,
+  "remaining": 340,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -28,19 +28,11 @@
     "AZC-021",
     "AZC-022",
     "AZC-023",
-    "AZC-024"
+    "AZC-024",
+    "AZC-025",
+    "AZC-026"
   ],
   "missing": [
-    {
-      "id": "AZC-025",
-      "title": "Check outbound network requirements for Azure Arc agents",
-      "historical_date": "2024-03-09"
-    },
-    {
-      "id": "AZC-026",
-      "title": "Decide which settings belong in Bicep parameters",
-      "historical_date": "2024-03-13"
-    },
     {
       "id": "AZC-027",
       "title": "Copilot for Security is coming in April: prepare the pilot first",
