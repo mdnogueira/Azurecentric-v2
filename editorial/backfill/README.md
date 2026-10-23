@@ -1,6 +1,6 @@
 # Historical article drafts
 
-26 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
+28 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
 
 Sources, real creation timestamps, generated-code limitations and remaining questions are recorded in `reviews/`. The original source texts and model responses are retained outside the site repository. No claim of live deployment or workload testing is made.
 
@@ -34,8 +34,8 @@ The article dates represent the requested historical editorial dates. The actual
 | AZC-024 | 2024-03-06 | [Choose CPU or GPU infrastructure for an AI workload](../../src/content/posts/en/choose-cpu-or-gpu-infrastructure-for-an-ai-workload.md) | Written; author review pending |
 | AZC-025 | 2024-03-09 | [Check outbound network requirements for Azure Arc agents](../../src/content/posts/en/check-outbound-network-requirements-for-azure-arc-agents.md) | Written; author review pending |
 | AZC-026 | 2024-03-13 | [Decide which settings belong in Bicep parameters](../../src/content/posts/en/decide-which-settings-belong-in-bicep-parameters.md) | Written; author review pending |
-| AZC-027 | 2024-03-16 | Copilot for Security is coming in April: prepare the pilot first | Pending delivery |
-| AZC-028 | 2024-03-18 | Create a Logic Apps workflow with a clear failure path | Pending delivery |
+| AZC-027 | 2024-03-16 | [Copilot for Security is coming in April: prepare the pilot first](../../src/content/posts/en/copilot-for-security-is-coming-in-april-prepare-the-pilot-first.md) | Written; author review pending |
+| AZC-028 | 2024-03-18 | [Create a Logic Apps workflow with a clear failure path](../../src/content/posts/en/create-a-logic-apps-workflow-with-a-clear-failure-path.md) | Written; author review pending |
 | AZC-029 | 2024-03-21 | Choose a hub-and-spoke topology for a small Azure estate | Pending delivery |
 | AZC-030 | 2024-03-24 | Configure VM insights for a group of Azure servers | Pending delivery |
 | AZC-031 | 2024-03-26 | Choose storage redundancy around recovery requirements | Pending delivery |

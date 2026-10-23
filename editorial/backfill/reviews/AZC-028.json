@@ -1,0 +1,80 @@
+{
+  "id": "AZC-028",
+  "title": "Create a Logic Apps workflow with a clear failure path",
+  "historical_date": "2024-03-18",
+  "file": "src/content/posts/en/create-a-logic-apps-workflow-with-a-clear-failure-path.md",
+  "created_at": "2026-10-23T12:51:27.349329+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/error-exception-handling.md",
+      "revision": "34da390c1b785ed64f424b5e9f32704cefa14f6e",
+      "revision_date": "2023-12-07T21:18:13Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Handle errors and exceptions in workflows",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/error-exception-handling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/34da390c1b785ed64f424b5e9f32704cefa14f6e/articles/logic-apps/error-exception-handling.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/logic-apps-control-flow-run-steps-group-scopes.md",
+      "revision": "134be6f5c1579de035c40918a14986f23f031037",
+      "revision_date": "2024-01-05T00:54:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Group and run actions by scope",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-control-flow-run-steps-group-scopes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/134be6f5c1579de035c40918a14986f23f031037/articles/logic-apps/logic-apps-control-flow-run-steps-group-scopes.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/monitor-logic-apps-overview.md",
+      "revision": "51f250be594df927c434adaca5b42c0543fb1cb4",
+      "revision_date": "2024-03-12T18:50:26Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Monitor Azure Logic Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/monitor-logic-apps-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/51f250be594df927c434adaca5b42c0543fb1cb4/articles/logic-apps/monitor-logic-apps-overview.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/logic-apps-workflow-actions-triggers.md",
+      "revision": "7cd42b376a2f95035cce5be1f77978a1642c3f9e",
+      "revision_date": "2023-12-12T01:19:50Z",
+      "title": "Workflow actions and triggers: Terminate",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-workflow-actions-triggers#terminate-action",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7cd42b376a2f95035cce5be1f77978a1642c3f9e/articles/logic-apps/logic-apps-workflow-actions-triggers.md",
+      "excerpt_context": "Extract from the Terminate action reference; complete document linked by snapshot_url",
+      "checked_at": "2026-10-23T23:09:56.231Z"
+    }
+  ],
+  "code_validation": {
+    "status": "json_schema_validated",
+    "checked_at": "2026-10-23T23:11:51.638945+00:00",
+    "validator": "jsonschema 4.25.1",
+    "schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "source_sha256": "5404492d3b2166ab797036108a96f1525c0c900a4e60e97d49e50981134a895b",
+    "integration_validation": "not_run",
+    "limitations": "JSON Schema and selected dependency checks only; no Azure workflow execution"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-028-failed-run-after-consumption.png",
+      "alt": "Consumption designer run-after status selection",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/34da390c1b785ed64f424b5e9f32704cefa14f6e/articles/logic-apps/media/error-exception-handling/failed-run-after-status-consumption.png",
+      "source_id": "S1",
+      "source_revision_date": "2023-12-07T21:18:13Z",
+      "sha256": "2eee12ae7c1574454fbe914ee621fe6a4caa864a86a003ccb82832d7cf3d8251",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft demo screenshot inspected; illustrates selecting failed predecessor status"
+    }
+  ]
+}

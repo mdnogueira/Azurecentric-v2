@@ -1,0 +1,44 @@
+{
+  "id": "AZC-027",
+  "title": "Copilot for Security is coming in April: prepare the pilot first",
+  "historical_date": "2024-03-16",
+  "file": "src/content/posts/en/copilot-for-security-is-coming-in-april-prepare-the-pilot-first.md",
+  "created_at": "2026-10-23T12:47:54.300616+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2024-03-13T16:00:00+00:00",
+      "published_at": "2024-03-13T16:00:00+00:00",
+      "checked_at": "2026-10-23T11:52:29.062435+00:00",
+      "title": "Microsoft Copilot for Security is generally available on April 1, 2024, with new capabilities",
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/",
+      "snapshot_url": "https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2025-09-22T08:57:43+00:00",
+      "historical_scope_note": "The live page includes a later product-renaming notice and current site navigation. The article uses the March 2024 name, original announced launch date and provisioned pay-as-you-go announcement; later updates are excluded."
+    },
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "d5b40bb2400d7d625f5cd16c8f71f9e48c21ee71",
+      "revision_date": "2024-03-07T10:32:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/d5b40bb2400d7d625f5cd16c8f71f9e48c21ee71/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/d5b40bb2400d7d625f5cd16c8f71f9e48c21ee71/README.md",
+      "rank_score": 100
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
