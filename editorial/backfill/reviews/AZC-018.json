@@ -1,0 +1,63 @@
+{
+  "id": "AZC-018",
+  "title": "Create an Ubuntu 22.04 LTS virtual machine on Hyper-V",
+  "historical_date": "2024-02-19",
+  "file": "src/content/posts/en/create-an-ubuntu-22-04-lts-virtual-machine-on-hyper-v.md",
+  "created_at": "2026-10-23T12:34:19.645152+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "revision": "ebdeee97a7dae446b50c7fbf99e9f9121b3e2c27",
+      "revision_date": "2023-02-22T18:47:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a virtual machine in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ebdeee97a7dae446b50c7fbf99e9f9121b3e2c27/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows.md",
+      "revision": "cf46ad87e6e6eb7f61647cf8e03af2beb98e8405",
+      "revision_date": "2021-08-16T18:05:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Get started with Hyper-V on Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cf46ad87e6e6eb7f61647cf8e03af2beb98e8405/WindowsServerDocs/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-Ubuntu-virtual-machines-on-Hyper-V.md",
+      "revision": "31ecaa544e7c72d69011038b94b358f3447efb05",
+      "revision_date": "2024-02-05T06:12:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported Ubuntu virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-ubuntu-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/31ecaa544e7c72d69011038b94b358f3447efb05/WindowsServerDocs/virtualization/hyper-v/Supported-Ubuntu-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/learn-more/Generation-2-virtual-machine-security-settings-for-Hyper-V.md",
+      "revision": "ab31226521118f3e864d854082350f381a7e6993",
+      "revision_date": "2021-12-08T15:19:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Generation 2 virtual machine security settings for Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ab31226521118f3e864d854082350f381a7e6993/WindowsServerDocs/virtualization/hyper-v/learn-more/Generation-2-virtual-machine-security-settings-for-Hyper-V.md",
+      "rank_score": 99
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

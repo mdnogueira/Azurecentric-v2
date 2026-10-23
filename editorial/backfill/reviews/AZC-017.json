@@ -1,0 +1,40 @@
+{
+  "id": "AZC-017",
+  "title": "Install Hyper-V on a Windows Server 2022 host",
+  "historical_date": "2024-02-17",
+  "file": "src/content/posts/en/install-hyper-v-on-a-windows-server-2022-host.md",
+  "created_at": "2026-10-23T21:55:44.573068+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Install-the-Hyper-V-role-on-Windows-Server.md",
+      "revision": "3685b71364e0d8c48445e22f5454668b899efdb2",
+      "revision_date": "2023-09-20T02:47:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Install the Hyper-V role on Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/3685b71364e0d8c48445e22f5454668b899efdb2/WindowsServerDocs/virtualization/hyper-v/get-started/Install-the-Hyper-V-role-on-Windows-Server.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/deploy/Deploy-Hyper-V-on-Windows-Server.md",
+      "revision": "e057d07062045e3a97715861a3a762434ce23dd9",
+      "revision_date": "2021-07-27T15:51:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Hyper-V on Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/deploy-hyper-v-on-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e057d07062045e3a97715861a3a762434ce23dd9/WindowsServerDocs/virtualization/hyper-v/deploy/Deploy-Hyper-V-on-Windows-Server.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": []
+}
