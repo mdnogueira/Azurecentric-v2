@@ -1,0 +1,50 @@
+{
+  "id": "AZC-005",
+  "title": "Deploy an Azure VM with a deliberate disk layout",
+  "historical_date": "2024-01-13",
+  "file": "src/content/posts/en/deploy-an-azure-vm-with-a-deliberate-disk-layout.md",
+  "created_at": "2026-10-23",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/attach-os-disk.md",
+      "revision": "bf171c77650adb915e6588a0abee7bce50a862b1",
+      "revision_date": "2023-12-28T20:05:50Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Attach an existing OS disk to a VM",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/attach-os-disk",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bf171c77650adb915e6588a0abee7bce50a862b1/articles/virtual-machines/attach-os-disk.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/attach-disk-portal.md",
+      "revision": "3a04febe9ad6f3ecc1849573c68ac185120063b8",
+      "revision_date": "2023-08-09T22:27:02Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Attach a data disk to a Linux VM",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3a04febe9ad6f3ecc1849573c68ac185120063b8/articles/virtual-machines/linux/attach-disk-portal.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/windows/attach-managed-disk-portal.md",
+      "revision": "6eac1db84868c9158287baead32c10bb57f138e5",
+      "revision_date": "2023-08-09T21:26:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Attach a managed data disk to a Windows VM - Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6eac1db84868c9158287baead32c10bb57f138e5/articles/virtual-machines/windows/attach-managed-disk-portal.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": []
+}

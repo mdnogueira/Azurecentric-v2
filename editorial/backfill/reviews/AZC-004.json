@@ -1,0 +1,50 @@
+{
+  "id": "AZC-004",
+  "title": "Choose an App Service plan around the workload",
+  "historical_date": "2024-01-10",
+  "file": "src/content/posts/en/choose-an-app-service-plan-around-the-workload.md",
+  "created_at": "2026-10-23",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-hosting-plans.md",
+      "revision": "62260ebd0b227aebc3c5acc5500a537e5df10950",
+      "revision_date": "2023-08-29T16:17:33Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "App Service plans",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/62260ebd0b227aebc3c5acc5500a537e5df10950/articles/app-service/overview-hosting-plans.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/manage-scale-up.md",
+      "revision": "62260ebd0b227aebc3c5acc5500a537e5df10950",
+      "revision_date": "2023-08-29T16:17:33Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Scale up features and capacities",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/62260ebd0b227aebc3c5acc5500a537e5df10950/articles/app-service/manage-scale-up.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/manage-automatic-scaling.md",
+      "revision": "86a191934c1ad8d8f369dcbef013520d75a4ee4d",
+      "revision_date": "2023-10-04T19:34:03Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "How to enable automatic scaling",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/86a191934c1ad8d8f369dcbef013520d75a4ee4d/articles/app-service/manage-automatic-scaling.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": []
+}

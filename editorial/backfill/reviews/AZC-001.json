@@ -1,0 +1,50 @@
+{
+  "id": "AZC-001",
+  "title": "Enable Defender for Cloud with a clear subscription scope",
+  "historical_date": "2024-01-02",
+  "file": "src/content/posts/en/enable-defender-for-cloud-with-a-clear-subscription-scope.md",
+  "created_at": "2026-10-22",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/connect-azure-subscription.md",
+      "revision": "c747999093092922c6800a264578621753940c60",
+      "revision_date": "2023-11-28T19:04:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Connect your Azure subscriptions",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/connect-azure-subscription",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c747999093092922c6800a264578621753940c60/articles/defender-for-cloud/connect-azure-subscription.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/defender-for-cloud-introduction.md",
+      "revision": "84b8f990680ffe1786ec8a2db82ad2932ffa1ff1",
+      "revision_date": "2023-12-11T17:17:30Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is Microsoft Defender for Cloud?",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/84b8f990680ffe1786ec8a2db82ad2932ffa1ff1/articles/defender-for-cloud/defender-for-cloud-introduction.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+      "revision": "bc40f6d6e98ae16fa6ac72b5ccb2b3b795212193",
+      "revision_date": "2023-12-11T18:21:56Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Protect your resources with Defender CSPM plan on your subscription",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-cspm-plan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bc40f6d6e98ae16fa6ac72b5ccb2b3b795212193/articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": []
+}

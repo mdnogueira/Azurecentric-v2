@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 470" role="img" aria-labelledby="title desc">
+<title id="title">Decisions before connecting data to Microsoft Sentinel</title>
+<desc id="desc">Tenant, residency and analyst access requirements determine the workspace boundary. Data sources feed the workspace; detection and response owners act on the resulting incidents.</desc>
+<rect width="1080" height="470" rx="20" fill="#f2f6fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#142c4c} .h{font-size:24px;font-weight:700}.b{font-size:20px}.box{fill:white;stroke:#176ea5;stroke-width:2}.line{stroke:#176ea5;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8" fill="#176ea5"/></marker></defs>
+<text x="40" y="48" class="h">Choose the boundary before adding connectors</text>
+<rect class="box" x="40" y="82" width="300" height="80" rx="10"/><text class="b" x="65" y="115">Tenant-specific sources</text><text class="b" x="65" y="143">Identity boundary</text>
+<rect class="box" x="390" y="82" width="300" height="80" rx="10"/><text class="b" x="415" y="115">Data residency</text><text class="b" x="415" y="143">Permitted regions</text>
+<rect class="box" x="740" y="82" width="300" height="80" rx="10"/><text class="b" x="765" y="115">Analyst access</text><text class="b" x="765" y="143">Who may investigate?</text>
+<path class="line" d="M190 162 V195 H470 V220"/><path class="line" d="M540 162 V220"/><path class="line" d="M890 162 V195 H610 V220"/>
+<rect x="355" y="225" width="370" height="88" rx="10" fill="#142c4c"/><text x="390" y="261" style="fill:white;font-size:23px;font-weight:700">Sentinel workspace design</text><text x="390" y="291" style="fill:white;font-size:20px">Collection, access and retention</text>
+<rect class="box" x="40" y="355" width="300" height="77" rx="10"/><text class="b" x="66" y="386">Selected data sources</text><text class="b" x="66" y="414">Volume and purpose</text>
+<path class="line" d="M340 392 H390 V313"/>
+<rect class="box" x="740" y="355" width="300" height="77" rx="10"/><text class="b" x="765" y="386">Detection and response</text><text class="b" x="765" y="414">Named operational owners</text>
+<path class="line" d="M690 313 V392 H740"/>
+</svg>
