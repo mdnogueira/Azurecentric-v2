@@ -1,0 +1,40 @@
+{
+  "id": "AZC-021",
+  "title": "Connect Windows security events using Azure Monitor Agent",
+  "historical_date": "2024-02-27",
+  "file": "src/content/posts/en/connect-windows-security-events-using-azure-monitor-agent.md",
+  "created_at": "2026-10-23T12:38:18.480673+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/connect-services-windows-based.md",
+      "revision": "8821ceb90d3e9c0195dd95de994f6284f1d8240d",
+      "revision_date": "2023-12-15T21:11:36Z",
+      "title": "Connect Microsoft Sentinel with Windows agent-based data connectors",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/connect-services-windows-based",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8821ceb90d3e9c0195dd95de994f6284f1d8240d/articles/sentinel/connect-services-windows-based.md",
+      "checked_at": "2026-10-23T22:40:54.420Z"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/data-connectors/windows-security-events-via-ama.md",
+      "revision": "49de612522212b46ab64a25cba1357c246321bbf",
+      "revision_date": "2023-11-09T09:31:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Windows Security Events via AMA connector for Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors/windows-security-events-via-ama",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/49de612522212b46ab64a25cba1357c246321bbf/articles/sentinel/data-connectors/windows-security-events-via-ama.md",
+      "rank_score": 100
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
