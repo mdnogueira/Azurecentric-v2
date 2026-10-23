@@ -1,0 +1,41 @@
+{
+  "id": "AZC-015",
+  "title": "Prepare a Windows Server 2022 installation for infrastructure workloads",
+  "historical_date": "2024-02-10",
+  "file": "src/content/posts/en/prepare-a-windows-server-2022-installation-for-infrastructure-workloads.md",
+  "created_at": "2026-10-23T12:32:14.204503+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/perform-in-place-upgrade.md",
+      "revision": "259d65b0bc9cea0998c7a3bdc2aa36c6052aeb01",
+      "revision_date": "2023-09-27T16:40:49Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Perform an in-place upgrade of Windows Server | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/perform-in-place-upgrade",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/259d65b0bc9cea0998c7a3bdc2aa36c6052aeb01/WindowsServerDocs/get-started/perform-in-place-upgrade.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/removed-deprecated-features-windows-server-2022.md",
+      "revision": "93734f8e31f1c3344f80b8ab05d2a0f8a49b13fb",
+      "revision_date": "2024-01-31T09:08:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Features removed or no longer developed starting with Windows Server 2022",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server-2022",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/93734f8e31f1c3344f80b8ab05d2a0f8a49b13fb/WindowsServerDocs/get-started/removed-deprecated-features-windows-server-2022.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
