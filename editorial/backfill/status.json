@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T23:13:31.298013+00:00",
+  "generated_at": "2026-10-23T23:44:46.895317+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 28,
-  "remaining": 338,
+  "written": 30,
+  "remaining": 336,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -32,19 +32,11 @@
     "AZC-025",
     "AZC-026",
     "AZC-027",
-    "AZC-028"
+    "AZC-028",
+    "AZC-029",
+    "AZC-030"
   ],
   "missing": [
-    {
-      "id": "AZC-029",
-      "title": "Choose a hub-and-spoke topology for a small Azure estate",
-      "historical_date": "2024-03-21"
-    },
-    {
-      "id": "AZC-030",
-      "title": "Configure VM insights for a group of Azure servers",
-      "historical_date": "2024-03-24"
-    },
     {
       "id": "AZC-031",
       "title": "Choose storage redundancy around recovery requirements",

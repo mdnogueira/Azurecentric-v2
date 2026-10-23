@@ -1,0 +1,95 @@
+{
+  "id": "AZC-030",
+  "title": "Configure VM insights for a group of Azure servers",
+  "historical_date": "2024-03-24",
+  "file": "src/content/posts/en/configure-vm-insights-for-a-group-of-azure-servers.md",
+  "created_at": "2026-10-23T23:44:21.862080+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/vm/tutorial-monitor-vm-enable-insights.md",
+      "revision": "67b67257296dfe0ebd00314c2f09e036e1979b72",
+      "revision_date": "2023-09-28T15:45:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable monitoring with VM insights for an Azure virtual machine",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-monitor-vm-enable-insights",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/67b67257296dfe0ebd00314c2f09e036e1979b72/articles/azure-monitor/vm/tutorial-monitor-vm-enable-insights.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/insights/insights-overview.md",
+      "revision": "354fdfece99f5fe2bb3f321bb53d9cab1e9cfa28",
+      "revision_date": "2024-02-14T16:47:54Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Monitor Insights Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/insights/insights-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/354fdfece99f5fe2bb3f321bb53d9cab1e9cfa28/articles/azure-monitor/insights/insights-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/vm/vminsights-log-query.md",
+      "revision": "361ea68e09b9f374a76740f65e4642be9d527b40",
+      "revision_date": "2024-03-18T17:06:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "How to Query Logs from VM insights",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-log-query",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/361ea68e09b9f374a76740f65e4642be9d527b40/articles/azure-monitor/vm/vminsights-log-query.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/vm/vminsights-enable-portal.md",
+      "revision": "7dbe70103e645b54cc66d9824a9877055f18666d",
+      "revision_date": "2024-03-10T12:26:12Z",
+      "checked_at": "2026-10-23T23:42:36.630170+00:00",
+      "title": "Enable VM insights in the Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-enable-portal",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/7dbe70103e645b54cc66d9824a9877055f18666d/articles/azure-monitor/vm/vminsights-enable-portal.md"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/vm/vminsights-enable-overview.md",
+      "revision": "ed5c086eda5b823f0e4e8b29064d8079361d36a8",
+      "revision_date": "2024-03-14T18:09:14Z",
+      "checked_at": "2026-10-23T23:42:37.096972+00:00",
+      "title": "Enable VM insights overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-enable-overview",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/ed5c086eda5b823f0e4e8b29064d8079361d36a8/articles/azure-monitor/vm/vminsights-enable-overview.md"
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-030-enable-vminsights-create-new-rule.png",
+      "alt": "Creating a VM insights data collection rule",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/67b67257296dfe0ebd00314c2f09e036e1979b72/articles/azure-monitor/vm/media/tutorial-monitor-vm/enable-vminsights-create-new-rule.png",
+      "source_id": "S1",
+      "source_revision_date": "2023-09-28T15:45:25Z",
+      "sha256": "cbdc3730d29de56bf59b5a785d585c67ee3121c6de7a23d00fab2ae2ab579573",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft demonstration screenshot inspected; directly illustrates the adjacent configuration or performance step"
+    },
+    {
+      "path": "/images/posts/2024/azc-030-performance.png",
+      "alt": "VM insights guest performance view",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/67b67257296dfe0ebd00314c2f09e036e1979b72/articles/azure-monitor/vm/media/tutorial-monitor-vm/performance.png",
+      "source_id": "S1",
+      "source_revision_date": "2023-09-28T15:45:25Z",
+      "sha256": "3dcdecc442440981023832c054362544270b596d9c5235afd9c9f1f22f2c4a55",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft demonstration screenshot inspected; directly illustrates the adjacent configuration or performance step"
+    }
+  ]
+}

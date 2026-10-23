@@ -1,0 +1,72 @@
+{
+  "id": "AZC-029",
+  "title": "Choose a hub-and-spoke topology for a small Azure estate",
+  "historical_date": "2024-03-21",
+  "file": "src/content/posts/en/choose-a-hub-and-spoke-topology-for-a-small-azure-estate.md",
+  "created_at": "2026-10-23T12:51:54.994996+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-peering-overview.md",
+      "revision": "64b85bb2c717dab10b34360f747d9f6b7ea19bc4",
+      "revision_date": "2024-02-24T03:41:34Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Virtual Network peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/64b85bb2c717dab10b34360f747d9f6b7ea19bc4/articles/virtual-network/virtual-network-peering-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/firewall-multi-hub-spoke.md",
+      "revision": "37db8b5c047e9f435b4673189d667e8a48f9914f",
+      "revision_date": "2023-05-30T15:57:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Azure Firewall to route a multi hub and spoke topology",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/firewall-multi-hub-spoke",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/37db8b5c047e9f435b4673189d667e8a48f9914f/articles/firewall/firewall-multi-hub-spoke.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/concepts-and-best-practices.md",
+      "revision": "985cb4f61579be8b1844ba7a763fcb94f5a7a0ca",
+      "revision_date": "2023-05-08T21:20:36Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Virtual Network - Concepts and best practices",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/985cb4f61579be8b1844ba7a763fcb94f5a7a0ca/articles/virtual-network/concepts-and-best-practices.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-networks-udr-overview.md",
+      "revision": "625b25d55ad572455bb596b710b888959a355868",
+      "revision_date": "2024-03-16T00:40:35Z",
+      "checked_at": "2026-10-23T23:42:36.191737+00:00",
+      "title": "Azure virtual network traffic routing",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/625b25d55ad572455bb596b710b888959a355868/articles/virtual-network/virtual-networks-udr-overview.md"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-manage-peering.md",
+      "revision": "2e619e5a370f731bd980a28dbe4347a0a703b5fa",
+      "revision_date": "2024-03-15T17:13:37Z",
+      "checked_at": "2026-10-23T23:43:26.456712+00:00",
+      "title": "Create, change, or delete a virtual network peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2e619e5a370f731bd980a28dbe4347a0a703b5fa/articles/virtual-network/virtual-network-manage-peering.md"
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
