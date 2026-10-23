@@ -1,0 +1,41 @@
+{
+  "id": "AZC-014",
+  "title": "Install PowerShell 7.4 alongside Windows PowerShell",
+  "historical_date": "2024-02-07",
+  "file": "src/content/posts/en/install-powershell-7-4-alongside-windows-powershell.md",
+  "created_at": "2026-10-23T12:31:59.317859+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/install/Installing-PowerShell-on-Windows.md",
+      "revision": "f35daddc5bf0a2f1247628573fe10f46b75db751",
+      "revision_date": "2024-01-12T16:49:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Installing PowerShell on Windows",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/install/Installing-PowerShell-on-Windows",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f35daddc5bf0a2f1247628573fe10f46b75db751/reference/docs-conceptual/install/Installing-PowerShell-on-Windows.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md",
+      "revision": "f1b2b42fa68ef70cf1eea40f0c0f68082d08ccad",
+      "revision_date": "2023-10-23T16:09:23Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Migrating from Windows PowerShell 5.1 to PowerShell 7",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f1b2b42fa68ef70cf1eea40f0c0f68082d08ccad/reference/docs-conceptual/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

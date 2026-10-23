@@ -1,6 +1,6 @@
 # Historical article drafts
 
-13 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
+14 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
 
 Sources, real creation timestamps, generated-code limitations and remaining questions are recorded in `reviews/`. The original source texts and model responses are retained outside the site repository. No claim of live deployment or workload testing is made.
 
@@ -21,7 +21,7 @@ The article dates represent the requested historical editorial dates. The actual
 | AZC-011 | 2024-01-30 | [Build an Azure Monitor alert with a useful action group](../../src/content/posts/en/build-an-azure-monitor-alert-with-a-useful-action-group.md) | Written; author review pending |
 | AZC-012 | 2024-02-02 | [Create a Storage account with private access in mind](../../src/content/posts/en/create-a-storage-account-with-private-access-in-mind.md) | Written; author review pending |
 | AZC-013 | 2024-02-05 | [Turn an application availability target into design decisions](../../src/content/posts/en/turn-an-application-availability-target-into-design-decisions.md) | Written; author review pending |
-| AZC-014 | 2024-02-07 | Install PowerShell 7.4 alongside Windows PowerShell | Pending delivery |
+| AZC-014 | 2024-02-07 | [Install PowerShell 7.4 alongside Windows PowerShell](../../src/content/posts/en/install-powershell-7-4-alongside-windows-powershell.md) | Written; author review pending |
 | AZC-015 | 2024-02-10 | Prepare a Windows Server 2022 installation for infrastructure workloads | Pending delivery |
 | AZC-016 | 2024-02-14 | Choose a quorum witness for a failover cluster | Pending delivery |
 | AZC-017 | 2024-02-17 | Install Hyper-V on a Windows Server 2022 host | Pending delivery |

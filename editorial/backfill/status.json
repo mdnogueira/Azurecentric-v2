@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T16:56:16.340260+00:00",
+  "generated_at": "2026-10-23T18:32:07.633719+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 13,
-  "remaining": 353,
+  "written": 14,
+  "remaining": 352,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -17,14 +17,10 @@
     "AZC-010",
     "AZC-011",
     "AZC-012",
-    "AZC-013"
+    "AZC-013",
+    "AZC-014"
   ],
   "missing": [
-    {
-      "id": "AZC-014",
-      "title": "Install PowerShell 7.4 alongside Windows PowerShell",
-      "historical_date": "2024-02-07"
-    },
     {
       "id": "AZC-015",
       "title": "Prepare a Windows Server 2022 installation for infrastructure workloads",
