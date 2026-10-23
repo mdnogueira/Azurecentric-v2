@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T18:45:14.982423+00:00",
+  "generated_at": "2026-10-23T21:57:39.927099+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 16,
-  "remaining": 350,
+  "written": 18,
+  "remaining": 348,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -20,19 +20,11 @@
     "AZC-013",
     "AZC-014",
     "AZC-015",
-    "AZC-016"
+    "AZC-016",
+    "AZC-017",
+    "AZC-018"
   ],
   "missing": [
-    {
-      "id": "AZC-017",
-      "title": "Install Hyper-V on a Windows Server 2022 host",
-      "historical_date": "2024-02-17"
-    },
-    {
-      "id": "AZC-018",
-      "title": "Create an Ubuntu 22.04 LTS virtual machine on Hyper-V",
-      "historical_date": "2024-02-19"
-    },
     {
       "id": "AZC-019",
       "title": "Turn secure score findings into a practical remediation queue",
