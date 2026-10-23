@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T23:03:23.134904+00:00",
+  "generated_at": "2026-10-23T23:13:31.298013+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 26,
-  "remaining": 340,
+  "written": 28,
+  "remaining": 338,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -30,19 +30,11 @@
     "AZC-023",
     "AZC-024",
     "AZC-025",
-    "AZC-026"
+    "AZC-026",
+    "AZC-027",
+    "AZC-028"
   ],
   "missing": [
-    {
-      "id": "AZC-027",
-      "title": "Copilot for Security is coming in April: prepare the pilot first",
-      "historical_date": "2024-03-16"
-    },
-    {
-      "id": "AZC-028",
-      "title": "Create a Logic Apps workflow with a clear failure path",
-      "historical_date": "2024-03-18"
-    },
     {
       "id": "AZC-029",
       "title": "Choose a hub-and-spoke topology for a small Azure estate",
