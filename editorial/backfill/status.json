@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T18:32:07.633719+00:00",
+  "generated_at": "2026-10-23T18:45:14.982423+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 14,
-  "remaining": 352,
+  "written": 16,
+  "remaining": 350,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -18,19 +18,11 @@
     "AZC-011",
     "AZC-012",
     "AZC-013",
-    "AZC-014"
+    "AZC-014",
+    "AZC-015",
+    "AZC-016"
   ],
   "missing": [
-    {
-      "id": "AZC-015",
-      "title": "Prepare a Windows Server 2022 installation for infrastructure workloads",
-      "historical_date": "2024-02-10"
-    },
-    {
-      "id": "AZC-016",
-      "title": "Choose a quorum witness for a failover cluster",
-      "historical_date": "2024-02-14"
-    },
     {
       "id": "AZC-017",
       "title": "Install Hyper-V on a Windows Server 2022 host",
