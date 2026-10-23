@@ -1,0 +1,64 @@
+{
+  "id": "AZC-020",
+  "title": "Create and test emergency access accounts in Microsoft Entra ID",
+  "historical_date": "2024-02-25",
+  "file": "src/content/posts/en/create-and-test-emergency-access-accounts-in-microsoft-entra-id.md",
+  "created_at": "2026-10-23T12:37:53.361974+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/security-emergency-access.md",
+      "revision": "559a9c6f188fe81cc69a1ba65331d6d19f7678a9",
+      "revision_date": "2024-02-12T20:58:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage emergency access admin accounts",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/559a9c6f188fe81cc69a1ba65331d6d19f7678a9/docs/identity/role-based-access-control/security-emergency-access.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/security-planning.md",
+      "revision": "559a9c6f188fe81cc69a1ba65331d6d19f7678a9",
+      "revision_date": "2024-02-12T20:58:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure access practices for administrators in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/559a9c6f188fe81cc69a1ba65331d6d19f7678a9/docs/identity/role-based-access-control/security-planning.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "revision": "a2abf8f095bea81c18c3530b9cfb1b64b1c3ac8d",
+      "revision_date": "2024-02-12T17:16:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Require multifactor authentication for Microsoft admin portals",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/how-to-policy-mfa-admin-portals",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/a2abf8f095bea81c18c3530b9cfb1b64b1c3ac8d/docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-020-create-emergency-account.png",
+      "alt": "Example user creation with a cloud-only account and administrator role",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/559a9c6f188fe81cc69a1ba65331d6d19f7678a9/docs/identity/role-based-access-control/media/security-emergency-access/create-emergency-access-account-azure-ad.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-02-12T20:58:29Z",
+      "sha256": "a4cd70a1316bd2caeb885c9cfb8743270dd579a0566c937a228f2931c1c7ce8b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Contoso demo screenshot inspected; illustrates account creation, not a real tenant"
+    }
+  ]
+}

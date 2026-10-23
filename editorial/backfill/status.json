@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T21:57:39.927099+00:00",
+  "generated_at": "2026-10-23T22:23:09.925843+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 18,
-  "remaining": 348,
+  "written": 20,
+  "remaining": 346,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -22,19 +22,11 @@
     "AZC-015",
     "AZC-016",
     "AZC-017",
-    "AZC-018"
+    "AZC-018",
+    "AZC-019",
+    "AZC-020"
   ],
   "missing": [
-    {
-      "id": "AZC-019",
-      "title": "Turn secure score findings into a practical remediation queue",
-      "historical_date": "2024-02-22"
-    },
-    {
-      "id": "AZC-020",
-      "title": "Create and test emergency access accounts in Microsoft Entra ID",
-      "historical_date": "2024-02-25"
-    },
     {
       "id": "AZC-021",
       "title": "Connect Windows security events using Azure Monitor Agent",
