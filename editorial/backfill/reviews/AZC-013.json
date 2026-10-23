@@ -1,0 +1,41 @@
+{
+  "id": "AZC-013",
+  "title": "Turn an application availability target into design decisions",
+  "historical_date": "2024-02-05",
+  "file": "src/content/posts/en/turn-an-application-availability-target-into-design-decisions.md",
+  "created_at": "2026-10-23T12:19:54.413954+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "765310e1247a4ee917e303d5de506b2322f95c72",
+      "revision_date": "2024-02-02T20:07:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/765310e1247a4ee917e303d5de506b2322f95c72/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/overview.md",
+      "revision": "d61099ec0d93d37563c65bfc248da3bb3e4ce6a7",
+      "revision_date": "2024-01-30T20:46:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure reliability documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d61099ec0d93d37563c65bfc248da3bb3e4ce6a7/articles/reliability/overview.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

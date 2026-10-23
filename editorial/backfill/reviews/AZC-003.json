@@ -1,0 +1,51 @@
+{
+  "id": "AZC-003",
+  "title": "Plan a Sentinel workspace before connecting data",
+  "historical_date": "2024-01-08",
+  "file": "src/content/posts/en/plan-a-sentinel-workspace-before-connecting-data.md",
+  "created_at": "2026-10-22T22:20:03.128481+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/design-your-workspace-architecture.md",
+      "revision": "a473857d3167eb865ec24daf142bd732d05aa743",
+      "revision_date": "2023-11-28T19:00:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Design your Microsoft Sentinel workspace architecture",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/design-your-workspace-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a473857d3167eb865ec24daf142bd732d05aa743/articles/sentinel/design-your-workspace-architecture.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/best-practices-workspace-architecture.md",
+      "revision": "7e8891febdbf1e91a3c9954b0735edab916387b5",
+      "revision_date": "2023-10-19T15:00:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Workspace architecture best practices for Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/best-practices-workspace-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7e8891febdbf1e91a3c9954b0735edab916387b5/articles/sentinel/best-practices-workspace-architecture.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/prepare-multiple-workspaces.md",
+      "revision": "55e26d02eddcc263ca088257823a2b6c0f9dcd31",
+      "revision_date": "2023-10-12T03:03:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Prepare for multiple workspaces and tenants in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/prepare-multiple-workspaces",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/55e26d02eddcc263ca088257823a2b6c0f9dcd31/articles/sentinel/prepare-multiple-workspaces.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": []
+}

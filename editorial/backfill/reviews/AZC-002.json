@@ -1,0 +1,51 @@
+{
+  "id": "AZC-002",
+  "title": "Roll out Conditional Access using report-only mode",
+  "historical_date": "2024-01-05",
+  "file": "src/content/posts/en/roll-out-conditional-access-using-report-only-mode.md",
+  "created_at": "2026-10-22T22:20:02.389859+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/concept-conditional-access-report-only.md",
+      "revision": "27f901814d60e9756c375458f6cffc5bd8b8fd22",
+      "revision_date": "2023-03-30T21:20:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is Conditional Access report-only mode?",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-report-only",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/27f901814d60e9756c375458f6cffc5bd8b8fd22/docs/identity/conditional-access/concept-conditional-access-report-only.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/concept-conditional-access-policies.md",
+      "revision": "b38ad3d97e9b2bb8ec56c7a57f28425616a7157a",
+      "revision_date": "2023-10-20T07:55:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Building a Conditional Access policy",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/b38ad3d97e9b2bb8ec56c7a57f28425616a7157a/docs/identity/conditional-access/concept-conditional-access-policies.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/plan-conditional-access.md",
+      "revision": "ca3c9ee1352035e26252395ce0c909ad8a844732",
+      "revision_date": "2024-01-03T15:10:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan a Microsoft Entra Conditional Access deployment",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/ca3c9ee1352035e26252395ce0c909ad8a844732/docs/identity/conditional-access/plan-conditional-access.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": []
+}

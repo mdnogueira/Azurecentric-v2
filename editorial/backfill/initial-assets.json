@@ -1,0 +1,29 @@
+[
+  {
+    "path": "public/images/posts/2024/defender-environment-settings.png",
+    "source": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c747999093092922c6800a264578621753940c60/articles/defender-for-cloud/media/get-started/environmental-settings.png",
+    "source_revision_date": "2023-11-28T19:04:46Z",
+    "sha256": "3fb42d2f897f7c9b07de042f78fee177c67cfaca2d5797de99e6d67b872f1721",
+    "transformation": "none; copied complete",
+    "credit": "Used with permission from Microsoft.",
+    "visual_review": "pending"
+  },
+  {
+    "path": "public/images/posts/2024/defender-plans.png",
+    "source": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c747999093092922c6800a264578621753940c60/articles/defender-for-cloud/media/get-started/enable-all-plans.png",
+    "source_revision_date": "2023-11-28T19:04:46Z",
+    "sha256": "92bead4142f859b9b9fb257de181a7792bf76c98011bdde8076f519a4b0b8c42",
+    "transformation": "none; copied complete",
+    "credit": "Used with permission from Microsoft.",
+    "visual_review": "pending"
+  },
+  {
+    "path": "public/images/posts/2024/conditional-access-report-only.png",
+    "source": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/27f901814d60e9756c375458f6cffc5bd8b8fd22/docs/identity/conditional-access/media/concept-conditional-access-report-only/report-only-detail-in-sign-in-log.png",
+    "source_revision_date": "2023-03-30T21:20:55Z",
+    "sha256": "d2bbe37dc905f40187597f40e8fe6ca87f272b344d39b71a999db2ae4e762398",
+    "transformation": "none; copied complete",
+    "credit": "Used with permission from Microsoft.",
+    "visual_review": "pending"
+  }
+]

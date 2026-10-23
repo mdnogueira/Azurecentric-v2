@@ -1,0 +1,64 @@
+{
+  "id": "AZC-007",
+  "title": "Connect a Windows server to Azure Arc",
+  "historical_date": "2024-01-20",
+  "file": "src/content/posts/en/connect-a-windows-server-to-azure-arc.md",
+  "created_at": "2026-10-23T12:14:43.776610+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/onboard-windows-server.md",
+      "revision": "b67d266cf66574fa84b5004bba4ce02130af3cde",
+      "revision_date": "2023-10-13T22:23:02Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connect Windows Server machines to Azure through Azure Arc Setup",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b67d266cf66574fa84b5004bba4ce02130af3cde/articles/azure-arc/servers/onboard-windows-server.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/prerequisites.md",
+      "revision": "6eb741f32f5aae1f90ba5e6fe8c65d11b6a8e11a",
+      "revision_date": "2023-12-14T18:36:13Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connected Machine agent prerequisites",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/prerequisites",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6eb741f32f5aae1f90ba5e6fe8c65d11b6a8e11a/articles/azure-arc/servers/prerequisites.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/azcmagent-connect.md",
+      "revision": "b0062e954381b934b95f22f1ca9bd42fb53daae4",
+      "revision_date": "2023-10-13T15:54:04Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "azcmagent connect CLI reference",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/azcmagent-connect",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b0062e954381b934b95f22f1ca9bd42fb53daae4/articles/azure-arc/servers/azcmagent-connect.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-007-learn-1.png",
+      "alt": "Screenshot showing Azure Arc system tray icon and window to launch Azure Arc setup process.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/b67d266cf66574fa84b5004bba4ce02130af3cde/articles/azure-arc/servers/media/onboard-windows-server/system-tray-icon.png",
+      "source_id": "S1",
+      "source_revision_date": "2023-10-13T22:23:02Z",
+      "sha256": "4ec1239c785d6cb34370e22feb0e2768b9c0a8fc16600c5aa6810d74debf95d6",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ]
+}

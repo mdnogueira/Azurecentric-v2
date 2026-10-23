@@ -1,0 +1,52 @@
+{
+  "id": "AZC-008",
+  "title": "Build a small Azure deployment with Bicep modules",
+  "historical_date": "2024-01-22",
+  "file": "src/content/posts/en/build-a-small-azure-deployment-with-bicep-modules.md",
+  "created_at": "2026-10-23T12:28:35.344234+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/modules.md",
+      "revision": "dd560cc8cf109a1fcff9524aecc8c6d9d8721f5d",
+      "revision_date": "2023-10-13T17:16:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/dd560cc8cf109a1fcff9524aecc8c6d9d8721f5d/articles/azure-resource-manager/bicep/modules.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "6cf048634c76c0c09fea342bf7d1a349c5c983ed",
+      "revision_date": "2023-06-23T22:26:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6cf048634c76c0c09fea342bf7d1a349c5c983ed/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/overview.md",
+      "revision": "de5860bbc2e2a7a410a031ddb7cd52cf26c2db05",
+      "revision_date": "2023-04-09T11:28:18Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep language for deploying Azure resources",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/de5860bbc2e2a7a410a031ddb7cd52cf26c2db05/articles/azure-resource-manager/bicep/overview.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

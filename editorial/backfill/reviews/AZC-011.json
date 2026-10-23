@@ -1,0 +1,52 @@
+{
+  "id": "AZC-011",
+  "title": "Build an Azure Monitor alert with a useful action group",
+  "historical_date": "2024-01-30",
+  "file": "src/content/posts/en/build-an-azure-monitor-alert-with-a-useful-action-group.md",
+  "created_at": "2026-10-23T12:17:13.773186+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/action-groups.md",
+      "revision": "ac87bda77c2c29110823125cb34f84a767ecbc15",
+      "revision_date": "2024-01-25T17:22:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Monitor action groups",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ac87bda77c2c29110823125cb34f84a767ecbc15/articles/azure-monitor/alerts/action-groups.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-create-metric-alert-rule.md",
+      "revision": "01900e523badfbbdb73f15a6f6c00cbd733c0020",
+      "revision_date": "2023-11-30T11:50:33Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create Azure Monitor metric alert rules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-metric-alert-rule",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/01900e523badfbbdb73f15a6f6c00cbd733c0020/articles/azure-monitor/alerts/alerts-create-metric-alert-rule.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/tutorial-metric-alert.md",
+      "revision": "dea4fe4e07a139d88c83db0b215f0441908bcbc0",
+      "revision_date": "2023-11-29T00:05:01Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Tutorial - Create a metric alert for an Azure resource",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/tutorial-metric-alert",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/dea4fe4e07a139d88c83db0b215f0441908bcbc0/articles/azure-monitor/alerts/tutorial-metric-alert.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}

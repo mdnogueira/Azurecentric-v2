@@ -1,0 +1,41 @@
+{
+  "id": "AZC-010",
+  "title": "Build a virtual network with a deliberate subnet plan",
+  "historical_date": "2024-01-28",
+  "file": "src/content/posts/en/build-a-virtual-network-with-a-deliberate-subnet-plan.md",
+  "created_at": "2026-10-23T12:29:26.052762+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-vnet-plan-design-arm.md",
+      "revision": "7418919137734547ce0889b430095e4c28703ac1",
+      "revision_date": "2023-10-11T03:34:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Plan Azure virtual networks",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-plan-design-arm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7418919137734547ce0889b430095e4c28703ac1/articles/virtual-network/virtual-network-vnet-plan-design-arm.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-manage-subnet.md",
+      "revision": "1f3f8a28cca77b840565382cdb4f0bd9595bb887",
+      "revision_date": "2023-11-14T00:11:58Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Add, change, or delete a subnet",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1f3f8a28cca77b840565382cdb4f0bd9595bb887/articles/virtual-network/virtual-network-manage-subnet.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": []
+}
