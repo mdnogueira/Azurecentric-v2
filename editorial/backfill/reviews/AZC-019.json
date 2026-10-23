@@ -1,0 +1,64 @@
+{
+  "id": "AZC-019",
+  "title": "Turn secure score findings into a practical remediation queue",
+  "historical_date": "2024-02-22",
+  "file": "src/content/posts/en/turn-secure-score-findings-into-a-practical-remediation-queue.md",
+  "created_at": "2026-10-23T12:37:22.545089+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/secure-score-security-controls.md",
+      "revision": "eaffdb90a9ab0ff0c8a52b32c49f0504f2ff3df9",
+      "revision_date": "2024-02-05T13:28:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure score in Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/eaffdb90a9ab0ff0c8a52b32c49f0504f2ff3df9/articles/defender-for-cloud/secure-score-security-controls.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/security-policy-concept.md",
+      "revision": "c69f8e953dcc4ec2df8946280b172a0994823051",
+      "revision_date": "2023-12-12T18:49:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Security policies in Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/security-policy-concept",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c69f8e953dcc4ec2df8946280b172a0994823051/articles/defender-for-cloud/security-policy-concept.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/managing-and-responding-alerts.md",
+      "revision": "7d6693d911e36ef781b616fdbffebd2ca7bc5de3",
+      "revision_date": "2024-02-14T07:31:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage and respond to security alerts",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/managing-and-responding-alerts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7d6693d911e36ef781b616fdbffebd2ca7bc5de3/articles/defender-for-cloud/managing-and-responding-alerts.md",
+      "rank_score": 98
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-019-learn-1.png",
+      "alt": "Screenshot of the portal dashboard that shows an overall secure score and underlying values.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/eaffdb90a9ab0ff0c8a52b32c49f0504f2ff3df9/articles/defender-for-cloud/media/secure-score-security-controls/single-secure-score-via-ui.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-02-05T13:28:47Z",
+      "sha256": "3152b3f09c8e65a62b3220cfb17b53b7e2af64777696d2bfb21d8ce915b4f661",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft demo screenshot inspected; relevant to the overview step"
+    }
+  ]
+}

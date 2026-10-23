@@ -1,6 +1,6 @@
 # Historical article drafts
 
-18 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
+20 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
 
 Sources, real creation timestamps, generated-code limitations and remaining questions are recorded in `reviews/`. The original source texts and model responses are retained outside the site repository. No claim of live deployment or workload testing is made.
 
@@ -26,8 +26,8 @@ The article dates represent the requested historical editorial dates. The actual
 | AZC-016 | 2024-02-14 | [Choose a quorum witness for a failover cluster](../../src/content/posts/en/choose-a-quorum-witness-for-a-failover-cluster.md) | Written; author review pending |
 | AZC-017 | 2024-02-17 | [Install Hyper-V on a Windows Server 2022 host](../../src/content/posts/en/install-hyper-v-on-a-windows-server-2022-host.md) | Written; author review pending |
 | AZC-018 | 2024-02-19 | [Create an Ubuntu 22.04 LTS virtual machine on Hyper-V](../../src/content/posts/en/create-an-ubuntu-22-04-lts-virtual-machine-on-hyper-v.md) | Written; author review pending |
-| AZC-019 | 2024-02-22 | Turn secure score findings into a practical remediation queue | Pending delivery |
-| AZC-020 | 2024-02-25 | Create and test emergency access accounts in Microsoft Entra ID | Pending delivery |
+| AZC-019 | 2024-02-22 | [Turn secure score findings into a practical remediation queue](../../src/content/posts/en/turn-secure-score-findings-into-a-practical-remediation-queue.md) | Written; author review pending |
+| AZC-020 | 2024-02-25 | [Create and test emergency access accounts in Microsoft Entra ID](../../src/content/posts/en/create-and-test-emergency-access-accounts-in-microsoft-entra-id.md) | Written; author review pending |
 | AZC-021 | 2024-02-27 | Connect Windows security events using Azure Monitor Agent | Pending delivery |
 | AZC-022 | 2024-03-01 | Deploy an App Service application with a staging slot | Pending delivery |
 | AZC-023 | 2024-03-04 | Choose a VM size using workload requirements | Pending delivery |
