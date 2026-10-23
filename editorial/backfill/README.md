@@ -1,6 +1,6 @@
 # Historical article drafts
 
-22 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
+24 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
 
 Sources, real creation timestamps, generated-code limitations and remaining questions are recorded in `reviews/`. The original source texts and model responses are retained outside the site repository. No claim of live deployment or workload testing is made.
 
@@ -30,8 +30,8 @@ The article dates represent the requested historical editorial dates. The actual
 | AZC-020 | 2024-02-25 | [Create and test emergency access accounts in Microsoft Entra ID](../../src/content/posts/en/create-and-test-emergency-access-accounts-in-microsoft-entra-id.md) | Written; author review pending |
 | AZC-021 | 2024-02-27 | [Connect Windows security events using Azure Monitor Agent](../../src/content/posts/en/connect-windows-security-events-using-azure-monitor-agent.md) | Written; author review pending |
 | AZC-022 | 2024-03-01 | [Deploy an App Service application with a staging slot](../../src/content/posts/en/deploy-an-app-service-application-with-a-staging-slot.md) | Written; author review pending |
-| AZC-023 | 2024-03-04 | Choose a VM size using workload requirements | Pending delivery |
-| AZC-024 | 2024-03-06 | Choose CPU or GPU infrastructure for an AI workload | Pending delivery |
+| AZC-023 | 2024-03-04 | [Choose a VM size using workload requirements](../../src/content/posts/en/choose-a-vm-size-using-workload-requirements.md) | Written; author review pending |
+| AZC-024 | 2024-03-06 | [Choose CPU or GPU infrastructure for an AI workload](../../src/content/posts/en/choose-cpu-or-gpu-infrastructure-for-an-ai-workload.md) | Written; author review pending |
 | AZC-025 | 2024-03-09 | Check outbound network requirements for Azure Arc agents | Pending delivery |
 | AZC-026 | 2024-03-13 | Decide which settings belong in Bicep parameters | Pending delivery |
 | AZC-027 | 2024-03-16 | Copilot for Security is coming in April: prepare the pilot first | Pending delivery |
