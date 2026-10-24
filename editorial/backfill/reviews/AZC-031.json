@@ -1,0 +1,74 @@
+{
+  "id": "AZC-031",
+  "title": "Choose storage redundancy around recovery requirements",
+  "historical_date": "2024-03-26",
+  "file": "src/content/posts/en/choose-storage-redundancy-around-recovery-requirements.md",
+  "created_at": "2026-10-23T23:58:26.571393+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-redundancy.md",
+      "revision": "57885423c753f282b6d4b6cc7e7f178f27c4fc2d",
+      "revision_date": "2024-01-26T00:34:11Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Data redundancy",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/57885423c753f282b6d4b6cc7e7f178f27c4fc2d/articles/storage/common/storage-redundancy.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/geo-redundant-design.md",
+      "revision": "65a5ff380766e571fffdde895ec5be71a594c4ba",
+      "revision_date": "2023-10-19T07:42:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use geo-redundancy to design highly available applications",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/geo-redundant-design",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/65a5ff380766e571fffdde895ec5be71a594c4ba/articles/storage/common/geo-redundant-design.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/redundancy-migration.md",
+      "revision": "9a0a95117041f0ce9f6990cdfe388003fa3be732",
+      "revision_date": "2024-03-05T02:36:56Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Change how a storage account is replicated",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9a0a95117041f0ce9f6990cdfe388003fa3be732/articles/storage/common/redundancy-migration.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/data-protection-overview.md",
+      "revision": "0a0b6f592276baed707af5daac81673abd5c6463",
+      "revision_date": "2023-09-11T20:26:51Z",
+      "checked_at": "2026-10-23T23:56:45.604829+00:00",
+      "title": "Data protection overview for Azure Blob Storage",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/data-protection-overview",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/0a0b6f592276baed707af5daac81673abd5c6463/articles/storage/blobs/data-protection-overview.md"
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-031-change-replication-option.png",
+      "alt": "Storage account redundancy options in the Azure portal",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9a0a95117041f0ce9f6990cdfe388003fa3be732/articles/storage/common/media/redundancy-migration/change-replication-option.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-03-05T02:36:56Z",
+      "sha256": "4bbff02ca1e581163d6b9553dff1610d9b3c014306a3f86bb2309bf8dc55543f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft documentation image inspected; matches the adjacent account-setting or recovery-objective explanation"
+    }
+  ]
+}

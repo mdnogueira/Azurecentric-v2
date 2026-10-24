@@ -1,0 +1,62 @@
+{
+  "id": "AZC-032",
+  "title": "Separate backup, high availability and disaster recovery",
+  "historical_date": "2024-03-29",
+  "file": "src/content/posts/en/separate-backup-high-availability-and-disaster-recovery.md",
+  "created_at": "2026-10-23T23:01:20.287194+00:00",
+  "creation_timestamp_source": "local filesystem creation time",
+  "draft": true,
+  "review_status": "Written and checked against selected evidence; author review pending",
+  "publication_approved": false,
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/disaster-recovery-overview.md",
+      "revision": "5b2b486028717235339aed980ec2279bbe15c622",
+      "revision_date": "2023-09-14T15:25:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Disaster recovery overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/disaster-recovery-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5b2b486028717235339aed980ec2279bbe15c622/articles/reliability/disaster-recovery-overview.md",
+      "rank_score": 98
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/backup/backup-overview.md",
+      "revision": "659dc0055ee16d54a6825f29439a5c54f8af53aa",
+      "revision_date": "2024-01-30T06:36:00Z",
+      "checked_at": "2026-10-23T23:56:45.103527+00:00",
+      "title": "Azure Backup overview",
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/659dc0055ee16d54a6825f29439a5c54f8af53aa/articles/backup/backup-overview.md"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/availability-zones/az-overview.md",
+      "revision": "6af0e1fdcde710c09be8678c5d5c275878614e80",
+      "revision_date": "2022-06-15T08:12:00Z",
+      "title": "Azure regions and availability zones",
+      "url": "https://learn.microsoft.com/en-us/azure/availability-zones/az-overview",
+      "snapshot_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/6af0e1fdcde710c09be8678c5d5c275878614e80/articles/availability-zones/az-overview.md",
+      "checked_at": "2026-10-23T23:56:58.020512+00:00"
+    }
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "open_questions": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-032-disaster-recovery-rpo-rto.png",
+      "alt": "Recovery point and recovery time objectives around a disruption",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/5b2b486028717235339aed980ec2279bbe15c622/articles/reliability/media/disaster-recovery-rpo-rto.png",
+      "source_id": "S1",
+      "source_revision_date": "2023-09-14T15:25:48Z",
+      "sha256": "63e6f881e19d2bf5c91213b077b61c7bafa4f61f41f235e0a0fcdd52b296204c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "Original Microsoft documentation image inspected; matches the adjacent account-setting or recovery-objective explanation"
+    }
+  ]
+}

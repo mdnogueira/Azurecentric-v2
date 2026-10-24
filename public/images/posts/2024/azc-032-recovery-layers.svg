@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" role="img" aria-labelledby="title desc">
+<title id="title">Three recovery mechanisms and their checks</title>
+<desc id="desc">Examples link instance failure with high availability, unwanted data change with backup and restore, and major disruption with disaster recovery. The mechanisms work together.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#176ea5"/></marker></defs>
+<rect width="1140" height="600" rx="18" fill="#f2f6fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#142c4c}.h{font-size:28px;font-weight:bold}.l{font-size:21px}.s{font-size:19px}</style>
+<text x="35" y="48" class="h">Different failures need different recovery checks</text>
+<text x="35" y="90" class="s">Example disruption</text><text x="410" y="90" class="s">Main mechanism</text><text x="760" y="90" class="s">Verification</text>
+<rect x="30" y="115" width="315" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="48" y="155" class="l">Application instance</text>
+<text x="48" y="183" class="l">fails</text>
+<rect x="400" y="115" width="290" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="418" y="155" class="l">High availability</text>
+<rect x="750" y="115" width="360" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="768" y="155" class="l">Check the remaining serving</text>
+<text x="768" y="183" class="l">path</text>
+<path d="M347 167H395" fill="none" stroke="#176ea5" stroke-width="3" marker-end="url(#a)"/>
+<path d="M692 167H745" fill="none" stroke="#176ea5" stroke-width="3" marker-end="url(#a)"/>
+<rect x="30" y="250" width="315" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="48" y="290" class="l">Data is overwritten or</text>
+<text x="48" y="318" class="l">deleted</text>
+<rect x="400" y="250" width="290" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="418" y="290" class="l">Backup and restore</text>
+<rect x="750" y="250" width="360" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="768" y="290" class="l">Recover a suitable earlier</text>
+<text x="768" y="318" class="l">state</text>
+<path d="M347 302H395" fill="none" stroke="#176ea5" stroke-width="3" marker-end="url(#a)"/>
+<path d="M692 302H745" fill="none" stroke="#176ea5" stroke-width="3" marker-end="url(#a)"/>
+<rect x="30" y="385" width="315" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="48" y="425" class="l">Major service disruption</text>
+<rect x="400" y="385" width="290" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="418" y="425" class="l">Disaster recovery</text>
+<rect x="750" y="385" width="360" height="105" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<text x="768" y="425" class="l">Recover the complete</text>
+<text x="768" y="453" class="l">business service</text>
+<path d="M347 437H395" fill="none" stroke="#176ea5" stroke-width="3" marker-end="url(#a)"/>
+<path d="M692 437H745" fill="none" stroke="#176ea5" stroke-width="3" marker-end="url(#a)"/>
+<text x="35" y="560" class="s">Combine the mechanisms. Validate the agreed recovery point and recovery time.</text>
+</svg>
