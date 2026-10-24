@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T23:44:46.895317+00:00",
+  "generated_at": "2026-10-23T23:59:06.527731+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 30,
-  "remaining": 336,
+  "written": 32,
+  "remaining": 334,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -34,19 +34,11 @@
     "AZC-027",
     "AZC-028",
     "AZC-029",
-    "AZC-030"
+    "AZC-030",
+    "AZC-031",
+    "AZC-032"
   ],
   "missing": [
-    {
-      "id": "AZC-031",
-      "title": "Choose storage redundancy around recovery requirements",
-      "historical_date": "2024-03-26"
-    },
-    {
-      "id": "AZC-032",
-      "title": "Separate backup, high availability and disaster recovery",
-      "historical_date": "2024-03-29"
-    },
     {
       "id": "AZC-033",
       "title": "Write a reusable function with clear parameters",

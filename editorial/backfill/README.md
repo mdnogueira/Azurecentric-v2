@@ -1,6 +1,6 @@
 # Historical article drafts
 
-30 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
+32 of 366 articles included in this draft pull request. All files have `draft: true`; author review is pending. Other local drafts are still undergoing technical and writing review.
 
 Sources, real creation timestamps, generated-code limitations and remaining questions are recorded in `reviews/`. The original source texts and model responses are retained outside the site repository. No claim of live deployment or workload testing is made.
 
@@ -38,8 +38,8 @@ The article dates represent the requested historical editorial dates. The actual
 | AZC-028 | 2024-03-18 | [Create a Logic Apps workflow with a clear failure path](../../src/content/posts/en/create-a-logic-apps-workflow-with-a-clear-failure-path.md) | Written; author review pending |
 | AZC-029 | 2024-03-21 | [Choose a hub-and-spoke topology for a small Azure estate](../../src/content/posts/en/choose-a-hub-and-spoke-topology-for-a-small-azure-estate.md) | Written; author review pending |
 | AZC-030 | 2024-03-24 | [Configure VM insights for a group of Azure servers](../../src/content/posts/en/configure-vm-insights-for-a-group-of-azure-servers.md) | Written; author review pending |
-| AZC-031 | 2024-03-26 | Choose storage redundancy around recovery requirements | Pending delivery |
-| AZC-032 | 2024-03-29 | Separate backup, high availability and disaster recovery | Pending delivery |
+| AZC-031 | 2024-03-26 | [Choose storage redundancy around recovery requirements](../../src/content/posts/en/choose-storage-redundancy-around-recovery-requirements.md) | Written; author review pending |
+| AZC-032 | 2024-03-29 | [Separate backup, high availability and disaster recovery](../../src/content/posts/en/separate-backup-high-availability-and-disaster-recovery.md) | Written; author review pending |
 | AZC-033 | 2024-04-01 | Write a reusable function with clear parameters | Pending delivery |
 | AZC-034 | 2024-04-03 | Copilot for Security is available: plan a controlled first investigation | Pending delivery |
 | AZC-035 | 2024-04-06 | Configure a Windows Server 2022 host using PowerShell | Pending delivery |
