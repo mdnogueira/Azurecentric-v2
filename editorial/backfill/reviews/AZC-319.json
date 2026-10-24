@@ -1,0 +1,135 @@
+{
+  "id": "AZC-319",
+  "title": "Restrict access to an application deployment endpoint",
+  "historical_date": "2026-06-11",
+  "created_at": "2026-10-23T23:43:40.557676+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Secure App Service deployment endpoints by combining private endpoints with disabled public network access, avoiding the trap of relying on access restrictions for private traffic.",
+  "tags": [
+    "azure-app-service",
+    "private-endpoints",
+    "access-restrictions",
+    "network-security",
+    "deployment"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-access-restrictions.md",
+      "revision": "e351edcfc779ea08f56508ccd1cfc59b59704cd4",
+      "revision_date": "2025-09-02T15:45:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "App Service Access restrictions",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-access-restrictions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e351edcfc779ea08f56508ccd1cfc59b59704cd4/articles/app-service/overview-access-restrictions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-private-endpoint.md",
+      "revision": "2ec7b89dc220f661e7e100a69dbab0531919c41c",
+      "revision_date": "2025-10-06T23:50:36Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Private Endpoints for Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2ec7b89dc220f661e7e100a69dbab0531919c41c/articles/app-service/overview-private-endpoint.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/secure-deployment.md",
+      "revision": "e2507938b2a97d1c5db073fc57046b84254900a0",
+      "revision_date": "2026-03-25T00:35:40Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Secure your Azure Container Apps deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/secure-deployment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e2507938b2a97d1c5db073fc57046b84254900a0/articles/container-apps/secure-deployment.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does disabling public network access prevent access via service endpoints?",
+    "Are there any limitations on using access restrictions with private endpoints for specific pricing tiers?",
+    "How does the unmatched rule behave if both allow and deny rules are configured?",
+    "What is the impact of access restrictions on log streaming and other diagnostic features?",
+    "Can access restrictions be applied to specific slots independently?"
+  ],
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/security/zero-trust-security-horizontal.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/restrict-access-to-an-application-deployment-endpoint.md",
+  "draft": true,
+  "word_count": 660,
+  "claim_support_checks": [
+    {
+      "claim": "Private endpoints bypass access restriction rules.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Access restrictions apply only to the default (public) endpoint.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The unmatched rule defaults to deny if any rules are configured.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Private endpoints are available on Basic, Standard, PremiumV2, PremiumV3, PremiumV4, IsolatedV2, and Functions Premium plans.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "DNS must be configured to resolve the app's hostname to the private endpoint IP.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies access restrictions can restrict private endpoint traffic by suggesting 'Option 2: Use access restrictions' to block public traffic while keeping the private endpoint. S1 explicitly states access restrictions do not apply to private endpoint traffic. This creates a false sense of security for the Kudu site if public access is disabled but private endpoints remain.",
+      "fix": "Clarify that access restrictions only affect the public entry point. To secure the Kudu site from public access, disable public network access entirely or use NSGs on the private endpoint subnet. Do not suggest access restrictions as a method to secure private endpoint traffic."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft suggests using service endpoints to restrict deployment traffic via access restrictions. S1 notes service endpoints are incompatible with private endpoints. S2 confirms apps with private endpoints cannot use service endpoint-based access restriction rules. This guidance is mutually exclusive and will fail.",
+      "fix": "Remove the suggestion to use service endpoints for access restrictions when private endpoints are present. Explain that private endpoints provide the network path, and access restrictions (or disabling public access) handle the public path. Use IP-based rules for public access control."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims disabling public network access prevents access via service endpoints in the review questions but doesn't address the contradiction in the main text. S1 states service endpoints are incompatible with private endpoints. The draft's 'Option 2' is invalid in the context of private endpoints.",
+      "fix": "Remove 'Option 2' as a viable path for private endpoint scenarios. Focus on the single correct pattern: Private Endpoint for VNet access + Disable Public Network Access for security. Update review questions to reflect this reality."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Summary of steps' section which is redundant and generic. The guidance ends with a generic concluding paragraph ('By combining...').",
+      "fix": "Remove the 'Summary of steps' and the final concluding paragraph. End with the verification step to ensure concrete actionability."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'deployment endpoint (the Kudu/scm site)' which is slightly misleading. Kudu is the SCM site, but the 'deployment endpoint' usually refers to the FTP/SCM interface. The draft correctly identifies Kudu but could be clearer.",
+      "fix": "Clarify that 'deployment endpoint' refers to the SCM (Kudu) site. Ensure the distinction between the main site and the SCM site is clear in the context of access restrictions."
+    }
+  ]
+}

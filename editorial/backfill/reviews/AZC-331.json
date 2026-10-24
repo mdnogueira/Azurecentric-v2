@@ -1,0 +1,149 @@
+{
+  "id": "AZC-331",
+  "title": "Validate a cluster after a network or storage change",
+  "slug": "validate-a-cluster-after-a-network-or-storage-change",
+  "historical_date": "2026-07-14",
+  "input_sha256": "0f89ad244138822d58f31dbccac04302b1cc8b22f7edd3015b74c1148426bfb8",
+  "created_at": "2026-10-23T19:57:51.872536+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Validate a Storage Spaces Direct cluster after network or storage changes using Health Service reports and system event logs.",
+  "tags": [
+    "failover-clustering",
+    "storage-spaces-direct",
+    "windows-server-2025",
+    "health-service",
+    "troubleshooting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "revision": "ef9afdb74d7e649d54aeaf104efe28dcd857ff2f",
+      "revision_date": "2026-02-16T15:59:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service reports",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-reports",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/create-failover-cluster.md",
+      "revision": "ef9afdb74d7e649d54aeaf104efe28dcd857ff2f",
+      "revision_date": "2026-02-16T15:59:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/create-failover-cluster",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/failover-clustering/create-failover-cluster.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [
+    "Does the Health Service report include metrics for network adapters, or only storage and compute?",
+    "What is the specific threshold for 'high latency' in the Health Service report for Windows Server 2025?",
+    "Are there any new Failover Clustering events in Windows Server 2025 that are not listed in the Windows Server 2016/2019/2022 documentation?",
+    "How does the Health Service handle streaming metrics for volumes that are not currently active?",
+    "Is the Validate Configuration wizard available in Windows Admin Center for Windows Server 2025, or only in Failover Cluster Manager?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/validate-a-cluster-after-a-network-or-storage-change.md",
+  "draft": true,
+  "word_count": 961,
+  "claim_support_checks": [
+    {
+      "claim": "The Health Service provides real-time metrics for the cluster, nodes, and volumes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Get-StorageHealthReport cmdlet can be used to get metrics for the entire cluster.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Failover Clustering events in the System log can be used to troubleshoot cluster issues.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Event 1135 indicates that a cluster node was removed from the active failover cluster membership.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1177 indicates that the cluster service shut down because quorum was lost.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1553 indicates that a cluster node has no network connectivity.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1038 indicates that a node unexpectedly lost ownership of a cluster disk.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The Validate Configuration wizard checks hardware compatibility, network settings, and storage connectivity.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Health Service provides metrics for 'network adapters' in its description and review questions, but Source S1 only lists metrics for StorageSubSystem, StorageNode, and Volume. No network adapter metrics are documented in the source.",
+      "fix": "Remove references to network adapter metrics from the Health Service section. Clarify that the Health Service focuses on storage and compute performance, while network connectivity is verified via Event Logs (S3) and the Validate Configuration wizard (S2)."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states Event 1135 indicates a node was 'removed from the active failover cluster membership.' Source S3 defines Event 1135 as 'EVENT_NODE_DOWN' with the description 'Cluster node... was removed...'. However, Event 1070 is 'NM_EVENT_BEGIN_JOIN_FAILED' and Event 1092 is 'NM_EVENT_MM_FORM_FAILED'. The draft conflates removal with other failure states. More critically, it implies Event 1135 is the primary indicator of removal, whereas S3 lists it alongside other critical events without specifying 'removal' as the sole definition.",
+      "fix": "Verify the exact wording in S3. S3 says 'Cluster node... was removed from the active failover cluster membership.' This is accurate. However, the draft implies this is a 'failure' event in the same vein as halts. Ensure the distinction between voluntary removal and involuntary removal due to failure (like Event 1177) is clear if implied. The current claim is technically supported by S3 text."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Get-StorageHealthReport -Count 10` to 'capture a series of samples at one-second intervals' to see 'transient spikes'. Source S1 states the `Count` parameter indicates 'how many sets of values to return, at one second intervals.' It does not explicitly state this is for detecting transient spikes or that it provides a time-series graph. It returns a static list of reports.",
+      "fix": "Clarify that `-Count` returns a static list of point-in-time reports, not a continuous stream or graph. State that this allows comparing discrete snapshots rather than detecting real-time transient spikes, which might require continuous monitoring tools."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the Validate Configuration wizard 'checks hardware compatibility, network settings, and storage connectivity' and is 'particularly useful for catching issues that the Health Service and event logs might not immediately highlight.' Source S2 states validation ensures 'hardware and hardware settings are compatible' and 'Microsoft only supports cluster solutions if the complete configuration passes all validation tests.' It does not explicitly claim it catches issues missed by Health/Events, nor does it list 'network settings' as a primary check in the same way (though it does test network).",
+      "fix": "Align with S2: State that validation tests verify hardware compatibility and configuration standards required for support. Avoid claiming it catches issues 'missed' by other tools, as Health Service and Event Logs are complementary diagnostic layers, not replacements for validation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Event 1672 indicates that a node has been quarantined... You can clear the quarantine using the `Start-ClusterNode -ClearQuarantine` cmdlet.' Source S3 confirms Event 1672 and the cmdlet. However, the draft does not warn about the risk of forcing a quarantined node back into a cluster with potential data inconsistencies or configuration drift, which is a common operational risk.",
+      "fix": "Add a caution that clearing quarantine should only be done after resolving the underlying issue, as rejoining a node with stale configuration can cause cluster instability. Reference S3's guidance on investigating the issue first."
+    }
+  ]
+}

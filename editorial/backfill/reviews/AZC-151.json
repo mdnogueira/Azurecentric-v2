@@ -1,0 +1,142 @@
+{
+  "id": "AZC-151",
+  "title": "Mount an Azure file share from a Windows server",
+  "slug": "mount-an-azure-file-share-from-a-windows-server",
+  "historical_date": "2025-02-25",
+  "input_sha256": "9c9a32fa0118dc5a7ebf6d41a00247ecc99c3b8de6fadc28228fa2e380edaf27",
+  "created_at": "2026-10-23T15:45:03.156518+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Mount an Azure file share on Windows using SMB, covering prerequisites, key-based and identity-based methods, and verification steps.",
+  "tags": [
+    "azure-files",
+    "smb",
+    "windows-server",
+    "identity-based-auth",
+    "networking"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-151-learn-1.png",
+      "alt": "Screenshot of file shares blade, file share is highlighted.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/285b23863e305149436de0a7b2d01537604d7583/articles/storage/files/media/storage-how-to-use-files-windows/select-file-shares.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-02-19T23:39:26Z",
+      "sha256": "70297545cbfe05aba5e9318b2a9a7e6ed3a7ff0ec97814f3f14aadcab3677e5a",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/storage-how-to-use-files-windows.md",
+      "revision": "285b23863e305149436de0a7b2d01537604d7583",
+      "revision_date": "2025-02-19T23:39:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Mount Azure file share on Windows",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/285b23863e305149436de0a7b2d01537604d7583/articles/storage/files/storage-how-to-use-files-windows.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/storage-files-identity-mount-file-share.md",
+      "revision": "202538509f8e9bb1c0d40a8b74e1b92b13caf30f",
+      "revision_date": "2024-12-14T10:50:44Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Mount SMB Azure file share with identity-based access",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-mount-file-share",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/202538509f8e9bb1c0d40a8b74e1b92b13caf30f/articles/storage/files/storage-files-identity-mount-file-share.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/files-nfs-protocol.md",
+      "revision": "bf350c7c8bcfd80c3fc3e939d878771fc462e292",
+      "revision_date": "2025-02-19T23:12:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "NFS file shares in Azure Files",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-nfs-protocol",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bf350c7c8bcfd80c3fc3e939d878771fc462e292/articles/storage/files/files-nfs-protocol.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the specific Windows Server version in the target environment have the required SMB updates for Multichannel?",
+    "Is the storage account joined to an AD DS or Microsoft Entra Domain Services domain for identity-based auth?",
+    "Are there any firewall rules blocking port 445 in the target network environment?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/mount-an-azure-file-share-from-a-windows-server.md",
+  "draft": true,
+  "word_count": 890,
+  "claim_support_checks": [
+    {
+      "claim": "SMB protocol requires TCP port 445 to be open for mounting Azure file shares.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Files supports SMB Multichannel only on premium file shares.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Shared access signature (SAS) tokens are not supported for mounting Azure file shares.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Identity-based authentication is preferred over storage account keys for production workloads.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "NFS file shares are not supported for Windows.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the PowerShell script uses `cmdkey` to cache credentials for identity-based authentication. The source (S2) shows the script uses `cmdkey` only to add the storage account name as a credential target, but the actual authentication relies on the domain-joined user's Kerberos ticket, not cached keys. The draft misrepresents the mechanism.",
+      "fix": "Clarify that `cmdkey` in the identity-based script prepares the credential target for the SMB session, but authentication is handled by the domain-joined user's existing Kerberos ticket, not by the cached key itself."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states that for non-domain-joined VMs, the user must have an identity in the AD domain the storage account is joined to. It fails to mention that for Microsoft Entra Domain Services, the user must be synced to that specific managed domain. This omission could lead to authentication failures for Entra ID users not synced to the target DS.",
+      "fix": "Explicitly state that for Microsoft Entra Domain Services, the user identity must be synced from Microsoft Entra ID to the managed domain, and network connectivity to those specific domain controllers is required."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `cmdkey /delete` to remove cached credentials. While functional, it does not address the need to disconnect existing SMB sessions (`net use * /delete`) which might persist and cause conflicts when switching from key-based to identity-based auth, as noted in the source (S2).",
+      "fix": "Add a step to disconnect existing SMB sessions using `net use * /delete` before removing cached credentials to ensure a clean state when switching authentication methods."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description but no actual visual. The guidance says 'Do not add an unrelated screenshot merely because it was supplied.' However, the draft lacks the specific screenshot from S1 for the 'Connect' step, which is a key visual aid for the key-based method.",
+      "fix": "Include the screenshot from S1 (select-file-shares.png) next to the step 'Select File shares' to visually guide the user, as it directly illustrates the action described."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions NFS shares are 'not supported for Windows' but does not clarify that this applies to the *mounting* of NFS shares on Windows clients, not just the protocol support in general. It could be misinterpreted as Windows not supporting NFS at all.",
+      "fix": "Rephrase to 'Windows clients cannot mount NFS Azure file shares' to be precise, aligning with the source's note that NFS shares are for Linux/UNIX workloads."
+    }
+  ]
+}

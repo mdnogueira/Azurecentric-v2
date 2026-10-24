@@ -1,0 +1,85 @@
+{
+  "id": "AZC-104",
+  "title": "Test a migration before scheduling the production cutover",
+  "slug": "test-a-migration-before-scheduling-the-production-cutover",
+  "historical_date": "2024-10-16",
+  "input_sha256": "ca42feb494148114b71392580593c5d6de83803cfc09d558eb8aaa052feb4fb1",
+  "created_at": "2026-10-23T14:34:43.247339+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Validate migration readiness by running a test migration in Azure Migrate, verifying OS state and connectivity before production cutover.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/prepare-for-migration.md",
+      "revision": "3ffae249ab069c6b6eb7dda4d3978ca76cfaf7b5",
+      "revision_date": "2024-09-27T19:08:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Prepare machines for migration with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/prepare-for-migration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3ffae249ab069c6b6eb7dda4d3978ca76cfaf7b5/articles/migrate/prepare-for-migration.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/how-to-migrate.md",
+      "revision": "1cd73f99259870db340e28a8915f1d5b5d796d6d",
+      "revision_date": "2024-08-23T09:14:20Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Add migration tools in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/how-to-migrate",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1cd73f99259870db340e28a8915f1d5b5d796d6d/articles/migrate/how-to-migrate.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/test-a-migration-before-scheduling-the-production-cutover.md",
+  "draft": true,
+  "word_count": 1343,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Migrate 'provides an option to delete the test VM' and implies a built-in cleanup button. The source documents do not describe a specific 'delete test VM' button within Azure Migrate; test VMs are standard Azure resources that must be manually deleted via the Azure Portal, CLI, or PowerShell. This misleads users about the cleanup workflow.",
+      "fix": "Clarify that the test VM is a standard Azure resource. Instruct users to manually delete the VM via the Azure Portal, Azure CLI, or PowerShell after validation to avoid ongoing costs, rather than implying a dedicated Migrate UI cleanup action."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Azure Migrate will create a temporary Azure VM... This VM is isolated from your production network'. This is an unsupported categorical claim. While test VMs are often placed in separate subnets or VNETs, the source documentation does not guarantee automatic network isolation. Users must explicitly configure the target VNET/subnet during the test migration setup.",
+      "fix": "Remove the guarantee of automatic isolation. Instruct users to select a specific VNET and subnet during the test migration configuration to ensure isolation, noting that network placement is a user-defined choice, not an automatic safeguard."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises allowing 'TCP and UDP' for RDP in the Public profile for internet access. RDP primarily uses TCP port 3389. While UDP may be used for performance optimization in newer Windows versions, the source documentation does not explicitly mandate UDP for basic connectivity. This could lead to unnecessary firewall exposure.",
+      "fix": "Specify allowing TCP port 3389 for RDP. Mention UDP only if referencing specific Windows 10/11 or Server 2019+ optimizations, but prioritize TCP as the standard requirement for connectivity verification."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that setting SAN Policy=OnlineAll is the primary fix for drive letter shifts. While correct, it omits that this is only necessary if the on-premises environment uses drive letters that conflict with Azure's default D: assignment for the temp disk. For many workloads, this is not an issue.",
+      "fix": "Add context that SAN policy adjustment is specifically needed if on-premises applications rely on drive letters that would conflict with Azure's default temporary disk assignment (typically D:). For others, it may be optional."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists 'Azure Serial Console logging' as a step to 'enable'. The source notes that enabling console logging helps troubleshooting but does not require a reboot. However, it states 'The Azure VM will boot by using the disk image. The disk image boot is equivalent to a reboot for the new VM.' This phrasing is confusing and potentially misleading regarding the reboot requirement.",
+      "fix": "Clarify that enabling Serial Console logging does not require a reboot on the on-premises machine. For the Azure test VM, the first boot will use the disk image, which behaves like a reboot, but no manual reboot is needed to enable the feature."
+    }
+  ]
+}

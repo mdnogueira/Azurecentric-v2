@@ -1,0 +1,137 @@
+{
+  "id": "AZC-325",
+  "title": "Choose NAT Gateway when stable outbound connectivity matters",
+  "slug": "choose-nat-gateway-when-stable-outbound-connectivity-matters",
+  "historical_date": "2026-06-27",
+  "input_sha256": "79612d28e8fa0e6e603557fc03c72991faa188c56b5ad434338a5edaa160bbb4",
+  "created_at": "2026-10-23T19:50:03.761385+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Why NAT Gateway is the preferred explicit outbound method for stable egress, and how to configure it with private subnets.",
+  "tags": [
+    "nat-gateway",
+    "azure-virtual-network",
+    "outbound-connectivity",
+    "private-subnets",
+    "snat"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-325-learn-1.png",
+      "alt": "Screenshot of configuration of SNAT ports on virtual machines with outbound load balancer rules.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/fb1f4be60c3577c1aad4438db70e9cd9c1992449/articles/load-balancer/media/load-balancer-outbound-rules-overview/load-balancer-outbound-rules.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-04-13T16:20:29Z",
+      "sha256": "f2c27cb420aca668b413ae921f6966b9691c6bb4a497871c501fb3159adeb855",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/ip-services/default-outbound-access.md",
+      "revision": "76cb79f7ce67946149da36b069ebec8e87325d95",
+      "revision_date": "2026-04-30T20:16:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Default Outbound Access in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/default-outbound-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/76cb79f7ce67946149da36b069ebec8e87325d95/articles/virtual-network/ip-services/default-outbound-access.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/integrate-with-nat-gateway.md",
+      "revision": "b5c48887c7ed9b9d4ec783f4acd855ff5706e35f",
+      "revision_date": "2026-06-16T16:25:24Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Scale SNAT ports with Azure NAT Gateway",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/integrate-with-nat-gateway",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b5c48887c7ed9b9d4ec783f4acd855ff5706e35f/articles/firewall/integrate-with-nat-gateway.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/load-balancer/outbound-rules.md",
+      "revision": "fb1f4be60c3577c1aad4438db70e9cd9c1992449",
+      "revision_date": "2026-04-13T16:20:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Outbound rules Azure Load Balancer",
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/outbound-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fb1f4be60c3577c1aad4438db70e9cd9c1992449/articles/load-balancer/outbound-rules.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Should the article explicitly mention the difference between Standard and StandardV2 NAT Gateway SKUs regarding zone redundancy?",
+    "Is there a need to clarify the interaction between NAT Gateway and Azure Firewall in hub-and-spoke architectures?",
+    "Does the article need to address the specific limitations of NAT Gateway with IPv6 secondary IP configurations?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-nat-gateway-when-stable-outbound-connectivity-matters.md",
+  "draft": true,
+  "word_count": 964,
+  "claim_support_checks": [
+    {
+      "claim": "NAT Gateway provides up to 64,512 SNAT ports per public IP address.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Default outbound access IPs can change without notice and are not customer-owned.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "New virtual networks default to private subnets after March 31, 2026.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "VMs must be stopped and deallocated for subnet private status changes to take effect.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Invents a zone redundancy capability for Standard NAT Gateway. The text claims 'Standard SKU... to support zone redundancy if needed, though note that Standard NAT Gateway does not support zone-redundant deployments'. This is contradictory and factually incorrect; Standard SKU does not support zone redundancy, only StandardV2 does.",
+      "fix": "Remove the reference to zone redundancy for Standard SKU. State clearly that Standard SKU is not zone-redundant and only StandardV2 supports it. Align with S2 note: 'StandardV2 NAT Gateway does support zone-redundant deployments.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "Misstates Load Balancer SNAT port limits. The draft claims 'Each extra IP address... provides another 64,000 ephemeral ports'. S3 explicitly states the maximum is 64,000 usable ephemeral ports per frontend IP, but S2 clarifies NAT Gateway provides 64,512. The draft conflates these or uses the wrong number for LB.",
+      "fix": "Correct the Load Balancer SNAT port count to 64,000 per IP address as per S3. Ensure the distinction between NAT Gateway (64,512) and Load Balancer (64,000) is clear if both are discussed."
+    },
+    {
+      "severity": "high",
+      "problem": "Omits cost and destructive context. The guide recommends disabling default outbound access and creating NAT Gateways without mentioning the cost of NAT Gateway resources or the operational risk of breaking VMs that rely on default access (e.g., Windows Updates) if not handled correctly.",
+      "fix": "Add a warning about NAT Gateway costs and the requirement to stop/deallocate VMs to apply subnet changes. Mention that private subnets break services like Windows Activation/Updates unless explicit egress is configured."
+    },
+    {
+      "severity": "low",
+      "problem": "Includes unnecessary permission claims. The draft lists 'Contributor or Owner permissions' in prerequisites. The guidance explicitly states not to add visible permission captions or claims unless critical.",
+      "fix": "Remove the specific permission list from prerequisites. Focus on the technical steps and configuration requirements instead of role-based access control details."
+    },
+    {
+      "severity": "medium",
+      "problem": "Vague troubleshooting advice. The draft suggests checking 'SNAT exhaustion' by monitoring connections per VM. It does not provide concrete metrics or tools for this, nor does it explain how to distinguish NAT Gateway exhaustion from other issues.",
+      "fix": "Replace vague monitoring advice with specific references to Azure Monitor metrics for NAT Gateway (e.g., SNAT Port Usage) or suggest checking connection logs. Remove generic 'Cheers' sign-off."
+    }
+  ]
+}

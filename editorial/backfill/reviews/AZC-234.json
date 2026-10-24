@@ -1,0 +1,134 @@
+{
+  "id": "AZC-234",
+  "title": "Review cluster event logs during a node failure",
+  "slug": "review-cluster-event-logs-during-a-node-failure",
+  "historical_date": "2025-10-15",
+  "input_sha256": "c58c53a1d9e1e732acb7150a32d26818ff8d1ddd391f2c7e4d1f2daed20f85f2",
+  "created_at": "2026-10-23T17:40:46.018813+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Diagnose Windows Server node failures using Failover Clustering events and, where applicable, Storage Spaces Direct Health Service faults.",
+  "tags": [
+    "failover-clustering",
+    "windows-server",
+    "troubleshooting",
+    "health-service",
+    "event-logs"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-faults.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service faults",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-faults",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/health-service-faults.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service reports",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-reports",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [
+    "The source documents primarily reference Windows Server 2016 and 2019. Are there any significant changes to the Health Service or event IDs in Windows Server 2022/2025 that should be noted?",
+    "The article mentions using `Start-ClusterNode -FQ` to force quorum. What are the specific risks and prerequisites for using this cmdlet that are not fully detailed in the source?",
+    "The source provides C# examples for interacting with the Health Service via WMI. Is there a simpler PowerShell-only method for advanced fault analysis that should be included?",
+    "How does the Health Service fault reporting interact with third-party monitoring tools? Are there any known compatibility issues or best practices?",
+    "The article mentions that forcing quorum may result in lost configuration changes. Is there a way to back up the cluster configuration before forcing quorum?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-cluster-event-logs-during-a-node-failure.md",
+  "draft": true,
+  "word_count": 1353,
+  "claim_support_checks": [
+    {
+      "claim": "Event 1135 indicates a node was removed from the active failover cluster membership.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Health Service cmdlet to view current faults is Debug-StorageSubSystem.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Event 1672 indicates a node has been quarantined due to consecutive failures.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Health Service can assess causality among faulting entities to reduce chatty reporting.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1554 indicates a node has lost all network connectivity.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft applies Health Service fault analysis (S2, S3) to general Failover Clustering. These sources explicitly state the Health Service applies to 'Storage Spaces Direct cluster' (Windows Server 2016+). It is not a general WSFC feature and is not available on standard clusters without S2D. The draft implies universal applicability.",
+      "fix": "Restrict the Health Service section to Storage Spaces Direct scenarios. Clarify that standard WSFC node failures rely primarily on Event Logs (S1) unless S2D is deployed. Remove the implication that `Debug-StorageSubSystem` works for all cluster types."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Event 1135 is the primary indicator of node failure. S1 lists Event 1177 (Quorum Lost) and Event 1069 (Resource Failure) as critical. Event 1135 is a symptom of removal, which can result from many causes. The draft oversimplifies the diagnostic path by focusing almost exclusively on 1135.",
+      "fix": "Broaden the event log section to include Event 1177 for quorum issues and Event 1069 for resource-level failures. Explain that 1135 confirms removal but requires preceding events (like 1554 or 1177) to determine cause."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Start-ClusterNode -ClearQuarantine` to resolve node rejoin issues. S1 states this clears quarantine but does not fix the underlying cause. The draft implies this is a standard recovery step for any non-joining node, which is incorrect. It only applies to quarantined nodes.",
+      "fix": "Clarify that `Start-ClusterNode -ClearQuarantine` is only valid for nodes in quarantine state (Event 1672). For other join failures, reference S1's guidance on checking network configuration, service status, or version compatibility (Events 1546/1547)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section with generic advice to document changes. This adds no technical value and violates the instruction to remove generic concluding paragraphs. It also repeats the 'By following' structure in the final paragraph.",
+      "fix": "Remove the 'Cleanup' and 'Common mistakes' sections. End the article with the verification step (checking `Get-ClusterNode` and fault status) as the concrete next action."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions the Health Service provides 'fault events' and includes C# code for WMI subscription. This is overly complex for a 'How-to' on event logs and distracts from the primary PowerShell-based troubleshooting flow. The C# code is illustrative but not actionable for most admins.",
+      "fix": "Remove the C# code and detailed WMI subscription explanation. Focus on the PowerShell `Get-StorageSubSystem | Debug-StorageSubSystem` cmdlet as the primary method for retrieving faults, as it is the standard operational approach."
+    }
+  ]
+}

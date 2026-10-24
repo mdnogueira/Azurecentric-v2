@@ -1,0 +1,132 @@
+{
+  "id": "AZC-170",
+  "title": "Choose a VPN gateway around connectivity requirements",
+  "slug": "choose-a-vpn-gateway-around-connectivity-requirements",
+  "historical_date": "2025-04-20",
+  "input_sha256": "b0f2f6e22fb29b5732a410e465e34d12609164cb5afa2fe0ecc43e5a6f240d25",
+  "created_at": "2026-10-23T16:12:01.317756+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Select an Azure VPN Gateway SKU and topology by matching throughput, tunnel count, and availability requirements.",
+  "tags": [
+    "azure-vpn-gateway",
+    "networking",
+    "high-availability",
+    "bgp",
+    "sku-selection"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/vpn-gateway/vpn-gateway-about-vpngateways.md",
+      "revision": "10ef8bfbeb499fe0cfd928b2fc73fd9492b7ce44",
+      "revision_date": "2025-03-31T18:26:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "About Azure VPN Gateway",
+      "url": "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/10ef8bfbeb499fe0cfd928b2fc73fd9492b7ce44/articles/vpn-gateway/vpn-gateway-about-vpngateways.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/vpn-gateway/vpn-gateway-highlyavailable.md",
+      "revision": "10ef8bfbeb499fe0cfd928b2fc73fd9492b7ce44",
+      "revision_date": "2025-03-31T18:26:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Design highly available gateway connectivity",
+      "url": "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-highlyavailable",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/10ef8bfbeb499fe0cfd928b2fc73fd9492b7ce44/articles/vpn-gateway/vpn-gateway-highlyavailable.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/vpn-gateway/bgp-howto.md",
+      "revision": "da67352cdb5ecbe96a4ce39e347e0a1f969d2273",
+      "revision_date": "2024-10-16T17:22:11Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Configure BGP for VPN Gateway: Portal",
+      "url": "https://learn.microsoft.com/en-us/azure/vpn-gateway/bgp-howto",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/da67352cdb5ecbe96a4ce39e347e0a1f969d2273/articles/vpn-gateway/bgp-howto.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to configure ECMP on the on-premises device for active-active mode?",
+    "What is the exact failover time for unplanned disruptions in active-standby mode?",
+    "Are there any specific firewall rules required for BGP UDP 179?",
+    "How does pricing differ between active-active and active-standby modes?",
+    "What are the limits for P2S SSTP connections in Generation 2 SKUs?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-vpn-gateway-around-connectivity-requirements.md",
+  "draft": true,
+  "word_count": 1089,
+  "claim_support_checks": [
+    {
+      "claim": "VPN Gateway supports up to 100 S2S/VNet-to-VNet tunnels in Generation 2 SKUs.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Generation 2 VpnGW5 provides 10 Gbps aggregate throughput.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "BGP is required for multiple on-premises VPN devices or ECMP.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure APIPA BGP IP addresses must be in the range 169.254.21.0 to 169.254.22.255.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Zone-redundant gateways are identified by the AZ suffix in the SKU name.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims active-active mode requires BGP. Source S2 states BGP is required for 'Multiple on-premises VPN devices' and 'Dual-redundancy' topologies, but active-active gateways alone do not strictly require BGP (it is optional for VNet-to-VNet and not mandated for basic active-active cross-premises). This misleads users into unnecessary complexity.",
+      "fix": "Clarify that BGP is required for multiple on-premises devices or ECMP, but active-active gateways can function without BGP for basic redundancy. Remove the absolute statement that active-active requires BGP."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states active-active mode requires two custom Azure APIPA BGP IP addresses. Source S3 indicates custom APIPA addresses are only needed if on-premises devices use APIPA peers. Standard private IPs from the GatewaySubnet are used otherwise. The draft invents a constraint for all active-active setups.",
+      "fix": "Specify that custom APIPA addresses are only required if on-premises devices use APIPA BGP peer IPs. Otherwise, the gateway uses default IPs from the GatewaySubnet range."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that for unplanned issues, recovery takes 1 to 3 minutes. Source S2 says 'about 1 to 3 minutes in the worst case'. The draft omits 'worst case', implying this is the typical duration, which is misleading and potentially inaccurate for most scenarios.",
+      "fix": "Retain the 'worst case' qualifier to accurately reflect Source S2. State that recovery is typically faster but can take up to 1-3 minutes in worst-case scenarios."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists VpnGW1 in the table but excludes it from the 'Generation 2' discussion context, yet includes it in the summary table. Source S1 shows VpnGW1 is Gen1. The table mixes Gen1 and Gen2 without clear separation, potentially confusing users about which SKUs are Gen2.",
+      "fix": "Separate the table into Generation 1 and Generation 2 sections or clearly label the generation column. Ensure VpnGW1 is not grouped with Gen2 SKUs in the narrative flow."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions checking 'Gateway Status' and 'Connected' state. Source S3 shows 'Connected' is a connection state, not a gateway state. The gateway itself has 'ProvisioningState'. This is a minor technical inaccuracy in verification steps.",
+      "fix": "Correct the verification step to check the 'Connection' status for 'Connected' and the 'Gateway' provisioning state for 'Succeeded' or 'Running'."
+    }
+  ]
+}

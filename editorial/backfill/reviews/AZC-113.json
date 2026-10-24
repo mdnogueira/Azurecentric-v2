@@ -1,0 +1,121 @@
+{
+  "id": "AZC-113",
+  "title": "Investigate a module that loads in one shell but not another",
+  "slug": "investigate-a-module-that-loads-in-one-shell-but-not-another",
+  "historical_date": "2024-11-11",
+  "input_sha256": "10ffd812eac50da041ee64d6e8efe2995f222c5f0205e5c4bf3b0ea44f04bac1",
+  "created_at": "2026-10-23T14:47:01.438890+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a PowerShell module that loads in one shell but not another by comparing PSModulePath, profiles, and session state.",
+  "tags": [
+    "powershell",
+    "modules",
+    "troubleshooting",
+    "profiles",
+    "psmodulepath"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/importing-a-powershell-module.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Importing a PowerShell Module",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/importing-a-powershell-module",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/module/importing-a-powershell-module.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/modules-and-snap-ins.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Modules and Snap-ins",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/modules-and-snap-ins",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/module/modules-and-snap-ins.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/shell/creating-profiles.md",
+      "revision": "859e3127aa79a9303cb795298e531610c4f7d3af",
+      "revision_date": "2024-10-11T21:06:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Customizing your shell environment",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/creating-profiles",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/859e3127aa79a9303cb795298e531610c4f7d3af/reference/docs-conceptual/learn/shell/creating-profiles.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to distinguish between Windows PowerShell and PowerShell 7 for execution policy behavior?",
+    "Are there any specific module manifest requirements that might cause load failures in one shell but not another?",
+    "Should the article mention the difference between user and system environment variables for PSModulePath?",
+    "Is it necessary to check for conflicting module versions in different directories?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-module-that-loads-in-one-shell-but-not-another.md",
+  "draft": true,
+  "word_count": 907,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell searches for modules in directories listed in the PSModulePath variable.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A PowerShell profile is a script that runs when PowerShell starts and can be used to load modules.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Modules can be imported explicitly using Import-Module with a full path if not in PSModulePath.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell supports four profile scopes for different user and host combinations.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Claims execution policy blocks module loading. S1/S3 do not support this; execution policies apply to script execution, not module import. Modules often load successfully under Restricted if they are binary or do not invoke restricted scripts. This is a misleading causal claim.",
+      "fix": "Remove the Execution Policy section. Execution policies generally do not prevent Import-Module from loading a module unless the module explicitly invokes a blocked script during initialization. Focus on PSModulePath and profile differences as the primary causes."
+    },
+    {
+      "severity": "medium",
+      "problem": "States `$PSModulePath` is a session variable that may be cached. S1/S3 define `$env:PSModulePath` as the environment variable. `$PSModulePath` is not a standard automatic variable in PowerShell 7.4. This invents a non-existent variable for troubleshooting.",
+      "fix": "Delete the reference to `$PSModulePath`. Use `$env:PSModulePath` exclusively. The session uses the environment variable directly; there is no separate cached session variable to check."
+    },
+    {
+      "severity": "medium",
+      "problem": "Suggests `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` as a fix for module loading. S3 notes execution policies don't apply to macOS/Linux, but the draft implies they are a universal troubleshooting step for module loads. This is technically inaccurate for non-Windows platforms and often irrelevant for modules.",
+      "fix": "Clarify that execution policy is Windows-specific and rarely the cause of module load failures. If included, restrict it to Windows-only context and emphasize it is not a standard module troubleshooting step."
+    },
+    {
+      "severity": "low",
+      "problem": "Concluding paragraphs use generic filler ('By systematically checking...', 'In summary...'). The draft ends with redundant summaries and review questions that do not add technical value.",
+      "fix": "Remove the 'In summary' and 'Review Questions' sections. End with the concrete verification step: restart the shell to apply environment changes and run `Import-Module MyModule` to confirm."
+    }
+  ]
+}

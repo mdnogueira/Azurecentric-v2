@@ -1,0 +1,116 @@
+{
+  "id": "AZC-284",
+  "title": "Add correlation identifiers across an integration workflow",
+  "slug": "add-correlation-identifiers-across-an-integration-workflow",
+  "historical_date": "2026-03-04",
+  "input_sha256": "b8c02d441138013d75d1ac270a87b428cd0979a2f88eb02ff63df9f27cc2e602",
+  "created_at": "2026-10-23T18:51:53.603423+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Propagate correlation identifiers through Azure API Management and Service Bus using set-variable and Diagnostic-Id.",
+  "tags": [
+    "api-management",
+    "service-bus",
+    "distributed-tracing",
+    "application-insights",
+    "opentelemetry"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/set-variable-policy.md",
+      "revision": "c4873d85521724f20358bd2b5bc2e0fed6508284",
+      "revision_date": "2025-05-12T17:24:00Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure API Management policy reference - set-variable | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/set-variable-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c4873d85521724f20358bd2b5bc2e0fed6508284/articles/api-management/set-variable-policy.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-end-to-end-tracing.md",
+      "revision": "76ef9af92f9b4483d1570e983c86741bd6d2d40a",
+      "revision_date": "2025-05-08T07:34:38Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "End-to-end tracing and diagnostics",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-end-to-end-tracing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/76ef9af92f9b4483d1570e983c86741bd6d2d40a/articles/service-bus-messaging/service-bus-end-to-end-tracing.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found"
+  ],
+  "open_questions": [
+    "Does the built-in Service Bus integration policy in APIM automatically map context variables to message properties, or is a send-request policy always required?",
+    "Are there specific APIM gateway types (e.g., v2 vs classic) that handle context variable persistence differently in this scenario?",
+    "How does the OpenTelemetry experimental mode in Service Bus SDK 7.5.0+ interact with manual Activity correlation?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/add-correlation-identifiers-across-an-integration-workflow.md",
+  "draft": true,
+  "word_count": 1230,
+  "claim_support_checks": [
+    {
+      "claim": "The set-variable policy in APIM can extract a header value and store it in a context variable.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Service Bus uses the Diagnostic-Id property to correlate messages with external traces.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Azure.Messaging.ServiceBus SDK supports automatic tracing instrumentation.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Support for the Microsoft.Azure.ServiceBus SDK is being retired.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the `Azure.Messaging.ServiceBus` SDK automatically sets `Diagnostic-Id` if an `Activity` is active. Source S2 states the SDK provides instrumentation points for tracing systems to hook, but does not claim automatic injection of the `Diagnostic-Id` property into the message payload. This misleads users into thinking no manual property mapping is needed.",
+      "fix": "Clarify that while the SDK emits telemetry events, propagating the trace context into the message's `ApplicationProperties` (specifically `Diagnostic-Id`) typically requires explicit configuration or manual setting in the sender code, as the SDK does not automatically stamp message properties based on ambient activity."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft implies `set-variable` in APIM can directly map to Service Bus message properties via `send-request` or 'built-in integration'. Source S1 only documents `set-variable` for context variables. It does not support direct mapping to Service Bus message properties. The draft invents a capability or omits the necessary `send-request` body construction logic complexity.",
+      "fix": "Remove the implication of automatic mapping. Explicitly state that `set-variable` only creates a context variable. To send it to Service Bus, the user must construct the HTTP request body in `send-request` using that variable, as shown in the illustrative XML example, or use a dedicated Service Bus policy if available (which is not documented in S1)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the `Microsoft.Azure.ServiceBus` SDK is retired on 30 September 2026. Source S2 confirms this retirement date. However, the draft presents this as a current 'consideration' for a 2026-dated post without warning that the draft itself is set in the future relative to the source's 'current' reality, or vice versa, potentially confusing the timeline of 'now' vs 'retirement'.",
+      "fix": "Ensure the temporal context is clear. Since the brief specifies 'Practical guidance framed as of March 2026', the retirement date of Sept 2026 is a future event. Frame the warning as 'upcoming retirement' rather than a past fact, and emphasize migration to `Azure.Messaging.ServiceBus`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `send-request` to call the Service Bus REST API. Source S2 does not document REST API usage for tracing. The draft's XML example for `send-request` is illustrative but omits required authentication headers and endpoint details, which are critical for a working 'how-to'.",
+      "fix": "Add a note that `send-request` requires proper authentication (e.g., SAS token) and the correct Service Bus REST endpoint URL. Clarify that this is a manual HTTP call pattern, not a native Service Bus policy integration, and may have higher latency/cost than native policies."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims `set-variable` supports `System.String` types. Source S1 confirms this. However, the draft's XML example uses `JObject` and `JProperty` which are not native APIM policy types but require the `JObject` helper class available in APIM expressions. The draft does not mention this dependency.",
+      "fix": "Clarify that the XML example relies on APIM's expression language support for `JObject` and `JProperty` classes. Ensure readers know this is valid APIM expression syntax, not standard XML."
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "AZC-189",
+  "title": "Build a route table for a controlled outbound path",
+  "slug": "build-a-route-table-for-a-controlled-outbound-path",
+  "historical_date": "2025-06-12",
+  "input_sha256": "00de0b05bb7fa0ab66ffb0d9fae9371dfacc9134c6e314f8b607b3a361f26e0a",
+  "created_at": "2026-10-23T16:36:54.949454+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create a user-defined route table to force outbound traffic through a network virtual appliance in Azure.",
+  "tags": [
+    "azure-virtual-network",
+    "user-defined-routes",
+    "network-virtual-appliance",
+    "networking",
+    "azure-cli"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-189-learn-1.png",
+      "alt": "Screenshot of network interface of NVA virtual machine.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/e072ac8c1b5c423b71748e3484a23f18fad2f48d/articles/virtual-network/media/tutorial-create-route-table-portal/nva-network-interface.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-02-19T00:34:50Z",
+      "sha256": "8c6afb23f4aa6e0813f9d2fa0816083e664b9e85bcf4e5ebc7105897c4cf95f1",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-networks-udr-overview.md",
+      "revision": "afa3fd0fd6517d4a9d04e0e4b0dca042352ae99e",
+      "revision_date": "2025-03-05T17:49:21Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure virtual network traffic routing",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/afa3fd0fd6517d4a9d04e0e4b0dca042352ae99e/articles/virtual-network/virtual-networks-udr-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/tutorial-create-route-table.md",
+      "revision": "e072ac8c1b5c423b71748e3484a23f18fad2f48d",
+      "revision_date": "2025-02-19T00:34:50Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Tutorial: Route network traffic with a route table",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e072ac8c1b5c423b71748e3484a23f18fad2f48d/articles/virtual-network/tutorial-create-route-table.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/cloud-shell-try-it.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/quickstarts-free-trial-note.md",
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/virtual-network-create-with-bastion.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/portal-clean-up.md"
+  ],
+  "open_questions": [
+    "Does the NVA require a public IP address or a specific route table to reach the internet for updates, or can it rely on a separate default route in its own subnet?",
+    "What are the specific OS-level configuration steps required to enable IP forwarding on Ubuntu 24.04 for the NVA?",
+    "How does Azure handle routing if the NVA is deployed in a high-availability configuration with an internal load balancer?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-route-table-for-a-controlled-outbound-path.md",
+  "draft": true,
+  "word_count": 774,
+  "claim_support_checks": [
+    {
+      "claim": "Azure automatically creates system routes for each subnet, including a default route to the Internet for 0.0.0.0/0.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Custom routes (UDRs) override Azure default system routes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Deploying a virtual appliance into the same subnet as the resources that route through it can result in routing loops.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "To route traffic to a virtual appliance, you must specify the private IP address of the appliance.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Enabling IP forwarding on a network interface disables the check of the source and destination for that interface.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft concludes with 'By following these steps...', which is a generic concluding paragraph explicitly forbidden by the editorial guidance.",
+      "fix": "Remove the final paragraph entirely. End the article after the 'Considerations for NVA configuration' section or with the verification step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses 'Ubuntu Server 24.04' in the PowerShell code block but 'Ubuntu2204' in the CLI block. S2 shows 'Ubuntu Server 24.04' in the Portal guide but 'Ubuntu2204' in the CLI guide. This inconsistency is confusing.",
+      "fix": "Standardize the image reference across all code blocks to match the specific guide's context or use a consistent, documented image reference like 'Canonical:ubuntu-24_04-lts:server-gen2:latest' for PowerShell and 'Ubuntu2404' for CLI if supported, ensuring alignment with S2's current state."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Azure automatically creates a route table for each subnet'. While technically true that system routes exist, the concept of a 'User-Defined Route Table' (UDR) is a separate resource. The phrasing might imply the system route table is the UDR being created.",
+      "fix": "Clarify that Azure provides system routes by default, but a UDR is a separate resource you create to override those defaults. Ensure the distinction between system routes and UDRs is explicit."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Ubuntu Server 24.04 LTS - x64 Gen2' in the Portal guide but the code blocks use different image references. The draft does not explicitly state that the NVA requires IP forwarding on the NIC, only in the considerations.",
+      "fix": "Move the IP forwarding requirement to the 'Create the route table and route' or 'NVA configuration' section earlier, as it is a critical prerequisite for the NVA to function as a next hop, not just an afterthought."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses 'VirtualAppliance' as the next hop type. S1 confirms this is correct. However, the draft does not mention that the NVA VM must have IP forwarding enabled on its NIC, which is a common point of failure.",
+      "fix": "Ensure the 'Considerations for NVA configuration' section explicitly states that IP forwarding must be enabled on the NVA's network interface, as per S1's note."
+    }
+  ]
+}

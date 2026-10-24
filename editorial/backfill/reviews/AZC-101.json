@@ -1,0 +1,142 @@
+{
+  "id": "AZC-101",
+  "title": "Give an App Service application private access to a database",
+  "slug": "give-an-app-service-application-private-access-to-a-database",
+  "historical_date": "2024-10-08",
+  "input_sha256": "b8b3e58541db097141def8e43de1f5bb70e448e5ce2530c0d661fba1a74658fa",
+  "created_at": "2026-10-23T14:31:12.535795+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Secure App Service database access using private endpoints for network isolation and managed identities for authentication.",
+  "tags": [
+    "app-service",
+    "private-endpoint",
+    "managed-identity",
+    "azure-sql",
+    "vnet-integration",
+    "service-connector"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-101-learn-1.png",
+      "alt": "Screenshot that shows the \"Networking\" tab with the \"Create new\" action highlighted in the \"Virtual network\" section.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/196c9b18716dbf1b2b3d7146d09cb502ac5f4a4f/articles/azure-functions/media/functions-create-private-site-access/create-vm-networking.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-06-13T20:47:41Z",
+      "sha256": "e85a0cd82b612bb15639793ad80869579e4a1d260fdea76d5c90f3b654fc920b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-private-endpoint.md",
+      "revision": "53412dbb0324b0f5bdbbfcde46f365ffdf8d07db",
+      "revision_date": "2024-09-25T14:30:56Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connect privately to an App Service apps using private endpoint",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/53412dbb0324b0f5bdbbfcde46f365ffdf8d07db/articles/app-service/overview-private-endpoint.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/tutorial-connect-msi-azure-database.md",
+      "revision": "67d2924d81da76db9dee2d9672d717bc044a3e91",
+      "revision_date": "2024-09-28T16:21:43Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Tutorial: Access Azure databases with managed identity",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-connect-msi-azure-database",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/67d2924d81da76db9dee2d9672d717bc044a3e91/articles/app-service/tutorial-connect-msi-azure-database.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-create-private-site-access.md",
+      "revision": "196c9b18716dbf1b2b3d7146d09cb502ac5f4a4f",
+      "revision_date": "2024-06-13T20:47:41Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable private site access to Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-private-site-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/196c9b18716dbf1b2b3d7146d09cb502ac5f4a4f/articles/azure-functions/functions-create-private-site-access.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/quickstarts-free-trial-note.md",
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md",
+    "Include unavailable: includes/clean-up-section-portal.md"
+  ],
+  "open_questions": [
+    "Does the Service Connector extension fully automate the setup for Azure Database for PostgreSQL Flexible Server, or are there manual steps required for existing tables?",
+    "What are the specific DNS configuration requirements for the Kudu site when using private endpoints?",
+    "How does the token cache behavior in App Service managed identities affect the timing of permission changes taking effect?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/give-an-app-service-application-private-access-to-a-database.md",
+  "draft": true,
+  "word_count": 1085,
+  "claim_support_checks": [
+    {
+      "claim": "Private endpoints for App Service are available on Basic, Standard, PremiumV2, PremiumV3, IsolatedV2, and Functions Premium plans.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The subnet for virtual network integration cannot be the same as the subnet for the private endpoint.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Service Connector can automate the setup of managed identity access for Azure SQL Database, MySQL, and PostgreSQL.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Database for MySQL Flexible Server requires manual setup of Microsoft Entra authentication before using Service Connector.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies private endpoints provide the network path for *outgoing* traffic to databases. S1 explicitly states private endpoints are only for *incoming* traffic. The draft correctly identifies VNet Integration for outgoing traffic but creates confusion by grouping them as the solution for 'private access'.",
+      "fix": "Clarify that Private Endpoints secure *incoming* app access, while Virtual Network Integration secures *outgoing* database traffic. Ensure the distinction is explicit in the opening section to prevent architectural misunderstanding."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests disabling public network access as 'Optional but Recommended'. S1 notes that when private endpoints are enabled, public access should be disabled to ensure isolation. However, S1 also states they can coexist. The draft lacks context on the security trade-off and the specific condition (isolating from public internet).",
+      "fix": "Reframe disabling public access as a security requirement for strict isolation, noting that coexistence is possible but exposes the app to public internet unless restricted by other means (like Access Restrictions)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Service Connector automates setup for PostgreSQL. S2 notes that for existing tables in PostgreSQL Flexible Server, manual permission grants are required. The draft mentions this in a footnote but presents the CLI command as the primary solution, potentially leading to permission errors.",
+      "fix": "Move the PostgreSQL manual permission step to a prominent warning or prerequisite step before running the Service Connector command, ensuring users know to grant privileges to the `<aad-username>` if tables already exist."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section with generic advice. S2 does not specify exactly what Service Connector leaves behind (e.g., database users, admin settings). The draft's claim that it 'may not automatically remove' is vague and unsupported by specific source text.",
+      "fix": "Remove the vague cleanup advice. Instead, direct users to the Service Connector documentation for cleanup specifics or explicitly state that manual removal of database users/admin settings is required based on general Azure resource management principles."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses 'Illustrative example: not tested' for the C# code. S1 and S2 provide concrete code snippets. The draft's code is a simplified version of S2's .NET example. While marked illustrative, it omits the `TrustServerCertificate=True` flag present in S2, which is often required for private endpoints.",
+      "fix": "Update the C# code snippet to include `TrustServerCertificate=True` in the connection string, matching the source S2, to ensure the example is technically accurate for private endpoint scenarios."
+    }
+  ]
+}

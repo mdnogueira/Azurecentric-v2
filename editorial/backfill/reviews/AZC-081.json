@@ -1,0 +1,139 @@
+{
+  "id": "AZC-081",
+  "title": "Troubleshoot an application that fails to start in App Service",
+  "slug": "troubleshoot-an-application-that-fails-to-start-in-app-service",
+  "historical_date": "2024-08-13",
+  "input_sha256": "eebe624a5e139d7f8852a7a36fd1d5d3d619b511a549952f5fb70b7d56713191",
+  "created_at": "2026-10-23T14:04:03.413792+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot App Service startup failures by enabling diagnostics, checking logs, and verifying configuration.",
+  "tags": [
+    "azure-app-service",
+    "troubleshooting",
+    "diagnostics",
+    "logging",
+    "node-js",
+    "windows"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-081-learn-1.png",
+      "alt": "Screenshot that shows your site/wwwroot directory and command prompt.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/1e77fc95f65abb26bf02c2c91932a446ef3e8f6e/articles/app-service/media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_install_v8.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-03-14T18:12:27Z",
+      "sha256": "fcdb1ce697a677e88aaa85ba1346917f70aa84a411f01a1704899943519a93a1",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/troubleshoot-diagnostic-logs.md",
+      "revision": "f7904c8b9c4773f408b6833b9c39275ce35ecdb9",
+      "revision_date": "2024-07-16T22:06:28Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable diagnostics logging",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f7904c8b9c4773f408b6833b9c39275ce35ecdb9/articles/app-service/troubleshoot-diagnostic-logs.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/troubleshoot-http-502-http-503.md",
+      "revision": "9100c85de11380beedcd4dedd5fe93edf57fc4fd",
+      "revision_date": "2024-02-03T17:59:40Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Fix HTTP 502 and HTTP 503 errors",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-http-502-http-503",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9100c85de11380beedcd4dedd5fe93edf57fc4fd/articles/app-service/troubleshoot-http-502-http-503.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/app-service-web-nodejs-best-practices-and-troubleshoot-guide.md",
+      "revision": "1e77fc95f65abb26bf02c2c91932a446ef3e8f6e",
+      "revision_date": "2024-03-14T18:12:27Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Node.js best practices and troubleshooting",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-nodejs-best-practices-and-troubleshoot-guide",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1e77fc95f65abb26bf02c2c91932a446ef3e8f6e/articles/app-service/app-service-web-nodejs-best-practices-and-troubleshoot-guide.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific diagnostic settings for Linux containers that differ from the file system logging described?",
+    "How does the Azure Monitor integration affect the availability of these traditional log files?",
+    "Is the Kudu console accessible for all app service plans, or are there restrictions?",
+    "What are the exact steps to enable AutoHeal for a specific error condition?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/troubleshoot-an-application-that-fails-to-start-in-app-service.md",
+  "draft": true,
+  "word_count": 1024,
+  "claim_support_checks": [
+    {
+      "claim": "Application logging can be enabled for both Windows and Linux apps in the Azure portal.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Streaming logs is available via the Azure portal and Azure CLI.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Kudu console provides access to log files and a debug environment.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Node.js startup issues can be caused by configuration errors or timeouts.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that Application Logging (Blob) is for long-term logging and 'needs a blob storage container'. S1 does not state that the user must manually provision a container; the portal UI typically handles container creation or uses a default. This is a misleading procedural claim.",
+      "fix": "Remove the requirement for manual container creation. State that the Blob option writes to Azure Storage, noting that S1 mentions it requires a storage account configuration but does not explicitly mandate manual container provisioning by the user in the text provided."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the Azure CLI `az webapp log tail` command 'may not work with web apps hosted in a Linux app service plan'. S1 marks this as an important note but does not specify the Linux restriction in the text body, only in the note. The draft implies a broader incompatibility than supported.",
+      "fix": "Align with S1's specific warning. State that the CLI command may have limitations with Linux apps as per S1's note, rather than presenting it as a general failure condition without the specific context provided in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that 'currently only .NET application logs can be written to blob storage'. S1 confirms this restriction for Java, PHP, Node.js, and Python. However, the draft presents this as a universal truth without noting that this is a specific limitation of the 'Application Logging (Blob)' feature, not all logging.",
+      "fix": "Clarify that the .NET-only restriction applies specifically to the 'Application Logging (Blob)' feature. Ensure the distinction between Filesystem (all languages) and Blob (.NET only) is explicit to avoid confusion with other log types like Web Server Logging."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends enabling 'Detailed Error Messages' or 'Failed Request Tracing' for troubleshooting startup failures. S1 notes these are for HTTP errors 400 or greater. Startup failures often result in 500 errors, which are covered, but the draft does not distinguish that these logs capture the *response* page, not necessarily the *process* crash details.",
+      "fix": "Specify that Detailed Error Messages capture the HTTP error page sent to the client, while Failed Request Tracing provides IIS component traces. Clarify that for process crashes (e.g., Node.js), `logging-errors.txt` in Application Logs is more direct, as per S3."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states that enabling Diagnostic Settings 'triggers an app restart'. S1 confirms this. However, the draft does not warn that this restart interrupts active connections, which is a critical operational detail for troubleshooting live issues.",
+      "fix": "Add a warning that enabling Diagnostic Settings causes an application restart, which may interrupt active requests. Advise performing this step during maintenance windows or on non-production slots if possible, consistent with S3's general caution about production changes."
+    }
+  ]
+}

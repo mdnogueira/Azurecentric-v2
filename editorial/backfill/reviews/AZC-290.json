@@ -1,0 +1,119 @@
+{
+  "id": "AZC-290",
+  "title": "Pin module versions for a repeatable automation job",
+  "slug": "pin-module-versions-for-a-repeatable-automation-job",
+  "historical_date": "2026-03-22",
+  "input_sha256": "71f0f40ba8a44e483b30f26dfccda16a3cb03fa5dcc37b91dc3b7bcb0bc8625c",
+  "created_at": "2026-10-23T18:59:15.861281+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Pin PowerShell module versions in automation to ensure predictable execution and avoid breaking changes from silent updates.",
+  "tags": [
+    "powershell",
+    "automation",
+    "module-management",
+    "devops",
+    "reliability"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/installing-a-powershell-module.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Installing a PowerShell Module",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/installing-a-powershell-module",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/module/installing-a-powershell-module.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/importing-a-powershell-module.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Importing a PowerShell Module",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/importing-a-powershell-module",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/module/importing-a-powershell-module.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/modules-and-snap-ins.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Modules and Snap-ins",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/modules-and-snap-ins",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/module/modules-and-snap-ins.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should automation handle the case where the pinned version is not available on the target system?",
+    "Are there any security implications of pinning to an older module version?",
+    "How does the module resolution order work when multiple paths are in PSModulePath?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/pin-module-versions-for-a-repeatable-automation-job.md",
+  "draft": true,
+  "word_count": 705,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell 3.0+ automatically imports modules when their cmdlets are used.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Multiple versions of a module can be installed by using versioned directories.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The RequiredVersion parameter ensures a specific module version is loaded.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Modules must be installed in directories listed in PSModulePath for auto-discovery.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses 'AzureRM.Compute' as an example. This module was deprecated and replaced by 'Az.Compute' in 2018. Using a defunct module name undermines credibility and confuses users about current Azure PowerShell workflows.",
+      "fix": "Replace 'AzureRM.Compute' with a currently maintained module like 'Az.Compute' or a generic placeholder like 'MyAutomationModule' throughout the text to ensure relevance and accuracy."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that if multiple versions are installed, the auto-loader picks the 'newest version'. The source (S1) states it picks the one appearing 'first' in PSModulePath. While newer versions are often placed first, this is not guaranteed by the mechanism itself, making the claim technically inaccurate.",
+      "fix": "Clarify that resolution depends on PSModulePath order. State that 'the version loaded depends on the order of directories in PSModulePath, which may not always be the newest version.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The directory structure example for multiple versions shows 'MyAutomationModule\\1.2.3\\...'. The source (S1) specifies the directory name should include the version, but the example structure implies a nested version folder inside the module folder, which is non-standard and potentially confusing compared to the source's 'Fabrikam8' example.",
+      "fix": "Align the directory structure example with the source's convention: 'C:\\...\\Modules\\MyAutomationModule\\1.2.3\\' where the version is part of the immediate subdirectory name, matching the 'Fabrikam8' pattern."
+    },
+    {
+      "severity": "low",
+      "problem": "The verification step uses `Where-Object { $_.Version -eq "
+    }
+  ]
+}

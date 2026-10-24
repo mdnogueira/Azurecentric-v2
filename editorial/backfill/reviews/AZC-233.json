@@ -1,0 +1,135 @@
+{
+  "id": "AZC-233",
+  "title": "Investigate a time synchronisation problem on Windows Server",
+  "slug": "investigate-a-time-synchronisation-problem-on-windows-server",
+  "historical_date": "2025-10-13",
+  "input_sha256": "2b2c33a2b4cd0b584e7c02e0277db1abaf2859d47ac85ee1ac932cfc30307e18",
+  "created_at": "2026-10-23T17:40:03.594865+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Windows Server time drift by querying W32Time state, verifying the AD DS hierarchy, and forcing a resync.",
+  "tags": [
+    "windows-server",
+    "time-synchronization",
+    "w32time",
+    "troubleshooting",
+    "active-directory"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/windows-time-service/How-the-Windows-Time-Service-Works.md",
+      "revision": "0694ce12f1cd41e24c8c77b5a34201f562479f1a",
+      "revision_date": "2025-09-22T10:58:51Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How the Windows Time Service Works",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/how-the-windows-time-service-works",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0694ce12f1cd41e24c8c77b5a34201f562479f1a/WindowsServerDocs/networking/windows-time-service/How-the-Windows-Time-Service-Works.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/windows-time-service/Windows-Time-Service-Tools-and-Settings.md",
+      "revision": "79ebe6bf20524768b259c357913592494f5690b0",
+      "revision_date": "2025-09-22T10:04:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Windows Time Service Tools and Settings",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/79ebe6bf20524768b259c357913592494f5690b0/WindowsServerDocs/networking/windows-time-service/Windows-Time-Service-Tools-and-Settings.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/windows-time-service/Windows-Time-Service.md",
+      "revision": "0694ce12f1cd41e24c8c77b5a34201f562479f1a",
+      "revision_date": "2025-09-22T10:58:51Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Windows Time Service",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0694ce12f1cd41e24c8c77b5a34201f562479f1a/WindowsServerDocs/networking/windows-time-service/Windows-Time-Service.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific event IDs to look for in the Windows Event Log when W32Time fails to synchronise?",
+    "How does the phase correction algorithm differ between Windows Server 2012 R2 and later versions, and when does this matter for troubleshooting?",
+    "What are the exact steps to partially disable time synchronisation with the host for a virtualised domain controller?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-time-synchronisation-problem-on-windows-server.md",
+  "draft": true,
+  "word_count": 1018,
+  "claim_support_checks": [
+    {
+      "claim": "The w32tm command is the preferred tool for configuring, monitoring, and troubleshooting W32Time.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Domain-joined computers default to synchronising time from the domain hierarchy using NT5DS.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "W32Time uses UDP port 123 for all time synchronization.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Windows Time service relies on Kerberos authentication for secure NTP packets within an AD DS forest.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Computers not joined to a domain default to synchronising with time.windows.com.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "For domain controllers, it is recommended to partially disable host time synchronisation to prevent skew during snapshots.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'VM IC Time Synchronization Provider' is 'problematic if the server is a domain controller' but 'normal for a member server'. S1 and S3 do not support this distinction; S3 only recommends partially disabling sync for DCs to prevent skew during snapshots, implying it is not inherently problematic for members, just potentially less accurate than domain hierarchy.",
+      "fix": "Remove the categorical claim that VM IC sync is problematic for DCs. State that for DCs, it is recommended to partially disable host sync to prevent skew during snapshots, while member servers typically rely on the domain hierarchy by default."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Stratum value... indicates how many hops away the source is... A higher stratum number generally means less accuracy'. S1 defines stratum as distance from the reference clock but does not claim higher stratum means less accuracy in AD DS contexts, where hierarchy accuracy is managed by algorithms. This is a vague generalization.",
+      "fix": "Remove the claim that higher stratum generally means less accuracy in AD DS. Clarify that stratum indicates distance from the reference clock, but W32Time algorithms select the best source regardless of stratum if it is part of the trusted hierarchy."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises checking 'Last Sync Error' field in `w32tm /query /status /verbose` output. S2 shows the verbose output example but does not list a 'Last Sync Error' field in the text description or the example output. The example shows 'Last Sync Error: 0' but this is not documented as a standard query output field in the provided text.",
+      "fix": "Remove the instruction to check 'Last Sync Error' in the verbose query output. Instead, instruct users to check the Windows Event Log for W32Time errors (e.g., Event IDs 24, 29, 38 mentioned in S3) for detailed failure reasons."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'authentication failures if the server is in a different forest without proper trust'. S1 states W32Time is 'not secure across forests' and packets are 'not authenticated'. It does not mention 'authentication failures' as a common error, but rather that authentication is not supported.",
+      "fix": "Clarify that cross-forest time synchronization does not use Kerberos authentication and is considered insecure. Do not frame it as an 'authentication failure' but as a lack of security mechanism, requiring manual configuration if needed."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'diagram' node list in the JSON metadata. The editorial guidance prohibits adding visible screenshots or permission captions, and the 'diagram' field is not a standard part of the content body. It adds clutter without technical value.",
+      "fix": "Remove the 'diagram' metadata field from the JSON output. Focus the content on the text-based troubleshooting steps and command outputs provided in the sources."
+    }
+  ]
+}

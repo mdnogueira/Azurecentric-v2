@@ -1,0 +1,153 @@
+{
+  "id": "AZC-230",
+  "title": "Use Azure File Sync with a deliberate endpoint design",
+  "slug": "use-azure-file-sync-with-a-deliberate-endpoint-design",
+  "historical_date": "2025-10-05",
+  "input_sha256": "b161584ffb8b144608d6aa540a883a3ce877309bf5acb6fe4436500167012b80",
+  "created_at": "2026-10-23T17:35:26.666135+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Design Azure File Sync sync groups and private endpoints deliberately to ensure data isolation and network security.",
+  "tags": [
+    "azure-file-sync",
+    "private-endpoints",
+    "dns-configuration",
+    "file-storage",
+    "networking"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-230-learn-1.png",
+      "alt": "Screenshot of the Local Server option in Server Manager.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/e7e8f2444917580691721eae1e995ab668cd01d7/articles/storage/file-sync/media/storage-sync-files-deployment-guide/prepare-server-disable-ieesc-part-1.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-09-15T15:29:38Z",
+      "sha256": "2a146be2eebc5a6a9ca287957b730dfae66976ca894157c4e6ab30b052204fea",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-230-learn-2.png",
+      "alt": "A screenshot of the private link center",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/76c3737a01fa5adfa866539ac526810c41b0d7c2/articles/storage/file-sync/media/storage-sync-files-networking-endpoints/create-storage-sync-private-endpoint-0.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-06-17T17:47:13Z",
+      "sha256": "e6af416cf34b049554817a865147ad1f5f0cc9623daf701e95f8a9eeee7d4593",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/file-sync/file-sync-planning.md",
+      "revision": "fead7d471a690efc09693e6883ce969efb33ecea",
+      "revision_date": "2025-09-30T15:43:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan for an Azure File Sync Deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fead7d471a690efc09693e6883ce969efb33ecea/articles/storage/file-sync/file-sync-planning.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/file-sync/file-sync-deployment-guide.md",
+      "revision": "e7e8f2444917580691721eae1e995ab668cd01d7",
+      "revision_date": "2025-09-15T15:29:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Azure File Sync",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-deployment-guide",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e7e8f2444917580691721eae1e995ab668cd01d7/articles/storage/file-sync/file-sync-deployment-guide.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/file-sync/file-sync-networking-endpoints.md",
+      "revision": "76c3737a01fa5adfa866539ac526810c41b0d7c2",
+      "revision_date": "2025-06-17T17:47:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Azure File Sync network endpoints",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-networking-endpoints",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/76c3737a01fa5adfa866539ac526810c41b0d7c2/articles/storage/file-sync/file-sync-networking-endpoints.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should the initial sync policy be chosen if the Azure file share is partially populated with data from a previous migration?",
+    "What are the specific performance implications of cloud tiering on the local disk I/O for high-churn workloads?",
+    "Does the Storage Sync Service private endpoint require a specific sub-resource group ID other than 'Afs' for different Azure environments?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-azure-file-sync-with-a-deliberate-endpoint-design.md",
+  "draft": true,
+  "word_count": 1234,
+  "claim_support_checks": [
+    {
+      "claim": "A sync group supports only one server endpoint per registered server.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "A cloud endpoint can only belong to one sync group.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Private DNS zones are required for mounting Azure file shares with AD user principals.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Storage Sync Service private endpoints require specific DNS suffixes.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "A single Windows Server instance can sync up to 30 Azure file shares.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the initial sync policy choice is 'irreversible'. The source documentation (S2) describes 'Initial Upload' and 'Initial Download' policies which determine the starting state. Subsequent syncs are bidirectional and continuous. There is no documentation stating the initial policy setting cannot be changed or that the state cannot be reset by removing and re-adding the endpoint.",
+      "fix": "Remove the word 'irreversible'. Clarify that the initial sync policy determines the conflict resolution and starting state for the first synchronization. If the policy needs to change, the server endpoint must be removed and re-added to the sync group."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that disabling the public endpoint on the storage account is a necessary step for Azure File Sync to function ('if you want to enforce private access... This is done by...'). While true for strict isolation, the source (S3) notes that Azure File Sync can work with public endpoints if allowed. More critically, the draft omits the requirement to allow 'AzureServices' in the bypass list, which is critical for the agent to communicate with the Storage Sync Service even if the storage account is private.",
+      "fix": "Clarify that disabling public access is optional but recommended for security. Explicitly state that if public access is disabled, the storage account network rule set must allow 'AzureServices' in the bypass list to permit Azure File Sync agents to access the storage account."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that changes made directly in the Azure file share are detected 'only once every 24 hours'. The source (S1) states the change detection job 'starts only once every 24 hours', but does not guarantee a 24-hour delay for detection. It is a scheduled job, not a fixed latency. This phrasing creates a misleading expectation of deterministic delay.",
+      "fix": "Rephrase to: 'A change detection job for a cloud endpoint runs periodically (typically every 24 hours). Changes made directly in the Azure file share are not synced to server endpoints until this job completes and detects the modifications.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The PowerShell code for creating the Storage Sync Service private endpoint DNS records uses a simplified loop that may not correctly map all FQDNs to IPs if the `PrivateLinkConnectionProperties` structure varies or if multiple NICs are involved. The source (S3) provides a more robust script that extracts IPs and FQDNs explicitly. The draft's code is illustrative but potentially fragile.",
+      "fix": "Mark the code as illustrative. Use the more robust extraction logic from the source (S3) that iterates through network interfaces and IP configurations to ensure all FQDNs are correctly mapped to their corresponding private IP addresses in the DNS zone."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'cloud tiering' in the context of the initial sync policy section without clearly distinguishing it from the initial sync policy itself. The source (S2) shows that cloud tiering is a separate setting enabled when creating the server endpoint, independent of the initial upload/download policy. The draft conflates these concepts slightly.",
+      "fix": "Separate the discussion of 'Initial Sync Policy' (Merge/ServerAuthoritative) from 'Cloud Tiering' settings. Clarify that cloud tiering is a feature enabled on the server endpoint to offload infrequently accessed files to the cloud, while the initial sync policy determines how the first batch of files is handled."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "AZC-216",
+  "title": "Investigate a checkpoint chain before deleting files",
+  "slug": "investigate-a-checkpoint-chain-before-deleting-files",
+  "historical_date": "2025-08-27",
+  "input_sha256": "1563a57184c5ab0cf5801d4c36e4caf11b423c31743bfbf52951103f310944d6",
+  "created_at": "2026-10-23T17:13:23.429337+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate Hyper-V checkpoint chains and disk space before deletion to prevent corruption and storage exhaustion.",
+  "tags": [
+    "hyper-v",
+    "virtualization",
+    "windows-server",
+    "troubleshooting",
+    "vhd"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Enable-or-disable-checkpoints-in-Hyper-V.md",
+      "revision": "6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb",
+      "revision_date": "2025-08-11T22:13:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable or disable checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/enable-or-disable-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb/WindowsServerDocs/virtualization/hyper-v/manage/Enable-or-disable-checkpoints-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "revision": "6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb",
+      "revision_date": "2025-08-11T22:13:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choose between standard or production checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/choose-between-standard-or-production-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb/WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-differencing.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Ensure sufficient physical disk space is available when virtual machines use differencing virtual hard disks",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-differencing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-differencing.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-08-14T14:58:55Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Enable-or-disable-checkpoints-in-Hyper-V.md",
+    "Public document removed/moved on 2025-08-14T14:58:55Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md"
+  ],
+  "open_questions": [
+    "Does the Best Practices Analyzer warning threshold for disk space vary based on the size of the differencing disks?",
+    "Are there specific PowerShell cmdlets to safely inspect the VHD chain without triggering a merge?",
+    "How does the merge process differ for production checkpoints versus standard checkpoints in terms of guest OS interaction?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-checkpoint-chain-before-deleting-files.md",
+  "draft": true,
+  "word_count": 1182,
+  "claim_support_checks": [
+    {
+      "claim": "Production checkpoints are the default for new virtual machines starting with Windows Server 2016.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Differencing virtual hard disks require available space on the hosting volume for writes.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Merging a differencing disk to a shared parent can corrupt the relationship with other differencing disks.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Only Production Checkpoints are supported on guests running Active Directory Domain Services.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims deleting a standard checkpoint involves a 'direct merge' and is 'more aggressive', while implying production checkpoints use backup technology to 'ensure data consistency before merging'. This conflates checkpoint creation mechanics with deletion. Both types require merging differencing disks upon deletion; production checkpoints only differ in how the snapshot is created (VSS vs saved state). The source does not support a different deletion merge process for production checkpoints.",
+      "fix": "Clarify that both checkpoint types require merging differencing disks upon deletion. Remove the claim that production checkpoints use backup technology during deletion. State that production checkpoints are supported for AD DS because they preserve guest consistency during creation, not deletion."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts that branching chains (multiple .avhdx files pointing to the same parent) are a 'red flag' and that deleting a checkpoint in such a chain 'can lead to corruption'. The provided sources do not mention branching chains or this specific corruption risk. This appears to be invented technical detail or external knowledge not supported by the supplied documentation.",
+      "fix": "Remove the specific claim about branching chains causing corruption. Focus on the documented risk: merging a differencing disk to a parent shared by *other* differencing disks (i.e., if the parent is itself a differencing disk with other children) will corrupt the relationship. Stick to the linear chain warning in S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends ensuring '20-30% free space' as a 'good rule of thumb'. This specific percentage is not found in the provided sources (S1, S2, S3). The sources only state that sufficient space is required for writes and warn of exhaustion. Inventing specific thresholds constitutes unsupported factual claims.",
+      "fix": "Remove the specific '20-30%' figure. Replace with guidance to 'ensure sufficient free space on the hosting volume to accommodate the merge operation', as stated in S3. Advise monitoring available space rather than citing an arbitrary percentage."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Get-VM | Get-VHD` to inspect the checkpoint chain. While functional, this cmdlet returns all VHDs, not just checkpoint differencing disks in a hierarchical view. The source does not recommend this specific PowerShell snippet for chain inspection. The draft presents this as a reliable method without source backing.",
+      "fix": "Remove the specific PowerShell code snippet as it is not supported by the sources for chain inspection. Instead, reference the Hyper-V Manager UI (Checkpoint pane) as the primary visual tool, or note that PowerShell can list VHDs but requires manual correlation of ParentPath to understand the chain structure."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that `Remove-VMSnapshot` is the PowerShell equivalent for deleting checkpoints. While true, the source text does not mention PowerShell cmdlets for checkpoint management. The draft introduces external knowledge (cmdlet names) without source citation, which violates the 'source absence is not proof' constraint for technical specifics.",
+      "fix": "Remove the PowerShell `Remove-VMSnapshot` example or explicitly mark it as illustrative external knowledge not derived from the provided sources. Since the sources only cover Hyper-V Manager UI steps, restrict the procedural guidance to the UI to remain strictly within the provided evidence."
+    }
+  ]
+}

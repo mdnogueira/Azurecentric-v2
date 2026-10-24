@@ -1,0 +1,136 @@
+{
+  "id": "AZC-159",
+  "title": "Review infrastructure security findings during a pull request",
+  "slug": "review-infrastructure-security-findings-during-a-pull-request",
+  "historical_date": "2025-03-20",
+  "input_sha256": "51b9d995b6a267daa1c85357ffccb8112cd2bd05104e4554d833c8fd871af3f5",
+  "created_at": "2026-10-23T15:56:26.843910+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable and triage Defender for Cloud pull request annotations for Infrastructure-as-Code in GitHub and Azure DevOps.",
+  "tags": [
+    "defender-for-cloud",
+    "devops-security",
+    "pull-request-annotations",
+    "iac",
+    "github-advanced-security",
+    "azure-devops"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-159-learn-1.png",
+      "alt": "Screenshot that shows where to navigate to, to select the GitHub workflow folder.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/tutorial-enable-pr-annotations/workflow-folder.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "28dd0cfd23318f13c370a67d4323cab1f5a7f1b07d3d5c58d7889b6cf70b5f45",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/enable-pull-request-annotations.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable pull request annotations in GitHub or in Azure DevOps",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/enable-pull-request-annotations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/enable-pull-request-annotations.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests.md",
+      "revision": "3c98b66164bfa6c5a6ba52159dd73e8d10f490e4",
+      "revision_date": "2025-03-05T11:35:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Triaging code scanning alerts in pull requests",
+      "url": "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests",
+      "snapshot_url": "https://github.com/github/docs/blob/3c98b66164bfa6c5a6ba52159dd73e8d10f490e4/content/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/code-scanning/managing-code-scanning-alerts/managing-code-scanning-alerts-for-your-repository.md",
+      "revision": "69e51a2f3388edb39f633cd4d3f0a7c556174ad1",
+      "revision_date": "2024-10-08T11:40:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Managing code scanning alerts for your repository",
+      "url": "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/managing-code-scanning-alerts-for-your-repository",
+      "snapshot_url": "https://github.com/github/docs/blob/69e51a2f3388edb39f633cd4d3f0a7c556174ad1/content/code-security/code-scanning/managing-code-scanning-alerts/managing-code-scanning-alerts-for-your-repository.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/enable-pull-request-annotations.md",
+    "Public document removed/moved on 2024-10-08T12:29:50Z; used previous public snapshot. Confirm continued applicability: content/code-security/code-scanning/managing-code-scanning-alerts/managing-code-scanning-alerts-for-your-repository.md"
+  ],
+  "open_questions": [
+    "Does the Microsoft Security DevOps GitHub action support scanning for dependencies or containers in pull requests, or only IaC?",
+    "What is the exact API version required for the Update Azure DevOps Resource API to ensure compatibility with the current Defender for Cloud version?",
+    "Are there any performance impacts on the pull request check time when scanning large IaC files?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-infrastructure-security-findings-during-a-pull-request.md",
+  "draft": true,
+  "word_count": 881,
+  "claim_support_checks": [
+    {
+      "claim": "Pull request annotations in GitHub require GitHub Advanced Security.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Only Infrastructure-as-Code misconfigurations are currently supported for annotations.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Annotations are added to the differences introduced during the pull request.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure DevOps requires Build Validation policy to be enabled before annotations can be used.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Show paths' is available for IaC findings. Source S1 restricts this feature to CodeQL code scanning alerts. Source S2 explicitly links 'Show paths' to data flow analysis in CodeQL, not Defender for Cloud IaC annotations. This is a factual error regarding UI capabilities.",
+      "fix": "Remove the reference to 'Show paths' in the IaC section. State that IaC annotations provide misconfiguration details and remediation guidance, but do not support data flow path visualization."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states dismissing an alert 'in one branch dismisses it across all branches'. Source S3 clarifies that CodeQL alerts dismissed via the Security tab are dismissed for the repository, but IaC annotations are transient PR comments. Defender for Cloud IaC findings are not persistent repository-level alerts that can be 'dismissed' in the same manner as CodeQL alerts.",
+      "fix": "Clarify that IaC annotations are transient comments on the PR. Dismissing or fixing them is local to the PR context. Do not imply cross-branch persistence for IaC findings."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies 'Code scanning alerts from other sources... are not annotated... unless they are part of the IaC scan results'. Source S1 notes that Defender for Cloud PR annotations currently support only IaC categories. The phrasing is vague and potentially misleading about the scope of supported categories.",
+      "fix": "Explicitly state that Defender for Cloud PR annotations are limited to Infrastructure-as-Code (IaC) misconfigurations. Code scanning for application logic is a separate GitHub Advanced Security feature, not part of this specific Defender for Cloud annotation workflow."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses a generic verification step involving a 'storage account with public access'. While valid, it does not specify the exact IaC template type (e.g., Bicep/ARM) or the specific finding ID, making the verification less concrete for the reader.",
+      "fix": "Specify that the verification should use a Bicep or ARM template snippet that triggers a known IaC finding, such as 'StorageAccountPublicAccessNotAllowed', to ensure the annotation appears reliably."
+    }
+  ]
+}

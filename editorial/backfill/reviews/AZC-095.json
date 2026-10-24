@@ -1,0 +1,120 @@
+{
+  "id": "AZC-095",
+  "title": "Choose fixed or dynamic memory for a VM",
+  "slug": "choose-fixed-or-dynamic-memory-for-a-vm",
+  "historical_date": "2024-09-21",
+  "input_sha256": "576adee2cf403ada4abb19b2b6f4a712b86438a5b6843204f29320ca1d19af7e",
+  "created_at": "2026-10-23T14:21:27.831194+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between fixed and dynamic memory for Hyper-V VMs based on workload stability, checkpoint requirements, and host resource constraints.",
+  "tags": [
+    "hyper-v",
+    "virtual-machines",
+    "dynamic-memory",
+    "windows-server-2022",
+    "best-practices"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choose between standard or production checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/choose-between-standard-or-production-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/A-virtual-machine-running-Windows-7-and-configured-with-Dynamic-Memory.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "A virtual machine running Windows 7 and configured with Dynamic Memory should use recommended values for memory settings",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/a-virtual-machine-running-windows-7-and-configured-with-dynamic-memory",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/A-virtual-machine-running-Windows-7-and-configured-with-Dynamic-Memory.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Ensure sufficient physical disk space is available when virtual machines use dynamically expanding virtual hard disks",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific performance impacts of Dynamic Memory on SQL Server workloads compared to web servers?",
+    "How does the memory buffer percentage interact with guest-side memory compression in Windows Server 2022?",
+    "Are there any known issues with Dynamic Memory and specific versions of Hyper-V Integration Services?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-fixed-or-dynamic-memory-for-a-vm.md",
+  "draft": true,
+  "word_count": 1023,
+  "claim_support_checks": [
+    {
+      "claim": "Dynamic Memory allows the hypervisor to adjust memory assigned to a VM in real-time based on guest usage.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Incorrect Dynamic Memory configuration can cause guest OS instability, especially for older operating systems.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Dynamically expanding virtual hard disks require available space on the hosting volume to prevent impact on all VMs.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "PowerShell can be used to enable Dynamic Memory and set memory limits for a VM.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Dynamic Memory was introduced in Windows Server 2016. It was actually introduced in Windows Server 2008 R2. This is a significant factual error regarding product history.",
+      "fix": "Correct the introduction date to Windows Server 2008 R2. Remove the claim that it was 'refined' in 2016 as the primary introduction point."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft implies Dynamic Memory is unsuitable for domain controllers, citing BPA warnings for Windows 7. It does not mention that Production Checkpoints are required for DCs, which is the more critical constraint for DCs in modern Hyper-V.",
+      "fix": "Clarify that while Dynamic Memory can be used for DCs, Production Checkpoints are mandatory. Reference S1 for checkpoint requirements rather than relying on outdated OS-specific BPA warnings."
+    },
+    {
+      "severity": "medium",
+      "problem": "The PowerShell example uses `-StartupBytes` which is deprecated/removed in newer PowerShell modules for Hyper-V. The draft presents it as a standard configuration step without noting version compatibility.",
+      "fix": "Update the PowerShell example to use current cmdlet parameters or note that `-StartupBytes` may not be supported in all versions. Verify against current Windows Server 2022 documentation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests configuring Dynamic Memory for web servers as a general best practice without mentioning the overhead of memory balancing or the need for guest-side memory compression awareness.",
+      "fix": "Add a note about the performance overhead of memory balancing and the importance of guest OS memory compression settings when using Dynamic Memory for variable workloads."
+    }
+  ]
+}

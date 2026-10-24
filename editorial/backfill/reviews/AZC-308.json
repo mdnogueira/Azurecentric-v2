@@ -1,0 +1,137 @@
+{
+  "id": "AZC-308",
+  "title": "Check hidden dependencies after an application failover",
+  "historical_date": "2026-05-11",
+  "created_at": "2026-10-23T23:42:46.916101+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify hidden dependencies after a failover to avoid partial recovery and data loss.",
+  "tags": [
+    "failover",
+    "disaster-recovery",
+    "azure-reliability",
+    "troubleshooting",
+    "business-continuity"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/incident-response.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-failover-failback.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover and failback",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-failover-failback",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/concept-failover-failback.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/disaster-recovery-overview.md",
+      "revision": "20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe",
+      "revision_date": "2024-12-10T20:41:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Disaster recovery overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/disaster-recovery-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe/articles/reliability/disaster-recovery-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the article sufficiently distinguish between automatic failover (e.g., zone-redundant services) and manual failover (e.g., region failover)?",
+    "Are there specific Azure services mentioned that have unique failover behaviors that should be highlighted?",
+    "Is the distinction between RPO and RTO clear enough for a practitioner to understand their impact on failover decisions?",
+    "Should the article include a specific example of a hidden dependency, such as a specific Azure service configuration?",
+    "Is the tone appropriate for a troubleshooting guide, or does it lean too much towards general advice?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/incident-response.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/concept-failover-failback.md",
+    "Public document removed/moved on 2024-12-10T21:13:56Z; used previous public snapshot. Confirm continued applicability: articles/reliability/disaster-recovery-overview.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-hidden-dependencies-after-an-application-failover.md",
+  "draft": true,
+  "word_count": 1133,
+  "claim_support_checks": [
+    {
+      "claim": "Failover involves both control plane and data plane components that must be verified separately.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "DNS updates during failover are subject to TTL delays, which can cause continued routing to the old primary.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Failback can be more complex than failover due to data synchronization issues and remediation steps.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Recovery Point Objective (RPO) and Recovery Time Objective (RTO) are critical business requirements for disaster recovery.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft-initiated failover is usually a last resort and should not be relied upon exclusively.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that Azure Blob Storage with GRS does not automatically switch to the secondary region for writes and requires manual connection string updates. S1 and S2 indicate that Microsoft manages failover for many services and that GRS provides geo-redundancy, but they do not support the claim that write routing is manual or that the secondary is read-only by default without promotion. This misleads users about automated PaaS behaviors.",
+      "fix": "Clarify that while some services auto-failover, others require manual intervention. Cite S1's note on customer-initiated failover for Azure Storage. Remove the definitive statement that GRS requires manual connection string updates for writes; instead, explain that promotion to read-write may be required and varies by service configuration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims conditional access policies might block access from the secondary region if configured by IP range. S1 and S2 do not mention IP-based conditional access restrictions during failover. This is a specific security configuration not supported by the provided sources as a common hidden dependency in this context.",
+      "fix": "Remove the specific claim about IP-based conditional access blocking. Generalize to 'identity and access configurations' without inventing specific policy types not found in the sources. Focus on managed identity permissions and Key Vault access policies, which are standard failover considerations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that Azure SQL Database failover is 'usually automatic' and suggests checking replication lag via PowerShell to decide whether to fail over. S2 distinguishes between Microsoft-managed failover (e.g., zone-redundant) and customer-initiated failover. S1 advises against rushed decisions. The draft conflates automatic zone failover with manual region failover, implying a choice that may not exist for fully managed SQL geo-replication without specific setup.",
+      "fix": "Distinguish between automatic zone failover and manual region failover. Cite S1's guidance on customer-initiated failover. Clarify that for region failover, the user initiates the process, and RPO/RTO considerations apply to the data state at the time of initiation, not just real-time lag checks during an active outage."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic conclusion starting with 'Failover is not a single event...' and 'The next time you face an outage...'. The editorial guidance explicitly forbids generic concluding paragraphs and stock summaries. The article should end with a concrete verification or next action.",
+      "fix": "Remove the 'Conclusion' section entirely. End the article with a concrete next action, such as 'Review your disaster recovery plan against the Azure Well-Architected Framework reliability pillar to identify untested dependencies.' Use S1's post-incident review guidance as the final actionable step."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Front Door' and 'Traffic Manager' without specifying their failover behaviors. S2 notes that these services support monitoring health and rerouting traffic, but the draft implies they are always automated. S1 warns that rushed decisions can make things worse. The draft lacks nuance on when these are automated vs. manual.",
+      "fix": "Clarify that traffic routing services require health probe configuration. Cite S2's note that Microsoft may handle some failover scopes while users handle others. Avoid implying full automation; specify that health probes must be correctly configured to avoid silent failures."
+    }
+  ]
+}

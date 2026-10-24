@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 580" role="img" aria-labelledby="t d">
+<title id="t">vCPU Quota Check Flow</title>
+<desc id="d">Checkpoints: Start Deployment; Check Total Regional vCPUs; Check VM Size Family Quota; Quota Exceeded?; Request Increase or Delete VMs; Deploy Success</desc>
+<rect width="1080" height="580" rx="20" fill="#f2f6fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#142c4c}.heading{font-size:25px;font-weight:700}.label{font-size:23px}</style>
+<text x="38" y="40" class="heading">vCPU Quota Check Flow</text>
+<rect x="36" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="134" r="20" fill="#176ea5"/><text x="65" y="142" style="font-size:23px;fill:white">1</text>
+<text x="106" y="139" class="label">Start Deployment</text>
+<rect x="556" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="134" r="20" fill="#176ea5"/><text x="585" y="142" style="font-size:23px;fill:white">2</text>
+<text x="626" y="139" class="label">Check Total Regional vCPUs</text>
+<rect x="36" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="289" r="20" fill="#176ea5"/><text x="65" y="297" style="font-size:23px;fill:white">3</text>
+<text x="106" y="294" class="label">Check VM Size Family Quota</text>
+<rect x="556" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="289" r="20" fill="#176ea5"/><text x="585" y="297" style="font-size:23px;fill:white">4</text>
+<text x="626" y="294" class="label">Quota Exceeded?</text>
+<rect x="36" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="444" r="20" fill="#176ea5"/><text x="65" y="452" style="font-size:23px;fill:white">5</text>
+<text x="106" y="449" class="label">Request Increase or Delete VMs</text>
+<rect x="556" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="444" r="20" fill="#176ea5"/><text x="585" y="452" style="font-size:23px;fill:white">6</text>
+<text x="626" y="449" class="label">Deploy Success</text>
+</svg>

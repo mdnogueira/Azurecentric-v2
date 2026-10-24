@@ -1,0 +1,141 @@
+{
+  "id": "AZC-261",
+  "title": "Diagnose a VM boot problem using serial console evidence",
+  "slug": "diagnose-a-vm-boot-problem-using-serial-console-evidence",
+  "historical_date": "2025-12-30",
+  "input_sha256": "07909db42058fd56dff0d4f6a5c5f02a1d881a0000829aa209cb708094f613b6",
+  "created_at": "2026-10-23T18:17:15.873236+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Boot Diagnostics serial logs to diagnose VM boot failures when the guest OS is unreachable.",
+  "tags": [
+    "azure-virtual-machines",
+    "boot-diagnostics",
+    "serial-console",
+    "troubleshooting",
+    "azure-monitor"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-261-learn-1.png",
+      "alt": "Screenshot of the VM insights 'Logical Disk Performance' view.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/media/monitor-vm/vminsights-01.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-20T00:18:50Z",
+      "sha256": "19acebf0690a526c5cc0d93d1d1d95f3dc75a9b3af0ec134f61cc71a7c0b809a",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/monitor-vm.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Azure Virtual Machines",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/monitor-vm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/monitor-vm.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/vm-boot-optimization.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "VM Boot Optimization for Azure Compute Gallery Images with Azure VM Image Builder",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-boot-optimization",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/vm-boot-optimization.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/vm-support-help.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Virtual Machine support and help options",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-support-help",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/vm-support-help.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/monitor-vm.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-activity-log.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-analyze-data.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/vm-boot-optimization.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/vm-support-help.md"
+  ],
+  "open_questions": [
+    "Does the serial console output include BIOS/UEFI messages or only guest OS boot messages?",
+    "Are there any specific VM sizes or generations where Boot Diagnostics is not supported?",
+    "How can an administrator programmatically retrieve the serial log content via Azure CLI or PowerShell?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/diagnose-a-vm-boot-problem-using-serial-console-evidence.md",
+  "draft": true,
+  "word_count": 972,
+  "claim_support_checks": [
+    {
+      "claim": "Boot Diagnostics is enabled by default when creating a VM in the Azure portal.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Boot Diagnostics collects serial log information and screenshots.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Guest-level monitoring tools like the Azure Monitor Agent require the OS to be running.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Invents a 'Serial Console' tab within Boot Diagnostics. S1 states Boot Diagnostics collects serial logs and screenshots, but does not provide an interactive serial console interface. The Azure Portal 'Serial Console' is a separate feature. This confuses two distinct diagnostic tools.",
+      "fix": "Remove references to a 'Serial Console' tab in Boot Diagnostics. Clarify that Boot Diagnostics provides static serial log files/screenshots, while the interactive Serial Console is a separate portal feature for connected VMs."
+    },
+    {
+      "severity": "medium",
+      "problem": "Claims network configuration failures can halt the boot process. S1 and S2 do not support this. Network configuration typically occurs after the OS loads. Attributing boot stalls to network issues is technically inaccurate for early boot failures.",
+      "fix": "Remove 'Network configuration' from the list of early boot failure causes. Focus on bootloader, kernel, and disk subsystem errors which are the primary causes of pre-OS boot stalls."
+    },
+    {
+      "severity": "low",
+      "problem": "Vague instruction to 'wait a few minutes for the VM to restart'. S1 does not specify this timing or requirement. Boot Diagnostics captures the current boot state; restarting is not always necessary or appropriate for troubleshooting a stuck state.",
+      "fix": "Replace with 'Refresh the Boot Diagnostics blade to retrieve the latest serial log output from the current boot attempt.' Do not imply a restart is required to view logs."
+    },
+    {
+      "severity": "medium",
+      "problem": "Implies Boot Diagnostics data retention is managed by Azure for managed accounts without cost context. S1 mentions managed storage but omits that it still incurs storage costs and has no automatic retention policy beyond storage limits.",
+      "fix": "Clarify that managed storage accounts still incur storage costs and do not have automatic data expiration. Users are responsible for managing storage consumption and costs."
+    },
+    {
+      "severity": "low",
+      "problem": "References 'VM Boot Optimization' (S2) in the 'Further documentation' section. S2 is about optimizing image creation time via Image Builder, not troubleshooting runtime boot failures. This is irrelevant to the diagnostic workflow.",
+      "fix": "Remove the link to 'VM Boot Optimization'. Link only to 'Azure boot diagnostics' and 'Troubleshoot Azure VMs' as relevant resources."
+    }
+  ]
+}

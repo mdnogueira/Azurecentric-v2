@@ -1,0 +1,146 @@
+{
+  "id": "AZC-343",
+  "title": "Plan an integration that can recover after an outage",
+  "slug": "plan-an-integration-that-can-recover-after-an-outage",
+  "historical_date": "2026-08-17",
+  "input_sha256": "0f845c0022d94326be669a110fec898d29543d09bfcb5c643646822af4e6e6c1",
+  "created_at": "2026-10-23T21:51:26.123173+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan integration recovery using Service Bus replication, API Management backup/restore, and Logic Apps error handling.",
+  "tags": [
+    "azure-service-bus",
+    "api-management",
+    "logic-apps",
+    "disaster-recovery",
+    "resilience"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-343-learn-1.png",
+      "alt": "Screenshot shows list for Select actions with predecessor operations.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/e0741fbc2956c922041e953230ddb22593656d79/articles/logic-apps/media/error-exception-handling/predecessor-operations.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-07-10T19:02:44Z",
+      "sha256": "9667baa8bbce8a658847ef76bb6875436a63aaa5af0e5efb772af763eab3693f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-outages-disasters.md",
+      "revision": "5a354d309f66c2bde1c2a432ca96d0f160ff9b27",
+      "revision_date": "2026-02-01T19:43:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Multiple Azure Service Bus Namespaces to Insulate Applications against Outages and Disasters",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-outages-disasters",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5a354d309f66c2bde1c2a432ca96d0f160ff9b27/articles/service-bus-messaging/service-bus-outages-disasters.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-howto-disaster-recovery-backup-restore.md",
+      "revision": "4a74bf2f66742c18e9cbe465af133be6f87c895b",
+      "revision_date": "2026-06-25T21:07:05Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Backup and restore your Azure API Management instance for disaster recovery",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-disaster-recovery-backup-restore",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4a74bf2f66742c18e9cbe465af133be6f87c895b/articles/api-management/api-management-howto-disaster-recovery-backup-restore.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/error-exception-handling.md",
+      "revision": "e0741fbc2956c922041e953230ddb22593656d79",
+      "revision_date": "2026-07-10T19:02:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Handle Workflow Errors and Exceptions",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/error-exception-handling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e0741fbc2956c922041e953230ddb22593656d79/articles/logic-apps/error-exception-handling.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "open_questions": [
+    "What is the specific RPO/RTO for the integration?",
+    "Are there any custom policies in API Management that need special handling during restore?",
+    "Is the Logic Apps workflow using Consumption or Standard tier?",
+    "Has the Service Bus replication logic been tested for duplicate suppression?",
+    "Is the storage account for API Management backups in a different region?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-an-integration-that-can-recover-after-an-outage.md",
+  "draft": true,
+  "word_count": 904,
+  "claim_support_checks": [
+    {
+      "claim": "Service Bus active replication doubles the number of operations and cost.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "API Management backups expire after 30 days.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "API Management restore does not change custom hostname configuration.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Logic Apps default retry policy is exponential with up to 4 retries.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "API Management backup/restore is not supported with workspace gateways.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims API Management backup/restore is supported in the Developer tier. Source S2 includes a dependency file stating 'APPLIES TO: Developer | Basic | Standard | Premium', but the main text only lists 'supported service tier' without explicit Developer inclusion in the body, and the dependency file is a separate include. More critically, the draft implies universal support without caveats about workspace gateways which are explicitly excluded.",
+      "fix": "Clarify that backup/restore applies to Developer, Basic, Standard, and Premium tiers, but explicitly exclude instances with workspace gateways. Ensure the distinction between tier support and feature exclusions is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Logic Apps default retry policy scales by 7.5 seconds. Source S3 says 'These intervals scale by 7.5 seconds but are capped between 5 and 45 seconds.' It does not explicitly state the base interval or that 7.5 is the multiplier. The example JSON shows 'interval': 'PT7S'. The text is slightly misleading about the mechanism.",
+      "fix": "Correct the description of the default retry policy. State that it uses an exponential interval policy with up to 4 retries, where intervals are capped between 5 and 45 seconds, referencing the specific behavior described in S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using the same custom hostname and TLS certificate for both active and standby API Management services to allow DNS CNAME redirection. While S2 recommends this, it does not guarantee it is the only or best way, nor does it address certificate renewal complexities across regions.",
+      "fix": "Retain the recommendation to use the same custom hostname and TLS certificate for simplicity, but note that this is a recommendation, not a strict requirement, and that certificate management across regions must be handled separately."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from S3 in the Logic Apps section. The editorial guidance allows including a screenshot if it directly illustrates a how-to step. The screenshot shows the 'Select actions' list, which is relevant to the 'run after' configuration step.",
+      "fix": "Keep the screenshot as it directly illustrates the 'Select actions' list for configuring 'run after' behavior, which is a key step in the error handling explanation. Ensure no permission caption is added."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Verify your recovery plan' with specific tests. This is good practice but not explicitly sourced. It is general advice.",
+      "fix": "Remove the specific testing steps as they are not sourced and could be seen as invented experience. Instead, refer readers to the 'Next steps' in the source articles for further guidance on validation."
+    }
+  ]
+}

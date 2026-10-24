@@ -1,0 +1,128 @@
+{
+  "id": "AZC-264",
+  "title": "Use deployment outputs without exposing secrets",
+  "slug": "use-deployment-outputs-without-exposing-secrets",
+  "historical_date": "2026-01-07",
+  "input_sha256": "97a97bd243bdccede7c2646f4be929691fba3e4130b6e8f46669469a10808bab",
+  "created_at": "2026-10-23T18:21:38.835251+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Prevent secrets from leaking into deployment history by using @secure() outputs or dynamic lookups.",
+  "tags": [
+    "bicep",
+    "azure-key-vault",
+    "deployment",
+    "security",
+    "outputs"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/outputs.md",
+      "revision": "f76f19bbdce93e1374633be0cb514bf9d656ed8d",
+      "revision_date": "2025-12-22T21:19:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Outputs in Bicep",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f76f19bbdce93e1374633be0cb514bf9d656ed8d/articles/azure-resource-manager/bicep/outputs.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/scenarios-secrets.md",
+      "revision": "f76f19bbdce93e1374633be0cb514bf9d656ed8d",
+      "revision_date": "2025-12-22T21:19:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Bicep to manage secrets",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-secrets",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f76f19bbdce93e1374633be0cb514bf9d656ed8d/articles/azure-resource-manager/bicep/scenarios-secrets.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9a1c7f047f984c0fb378e0cea44917b47b6234d5",
+      "revision_date": "2025-12-10T18:36:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9a1c7f047f984c0fb378e0cea44917b47b6234d5/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the @secure() decorator also prevent the value from being displayed in the deployment status output immediately after deployment, or only in the history?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-deployment-outputs-without-exposing-secrets.md",
+  "draft": true,
+  "word_count": 923,
+  "claim_support_checks": [
+    {
+      "claim": "The @secure() decorator prevents sensitive output values from being logged or displayed in deployment history.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Bicep version 0.35.1 and later supports the @secure() decorator for outputs.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Outputs should not be used for secrets from existing resources because they are logged.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The listKeys() method can be used to retrieve secrets from existing resources without outputting them.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The getSecret function allows modules to retrieve secrets from Key Vaults in other resource groups.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses `newString(16)` in the secure output example. This function does not exist in Bicep. The source (S1) shows `@secure()` with empty or variable assignments, and S2/S3 discuss secure parameters/outputs but do not provide a built-in function for generating random strings. This is an invented function.",
+      "fix": "Replace `newString(16)` with a valid placeholder or variable, e.g., `myPassword` (assuming it's a secure parameter), or clarify that Bicep does not have a built-in random string generator and suggest using a secure parameter or external tool for generation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims `@secure()` prevents the value from being used in the deployment ('It also does not prevent the value from being used...'). While true, the phrasing 'It also does not prevent...' is confusingly double-negative. More importantly, it implies the value is hidden from the *deployment engine*, which is false; the engine needs it. The source (S1) says it prevents logging/displaying, not usage.",
+      "fix": "Clarify that `@secure()` hides the value from *logs and UI*, but the value is still processed by the deployment engine and applied to resources. Remove the confusing sentence about 'not preventing usage' and replace with 'The value is still passed to resources but hidden from logs.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'If you need to pass this secret to another resource in the same deployment, you can reference the output directly.' This is misleading. While you *can* reference an output, the *best practice* (S3) is to use `existing` or direct resource references to avoid outputs entirely for secrets. The draft presents referencing the output as a valid security pattern, which contradicts the 'Avoid outputs for secrets' guidance in S2 and S3.",
+      "fix": "Remove the recommendation to reference secure outputs for passing secrets. Instead, recommend using the `existing` keyword or direct resource references (as shown in S2) to pass secrets between resources within the same deployment, aligning with best practices."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section 'Verify the protection' with steps to check deployment history. This is generic and not a specific technical step. The source (S1) mentions outputs are logged, but doesn't provide a 'verification' procedure beyond checking the history. The draft's instruction 'check the deployment history' is vague.",
+      "fix": "Remove the 'Verify the protection' section. It adds no technical value and is not a 'how-to' step supported by the sources. The sources only describe the behavior of `@secure()`, not a verification workflow."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `newString(16)` which is invalid. Additionally, the example for `listKeys()` uses `storageAccount.apiVersion` which is not defined in the `existing` resource block in the draft. The source (S2) example uses `storageAccount.apiVersion` but defines `storageAccount` with `apiVersion` implicitly via the resource type string. The draft's example is incomplete.",
+      "fix": "Ensure the `existing` resource block in the `listKeys` example includes the `apiVersion` property or relies on the implicit version from the resource type string, matching the source (S2) structure exactly. The draft's code block is syntactically incomplete for a real deployment."
+    }
+  ]
+}

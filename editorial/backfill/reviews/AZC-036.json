@@ -1,0 +1,139 @@
+{
+  "id": "AZC-036",
+  "title": "Validate Windows Server nodes before creating a cluster",
+  "slug": "validate-windows-server-nodes-before-creating-a-cluster",
+  "historical_date": "2024-04-10",
+  "input_sha256": "96e4afa603437817728943066ca644d597b4e08888fe2a09c20340c76e2f22ef",
+  "created_at": "2026-10-23T13:03:44.762212+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Validate Windows Server nodes using hardware checks, network isolation, and the Validate a Configuration wizard to prevent quorum and connectivity failures.",
+  "tags": [
+    "failover-clustering",
+    "windows-server",
+    "validation",
+    "quorum",
+    "networking",
+    "storage"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "revision": "417d5af3ca3a8db01e9f82caf04c7ebd11208ec9",
+      "revision_date": "2021-08-24T19:04:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service reports",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-reports",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/417d5af3ca3a8db01e9f82caf04c7ebd11208ec9/WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/clustering-requirements.md",
+      "revision": "a0f000c524782a1cd7c38f5a39b23546faab2967",
+      "revision_date": "2023-10-10T16:46:49Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover clustering hardware requirements and storage options",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a0f000c524782a1cd7c38f5a39b23546faab2967/WindowsServerDocs/failover-clustering/clustering-requirements.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [
+    "Does the validation wizard test for specific Hyper-V hardware requirements like Intel VT or AMD-V?",
+    "What is the exact procedure for resolving Event 1561 (SERVICE_NONSTORAGE_WITNESS_BETTER_TAG) if no nodes have the latest configuration data?",
+    "Are there specific performance benchmarks for iSCSI latency that should be checked during validation?",
+    "How does the validation process differ for Azure Stack HCI compared to standard Windows Server failover clustering?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/validate-windows-server-nodes-before-creating-a-cluster.md",
+  "draft": true,
+  "word_count": 1216,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft recommends that all parts of the failover cluster pass the validation tests in the Validate a Configuration wizard to ensure stability.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "For SAS or Fibre Channel storage, the storage stack including MPIO, DSM, HBA, drivers, and firmware must be identical across all nodes.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Event 1572 indicates a node failed to join the cluster due to inability to send and receive failure detection network messages.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1546 and 1547 indicate that nodes are running incompatible versions of the cluster service software.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1177 indicates that the Cluster service is shutting down because quorum was lost.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "For SET, NIC adapters, drivers, and firmware must exactly match for it to function properly in all cluster nodes.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'All parts of the failover cluster must pass the validation tests... before you proceed to create the cluster.' Source S2 states this requirement applies to 'All parts of the failover cluster' but does not mandate passing validation *before* creation; it is a post-creation verification step or a recommendation for existing clusters. Creating a cluster with failing nodes is technically possible, though unstable.",
+      "fix": "Rephrase to: 'Microsoft recommends that all parts of the failover cluster pass the validation tests... to ensure stability.' Remove the absolute prohibition 'must... before you proceed' as it contradicts the technical capability to create clusters with known issues for troubleshooting purposes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Failover clusters only have disk witnesses if the disk witness is supposed to be part of the specified quorum configuration.' This is misleading. Disk witnesses are a quorum *mode* option. The cluster database is always stored on the quorum disk (whether disk or file share witness). The phrasing implies the database location changes, which is incorrect.",
+      "fix": "Clarify: 'A disk witness serves as the quorum resource in a Node and Disk Majority configuration. The cluster configuration database is stored on the quorum resource, which can be a disk witness or a file share witness.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises checking for Event 1553 (no connectivity) *before* cluster creation. Event 1553 is a runtime event that occurs when a node *attempts* to join or is already in a cluster. It cannot exist in the system log of a standalone node prior to cluster formation, making this step logically impossible for pre-creation validation.",
+      "fix": "Remove Event 1553 from the pre-creation checklist. Replace with a check for basic network reachability (e.g., ping, port 445/3268) or reliance on the Validate a Configuration wizard's network tests, which are the appropriate pre-creation tools."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' section with generic advice ('Use the Create Cluster wizard... verify that all nodes are online'). This violates the editorial guidance to end when the technical question is answered and remove generic concluding paragraphs.",
+      "fix": "Delete the 'Next steps' section entirely. End the article after the 'Confirm quorum and witness configuration' section, as the validation process is the complete answer to the prompt's scope."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft cites S1 (Health Service reports) in the context of 'Validate a Configuration' but S1 describes PowerShell/C# APIs for streaming metrics, not the validation wizard. The validation wizard is a GUI/PowerShell cmdlet (`Test-Cluster`), not the Health Service API.",
+      "fix": "Remove references to S1 in the validation workflow. The validation wizard is documented in separate 'Validate a Configuration' articles, not the Health Service reports page. Ensure citations match the specific tool being described."
+    }
+  ]
+}

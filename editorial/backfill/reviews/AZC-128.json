@@ -1,0 +1,132 @@
+{
+  "id": "AZC-128",
+  "title": "Use message sessions when processing order matters",
+  "slug": "use-message-sessions-when-processing-order-matters",
+  "historical_date": "2024-12-23",
+  "input_sha256": "d89911343d5a6e58066d881174678d232fe2987cded86f4c4a217122678a132c",
+  "created_at": "2026-10-23T15:08:55.829408+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Service Bus sessions to guarantee ordered processing of related messages, avoiding the pitfalls of sequence numbers alone.",
+  "tags": [
+    "azure-service-bus",
+    "message-sessions",
+    "ordering",
+    "fifo",
+    "messaging"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/message-sessions.md",
+      "revision": "737be4eec1b0b1104eb1a2a3afb25efcd6f984b5",
+      "revision_date": "2024-02-23T18:50:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Service Bus message sessions | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-sessions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/737be4eec1b0b1104eb1a2a3afb25efcd6f984b5/articles/service-bus-messaging/message-sessions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/enable-message-sessions.md",
+      "revision": "63fdd8b1be8f10c43061bb0e261ca7bb17ff5b8d",
+      "revision_date": "2024-06-13T20:58:17Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable Azure Service Bus message sessions | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/enable-message-sessions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/63fdd8b1be8f10c43061bb0e261ca7bb17ff5b8d/articles/service-bus-messaging/enable-message-sessions.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/message-sequencing.md",
+      "revision": "dd5330b37662e59eacbd516b03db21900d3189ea",
+      "revision_date": "2024-07-25T02:30:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Service Bus message sequencing and timestamps",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-sequencing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/dd5330b37662e59eacbd516b03db21900d3189ea/articles/service-bus-messaging/message-sequencing.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: includes/service-bus-track-0-and-1-sdk-support-retirement.md"
+  ],
+  "open_questions": [
+    "What is the default lock duration for a session if not explicitly configured?",
+    "How does the session processor handle message abandonment in terms of delivery count?",
+    "Are there any performance implications of having a very large number of concurrent sessions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-message-sessions-when-processing-order-matters.md",
+  "draft": true,
+  "word_count": 1029,
+  "claim_support_checks": [
+    {
+      "claim": "Sequence numbers guarantee arrival order but not processing order.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Sessions require standard or premium tier.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Sessions cannot be enabled after creation.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "All messages in a session-enabled queue must have a SessionId.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Session lock expires if timeout is reached.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that when sessions are enabled, clients 'cannot simply peek or receive without acknowledging the session lock'. This contradicts S1, which explicitly notes: 'Clients may still peek a queue or subscription that has sessions enabled.' Peek operations do not require session acceptance or lock acquisition.",
+      "fix": "Remove the claim that peeking is prohibited. Clarify that while sending and receiving messages require session handling, peeking remains available for inspection without affecting session locks or requiring session acceptance."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that abandoning a message 'remains in the session and will be served again'. S1's delivery count table indicates that abandoning a message does *not* increment the delivery count, but implies it is retried. However, the phrasing 'served again' is vague. More critically, the draft omits the context that abandoning a message *within* a session does not increment the delivery count, which is a specific behavioral nuance different from non-session messages.",
+      "fix": "Clarify the delivery count behavior: abandoning a message within a session does not increment the delivery count, but the message remains available for receive within that session. Ensure the distinction between session lock expiration (increments count) and message abandonment (does not) is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that if any message in a session expires, 'all messages in that session are either dropped or dead-lettered'. S1 states this happens 'based on the dead-lettering enabled on messaging expiration setting'. The draft implies a universal immediate drop/DLQ action without mentioning the entity-level configuration dependency, potentially misleading users who have expiration disabled or configured differently.",
+      "fix": "Add context that the action (drop vs. dead-letter) depends on the entity's 'messaging expiration' setting. Clarify that this behavior applies only if message expiration is enabled on the queue or subscription."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses repetitive citation formatting, appending '[Azure Service Bus message sessions | Microsoft Docs]...' after nearly every paragraph. This disrupts reading flow and violates the guidance to use a few well-placed source links rather than repeating citations.",
+      "fix": "Consolidate citations. Place source links at the end of relevant sections or paragraphs where multiple facts are drawn from the same source, rather than after every sentence or claim."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Service Bus does not define a specific time or API for when a session expires'. While technically true per S1, it omits the practical implication that sessions persist indefinitely until cleared, which can impact storage costs. The draft mentions storage costs later but doesn't link the indefinite persistence directly to the lack of expiration API as a risk factor.",
+      "fix": "Strengthen the link between indefinite session persistence and storage costs. Explicitly state that because sessions never auto-expire, applications must actively clean up session state to avoid exceeding storage quotas and incurring unnecessary costs."
+    }
+  ]
+}

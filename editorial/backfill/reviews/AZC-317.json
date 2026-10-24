@@ -1,0 +1,94 @@
+{
+  "id": "AZC-317",
+  "title": "Check permissions when a security plugin cannot retrieve data",
+  "slug": "check-permissions-when-a-security-plugin-cannot-retrieve-data",
+  "historical_date": "2026-06-06",
+  "input_sha256": "cd7b82d339201c3d34999184be5eedc69f3893ae15a0ebb18085eec30f8554bc",
+  "created_at": "2026-10-23T19:36:25.904345+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Security Copilot plugin data retrieval failures by verifying data-plane access for the plugin's execution identity.",
+  "tags": [
+    "security-copilot",
+    "plugins",
+    "permissions",
+    "troubleshooting",
+    "azure-identity"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "546fc8520e9443e311cc9df30ab5e0ac79301a9f",
+      "revision_date": "2024-11-06T08:18:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What is the specific identity used by Security Copilot plugins by default, and how is it configured?",
+    "Are there any specific Azure roles recommended for common plugin data sources (e.g., Log Analytics, Resource Graph)?",
+    "How long does it typically take for permission updates to propagate in Azure?",
+    "Are there any known issues or limitations with Security Copilot plugins regarding permission scopes?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-permissions-when-a-security-plugin-cannot-retrieve-data.md",
+  "draft": true,
+  "word_count": 702,
+  "claim_support_checks": [
+    {
+      "claim": "Security Copilot plugins require appropriate permissions to access underlying data sources.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The plugin's ability to function depends on the permissions of the identity it uses to query the data.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that Security Copilot plugins use a specific managed identity or service principal to query data sources. The provided source (S1) is a GitHub README for community contributions and contains no technical details about plugin architecture, execution identities, or RBAC requirements. This is an unsupported factual claim.",
+      "fix": "Remove the specific claims about managed identities and execution contexts. Replace with a general statement that plugin data retrieval failures often stem from insufficient access to the target data source, referencing the official Security Copilot documentation for architectural details rather than inferring from the community repo."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft provides specific Azure CLI commands for checking and assigning roles (e.g., `az role assignment list`) and names specific roles like `Log Reader` and `Reader`. The source S1 does not contain any of this technical guidance, role names, or CLI syntax. These are invented details not supported by the provided text.",
+      "fix": "Remove the specific CLI commands and role names. If the official documentation is not provided, do not invent the specific RBAC roles or commands. State that administrators should verify access using standard Azure RBAC tools, without prescribing the exact commands or role definitions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that 'Permission updates can take a few minutes to take effect.' This is a specific technical assertion about Azure RBAC propagation latency. The source S1 provides no evidence for this timing. This is an unsupported technical detail.",
+      "fix": "Remove the specific time estimate for permission propagation. Replace with a general recommendation to allow time for role assignment propagation or to verify the assignment was successful before retesting."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By carefully verifying... This approach ensures that the plugin has the necessary access...'. This is a generic concluding paragraph that violates the editorial guidance to remove generic conclusions beginning with 'By following' or 'This approach ensures'.",
+      "fix": "Delete the final paragraph entirely. End the article after the 'Common pitfalls' section or with a direct next step, such as checking network connectivity if permissions are confirmed correct."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'The plugin configuration looks correct... the query syntax is valid.' This assumes a specific troubleshooting scenario not supported by the source. The source S1 is about contributing code, not troubleshooting plugin data retrieval. The entire troubleshooting narrative is unsupported by the provided evidence.",
+      "fix": "Reframe the article as a general reminder that plugin data access depends on data-plane permissions, rather than a step-by-step troubleshooting guide for a specific failure mode. Explicitly state that the provided source does not cover troubleshooting steps, and rely on general Azure security principles instead of invented scenarios."
+    }
+  ]
+}

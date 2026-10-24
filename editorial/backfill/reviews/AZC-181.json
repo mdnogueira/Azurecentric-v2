@@ -1,0 +1,95 @@
+{
+  "id": "AZC-181",
+  "title": "Review the plugins available to a Copilot for Security session",
+  "historical_date": "2025-05-20",
+  "created_at": "2026-10-23T23:24:43.818666+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use the Security Copilot sample prompt library to identify supported security domains, distinguishing content scope from active tenant configuration.",
+  "tags": [
+    "security-copilot",
+    "plugins",
+    "data-sources",
+    "azure-security",
+    "how-to"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "Sample Prompts/Readme.md",
+      "revision": "b9fb72cb5aa2f7fe3fff48ec6735f04f674ede36",
+      "revision_date": "2024-11-06T08:32:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Readme",
+      "url": "https://github.com/Azure/Security-Copilot/blob/b9fb72cb5aa2f7fe3fff48ec6735f04f674ede36/Sample Prompts/Readme.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/b9fb72cb5aa2f7fe3fff48ec6735f04f674ede36/Sample Prompts/Readme.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the Security Copilot interface explicitly list all available plugins in a settings menu, or is the sample library the only definitive source?",
+    "Are there specific UI indicators (icons/badges) that definitively show a plugin is active, or are these optional?",
+    "How does a user configure data connections for plugins in the current version of Security Copilot?",
+    "What are the exact permission requirements for each plugin to function correctly?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://github.com/Azure/Security-Copilot/blob/b9fb72cb5aa2f7fe3fff48ec6735f04f674ede36/Sample%20Prompts/Readme.md"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-the-plugins-available-to-a-copilot-for-security-session.md",
+  "draft": true,
+  "word_count": 681,
+  "claim_support_checks": [
+    {
+      "claim": "The sample prompt library categorises examples by underlying data source or plugin, indicating supported integrations.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The sample prompts are subject to change and serve as examples of how prompts can be used.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft treats the GitHub sample prompt library as a definitive inventory of 'plugins' or 'data sources'. The source explicitly labels these as 'Sample Prompts' for 'security tasks', not technical plugins or active tenant configurations. This misleads users into believing the library maps directly to software integrations.",
+      "fix": "Clarify that the library demonstrates prompt patterns for specific security domains (e.g., Entra, Defender) rather than listing technical plugins or active data connectors. Emphasize that categories represent content scope, not installed components."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the library is a 'definitive list of the integration domains the product supports'. The source only lists categories for sample prompts. It does not claim to be exhaustive or definitive for the product's entire capability set, creating an unsupported categorical claim about product scope.",
+      "fix": "Rephrase to state the library provides examples for specific domains, not a definitive or exhaustive list of all supported integrations. Remove 'definitive' to avoid overstating the source's authority on product capabilities."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises verifying functionality by 'running a query related to that category'. This is vague and potentially confusing. It does not specify how to construct such a query or what constitutes a 'lack of response'. This lacks concrete operational guidance.",
+      "fix": "Replace with specific advice to consult official documentation for prerequisites and permissions. Remove the vague instruction to 'run a query' as it is not supported by the source and may lead to trial-and-error without clear success criteria."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' section with generic advice ('identify the domain', 'check documentation', 'ensure tenant has services'). This is repetitive of the previous sections and adds no new technical value. It violates the guidance to remove generic concluding paragraphs.",
+      "fix": "Remove the 'Next steps' section entirely. End the article after the 'Verify functionality through documentation' section, concluding with the specific advice to check official documentation for prerequisites."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the 'Further documentation' link twice at the end. This is a prose defect and redundant. It also uses a blockquote-like format that is not standard Markdown for citations in this context.",
+      "fix": "Remove the duplicate 'Further documentation' lines. If a citation is needed, integrate it naturally into the text or use a single, clean reference link at the end, consistent with the source URL provided."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 580" role="img" aria-labelledby="t d">
+<title id="t">App Service Slot Swap Flow</title>
+<desc id="d">Checkpoints: Source Slot (Staging) receives Target&#x27;s sticky settings; Source Slot instances restart; Source Slot instances warm up (HTTP check); Routing rules swapped; Target Slot (Production) now serves Source&#x27;s code; Former Production instances recycle</desc>
+<rect width="1080" height="580" rx="20" fill="#f2f6fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#142c4c}.heading{font-size:25px;font-weight:700}.label{font-size:23px}</style>
+<text x="38" y="40" class="heading">App Service Slot Swap Flow</text>
+<rect x="36" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="134" r="20" fill="#176ea5"/><text x="65" y="142" style="font-size:23px;fill:white">1</text>
+<text x="106" y="139" class="label">Source Slot (Staging) receives</text>
+<text x="106" y="168" class="label">Target&#x27;s sticky settings</text>
+<rect x="556" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="134" r="20" fill="#176ea5"/><text x="585" y="142" style="font-size:23px;fill:white">2</text>
+<text x="626" y="139" class="label">Source Slot instances restart</text>
+<rect x="36" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="289" r="20" fill="#176ea5"/><text x="65" y="297" style="font-size:23px;fill:white">3</text>
+<text x="106" y="294" class="label">Source Slot instances warm up</text>
+<text x="106" y="323" class="label">(HTTP check)</text>
+<rect x="556" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="289" r="20" fill="#176ea5"/><text x="585" y="297" style="font-size:23px;fill:white">4</text>
+<text x="626" y="294" class="label">Routing rules swapped</text>
+<rect x="36" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="444" r="20" fill="#176ea5"/><text x="65" y="452" style="font-size:23px;fill:white">5</text>
+<text x="106" y="449" class="label">Target Slot (Production) now</text>
+<text x="106" y="478" class="label">serves Source&#x27;s code</text>
+<rect x="556" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="444" r="20" fill="#176ea5"/><text x="585" y="452" style="font-size:23px;fill:white">6</text>
+<text x="626" y="449" class="label">Former Production instances</text>
+<text x="626" y="478" class="label">recycle</text>
+</svg>

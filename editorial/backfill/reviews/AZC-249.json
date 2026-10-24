@@ -1,0 +1,142 @@
+{
+  "id": "AZC-249",
+  "title": "Plan an immutable storage policy before retaining regulated data",
+  "slug": "plan-an-immutable-storage-policy-before-retaining-regulated-data",
+  "historical_date": "2025-11-27",
+  "input_sha256": "ff02295a5e4b176f7317e0d9d633b866fe45defc324db81f4fba2b65abdeb58c",
+  "created_at": "2026-10-23T18:01:34.834216+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan immutable storage policies by choosing between container-level and version-level WORM, then lock and verify retention.",
+  "tags": [
+    "azure-storage",
+    "immutable-storage",
+    "compliance",
+    "blob-storage",
+    "worm"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-249-learn-1.png",
+      "alt": "Screenshot showing how to configure immutability policy scoped to container",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/57abfc3493c96e088b24dfe857bbd3008a022be6/articles/storage/blobs/media/immutable-policy-configure-container-scope/configure-retention-policy-container-scope.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-08-06T18:26:54Z",
+      "sha256": "1a3e5ee0ce80a6aa1faa99a1a01d0233ad3cbcfa9d4fb520fb26669a0308cdc8",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/immutable-storage-overview.md",
+      "revision": "b1dbad7c06decd2013791cb368735312eb79606f",
+      "revision_date": "2025-11-17T17:28:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of immutable storage for blob data",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b1dbad7c06decd2013791cb368735312eb79606f/articles/storage/blobs/immutable-storage-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/immutable-policy-configure-container-scope.md",
+      "revision": "57abfc3493c96e088b24dfe857bbd3008a022be6",
+      "revision_date": "2025-08-06T18:26:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure immutability policies for containers",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-policy-configure-container-scope",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/57abfc3493c96e088b24dfe857bbd3008a022be6/articles/storage/blobs/immutable-policy-configure-container-scope.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/immutable-time-based-retention-policy-overview.md",
+      "revision": "82f8d2c23b6e07c8bcef165284b0dd91e98a44b2",
+      "revision_date": "2024-03-22T22:31:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Time-based retention policies for immutable blob data",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-time-based-retention-policy-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/82f8d2c23b6e07c8bcef165284b0dd91e98a44b2/articles/storage/blobs/immutable-time-based-retention-policy-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-03-22T22:44:28Z; used previous public snapshot. Confirm continued applicability: articles/storage/blobs/immutable-time-based-retention-policy-overview.md"
+  ],
+  "open_questions": [
+    "The source text states that soft-deleted blobs are permanently deleted once the soft delete retention period expires, even if the immutability policy is still active. This contradicts the principle that immutability prevents deletion. Should this be flagged as a documentation error or interpreted as a specific edge case for soft-deleted blobs that were deleted *before* the policy was applied?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-an-immutable-storage-policy-before-retaining-regulated-data.md",
+  "draft": true,
+  "word_count": 1136,
+  "claim_support_checks": [
+    {
+      "claim": "Container-level WORM does not require blob versioning, whereas version-level WORM requires it.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Version-level WORM is not supported in accounts with hierarchical namespace enabled.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A time-based retention policy must be locked for compliance with SEC 17a-4(f).",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Locked container-level policies allow a maximum of five increases to the effective retention period.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Soft delete applies to all blobs in the account regardless of immutability status.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that soft-deleted blobs are permanently deleted once the soft delete retention period expires, even if an immutability policy is active. This is factually incorrect. S1 clarifies that a blob protected by an immutability policy cannot be soft-deleted until the policy expires. Soft delete and immutability interact such that immutability prevents the soft-delete action itself during the retention period.",
+      "fix": "Correct the interaction: Immutability policies prevent blobs from being soft-deleted while the policy is in effect. Soft delete only applies to blobs that are not currently protected by an active immutability policy. Remove the claim that soft-delete expiration overrides immutability."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims version-level WORM is 'not yet supported' in Azure Data Lake Storage. While S1 notes this limitation, the phrasing implies a temporary state without citing the source or clarifying if this is a permanent architectural constraint or a roadmap item. It also fails to mention that container-level WORM is supported in HNS accounts, creating a false dichotomy for DL users.",
+      "fix": "Clarify that container-level WORM is supported in accounts with hierarchical namespace (Data Lake Storage), while version-level WORM is currently unsupported in such accounts. Cite S1 for this distinction to avoid implying no WORM option exists for DL users."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises enabling blob soft delete 'before any immutability policies are applied' for extra protection. S1 recommends this, but the draft omits the critical context that immutability policies prevent soft deletion of protected blobs. This creates a misleading operational sequence where users might expect soft delete to protect immutable data, which it cannot do while the policy is active.",
+      "fix": "Explain that soft delete provides protection for non-immutable data. For immutable data, the immutability policy itself is the primary protection. Soft delete cannot protect blobs that are currently under an active immutability policy. Adjust the guidance to reflect this dependency."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot path in the source data but the editorial guidance explicitly forbids visible Microsoft Learn screenshots or permission captions. The draft body does not contain the image, but the source metadata suggests it might be intended for insertion. The review must ensure no such image is added.",
+      "fix": "Ensure no screenshots from the provided source are included in the final output, adhering to the 'Do not add visible Microsoft Learn screenshot' guidance. Rely on text descriptions of the portal steps instead."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions that 'changes to time-based retention policies at the version level aren't audited.' While true per S1, it lacks context on what *is* audited (Activity Log). This might lead users to believe there is no audit trail for version-level changes, which is misleading since Activity Logs capture management operations.",
+      "fix": "Clarify that while the specific container-level audit log does not record version-level policy changes, the Azure Activity Log still captures these management operations. This ensures users know where to look for audit trails for version-level policies."
+    }
+  ]
+}

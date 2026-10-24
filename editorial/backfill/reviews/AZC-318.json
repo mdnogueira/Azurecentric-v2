@@ -1,0 +1,159 @@
+{
+  "id": "AZC-318",
+  "title": "Check entity mapping when related alerts remain separate",
+  "slug": "check-entity-mapping-when-related-alerts-remain-separate",
+  "historical_date": "2026-06-08",
+  "input_sha256": "513b65aa385a566ed543ff99df0f18ae2e970ed61e0f6aa2ba7f03ac0da28ce7",
+  "created_at": "2026-10-23T19:38:13.778598+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot why related alerts remain separate in Microsoft Sentinel by checking entity mapping identifiers.",
+  "tags": [
+    "microsoft-sentinel",
+    "entity-mapping",
+    "incident-correlation",
+    "security-operations",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-318-learn-1.png",
+      "alt": "Screenshot shows how to add a new entity.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/media/map-data-fields-to-entities/add-new-entity.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-04-20T16:05:28Z",
+      "sha256": "7047d317b06ced6dc6a128f7f8dbeffd373b3943467f3c1675893ed799e87f05",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-318-learn-2.png",
+      "alt": "Screenshot of new incidents queue displayed in a grid.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/media/investigate-incidents/incident-grid.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-04-20T16:05:28Z",
+      "sha256": "bd45666e72587fe9ac5b7457a187676e695b5a0f29e9dbbf1d02e8584a1fd038",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/map-data-fields-to-entities.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Map data fields to Microsoft Sentinel entities | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/map-data-fields-to-entities",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/map-data-fields-to-entities.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/entities.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Entities in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/entities",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/entities.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/relate-alerts-to-incidents.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Relate alerts to incidents in Microsoft Sentinel in the Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/relate-alerts-to-incidents",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/relate-alerts-to-incidents.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/map-data-fields-to-entities.md",
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/entities.md",
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/relate-alerts-to-incidents.md"
+  ],
+  "open_questions": [
+    "Does the new version of entity mapping have any backward compatibility issues with rules created in the old version?",
+    "Are there any performance implications when mapping multiple strong identifiers to the same entity?",
+    "How does the entity mapping configuration differ between the Azure portal and the Microsoft Defender portal?",
+    "What are the specific error codes returned when entity mapping fails during alert generation?",
+    "Is there a way to bulk update entity mappings for multiple analytics rules at once?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-entity-mapping-when-related-alerts-remain-separate.md",
+  "draft": true,
+  "word_count": 1076,
+  "claim_support_checks": [
+    {
+      "claim": "Entity mapping is integral to scheduled analytics rules and enriches output with essential information for investigation.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft Sentinel uses strong identifiers to uniquely identify entities and merge alerts, while weak identifiers may not guarantee unique identification.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "If an entity is not sufficiently identified in an alert, it cannot be merged with other instances of the same entity.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "You can define up to ten entity mappings in a single analytics rule, and up to three identifiers for a given entity mapping.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The entity timeline allows analysts to see all entities in an incident and add external alerts to the incident.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that alerts with merged entities will automatically relate to the same incident. Sources clarify that entity mapping enriches alerts, but incident correlation/merging is a separate process. Alerts remain separate incidents unless explicitly related or merged by system rules, not merely by entity identity.",
+      "fix": "Clarify that entity mapping enables correlation context but does not guarantee automatic incident merging. State that separate incidents may persist even with merged entities, requiring manual relation or specific incident merging configurations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the entity timeline feature is 'now in Preview'. Source S3 indicates the 'new incident experience' is in Preview, but does not explicitly label the timeline feature itself as Preview in the same way. This creates ambiguity about the feature's stability and availability.",
+      "fix": "Remove the 'Preview' label for the entity timeline specifically. Instead, state that the entity timeline is part of the new incident experience, which is in Preview, to maintain accuracy regarding the feature's status."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests synchronizing user account entities with Microsoft Entra ID will merge entities. Source S2 states this 'may create a unifying directory', implying it is a conditional factor, not a guaranteed solution. The draft presents it as a definitive fix.",
+      "fix": "Rephrase to indicate that synchronizing with Microsoft Entra ID 'may' help unify entities by providing a common directory, but it is not a guaranteed method for merging all entity instances."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph beginning with 'By ensuring...'. The editorial guidance explicitly forbids generic concluding paragraphs starting with 'By following', 'By starting', or similar phrases.",
+      "fix": "Remove the final concluding paragraph entirely. End the article after the verification steps or the note about reviewing entity reference documentation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats source citations excessively after every sentence and step (e.g., '[Map data fields...]'). This disrupts reading flow and violates the guidance to use a few well-placed source links.",
+      "fix": "Consolidate citations. Place one relevant source link at the end of the section or paragraph where the information is introduced, rather than after every individual step or sentence."
+    }
+  ]
+}

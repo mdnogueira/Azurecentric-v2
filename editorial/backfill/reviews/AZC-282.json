@@ -1,0 +1,118 @@
+{
+  "id": "AZC-282",
+  "title": "Review identity and DNS dependencies before a migration",
+  "slug": "review-identity-and-dns-dependencies-before-a-migration",
+  "historical_date": "2026-02-27",
+  "input_sha256": "bf9cd1f49cdd6602ef7ec2fb046e1e62c38f977c3e86b20f8c900b945d9c949c",
+  "created_at": "2026-10-23T18:48:51.018618+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify identity and DNS dependencies before migrating workloads to Azure to avoid connectivity failures.",
+  "tags": [
+    "azure-migrate",
+    "dns",
+    "active-directory",
+    "hybrid-connectivity",
+    "migration-planning"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/prepare-for-migration.md",
+      "revision": "e19500fdaaa4d5b0ab4a9e4d00e894dcff2c2ac5",
+      "revision_date": "2026-01-28T12:12:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Prepare machines for migration with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/prepare-for-migration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e19500fdaaa4d5b0ab4a9e4d00e894dcff2c2ac5/articles/migrate/prepare-for-migration.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/assessment-prerequisites.md",
+      "revision": "e72d068d1875704f622a3b830b46576e6bee0ed6",
+      "revision_date": "2025-09-30T21:54:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Assessment Prerequisites",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/assessment-prerequisites",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e72d068d1875704f622a3b830b46576e6bee0ed6/articles/migrate/assessment-prerequisites.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found"
+  ],
+  "open_questions": [
+    "Does the source text specify the exact ports required for LDAP and Kerberos communication between Azure VMs and on-premises domain controllers?",
+    "Are there any specific Azure Migrate limitations regarding the number of VMs that can be joined to a domain simultaneously?",
+    "Does the source text provide guidance on troubleshooting DNS resolution failures in Azure after migration?",
+    "Is there any information on how Azure Migrate handles the migration of local user accounts if domain membership is not used?",
+    "Does the source text mention any specific requirements for the Azure VM Agent when joining a domain?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-identity-and-dns-dependencies-before-a-migration.md",
+  "draft": true,
+  "word_count": 1284,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Migrate does not automatically join migrated VMs to an on-premises domain.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Migrate collects metadata and performance data for assessment.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure VMs require preparation to connect after migration, including configuring Windows settings.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Azure Migrate appliance collects metadata and performance data.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Migrate does not join VMs to domains because they are not on the same network segment. This is a causal error; the appliance does not join domains because it is a migration tool, not a domain controller or identity provider. The network segment issue is a consequence, not the cause of the tool's limitation.",
+      "fix": "Clarify that Azure Migrate is a migration orchestration tool that replicates disks and does not perform identity provisioning tasks like domain joining. State that domain joining is a post-migration configuration step required for the OS to function within the target identity infrastructure."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests configuring conditional forwarders by setting the VNet DNS servers to the on-premises DNS IP. This is technically incorrect for Azure VNet DNS settings; setting custom DNS servers replaces Azure's default resolvers entirely, potentially breaking Azure internal name resolution unless the on-premises server is configured to forward those queries.",
+      "fix": "Correct the guidance: Azure VNet DNS settings allow specifying custom DNS servers. If using on-premises DNS, ensure it forwards Azure-specific queries. Alternatively, recommend Azure Private DNS Zones or AADDS conditional zones for specific domain resolution without replacing the entire resolver stack."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft lists specific ports for LDAP and Kerberos as requirements without citing source support for these specific port numbers in the context of Azure Migrate documentation. While standard, the source text does not enumerate these ports, making this an unsupported specific claim.",
+      "fix": "Remove the specific port numbers (LDAP/Kerberos) from the main text. Refer readers to the 'URL and port access' section of the Azure Migrate documentation for migration tool ports, and advise consulting Active Directory documentation for domain controller communication requirements."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes generic concluding paragraphs starting with 'By addressing these dependencies...' and 'This approach ensures...', which violate the editorial guidance to end with concrete verification or next actions and remove generic conclusions.",
+      "fix": "Delete the final two paragraphs. End the article with the concrete next action: 'Verify connectivity to domain controllers and DNS servers from the Azure VMs before performing the cutover migration.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The illustrative example for configuring conditional forwarders is vague and potentially misleading. It implies setting VNet DNS to the on-premises IP is the standard way to handle conditional forwarding, which is not accurate for Azure networking best practices.",
+      "fix": "Replace the illustrative example with a reference to Azure Private DNS Zones for internal name resolution in Azure, or AADDS conditional zones for hybrid scenarios. Provide a link to the specific Azure Private DNS documentation instead of a generic portal click-path."
+    }
+  ]
+}

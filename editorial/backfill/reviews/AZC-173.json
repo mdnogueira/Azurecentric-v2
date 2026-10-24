@@ -1,0 +1,96 @@
+{
+  "id": "AZC-173",
+  "title": "Build a recovery runbook with an explicit validation step",
+  "slug": "build-a-recovery-runbook-with-an-explicit-validation-step",
+  "historical_date": "2025-04-28",
+  "input_sha256": "8f5881a92f8bd5ab56ae506bb94a7fc475147a5517c2df63cccc3968f6b0d1d5",
+  "created_at": "2026-10-23T16:15:34.604547+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Construct a recovery runbook that defines scope, justifies action, and validates outcomes using service-specific reliability guides.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "4ca63719858e419d8f7530f97881bcda9e66a67b",
+      "revision_date": "2025-02-27T17:22:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4ca63719858e419d8f7530f97881bcda9e66a67b/articles/reliability/incident-response.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/business-continuity-management-program.md",
+      "revision": "aa65007c6058f5708b19b42a0e3ac6c931e59987",
+      "revision_date": "2024-12-16T02:23:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Business continuity management program in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aa65007c6058f5708b19b42a0e3ac6c931e59987/articles/reliability/business-continuity-management-program.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-failover-failback.md",
+      "revision": "71b365548ef8427dd491873340fdc85b4f4a30ff",
+      "revision_date": "2025-03-03T15:37:24Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover and failback",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-failover-failback",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/71b365548ef8427dd491873340fdc85b4f4a30ff/articles/reliability/concept-failover-failback.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-12-16T03:01:28Z; used previous public snapshot. Confirm continued applicability: articles/reliability/business-continuity-management-program.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-recovery-runbook-with-an-explicit-validation-step.md",
+  "draft": true,
+  "word_count": 1289,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft prescribes specific validation steps (e.g., 'run a small set of test queries') that are not supported by the sources. S3 explicitly states that failover details depend on the particular system and service, and S2 notes RTO/RPO are internal measures. The draft invents a generic technical procedure that may not apply to all Azure services.",
+      "fix": "Replace specific technical validation commands with a reference to service-specific reliability guides. State that validation steps must be defined based on the specific service's documentation and the organization's RTO/RPO requirements, rather than prescribing a universal 'test query' method."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Azure requires every service to have a detailed recovery plan and to test that plan' (citing S2). This refers to Microsoft's internal Business Continuity Management program for Azure services, not a requirement for customer-written runbooks. This misattribution creates a false regulatory obligation for the reader.",
+      "fix": "Clarify that S2 describes Microsoft's internal compliance for its own services. Reframe the testing section as a best practice for customer disaster recovery plans, citing S1's recommendation to review and improve resiliency processes after incidents."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that checking Azure Service Health is the primary or only way to validate incident scope, potentially overlooking the need to check Azure Status for widespread issues or social media for real-time updates if Service Health is delayed or inaccessible.",
+      "fix": "Align with S1's multi-step scope understanding: mention checking Azure Service Health, Azure Status (for widespread issues), and @AzureSupport on X if needed. Ensure the runbook allows for multiple information sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests comparing estimated resolution time with RTO to decide on failover. While logical, S1 warns that rushed decisions can make things worse and advises against acting if the issue is expected to resolve quickly. The draft lacks the nuance of 'cost and risk' justification mentioned in S1.",
+      "fix": "Add context from S1 that failover decisions must justify costs and risks, including potential data loss or downtime. Emphasize that if the estimated resolution time is short, inaction might be the preferred business continuity strategy."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's diagram description uses generic nodes but lacks specific Azure service references (e.g., Azure Traffic Manager, Azure Front Door) mentioned in S3 for traffic redirection. This makes the runbook less actionable for specific Azure architectures.",
+      "fix": "Reference S3's mention of Azure Front Door and Traffic Manager for global traffic routing. Suggest that the runbook should specify which traffic management service is used for redirection, rather than using generic 'load balancer' or 'DNS' terms without context."
+    }
+  ]
+}

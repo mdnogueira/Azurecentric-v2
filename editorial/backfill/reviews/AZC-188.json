@@ -1,0 +1,158 @@
+{
+  "id": "AZC-188",
+  "title": "Put an API behind Azure API Management",
+  "slug": "put-an-api-behind-azure-api-management",
+  "historical_date": "2025-06-09",
+  "input_sha256": "5785cc81bae49d6a56396ec63ae8ee9392f9827136cebc3e81d98d30f6abbc0c",
+  "created_at": "2026-10-23T16:35:04.784062+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to manually add an API to Azure API Management, map operations, and test them using the Azure portal.",
+  "tags": [
+    "azure-api-management",
+    "how-to",
+    "api-gateway",
+    "azure-portal",
+    "backend-integration"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-188-learn-1.png",
+      "alt": "Screenshot that shows the HTTP tile in the Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/6136b609bebd30378a46a15ab28fa38d5a0b7684/articles/api-management/media/add-api-manually/blank-api-1.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-06-02T20:04:14Z",
+      "sha256": "df6e40b6cb7ea9a141d711ea3f3d4ca91bc872bf90b161164a9ec59c5ef4b12b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-188-learn-2.png",
+      "alt": "Screenshot of API Management developer portal - administrator mode.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/64ae15469776fa88f9e3c448a3c2a82279a64a8e/articles/api-management/media/api-management-key-concepts/cover.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-05-16T03:13:06Z",
+      "sha256": "87df5433d91fc5f9dbad1dda2ddca4cf18b5c9f2babd4fc8d31035e9d03503a8",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/add-api-manually.md",
+      "revision": "6136b609bebd30378a46a15ab28fa38d5a0b7684",
+      "revision_date": "2025-06-02T20:04:14Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Manually Add an API by Using the Azure portal | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/add-api-manually",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6136b609bebd30378a46a15ab28fa38d5a0b7684/articles/api-management/add-api-manually.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-key-concepts.md",
+      "revision": "64ae15469776fa88f9e3c448a3c2a82279a64a8e",
+      "revision_date": "2025-05-16T03:13:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure API Management - Overview and key concepts",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/64ae15469776fa88f9e3c448a3c2a82279a64a8e/articles/api-management/api-management-key-concepts.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/import-api-from-oas.md",
+      "revision": "0e46dea1d06a4b2ff2d46f3d5a8ef14bf88575b4",
+      "revision_date": "2025-03-13T00:05:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Import an OpenAPI specification to Azure API Management | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/import-api-from-oas",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0e46dea1d06a4b2ff2d46f3d5a8ef14bf88575b4/articles/api-management/import-api-from-oas.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-powershell-requirements-no-header.md"
+  ],
+  "open_questions": [
+    "Does the 'Bypass CORS proxy' option work for all backend types, or only public ones?",
+    "Are there specific permission requirements for the 'all-access' subscription key beyond the API Management service contributor role?",
+    "How does the Consumption tier handle manual API addition compared to Classic and V2 tiers?",
+    "What is the exact error message returned when calling an unmapped backend operation?",
+    "Can wildcard operations be restricted to specific HTTP methods or paths within the API Management policy framework?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/put-an-api-behind-azure-api-management.md",
+  "draft": true,
+  "word_count": 758,
+  "claim_support_checks": [
+    {
+      "claim": "Adding an API does not automatically expose backend operations; they must be explicitly mapped.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "All API Management tiers support manually adding APIs.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The test console uses a built-in all-access subscription key for testing.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Wildcard operations can introduce security risks related to improper inventory management.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "API Management acts as a facade, routing requests to backend services.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Bypass CORS proxy' is needed for non-public backends. The source (S3) states this option is for when the gateway is network-isolated or blocks the proxy's public IP. It does not apply to all non-public backends (e.g., VNet-integrated backends accessible via private endpoints). This is a misleading technical instruction.",
+      "fix": "Clarify that 'Bypass CORS proxy' is specifically for network-isolated gateways or when the backend rejects the proxy's IP. For standard VNet-integrated backends, the default proxy behavior may still work if the proxy IP is allowed, or direct access is configured differently. Remove the generalization about 'non-public backends'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the steps apply to 'all API Management tiers, including Classic, V2, and Consumption'. While S1 says 'All API Management tiers', the Consumption tier is serverless and has different management characteristics. The draft does not distinguish if the 'Add API' UI flow is identical or if there are limitations in Consumption tier manual addition compared to Classic/V2.",
+      "fix": "Verify if the manual 'Add API' UI flow is identical in Consumption tier. If so, keep the statement but ensure no Classic/V2-specific features (like specific network isolation settings mentioned in S2) are implied in the steps. If the UI differs, specify the difference."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'Bypass CORS proxy' uses public IP 13.91.254.72 (from S3). The draft does not warn that this IP might change or that relying on it for firewall rules is not recommended. It presents it as a static fact.",
+      "fix": "Add a note that the CORS proxy IP is subject to change and should not be hardcoded into firewall rules. Recommend using Azure Front Door or other stable endpoints for production traffic management if IP-based restrictions are needed."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'The management plane... is accessed via the Azure portal, Azure CLI, PowerShell, or REST API'. It omits the Visual Studio Code extension mentioned in S2. While not wrong, it's incomplete regarding the 'management plane' access methods.",
+      "fix": "Add 'Visual Studio Code extension' to the list of management plane access methods to align with S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'The first practical step is to add the API'. This is slightly vague. S1 says 'This article shows how to manually add an API'. The draft's intro is a bit more narrative than the source.",
+      "fix": "Tighten the intro to directly state the goal: 'This guide demonstrates how to manually add an API to Azure API Management using the Azure portal.' Remove subjective phrasing like 'first practical step'."
+    }
+  ]
+}

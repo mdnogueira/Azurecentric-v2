@@ -1,0 +1,147 @@
+{
+  "id": "AZC-218",
+  "title": "Configure malware scanning for an Azure Storage account",
+  "slug": "configure-malware-scanning-for-an-azure-storage-account",
+  "historical_date": "2025-09-01",
+  "input_sha256": "1b3a1293cc9ca61e797de1268a06cb1eeeac195b1796d0e52efba62a2dda53f2",
+  "created_at": "2026-10-23T17:17:00.891844+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure automated responses to malware scanning in Defender for Storage using Logic Apps or Event Grid.",
+  "tags": [
+    "defender-for-storage",
+    "malware-scanning",
+    "logic-apps",
+    "event-grid",
+    "azure-functions",
+    "automation"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-218-learn-1.png",
+      "alt": "Screenshot that shows how to set up a role assignment for workflow automation to respond to scan results.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/defender-for-storage-malware-scan/system-assigned-managed-identity.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "c0c6b3675c5f203bd43b4691e23147db386896936ab1f5b1eb8aa5b9efbf34cd",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/defender-for-storage-configure-malware-scan.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Setting up response to Malware Scanning | Microsoft Defender for Storage",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-configure-malware-scan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/defender-for-storage-configure-malware-scan.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/defender-for-storage-introduction.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Microsoft Defender for Storage - the benefits and features",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/defender-for-storage-introduction.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/tutorial-enable-storage-plan.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Protect your storage accounts with the Microsoft Defender for Storage plan",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-storage-plan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/tutorial-enable-storage-plan.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/defender-for-storage-configure-malware-scan.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/defender-for-storage-introduction.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/tutorial-enable-storage-plan.md"
+  ],
+  "open_questions": [
+    "Does the Logic App template require any additional configuration beyond the role assignment?",
+    "Are there specific Event Grid filter criteria needed to avoid processing non-malicious scan results?",
+    "How does the response behave if the quarantine container is full or inaccessible?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-malware-scanning-for-an-azure-storage-account.md",
+  "draft": true,
+  "word_count": 963,
+  "claim_support_checks": [
+    {
+      "claim": "Owner roles or specific data actions are required to configure malware scanning responses.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Logic Apps provide a no-code approach to responding to malware alerts.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Event Grid events can trigger Function Apps for low-latency malware response.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Soft delete should be enabled before setting up automated deletion of malicious files.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Malware Scanning has a default monthly cap of 5,000 GB per storage account.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs assigning the 'Storage Blob Data Contributor' role at the subscription level for the Logic App. S1 specifies this role assignment should be at the subscription or storage account level, but assigning it at the subscription scope is overly permissive and contradicts the principle of least privilege, especially when the action is scoped to specific storage accounts. The draft fails to emphasize that this grants access to all blobs in the subscription.",
+      "fix": "Clarify that the role assignment scope depends on the desired access. Recommend assigning 'Storage Blob Data Contributor' at the specific storage account level to limit the Logic App's permissions to only the protected account, rather than the entire subscription, unless cross-account access is explicitly required and justified."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Malware Scanning is 'charged per GB scanned' and mentions a 'monthly cap' but omits that scanning stops entirely once the cap is reached. S2 states: 'Once this threshold is exceeded, scanning will cease for the remaining blobs'. This is a critical operational risk: if the cap is hit, new uploads are unscanned. The draft presents the cap as a cost control without highlighting the security gap it creates.",
+      "fix": "Explicitly state that exceeding the monthly cap pauses scanning for the remainder of the month, leaving new uploads unprotected. Advise monitoring the 'Malware Scanning stopped' alert to ensure coverage is maintained, rather than just viewing the cap as a billing limit."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using the 'DeleteBlobLogicApp' ARM template but does not mention that this template deploys a Logic App with a specific workflow definition. It also fails to note that the Logic App requires a system-assigned managed identity to perform the blob operations, which is a prerequisite for the role assignment step. Without this identity, the role assignment is ineffective.",
+      "fix": "Add a step to enable the system-assigned managed identity on the Logic App before assigning the role. Clarify that the ARM template deploys the Logic App, but the identity must be explicitly enabled and assigned permissions for the automation to function."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from S1 but does not explicitly link it to the step of assigning the role via the Identity blade. The caption is generic. The guidance should directly reference the visual aid to help users locate the 'Azure role assignments' option in the Logic App's Identity menu, improving usability.",
+      "fix": "Place the screenshot immediately after the instruction to go to **Identity** > **Azure role assignments** in the Logic App. Ensure the caption describes the specific UI element being highlighted (e.g., 'The Azure role assignments blade in the Logic App Identity settings')."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Blob index tags' as a response option but does not explain how to configure them or their latency implications compared to Logic Apps or Event Grid. S1 lists them as a method to make applications aware of scan results but does not provide a 'how-to' for setting up the tag-based response in the context of automated deletion/movement.",
+      "fix": "Briefly explain that Blob index tags are updated by Defender for Storage and can be queried by applications, but they are not a direct automation trigger for deletion/movement like Logic Apps or Event Grid. Clarify that this method is for application-level awareness, not automated containment."
+    }
+  ]
+}

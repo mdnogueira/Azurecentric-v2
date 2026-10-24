@@ -1,0 +1,133 @@
+{
+  "id": "AZC-274",
+  "title": "Plan Linux guest backup around application consistency",
+  "historical_date": "2026-02-04",
+  "created_at": "2026-10-23T23:38:55.134952+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan Linux guest backup consistency on Hyper-V by distinguishing host-side snapshot mechanisms from guest-level application quiescence.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "backup",
+    "vss",
+    "sles",
+    "virtualization"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/backup-approaches.md",
+      "revision": "a46530caf76fddf6bbe2c8f2db902c22cac162b3",
+      "revision_date": "2025-08-14T14:58:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Hyper-V Backup Approaches",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/backup-approaches",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a46530caf76fddf6bbe2c8f2db902c22cac162b3/WindowsServerDocs/virtualization/hyper-v/backup-approaches.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "0bf43567aa8837d4780a5dc03c2abf8328224140",
+      "revision_date": "2025-12-02T09:41:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0bf43567aa8837d4780a5dc03c2abf8328224140/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported SUSE Linux Enterprise Server (SLES) virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-suse-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the Linux guest have a VSS writer installed and enabled?",
+    "Are there any partitions mounted multiple times in the Linux guest?",
+    "Is the application quiesced before the backup starts?",
+    "Has the backup been verified for consistency after restoration?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-linux-guest-backup-around-application-consistency.md",
+  "draft": true,
+  "word_count": 746,
+  "claim_support_checks": [
+    {
+      "claim": "Hyper-V provides VM backup and data-only backup approaches.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Hyper-V VSS writer is designed for small scale backup operations.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "SLES versions 11 SP3 through 15 SP7 support live virtual machine backup.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Open file handles during backup may require fsck on restore.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "VSS backup fails if a single partition is mounted multiple times.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Hyper-V WMI-based backup 'still relies on VSS inside the virtual machine for the actual data consistency.' Source S1 states WMI uses 'reference points and resilient change tracking (RCT)' and does not use VSS in the host, but does not explicitly state it relies on guest VSS for all scenarios (e.g., data-only backups may not require guest quiescence). This is a misleading generalization about consistency models.",
+      "fix": "Clarify that WMI-based backup uses RCT for efficient data access. State that application consistency depends on guest-level mechanisms (like VSS or app-specific scripts) if required by the workload, rather than asserting WMI itself enforces guest VSS for all backup types."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts 'VSS backup fails if a single partition is mounted multiple times.' Source S3 Note 8 states 'VSS backup fails if a single partition is mounted multiple times.' However, the draft presents this as a universal constraint for Linux guests, whereas S3 specifically ties this note to SLES support. It implies all Linux VSS implementations behave identically, which is unsupported.",
+      "fix": "Attribute the 'multiple mount' failure specifically to the SLES documentation (S3 Note 8). Clarify that this is a known limitation for SLES guests and may not apply to other distributions or non-VSS backup methods."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Summary of steps' with step 3: 'Quiesce the application... using the VSS writer.' Source S1 and S3 do not provide instructions on how to trigger guest VSS quiescence from the host or guest for Linux. This is an invented 'how-to' step without procedural support.",
+      "fix": "Remove the specific instruction to 'run a script... to flush caches.' Instead, note that application consistency requires coordinating with the guest OS or application, and that Hyper-V's role is limited to the snapshot mechanism, not application-level quiescence for Linux."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Hyper-V VSS writer on the host is designed for small-scale operations... For larger... deployments, Hyper-V supports backup through the WMI API.' Source S1 confirms WMI is 'more scalable.' However, the draft implies WMI is the solution for 'larger' deployments without defining what constitutes 'large' or mentioning the operational complexity of WMI APIs.",
+      "fix": "Retain the scalability comparison but add context that WMI-based backup requires developer implementation (as noted in S1) and is not a drop-in replacement for simple VSS backups. Avoid implying it is the standard 'best' practice for scale without noting the development effort."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By following these steps, you can plan Linux guest backups that are consistent and reliable.' This is a generic concluding paragraph that promises reliability without addressing the inherent risks of crash-consistent backups or the complexity of verification.",
+      "fix": "Remove the generic conclusion. End with a concrete verification action, such as 'Verify backup integrity by restoring to a test VM and running fsck, as open handles or mount issues may require manual intervention.'"
+    }
+  ]
+}

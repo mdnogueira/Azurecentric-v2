@@ -1,0 +1,136 @@
+{
+  "id": "AZC-042",
+  "title": "Create a useful KQL query for an initial investigation",
+  "slug": "create-a-useful-kql-query-for-an-initial-investigation",
+  "historical_date": "2024-04-26",
+  "input_sha256": "7d2d1a922f65aa2562ad9c4b3f66301b93f7e72288c333cd6e0184aa9dbdc2ac",
+  "created_at": "2026-10-23T13:11:30.259845+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Construct a focused KQL query for initial threat investigation using union, where, and project operators.",
+  "tags": [
+    "kql",
+    "advanced-hunting",
+    "threat-investigation",
+    "microsoft-defender-xdr",
+    "sentinel"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-042-learn-1.png",
+      "alt": "Screenshot of results of take operator.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2b7992eb3faf94658973904c256293b17b2ca118/articles/sentinel/media/kusto-overview/table-take-5.png",
+      "source_id": "S2",
+      "source_revision_date": "2023-10-11T03:22:05Z",
+      "sha256": "5909f364260161f5b8cf6c229427b240fdc984383fa72fcfe0acc7b3143bf03c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/microsoft-365-docs",
+      "path": "microsoft-365/security/defender/advanced-hunting-query-language.md",
+      "revision": "bbffa703a5a0110b300ca66c9e0a596e6a158ed8",
+      "revision_date": "2024-04-23T02:31:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Learn the advanced hunting query language in Microsoft Defender XDR",
+      "url": "https://github.com/MicrosoftDocs/microsoft-365-docs/blob/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/security/defender/advanced-hunting-query-language.md",
+      "snapshot_url": "https://github.com/MicrosoftDocs/microsoft-365-docs/blob/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/security/defender/advanced-hunting-query-language.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/kusto-overview.md",
+      "revision": "2b7992eb3faf94658973904c256293b17b2ca118",
+      "revision_date": "2023-10-11T03:22:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Kusto Query Language in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/kusto-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2b7992eb3faf94658973904c256293b17b2ca118/articles/sentinel/kusto-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-04-26: MicrosoftDocs/azure-docs/articles/sentinel/datalake/kql-queries.md",
+    "Public document removed/moved on 2024-04-23T03:02:50Z; used previous public snapshot. Confirm continued applicability: microsoft-365/security/defender/advanced-hunting-query-language.md"
+  ],
+  "open_questions": [
+    "Does the 'union' operator support more than two tables in the current version of Microsoft Defender XDR?",
+    "Are there specific performance implications when using 'has_any' with a large number of search strings?",
+    "How does the query performance change when the time range is increased beyond seven days?",
+    "Is there a recommended limit for the number of columns in a 'project' statement to ensure optimal performance?",
+    "How can users effectively share and version control their KQL queries within their organisation?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-useful-kql-query-for-an-initial-investigation.md",
+  "draft": true,
+  "word_count": 1166,
+  "claim_support_checks": [
+    {
+      "claim": "Kusto Query Language is used in Microsoft Defender XDR and Microsoft Sentinel for advanced hunting and log analysis.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Filtering data early in a KQL query improves performance by reducing the amount of data processed in subsequent steps.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Kusto time filters are in UTC regardless of the timezone specified in user settings.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The 'union' operator combines two or more tables into a single result set.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The 'has_any' operator checks if a string contains any of the specified values.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'union' combines tables to link process and network events. S1 shows 'union' simply concatenates rows from different schemas; it does not join or correlate data. This misleads users into thinking they are linking related events, which requires 'join' or 'lookup' operators instead.",
+      "fix": "Clarify that 'union' merges disparate tables for broad searching, not correlation. Explain that linking process and network events requires specific join keys (e.g., DeviceId, Timestamp) or separate queries, as 'union' does not establish relationships between rows."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'has_any' is more efficient than multiple 'or' conditions. S1 lists 'has_any' as a common operator but does not claim performance superiority over 'or'. This is an unsupported optimization assertion that may not hold true depending on query engine implementation or index usage.",
+      "fix": "Remove the claim about efficiency. State that 'has_any' improves query readability and maintainability by consolidating multiple string checks into a single condition, without asserting performance benefits over logical 'or' operators."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that a seven-day time window is a 'sensible starting point' for investigations. This is a subjective recommendation not supported by S1 or S2. S1 notes time filters prevent timeouts but does not prescribe specific durations for investigation efficacy.",
+      "fix": "Reframe the seven-day window as an example of limiting scope to manage result volume and performance, rather than a universal best practice. Advise users to adjust the time range based on specific incident timelines and data retention policies."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By following this structured approach...') that adds no technical value. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar phrases.",
+      "fix": "Remove the final two paragraphs. End the article with the concrete advice on saving and sharing queries, or the verification step, to maintain a direct operational focus without redundant summary prose."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using 'union' to search 'across both tables simultaneously' to ensure no related events are missed. This implies 'union' is the correct tool for correlation, which is technically incorrect. S1 uses 'union' for broad hunting, not linking.",
+      "fix": "Correct the explanation of 'union'. State that it allows searching multiple tables in a single query pass, but emphasize that identifying related events across different event types requires correlating on common identifiers, not just unioning the tables."
+    }
+  ]
+}

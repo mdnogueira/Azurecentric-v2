@@ -1,0 +1,132 @@
+{
+  "id": "AZC-035",
+  "title": "Configure a Windows Server 2022 host using PowerShell",
+  "slug": "configure-a-windows-server-2022-host-using-powershell",
+  "historical_date": "2024-04-06",
+  "input_sha256": "bb02a068f5e0ebf8e25416edce4430c84c67163b04d2f72d6da7e1c41330b9f4",
+  "created_at": "2026-10-23T12:59:04.613895+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Windows Server 2022 using PowerShell: install roles, manage features, and remove payload files.",
+  "tags": [
+    "windows-server-2022",
+    "powershell",
+    "server-configuration",
+    "roles-and-features",
+    "features-on-demand"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-commands/powershell.md",
+      "revision": "886ec818a9855249d444296bd0c805c15c2d732e",
+      "revision_date": "2023-02-03T11:34:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/powershell",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/886ec818a9855249d444296bd0c805c15c2d732e/WindowsServerDocs/administration/windows-commands/powershell.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md",
+      "revision": "46ce9496f88047a9aaf7beeae9619107e1809cfa",
+      "revision_date": "2024-03-15T19:46:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Install or Uninstall Roles, Role Services, or Features",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/46ce9496f88047a9aaf7beeae9619107e1809cfa/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/server-manager/configure-features-on-demand-in-windows-server.md",
+      "revision": "e057d07062045e3a97715861a3a762434ce23dd9",
+      "revision_date": "2021-07-27T15:51:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Features on Demand in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e057d07062045e3a97715861a3a762434ce23dd9/WindowsServerDocs/administration/server-manager/configure-features-on-demand-in-windows-server.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific prerequisites for running PowerShell on Windows Server 2022 Server Core?",
+    "How does the execution policy affect the installation of roles and features?",
+    "What are the security implications of granting Read permissions to the Everyone group for alternate source paths?",
+    "How can you automate the installation of roles and features across multiple servers?",
+    "What is the impact of removing feature files on dependent roles or features?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-a-windows-server-2022-host-using-powershell.md",
+  "draft": true,
+  "word_count": 621,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell is a task-based command-line shell designed for system administration.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Management tools are not included by default when installing roles via PowerShell.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Features on Demand allows removing role and feature files to conserve disk space.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The -remove parameter deletes feature files for a role.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "You must add the IncludeManagementTools parameter to include management tools.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims PowerShell is 'the most efficient way' to configure the host. This is a subjective superlative and unsupported categorical claim about workload suitability. Efficiency depends on context (e.g., GUI wizard may be faster for one-off tasks).",
+      "fix": "Remove 'The most efficient way'. Replace with neutral phrasing such as 'PowerShell allows you to automate role installation...'. Avoid comparative or superlative language regarding method effectiveness."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft ends with 'By following these steps... ensuring that your server is ready for its intended workload'. This is a generic concluding paragraph that promises a specific outcome ('ready for its intended workload') not guaranteed by the technical steps (e.g., network config, security hardening are missing).",
+      "fix": "Remove the entire concluding paragraph starting with 'By following these steps'. End the article immediately after the verification step or the final code block. Do not promise readiness for specific workloads."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Windows PowerShell is... built on the .NET Framework'. While historically true for PS 5.1, Windows Server 2022 ships with PowerShell 7.x (Core) which is cross-platform and not built on .NET Framework. The source S1 refers to 'Windows PowerShell' (legacy), but the draft implies this applies to the host's primary PowerShell experience without distinction.",
+      "fix": "Clarify that the description applies to Windows PowerShell (v5.1). If the guide intends to use PowerShell 7+, note the architectural difference. Distinguish between the legacy Windows PowerShell module and PowerShell Core if both are relevant."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft instructs to 'right-click Windows PowerShell on the taskbar'. On Windows Server 2022 Server Core, there is no taskbar or GUI. The source S2 notes Server Core limitations but the draft does not provide the CLI alternative (`powershell.exe`) for Server Core hosts, which is a common configuration scenario.",
+      "fix": "Add a note or alternative step for Server Core: 'On Server Core, start PowerShell by typing `powershell` in the command prompt.' Ensure the guide acknowledges the lack of GUI in Server Core environments."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'optimise disk space' as a primary goal but does not quantify the cost or risk. Removing feature files via `-remove` is destructive and irreversible without an alternate source. The draft mentions 'alternate source' but does not explain the operational cost of maintaining it.",
+      "fix": "Explicitly state that removing feature files is destructive and requires an alternate source (local media, network share, or Windows Update) for future reinstallation. Warn that without a configured source, the role cannot be reinstalled."
+    }
+  ]
+}

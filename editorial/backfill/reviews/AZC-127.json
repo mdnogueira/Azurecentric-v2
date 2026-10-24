@@ -1,0 +1,132 @@
+{
+  "id": "AZC-127",
+  "title": "Investigate a deployment that failed after creating some resources",
+  "slug": "investigate-a-deployment-that-failed-after-creating-some-resources",
+  "historical_date": "2024-12-21",
+  "input_sha256": "487b256c399deaf0b6ebacc5462691c9434d6c3e634f13a5ba661fe38bfd14a8",
+  "created_at": "2026-10-23T15:09:53.275993+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a failed Bicep deployment by validating permissions, linting the template, and using what-if to identify conflicts before applying changes.",
+  "tags": [
+    "bicep",
+    "troubleshooting",
+    "azure-cli",
+    "deployment",
+    "what-if"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9dab744dd92a844521ff089faf5b6b3fbd6b391f",
+      "revision_date": "2024-07-11T14:50:01Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9dab744dd92a844521ff089faf5b6b3fbd6b391f/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-cli.md",
+      "revision": "9e566d11028ff84fbdf25917db89dc4437d4e593",
+      "revision_date": "2024-12-06T03:37:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy resources with Azure CLI and Bicep files | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9e566d11028ff84fbdf25917db89dc4437d4e593/articles/azure-resource-manager/bicep/deploy-cli.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/linter.md",
+      "revision": "cd9f04c27ab33245cc5a8d1cca46887fd4734bdd",
+      "revision_date": "2024-12-02T20:43:51Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Bicep linter",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/linter",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cd9f04c27ab33245cc5a8d1cca46887fd4734bdd/articles/azure-resource-manager/bicep/linter.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user have Contributor role on the target resource group or subscription?",
+    "Is the Bicep file using the most recent API versions for all resources?",
+    "Are there any naming conflicts with existing resources in the target scope?",
+    "Is the deployment history showing any previous failed deployments that might be related?",
+    "Are there any explicit dependsOn statements that might be causing dependency issues?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-deployment-that-failed-after-creating-some-resources.md",
+  "draft": true,
+  "word_count": 1297,
+  "claim_support_checks": [
+    {
+      "claim": "To deploy a Bicep file, you need write access on the resources you're deploying and access to all operations on the Microsoft.Resources/deployments resource type.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Bicep linter checks Bicep files for syntax errors and best practice violations.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "You can preview the changes the Bicep file will make to your environment using the what-if operation.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Every time you run a deployment, an entry is added to the resource group's deployment history with the deployment name.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The uniqueString() function doesn't guarantee globally unique names.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The text claims Azure CLI doesn't support deploying remote Bicep files, but the source (S2) explicitly states this limitation. However, the text cites a 'deploy-remote-template' anchor for permission info, which is a broken/misleading reference in the context of Bicep CLI deployment. More critically, the text implies remote Bicep deployment is impossible without building to JSON, which is accurate per S2, but the citation URL is misleading.",
+      "fix": "Remove the specific anchor '#deploy-remote-template' from the permission citation. The permission requirement is general. The statement about remote Bicep files is correct per S2, but the citation should point to the main Bicep CLI deploy page or the specific remote ARM template page if discussing JSON conversion, not a Bicep-specific remote deployment section that doesn't exist."
+    },
+    {
+      "severity": "medium",
+      "problem": "The text states: 'If you can't list them, you can't deploy to them.' This is an unsupported generalization. Permissions for deployment (write on resources, Microsoft.Resources/deployments/*) are distinct from read/list permissions. A user with Contributor role can deploy but might not have List permission on all resource types if scoped narrowly, or vice versa. The source (S2/S2-dependency) only specifies write and deployment resource permissions.",
+      "fix": "Remove the 'list resources' test as a proxy for deployment permissions. Replace with a direct verification of the required permissions: write access on target resources and Microsoft.Resources/deployments/* operations, as defined in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The text claims: 'The what-if operation also helps you understand dependencies... the what-if output will show the order of operations.' Source S2 does not state that what-if shows the 'order of operations' or dependency resolution sequence. It only says it validates errors and previews changes. This is an invented feature detail.",
+      "fix": "Remove the claim that what-if shows the 'order of operations.' State only that it validates the template and previews the resulting changes (create, update, delete) to identify conflicts or errors, as per S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The text cites 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli' for Bicep deployment permissions. The actual source S2 is at 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli'. The URL in the text is for ARM templates, not Bicep, although the content is similar. This is a provenance error.",
+      "fix": "Update all citations to use the correct Bicep-specific URL: 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli'."
+    },
+    {
+      "severity": "low",
+      "problem": "The text states: 'If you are deploying to a resource group, you need at least Contributor role on that group.' This is a categorical claim not fully supported by S2, which specifies 'write access on the resources' and 'Microsoft.Resources/deployments/*'. Contributor is one way to achieve this, but custom roles with specific write permissions also work. The source does not mandate Contributor.",
+      "fix": "Rephrase to: 'You need write access on the resources and Microsoft.Resources/deployments/* permissions. The Contributor role on the resource group typically provides these permissions, but custom roles can also be configured to meet these requirements.'"
+    }
+  ]
+}

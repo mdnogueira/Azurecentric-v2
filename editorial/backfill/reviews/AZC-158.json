@@ -1,0 +1,117 @@
+{
+  "id": "AZC-158",
+  "title": "Expand a Linux guest disk and verify the file system",
+  "slug": "expand-a-linux-guest-disk-and-verify-the-file-system",
+  "historical_date": "2025-03-17",
+  "input_sha256": "c8ee85bfa813fe4685e7101429b7e5e07c3658672c42e7c1b18cf1fe69ab522e",
+  "created_at": "2026-10-23T15:53:27.534248+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Expand a Linux guest disk on Hyper-V by updating the partition table and file system, ensuring GPT headers are aligned.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "vhdx",
+    "gpt",
+    "resize2fs",
+    "xfs_growfs"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "revision": "dedf7198ffe3c5689286b7e61fb3878b57118844",
+      "revision_date": "2025-01-12T23:19:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Physical storage architectures for Hyper-V in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-storage-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/dedf7198ffe3c5689286b7e61fb3878b57118844/WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "c8e0387a133c34c31ba17ccf2ae4049f989c19ad",
+      "revision_date": "2025-02-20T22:03:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/c8e0387a133c34c31ba17ccf2ae4049f989c19ad/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "revision": "da913042d23db47e0a7154c41108595300ff195d",
+      "revision_date": "2025-01-16T21:23:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported SUSE Linux Enterprise Server (SLES) virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-suse-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/da913042d23db47e0a7154c41108595300ff195d/WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-01-13T10:58:44Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md"
+  ],
+  "open_questions": [
+    "Does the specific Linux distribution require a reboot after updating the partition table, or can the kernel reload it without a reboot?",
+    "Are there any specific kernel parameters or module versions required for GPT header fixes on older Linux kernels?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/expand-a-linux-guest-disk-and-verify-the-file-system.md",
+  "draft": true,
+  "word_count": 797,
+  "claim_support_checks": [
+    {
+      "claim": "Hyper-V allows resizing VHDX files without regard for partition structures, which can cause GPT header warnings.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Fixing GPT headers after resizing a VHDX is a safe manual step.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Linux guests support VHDX resize operations.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to delete and recreate a partition using `fdisk` to extend it. This is a destructive operation that risks data loss if the starting sector is not perfectly preserved. The sources do not support this specific `fdisk` workflow as a safe, standard procedure for expansion, and it contradicts the safer `parted` approach.",
+      "fix": "Remove the `fdisk` delete/recreate example. Rely on `parted resizepart` or `growpart` which are safer and explicitly supported by the context of fixing GPT headers. If `fdisk` is mentioned, emphasize that preserving the starting sector is critical and risky."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims `fdisk` may 'automatically fix the headers' when writing the partition table. This is technically inaccurate; `fdisk` writes the new primary GPT and updates the backup GPT location, but it does not 'fix' misalignment warnings in the same way `parted fix` does, nor does it guarantee header consistency without explicit verification. This misleads users about the tool's behavior.",
+      "fix": "Clarify that `fdisk` updates the backup GPT location to the new disk end, but `parted fix` is the explicit tool for resolving GPT header misalignment warnings. Do not claim `fdisk` automatically fixes headers; instead, state it relocates the backup header."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the kernel 'may need a reboot' to recognize partition changes. While true for some older kernels or specific configurations, modern Linux kernels can often reload partition tables via `partprobe` or `blockdev --rereadpt` without a reboot. The sources do not specify a mandatory reboot for all cases, making this a vague and potentially unnecessary step.",
+      "fix": "Replace 'may need a reboot' with 'use `partprobe` or `blockdev --rereadpt` to reload the partition table without a reboot.' Mention reboot only as a fallback if the kernel does not detect the change."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph starting with 'By following these steps...'. This is a generic concluding phrase that adds no technical value and violates the editorial guidance to end with a concrete verification or next action.",
+      "fix": "Remove the final paragraph entirely. End the article after the 'Verify the change' section with the specific commands `df -h` and `lsblk` as the final verification step."
+    }
+  ]
+}

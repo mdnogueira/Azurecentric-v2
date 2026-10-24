@@ -1,0 +1,142 @@
+{
+  "id": "AZC-073",
+  "title": "Use Windows Admin Center for a defined administration task",
+  "slug": "use-windows-admin-center-for-a-defined-administration-task",
+  "historical_date": "2024-07-22",
+  "input_sha256": "8ef86245273d1c513ed87dbdbd184dbf1bc7bebf37669c7e7cfe25e215271533",
+  "created_at": "2026-10-23T20:59:38.382869+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Connect a Windows Server 2022 node to Windows Admin Center, handling authentication and connection verification.",
+  "tags": [
+    "windows-admin-center",
+    "windows-server-2022",
+    "management",
+    "gateway",
+    "authentication"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-073-learn-1.png",
+      "alt": "Screenshot of the prompt showing options to select a certificate.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/46c954a8d9eb85e4440127aea157a6658b82b66b/WindowsServerDocs/manage/windows-admin-center/media/launch/select-certificate.png",
+      "source_id": "S2",
+      "source_revision_date": "2023-12-19T21:48:36Z",
+      "sha256": "aad0873c2d58534d51f23172e70352550715ea403edc1c368bfccca0ab906f8c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/manage/windows-admin-center/understand/what-is.md",
+      "revision": "5512eaceb8f7721172f04058d701072a4576c280",
+      "revision_date": "2024-01-02T19:41:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is Windows Admin Center",
+      "url": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/5512eaceb8f7721172f04058d701072a4576c280/WindowsServerDocs/manage/windows-admin-center/understand/what-is.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/manage/windows-admin-center/use/get-started.md",
+      "revision": "46c954a8d9eb85e4440127aea157a6658b82b66b",
+      "revision_date": "2023-12-19T21:48:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Get started with Windows Admin Center",
+      "url": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/get-started",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/46c954a8d9eb85e4440127aea157a6658b82b66b/WindowsServerDocs/manage/windows-admin-center/use/get-started.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/manage/windows-admin-center/configure/settings.md",
+      "revision": "c85c74e90d8deb7a5bd5e55d28cdd7e910419c1b",
+      "revision_date": "2024-05-09T08:58:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Settings",
+      "url": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/configure/settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/c85c74e90d8deb7a5bd5e55d28cdd7e910419c1b/WindowsServerDocs/manage/windows-admin-center/configure/settings.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the modernized gateway build still require certificate selection, or is it fully replaced by login prompts?",
+    "What are the specific WinRM firewall rules required for cross-subnet management?",
+    "How does LAPS integration affect the authentication flow for non-domain-joined servers?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-windows-admin-center-for-a-defined-administration-task.md",
+  "draft": true,
+  "word_count": 1014,
+  "claim_support_checks": [
+    {
+      "claim": "Windows Admin Center is a locally-deployed, browser-based management tool that does not require cloud connectivity for basic server management.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The gateway manages servers using Remote PowerShell and WMI over WinRM.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Users must be members of the local administrator's group to use Windows Admin Center on Windows 10.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Windows Admin Center impersonates the provided user's security context for remote management.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Gateway settings affect all users, while user settings only affect the current user's profile.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the gateway manages servers using 'Remote PowerShell and WMI over WinRM'. Source S1 states it uses 'Remote PowerShell and WMI over WinRM', but modern Windows Admin Center relies heavily on SMB and other protocols for file management and many tools. Attributing all management to WinRM is technically incomplete and potentially misleading regarding firewall requirements.",
+      "fix": "Revise the technical description to reflect that Windows Admin Center uses multiple protocols (including SMB, WMI, and PowerShell) for different management tasks, rather than implying a single protocol stack. Cite S1 for the general architecture but clarify the protocol diversity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft instructs users to select the 'Windows Admin Center Client' certificate. Source S2 explicitly notes that in the 'modernized gateway build', users are asked to log in instead of being prompted for a certificate. The draft fails to distinguish between legacy and modernized gateway builds, creating confusion for users on updated versions.",
+      "fix": "Add a conditional note: 'In modernized gateway builds, you will be asked to log in rather than select a certificate. If you are using an older build, select the Windows Admin Center Client certificate.' This aligns with S2's note on the modernized gateway."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The installation package is a single lightweight .msi file'. Source S1 mentions a 'single lightweight .msi package', but this description may not apply to all deployment methods (e.g., side-by-side installation on Windows Server). The term 'lightweight' is subjective and potentially misleading regarding disk space or resource usage.",
+      "fix": "Remove the subjective term 'lightweight'. State that the gateway is installed via an .msi package for local management, as per S1. Avoid implying a universal installation footprint without specifying the deployment context (PC vs. Server)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' section with generic advice about publishing the gateway to DNS and configuring firewall rules. This section adds little operational value and repeats information already covered or implied in the main text. It also vaguely references 'additional configuration for delegation' without specifics.",
+      "fix": "Remove the 'Next steps' section. The article already covers the core task of adding and verifying a connection. Generic advice on publishing and delegation belongs in a separate 'How to publish' article, not this focused how-to guide."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Windows Admin Center is not a replacement for [System Center]'. Source S1 states it 'complements System Center - it's not a replacement'. While accurate, the draft's phrasing in the intro and conclusion is repetitive. The claim is supported, but the prose is redundant.",
+      "fix": "Consolidate the mention of System Center into a single, concise statement in the introduction. Remove the repetitive reiteration in the 'Next steps' section to improve flow and reduce redundancy."
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "AZC-340",
+  "title": "Separate job input data from temporary compute storage",
+  "slug": "separate-job-input-data-from-temporary-compute-storage",
+  "historical_date": "2026-08-09",
+  "input_sha256": "fedb2adcd5dba8d5754aefb6fdc45b93f8f425368f0540db374cb47cb960bbbc",
+  "created_at": "2026-10-23T20:10:14.911091+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Separate persistent job data from temporary node storage in Azure Batch to avoid data loss on node reimage.",
+  "tags": [
+    "azure-batch",
+    "azure-files",
+    "data-persistence",
+    "cloud-computing",
+    "best-practices"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-340-learn-1.png",
+      "alt": "Screenshot of the compute node directory structure.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/224578b2f5c65f2a9168d075419c934f7b1fb38a/articles/batch/media/files-and-directories/node-folder-structure.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-06-16T23:57:46Z",
+      "sha256": "db29148532b15b33cc9cb789156a931593c3406452d477511c3cdece9c91a852",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/files-and-directories.md",
+      "revision": "224578b2f5c65f2a9168d075419c934f7b1fb38a",
+      "revision_date": "2026-06-16T23:57:46Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Files and directories in Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/files-and-directories",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/224578b2f5c65f2a9168d075419c934f7b1fb38a/articles/batch/files-and-directories.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/pool-file-shares.md",
+      "revision": "e4c90f43e7d2f2a6a7fb93eb5c708137b10de6e2",
+      "revision_date": "2026-06-17T07:00:43Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure file share for Azure Batch pools",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/pool-file-shares",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e4c90f43e7d2f2a6a7fb93eb5c708137b10de6e2/articles/batch/pool-file-shares.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the current documentation specify the exact SMB version required for mounting Azure Files on Linux vs. Windows Batch nodes?",
+    "Are there specific performance benchmarks for Azure Files when used with high-concurrency Batch pools?",
+    "How does the RetentionTime constraint interact with node reimage events specifically, rather than just node removal?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-job-input-data-from-temporary-compute-storage.md",
+  "draft": true,
+  "word_count": 822,
+  "claim_support_checks": [
+    {
+      "claim": "Files in the task working directory are lost when a node is removed from the pool.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The root directory is located on the temporary storage drive, not the OS drive.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Files can be mounted on Batch pool compute nodes for persistent storage.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The working directory is retained based on the RetentionTime constraint.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot with the credit 'Used with permission from Microsoft.' This violates the editorial guidance to not add visible permission captions and to keep source provenance in separate review records.",
+      "fix": "Remove the 'Used with permission from Microsoft.' credit text from the image alt text or caption if present. Ensure the image is included without any visible permission attribution in the final output."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure File shares are 'cost-efficient' and 'ideal for sharing data'. These are subjective superlatives and promotional claims not supported by technical documentation. The source only states they are cost-efficient in a pricing link context, not as a general technical attribute.",
+      "fix": "Remove subjective terms like 'ideal' and 'cost-efficient'. State factually that Azure Files offers managed file shares accessible via SMB, and refer users to pricing details for cost considerations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests copying inputs to the local working directory for 'fast, local access'. It omits the destructive context that this local data is ephemeral and will be lost if the node is reimaged or removed before the output is copied back. This creates a risk of data loss if the workflow is interrupted.",
+      "fix": "Explicitly state that local working files are temporary and must be copied to persistent storage (Azure Files) before the task completes or the node is removed to prevent data loss."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By keeping persistent data in Azure Files... This separation is essential...'. This is a generic concluding paragraph that adds no technical value and violates the instruction to end with a concrete verification or next action.",
+      "fix": "Remove the final two paragraphs. End the article with the 'Verify your setup' section, ensuring the reader has a concrete action to confirm their configuration."
+    }
+  ]
+}

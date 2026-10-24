@@ -1,0 +1,134 @@
+{
+  "id": "AZC-352",
+  "title": "Check kernel changes after a Linux guest update",
+  "slug": "check-kernel-changes-after-a-linux-guest-update",
+  "historical_date": "2026-09-11",
+  "input_sha256": "0d85373aa3171ea5ed2afe83ffef7a80e7d93475fa2eb61e931f4051fc8403bb",
+  "created_at": "2026-10-23T20:26:40.291057+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify Linux Hyper-V integration services after kernel updates by checking kernel modules and daemons.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "integration-services",
+    "kernel",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-352-learn-1.png",
+      "alt": "Screen shot that shows the Windows Services pane",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/a67a8c2abcdc729692a24f904778f0b5e8f67773/WindowsServerDocs/virtualization/hyper-v/manage/media/HVServices.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-02-16T16:23:09Z",
+      "sha256": "d1ad1d345ee38b010a2e13d68ae71739e36e5de28718251a0cdf3869ba14e27e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "revision": "a67a8c2abcdc729692a24f904778f0b5e8f67773",
+      "revision_date": "2026-02-16T16:23:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Hyper-V Integration Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a67a8c2abcdc729692a24f904778f0b5e8f67773/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "revision": "a244f23072b2d8f4243146372c506a8948406cd3",
+      "revision_date": "2025-08-11T10:54:11Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Feature Descriptions for Linux and FreeBSD virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a244f23072b2d8f4243146372c506a8948406cd3/WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "0bf43567aa8837d4780a5dc03c2abf8328224140",
+      "revision_date": "2025-12-02T09:41:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0bf43567aa8837d4780a5dc03c2abf8328224140/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-08-11T13:30:23Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md"
+  ],
+  "open_questions": [
+    "How to automate verification of integration services across multiple Linux guests?",
+    "What are the specific steps to troubleshoot missing hv_utils module after kernel update?",
+    "How to handle integration service issues with custom or unsupported kernel versions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-kernel-changes-after-a-linux-guest-update.md",
+  "draft": true,
+  "word_count": 843,
+  "claim_support_checks": [
+    {
+      "claim": "Linux integration services are built into the kernel, not separate packages.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The hv_utils module is the core driver for Linux integration services.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "hv_vss_daemon is required for live backups.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "hv_kvp_daemon allows setting and querying key value pairs.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims kernel updates 'break' integration services. Source S1 states Linux integration services are built into the kernel and updated with it, implying continuity rather than breakage. This creates unnecessary alarm and misrepresents the update mechanism.",
+      "fix": "Rephrase to state that verification is required to ensure the new kernel includes the expected drivers, rather than asserting that updates break functionality."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking the kernel version against supported versions to verify integration service status. Source S1 indicates that current kernels contain the services; version checking is for support eligibility, not functional verification of the running instance.",
+      "fix": "Remove the step about comparing kernel versions for functionality. Focus verification on the presence of `hv_utils` and running daemons as the primary indicators of service status."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes repetitive concluding paragraphs starting with 'By keeping...', 'In summary...', and 'If you have questions...'. This violates the guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Delete all generic concluding paragraphs. End the article immediately after the troubleshooting steps or the automation suggestion, without summary or rhetorical questions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends automating verification with a script. While helpful, this is an invented workflow not supported by the provided sources. The sources only describe manual verification commands.",
+      "fix": "Frame the automation suggestion as a reader-implemented best practice rather than a standard procedure, or remove it to stay strictly within source-supported content."
+    }
+  ]
+}

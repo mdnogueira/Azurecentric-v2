@@ -1,0 +1,125 @@
+{
+  "id": "AZC-309",
+  "title": "Investigate a scheduled script that works interactively",
+  "slug": "investigate-a-scheduled-script-that-works-interactively",
+  "historical_date": "2026-05-14",
+  "input_sha256": "a5a706eac37b36ce08813fe64b82d8d3c0b72b53b93bf677b2e5a13b644047fb",
+  "created_at": "2026-10-23T19:27:11.436856+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a PowerShell 7.6 scheduled script that fails silently by checking profile isolation and error handling.",
+  "tags": [
+    "powershell",
+    "scheduled-tasks",
+    "troubleshooting",
+    "error-handling",
+    "profiles"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/scheduling-jobs-with-the-windows-powershell-api.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Scheduling Jobs with the Windows PowerShell API",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/scheduling-jobs-with-the-windows-powershell-api",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/scheduling-jobs-with-the-windows-powershell-api.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/shell/creating-profiles.md",
+      "revision": "775dab7febcb227b26c26df71a0fe111aefcd0c5",
+      "revision_date": "2025-11-21T22:15:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Customizing your shell environment",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/creating-profiles",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/775dab7febcb227b26c26df71a0fe111aefcd0c5/reference/docs-conceptual/learn/shell/creating-profiles.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "revision": "7baf66776aea350bef39470600f075e85f30d7ef",
+      "revision_date": "2026-04-02T20:03:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Everything you wanted to know about exceptions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/7baf66776aea350bef39470600f075e85f30d7ef/reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the specific version of PowerShell used in the scheduled task support the -NonInteractive flag in the same way as the interactive shell?",
+    "Are there any specific security policies that might prevent the scheduled task from writing to the log file location?",
+    "Is the Windows PowerShell Scheduled Job API still the recommended method for scheduling tasks in PowerShell 7.6, or should Task Scheduler be used directly?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-scheduled-script-that-works-interactively.md",
+  "draft": true,
+  "word_count": 727,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell profiles are not loaded by default in non-interactive scheduled tasks if -NoProfile is used.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Non-terminating errors do not stop script execution and are not caught by try/catch blocks.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The $PSItem variable contains the ErrorRecord object with exception details.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Scheduled job output is written to a file-based job store in the user's local app data.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly suggests using the Windows PowerShell Scheduled Job API (S1) for PowerShell 7.6 tasks. S1 documents the .NET API for Windows PowerShell (v5.1) only. PowerShell 7.x does not support the Microsoft.PowerShell.ScheduledJob namespace; it relies on Windows Task Scheduler directly. This is a fundamental compatibility error for the stated context.",
+      "fix": "Remove references to the ScheduledJob API and ScheduledJobSourceAdapter. Advise using Windows Task Scheduler with `pwsh.exe` arguments. The API is obsolete for PS7."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims scheduled tasks do not load profiles by default, implying `-NoProfile` is the default or that removing it is a fix. This is misleading. Task Scheduler runs `powershell.exe` or `pwsh.exe`, which *does* load profiles unless `-NoProfile` is explicitly passed. The issue is often that the profile path differs or the profile itself fails silently.",
+      "fix": "Clarify that profiles *are* loaded by default. Troubleshooting should focus on verifying the profile path loaded by the task account and ensuring the profile doesn't contain errors that suppress output."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states `powershell.exe -NonInteractive` is the correct way to simulate the task. This is inaccurate for PowerShell 7.x. The correct executable is `pwsh.exe`. Using `powershell.exe` invokes Windows PowerShell (v5.1), which has different behaviors, modules, and profile paths than PS7.6.",
+      "fix": "Update the test command to use `pwsh.exe -NonInteractive -NoProfile -File ...` to accurately reflect the PowerShell 7.6 environment specified in the brief."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that `Add-Content` to a log file is a robust error handling strategy without addressing permissions or path existence. If the log directory doesn't exist or permissions are restricted, this step fails silently or throws, potentially masking the original error.",
+      "fix": "Add a check to ensure the log directory exists and the account has write permissions before attempting to log. Or suggest using `Start-Transcript` for comprehensive logging."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `$PSItem.ToString()` for error logging. While valid, it loses the structured error record details (like `FullyQualifiedErrorId`) which are crucial for troubleshooting. The source S3 highlights `$PSItem.Exception.Message` and `$PSItem.ScriptStackTrace` as more informative.",
+      "fix": "Recommend logging `$PSItem.Exception.Message` and `$PSItem.ScriptStackTrace` for better diagnostic information, as suggested by S3."
+    }
+  ]
+}

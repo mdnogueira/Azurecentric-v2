@@ -1,0 +1,103 @@
+{
+  "id": "AZC-121",
+  "title": "Build a prompt that produces a useful incident summary",
+  "slug": "build-a-prompt-that-produces-a-useful-incident-summary",
+  "historical_date": "2024-12-03",
+  "input_sha256": "10c0c2e814bd80f305f27c0e667d98062e267575c578f9da38fb08a4b498f234",
+  "created_at": "2026-10-23T15:00:22.355089+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Construct precise prompts for Microsoft Security Copilot to generate structured incident summaries with specific audience and data requirements.",
+  "tags": [
+    "security-copilot",
+    "incident-response",
+    "prompting",
+    "microsoft-defender",
+    "threat-intelligence"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "Customer Guides/Prompting Tips for Copilot For Security/readme.md",
+      "revision": "17b5582f31b37a2d641aec0d480ddcaaa85170a0",
+      "revision_date": "2024-11-06T08:38:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "readme",
+      "url": "https://github.com/Azure/Security-Copilot/blob/17b5582f31b37a2d641aec0d480ddcaaa85170a0/Customer Guides/Prompting Tips for Copilot For Security/readme.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/17b5582f31b37a2d641aec0d480ddcaaa85170a0/Customer Guides/Prompting Tips for Copilot For Security/readme.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the MDTI reputation skill always provide accurate enrichment for all entity types?",
+    "How does the model handle incidents with no associated entities in Defender?",
+    "What are the specific permissions required for Security Copilot to access MDTI data?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-prompt-that-produces-a-useful-incident-summary.md",
+  "draft": true,
+  "word_count": 946,
+  "claim_support_checks": [
+    {
+      "claim": "Vague prompts yield vague results in Security Copilot.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Specifying the audience shifts the model's tone and depth.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "MDTI reputation skill can be used to enrich entities in a summary.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Process log can be used to understand plugin selection.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft contains excessive, repetitive concluding sections ('Cleanup and Reuse', 'By following these steps', 'Next Steps', 'Conclusion', 'Final Verification', 'Additional Resources', 'End of Guide') that violate the instruction to end when the technical question is answered and remove generic concluding paragraphs.",
+      "fix": "Delete all sections from 'Cleanup and Reuse' onwards. Retain only the 'Verification' section as the concrete next action, ensuring the article ends immediately after the verification step without generic wrap-up prose."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the MDTI reputation skill 'helps the executive understand if an entity is known malicious, suspicious, or benign.' The source only specifies enriching against the 'Copilot reputation skill' without defining the output values or their semantic meaning for executives.",
+      "fix": "Remove the specific interpretation of reputation values ('malicious, suspicious, or benign'). State only that the skill enriches entities with reputation data, as the source does not define the specific output schema or semantic labels."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using the 'process log or debugger' to understand plugin selection. The source lists these as distinct features for understanding execution. The draft implies they are interchangeable or that the debugger is a standard user-facing tool for this specific purpose without clarifying the distinction.",
+      "fix": "Clarify that the process log shows plugin selection. Do not conflate it with the debugger unless the source explicitly states they serve the same immediate purpose for this user action. Stick to the source's listing of features."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a JSON diagram node list and 'Review Questions' section. The source does not provide a diagram structure or these specific review questions. This constitutes invented content and structural bloat not supported by the provided historical context.",
+      "fix": "Remove the JSON diagram and the 'Review Questions' section. These are not present in the source and add no operational value to the how-to guide. Keep the focus on the prompt construction and verification steps."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Sessions currently cannot reference other sessions' as a general rule. The source says 'Treat new Copilot sessions as if they are a Stranger' and explains that new sessions struggle without context. The draft presents this as a hard technical limitation rather than a prompting best practice.",
+      "fix": "Rephrase to reflect the source's guidance: advise users to provide full context in new sessions because the model does not automatically carry over context, rather than stating a hard technical prohibition on cross-session reference."
+    }
+  ]
+}

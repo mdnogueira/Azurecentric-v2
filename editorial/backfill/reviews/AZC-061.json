@@ -1,0 +1,140 @@
+{
+  "id": "AZC-061",
+  "title": "Turn a detection requirement into an analytics rule",
+  "slug": "turn-a-detection-requirement-into-an-analytics-rule",
+  "historical_date": "2024-06-18",
+  "input_sha256": "c3679cebc5ec298f055e3e7c0c12fac126e0ac0defa1d9617f27b8cd7c0ad068",
+  "created_at": "2026-10-23T13:37:30.075834+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create a Microsoft Sentinel scheduled analytics rule from a template, verifying data sources and preview status.",
+  "tags": [
+    "microsoft-sentinel",
+    "analytics-rules",
+    "threat-detection",
+    "kql",
+    "threat-intelligence"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-061-learn-1.png",
+      "alt": "Screenshot of analytics rule templates in Microsoft Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/8d216c91547d5dad66f3546b0e3a4f188fe6fff8/articles/sentinel/media/create-analytics-rule-from-template/view-detections.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-06-02T14:01:38Z",
+      "sha256": "362a8d79d7cf5e6fbfc27aff1560a5b670e364c417adb601a70b7d37c2ca72b1",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-061-learn-2.png",
+      "alt": "A screenshot showing the Microsoft Defender Threat Intelligence Analytics rule data source connections.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/eabff6813be0ff0d72301fd115647aa10eace375/articles/sentinel/media/use-matching-analytics-to-detect-threats/data-sources.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-03-28T11:23:15Z",
+      "sha256": "8dd5fc82558e6bbe964060cb109f9dbcfb6f3c02649a0e2cb2737a74171fb1c9",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/create-analytics-rules.md",
+      "revision": "8d216c91547d5dad66f3546b0e3a4f188fe6fff8",
+      "revision_date": "2024-06-02T14:01:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create scheduled analytics rules in Microsoft Sentinel | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/create-analytics-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8d216c91547d5dad66f3546b0e3a4f188fe6fff8/articles/sentinel/create-analytics-rules.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/use-matching-analytics-to-detect-threats.md",
+      "revision": "eabff6813be0ff0d72301fd115647aa10eace375",
+      "revision_date": "2024-03-28T11:23:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use matching analytics to detect threats",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/use-matching-analytics-to-detect-threats",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/eabff6813be0ff0d72301fd115647aa10eace375/articles/sentinel/use-matching-analytics-to-detect-threats.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-06-18: MicrosoftDocs/azure-docs/articles/sentinel/sentinel-analytic-rules-creation.md"
+  ],
+  "open_questions": [
+    "Does the user have the necessary permissions to install data connectors and create analytics rules?",
+    "Are there any specific compliance requirements that might restrict the use of near-real-time (NRT) rules versus scheduled rules?",
+    "How should the user handle false positives from the Microsoft Defender Threat Intelligence Analytics rule?",
+    "What is the expected volume of data for the custom KQL query to ensure it does not exceed Log Analytics limits?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/turn-a-detection-requirement-into-an-analytics-rule.md",
+  "draft": true,
+  "word_count": 1109,
+  "claim_support_checks": [
+    {
+      "claim": "Scheduled analytics rules are created from templates or custom queries in the Analytics configuration section.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Templates automatically check for data source availability and may disable creation if sources are missing.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft Defender Threat Intelligence Analytics rule requires specific data connectors but not a premium MDTI license.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Matching analytics matches indicators against specific fields in supported data tables like CommonSecurityLog and DnsEvents.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Incidents generated by matching analytics are grouped by observable and published to the ThreatIntelligenceIndicators table.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies the 'Microsoft Defender Threat Intelligence Analytics' rule is a standard scheduled template available via the 'Rule templates' tab. Source S2 explicitly states this feature is in PREVIEW and requires specific legal terms, yet the draft presents it as a general solution without highlighting the preview status or potential instability.",
+      "fix": "Add a prominent warning that 'Microsoft Defender Threat Intelligence Analytics' is a preview feature. Clarify that preview features may change or be removed, and advise users to check the Supplemental Terms of Use. Do not present it as a stable, general-purpose template alongside standard scheduled rules."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the 'Microsoft Defender Threat Intelligence Analytics' rule details are 'largely read-only' because matching logic is fixed. Source S2 shows a 'Review > Create' workflow but does not state the logic is immutable or that the rule is read-only in the editor. This misrepresents the user's ability to configure the rule.",
+      "fix": "Remove the claim that details are 'largely read-only'. Instead, describe the creation workflow as shown in S2: selecting the template, reviewing settings, and clicking 'Create'. Note that while the matching logic is predefined by the template, users can still configure rule settings like severity and tactics during creation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises reviewing 'Log Analytics workspace costs' as a general next step for all analytics rules. This is a vague, unsupported cost prediction. Source S1 and S2 do not provide specific cost models or warnings about high costs for scheduled rules, making this a speculative financial claim.",
+      "fix": "Remove the specific advice about reviewing costs. Instead, advise users to monitor query performance and data volume, as complex queries or large lookback durations can impact performance. Reference the general Sentinel pricing documentation for cost details rather than making specific claims in the how-to guide."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from S1 (viewing detections) but uses it in the 'Create a rule from a template' section. Source S1 places this screenshot in the 'View existing analytics rules' section, not the 'Create a rule from a template' section. The placement is contextually mismatched.",
+      "fix": "Move the screenshot to the 'Confirm your data sources are active' section or the 'View existing analytics rules' context if expanded. Alternatively, replace it with a screenshot of the 'Create rule' button or the rule creation wizard, if available and permitted by the source usage policy."
+    }
+  ]
+}

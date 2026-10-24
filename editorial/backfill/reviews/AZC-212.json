@@ -1,0 +1,133 @@
+{
+  "id": "AZC-212",
+  "title": "Review resilience trade-offs in a cost-constrained workload",
+  "slug": "review-resilience-trade-offs-in-a-cost-constrained-workload",
+  "historical_date": "2025-08-15",
+  "input_sha256": "dfd72960009e4bd6fc9ca229dfc9dc12590b833c8e39cc50f360f300c2513e7f",
+  "created_at": "2026-10-23T17:08:38.529708+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Balance cost and resilience by classifying risks into HA and DR, then selecting matching redundancy levels.",
+  "tags": [
+    "reliability",
+    "high-availability",
+    "disaster-recovery",
+    "cost-optimization",
+    "business-continuity"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "revision": "5a363d909c6556cc55a510bddd84b5c4fd618115",
+      "revision_date": "2025-06-19T01:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What are business continuity, high availability, and disaster recovery?",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5a363d909c6556cc55a510bddd84b5c4fd618115/articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "297ed3fede45b3785bda973110241a420f0e621b",
+      "revision_date": "2024-02-23T13:07:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/297ed3fede45b3785bda973110241a420f0e621b/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/overview.md",
+      "revision": "cc7cd103280280a6b69e1de5cf4ce2c4e9aadb09",
+      "revision_date": "2025-06-24T21:06:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure reliability documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cc7cd103280280a6b69e1de5cf4ce2c4e9aadb09/articles/reliability/overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-02-23T16:05:23Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-guidance-overview.md"
+  ],
+  "open_questions": [
+    "Does the source text provide specific cost comparisons between local, zone, and geo-redundancy options for Azure App Service and SQL Database?",
+    "Are there specific SLA differences between zone-redundant and locally redundant configurations for the services mentioned?",
+    "What are the exact steps to configure geo-restore for Azure SQL Database, and is it available in all tiers?",
+    "How does the cost of zone-redundant App Service compare to locally redundant App Service in the same region?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-resilience-trade-offs-in-a-cost-constrained-workload.md",
+  "draft": true,
+  "word_count": 1312,
+  "claim_support_checks": [
+    {
+      "claim": "Business continuity is the state in which a business can continue operations during failures, outages, or disasters.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "High availability is about designing a solution to be resilient to day-to-day issues and to meet the business needs for availability.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Disaster recovery is about planning how to deal with uncommon risks and the catastrophic outages that can result.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Availability zones are separated groups of datacenters within a region that provide physical isolation.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Redundancy is the practice of duplicating instances or data to increase the reliability of the workload.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure App Service plans support zone redundancy. Source S1 states App Service provides HA by moving workers between nodes, and S2 links to reliability guides but does not confirm zone redundancy for App Service Plans. App Service is generally not zone-redundant in the same way VMs or SQL are; this is a likely factual error regarding service capabilities.",
+      "fix": "Remove the specific recommendation to 'Enable zone redundancy for the App Service plan.' Instead, recommend deploying multiple instances across availability zones if supported, or clarify that App Service handles node failures internally. Verify current App Service zone support in the specific service reliability guide before asserting this capability."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts Azure SQL Database 'has multiple replicas' and implies zone redundancy is a simple tier choice for HA. Source S1 mentions SQL DB has multiple replicas but does not explicitly confirm zone redundancy availability or mechanics in the provided text. S2 lists SQL DB reliability guides but doesn't detail the zone redundancy feature in the snippet. This risks misleading users about SLA eligibility.",
+      "fix": "Replace the general claim with a directive to 'Review the Azure SQL service reliability guide for specific zone redundancy support and SLA conditions.' Do not assert zone redundancy is available in all Standard/Premium tiers without explicit source confirmation in the provided text."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that availability zones 'automatically guarantee' that a workload survives a datacenter outage. Source S3 states zones are 'designed so that... high availability are supported,' but does not guarantee it. The draft's example assumes immediate survival without mentioning application-level failover logic or DNS propagation delays.",
+      "fix": "Clarify that availability zones provide infrastructure isolation but do not automatically guarantee application availability. Add a note that application code must handle transient faults and failover logic, as infrastructure redundancy alone is insufficient for seamless continuity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Azure Storage offers Zone-Redundant Storage (ZRS)... GRS replicates data to a secondary region.' While factually correct in general Azure knowledge, the provided Source S1 only mentions ZRS and GRS in the context of 'some Azure services' without detailing the replication mechanics or cost implications explicitly. The draft infers cost savings without source-backed data.",
+      "fix": "Attribute the ZRS/GRS comparison to the Azure Storage reliability guidance rather than the general BC/HA article. Remove the specific claim about cost savings unless supported by a source citing price differences or the general principle that geo-redundancy incurs higher costs."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses repetitive citation blocks for every definition of BC, HA, and DR, cluttering the prose. The opening paragraph is generic. The conclusion ('By following...') is a generic closing paragraph that adds no technical value.",
+      "fix": "Consolidate citations to a single reference at the end of the conceptual section. Remove the generic concluding paragraph starting with 'By classifying risks...' and end with the concrete verification step regarding RTO/RPO testing."
+    }
+  ]
+}

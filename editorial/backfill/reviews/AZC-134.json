@@ -1,0 +1,114 @@
+{
+  "id": "AZC-134",
+  "title": "Choose an Active Directory site and subnet design",
+  "slug": "choose-an-active-directory-site-and-subnet-design",
+  "historical_date": "2025-01-08",
+  "input_sha256": "03bc38f32908124481302835a7034fc399f587c0d317771c9aa20e7ba72ebe05",
+  "created_at": "2026-10-23T15:18:55.612516+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Design Active Directory sites and subnets using latency thresholds and application requirements to control replication and client traffic.",
+  "tags": [
+    "active-directory",
+    "site-topology",
+    "subnet-design",
+    "replication",
+    "windows-server"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/Creating-a-Site-Design.md",
+      "revision": "e28a2171cdb0461e6808c79f9e78cae1970b0051",
+      "revision_date": "2025-01-06T16:31:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Creating a Site Design",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/creating-a-site-design",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e28a2171cdb0461e6808c79f9e78cae1970b0051/WindowsServerDocs/identity/ad-ds/plan/Creating-a-Site-Design.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/Understanding-Active-Directory-Site-Topology.md",
+      "revision": "e28a2171cdb0461e6808c79f9e78cae1970b0051",
+      "revision_date": "2025-01-06T16:31:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Understanding Active Directory Site Topology",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e28a2171cdb0461e6808c79f9e78cae1970b0051/WindowsServerDocs/identity/ad-ds/plan/Understanding-Active-Directory-Site-Topology.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should site links be configured to optimise replication traffic between sites?",
+    "What are the specific prerequisites for creating site and subnet objects in Windows Server 2025?",
+    "How does the site topology owner role impact the design and maintenance of the site structure?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-an-active-directory-site-and-subnet-design.md",
+  "draft": true,
+  "word_count": 1069,
+  "claim_support_checks": [
+    {
+      "claim": "Subnets with round-trip latency of 10 ms or less can be included in a single Active Directory site.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Subnets with latency greater than 10 ms should not be included in a single Active Directory site.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Active Directory automatically translates IPv4 subnet masks into prefix length notation when creating subnet objects.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Applications like Distributed File System Namespaces use site objects to locate the closest servers.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Subnets in locations without a site should be added to a site with maximum WAN speed and bandwidth.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a 'Cleanup' section instructing users to 'remove the subnet and site objects'. This implies a reversible, temporary deployment scenario which is dangerous for AD infrastructure. Removing site/subnet objects can break replication topology and client binding permanently, requiring complex restoration. The sources do not support this as a standard operational step.",
+      "fix": "Remove the 'Cleanup' section entirely. AD site design is a persistent configuration change, not a temporary test. If a design is incorrect, the fix is to modify the objects (edit properties) or delete them with explicit warnings about topology impact, not as a routine 'cleanup' step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'If the latency exceeds 10 milliseconds, you must create separate sites.' The source (S1) states you 'should not include the subnets in a single Active Directory site' but allows for exceptions if you 'elect to deploy separate sites' for segmentation. The word 'must' is an unsupported categorical claim that ignores administrative discretion for segmentation or specific application needs.",
+      "fix": "Change 'must create separate sites' to 'should create separate sites to prevent suboptimal client binding and replication behavior.' Clarify that while the 10ms threshold is the technical guideline for grouping, administrative decisions may override this for segmentation purposes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft lists 'Access to Active Directory Users and Computers or PowerShell with permissions to create site and subnet objects' as a prerequisite. It fails to specify that these objects reside in the 'Configuration' partition and require Enterprise Admin or Schema Admin privileges (or delegated permissions) to create, not just standard domain admin rights. This is a vague permission claim.",
+      "fix": "Specify that creating site and subnet objects requires permissions in the Configuration partition, typically held by Enterprise Administrators or delegated accounts. Remove the generic 'permissions to create' phrasing and replace it with the specific AD partition requirement."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft references the 'Job Aids for Windows Server 2003 Deployment Kit' for documentation worksheets. This is outdated historical context that does not apply to Windows Server 2025. The source (S1) is from 2017 but references 2003 docs. The draft should not present this as current guidance for a 2025 host.",
+      "fix": "Remove the reference to the Windows Server 2003 Job Aids. Suggest using modern documentation tools or the current Microsoft Learn documentation structure for site design worksheets, as the 2003 kit is obsolete and likely inaccessible."
+    }
+  ]
+}

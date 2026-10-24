@@ -1,0 +1,146 @@
+{
+  "id": "AZC-243",
+  "title": "Set a budget boundary around a compute experiment",
+  "slug": "set-a-budget-boundary-around-a-compute-experiment",
+  "historical_date": "2025-11-10",
+  "input_sha256": "8ee1c730f947dabc05b200373890c59a3f22e94e3f6710a138805f6b3846aa67",
+  "created_at": "2026-10-23T17:52:40.906731+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Set a budget boundary for Azure Batch experiments using Cost Management filters for service or user subscription modes.",
+  "tags": [
+    "azure-batch",
+    "cost-management",
+    "budgets",
+    "cloud-computing",
+    "azure-cost-optimization"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-243-learn-1.png",
+      "alt": "Screenshot showing cost analysis in the Azure portal for all Batch accounts in a subscription.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/bf7ca41ffd23bfde2860af57e6df31b65bfe512a/articles/batch/media/batch-budget/subscription-cost-analysis.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-01-09T13:38:49Z",
+      "sha256": "e98e93b135a6cd27b13d4faff72c77a2bb488e5f279805b693fd42a0eeb1d04f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-243-learn-2.png",
+      "alt": "Screenshot showing cost analysis in the Azure portal for all Batch accounts in a subscription.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/media/plan-to-manage-costs/subscription-cost-analysis.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-06-04T22:56:38Z",
+      "sha256": "e98e93b135a6cd27b13d4faff72c77a2bb488e5f279805b693fd42a0eeb1d04f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/budget.md",
+      "revision": "bf7ca41ffd23bfde2860af57e6df31b65bfe512a",
+      "revision_date": "2024-01-09T13:38:49Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Get cost analysis and set budgets for Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/budget",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bf7ca41ffd23bfde2860af57e6df31b65bfe512a/articles/batch/budget.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/plan-to-manage-costs.md",
+      "revision": "bb9e426cabbe0b3bf597d84424a5b22c16911c3f",
+      "revision_date": "2025-06-04T22:56:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan to manage costs for Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/plan-to-manage-costs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/plan-to-manage-costs.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-01-09T18:08:07Z; used previous public snapshot. Confirm continued applicability: articles/batch/budget.md"
+  ],
+  "open_questions": [
+    "Does the user have the necessary permissions to view cost data and create budgets in the target subscription?",
+    "Has the user confirmed whether their Batch account is in Batch service mode or user subscription mode?",
+    "If using user subscription mode, have the underlying resources been tagged appropriately for filtering?",
+    "Is the user aware that budget alerts may have a delay and might not prevent overspending in real-time?",
+    "Has the user planned for the cleanup of underlying resources (VMs, disks, VNets) after the Batch pool is deleted?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/set-a-budget-boundary-around-a-compute-experiment.md",
+  "draft": true,
+  "word_count": 911,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Batch is a free service, but costs are incurred for underlying compute resources like VMs, managed disks, storage, and networking.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "In Batch service mode, cost analysis for a pool can be filtered by selecting the specific Batch pool resource.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "In user subscription mode, Batch pools do not appear under the Resource filter and require tagging for cost analysis.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Budgets can be created with alerts at specific percentages, but there may be a delay in spending alerts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Deleting a Batch pool does not automatically delete all underlying resources, which may continue to incur costs.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Batch service mode pools appear under the 'Resource' filter. Source S1/S2 explicitly state that for Batch service mode, you filter by 'Resource' to find the pool. However, for user subscription mode, it says pools do NOT show under 'Resource' and require Tag filtering. The draft's distinction is correct, but the phrasing 'appear under a specific resource filter' is vague. More critically, the draft implies a universal 'Resource' filter exists for service mode, which is correct per source, but fails to mention that tags cannot be associated with Batch pools (S1/S2), making the user subscription mode instruction dependent on pre-existing tags which the draft assumes exist without warning about this limitation.",
+      "fix": "Clarify that tags cannot be associated with Batch pools (S1/S2). For user subscription mode, explicitly state that the user must have applied tags to the underlying VMs or resources, as the pool itself isn't taggable. Ensure the distinction between filtering by 'Resource' (Service Mode) vs 'Tag' (User Subscription Mode) is precise and references the specific limitation that pool-level tagging is not supported."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests deleting the Batch pool and 'any associated resources' but lists VMs, disks, VNets, and load balancers as potentially remaining. Source S2 notes that VNets are billed per subscription/region and might not be deleted with the pool. The draft's cleanup section is vague on *how* to ensure these are deleted, potentially leaving the user with lingering costs despite the budget alert. It doesn't explicitly warn that deleting the Batch pool does not automatically delete the underlying VMs if they were created in user subscription mode or if specific deletion policies were set.",
+      "fix": "Explicitly state that deleting a Batch pool does not automatically delete underlying VMs, disks, or VNets, especially in user subscription mode. Advise manually verifying and deleting these resources to avoid post-experiment charges, referencing S2's warning about resources continuing to accrue costs."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Azure Batch itself is a free service' which is true, but it doesn't clarify that the budget applies to the *subscription* or *resource group* level via filters, not a native 'Batch Budget' object. The draft implies a direct 'Batch Budget' exists. While S1/S2 describe creating budgets in Cost Management with filters, the draft's narrative might mislead users into thinking there's a specific 'Batch Budget' feature separate from standard Azure Cost Management budgets.",
+      "fix": "Clarify that Azure Cost Management budgets are generic Azure resources, not Batch-specific objects. Emphasize that the 'boundary' is created by applying filters (Resource or Tag) within the standard Cost Management budget creation workflow, as described in S1/S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' section with generic links. The editorial guidance prohibits generic concluding paragraphs and advises ending with a concrete verification or next action. The draft's 'Next steps' are standard boilerplate.",
+      "fix": "Remove the generic 'Next steps' section. End with a concrete action, such as verifying the budget alert notification delivery or checking the cost analysis view for the specific pool after a job completes."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'standard load balancers' incurring charges. Source S1/S2 specify that standard load balancers are used for Virtual Machine Configuration pools in user subscription mode, but not necessarily in Batch service mode (where they might be hidden or managed differently). The draft generalizes this cost driver without distinguishing the mode.",
+      "fix": "Specify that standard load balancer costs apply primarily to Virtual Machine Configuration pools in user subscription mode, as per S1/S2, to avoid confusion for users in Batch service mode."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "AZC-068",
+  "title": "Use network security groups with clear traffic ownership",
+  "slug": "use-network-security-groups-with-clear-traffic-ownership",
+  "historical_date": "2024-07-08",
+  "input_sha256": "3c780396904121a3d950c5109b0e343e7bb72d66f7cb8f0ee2d853461b716b18",
+  "created_at": "2026-10-23T13:47:26.277163+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define traffic ownership in Azure NSGs by understanding rule evaluation order, association scope, and effective rules.",
+  "tags": [
+    "network-security-groups",
+    "azure-virtual-network",
+    "networking",
+    "security",
+    "azure"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-068-learn-1.png",
+      "alt": "Screenshot of create network security group in Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/8486ec0add0830e4c4ef4418f1787500f5de4827/articles/virtual-network/media/manage-network-security-group/create-network-security-group.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-03-19T19:55:42Z",
+      "sha256": "eda080c57105336f085011b802140ce7a477ae01bba0aed32d55b8d1748d5b49",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/network-security-groups-overview.md",
+      "revision": "9bb6bdb65127b87e8f2936d773ea6e4e3be21a87",
+      "revision_date": "2024-05-02T14:22:34Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure network security groups overview",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9bb6bdb65127b87e8f2936d773ea6e4e3be21a87/articles/virtual-network/network-security-groups-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/manage-network-security-group.md",
+      "revision": "8486ec0add0830e4c4ef4418f1787500f5de4827",
+      "revision_date": "2024-03-19T19:55:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create, change, or delete an Azure network security group",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8486ec0add0830e4c4ef4418f1787500f5de4827/articles/virtual-network/manage-network-security-group.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/network-security-group-how-it-works.md",
+      "revision": "1c9da4c6bd356acac564fbc17fbdc66dd3a4f83c",
+      "revision_date": "2023-10-24T20:32:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Network security group - how it works",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1c9da4c6bd356acac564fbc17fbdc66dd3a4f83c/articles/virtual-network/network-security-group-how-it-works.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the article sufficiently explain the difference between service tags and application security groups in the context of rule simplification?",
+    "Is the example of creating a security rule detailed enough for a practitioner to implement without referring to external documentation?",
+    "Should the article include a specific warning about the impact of NSG changes on running applications, given that existing connections are not reevaluated?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-network-security-groups-with-clear-traffic-ownership.md",
+  "draft": true,
+  "word_count": 1386,
+  "claim_support_checks": [
+    {
+      "claim": "NSG rules are processed in priority order, with lower numbers having higher priority.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "For inbound traffic, subnet NSG rules are processed before network interface NSG rules.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "For outbound traffic, network interface NSG rules are processed before subnet NSG rules.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Default security rules have the lowest priority (highest numbers) and cannot be deleted.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Modifying NSG rules only affects new connections; existing connections are not reevaluated.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The opening uses the forbidden 'Which ...? It sounds ...' construction. The text also contains a generic concluding paragraph starting with 'By understanding...', which violates the instruction to end with a concrete verification or next action.",
+      "fix": "Replace the opening with a direct operational observation, such as 'Inbound traffic evaluation order determines whether an NSG protects or blocks a workload.' Remove the final paragraph entirely and end with the IP Flow Verify verification step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot of the 'Create network security group' page. This image illustrates resource creation, not the core topic of rule evaluation order or traffic ownership. It adds no value to the specific how-to guidance requested.",
+      "fix": "Remove the screenshot. The guidance focuses on evaluation logic and association scope, not the initial creation workflow. Keep source provenance in review records without displaying unrelated UI images."
+    },
+    {
+      "severity": "medium",
+      "problem": "The 'Steps to verify effective security rules' directs users to select 'Effective security rules' on the NSG blade. This path is incorrect; effective rules are viewed on the Network Interface blade or via Network Watcher. The draft also omits the destructive context that NSG changes do not affect existing connections.",
+      "fix": "Correct the steps: 'Select the Network Interface, then choose Effective security rules.' Add a warning that rule modifications only apply to new connections, potentially disrupting active sessions if not planned."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Azure default security rules are assigned the lowest priority (highest numbers, 65000 and above)'. While technically true for the specific default rules listed, the text implies this is a universal property of all default rules or a fixed range, which could be misleading if Microsoft changes internal priorities.",
+      "fix": "Refine to: 'Azure default security rules use high priority numbers (e.g., 65000+) to ensure custom rules are processed first.' This aligns with the source text's specific examples without overgeneralizing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'If the subnet NSG denies the traffic, the network interface NSG is not evaluated... Conversely, if the subnet NSG denies the traffic, the network interface NSG is never consulted'. This is repetitive and slightly confusingly phrased in the context of the 'Conversely' clause which seems to restate the denial logic rather than contrasting it.",
+      "fix": "Consolidate the evaluation order explanation. State clearly: 'For inbound traffic, both subnet and NIC NSGs must allow traffic. A deny at either stage blocks the connection, and subsequent stages are skipped.'"
+    }
+  ]
+}

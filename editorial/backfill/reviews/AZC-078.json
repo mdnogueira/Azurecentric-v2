@@ -1,0 +1,137 @@
+{
+  "id": "AZC-078",
+  "title": "Replace a service principal secret with workload identity federation",
+  "slug": "replace-a-service-principal-secret-with-workload-identity-federation",
+  "historical_date": "2024-08-05",
+  "input_sha256": "a979557e5f3b4c3c02bf120fbd75c7eff997311f899685f103bfcf7f3a8ae8a1",
+  "created_at": "2026-10-23T13:59:55.123363+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Replace service principal secrets with workload identity federation by linking an external OIDC provider to an Azure managed identity.",
+  "tags": [
+    "workload-identity",
+    "managed-identities",
+    "azure-entra-id",
+    "ci-cd",
+    "security"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-078-learn-1.png",
+      "alt": "Screenshot of searching for managed identities in the portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/f6e27efc9cff56562b13ea738e41954d9094f64f/docs/identity/managed-identities-azure-resources/media/developer-introduction/managed-identities-search.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-02-12T20:02:01Z",
+      "sha256": "8fd6bf9ec6704cbebc5e0cff92732151c36129b737a9e1d1f0034cf6f84e0b7b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/secure-hybrid-access-integrations.md",
+      "revision": "f7ae77040f0acad40abfdb18a563900d76d4f3c7",
+      "revision_date": "2024-06-04T16:39:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure hybrid access with Microsoft Entra integration",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/secure-hybrid-access-integrations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/f7ae77040f0acad40abfdb18a563900d76d4f3c7/docs/identity/enterprise-apps/secure-hybrid-access-integrations.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/secure-hybrid-access.md",
+      "revision": "303098623349cb1531546335ee0d73b72dd0d6ce",
+      "revision_date": "2024-07-16T12:45:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure hybrid access, protect legacy apps with Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/secure-hybrid-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/303098623349cb1531546335ee0d73b72dd0d6ce/docs/identity/enterprise-apps/secure-hybrid-access.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/managed-identities-azure-resources/overview-for-developers.md",
+      "revision": "f6e27efc9cff56562b13ea738e41954d9094f64f",
+      "revision_date": "2024-02-12T20:02:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Developer introduction and guidelines",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview-for-developers",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/f6e27efc9cff56562b13ea738e41954d9094f64f/docs/identity/managed-identities-azure-resources/overview-for-developers.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source text explicitly mention 'workload identity federation' as a feature name, or is this inferred from 'federated-credential' CLI commands?",
+    "Are there specific audience claims required for GitHub Actions vs. other IdPs that are not detailed in the sources?",
+    "Is the 'audience-claim' parameter in the CLI command always 'api://AzureADTokenExchange' or does it vary by IdP?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/replace-a-service-principal-secret-with-workload-identity-federation.md",
+  "draft": true,
+  "word_count": 785,
+  "claim_support_checks": [
+    {
+      "claim": "Managed identities are the recommended authentication option for Azure resources.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "User-assigned managed identities are recommended for most scenarios.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "DefaultAzureCredential automatically handles token acquisition for managed identities.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Federated credentials link an external IdP to a service principal.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Application Administrator' or 'Cloud Application Administrator' roles are required to configure federated credentials. The provided sources (S1, S3) do not support this specific permission claim for federated credentials; S1 lists Graph API permissions for app registration, and S3 lists 'Managed Identity Contributor' for identity creation. This is an unsupported permission assertion.",
+      "fix": "Remove the specific role claims. Replace with a reference to the official documentation for 'Federated credentials' permissions, or state that 'Application.ReadWrite.All' Graph permissions are required, as implied by S1's API section, without asserting specific RBAC roles not found in the sources."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft uses `az ad app federated-credential create` to add credentials to a service principal. However, the context is Workload Identity Federation for Azure resources (e.g., AKS, App Service), where credentials are typically added to the *Azure resource* (e.g., `az aks update` or `az webapp identity federated-credential`), not the generic `az ad app` command which targets the Entra ID app registration directly. The sources do not support this specific CLI command for this workflow.",
+      "fix": "Replace the CLI command with the correct resource-specific command (e.g., `az aks update` for Kubernetes or `az webapp identity federated-credential` for App Service) or remove the code snippet if the specific resource type isn't defined. Clarify that the credential links the external IdP to the *resource's* identity, not just the app registration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'User-assigned identities are recommended for most scenarios' citing S3. While S3 mentions this, it is in the context of 'Developer introduction' and specific Azure resources. The draft generalizes this to all Workload Identity Federation scenarios without noting that system-assigned identities are often sufficient and simpler for single-resource deployments. This is a vague generalization.",
+      "fix": "Qualify the recommendation: 'User-assigned identities are recommended when the identity needs to be shared across multiple resources or have an independent lifecycle.' Remove the absolute 'most scenarios' claim if not strictly supported by the broader workload identity documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a .NET code snippet using `DefaultAzureCredential` with `ManagedIdentityClientId`. This code is from S3 (Managed Identities overview) and is illustrative. However, the draft presents it as the definitive solution for Workload Identity Federation without explaining that `DefaultAzureCredential` automatically handles the OIDC token exchange from the workload identity provider in supported environments (like AKS with Azure Workload Identity), not just via explicit client ID passing.",
+      "fix": "Clarify that `DefaultAzureCredential` automatically detects the workload identity environment (e.g., via environment variables set by the Azure Workload Identity webhook) and does not require manual `ManagedIdentityClientId` configuration in most standard Workload Identity setups. Mark the code as illustrative and note the environment dependency."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By following these steps, you can securely replace...'. This is a generic concluding paragraph that violates the editorial guidance to end with a concrete verification or next action.",
+      "fix": "Remove the concluding paragraph. End with the troubleshooting section or a concrete next step, such as 'Verify the token acquisition in your application logs to confirm the federated credential is being used.'"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "AZC-056",
+  "title": "Create and verify a Hyper-V virtual switch",
+  "slug": "create-and-verify-a-hyper-v-virtual-switch",
+  "historical_date": "2024-06-05",
+  "input_sha256": "c2f90b2c2651354425dbcbebd8212fa191d3befa6c905b74b1185c7205f8e127",
+  "created_at": "2026-10-23T23:51:17.303369+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create and verify a Hyper-V virtual switch on Windows Server 2022 using PowerShell, covering switch types and basic configuration.",
+  "tags": [
+    "hyper-v",
+    "virtual-switch",
+    "windows-server-2022",
+    "networking",
+    "powershell"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-switch-for-Hyper-V-virtual-machines.md",
+      "revision": "42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3",
+      "revision_date": "2022-12-07T14:07:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create and configure a virtual switch with Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-switch-for-Hyper-V-virtual-machines.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/plan/plan-hyper-v-networking-in-windows-server.md",
+      "revision": "42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3",
+      "revision_date": "2022-12-07T14:07:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan for Hyper-V networking in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/plan-hyper-v-networking-in-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3/WindowsServerDocs/virtualization/hyper-v/plan/plan-hyper-v-networking-in-windows-server.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-06-05: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/virtual-switch.md"
+  ],
+  "open_questions": [
+    "Does the provided source explicitly state the default VLAN ID if not specified?",
+    "Are there specific hardware requirements for SR-IOV beyond the guest OS being Windows Server?",
+    "What is the exact impact on live migration if QoS is not configured on the virtual switch?",
+    "Does the source provide guidance on troubleshooting connectivity issues after creating an external switch?",
+    "Are there any known limitations with Switch Embedded Teaming (SET) on Windows Server 2022 not mentioned in the source?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-and-verify-a-hyper-v-virtual-switch.md",
+  "draft": true,
+  "word_count": 1127,
+  "claim_support_checks": [
+    {
+      "claim": "An external virtual switch binds to a physical network adapter and provides connectivity to the outside network.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "An internal virtual switch allows communication between the host and the virtual machines but not to an external network.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "A private virtual switch restricts communication to the virtual machines only, excluding the host.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Binding a virtual switch to a physical network adapter can disrupt network connectivity.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The management operating system can be allowed to share the network adapter with the virtual switch.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "SR-IOV is only available for virtual machines running Windows Server.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies that enabling management OS sharing on an existing external switch triggers a connectivity disruption warning. Source S1 explicitly states the warning occurs when creating the switch or selecting the adapter; S1 does not mention a warning for subsequent `Set-VMSwitch` operations. This is a factual error regarding user experience.",
+      "fix": "Remove the statement that the connectivity warning occurs when enabling management OS sharing. Clarify that the warning is specific to the initial binding/creation phase. Ensure the distinction between creation-time and configuration-time actions is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Summary of commands' section and a 'Next steps' section with generic advice ('Always test changes...'). The editorial guidance explicitly forbids stock conclusion and summary sections, and requires ending with a concrete verification or decision rather than generic advice.",
+      "fix": "Remove the 'Summary of commands' and 'Next steps' sections entirely. End the article immediately after the 'Verify the configuration' section, concluding with the specific verification command output check."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions configuring VLANs using `Set-VMNetworkAdapterVlan` but does not provide the complete, working PowerShell syntax supported by the source. The source provides specific examples for ManagementOS and Trunk modes. The draft's vague reference to 'additional parameters' violates the requirement for complete, small working structures.",
+      "fix": "Include the specific `Set-VMNetworkAdapterVlan` examples from Source S1 for ManagementOS access mode and Trunk mode. Ensure the code blocks are complete and use splatting where appropriate, as demonstrated in the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims that for internal/private switches, the `NetAdapterName` field is 'not present' in `Get-VMSwitch` output. While functionally true that it's empty/null, the source does not explicitly define the output schema of `Get-VMSwitch` for these types. This is a minor inference.",
+      "fix": "Rephrase to state that internal and private switches are not bound to a physical adapter, so the `NetAdapterName` property will be empty or null, rather than claiming the field is absent from the output structure."
+    }
+  ]
+}

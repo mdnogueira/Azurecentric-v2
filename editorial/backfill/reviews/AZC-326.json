@@ -1,0 +1,130 @@
+{
+  "id": "AZC-326",
+  "title": "Design a dashboard with clear service ownership",
+  "historical_date": "2026-07-01",
+  "created_at": "2026-10-23T23:45:16.408709+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Azure Workbooks to clarify service ownership with dynamic parameters and scoped queries.",
+  "tags": [
+    "azure-workbooks",
+    "azure-monitor",
+    "kusto",
+    "ownership",
+    "dashboards"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/visualize/workbooks-create-workbook.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create or edit an Azure Workbook",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/visualize/workbooks-create-workbook.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/visualize/workbooks-overview.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Workbooks overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/visualize/workbooks-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/visualize/tutorial-logs-dashboards.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create and share dashboards of Azure Log Analytics data | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/tutorial-logs-dashboards",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/visualize/tutorial-logs-dashboards.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "How should ownership metadata be stored if it is not directly available in Azure Resource Graph?",
+    "What is the best practice for handling parameters when the number of resource groups exceeds the dropdown limit?",
+    "Are there specific Kusto functions for handling missing columns in custom tables that should be referenced?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/visualize/workbooks-create-workbook.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/visualize/workbooks-overview.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/visualize/tutorial-logs-dashboards.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://internal-wiki.example.com/{ResourceGroup}"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/design-a-dashboard-with-clear-service-ownership.md",
+  "draft": true,
+  "word_count": 764,
+  "claim_support_checks": [
+    {
+      "claim": "Workbooks can combine text, log queries, metrics, and parameters into rich interactive reports.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Text blocks support markdown and can reference parameter values.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Monitoring Reader role includes standard /read privileges for workbooks.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Monitoring Contributor role includes workbooks/write privileges.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The Kusto query `Resources | where name == '{ResourceGroup}'` is syntactically invalid. `Resources` returns resource IDs, not names, and the parameter placeholder syntax `{ResourceGroup}` is not valid Kusto; it requires the `in~` operator with a parameter reference like `{ResourceGroup}` only if the parameter is defined as a string array, but `name` is not a column in the `Resources` table.",
+      "fix": "Replace the query with a valid Resource Graph query that joins `Resources` to `Perf` using `ResourceId`. Use `in~({ResourceGroup})` if the parameter is a string, or join to the specific resource IDs. Example: `Resources | where id in~({ResourceGroup}) | join kind=inner (Perf) on $left.ResourceId == $right.ResourceId`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The text block example uses `{ResourceGroup}` as a direct placeholder in markdown. While workbooks support parameter references, the syntax is typically `{ParameterName}`. The example implies a direct substitution without showing the parameter definition in the text block context, which might confuse users about how the reference is resolved.",
+      "fix": "Clarify that the text block must reference the parameter name exactly as defined (e.g., `{ResourceGroup}`) and ensure the parameter is added to the workbook before the text block. Add a note that parameter references in text are updated dynamically."
+    },
+    {
+      "severity": "medium",
+      "problem": "The article claims workbooks are 'superior to static dashboards for multi-tenant or multi-team environments' without evidence. This is a subjective comparison not supported by the sources, which describe workbooks as flexible and dashboards as shared views, without ranking them.",
+      "fix": "Remove the comparative claim. State that workbooks offer dynamic filtering and narrative capabilities, while dashboards provide a persistent, shared view of static tiles. Let the features speak for themselves."
+    },
+    {
+      "severity": "low",
+      "problem": "The article mentions 'Azure Resource Graph' for parameters but does not explicitly state that the parameter type must be set to 'Query' with the Kusto query as the source. This is a missing step in the 'how-to' guidance.",
+      "fix": "Add a step in the 'Define ownership as a parameter' section: 'Set the parameter type to Query, paste the Resource Graph query, and configure the display and value fields.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The verification step 'Link Accuracy' assumes internal wiki links are valid. This is an unsupported assumption about the user's infrastructure and is not part of the workbook functionality.",
+      "fix": "Change the verification step to 'Link Syntax: Verify that the markdown link syntax is correct and that the URL structure is valid for your organization's wiki.' Remove the assumption of existing content."
+    }
+  ]
+}

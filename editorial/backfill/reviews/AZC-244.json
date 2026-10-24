@@ -1,0 +1,125 @@
+{
+  "id": "AZC-244",
+  "title": "Understand the operating model of Azure Local",
+  "slug": "understand-the-operating-model-of-azure-local",
+  "historical_date": "2025-11-12",
+  "input_sha256": "5a82e35545ed50f1f9968bd259462480355e1e8bd4c01becef9d353a603f841b",
+  "created_at": "2026-10-23T17:53:16.689361+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Clarify the Azure Connected Machine agent's role in Azure Local by distinguishing it from the Azure Arc infrastructure and the Azure Monitor Agent.",
+  "tags": [
+    "azure-local",
+    "azure-arc",
+    "connected-machine-agent",
+    "azure-monitor-agent",
+    "hybrid-cloud"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/agent-overview.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of the Azure Connected Machine agent",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/agent-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/overview.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Arc-enabled servers Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/plan-at-scale-deployment.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan and deploy Azure Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/plan-at-scale-deployment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/plan-at-scale-deployment.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/agent-overview.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/overview.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-lighthouse-supported-service.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/plan-at-scale-deployment.md"
+  ],
+  "open_questions": [
+    "Does Azure Local have specific prerequisites for the Connected Machine agent version that differ from standard Azure Arc?",
+    "Is the Azure Monitor Agent strictly required for all Azure Local workloads, or only for specific management features like Defender for Cloud?",
+    "How does the Azure Connected Machine agent handle identity when the Azure Local cluster is disconnected from Azure for extended periods?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-the-operating-model-of-azure-local.md",
+  "draft": true,
+  "word_count": 934,
+  "claim_support_checks": [
+    {
+      "claim": "The Azure Connected Machine agent manages identity, policy, and extensions.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Azure Monitor Agent is a separate agent that collects monitoring data.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "An outage of Azure Arc won't affect the customer workload itself.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Connected Machine agent 'only replaces the legacy Log Analytics agent, Diagnostics extension, and Telegraf agent'. This is factually incorrect; the Azure Monitor Agent (AMA) replaces these legacy agents, not the Connected Machine agent. The draft conflates the two agents' roles.",
+      "fix": "Remove the sentence stating the Connected Machine agent replaces legacy agents. Clarify that the Connected Machine agent manages extensions (which may include installing AMA), but the AMA itself is the component that replaces the Log Analytics agent and Diagnostics extension."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Azure Local machines 'require' the Azure Monitor Agent (AMA) to achieve a consistent Azure experience. The sources do not support this as a strict requirement for Azure Local specifically, nor do they define 'consistent Azure experience' as dependent solely on AMA. This is an unsupported categorical claim about workload suitability.",
+      "fix": "Rephrase to indicate that installing the AMA is necessary to enable specific capabilities like proactive monitoring and Defender for Cloud, rather than implying it is a universal requirement for the Azure Local operating model itself."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph beginning with 'By clearly separating...'. This violates the editorial guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Delete the final paragraph. End the article immediately after the verification steps or the final operational consideration to maintain a direct, operational tone."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft cites 'Overview of the Azure Connected Machine agent' for the statement that 'An outage of Azure Arc won't affect the customer workload itself'. While S1 mentions this, S2 provides the broader context of Azure Arc-enabled servers. The draft attributes this general Azure Arc behavior exclusively to the agent overview, which is slightly misleading regarding the scope of the claim.",
+      "fix": "Attribute the statement about workload impact to the Azure Arc-enabled servers overview (S2) or both sources, as it describes the service behavior rather than just the agent's internal logic."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses repetitive citation formatting, appending the full URL and title after every sentence. This disrupts reading flow and violates the guidance to use a few well-placed source links.",
+      "fix": "Consolidate citations. Place a single source link at the end of the relevant section or paragraph where the information is derived, rather than repeating it after every individual claim or sentence."
+    }
+  ]
+}

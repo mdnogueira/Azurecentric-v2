@@ -1,0 +1,94 @@
+{
+  "id": "AZC-271",
+  "title": "Check SMB settings before changing a file-service workload",
+  "slug": "check-smb-settings-before-changing-a-file-service-workload",
+  "historical_date": "2026-01-27",
+  "input_sha256": "91eb11382dd156c343cc3ee254d99681a4e661016dc3775732cc43d00163f145",
+  "created_at": "2026-10-23T18:33:08.479108+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify SMB dialect and baseline configuration before applying performance tuning to prevent regressions.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/performance-tuning/role/file-server/smb-file-server.md",
+      "revision": "16dafaddc757fb0b4ad7e5f8da33fbfc888fbcd4",
+      "revision_date": "2025-09-12T09:49:23Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Performance Tuning for SMB File Servers",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/performance-tuning/role/file-server/smb-file-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/16dafaddc757fb0b4ad7e5f8da33fbfc888fbcd4/WindowsServerDocs/administration/performance-tuning/role/file-server/smb-file-server.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/storage/file-server/file-server-smb-overview.md",
+      "revision": "d3112525b31084f0b0eef1e6525d3da228c71ac1",
+      "revision_date": "2025-11-27T16:37:20Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is SMB File Sharing for Windows and Windows Server?",
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/d3112525b31084f0b0eef1e6525d3da228c71ac1/WindowsServerDocs/storage/file-server/file-server-smb-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/storage/file-server/Troubleshoot/troubleshooting-smb.md",
+      "revision": "6c108e742d8decec43421d9138051f695f225ddf",
+      "revision_date": "2025-09-22T10:06:56Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Advanced Troubleshooting Server Message Block (SMB)",
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/troubleshooting-smb",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6c108e742d8decec43421d9138051f695f225ddf/WindowsServerDocs/storage/file-server/Troubleshoot/troubleshooting-smb.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-smb-settings-before-changing-a-file-service-workload.md",
+  "draft": true,
+  "word_count": 848,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft recommends disabling SMB encryption and signing as baseline optimizations. Source S2 identifies these as critical security features protecting data in transit. Disabling them exposes the workload to eavesdropping and tampering, creating a significant security regression that is not justified by minor throughput gains in modern environments.",
+      "fix": "Remove the recommendation to disable SMB encryption and signing. Frame the 'disable unnecessary services' list as a security-risk assessment rather than a performance optimization step. Explicitly state that disabling these features compromises data integrity and confidentiality."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Windows Server 2025 supports SMB 3.1.1 as the 'highest available dialect'. Source S2 only lists dialect support up to Windows Server 2016+ for 3.1.1 and does not confirm 2025-specific dialect versions. This is a future knowledge assumption not supported by the provided sources.",
+      "fix": "Verify the specific SMB dialect support for Windows Server 2025 against current documentation. If 3.1.1 remains the highest, cite the specific 2025 feature documentation. Otherwise, remove the version claim or generalize to 'latest supported dialect'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Get-SMBConnection` to check the dialect on the server. Source S1 specifies that `Get-SMBConnection` is for clients, while `Get-SMBSession` is for servers. Using the client cmdlet on the server may yield no results or incorrect context, leading to misdiagnosis.",
+      "fix": "Correct the PowerShell commands: use `Get-SMBSession` on the server and `Get-SMBConnection` on the client. Ensure the instructions clearly distinguish between the server-side session view and the client-side connection view."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'This approach ensures you understand the trade-offs and avoid unintended consequences.' This is a generic concluding paragraph that adds no technical value and violates the guidance to remove such endings.",
+      "fix": "Remove the final concluding paragraph. End the article immediately after the verification step with the concrete action of reverting changes if performance degrades."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists 'Client-side caching' as a service to disable. SMB 3.0+ includes Directory Cache and Oplocks which are integral to performance. Disabling client-side caching broadly may severely degrade performance for read-heavy workloads, contradicting the goal of optimization.",
+      "fix": "Clarify that 'Client-side caching' refers to specific legacy features like Offline Files or specific DFS caching, not the SMB 3.0 Directory Cache. Advise against disabling caching unless specific latency issues are identified, as it is a key performance enabler."
+    }
+  ]
+}

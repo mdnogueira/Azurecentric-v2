@@ -1,0 +1,121 @@
+{
+  "id": "AZC-186",
+  "title": "Plan rollback before a server migration",
+  "slug": "plan-rollback-before-a-server-migration",
+  "historical_date": "2025-06-04",
+  "input_sha256": "da8cb632e2d6891ecb9a54c2dd14bd231de781749cec6277da3b33aa545c7195",
+  "created_at": "2026-10-23T16:32:59.360498+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Azure Migrate test migrations to validate readiness and refine the plan before committing to a full cutover.",
+  "tags": [
+    "azure-migrate",
+    "migration",
+    "test-migration",
+    "vmware",
+    "hyper-v",
+    "cloud-adoption"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/prepare-for-migration.md",
+      "revision": "f335d6e1dbd8e86d46ef1a410dea8bcb3e1b8103",
+      "revision_date": "2025-04-17T06:03:51Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Prepare machines for migration with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/prepare-for-migration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f335d6e1dbd8e86d46ef1a410dea8bcb3e1b8103/articles/migrate/prepare-for-migration.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/concepts-migration-planning.md",
+      "revision": "78be6e42449ef19c7d9c7105f75159002f8651cf",
+      "revision_date": "2025-05-02T21:41:36Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Build a migration plan with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/78be6e42449ef19c7d9c7105f75159002f8651cf/articles/migrate/concepts-migration-planning.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/how-to-migrate.md",
+      "revision": "3606e8688e50ccd8dd657d8e91d0647edc8729a0",
+      "revision_date": "2024-12-31T06:22:12Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Add migration tools in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/how-to-migrate",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3606e8688e50ccd8dd657d8e91d0647edc8729a0/articles/migrate/how-to-migrate.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source explicitly state that test migrations are supported for physical servers, or only for VMs?",
+    "Are there specific Azure VM sizing constraints that apply only during test migrations?",
+    "How does Azure Migrate handle data consistency during a test migration if the source VM is still active?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-rollback-before-a-server-migration.md",
+  "draft": true,
+  "word_count": 815,
+  "claim_support_checks": [
+    {
+      "claim": "A test migration helps estimate time and discover issues before full migration.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Migrate allows selecting up to 10 machines at once for replication.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Test migrations are supported for VMware vSphere and Hyper-V VMs.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims test migrations create VMs in a 'test resource group' specified by the user. The sources do not mention user-specified test resource groups or this specific workflow detail, making this an invented procedural step.",
+      "fix": "Remove the claim about specifying a test resource group. State that test migrations create temporary Azure VMs for validation, without inventing UI steps or resource group naming conventions not found in the provided documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that test migrations prevent 'data loss'. The sources only mention estimating time, tweaking plans, and discovering issues. They do not guarantee data integrity or zero data loss during the test phase, which is a misleading promise.",
+      "fix": "Replace 'prevent data loss' with 'identify potential issues'. Align the benefits with the source's explicit list: estimating time, tweaking the plan, and discovering issues before full migration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states test migrations are supported for 'both VMware vSphere and Hyper-V VMs' as a general fact. While S1 covers both, it does not explicitly confirm 'test migration' functionality is identical or available for both in the same manner, risking overgeneralization.",
+      "fix": "Verify the specific test migration capabilities for Hyper-V in the sources. If not explicitly detailed, phrase cautiously: 'Azure Migrate supports test migrations for virtualized workloads, including VMware vSphere and Hyper-V, subject to specific tool capabilities.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes generic concluding paragraphs starting with 'By following these steps...' and 'Remember, the key to...'. This violates the editorial guidance to remove generic concluding paragraphs and end with a concrete next action.",
+      "fix": "Delete the final two paragraphs. End the article with the concrete action of addressing issues identified during the test migration and updating the migration plan, as supported by the source's 'Refining the migration plan' section."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the same source citation multiple times in close proximity (e.g., S2 cited three times in the 'Why test migrations matter' section). This creates prose defects and reduces reading flow.",
+      "fix": "Consolidate citations. Use a single source link at the end of the relevant sentence or paragraph where the information is derived, rather than repeating the full citation after every claim."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "AZC-358",
+  "title": "Plan VM maintenance around application recovery requirements",
+  "slug": "plan-vm-maintenance-around-application-recovery-requirements",
+  "historical_date": "2026-09-28",
+  "input_sha256": "ff68f9300580e95f924ed6fcc578bfd7c8f2512e8b3aff36a2207fd35ba663ae",
+  "created_at": "2026-10-23T20:33:04.415996+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Align VMSS maintenance with recovery needs by distinguishing self-service host reboots from OS upgrade windows.",
+  "tags": [
+    "virtual-machine-scale-sets",
+    "maintenance",
+    "self-service-maintenance",
+    "maintenance-control",
+    "high-availability"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-358-learn-1.png",
+      "alt": "Screenshot showing how to open Maintenance Configurations",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/media/virtual-machine-scale-sets-maintenance-control-portal/maintenance-configurations-search-bar.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-20T00:18:50Z",
+      "sha256": "360f99b903c4bfaaf30727517acd5898148a51aee427fa01bceb1731593d208c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Maintenance notifications for Virtual Machine Scale Sets in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/virtual-machine-scale-sets-maintenance-control-portal.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Maintenance control for OS image upgrades on Azure Virtual Machine Scale Sets using Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machine-scale-sets-maintenance-control-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/virtual-machine-scale-sets-maintenance-control-portal.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/virtual-machine-scale-sets-maintenance-control.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of Maintenance control for OS image upgrades on Azure Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machine-scale-sets-maintenance-control",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/virtual-machine-scale-sets-maintenance-control.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/virtual-machine-scale-sets-maintenance-control-portal.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/virtual-machine-scale-sets-maintenance-control.md"
+  ],
+  "open_questions": [
+    "Does the 30-minute pause between update domains apply to self-service maintenance triggered by the customer, or only to Azure-initiated scheduled maintenance?",
+    "Can a single maintenance configuration be assigned to multiple VMSS across different subscriptions, or is it subscription-scoped?",
+    "What is the exact impact on local ephemeral disk data if self-service maintenance is triggered on a VM that has been resized recently?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-vm-maintenance-around-application-recovery-requirements.md",
+  "draft": true,
+  "word_count": 1144,
+  "claim_support_checks": [
+    {
+      "claim": "Self-service maintenance allows customers to start maintenance during a typical 35-day window before Azure schedules it.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Self-service maintenance is recommended if you need to control the sequence of maintenance to guarantee safe recovery.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Maintenance configurations for OS image upgrades require a duration of at least 5 hours and a recurrence of at least once a day.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure waits at least 30 minutes between update domains during scheduled maintenance.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Self-service maintenance is not recommended for deployments that use availability sets.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides an illustrative PowerShell command `New-AzMaintenanceConfiguration` with `-Scope \"OSImageUpgrade\"`. This cmdlet and parameter do not exist in the Azure PowerShell Az module; maintenance configurations are managed via `New-AzMaintenanceConfiguration` with specific schedule/assignment logic, not a simple scope flag. This is an invented command structure.",
+      "fix": "Remove the illustrative PowerShell code for creating maintenance configurations. The source documentation (S2, S3) only details the Azure Portal workflow and references other docs for PowerShell/CLI. Do not invent code snippets that do not match the actual cmdlet signatures."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims self-service maintenance is 'not recommended' for availability sets because Azure handles sequencing. However, it fails to mention that self-service maintenance is explicitly unavailable for Azure Cloud Services and Service Fabric (S1). It also omits that self-service maintenance may revert if VMs are stopped/deallocated or resized, a critical risk for recovery planning.",
+      "fix": "Add the specific counterindications from S1: self-service maintenance is not available for Cloud Services/Service Fabric, and it is discouraged if VMs are frequently stopped, resized, or short-lived, as these actions revert the maintenance status."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that if you need more than 30 minutes of recovery time, you must trigger maintenance 'one update domain at a time.' This is misleading. Self-service maintenance triggers a reboot of the *entire* scale set (or selected instances) immediately. It does not provide a mechanism to pause between update domains for recovery verification. The 30-minute pause is a feature of Azure-initiated scheduled maintenance, not customer-initiated.",
+      "fix": "Clarify that self-service maintenance initiates a reboot immediately for the selected VMs. It does not support pausing between update domains. If granular sequencing with delays is required, the draft should acknowledge that this is not natively supported by the self-service feature and may require custom orchestration or acceptance of the Azure-initiated 30-minute pause."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'diagram' node list in the metadata but does not render a visual diagram or provide a text-based flowchart in the body. The guidance is text-heavy and lacks the visual aid promised by the structure. Additionally, the 'Verify your plan' section is generic.",
+      "fix": "Replace the generic 'Verify your plan' section with a concrete next action, such as checking the `MaintenanceRedeployStatus` via CLI/PowerShell to confirm `IsCustomerInitiatedMaintenanceAllowed` is true before attempting any action."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that maintenance configurations are subscription-scoped by saying 'Maintenance configurations work across subscriptions and resource groups' (S3) but then instructs to create one in a specific RG. It doesn't clarify the assignment scope. The draft also uses the term 'OS image upgrade' which is correct, but the illustrative code for it is wrong (see Issue 1).",
+      "fix": "Ensure the distinction between the *resource* (Maintenance Configuration) and the *assignment* is clear. The configuration is a resource in a specific RG/Subscription, but can be assigned to VMSS in other RGs/Subscriptions. Remove the incorrect illustrative code."
+    }
+  ]
+}

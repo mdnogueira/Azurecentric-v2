@@ -1,0 +1,129 @@
+{
+  "id": "AZC-253",
+  "title": "Choose failover priorities around application dependencies",
+  "historical_date": "2025-12-08",
+  "created_at": "2026-10-23T23:36:25.698824+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish cluster quorum from application failover priorities. Configure votes to control survival, not role placement.",
+  "tags": [
+    "failover-clustering",
+    "quorum",
+    "windows-server",
+    "disaster-recovery",
+    "multisite"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "revision": "122e7dc009e0e19625a7cdb603aa7cf495da635a",
+      "revision_date": "2025-03-25T15:36:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure and manage the quorum in a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/122e7dc009e0e19625a7cdb603aa7cf495da635a/WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source explicitly state that failover priorities are ignored if quorum is lost, or is this an inference from the cluster halting?",
+    "Is there any evidence in the sources that quorum configuration directly influences failover priorities, or are they independent configurations?",
+    "The sources mention that removing votes from backup site nodes is recommended only for manual failover. What are the implications for automatic failover scenarios?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2025-03-27T17:36:59Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-failover-priorities-around-application-dependencies.md",
+  "draft": true,
+  "word_count": 912,
+  "claim_support_checks": [
+    {
+      "claim": "Quorum is the mechanism that prevents split-brain scenarios by ensuring only one part of the cluster can continue operating.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "If a network partition causes a loss of quorum, the cluster service halts.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "In a multisite cluster, a file share witness should be on a site separate from the cluster workload.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Node votes can be removed from nodes in a backup site for manual failover across sites.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Validate Cluster Quorum validation test can be used to verify vote assignment.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft conflates quorum configuration with failover priorities. Sources state quorum prevents split-brain and halts the cluster if lost, but do not claim that removing node votes 'ensures' a specific site wins or directly configures application failover priorities. Failover priorities are role-level settings independent of quorum votes.",
+      "fix": "Clarify that quorum configuration determines cluster survival, not application failover order. Remove the implication that removing votes 'ensures' the primary site wins; state it prevents the secondary site from forming quorum, forcing a halt or manual intervention."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends removing votes from backup site nodes for multisite clusters but omits the critical context that this configuration is 'recommended only for manual failover.' It fails to explain that automatic failover may be impossible if the isolated site cannot form quorum, leading to service loss.",
+      "fix": "Explicitly state that this configuration is for manual failover scenarios only. Warn that automatic failover to the isolated site is prevented because it cannot achieve quorum, requiring manual intervention to restore service."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests testing failover by 'disabling network connectivity between sites' without warning about the destructive nature of this action. It does not mention that forcing quorum or recovering from a halted cluster may require specific PowerShell commands (e.g., Start-ClusterNode -FQ) and risks data loss.",
+      "fix": "Add a warning that simulating network partitions can halt the cluster. Mention that recovery may require forcing quorum, which can result in the loss of recent configuration changes, and advise performing this in a non-production environment."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic 'Conclusion' section starting with 'Quorum configuration is a fundamental aspect...', which violates the editorial guidance to remove stock concluding paragraphs and end with a concrete verification or next action.",
+      "fix": "Remove the entire 'Conclusion' section. End the article with the verification step: 'Run the Validate Quorum Configuration test to confirm the settings are optimal for your cluster before placing it into production.'"
+    }
+  ]
+}

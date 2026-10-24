@@ -1,0 +1,131 @@
+{
+  "id": "AZC-072",
+  "title": "Handle script failures using try, catch and ErrorAction",
+  "slug": "handle-script-failures-using-try-catch-and-erroraction",
+  "historical_date": "2024-07-19",
+  "input_sha256": "2b52fc7d70402c96dc1ff0392382460ea83d96ccb4abde2f05ea71f48f634066",
+  "created_at": "2026-10-23T13:52:57.568977+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use try/catch and ErrorAction Stop to handle script failures predictably in PowerShell 7.4.",
+  "tags": [
+    "powershell",
+    "error-handling",
+    "try-catch",
+    "scripting",
+    "best-practices"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "revision": "b0246898da471e08ffabc70991b8ec5266f81528",
+      "revision_date": "2024-06-20T21:22:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Everything you wanted to know about exceptions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/b0246898da471e08ffabc70991b8ec5266f81528/reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/error-reporting-concepts.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Error Reporting Concepts",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/error-reporting-concepts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/cmdlet/error-reporting-concepts.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/terminating-errors.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Terminating Errors",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/terminating-errors",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/cmdlet/terminating-errors.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source explicitly state the behavior of -ErrorAction Stop in PowerShell 7.4 compared to Windows PowerShell 5.1?",
+    "Are there any performance implications of using -ErrorAction Stop in large loops?",
+    "How does -ErrorAction Stop interact with pipeline processing in advanced functions?",
+    "Is there a difference in error record structure between cmdlet-generated errors and thrown exceptions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/handle-script-failures-using-try-catch-and-erroraction.md",
+  "draft": true,
+  "word_count": 806,
+  "claim_support_checks": [
+    {
+      "claim": "Non-terminating errors do not trigger catch blocks by default.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "ErrorAction Stop converts non-terminating errors to terminating errors.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The catch block only runs if a terminating error occurs.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Finally blocks run regardless of whether an exception was caught.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Specific exception types can be caught to handle different errors differently.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'PowerShell scripts often fail silently'. This is an unsupported generalization. Non-terminating errors are logged to the error stream and do not fail silently; they are visible unless explicitly suppressed. This misleads users about error visibility.",
+      "fix": "Replace 'fail silently' with 'continue execution despite errors'. Clarify that non-terminating errors are recorded in the error stream and visible via $Error or Write-Host, but do not stop the pipeline."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Re-throwing with throw $_ also works but is less common.' This is technically inaccurate for preserving stack traces. `throw $_` creates a new exception, resetting the stack trace. Only bare `throw` preserves the original stack trace, as documented in S1.",
+      "fix": "Remove the claim that `throw $_` is common or equivalent. State that bare `throw` preserves the original stack trace, while `throw $_` creates a new exception with a new stack trace, obscuring the original error location."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies `Get-ChildItem` generates non-terminating errors by default for missing paths. In PowerShell 7+, `Get-ChildItem` throws a terminating `ItemNotFoundException` by default for missing paths, making `-ErrorAction Stop` redundant for this specific case. This contradicts the general rule for other cmdlets.",
+      "fix": "Clarify that behavior varies by cmdlet and version. Note that `Get-ChildItem` in PS7+ often throws terminating errors for missing items, whereas many other cmdlets (like `Invoke-WebRequest` or `Start-Process`) require `-ErrorAction Stop` to catch non-terminating errors."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Verify your error handling' section with a test script. This is redundant and adds no new technical value beyond the examples already provided. It also suggests checking for 'syntax errors' as a reason for `finally` not running, which is a basic programming error, not a PowerShell-specific concept.",
+      "fix": "Remove the 'Verify your error handling' section. The examples provided earlier sufficiently demonstrate the behavior. Focus on the core concepts of error types and handling rather than generic testing advice."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'If the finally block does not run, check for syntax errors'. This is misleading. `finally` runs unless the process is killed externally or a catastrophic host failure occurs. Syntax errors prevent the script from running at all, so `finally` wouldn't run regardless of the try/catch structure.",
+      "fix": "Remove the advice to check for syntax errors if `finally` doesn't run. Clarify that `finally` runs in all normal execution paths, including when an exception is caught or not. It only fails to run if the PowerShell process is terminated abruptly."
+    }
+  ]
+}

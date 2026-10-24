@@ -1,0 +1,132 @@
+{
+  "id": "AZC-096",
+  "title": "Investigate a Linux guest with a missing network adapter",
+  "historical_date": "2024-09-25",
+  "created_at": "2026-10-24T00:00:23.850536+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a missing Linux network adapter on Hyper-V by verifying synthetic hardware, removing legacy conflicts, and checking driver status.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "networking",
+    "integration-services",
+    "troubleshooting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Hyper-V Integration Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Feature Descriptions for Linux and FreeBSD virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the hv_netvsc module require explicit loading in all modern Linux distributions, or is it auto-loaded by udev?",
+    "Are there specific kernel versions where hv_netvsc is known to be missing or buggy on common distributions like Ubuntu or RHEL?",
+    "What is the exact PowerShell cmdlet to disable a legacy network adapter, and does it require the VM to be off?",
+    "How does NetworkManager handle MAC address changes in modern Linux distributions, and is manual configuration still required?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-linux-guest-with-a-missing-network-adapter.md",
+  "draft": true,
+  "word_count": 778,
+  "claim_support_checks": [
+    {
+      "claim": "Synthetic network adapters are the primary interface for Linux guests on Hyper-V and depend on the hv_netvsc kernel module.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Presence of legacy network adapters can cause random interface names or failure to recognize the synthetic adapter.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Integration services must be enabled on both the host and guest for the network adapter to function.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Static MAC addresses are recommended for Linux virtual machines in failover clustering to prevent network configuration loss.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The lsvmbus command can be used to check for devices on the Hyper-V virtual machine bus.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Claims integration services (Heartbeat/Time Sync) must be enabled for the network adapter to function. Sources state these are separate services; the synthetic network adapter operates via the `hv_netvsc` driver and VMBus, independent of the Integration Services toggles for Heartbeat or Time Sync.",
+      "fix": "Remove the claim that integration service toggles control network functionality. Clarify that `hv_netvsc` and VMBus connectivity are required, while services like Heartbeat are for host management only."
+    },
+    {
+      "severity": "medium",
+      "problem": "States `hv_netvsc` is part of 'Linux kernel integration services'. Sources describe it as a kernel driver/module included in the kernel, not a separate 'integration services' package like the Windows CAB or ISO. This conflates kernel modules with the 'Integration Services' feature set.",
+      "fix": "Refer to `hv_netvsc` as a kernel module or driver included in the Linux kernel, distinct from the 'Integration Services' feature set managed via Hyper-V Manager or the Windows guest services."
+    },
+    {
+      "severity": "medium",
+      "problem": "Suggests checking `hv_netvsc` loading as a primary step for a *missing* adapter. If the adapter is missing from the guest OS view, the hardware is likely not attached or a legacy adapter is present. `hv_netvsc` loads when the device is detected.",
+      "fix": "Prioritize verifying the virtual hardware configuration (synthetic vs. legacy adapter presence) in Hyper-V Manager before checking kernel modules. A missing device usually indicates a configuration issue, not a driver load failure."
+    },
+    {
+      "severity": "low",
+      "problem": "Uses `ifconfig -a` in the legacy adapter section. While sources mention `ifconfig -a` showing random names, `ifconfig` is deprecated in many modern Linux distributions.",
+      "fix": "Update the command example to `ip link show` or note that `ifconfig` is legacy. Ensure consistency with modern networking tools while acknowledging the source's specific example of random naming."
+    },
+    {
+      "severity": "low",
+      "problem": "The diagram includes a node 'Check: VM hardware has synthetic adapter?'. The draft body does not explicitly guide the user to verify the adapter attachment in Hyper-V Manager settings as a distinct step before checking drivers.",
+      "fix": "Add a step to verify the virtual machine settings in Hyper-V Manager to ensure a synthetic network adapter is attached, as this is the root cause if the OS sees no hardware."
+    }
+  ]
+}

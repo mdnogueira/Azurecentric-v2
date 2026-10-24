@@ -1,0 +1,144 @@
+{
+  "id": "AZC-357",
+  "title": "Separate staging and production identities for a PaaS application",
+  "slug": "separate-staging-and-production-identities-for-a-paas-application",
+  "historical_date": "2026-09-26",
+  "input_sha256": "24bb25f4ace075c2ec2c8bd3b31217e6a8a9d5a602ad8b0a736e5f8657a8fc6f",
+  "created_at": "2026-10-23T20:32:16.204455+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Separate staging and production identities using user-assigned managed identities to prevent shared access risks.",
+  "tags": [
+    "managed-identities",
+    "app-service",
+    "container-apps",
+    "security",
+    "separation-of-concerns"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-357-learn-1.png",
+      "alt": "Screenshot of system-assigned identities.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/fb2bffef7c187084d68e891abfcef957fb752117/articles/container-apps/media/managed-identity/screenshot-system-assigned-identity.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-02-13T05:10:35Z",
+      "sha256": "46f2e63765c5f107c9b4538112a77250b7480d0cc3ac281dbdefa6b1a1caf2d2",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-managed-identity.md",
+      "revision": "6054c556bbf9abad5d4cd5935d81ae9c698635de",
+      "revision_date": "2026-04-14T19:21:56Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Managed Identities",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-managed-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6054c556bbf9abad5d4cd5935d81ae9c698635de/articles/app-service/overview-managed-identity.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/identity-scenarios.md",
+      "revision": "7ab0ce6c3006c1396665db9caf30ed0d7f9d5988",
+      "revision_date": "2026-03-26T12:57:56Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "App Service authentication recommendations",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/identity-scenarios",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7ab0ce6c3006c1396665db9caf30ed0d7f9d5988/articles/app-service/identity-scenarios.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/managed-identity.md",
+      "revision": "fb2bffef7c187084d68e891abfcef957fb752117",
+      "revision_date": "2026-02-13T05:10:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Managed identities in Azure Container Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/managed-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fb2bffef7c187084d68e891abfcef957fb752117/articles/container-apps/managed-identity.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the article need to include specific code examples for retrieving tokens in different languages?",
+    "Should the article mention the cost implications of user-assigned identities in more detail?",
+    "Is the verification step clear enough for a practitioner to follow?",
+    "Are there any other PaaS services beyond App Service and Container Apps that should be covered?",
+    "Should the article include a troubleshooting section for common issues with managed identities?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-staging-and-production-identities-for-a-paas-application.md",
+  "draft": true,
+  "word_count": 927,
+  "claim_support_checks": [
+    {
+      "claim": "User-assigned managed identities are standalone Azure resources that can be assigned to multiple apps, allowing for independent permission management.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A system-assigned managed identity is tied to the lifecycle of the app and is deleted when the app is deleted.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You can assign a user-assigned identity to an App Service app using the Azure CLI command `az webapp identity assign`.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You can assign a user-assigned identity to a Container App using the Azure CLI command `az containerapp identity assign`.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Managed identity tokens are cached for up to 24 hours, so permission changes may not take effect immediately.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'User-assigned identities have a small monthly cost.' The provided sources (S1, S3) do not mention any pricing or cost for user-assigned identities. This is an unsupported financial claim.",
+      "fix": "Remove the sentence regarding monthly costs. The sources do not support any claim about the pricing tier or cost of user-assigned managed identities."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'An app can have both system-assigned and user-assigned identities... it is best to use only user-assigned identities for staging and production.' The sources confirm support for mixed identities but do not provide best practice guidance to exclude system-assigned identities. This is an unsupported prescriptive claim.",
+      "fix": "Remove the recommendation to use 'only' user-assigned identities. State that apps support both types, allowing for flexible identity configuration, without prescribing the exclusion of system-assigned identities."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that assigning a user-assigned identity to an App Service app requires a restart ('After you finish these steps, the app restarts' is in S1 for User Assigned, but the draft doesn't explicitly link this to the CLI command's effect, though S1 does). However, S3 for Container Apps explicitly states 'the app doesn’t automatically restart'. The draft fails to distinguish the operational impact (restart vs. no restart) between App Service and Container Apps when modifying identities.",
+      "fix": "Clarify the operational impact. For App Service, note that adding a user-assigned identity triggers a restart (per S1). For Container Apps, note that identity changes do not automatically restart the app or create a new revision (per S3)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests verifying separation by 'attempting to access a production resource from the staging app.' It does not specify that this requires the staging app's code to actually attempt the access using its identity. The verification step is vague on how the 'simple script' interacts with the app's runtime identity.",
+      "fix": "Clarify that verification requires the staging application code to actively attempt the resource access. Alternatively, suggest using Azure Policy or RBAC audit logs to verify lack of assignment, which is more reliable than runtime testing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'most direct way to enforce this boundary'. This is a subjective superlative not supported by the sources. Sources describe capabilities, not comparative efficiency of methods.",
+      "fix": "Replace 'most direct way' with 'a common approach' or 'a method'. The sources describe how to configure identities, not the relative directness of this method compared to others."
+    }
+  ]
+}

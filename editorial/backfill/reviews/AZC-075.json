@@ -1,0 +1,122 @@
+{
+  "id": "AZC-075",
+  "title": "Build a repeatable virtual machine with PowerShell",
+  "slug": "build-a-repeatable-virtual-machine-with-powershell",
+  "historical_date": "2024-07-27",
+  "input_sha256": "6f776c2068b32865bf3f188abb3337735069e55ce544833432d253fb86c57567",
+  "created_at": "2026-10-23T13:57:02.884878+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Build a repeatable Windows Server 2022 VM in Hyper-V using PowerShell, then configure it via PowerShell Direct without network dependencies.",
+  "tags": [
+    "hyper-v",
+    "powershell-direct",
+    "windows-server-2022",
+    "virtualization",
+    "automation"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Windows virtual machines with PowerShell Direct",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-windows-virtual-machines-with-powershell-direct",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "revision": "ebdeee97a7dae446b50c7fbf99e9f9121b3e2c27",
+      "revision_date": "2023-02-22T18:47:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a virtual machine in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ebdeee97a7dae446b50c7fbf99e9f9121b3e2c27/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-07-27: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/powershell.md"
+  ],
+  "open_questions": [
+    "How should the unattend.xml file be integrated into the PowerShell script to automate OOBE without manual intervention?",
+    "What are the specific performance implications of using PowerShell Direct for large-scale file transfers compared to SMB?",
+    "Does PowerShell Direct support credential delegation to the guest OS for accessing external resources?",
+    "How does PowerShell Direct behave if the VM is in a saved or paused state?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-repeatable-virtual-machine-with-powershell.md",
+  "draft": true,
+  "word_count": 848,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell Direct requires the host and guest to run Windows 10 or Windows Server 2016 or later.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The user must be a Hyper-V administrator on the host to create a PowerShell Direct session.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "PowerShell Direct can be used to run commands on a VM without network configuration.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "New-VM can create a VM with a new virtual hard disk using the -NewVHDPath and -NewVHDSizeBytes parameters.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Generation 2 VMs use VHDX and are the default for modern Windows Server versions.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims PowerShell Direct requires the VM to be 'booted' and 'running', but then instructs the user to complete OOBE or use an unattend.xml. It fails to explain how to inject the unattend.xml or automate the initial login to establish the session, leaving the 'repeatable' goal unachievable without manual intervention or complex pre-deployment steps not covered.",
+      "fix": "Clarify that PowerShell Direct cannot automate the initial OOBE. Recommend using the Hyper-V 'New-VM' wizard's 'Installation Options' to attach an ISO, or explain that full automation requires a separate mechanism (like a startup script triggered by a different method) to handle the first login before PowerShell Direct can be used for subsequent configuration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that Generation 2 is 'required' for Windows Server 2022. While Generation 2 is the standard and recommended approach, the source (S2) only states it is used for VHDX and UEFI. It does not explicitly forbid Generation 1, though Gen 1 is deprecated for modern OSs. This is a slight overstatement of 'requirement' vs 'best practice'.",
+      "fix": "Rephrase to state that Generation 2 is the 'recommended' or 'standard' configuration for Windows Server 2022 due to UEFI support and VHDX compatibility, rather than an absolute technical requirement, to align with the source's nuanced guidance."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a code example using `Install-WindowsFeature` with `-Restart`. This is a destructive action that reboots the VM. The draft does not warn about the downtime or the need to wait for the VM to come back online before subsequent `Invoke-Command` calls, which could fail if executed immediately.",
+      "fix": "Add a warning about the destructive nature of the `-Restart` parameter. Explain that subsequent commands must account for the reboot time, or suggest using `-NoRestart` and handling reboots explicitly in the automation flow."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses a hardcoded password `P@ssw0rd!` in the example code. This is a security anti-pattern and could be flagged by security scanners or lead to accidental credential exposure if copied.",
+      "fix": "Replace the hardcoded password with a placeholder like `<SecurePassword>` and recommend using `Get-Credential` or secure secret management solutions for production scripts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's conclusion uses the phrase 'By leveraging PowerShell Direct, you eliminate...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or 'This approach ensures'.",
+      "fix": "Remove the concluding paragraph entirely. End with the verification step or the cleanup command, as per the guidance to 'End when the technical question is answered, with a concrete verification or next action.'"
+    }
+  ]
+}

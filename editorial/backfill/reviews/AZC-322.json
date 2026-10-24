@@ -1,0 +1,138 @@
+{
+  "id": "AZC-322",
+  "title": "Separate an infrastructure move from application modernisation",
+  "slug": "separate-an-infrastructure-move-from-application-modernisation",
+  "historical_date": "2026-06-19",
+  "input_sha256": "1c09de981f5935dee0073c83b972b6aa4b4a65b52d3348365d15635983c5f800",
+  "created_at": "2026-10-23T23:44:29.778148+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Separate infrastructure lift-and-shift from application modernisation using Azure Migrate's distinct assessment and migration tools.",
+  "tags": [
+    "azure-migrate",
+    "cloud-migration",
+    "infrastructure-modernisation",
+    "application-modernisation",
+    "azure-virtual-machines",
+    "azure-sql-database"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-322-learn-1.png",
+      "alt": "Screenshot that shows the phases of migrating workloads to Azure.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/1e35e7b98fcef24137da58f29dfe3092f723076c/articles/migrate/media/migrate-services-overview/migrate-journey.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-05-19T03:18:49Z",
+      "sha256": "ef82131c9c2b0bde728e21ef6c39b13a6e2ef216f18d98ecb636a141dc828535",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/concepts-migration-planning.md",
+      "revision": "74f41e2a2e6fc8896927019f20b86139dff8d2ba",
+      "revision_date": "2026-06-11T09:52:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Build a migration plan with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/74f41e2a2e6fc8896927019f20b86139dff8d2ba/articles/migrate/concepts-migration-planning.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/concepts-overview.md",
+      "revision": "74f41e2a2e6fc8896927019f20b86139dff8d2ba",
+      "revision_date": "2026-06-11T09:52:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview Assessment",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/concepts-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/74f41e2a2e6fc8896927019f20b86139dff8d2ba/articles/migrate/concepts-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/migrate-services-overview.md",
+      "revision": "1e35e7b98fcef24137da58f29dfe3092f723076c",
+      "revision_date": "2026-05-19T03:18:49Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "About Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1e35e7b98fcef24137da58f29dfe3092f723076c/articles/migrate/migrate-services-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should the migration plan account for dependencies between the application layer and the infrastructure layer when they are migrated at different times?",
+    "What specific performance metrics should be used to validate that the modernised application is performing better than the on-premises version?",
+    "How do we handle data consistency during the transition period when the application is partially migrated to Azure PaaS and partially on-premises?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-an-infrastructure-move-from-application-modernisation.md",
+  "draft": true,
+  "word_count": 1215,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Migrate assessments evaluate workloads for migration strategy, readiness, and rightsized targets.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Infrastructure readiness is a prerequisite for sizing and cost calculation in assessments.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Migrate supports migration of on-premises VMs to Azure with around zero downtime.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Database Migration Service enables seamless migrations from multiple database sources to Azure Data platforms with minimal downtime.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Migrate and Modernize tool migrates web apps with 'around zero downtime'. Source S3 states this tool is for servers (VMware/Hyper-V/Physical). Web app migration uses the standalone Azure App Service Migration Assistant. This conflates distinct tools and capabilities.",
+      "fix": "Remove the claim that the integrated Migrate and Modernize tool handles web apps. Clarify that web app migration uses the standalone Azure App Service Migration Assistant, which assesses and migrates .NET/PHP apps, and do not attribute 'zero downtime' server migration guarantees to it."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft promises 'around zero downtime' for VM migration and 'minimal downtime' for DMS. Source S3 and S1 use these phrases, but they are marketing terms, not technical SLAs. Asynchronous replication and database cutover inherently involve some downtime or data loss risk depending on configuration.",
+      "fix": "Rephrase to 'minimal downtime' or 'near-zero downtime' where appropriate, but explicitly state that actual downtime depends on replication lag, cutover strategy, and application state. Do not present these as guaranteed outcomes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Azure Migrate OS upgrade keeps 'settings, server roles, and data intact'. Source S1 specifies this uses a Custom Script Extension for an in-place upgrade. It does not guarantee all settings or roles are preserved if the target OS version has breaking changes or if the script fails.",
+      "fix": "Clarify that the OS upgrade feature performs an in-place upgrade using a Custom Script Extension. Note that while it aims to preserve data and roles, compatibility with the target Windows Server version must be verified, and it is not a universal fix for all 'Not ready' states."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph starting with 'Start by assessing...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar stock phrases.",
+      "fix": "Remove the final paragraph entirely. End the article with the concrete verification step or the image caption, as per the guidance to 'End when the technical question is answered, with a concrete verification or next action.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses :::image directives in the source text but the output draft uses standard Markdown. The guidance requires standard Markdown image syntax for supplied local screenshots and forbids :::image directives in Astro posts. The draft correctly uses Markdown, but the review should confirm no :::image slipped in.",
+      "fix": "Verify that the image syntax in the final output is standard Markdown: `![alt text](/path/to/image.png)`. Ensure no :::image directives are present. The current draft uses correct syntax, so no change needed, but this is a check item."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "AZC-094",
+  "title": "Configure and verify a cluster witness",
+  "slug": "configure-and-verify-a-cluster-witness",
+  "historical_date": "2024-09-18",
+  "input_sha256": "ba17336a03c316d59c1d4d756b9729660a98d220071f9d79ef5f364709be30b7",
+  "created_at": "2026-10-23T14:20:45.694749+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure a file share witness for Windows Server failover clustering using PowerShell, with verification steps.",
+  "tags": [
+    "failover-clustering",
+    "quorum",
+    "file-share-witness",
+    "windows-server",
+    "powershell"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/file-share-witness.md",
+      "revision": "3883fdc2b5e2e7784aa972350a97726272c0dfdd",
+      "revision_date": "2024-08-27T12:30:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure a file share witness for Failover Clustering in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/file-share-witness",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/3883fdc2b5e2e7784aa972350a97726272c0dfdd/WindowsServerDocs/failover-clustering/file-share-witness.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "revision": "439e4b225f2ecb1155240887f4d2cb4426396af5",
+      "revision_date": "2024-08-13T09:35:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure and manage the quorum in a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/439e4b225f2ecb1155240887f4d2cb4426396af5/WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-09-18: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/failover-clustering/deploy-quorum-witness.md"
+  ],
+  "open_questions": [
+    "Does the non-domain joined witness require SMB 3.0 specifically, or is SMB 2.0 sufficient?",
+    "Are there any specific firewall port requirements for the SMB traffic between the cluster nodes and the witness device?",
+    "How does the quorum configuration change if the cluster has an odd number of nodes and a file share witness is added?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-and-verify-a-cluster-witness.md",
+  "draft": true,
+  "word_count": 763,
+  "claim_support_checks": [
+    {
+      "claim": "A file share witness is useful when a disk witness cannot be used, such as in Storage Spaces Direct or Always On Availability Groups.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "A non-domain joined file share witness can only be configured from PowerShell.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The file share witness must be physically separate from the cluster nodes or cluster sites.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Using DFS or replicated storage for a file share witness is not supported and can cause data loss.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The file share witness maintains cluster information only in a witness.log file and does not store a copy of the cluster database.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "If all nodes are shut down, the cluster service must be started from the last-man-standing node.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Failover Cluster Manager wizard 'does not support' configuring a non-domain joined witness. Source S1 states the wizard is used for domain-joined devices and implies non-domain requires PowerShell, but does not explicitly state the GUI is incapable or blocked. This is an unsupported categorical claim about product limitations.",
+      "fix": "Rephrase to: 'Source documentation specifies PowerShell for non-domain joined scenarios. Use Set-ClusterQuorum to configure the witness, providing the local account credentials via the -Credential parameter.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that if the validation test passes, 'the cluster can sustain the loss of half its nodes.' This is a misleading operational promise. Quorum ensures the cluster remains online, but it does not guarantee application availability or data integrity during such a failure, nor does it address the 'last-man-standing' startup constraint.",
+      "fix": "Clarify that the test verifies quorum configuration validity. Add context that sustaining node loss requires the witness to remain accessible and that cluster startup after total outage requires specific manual intervention."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the witness 'does not store a copy of the cluster database.' While technically true for the witness file itself, Source S2 notes the witness maintains cluster information in a `witness.log`. The draft omits this nuance, potentially confusing readers about what data is persisted versus what is purely ephemeral state.",
+      "fix": "Refine the statement: 'The witness does not store the full cluster database. It maintains cluster state information in a log file, which is insufficient for restoring the cluster database after a total outage.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The verification step uses `Test-Cluster` with specific node names. Source S1 recommends running the 'Validate Quorum Configuration' test but does not mandate specifying node names in the command line for this specific validation, which can be done via the wizard or without node parameters if run on a cluster node.",
+      "fix": "Simplify the verification command to `Test-Cluster -Node <Node1>,<Node2>` only if necessary, or reference the general recommendation to run the validation test via Failover Cluster Manager or PowerShell without assuming a specific node list is required for the quorum check."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that a file share witness is 'common in hybrid or isolated environments' for non-domain joined devices. Source S1 lists non-domain joined devices as an option but does not characterize them as 'common' or define the environment type. This is an unsupported generalization.",
+      "fix": "Remove the characterization 'common in hybrid or isolated environments.' State simply that non-domain joined devices are supported for scenarios where domain trust is not established, requiring local account authentication."
+    }
+  ]
+}

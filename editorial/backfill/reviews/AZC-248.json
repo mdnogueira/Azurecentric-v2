@@ -1,0 +1,157 @@
+{
+  "id": "AZC-248",
+  "title": "Apply diagnostic settings consistently across Azure resources",
+  "slug": "apply-diagnostic-settings-consistently-across-azure-resources",
+  "historical_date": "2025-11-24",
+  "input_sha256": "0fa7ed85d2781f4d4db1f1e053c3ed692f60a7edad88eff1a6b4077e9be0de53",
+  "created_at": "2026-10-23T21:37:03.956536+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Azure Monitor diagnostic settings consistently using resources, category groups, and automation.",
+  "tags": [
+    "azure-monitor",
+    "diagnostic-settings",
+    "log-analytics",
+    "azure-storage",
+    "arm-templates"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-248-learn-1.png",
+      "alt": "A screenshot showing the logs category groups.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/media/diagnostic-settings/audit-category-group.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "d28407cbae2051aa4ce1d8eb227fb0998c0c2075a8e746fe2ca780eadc28a4b5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-248-learn-2.png",
+      "alt": "Screenshot that shows the Monitoring section of a resource menu in the Azure portal with Diagnostic settings highlighted.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/media/diagnostic-settings/menu-resource.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "f585803d362f7bd7d2a49c976b0f625ff98eb32eedfd008b6ff0f5436e8e63e9",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/diagnostic-settings.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Diagnostic settings in Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/diagnostic-settings.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/create-diagnostic-settings.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create diagnostic settings in Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/create-diagnostic-settings.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/resource-manager-diagnostic-settings.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Resource Manager template samples for diagnostic settings",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/resource-manager-diagnostic-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/resource-manager-diagnostic-settings.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/essentials/diagnostic-settings.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/essentials/create-diagnostic-settings.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/essentials/resource-manager-diagnostic-settings.md"
+  ],
+  "open_questions": [
+    "Does the specific resource type support the 'Audit' category group, or only individual categories?",
+    "Are there any regional restrictions for the chosen destination (e.g., Storage account must be in the same region as the resource)?",
+    "What is the specific API version required for the diagnostic setting resource type for the target service?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/apply-diagnostic-settings-consistently-across-azure-resources.md",
+  "draft": true,
+  "word_count": 1072,
+  "claim_support_checks": [
+    {
+      "claim": "Each Azure resource requires its own diagnostic setting.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "A single diagnostic setting can define no more than one of each destination type.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Category groups allow dynamic collection of logs but prevent individual category selection.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Activity log settings are configured at the subscription level.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Metric category 'AllMetrics' is required for exporting metrics via diagnostic settings.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Contributor or Owner' are the required permissions. S1/S2 do not specify these RBAC roles; they only mention 'appropriate Azure role-based access control access'. This is an unsupported specific claim that may mislead users regarding least-privilege requirements.",
+      "fix": "Replace 'Contributor or Owner' with 'appropriate Azure role-based access control access' to align with the source documentation's general requirement without inventing specific role names."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Metrics are converted to log form' for Log Analytics workspaces. S1 clarifies 'Metrics are converted to log form' only in the destination description, but S2 notes 'Metrics are sent automatically... by default'. The draft implies a mandatory conversion step for all metric routing, which is slightly misleading regarding the 'AllMetrics' source behavior.",
+      "fix": "Clarify that routing metrics via diagnostic settings sends them to the Logs store, where they are available for querying, rather than implying a complex conversion process distinct from standard metric collection."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot with the caption 'Screenshot showing the Monitoring section...'. The editorial guidance explicitly forbids visible permission or screenshot captions. The image is relevant but the caption violates the style guide.",
+      "fix": "Remove the visible caption text from the image markdown. The image should stand alone or be referenced in the text flow without a redundant descriptive caption overlay."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'End your configuration by verifying... This confirms the diagnostic setting is active...'. The guidance forbids generic concluding paragraphs starting with 'By following' or similar affirmations. The verification step is valid but the closing prose is redundant.",
+      "fix": "Remove the final concluding paragraph. End the article immediately after the verification steps or cost considerations, as the technical question is answered."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Category groups... dynamically collect logs... Note that using category groups prevents you from selecting individual log categories'. S1 confirms this limitation. However, the draft does not explicitly warn that retention settings cannot be applied to storage when using category groups, which is a critical destructive/cost context missing from the 'Configuration steps' section.",
+      "fix": "Add a warning in the configuration steps that selecting category groups disables the ability to apply retention settings to Azure Storage destinations, as per S1."
+    }
+  ]
+}

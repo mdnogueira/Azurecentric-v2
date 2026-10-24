@@ -1,0 +1,116 @@
+{
+  "id": "AZC-260",
+  "title": "Plan certificate renewal before the production release",
+  "slug": "plan-certificate-renewal-before-the-production-release",
+  "historical_date": "2025-12-28",
+  "input_sha256": "a47d9195b4b6e0f89d1458db9e09093be0c747f9351820ff153f27dd3223c3a4",
+  "created_at": "2026-10-23T18:17:50.239623+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan certificate renewal by distinguishing managed, paid, and BYO options to avoid production outages.",
+  "tags": [
+    "azure-app-service",
+    "tls-ssl",
+    "certificate-renewal",
+    "azure-container-apps",
+    "production-readiness"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-tls.md",
+      "revision": "a896d544a4c20f287e254949093cc9e42a0b46a9",
+      "revision_date": "2025-11-04T23:02:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "What Is TLS/SSL in Azure App Service?",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-tls",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a896d544a4c20f287e254949093cc9e42a0b46a9/articles/app-service/overview-tls.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/certificates-overview.md",
+      "revision": "e669007e0aadece40435e6f06877983eba52cb75",
+      "revision_date": "2025-05-26T15:40:40Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Certificates in Azure Container Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/certificates-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e669007e0aadece40435e6f06877983eba52cb75/articles/container-apps/certificates-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found"
+  ],
+  "open_questions": [
+    "Does the 'Free Managed Certificate' in Container Apps have the same automatic renewal guarantees as in App Service?",
+    "Are there any specific DNS validation requirements for ASC renewal that might fail silently?",
+    "What is the exact procedure for re-binding a BYOC certificate without downtime using SNI?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-certificate-renewal-before-the-production-release.md",
+  "draft": true,
+  "word_count": 1162,
+  "claim_support_checks": [
+    {
+      "claim": "App Service managed certificates are fully managed by App Service, including automatic renewal.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "App Service certificates (ASC) are paid certificates stored in Key Vault.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Bring your own certificate (BYOC) is fully customer-managed with no automatic renewal.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Container Apps supports custom domains with free managed certificates, existing certificates, and certificates from Azure Key Vault.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states ASCs are 'issued by GoDaddy' (S1). This is a specific vendor claim not supported by the provided source text, which only says 'Paid certificates issued by GoDaddy' in a bullet point that may be outdated or specific to a legacy integration. More critically, the draft implies ASCs are the only paid option, ignoring other CAs. The source S1 text provided is ambiguous about current issuance partners beyond the GoDaddy mention.",
+      "fix": "Remove the specific vendor name 'GoDaddy' unless the source explicitly mandates it as the current sole provider. The source S1 text provided is the only evidence; if it says GoDaddy, keep it but note it's from the provided text. However, the draft's claim that ASCs are 'issued by GoDaddy' is a factual assertion. If the source S1 text says 'Paid certificates issued by GoDaddy', it is supported. But the draft adds 'Unlike the free managed certificates... ASCs are stored in Azure Key Vault'. S1 says 'Stored in your key vault'. This is supported. The issue is the 'GoDaddy' specificity if it's not the only provider. Given the strict instruction 'Do not invent additional facts', and S1 says 'issued by GoDaddy', it is technically supported by the provided text. However, the draft's section on ASC renewal says 'renewal is automatic provided the Key Vault integration is correctly configured'. S1 says 'Fully managed... including automatic renewal' for ASCs. This is supported. The real issue is the 'GoDaddy' claim might be outdated in reality, but based *only* on S1, it is supported. I will flag the 'GoDaddy' claim as potentially misleading if it's not the only provider, but strictly speaking, it's in the source. Let's look for a clearer error. The draft says 'ASCs... require you to own and manage the certificate lifecycle within your Key Vault'. S1 says 'You own and manage the certificate'. This is supported. The draft says 'BYOC... no automatic renewal'. S1 says 'Fully customer-managed'. This is supported. The draft says 'Free Managed... automatic renewal'. S1 says 'automatic renewal'. Supported. The draft says 'Container Apps... free managed certificates... automatically renewed'. S2 says 'free certificate... easy to use'. It doesn't explicitly say 'automatic renewal' in the provided S2 text, only in the 'Next steps' link title or implied. S2 text: 'Custom domain with a free certificate... A private certificate that's free of charge and easy to use'. It does *not* explicitly state 'automatic renewal' in the provided text snippet. This is an unsupported inference."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Container Apps 'free managed certificates' are 'automatically renewed' based on S2. The provided S2 text only describes them as 'free of charge and easy to use' and links to 'custom-domains-managed-certificates.md'. It does not explicitly state 'automatic renewal' in the provided snippet. Inferring automatic renewal from 'easy to use' or 'managed' without explicit source text is an unsupported fact.",
+      "fix": "Remove the explicit claim that Container Apps free managed certificates are 'automatically renewed' unless the source text explicitly states it. The provided S2 text does not contain this phrase. State that they are 'free' and 'easy to use' as per S2, and refer users to the linked documentation for renewal specifics, rather than asserting the mechanism."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'SNI bindings allow you to bind the new certificate before removing the old one' implying zero downtime. While technically true for SNI, the draft presents this as a guaranteed outcome without mentioning that the old certificate must still be valid for the duration of the transition or that clients might cache old certs. It oversimplifies the 'no downtime' claim.",
+      "fix": "Clarify that SNI allows binding multiple certificates, but verify that the old certificate remains valid during the transition period. Mention that client-side caching or strict TLS checks might still cause issues if the old cert expires during the switch. Do not promise 'no downtime' as a universal fact."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises uploading the new BYOC certificate 'at least 48 hours before the release'. This is an arbitrary time frame not supported by the sources. The sources do not specify a recommended lead time for manual renewal.",
+      "fix": "Remove the specific '48 hours' recommendation. Replace it with general guidance to allow sufficient time for verification and propagation, as the sources do not specify a mandatory lead time. Use phrasing like 'allow sufficient time for verification' instead of a specific number."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By taking these steps, you ensure that your production release is not hindered by certificate expiration.' This is a generic concluding paragraph that promises a specific outcome ('ensure... not hindered') which is not guaranteed by the actions described, especially for BYOC where human error is possible.",
+      "fix": "Remove the generic concluding paragraph. End with the concrete verification step or next action, such as 'Verify the binding is active and the new certificate is served' or 'Check the Key Vault for renewal status'. Avoid promises of guaranteed success."
+    }
+  ]
+}

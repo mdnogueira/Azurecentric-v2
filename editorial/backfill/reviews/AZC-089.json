@@ -1,0 +1,137 @@
+{
+  "id": "AZC-089",
+  "title": "Investigate a server that stopped sending logs",
+  "slug": "investigate-a-server-that-stopped-sending-logs",
+  "historical_date": "2024-09-05",
+  "input_sha256": "3a5dd47a7f0512b35ae6b09e596ca682f59d31de366e2f6d2626bbfad0405693",
+  "created_at": "2026-10-23T14:14:06.248681+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a Linux server that stopped sending logs by tracing the signal from the agent to the workspace.",
+  "tags": [
+    "azure-monitor",
+    "azure-monitor-agent",
+    "data-collection-rules",
+    "log-analytics",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-089-learn-1.png",
+      "alt": "Screenshot of VM list page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/91b5048fe887a10d12167190ba681b568ae21a02/articles/automation/media/update-agent-issues-linux/vm-list.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-08-30T14:07:26Z",
+      "sha256": "364f2b4741b9e851e54966f2ff69a6f047cc8afdbd41a7c444fff1fe2fc0cbfc",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm.md",
+      "revision": "3371646e3e2e9916dbf7dfc4cbffad0a88dfe087",
+      "revision_date": "2024-07-24T18:30:07Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot the Azure Monitor agent on Linux virtual machines and scale sets",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3371646e3e2e9916dbf7dfc4cbffad0a88dfe087/articles/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/logs/data-collection-troubleshoot.md",
+      "revision": "3dc6ed2117e12faeaff7375bb8798a4b396efe3b",
+      "revision_date": "2024-08-06T09:49:31Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot why data is no longer being collected in Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3dc6ed2117e12faeaff7375bb8798a4b396efe3b/articles/azure-monitor/logs/data-collection-troubleshoot.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/automation/troubleshoot/update-agent-issues-linux.md",
+      "revision": "91b5048fe887a10d12167190ba681b568ae21a02",
+      "revision_date": "2024-08-30T14:07:26Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshooting Linux update agent issues in Azure Automation",
+      "url": "https://learn.microsoft.com/en-us/azure/automation/troubleshoot/update-agent-issues-linux",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/91b5048fe887a10d12167190ba681b568ae21a02/articles/automation/troubleshoot/update-agent-issues-linux.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific network endpoints required for the Azure Monitor Configuration Service (AMCS) that the agent must reach?",
+    "How does the agent handle DCR updates if the configuration changes while the agent is running?",
+    "What is the exact reset time for the daily cap, and is it configurable?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-server-that-stopped-sending-logs.md",
+  "draft": true,
+  "word_count": 684,
+  "claim_support_checks": [
+    {
+      "claim": "Heartbeat query can identify machines that have stopped reporting.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "DCR resources tab shows associated virtual machines.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Daily cap status can be checked via Operation table.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Syslog QoS file provides ingestion drop information.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft concludes with a generic paragraph ('By following these steps...') that violates the editorial guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Replace the final paragraph with a specific verification step, such as: 'Verify log ingestion by running a search query for the server's hostname in the Log Analytics workspace within the last 10 minutes.' Remove the 'By following' sentence entirely."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft references 'Troubleshooting Linux update agent issues in Azure Automation' (S3) in the final documentation links. S3 is about Update Management/Hybrid Runbook Workers, not general log collection troubleshooting. This is misleading context for a log collection issue.",
+      "fix": "Remove S3 from the 'Further documentation' list. It addresses Update Management readiness, not Azure Monitor Agent log collection failures. Keep only S1 and S2 which are directly relevant to the troubleshooting steps described."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims the daily cap reset time is a fixed value implied by 'wait for the reset time' without specifying it. The source (S2) does not explicitly define the reset time in the provided text, though it mentions waiting.",
+      "fix": "Clarify that the daily cap resets at midnight UTC (or specify if the source confirms this, otherwise state 'wait for the daily reset cycle'). Since S2 doesn't specify the exact hour, avoid implying a specific time to prevent inaccuracy. Just state 'wait for the daily reset'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking the 'Extensions + applications' blade for the AzureMonitorLinuxAgent. While correct, it omits the critical step of verifying the extension version or ensuring it matches the expected version, which is a common cause of silent failures not covered by status alone.",
+      "fix": "Add a note to verify the extension version in the portal matches the latest stable version, or check the extension logs for specific version mismatch errors if the status is succeeded but logs are missing."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft instructs to append `-T 0x2002` to `MDSD_OPTIONS` in `/etc/default/azuremonitoragent`. The source (S1) shows this as an export command, not necessarily a persistent file edit, and warns about disk filling. The draft presents it as a simple file edit without emphasizing the transient nature or the risk of persistent logging.",
+      "fix": "Clarify that this is a temporary debugging step. Explicitly state to revert the change immediately after debugging. Ensure the user understands this modifies the runtime environment and should be undone to prevent disk exhaustion."
+    }
+  ]
+}

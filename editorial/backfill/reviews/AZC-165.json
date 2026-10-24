@@ -1,0 +1,146 @@
+{
+  "id": "AZC-165",
+  "title": "Review repository protection as GitHub security product choices change",
+  "slug": "review-repository-protection-as-github-security-product-choices-change",
+  "historical_date": "2025-04-05",
+  "input_sha256": "a9ad3de27c5c204df4d48232880047cf7cd7720355cd16f0b7cb4ce9d4530578",
+  "created_at": "2026-10-23T16:04:40.322161+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to apply GitHub security configurations after the April 2025 GHAS split into Secret Protection and Code Security.",
+  "tags": [
+    "github",
+    "security",
+    "ghas",
+    "secret-protection",
+    "code-security",
+    "configuration"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "unknown",
+      "published_at": "unknown",
+      "checked_at": "2026-10-23T11:53:00.901342+00:00",
+      "title": "Review repository protection as GitHub security product choices change",
+      "url": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+      "snapshot_url": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2025-04-30T12:31:54+00:00"
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/securing-your-organization/enabling-security-features-in-your-organization/applying-a-custom-security-configuration.md",
+      "revision": "8c62486a96baf5ee9b4771b28deaff6978375b18",
+      "revision_date": "2025-04-01T10:29:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Applying a custom security configuration",
+      "url": "https://docs.github.com/en/code-security/securing-your-organization/enabling-security-features-in-your-organization/applying-a-custom-security-configuration",
+      "snapshot_url": "https://github.com/github/docs/blob/8c62486a96baf5ee9b4771b28deaff6978375b18/content/code-security/securing-your-organization/enabling-security-features-in-your-organization/applying-a-custom-security-configuration.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/choosing-a-security-configuration-for-your-repositories.md",
+      "revision": "8c62486a96baf5ee9b4771b28deaff6978375b18",
+      "revision_date": "2025-04-01T10:29:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choosing a security configuration for your repositories",
+      "url": "https://docs.github.com/en/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/choosing-a-security-configuration-for-your-repositories",
+      "snapshot_url": "https://github.com/github/docs/blob/8c62486a96baf5ee9b4771b28deaff6978375b18/content/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/choosing-a-security-configuration-for-your-repositories.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/security-overview/enabling-security-features-for-multiple-repositories.md",
+      "revision": "8c62486a96baf5ee9b4771b28deaff6978375b18",
+      "revision_date": "2025-04-01T10:29:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enabling security features for multiple repositories",
+      "url": "https://docs.github.com/en/code-security/security-overview/enabling-security-features-for-multiple-repositories",
+      "snapshot_url": "https://github.com/github/docs/blob/8c62486a96baf5ee9b4771b28deaff6978375b18/content/code-security/security-overview/enabling-security-features-for-multiple-repositories.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2025-04-05"
+  ],
+  "open_questions": [
+    "What are the specific transition instructions for self-serve Enterprise customers?",
+    "How does the consumption-based billing model calculate 'active committer' for GitHub Team customers?",
+    "Are there any known limitations when applying enforced configurations to repositories with existing custom settings?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-repository-protection-as-github-security-product-choices-change.md",
+  "draft": true,
+  "word_count": 719,
+  "claim_support_checks": [
+    {
+      "claim": "GitHub Advanced Security is split into two standalone products starting April 1, 2025.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "GitHub Team customers can purchase the new products on a consumption-based model.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Only one security configuration can be applied to a repository at a time.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The GitHub Security Configuration is the recommended starting point.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Custom Security Configurations allow control over usage and costs.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states GitHub Team customers can purchase products on a 'consumption-based, pay-as-you-go model'. Source S1 specifies this model applies to customers on the GitHub Team plan, but does not explicitly state that the $19/$30 per-committer prices are the consumption rates; it lists them as prices for 'New customers' generally. The draft conflates the general pricing with the specific billing mechanism for Team customers, which is a distinct claim.",
+      "fix": "Clarify that the $19/$30 per-committer pricing applies to new customers generally, and that GitHub Team customers can purchase these products starting April 1, 2025, via a consumption-based, pay-as-you-go model. Do not explicitly link the specific dollar amounts to the Team plan's consumption model without explicit source confirmation that these are the consumption rates for Team."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Applying the GitHub Security Configuration to private and internal repositories incurs usage costs or requires licenses.' Source S3 states this, but the draft does not distinguish between the 'GitHub Security Configuration' (which includes both products) and the individual products. This could mislead users into thinking they need licenses for both if they only want one, whereas Source S1 implies they can be purchased separately.",
+      "fix": "Clarify that the GitHub Security Configuration includes features from both Secret Protection and Code Security, and that applying it incurs costs for both. For users wanting only one, they should purchase the specific standalone product (Secret Protection or Code Security) and apply a Custom Security Configuration or use Security Overview to enable only the desired features."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a section 'Verify and monitor' with vague steps: 'Check the security findings... interpret security findings... refer to troubleshooting documentation.' This is generic advice not supported by specific steps in the sources. Source S2 links to 'interpreting security findings' but does not provide the steps. The draft invents a verification workflow.",
+      "fix": "Remove the generic 'Verify and monitor' section. Instead, direct users to the specific documentation for interpreting security findings (Source S2) and troubleshooting (Source S2) without inventing a verification procedure. Focus on the configuration application steps which are the core 'how-to'."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'GitHub Team customers can purchase them on a consumption-based, pay-as-you-go model starting April 1, 2025.' Source S1 says 'GitHub Team customers can choose to purchase Secret Protection or Code Security from their organization settings pages starting April 1, 2025.' It does not explicitly state that the purchase happens *on* April 1, but that they *can* purchase. The draft implies immediate availability, which is supported, but the phrasing 'starting April 1' is slightly ambiguous regarding the exact moment of availability vs. the announcement.",
+      "fix": "Rephrase to: 'Starting April 1, 2025, GitHub Team customers can purchase Secret Protection or Code Security from their organization settings pages.' This aligns precisely with Source S1 and avoids any ambiguity about the start date of availability."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'AI-detected passwords' as a feature of Secret Protection. Source S1 lists 'AI detection with a low rate of false positives' but does not explicitly name it 'AI-detected passwords'. While likely accurate, the source text is 'AI detection'. The draft adds specific detail not in the source.",
+      "fix": "Change 'AI-detected passwords' to 'AI detection' to match Source S1 exactly. This avoids inventing specific feature names not present in the provided changelog text."
+    }
+  ]
+}

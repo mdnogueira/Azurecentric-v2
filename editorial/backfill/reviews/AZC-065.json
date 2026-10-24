@@ -1,0 +1,116 @@
+{
+  "id": "AZC-065",
+  "title": "Assess a server estate with Azure Migrate",
+  "slug": "assess-a-server-estate-with-azure-migrate",
+  "historical_date": "2024-06-29",
+  "input_sha256": "08f63579f0f6a2f66f42566477b45f08beac7ca256f111cde6cd79af36296c80",
+  "created_at": "2026-10-23T13:41:36.005685+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Add assessment tools in Azure Migrate and verify data collection to ensure accurate server sizing and confidence ratings.",
+  "tags": [
+    "azure-migrate",
+    "server-assessment",
+    "vm-sizing",
+    "migration-planning"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/how-to-assess.md",
+      "revision": "dd9a0f5b26427085428640dac3f1e842472ccdd4",
+      "revision_date": "2024-05-22T02:46:20Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Add assessment tools in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/how-to-assess",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/dd9a0f5b26427085428640dac3f1e842472ccdd4/articles/migrate/how-to-assess.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/troubleshoot-assessment-faq.md",
+      "revision": "401561f4733158b06ce51d1df050811e6db41b7c",
+      "revision_date": "2024-02-29T00:21:56Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot assessments FAQ in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/troubleshoot-assessment-faq",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/401561f4733158b06ce51d1df050811e6db41b7c/articles/migrate/troubleshoot-assessment-faq.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-05-22T03:47:02Z; used previous public snapshot. Confirm continued applicability: articles/migrate/how-to-assess.md",
+    "No revision before 2024-06-29: MicrosoftDocs/azure-docs/articles/migrate/concepts-assessment-overview.md"
+  ],
+  "open_questions": [
+    "What is the exact minimum duration required for performance-based assessments to achieve a 'high' confidence rating, or is it strictly tied to the user-defined profiling period?",
+    "Are there specific Azure regions where Ultra disk recommendations might fail due to VM size availability, and how should this be communicated to users?",
+    "Does the 'As on-premises' sizing criteria also consider IOPS/throughput matching, or is it strictly a size and type match?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/assess-a-server-estate-with-azure-migrate.md",
+  "draft": true,
+  "word_count": 811,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Migrate Discovery and assessment tool is automatically added if the project is created with the 'Assess and migrate servers' option.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Performance-based assessments require a minimum duration to collect sufficient data points for a high confidence rating.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Hyper-V VMs with dynamic memory disabled will result in missing memory utilization data in the assessment.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Migrate does not support migration to Ultra disks.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "If performance data is missing, Azure Migrate falls back to using allocated cores/memory for VM size recommendations.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that selecting 'Automatic' storage type allows Azure Migrate to recommend 'Ultra' disks. Source S2 explicitly states: 'Currently, both Azure Migrate and Azure Site Recovery don't support migration to Ultra disks.' This is a direct factual contradiction that misleads users about supported target storage types.",
+      "fix": "Remove 'Ultra' from the list of disk types recommended by the 'Automatic' storage type option. Clarify that while Ultra disks are a billing concept, Azure Migrate does not recommend them for migration targets."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'As on-premises' sizing 'matches the Azure disk size and type to the on-premises disk configuration.' Source S2 explains that 'As on-premises' still considers IOPS/throughput requirements to select a specific SKU within that type (e.g., selecting P15 for 800 IOPS). The draft oversimplifies this, ignoring performance-based SKU selection within the chosen tier.",
+      "fix": "Revise the 'As on-premises' description to clarify that while the storage tier is fixed to match on-premises, the specific SKU is still selected based on IOPS and throughput requirements within that tier."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that a one-week profiling period is required for a 'high' confidence rating. Source S2 states this is an example ('For example...') and that the rating depends on the 'percentage of available data points needed.' It does not define a universal minimum duration, but rather ties it to the user-defined assessment period and data completeness.",
+      "fix": "Rephrase to state that confidence depends on the percentage of collected data points relative to the defined assessment period. Remove the rigid 'one-week' requirement, noting it as a common example rather than a rule."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that missing performance counters always lead to 'oversized or undersized' recommendations. Source S2 specifies the fallback is 'allocated cores/memory,' which typically results in 'oversized' recommendations if actual usage is low, but doesn't guarantee 'undersized' outcomes. The binary claim is imprecise.",
+      "fix": "Clarify that the fallback uses allocated resources, which may not reflect actual usage patterns, potentially leading to inaccurate sizing (often oversized) rather than a binary oversized/undersized outcome."
+    }
+  ]
+}

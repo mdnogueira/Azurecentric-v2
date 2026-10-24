@@ -1,0 +1,131 @@
+{
+  "id": "AZC-093",
+  "title": "Configure a file share with clear Windows permissions",
+  "slug": "configure-a-file-share-with-clear-windows-permissions",
+  "historical_date": "2024-09-16",
+  "input_sha256": "39178fbdabfe3628a6aad11951cbbb3670ee0ca45239eed13955ae9f2499d987",
+  "created_at": "2026-10-23T23:14:21.685629+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Fix DFS visibility by switching from inherited to explicit permissions and enforce SMB encryption on Windows Server 2022.",
+  "tags": [
+    "dfs-namespaces",
+    "smb-encryption",
+    "windows-server-2022",
+    "file-sharing",
+    "security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/storage/dfs-namespaces/add-namespace-servers-to-a-domain-based-DFS-namespace.md",
+      "revision": "41a145517dc5de3e04a0a34165fd37876bfd1f79",
+      "revision_date": "2024-08-13T09:50:43Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Add Namespace Servers to a Domain-based DFS Namespace",
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/dfs-namespaces/add-namespace-servers-to-a-domain-based-dfs-namespace",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/41a145517dc5de3e04a0a34165fd37876bfd1f79/WindowsServerDocs/storage/dfs-namespaces/add-namespace-servers-to-a-domain-based-DFS-namespace.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/storage/dfs-namespaces/using-inherited-permissions-with-access-based-enumeration.md",
+      "revision": "41a145517dc5de3e04a0a34165fd37876bfd1f79",
+      "revision_date": "2024-08-13T09:50:43Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Using Inherited Permissions with Access-based Enumeration",
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/dfs-namespaces/using-inherited-permissions-with-access-based-enumeration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/41a145517dc5de3e04a0a34165fd37876bfd1f79/WindowsServerDocs/storage/dfs-namespaces/using-inherited-permissions-with-access-based-enumeration.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/storage/file-server/smb-security.md",
+      "revision": "41a145517dc5de3e04a0a34165fd37876bfd1f79",
+      "revision_date": "2024-08-13T09:50:43Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "SMB security enhancements",
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/smb-security",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/41a145517dc5de3e04a0a34165fd37876bfd1f79/WindowsServerDocs/storage/file-server/smb-security.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source explicitly state how to verify if a specific client is using SMB 3.x or 3.1.1?",
+    "Is there a specific command to check the replication status of explicit permissions across namespace servers?",
+    "What is the exact performance impact of enabling SMB encryption on Windows Server 2022 with SMB Direct?",
+    "Are there any known issues with ABE when using explicit permissions on folders with multiple targets?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-a-file-share-with-clear-windows-permissions.md",
+  "draft": true,
+  "word_count": 987,
+  "claim_support_checks": [
+    {
+      "claim": "Default DFS permissions are inherited from the local file system, granting DOMAIN\\Users Read access.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Inherited permissions are not replicated to other namespace servers.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "SMB Encryption can be enabled for individual shares or the entire server.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Enabling SMB Encryption restricts access to SMB 3.0, 3.02, and 3.1.1 clients by default.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Preauthentication integrity in SMB 3.1.1 protects against downgrade attacks to SMB 2.x.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to click 'Use inherited permissions from the local file system' to switch to explicit permissions. This is the opposite of the correct action; that button enables inheritance. Switching to explicit permissions requires disabling inheritance.",
+      "fix": "Correct the procedure to state: 'Click **Disable inheritance** and choose **Convert inherited permissions into explicit permissions**.' The current instruction reverts the folder to inherited state, failing to achieve the goal of setting explicit ACLs."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims DFS Management and Dfsutil cannot manage underlying file system ACLs that generate inherited permissions, implying they can manage explicit ones. However, S2 states DFS Management cannot view or modify inherited permissions, and explicit permissions on folders with targets are automatically removed by DFS Namespaces if set via other tools. The draft misrepresents the tool's capability to 'set specific ACLs' on namespace folders with targets.",
+      "fix": "Clarify that explicit permissions on namespace folders with targets are fragile and often overridden. Recommend setting permissions on the underlying file share targets instead, or using DFS Management only for folders without targets. Cite S2's limitation regarding folders with targets."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Summary of actions' section with generic concluding text ('By following these steps...'). This violates the editorial guidance to remove stock conclusion and summary sections and end with a concrete verification.",
+      "fix": "Remove the 'Summary of actions' and 'By following these steps' paragraph. End the article immediately after the 'Verify the configuration' section, ensuring the last sentence is a concrete verification step or next action."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Illustrative Example' for PowerShell commands but does not mark them as unrun or explicitly state they are examples. While the syntax is correct, the editorial guidance prefers clear distinction for illustrative code.",
+      "fix": "Add a note that the PowerShell examples are illustrative and unrun. Ensure the code blocks are clearly separated from operational instructions. The current 'Illustrative Example' headers are acceptable but could be more explicit about their non-operational nature."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that 'permissions set on the namespace do not prevent direct access to the underlying file shares'. While true, it omits the critical context that ABE only controls visibility, not access. Users might assume setting explicit namespace permissions restricts data access, which is false.",
+      "fix": "Explicitly state that namespace permissions control visibility (ABE), while NTFS and Share permissions on the target server control actual data access. Emphasize that both layers must be configured for full security."
+    }
+  ]
+}

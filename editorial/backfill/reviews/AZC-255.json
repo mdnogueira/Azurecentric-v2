@@ -1,0 +1,134 @@
+{
+  "id": "AZC-255",
+  "title": "Investigate slow disk access in a Linux VM",
+  "slug": "investigate-slow-disk-access-in-a-linux-vm",
+  "historical_date": "2025-12-13",
+  "input_sha256": "63cedfbc72376536abbd3d4a5fc46f431b84a9c51d5c35d58963bc7e1710b3b2",
+  "created_at": "2026-10-23T18:10:08.056629+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot slow Linux VM disk I/O on Windows Server 2025 Hyper-V by checking schedulers, VHDX config, and storage architecture.",
+  "tags": [
+    "hyper-v",
+    "linux-vm",
+    "disk-performance",
+    "vhdx",
+    "i-o-scheduler"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "revision": "dedf7198ffe3c5689286b7e61fb3878b57118844",
+      "revision_date": "2025-01-12T23:19:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Physical storage architectures for Hyper-V in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-storage-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/dedf7198ffe3c5689286b7e61fb3878b57118844/WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "0bf43567aa8837d4780a5dc03c2abf8328224140",
+      "revision_date": "2025-12-02T09:41:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0bf43567aa8837d4780a5dc03c2abf8328224140/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported SUSE Linux Enterprise Server (SLES) virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-suse-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-01-13T10:58:44Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md"
+  ],
+  "open_questions": [
+    "Does the specific Linux distribution version impact the recommended I/O scheduler beyond the blk/blk-mq distinction?",
+    "Are there specific performance benchmarks for ext4 with 4096 groups vs default settings on dynamic VHDX?",
+    "How does SMB Direct vs iSCSI impact Linux VM disk performance in a disaggregated Storage Spaces Direct setup?",
+    "What is the exact impact of TRIM support on performance for different Linux file systems on Hyper-V?",
+    "Are there known issues with the 'none' scheduler on older Linux kernels that might require fallback to 'noop'?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-slow-disk-access-in-a-linux-vm.md",
+  "draft": true,
+  "word_count": 1115,
+  "claim_support_checks": [
+    {
+      "claim": "Linux kernels using the 'blk-mq' subsystem should use the 'none' I/O scheduler for better performance on Hyper-V with SSDs.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Dynamic VHDX files should use a 1 MB block size to reduce real disk space usage and improve performance.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "ext4 is recommended over ext3 for Linux on Hyper-V due to better space efficiency with dynamic VHDX files.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "SLES versions 12 SP3 and later have built-in LIS drivers, and the Microsoft LIS package should not be installed.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Hyperconverged configurations with Storage Spaces Direct replicate data to other nodes, which can impact write performance.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft recommends using 'noop' or 'none' I/O schedulers for all modern Linux kernels on Hyper-V. Source S2 explicitly states this is for 'today's solid state disks' and implies a general recommendation that may not hold for all workloads or storage types, potentially causing performance degradation for spinning disk or specific I/O patterns.",
+      "fix": "Clarify that the 'noop'/'none' recommendation is specifically for SSD-backed storage as per S2. Advise verifying the underlying storage type and workload characteristics before applying this change, noting that default schedulers may be optimal for other scenarios."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims ext4 is 'preferred' over ext3 for space efficiency with dynamic VHDX. While S2 supports this, it presents it as a universal preference without context on ext4's overhead or suitability for all Linux distributions. It also suggests setting 4096 groups as a general optimization without explaining the trade-off in metadata overhead.",
+      "fix": "Rephrase to state ext4 is 'recommended' by S2 for space efficiency, not universally 'preferred'. Explain that the 4096 group setting is a specific optimization for dynamic VHDXs and may increase metadata overhead, requiring validation for the specific use case."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that shrinking/expanding VHD/VHDX files can result in erroneous GPT partition tables, suggesting this is a common risk. S2 notes this happens when shrinking to a point before the partition end, which is a specific user error, not an inherent feature risk. The draft lacks the specific condition (shrinking past partition end) that triggers this.",
+      "fix": "Specify that GPT corruption occurs specifically when shrinking a VHDX to a size smaller than the partition's end. Emphasize that this is a result of incorrect resizing operations, not a general risk of resizing, and advise using partition tools to update structures after any resize."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions TRIM support for SLES 11 SP4 and later, implying it helps maintain performance on thin-provisioned storage. S3 confirms TRIM support for SLES 11 SP4+, but does not explicitly link it to 'maintaining performance' in a way that justifies it as a primary troubleshooting step for slow disk I/O without further context on the storage backend's TRIM support.",
+      "fix": "Clarify that TRIM support is available for SLES 11 SP4+ (per S3) but note that its effectiveness depends on the underlying storage array's support for UNMAP/TRIM commands. It is not a standalone fix for slow I/O without proper storage backend configuration."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using 'lsvmbus' to inspect Hyper-V bus devices. S3 lists 'lsvmbus command' as a supported feature for SLES 12 SP3+ and SLES 15, but not for SLES 11 SP4 or earlier. The draft does not specify this version dependency, potentially leading users on older SLES versions to attempt an unavailable command.",
+      "fix": "Specify that the 'lsvmbus' command is available only on SLES 12 SP3 and later (per S3). For older SLES versions, suggest alternative methods to verify vmbus status, such as checking kernel modules or dmesg output."
+    }
+  ]
+}

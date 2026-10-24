@@ -1,0 +1,132 @@
+{
+  "id": "AZC-321",
+  "title": "Plan checkpoint and restart behaviour for long-running jobs",
+  "slug": "plan-checkpoint-and-restart-behaviour-for-long-running-jobs",
+  "historical_date": "2026-06-16",
+  "input_sha256": "6cf3c9e44a37f1e7ddf65c6c4cd50a4bd99989685685b4bb19a4379ad4e6e7ea",
+  "created_at": "2026-10-23T19:43:16.291250+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan long-running Azure Batch jobs using constraints, job manager tasks, and restart policies to handle failures and timeouts.",
+  "tags": [
+    "azure-batch",
+    "job-manager-task",
+    "task-retries",
+    "job-constraints",
+    "batch-scheduling"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-321-learn-1.png",
+      "alt": "Screenshot of the Add button for job schedules.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/8f9326b302d5eaf4ff61196e7ef42822b2eeabc3/articles/batch/media/batch-job-schedule/add-job-schedule.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-06-04T22:53:44Z",
+      "sha256": "a697d4c835929cb766af19ae0007b3473a266fb2458f91d5bbd0369263d1bcd7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/jobs-and-tasks.md",
+      "revision": "4e475c1d0aacb7f02f51deeb97819a58de5a8975",
+      "revision_date": "2026-05-15T17:58:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Jobs and tasks in Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/jobs-and-tasks",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4e475c1d0aacb7f02f51deeb97819a58de5a8975/articles/batch/jobs-and-tasks.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-job-schedule.md",
+      "revision": "8f9326b302d5eaf4ff61196e7ef42822b2eeabc3",
+      "revision_date": "2025-06-04T22:53:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Schedule Batch jobs for efficiency",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-job-schedule",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8f9326b302d5eaf4ff61196e7ef42822b2eeabc3/articles/batch/batch-job-schedule.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should a client application handle tasks that remain in a 'running' state due to node preemption or lost connectivity if no other node is available?",
+    "What are the specific API calls or SDK methods required to query task state and associated node status to detect stuck tasks?",
+    "How does the 'maxWallClockTime' constraint interact with the 'maxTaskRetryCount' constraint if a task fails repeatedly?",
+    "Are there any known limitations or edge cases when using job manager tasks with job schedules that are not covered in the provided sources?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-checkpoint-and-restart-behaviour-for-long-running-jobs.md",
+  "draft": true,
+  "word_count": 1353,
+  "claim_support_checks": [
+    {
+      "claim": "A task in Azure Batch cannot run for more than 180 days.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Job manager tasks are restarted if they fail and are given highest priority for restart.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Batch limits the total size of a start task including resource files and environment variables.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "If a job is terminated, Batch only terminates running tasks on accessible compute nodes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Job schedules ensure only one job runs at a time per schedule definition.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The C# code example is structurally invalid. It assigns `JobManagerTask` properties to a `CloudTask` object, which is incorrect; `JobManagerTask` is a property of `JobDetails` or created via specific job APIs, not a task property. It also uses non-existent `RunExe` and `RunCommandLine` properties.",
+      "fix": "Remove the illustrative code block entirely. The sources do not provide a working code snippet for creating a job manager task via SDK. Describe the configuration conceptually or link to the official azure-batch-samples repository instead of providing broken code."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims job manager tasks are 'required for jobs created by a job schedule' and 'required for any job where you need to dynamically determine the workload.' This is an unsupported categorical claim. While required for job schedules, dynamic workload generation can be achieved via client-side orchestration without a job manager task running on a node.",
+      "fix": "Clarify that job manager tasks are mandatory for job schedules but optional for dynamic workloads. Distinguish between service-enforced requirements and architectural recommendations to avoid misleading users about mandatory infrastructure."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If you do not use a job manager task, you should initially set onAllTasksComplete to noaction...'. This implies a procedural necessity that isn't strictly true; it's a best practice to avoid premature termination, but not a hard constraint. The phrasing suggests a rigid workflow step.",
+      "fix": "Rephrase to 'It is recommended to set onAllTasksComplete to noaction initially if tasks are added asynchronously, then update it to terminatejob.' This reflects the advisory nature of the guidance rather than a strict rule."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section advising manual deletion of jobs. While true, this is generic operational advice not specific to the 'checkpoint and restart' topic. It dilutes the focus on failure handling and retry logic.",
+      "fix": "Remove the generic cleanup section. Focus the conclusion on verification steps related to failure modes, such as checking task states and node statuses, which directly addresses the draft's title and core technical question."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'Batch limits the total size of a start task' in the context of job constraints, but this is a separate feature (Start Task) not directly related to job-level retry/wallclock constraints. It creates confusion about where size limits apply.",
+      "fix": "Move the start task size limit information to a separate note or remove it if irrelevant to 'job constraints'. Ensure the distinction between job-level constraints and node-level start task configurations is clear to prevent architectural confusion."
+    }
+  ]
+}

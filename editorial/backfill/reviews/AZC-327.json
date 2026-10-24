@@ -1,0 +1,147 @@
+{
+  "id": "AZC-327",
+  "title": "Choose managed disks around workload I/O patterns",
+  "slug": "choose-managed-disks-around-workload-i-o-patterns",
+  "historical_date": "2026-07-04",
+  "input_sha256": "2f7cab4222bbbd547e942084762a401000402b9fce568d0763d57f038afcf0ff",
+  "created_at": "2026-10-23T19:51:17.082136+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Choose managed disk redundancy and sharing by matching write latency, cross-zone needs, and cluster requirements.",
+  "tags": [
+    "managed-disks",
+    "lrs",
+    "zrs",
+    "availability-zones",
+    "shared-disks"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-327-learn-1.png",
+      "alt": "Screenshot of the create a managed disk pane, change size highlighted..",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/media/disks-shared-enable/create-shared-disk-basics-pane.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-20T00:18:50Z",
+      "sha256": "8f96a225a04312c790e2d24bc436cc0713b588402e414efc888272ece4551ea0",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/disks-redundancy.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Redundancy options for Azure managed disks",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/disks-redundancy.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/disks-shared-enable.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable shared disks for Azure managed disks",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared-enable",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/disks-shared-enable.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/disks-shared.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Share an Azure managed disk across VMs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/disks-shared.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/disks-redundancy.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/disks-shared-enable.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/disks-shared.md"
+  ],
+  "open_questions": [
+    "Are there specific workload types where the latency difference between LRS and ZRS is proven to be critical, beyond general benchmarking recommendations?",
+    "Does the force detach feature (preview) have any known limitations or risks when used with ZRS disks in production scenarios?",
+    "Are there any additional billing implications for ZRS disks beyond the standard pricing page, such as egress costs for cross-zone replication?",
+    "How does the durability of ZRS compare to LRS in the event of a complete region failure, given that ZRS is zone-redundant but not region-redundant?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-managed-disks-around-workload-i-o-patterns.md",
+  "draft": true,
+  "word_count": 954,
+  "claim_support_checks": [
+    {
+      "claim": "LRS disks provide lower write latency than ZRS disks because they replicate within a single data centre.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "ZRS disks synchronously replicate data across three availability zones.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Shared disks can only be shared across availability zones if using ZRS.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Host caching is not supported for shared disks.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "ZRS disks provide higher durability than LRS disks.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims ZRS is ideal for zero RPO, but the source explicitly states cross-zone disaster recovery for LRS does not provide zero RPO, implying ZRS is the only native option for synchronous zone replication. However, the draft also suggests ZRS is ideal for zero RPO without clarifying that ZRS protects against zone failure, not region failure, and does not guarantee zero RPO against regional outages. This is a misleading promise of data protection.",
+      "fix": "Clarify that ZRS provides synchronous replication across zones, protecting against zone failures, but does not guarantee zero RPO against regional outages. Remove the absolute claim that ZRS is 'ideal' for zero RPO without context, as application-level synchronous writes are the only true zero RPO mechanism across zones."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'ZRS may incur higher costs due to the additional replication across zones.' The source only links to the pricing page and mentions billing implications are detailed there, but does not explicitly state ZRS costs more than LRS in the provided text. This is an unsupported financial claim.",
+      "fix": "Remove the specific claim about ZRS incurring higher costs. Instead, direct the reader to the Azure pricing page for detailed cost comparisons, as the source does not provide explicit cost differential data."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'force detach feature (preview)' for ZRS disks. The source indicates this feature is in preview and only supports data disks. The draft does not clarify that this is a preview feature with potential limitations, which could lead to production reliance on unstable functionality.",
+      "fix": "Explicitly state that the force detach feature is in preview and currently supports only data disks. Advise users to consider the stability and limitations of preview features before relying on them for disaster recovery."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph: 'Ultimately, the choice between LRS and ZRS depends on your specific workload requirements. There is no one-size-fits-all answer. Benchmark, test, and choose the option that best fits your application's needs.' This is a filler statement that adds no technical value.",
+      "fix": "Remove the generic concluding paragraph. End the article with the concrete verification step: 'To verify your choice, check the disk's redundancy setting in the Azure portal or via CLI.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests 'If you are unsure, start with a pilot using a non-production subscription to benchmark the latency.' This is a vague how-to step without specific guidance on how to benchmark or what metrics to use, relying on the reader to figure out the process.",
+      "fix": "Replace the vague advice with a direct reference to the source's recommendation: 'Microsoft recommends benchmarking your disks to simulate your application's workload and compare the latency between LRS and ZRS disks before making a final decision.'"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "AZC-215",
+  "title": "Plan storage availability across cluster nodes",
+  "historical_date": "2025-08-23",
+  "created_at": "2026-10-23T23:30:35.618439+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Align Windows Server cluster fault domains with physical hardware and configure a quorum witness to maintain storage availability.",
+  "tags": [
+    "windows-server",
+    "failover-clustering",
+    "storage-spaces-direct",
+    "quorum",
+    "fault-domains",
+    "azure-local"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "revision": "122e7dc009e0e19625a7cdb603aa7cf495da635a",
+      "revision_date": "2025-03-25T15:36:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure and manage the quorum in a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/122e7dc009e0e19625a7cdb603aa7cf495da635a/WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/fault-domains.md",
+      "revision": "557f775484b508a331c0649be2d7314c29c8ffe8",
+      "revision_date": "2025-05-19T09:51:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Fault domain awareness",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/fault-domains",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/557f775484b508a331c0649be2d7314c29c8ffe8/WindowsServerDocs/failover-clustering/fault-domains.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "The sources do not specify the exact PowerShell cmdlets for configuring a cloud witness, only that it is available in the wizard for Windows Server 2016 and above.",
+    "The sources do not detail the specific network requirements or firewall rules needed for the cloud witness to communicate with Azure Blob Storage.",
+    "The sources do not provide explicit guidance on how to handle fault domain changes for nodes that are already part of an active Storage Spaces Direct pool beyond eviction."
+  ],
+  "research_warnings": [
+    "No revision before 2025-08-23: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/failover-clustering/storage-architectures.md",
+    "Public document removed/moved on 2025-03-27T17:36:59Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/manage-cluster-quorum.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-storage-availability-across-cluster-nodes.md",
+  "draft": true,
+  "word_count": 802,
+  "claim_support_checks": [
+    {
+      "claim": "Fault domain awareness allows Storage Spaces Direct to place data copies in separate fault domains to maximise data safety.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Windows Server cannot verify that software-defined fault domains correspond to physical hardware.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "A cloud witness is a file stored in Azure Blob Storage and does not store a copy of the cluster database.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Data will not retroactively move in response to changes to the fault domain topology after Storage Spaces Direct is enabled.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "If you configure a file share witness or a cloud witness, you must start the cluster service from a last-man standing node after a shutdown.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims a cloud witness 'maintains a witness file' and 'does not store a copy of the cluster database'. While technically true that it doesn't store the *database*, it fails to clarify that the witness file *is* the quorum state indicator, which is distinct from the cluster database stored on shared storage. This distinction is critical for understanding recovery behavior.",
+      "fix": "Clarify that the cloud witness file tracks the cluster's quorum state (who is alive), not the cluster database (configuration/data). This explains why the database must come from a node, not the witness, during recovery."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'If you shut down all nodes for maintenance, remember that the latest cluster database is not stored in the cloud witness. You must start the cluster service from the last node standing to ensure it can recover the database.' This is misleading. If *all* nodes are shut down, there is no 'last node standing' to start. The cluster must be started on *one* node, which then brings up the database from its local copy.",
+      "fix": "Correct the instruction: 'If all nodes are shut down, start the cluster service on a single node. That node will load the local cluster database and rejoin the cluster, using the cloud witness to confirm quorum.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that 'Node majority (no witness)' is a valid option for multi-node clusters without qualification. Source S1 explicitly states that 'No majority (disk witness only)' is not recommended, but for 'Node majority (no witness)', it notes it's suitable if there's an odd number of nodes. The draft omits the critical constraint that node-only quorum requires an odd number of voting nodes to avoid split-brain.",
+      "fix": "Add a note that 'Node majority (no witness)' requires an odd number of voting nodes. If the cluster has an even number of nodes, a witness (disk, file share, or cloud) is required to break ties and ensure quorum."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'Azure Local' which is the current product name, but the historical context is August 2025. Source S1 references 'Azure Local' in the title and text, so this is consistent. However, the draft does not explicitly link the 'Cloud Witness' configuration to the 'Azure Local' product line's specific requirements, potentially confusing readers who might think this is generic Windows Server guidance only.",
+      "fix": "Explicitly state that Cloud Witness is a supported quorum option for Azure Local clusters, as referenced in Source S1's link to Azure Local concepts, to anchor the guidance to the specific platform."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's PowerShell example for fault domains uses `Set-ClusterFaultDomain -Name \"Server01\" -Parent \"Rack A\"`. Source S2 shows `Set-ClusterFaultDomain -Name \"server01.contoso.com\" -Parent \"Rack A\"`. The draft simplifies the node name, which might cause confusion if the actual node name differs from the hostname. It also omits the `New-ClusterFaultDomain` for the node itself, which is implicitly created but not shown.",
+      "fix": "Use a realistic node name in the example (e.g., `Server01.contoso.com`) and clarify that node fault domains are automatically created, so `New-ClusterFaultDomain` is only needed for Site, Rack, and Chassis levels."
+    }
+  ]
+}

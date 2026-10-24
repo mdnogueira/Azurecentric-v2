@@ -1,0 +1,143 @@
+{
+  "id": "AZC-062",
+  "title": "Configure Application Insights for an application deployment",
+  "historical_date": "2024-06-21",
+  "created_at": "2026-10-23T23:53:18.029984+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable Application Insights for App Service or Functions, verify telemetry, and distinguish it from platform diagnostics.",
+  "tags": [
+    "application-insights",
+    "azure-monitor",
+    "app-service",
+    "azure-functions",
+    "monitoring"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/monitor-app-service.md",
+      "revision": "3fd25208f0f0ad72c7bc95d1d48e3ac3f3b4d02f",
+      "revision_date": "2024-06-13T21:46:34Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Monitor Azure App Service",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3fd25208f0f0ad72c7bc95d1d48e3ac3f3b4d02f/articles/app-service/monitor-app-service.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-diagnostics.md",
+      "revision": "c498bb73e0dd078361eb643bf2399f10430ca1ff",
+      "revision_date": "2021-11-02T09:27:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Functions diagnostics Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-diagnostics",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c498bb73e0dd078361eb643bf2399f10430ca1ff/articles/azure-functions/functions-diagnostics.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/durable/function-app-diagnostics.md",
+      "revision": "a41012f56060747d927c336d6edead901a976e8d",
+      "revision_date": "2023-04-11T03:06:05Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Functions app diagnostics",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/durable/function-app-diagnostics",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a41012f56060747d927c336d6edead901a976e8d/articles/azure-functions/durable/function-app-diagnostics.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "The draft claims Application Insights 'is not a Log Analytics workspace itself' and has its own schema. This is outdated; modern Application Insights workspaces are backed by Log Analytics workspaces. The draft also omits the cost implications of enabling AI, which involves data ingestion charges.",
+    "The draft suggests using the 'Application Insights' blade to enable integration. In current Azure portal experiences, this is often done via 'Diagnostic settings' or the 'Application Insights' integration blade which may redirect to Diagnostic Settings. The draft lacks specific UI navigation details for the current portal layout.",
+    "The KQL examples use `requests` and `dependencies` tables directly. While valid in AI workspaces, the draft does not specify that these queries must be run in the 'Logs' blade of the Application Insights resource or its associated Log Analytics workspace. It also omits the `project` clause syntax details for clarity."
+  ],
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-insights.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-resource-types.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/app-service/monitor-app-service"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-application-insights-for-an-application-deployment.md",
+  "draft": true,
+  "word_count": 926,
+  "claim_support_checks": [
+    {
+      "claim": "Application Insights provides deep insights into application operations, monitoring availability, performance, and usage.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Diagnostic Settings allows exporting logs to other services, such as Log Analytics, Storage account, and Event Hubs.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Functions diagnostics is an intelligent and interactive experience to help you troubleshoot your function app with no configuration or extra cost.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Functions App Diagnostics helps diagnose problems in Durable Functions applications.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Application Insights collects telemetry data including requests, dependencies, exceptions, and performance counters.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You can query Application Insights data using Kusto Query Language (KQL) in the Logs blade.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Application Insights 'is not a Log Analytics workspace itself' and has its own schema. This is factually incorrect for modern workspaces (post-2020), which are backed by Log Analytics workspaces with a unified schema. This misleads users about data location and querying capabilities.",
+      "fix": "Update the 'Understand the data you are collecting' section to clarify that modern Application Insights resources are backed by Log Analytics workspaces. Remove the claim about separate schemas and distinct resource types for data storage, as they now share the same underlying infrastructure and schema."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Azure Functions diagnostics has 'no configuration or extra cost' and implies Application Insights is the only way for deeper monitoring. It omits the cost context for Application Insights (ingestion/pricing tiers) and the fact that Diagnostic Settings can also export Function logs to Log Analytics without AI.",
+      "fix": "Add a note about Application Insights pricing/ingestion costs. Clarify that Diagnostic Settings can also be used for Functions to export logs to Log Analytics, offering an alternative to AI for platform-level monitoring. Remove the absolute 'no extra cost' phrasing for diagnostics if it implies no monitoring costs at all."
+    },
+    {
+      "severity": "medium",
+      "problem": "The KQL examples use `requests` and `dependencies` tables directly without specifying the scope. The draft does not mention that these queries must be run in the 'Logs' blade of the Application Insights resource or its associated Log Analytics workspace, which is a critical step for users.",
+      "fix": "Explicitly state that the KQL queries should be executed in the 'Logs' blade of the Application Insights resource (or its linked Log Analytics workspace). Ensure the query syntax is valid for the current schema (e.g., `requests` table exists in AI workspaces)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests navigating to the 'Application Insights' blade to enable integration. In many current portal experiences, this is handled via 'Diagnostic settings' or a specific integration blade that may redirect. The instruction is vague and may not match the user's UI.",
+      "fix": "Update the 'Enable Application Insights via the Azure Portal' steps to reflect the current portal experience, likely directing users to 'Diagnostic settings' or the 'Application Insights' integration option within the resource menu, noting that the exact UI may vary."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram node 'Log Analytics Workspace' in the 'Application Insights Integration Flow'. For modern workspaces, this is redundant as AI *is* backed by a LA workspace. This could confuse users about the architecture.",
+      "fix": "Update the diagram to reflect that Application Insights resources are backed by Log Analytics workspaces, rather than showing them as separate, parallel nodes. Simplify the flow to 'App Service/Functions' -> 'Application Insights (backed by LA Workspace)'."
+    }
+  ]
+}

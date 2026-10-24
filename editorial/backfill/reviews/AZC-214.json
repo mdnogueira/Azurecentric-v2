@@ -1,0 +1,125 @@
+{
+  "id": "AZC-214",
+  "title": "Use group policy to configure a small server estate",
+  "slug": "use-group-policy-to-configure-a-small-server-estate",
+  "historical_date": "2025-08-20",
+  "input_sha256": "28d4af6a800bd66f0ba9307a4788cc1a6d16a516bd2efa691580e9eb6a3e4779",
+  "created_at": "2026-10-23T17:10:24.183387+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Windows Server 2025 servers using Group Policy Objects, OU structure, and GPMC with clear processing order and verification.",
+  "tags": [
+    "group-policy",
+    "windows-server-2025",
+    "active-directory",
+    "gpmc",
+    "server-management"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/group-policy/group-policy-overview.md",
+      "revision": "2c6036533df6284ad50caaf2b802cd43e611127a",
+      "revision_date": "2025-06-10T19:20:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Group Policy overview for Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/group-policy/group-policy-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/2c6036533df6284ad50caaf2b802cd43e611127a/WindowsServerDocs/identity/ad-ds/manage/group-policy/group-policy-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/group-policy/group-policy-processing.md",
+      "revision": "1123e4a346117c00540652d9ccb9b4b73fe6944c",
+      "revision_date": "2025-06-16T17:32:31Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Group Policy processing for Windows",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/group-policy/group-policy-processing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1123e4a346117c00540652d9ccb9b4b73fe6944c/WindowsServerDocs/identity/ad-ds/manage/group-policy/group-policy-processing.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/group-policy/group-policy-management-console.md",
+      "revision": "08f066554aa3268ac6bfb35a760c87268b4c3171",
+      "revision_date": "2025-05-14T20:39:44Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Group Policy Management Console in Windows",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/group-policy/group-policy-management-console",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/08f066554aa3268ac6bfb35a760c87268b4c3171/WindowsServerDocs/identity/ad-ds/manage/group-policy/group-policy-management-console.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source text provide specific examples of security settings that can be configured via GPO for Windows Server 2025?",
+    "Is there any information on how to handle GPO conflicts when multiple GPOs are linked to the same OU?",
+    "Are there any best practices for naming GPOs to ensure clarity and manageability?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-group-policy-to-configure-a-small-server-estate.md",
+  "draft": true,
+  "word_count": 1257,
+  "claim_support_checks": [
+    {
+      "claim": "Group Policy settings are applied in a specific order: local, site, domain, then OU.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "GPOs can be linked to sites, domains, and OUs.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The default refresh interval for Group Policy is 90 minutes with a random offset of up to 30 minutes.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "You can disable user or computer configuration settings in a GPO to reduce processing time.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `gpupdate.exe /force` forces a refresh of both computer and user policies. The source text (S2) states that script extensions run only at startup/logoff, and software installation only at startup/logon. It does not support the claim that `/force` overrides these event-driven processing constraints for all extensions.",
+      "fix": "Clarify that `gpupdate /force` forces reapplication of settings that support it, but event-driven extensions (scripts, software installation) still require specific triggers (startup/logon) to execute, as noted in S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that disabling User Configuration settings 'speeds up startup and logon times.' Source S3 states it 'slightly reduces computer startup time' by skipping evaluation. It does not mention logon time improvements for user settings disabled in a computer-focused GPO, nor does it quantify 'speeds up' generally.",
+      "fix": "Refine the claim to match S3: 'Disabling unused configurations reduces processing time by skipping evaluation of those settings, which can slightly reduce startup time.' Remove the specific claim about logon time improvement."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that `gpresult /h report.html` is the primary verification method alongside GPMC. While valid, the draft omits the source's mention of 'Group Policy Results' (RSoP) as a distinct GPMC feature for troubleshooting, potentially underutilizing the provided toolset description in S3.",
+      "fix": "Explicitly mention using the 'Group Policy Results' tool in GPMC as the recommended troubleshooting method for viewing GPO interaction, as described in S3, alongside the command-line alternative."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states GPOs are stored in the 'domain partition of Active Directory' and 'SYSVOL folder'. It does not clarify that the GPO container is in AD while the template is in SYSVOL, which S1 distinguishes. This minor conflation may confuse readers about replication mechanisms.",
+      "fix": "Clarify that the GPO container is stored in the domain partition of AD, while the Group Policy template is located in the SYSVOL folder on each DC, as detailed in S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic advice ('By following these steps... This approach ensures...'). The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or 'This approach ensures'.",
+      "fix": "Remove the final two paragraphs. End the article with the concrete verification step or a direct statement about the next action, such as 'Verify the RSoP report to confirm policy application.'"
+    }
+  ]
+}

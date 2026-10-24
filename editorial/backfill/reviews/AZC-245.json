@@ -1,0 +1,125 @@
+{
+  "id": "AZC-245",
+  "title": "Troubleshoot deployment permissions without assigning Owner",
+  "slug": "troubleshoot-deployment-permissions-without-assigning-owner",
+  "historical_date": "2025-11-15",
+  "input_sha256": "6a28136a554344e9b3237b331c2324bd1d39feec9fe3d041625fb378de868be6",
+  "created_at": "2026-10-23T17:56:51.778101+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Bicep RBAC deployment failures by verifying deployment scope, role assignment syntax, and permission requirements.",
+  "tags": [
+    "azure-rbac",
+    "bicep",
+    "deployment",
+    "permissions",
+    "troubleshooting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/scenarios-rbac.md",
+      "revision": "ecc6b36a0c8cde5fdf2b685191ceebdf07bb0aec",
+      "revision_date": "2025-11-07T19:56:03Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Bicep to create Azure role-based access control (Azure RBAC) resources",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-rbac",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ecc6b36a0c8cde5fdf2b685191ceebdf07bb0aec/articles/azure-resource-manager/bicep/scenarios-rbac.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "ef37e75885390a62b74e9935f64f7118ebeedbdd",
+      "revision_date": "2025-10-30T14:22:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ef37e75885390a62b74e9935f64f7118ebeedbdd/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-cli.md",
+      "revision": "ef37e75885390a62b74e9935f64f7118ebeedbdd",
+      "revision_date": "2025-10-30T14:22:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy Bicep files with the Azure CLI",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ef37e75885390a62b74e9935f64f7118ebeedbdd/articles/azure-resource-manager/bicep/deploy-cli.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user have the necessary permissions to create the role assignment at the target scope?",
+    "Is the role assignment name unique within the Microsoft Entra tenant?",
+    "Is the principalType property set correctly for the principal?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/troubleshoot-deployment-permissions-without-assigning-owner.md",
+  "draft": true,
+  "word_count": 958,
+  "claim_support_checks": [
+    {
+      "claim": "Deployment permissions depend on the scope of the deployment command and the resources being deployed.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Role assignments are extension resources that apply to a specific scope.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Role assignment names must be unique within the Microsoft Entra tenant.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The principalType property should be set to avoid intermittent deployment errors.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that deploying a role assignment scoped to a resource group using a subscription-level command fails due to missing permissions on `Microsoft.Resources/deployments` at the subscription scope. This is technically incorrect; subscription-level deployments can create resources scoped to child resource groups, provided the user has `Microsoft.Authorization/roleAssignments/write` on that specific resource group. The error would stem from lack of write access on the target resource group, not the deployment scope validation.",
+      "fix": "Clarify that subscription-level deployments can target child scopes. The permission failure occurs if the deploying principal lacks `Microsoft.Authorization/roleAssignments/write` on the specific resource group where the role assignment is scoped, rather than a mismatch between deployment command scope and resource scope."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a generic 'Summary of checks' section and concludes with 'By following these steps...'. This violates the editorial guidance to end with a concrete verification or next action and to remove generic concluding paragraphs.",
+      "fix": "Remove the 'Summary of checks' and the final concluding paragraph. End the article immediately after the 'Use what-if to preview changes' section or a specific verification step, such as confirming the role assignment exists via `az role assignment list`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The permissions required to deploy a Bicep file are not the same as the permissions required to manage the resources inside the deployment.' While true, it implies a separation that can be misleading. The draft fails to explicitly state that `Microsoft.Resources/deployments/*` is required for the deployment operation itself, regardless of the inner resource permissions, which is a distinct permission requirement often overlooked.",
+      "fix": "Explicitly state that `Microsoft.Resources/deployments/*` is required for the deployment operation at the chosen scope, in addition to the specific write permissions for the resources (like `roleAssignments/write`) being created within that deployment."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the same source citation multiple times in close proximity (e.g., in the 'Check for existing role assignments' section). This disrupts reading flow and violates the guidance to use a few well-placed source links.",
+      "fix": "Consolidate citations. Place a single relevant source link at the end of the paragraph or section where the information is presented, rather than repeating it after every sentence or claim within the same logical block."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'The most common mistake is assuming that a role at the control plane implies data-plane rights'. This is a vague generalization. The specific issue is that RBAC roles are scoped; having Contributor on a resource does not grant permission to manage RBAC assignments on that resource unless the user is also an Owner or has explicit `Microsoft.Authorization/roleAssignments/write`.",
+      "fix": "Replace the vague 'control plane vs data plane' statement with the specific technical limitation: 'Having Contributor on a resource does not grant permission to manage RBAC assignments on that resource unless the user is also an Owner or has explicit `Microsoft.Authorization/roleAssignments/write` permissions.'"
+    }
+  ]
+}

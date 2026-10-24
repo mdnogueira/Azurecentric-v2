@@ -1,0 +1,143 @@
+{
+  "id": "AZC-202",
+  "title": "Use Content Hub templates with a production review",
+  "slug": "use-content-hub-templates-with-a-production-review",
+  "historical_date": "2025-07-18",
+  "input_sha256": "1690cffd65fa9d618aab89f82d565a9e85c3c5455a2cb85dad6add8fdc72b4b6",
+  "created_at": "2026-10-23T16:54:23.680684+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Deploy Microsoft Sentinel Content Hub solutions with a production review to validate dependencies and configuration before activation.",
+  "tags": [
+    "microsoft-sentinel",
+    "content-hub",
+    "security-operations",
+    "deployment",
+    "configuration"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-202-learn-1.png",
+      "alt": "Screenshot of the Microsoft Sentinel content hub in the Defender portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/89bb9390e98db2ae16bc5ff65e8f35e435fe6c51/articles/sentinel/media/sentinel-solutions-deploy/solutions-list-defender.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-07-04T19:12:14Z",
+      "sha256": "64dc8d2b3d58d149c9c60ce85219b0fed807c5592c999ac71acefe3fd54cdcdd",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/sentinel-solutions-catalog.md",
+      "revision": "704f7ef03c854298c64dbbdbf30706ef0af22e89",
+      "revision_date": "2025-05-26T14:13:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Microsoft Sentinel content hub catalog | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-catalog",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/704f7ef03c854298c64dbbdbf30706ef0af22e89/articles/sentinel/sentinel-solutions-catalog.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/sentinel-solutions-deploy.md",
+      "revision": "89bb9390e98db2ae16bc5ff65e8f35e435fe6c51",
+      "revision_date": "2025-07-04T19:12:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Discover and deploy Microsoft Sentinel out-of-the-box content from Content hub",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/89bb9390e98db2ae16bc5ff65e8f35e435fe6c51/articles/sentinel/sentinel-solutions-deploy.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/configure-content.md",
+      "revision": "0d3496bce4ecc6b2b268e997b71e3e017a51bc90",
+      "revision_date": "2024-10-13T13:33:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Microsoft Sentinel content",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/configure-content",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0d3496bce4ecc6b2b268e997b71e3e017a51bc90/articles/sentinel/configure-content.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the article clearly distinguish between the Defender portal and Azure portal navigation paths for the Content hub?",
+    "Is the dependency on the 'Microsoft Sentinel Contributor' role explicitly stated before the deployment steps?",
+    "Are the post-installation configuration steps for data connectors and analytics rules clearly separated from the initial deployment?",
+    "Does the article avoid claiming that deployment equals activation for all content types?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-content-hub-templates-with-a-production-review.md",
+  "draft": true,
+  "word_count": 1203,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Sentinel is generally available in the Microsoft Defender portal, with Azure portal support ending in July 2026.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft Sentinel Contributor role at the resource group level is required to install or update solutions in the Content hub.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Solutions can be installed with dependencies, such as data connectors for CEF, Syslog, or custom logs.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Data connectors require manual configuration after solution installation to become active.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Content hub displays the support model for each solution, indicating whether it is supported by Microsoft or a partner.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a visible image caption ('Used with permission from Microsoft.') and a link to the raw GitHub source image, violating the guidance to omit visible permission captions and keep source provenance in review records.",
+      "fix": "Remove the 'Used with permission' credit text and the raw GitHub link. Use the local path `/images/posts/2025/azc-202-learn-1.png` for the image source only, as instructed."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses repetitive citation blocks after nearly every sentence (e.g., '[Discover and deploy...]'). This disrupts reading flow and violates the guidance to use a few well-placed source links rather than repeating citations.",
+      "fix": "Consolidate citations. Place one relevant link at the end of the section or paragraph where the information is introduced, rather than after every individual step or claim."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'If you do not configure the connector, the analytics rules dependent on it will not trigger.' This is a causal overstatement; rules may trigger with no data or errors, not necessarily 'not trigger'.",
+      "fix": "Rephrase to: 'Without a configured connector, the analytics rules will have no data to evaluate, preventing detection of relevant events.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The deployment is not complete until you verify...'. This implies a rigid completion criteria not defined in the sources. Sources describe configuration as separate steps, not a binary completion state.",
+      "fix": "Change to: 'Post-installation, verify that content items are configured. Data connectors must be connected, and analytics rules enabled, to function effectively.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'The support model... is clearly indicated... This is important for understanding who to contact if something goes wrong.' This is vague advice not supported by specific source text regarding support escalation paths.",
+      "fix": "Remove the subjective advice about contacting support. Simply state that the Support box indicates whether Microsoft or a partner supports the solution."
+    }
+  ]
+}

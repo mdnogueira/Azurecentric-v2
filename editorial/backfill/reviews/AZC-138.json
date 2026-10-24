@@ -1,0 +1,134 @@
+{
+  "id": "AZC-138",
+  "title": "Roll out GitHub push protection without disrupting developers",
+  "slug": "roll-out-github-push-protection-without-disrupting-developers",
+  "historical_date": "2025-01-20",
+  "input_sha256": "f69024d5b094db4f3a5d265872f7b08ab511664c3f878b3196a8a241fa2339e7",
+  "created_at": "2026-10-23T15:26:07.793391+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure GitHub push protection with delegated bypass to block secret commits while maintaining a controlled approval workflow for developers.",
+  "tags": [
+    "github-advanced-security",
+    "secret-scanning",
+    "push-protection",
+    "delegated-bypass",
+    "security-workflow"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository.md",
+      "revision": "ecbb38c0bab7471271841a00130588adf7fc2486",
+      "revision_date": "2024-12-12T10:27:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enabling secret scanning for your repository",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository",
+      "snapshot_url": "https://github.com/github/docs/blob/ecbb38c0bab7471271841a00130588adf7fc2486/content/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/delegated-bypass-for-push-protection/about-delegated-bypass-for-push-protection.md",
+      "revision": "ecbb38c0bab7471271841a00130588adf7fc2486",
+      "revision_date": "2024-12-12T10:27:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "About delegated bypass for push protection",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/delegated-bypass-for-push-protection/about-delegated-bypass-for-push-protection",
+      "snapshot_url": "https://github.com/github/docs/blob/ecbb38c0bab7471271841a00130588adf7fc2486/content/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/delegated-bypass-for-push-protection/about-delegated-bypass-for-push-protection.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/secret-scanning/push-protection-for-repositories-and-organizations.md",
+      "revision": "29cffd185047a8901db7c037330299b3bfb628b9",
+      "revision_date": "2024-07-09T09:19:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Push protection for repositories and organizations",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/push-protection-for-repositories-and-organizations",
+      "snapshot_url": "https://github.com/github/docs/blob/29cffd185047a8901db7c037330299b3bfb628b9/content/code-security/secret-scanning/push-protection-for-repositories-and-organizations.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-07-09T09:22:38Z; used previous public snapshot. Confirm continued applicability: content/code-security/secret-scanning/push-protection-for-repositories-and-organizations.md"
+  ],
+  "open_questions": [
+    "What is the specific API endpoint for updating the bypass list via the REST API?",
+    "Are there any performance implications for large repositories when enabling push protection on every push?",
+    "How does the bypass workflow differ for enterprise-level vs organisation-level configurations?",
+    "What happens if a reviewer is removed from the bypass list while a request is pending?",
+    "Can bypass requests be automated or integrated with external ticketing systems?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/roll-out-github-push-protection-without-disrupting-developers.md",
+  "draft": true,
+  "word_count": 813,
+  "claim_support_checks": [
+    {
+      "claim": "Push protection blocks commits containing detected secrets and requires a reason for bypass by default.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Delegated bypass allows organisation owners to restrict who can bypass push protection and introduces a review cycle.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Members of the bypass list can bypass the block themselves but must review requests from others.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Organisation-level delegated bypass settings disable repository-level settings for this feature.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Forked repositories do not inherit push protection settings.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims GitHub Advanced Security must be enabled at the organization level for private/internal repositories. Source S3 states this is required only for private/internal repositories, but S1 indicates secret scanning (and thus push protection) can be enabled on free public repos without Advanced Security. The draft omits the public repo exception, creating a false universal restriction.",
+      "fix": "Clarify that Advanced Security is required for private/internal repos, but push protection is available for public repos without it. Remove the implication that it is universally required for all private repos if the org doesn't have the license, noting the specific S3 condition."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states push protection settings apply to 'all existing repositories' when enabled at the organization level. Source S3 clarifies that organization-level settings can enable/disable it for 'all existing repositories' but does not guarantee it applies to future repos without specific configuration (e.g., security configurations or default settings). This is a vague how-to step regarding scope.",
+      "fix": "Specify that enabling at the org level applies to existing repos, and reference 'Security Configurations' or default settings for new repos. Distinguish between retroactive application and default behavior for new repositories."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that members of the bypass list 'must specify a reason' when bypassing. Source S2 says they 'can choose to bypass... by specifying a reason,' implying the reason field might be optional or context-dependent. The draft presents this as a mandatory constraint without source support for the 'must' aspect.",
+      "fix": "Change 'must specify a reason' to 'can specify a reason' or 'are prompted to specify a reason.' Verify if the UI enforces the reason field. If the source says 'choose to bypass... by specifying,' it implies the action includes the reason, but 'must' is too strong without explicit confirmation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a verification step asking a developer to push a 'known test secret.' This is a vague how-to step. It does not specify what constitutes a 'known test secret' or how to generate one safely without triggering false positives in production. It lacks concrete operational detail.",
+      "fix": "Provide a concrete example of a test secret pattern (e.g., a dummy AWS key format) or reference the documentation on testing secret scanning patterns. Ensure the example is clearly marked as illustrative and safe for testing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Forked repositories do not inherit push protection settings.' Source S3 says 'this is not enabled by default on the fork.' This is a subtle but important distinction. 'Do not inherit' implies a hard technical block, whereas 'not enabled by default' implies it can be enabled manually. The draft's phrasing is slightly misleading.",
+      "fix": "Rephrase to 'Forked repositories do not have push protection enabled by default.' Add that it can be enabled manually on the fork, aligning with the source text 'You can enable it on the fork the same way you enable it on a standalone repository.'"
+    }
+  ]
+}

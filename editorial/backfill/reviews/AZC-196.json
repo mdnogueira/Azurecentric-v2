@@ -1,0 +1,130 @@
+{
+  "id": "AZC-196",
+  "title": "Export and import a Hyper-V virtual machine",
+  "slug": "export-and-import-a-hyper-v-virtual-machine",
+  "historical_date": "2025-07-02",
+  "input_sha256": "fddeb65971eb2f87687f52d4af224471883a3ece9c529678024786974b968e85",
+  "created_at": "2026-10-23T16:45:20.418119+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to export and import Hyper-V virtual machines using PowerShell or Hyper-V Manager, covering import types and version compatibility.",
+  "tags": [
+    "hyper-v",
+    "virtual-machines",
+    "export-import",
+    "windows-server",
+    "virtualization"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/deploy/Export-and-import-virtual-machines.md",
+      "revision": "4882b6f33fc718a83a82301a3921749a22c0a3de",
+      "revision_date": "2025-05-14T21:48:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Export and import virtual machines",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/4882b6f33fc718a83a82301a3921749a22c0a3de/WindowsServerDocs/virtualization/hyper-v/deploy/Export-and-import-virtual-machines.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "revision": "8cec6acee574870f2b0ac21c6d788074154c6533",
+      "revision_date": "2025-01-29T20:06:10Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a virtual machine in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/8cec6acee574870f2b0ac21c6d788074154c6533/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use live migration without Failover Clustering to move a VM",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/use-live-migration-without-failover-clustering-to-move-a-virtual-machine",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The source documentation states that exporting a running VM is possible, but does not explicitly address application consistency. Should we add a caveat that exporting a running VM may result in an inconsistent state unless the guest OS supports it or the VM is paused?",
+    "The source documentation states that importing to the same host does not require a prior export, but does not clarify the implications for an already-registered VM. Should we explicitly state that the existing VM must be deleted before importing with 'Register in-place' or 'Restore' types to avoid ID conflicts?",
+    "The source documentation does not provide specific PowerShell commands for the 'Restore' import type that do not use the `-Copy` flag. Should we infer the correct command structure or leave it as a manual wizard step?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/export-and-import-a-hyper-v-virtual-machine.md",
+  "draft": true,
+  "word_count": 990,
+  "claim_support_checks": [
+    {
+      "claim": "You can export a virtual machine that is in either a started or stopped state.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You can only import a virtual machine if the Hyper-V host supports that configuration version.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The 'Restore' import type creates a copy of the exported files and moves them to the selected location, retaining the original ID.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The 'Copy' import type generates a new unique ID for the imported virtual machine.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "If you are importing to the same host, you do not need to export the virtual machine first, because Hyper-V tries to recreate the virtual machine from available files.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The 'Restore' PowerShell example incorrectly uses the -Copy flag. The source documentation defines 'Restore' as retaining the original VM ID and using the specified paths, whereas -Copy generates a new ID (the 'Copy' import type). This creates a contradiction between the section header and the code.",
+      "fix": "Remove the -Copy flag from the 'Restore' PowerShell example to match the 'Restore' definition (retaining ID). Use the 'Copy' example for the scenario requiring a new ID."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims you can export a VM while it is running. While technically true for the export operation, it does not guarantee data consistency for the application inside the VM. The text omits the critical context that exporting a running VM may result in inconsistent state unless the guest OS supports it or the VM is paused.",
+      "fix": "Add a note that exporting a running VM captures the state at that moment but may not ensure application-consistent data. Recommend pausing or shutting down the VM for consistent backups, or relying on guest-level tools."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If you are importing to the same host, you do not need to export the virtual machine first'. This is misleading. Importing to the same host typically requires the VM to be deleted first (for Register in-place/Restore) or is used to recover from a corrupted state. It is not a standard 'move' operation without prior export/import cycle context.",
+      "fix": "Clarify that importing to the same host is primarily for recovery or re-registration. Explicitly state that if the VM is already registered, it must be deleted before importing with 'Register in-place' or 'Restore' types to avoid ID conflicts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the source link citation after almost every sentence and step. This violates the guidance to 'Use a few well-placed source links rather than repeating the same citation after every sentence'.",
+      "fix": "Consolidate citations. Place the primary source link at the end of the relevant section or paragraph, rather than after every individual sentence or code block."
+    },
+    {
+      "severity": "low",
+      "problem": "The 'Verify the import' section suggests checking event logs for 'permission problems'. The source documentation does not explicitly list permission errors as a common post-import issue in the troubleshooting section, focusing instead on hardware compatibility and connection issues.",
+      "fix": "Remove the specific claim about permission problems in event logs unless supported by the source. Focus verification on ensuring the VM is registered and network adapters are connected to the correct virtual switches."
+    }
+  ]
+}

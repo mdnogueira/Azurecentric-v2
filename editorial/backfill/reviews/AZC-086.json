@@ -1,0 +1,117 @@
+{
+  "id": "AZC-086",
+  "title": "Choose a state boundary for Azure Terraform deployments",
+  "slug": "choose-a-state-boundary-for-azure-terraform-deployments",
+  "historical_date": "2024-08-28",
+  "input_sha256": "6840e8073675b3ff7534042db31ada8367123d06ae5195b816eeaf829cdfbca0",
+  "created_at": "2026-10-23T14:10:00.567105+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to scope Bicep modules to different management boundaries and resolve cross-scope dependencies.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-086-learn-1.png",
+      "alt": "The screenshot of Azure Verified Modules (AVM).",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/a38c798193d6ad49233eff450f21b3ecdbc50d89/articles/azure-resource-manager/bicep/media/modules/bicep-azure-verified-modules-avm.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-21T17:28:36Z",
+      "sha256": "d2f28633fc1c4a04aa44964c2ec779147337ccb309c4ce0b46539d9823f16b9f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-086-learn-2.png",
+      "alt": "Screenshot of bicep module registry with source.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/a5649c4c9dc8bb1a0e4fa808b8fd058749b6f42b/articles/azure-resource-manager/bicep/media/private-module-registry/bicep-module-with-source-manifest.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-06-28T15:07:31Z",
+      "sha256": "6c9766c09d590611012cf1cfd8cf4a4bac09ebaf13a0a7edf8f46f690b49f7fa",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9dab744dd92a844521ff089faf5b6b3fbd6b391f",
+      "revision_date": "2024-07-11T14:50:01Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9dab744dd92a844521ff089faf5b6b3fbd6b391f/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/modules.md",
+      "revision": "a38c798193d6ad49233eff450f21b3ecdbc50d89",
+      "revision_date": "2024-08-21T17:28:36Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a38c798193d6ad49233eff450f21b3ecdbc50d89/articles/azure-resource-manager/bicep/modules.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/private-module-registry.md",
+      "revision": "a5649c4c9dc8bb1a0e4fa808b8fd058749b6f42b",
+      "revision_date": "2024-06-28T15:07:31Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create private registry for Bicep module",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/private-module-registry",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a5649c4c9dc8bb1a0e4fa808b8fd058749b6f42b/articles/azure-resource-manager/bicep/private-module-registry.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-state-boundary-for-azure-terraform-deployments.md",
+  "draft": true,
+  "word_count": 873,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `targetScope` can be set to `tenant`. Source S1 explicitly states: 'You can't create policies or role assignments at the tenant scope... deploy these resources to the root management group.' Bicep does not support `tenant` as a valid `targetScope` value; it only supports `resourceGroup`, `subscription`, and `managementGroup`.",
+      "fix": "Remove `tenant` from the list of valid `targetScope` values. Clarify that tenant-level deployments (like policy assignments) must target the root management group, not a 'tenant' scope."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that `az deployment sub create` is the correct command for deploying a module scoped to a resource group. While the command runs at the subscription level, the explanation is vague about the distinction between the deployment scope (subscription) and the module scope (resource group). It risks confusing users about where the deployment actually occurs versus where the resources are placed.",
+      "fix": "Clarify that the deployment command's scope must match the Bicep file's `targetScope`, while the module's `scope` property determines where the module's resources are created. Ensure the example command aligns with the file's `targetScope`."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This approach allows you to manage complex deployments... By explicitly defining scopes, you avoid common pitfalls...' which is a generic concluding paragraph starting with 'This approach ensures' or similar phrasing, violating the guidance to remove generic concluding paragraphs.",
+      "fix": "Remove the final paragraph starting with 'This approach allows you to manage...' and end with a concrete verification step or next action, such as running `az bicep build` or checking the deployment history."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `az bicep build` for validation. While valid, it does not mention `az bicep lint` which is the primary tool for catching best practice violations and syntax errors before deployment. The draft also omits the need for `az bicep restore` when using registry modules, which is critical for resolving external dependencies.",
+      "fix": "Add `az bicep lint` as a recommended validation step. Include a note about running `az bicep restore` to download external modules from registries before building or deploying."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states: 'If you try to deploy a resource to a scope that differs from the file's target scope without explicit configuration, the deployment fails.' This is misleading. You can deploy resources to a different scope if you use the `scope` property on the resource itself, not just modules. The draft overemphasizes modules as the only solution.",
+      "fix": "Clarify that both resources and modules can use the `scope` property to deploy to a different boundary than the file's `targetScope`. Update the example to show a resource with a `scope` property if appropriate, or clarify that modules are used for encapsulation while resources can also be scoped."
+    }
+  ]
+}

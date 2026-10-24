@@ -1,0 +1,120 @@
+{
+  "id": "AZC-362",
+  "title": "Document and test manual replay of failed messages",
+  "slug": "document-and-test-manual-replay-of-failed-messages",
+  "historical_date": "2026-10-09",
+  "input_sha256": "3d9fc033c12e0be7d91bc39a2be5b795af1386c593bfad6676499da55f4294a6",
+  "created_at": "2026-10-23T20:41:42.873870+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to inspect, recover, and manually replay failed Service Bus messages using the .NET SDK and Service Bus Explorer.",
+  "tags": [
+    "azure-service-bus",
+    "dead-letter-queue",
+    "message-deferral",
+    "replay-messages",
+    "azure-messaging-servicebus"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/message-browsing.md",
+      "revision": "972d288defd68bf4176c66cc8156c47a679b159b",
+      "revision_date": "2025-09-05T05:41:31Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Service Bus - Browse or peek messages",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-browsing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/972d288defd68bf4176c66cc8156c47a679b159b/articles/service-bus-messaging/message-browsing.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-dead-letter-queues.md",
+      "revision": "e601398ae65b4e8134bb752b47dfe0c4b1122740",
+      "revision_date": "2026-07-16T23:42:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Service Bus Dead-Letter Queues",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dead-letter-queues",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e601398ae65b4e8134bb752b47dfe0c4b1122740/articles/service-bus-messaging/service-bus-dead-letter-queues.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/message-deferral.md",
+      "revision": "033f36a3ec6776433942548917c29210f77bbc09",
+      "revision_date": "2026-06-12T22:05:41Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Message Deferral Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-deferral",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/033f36a3ec6776433942548917c29210f77bbc09/articles/service-bus-messaging/message-deferral.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Should the article include a specific example of handling a 'MaxDeliveryCountExceeded' scenario with code to illustrate root cause analysis?",
+    "Is there a need to clarify the difference between 'Receive-and-delete' and 'Peek-lock' modes in the context of message settlement and DLQ behavior?",
+    "Should the article mention the retirement of older SDK libraries (WindowsAzure.ServiceBus, Microsoft.Azure.ServiceBus) as a prerequisite for using the latest Azure.Messaging.ServiceBus?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/document-and-test-manual-replay-of-failed-messages.md",
+  "draft": true,
+  "word_count": 973,
+  "claim_support_checks": [
+    {
+      "claim": "Dead-lettered messages are moved to a subqueue and do not expire in the DLQ.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Deferred messages remain in the main queue and require the sequence number for retrieval.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Service Bus Explorer provides a UI for browsing dead-letter queues and resending messages.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Peek operation can be used to discover deferred messages if sequence numbers are lost.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to 'delete' messages in the DLQ via the portal. Service Bus DLQs do not support deletion; messages must be explicitly 'completed' (settled) to remove them. This is a critical functional error that will confuse users.",
+      "fix": "Replace 'delete' with 'complete' or 'remove' in the context of DLQ management. Clarify that settlement is the only mechanism to remove messages from the DLQ, as there is no automatic cleanup or delete operation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The replay code snippet creates a new `ServiceBusMessage` using only the body (`dlqMessage.Body`). This discards critical metadata such as MessageId, CorrelationId, and custom headers, which may be required by downstream consumers for correlation or routing.",
+      "fix": "Update the replay code to copy all relevant properties from the original message to the new `ServiceBusMessage` instance, or use a method that preserves the full message envelope, ensuring downstream dependencies are met."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the Azure portal provides a UI for browsing DLQs. While Service Bus Explorer exists, it is a separate tool, not an integrated portal feature. This misleads users looking for native portal capabilities.",
+      "fix": "Clarify that 'Service Bus Explorer' is a separate tool (available as a download or web app) and not a native Azure Portal blade. Distinguish between native portal metrics and external tool capabilities."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By following these steps...') which violates the editorial guidance to end with a concrete verification or next action.",
+      "fix": "Remove the final paragraph starting with 'By following these steps'. Replace it with a specific verification step, such as 'Monitor the queue's active message count to confirm successful processing.'"
+    }
+  ]
+}

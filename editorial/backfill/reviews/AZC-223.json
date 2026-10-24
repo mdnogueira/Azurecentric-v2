@@ -1,0 +1,99 @@
+{
+  "id": "AZC-223",
+  "title": "Choose ephemeral OS disks when the workload permits it",
+  "historical_date": "2025-09-15",
+  "created_at": "2026-10-23T23:33:22.116730+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide when ephemeral OS disks fit your workload by checking VM size, placement, and lifecycle constraints.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/ephemeral-os-disks-deploy.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Ephemeral OS disks",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-deploy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/ephemeral-os-disks-deploy.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/attach-os-disk.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Attach an existing OS disk to a VM",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/attach-os-disk",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/attach-os-disk.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/os-disk-swap.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Swap between OS disks using the Azure CLI",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/os-disk-swap",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/linux/os-disk-swap.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [],
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/ephemeral-os-disks-deploy.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/attach-os-disk.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/linux/os-disk-swap.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/virtual-machines/sizes"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-ephemeral-os-disks-when-the-workload-permits-it.md",
+  "draft": true,
+  "word_count": 1594,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims ephemeral OS disks avoid the cost of a dedicated managed disk. This is unsupported; Azure charges for the underlying local storage capacity used by the ephemeral disk, which is billed similarly to standard managed storage in many contexts, and the 'cost' benefit is not a guaranteed feature but a variable outcome.",
+      "fix": "Remove the claim about avoiding managed disk costs. State that ephemeral disks use local host storage, which may reduce I/O latency, but do not assert specific cost savings or that no storage charges apply."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states you cannot detach and reattach the OS disk. While true for ephemeral disks specifically, it implies a general limitation of VMs. More critically, it suggests you 'must redeploy' to move the OS, ignoring that you can create a new VM from the same image or use Azure Compute Gallery, which is a distinct workflow.",
+      "fix": "Clarify that the ephemeral OS disk itself cannot be detached. To migrate the OS state, you must provision a new VM from the source image or gallery, rather than implying a simple redeployment is the only option."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the OS disk type 'should indicate that it is ephemeral' in `az vm show`. The source documentation does not specify a specific field value or output format for verifying this via CLI query. The suggested query `storageProfile.osDisk` does not explicitly show 'ephemeral' status in the standard output schema described in sources.",
+      "fix": "Remove the specific CLI verification command. Instead, advise checking the VM properties in the portal or template definition, as the CLI output does not explicitly label the disk as 'ephemeral' in a queryable string field according to the provided sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that 'many DS and DSv2-series sizes support this feature'. This is a vague generalization. Support depends on specific cache/temp disk sizes relative to the OS image, not just the series. Some DSv2 sizes may not have sufficient cache for larger OS images.",
+      "fix": "Replace the series-specific claim with the rule: 'Verify that the VM size's local cache or temporary disk is larger than the OS image size.' Cite the source note about greyed-out options due to size constraints."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section and 'Review Questions' that are generic or unanswerable. The review questions ask for exact minimum cache sizes and specific OS image incompatibilities not detailed in the provided sources. The cleanup section is boilerplate.",
+      "fix": "Remove the generic 'Cleanup' section. Replace unanswerable review questions with actionable checks, such as verifying the `diffDiskSettings` property in the deployment template or confirming the `caching` mode is `ReadOnly`."
+    }
+  ]
+}

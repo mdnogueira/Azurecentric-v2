@@ -1,0 +1,148 @@
+{
+  "id": "AZC-293",
+  "title": "Use PowerShell Direct for Windows guest administration",
+  "slug": "use-powershell-direct-for-windows-guest-administration",
+  "historical_date": "2026-03-30",
+  "input_sha256": "7d03d2c26b7ce491e1cf21b3306f5435f3673fff64abd62f8ca653cfd46a07ed",
+  "created_at": "2026-10-23T19:04:46.558710+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use PowerShell Direct to manage Windows VMs on a Hyper-V host without network or remote management configuration.",
+  "tags": [
+    "hyper-v",
+    "powershell-direct",
+    "windows-server",
+    "virtualization",
+    "automation"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-293-learn-1.png",
+      "alt": "Screenshot that calls out Show options on the bottom left of the dialog box.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/182e26670e5cbd0a82a7c16c3d784e13c3c83e14/WindowsServerDocs/virtualization/hyper-v/learn-more/media/HyperV-VMConnect-DisplayConfig.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-07-25T12:57:04Z",
+      "sha256": "cb4558807597c70445a679c8d431543e847bb648752fa1a483cfa0ef570c3a6f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md",
+      "revision": "6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb",
+      "revision_date": "2025-08-11T22:13:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Windows virtual machines with PowerShell Direct",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-windows-virtual-machines-with-powershell-direct",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/powershell-direct.md",
+      "revision": "b1471a2555f13dfcf3a84c348fadcfc5a49a2104",
+      "revision_date": "2025-10-28T14:52:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Windows Virtual Machines with PowerShell Direct",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/powershell-direct",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/b1471a2555f13dfcf3a84c348fadcfc5a49a2104/WindowsServerDocs/virtualization/hyper-v/powershell-direct.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md",
+      "revision": "182e26670e5cbd0a82a7c16c3d784e13c3c83e14",
+      "revision_date": "2025-07-25T12:57:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use local resources on Hyper-V with VMConnect",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/use-local-resources-on-hyper-v-virtual-machine-with-vmconnect",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/182e26670e5cbd0a82a7c16c3d784e13c3c83e14/WindowsServerDocs/virtualization/hyper-v/learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-08-14T14:58:55Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md",
+    "Public document removed/moved on 2025-07-25T15:19:22Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md"
+  ],
+  "open_questions": [
+    "Does PowerShell Direct work with Windows Server 2025 guests if the host is Windows Server 2025, given the source documentation primarily cites Windows 10/Server 2016 as the baseline?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-powershell-direct-for-windows-guest-administration.md",
+  "draft": true,
+  "word_count": 905,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell Direct allows management of Windows VMs without relying on network or remote connection settings.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The host and guest must run Windows 10 or Windows Server 2016 or later.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "You must be logged into the host as a Hyper-V administrator and supply valid guest credentials.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The -RunAsAdministrator flag cannot be used when connecting to virtual machines.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Persistent sessions are supported in Windows builds 14280 and later.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "If the vmicvmsession service hangs, it can be restarted via VMConnect.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that Windows Server 2025 host and guest configurations are supported by citing 'Windows 10, Windows Server 2016, or later'. The provided sources (S1, S2) only explicitly list Windows 10 and Windows Server 2016/2019 as supported versions. While 'or later' is implied in S2, the sources do not confirm Windows Server 2025 compatibility, making this a future knowledge claim unsupported by the provided text.",
+      "fix": "Remove the specific reference to Windows Server 2025 in the prerequisites. State that the host and guest must run Windows 10 or Windows Server 2016 or later, as per the source documentation, without validating the specific 2025 version."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot from S3 (VMConnect) to illustrate 'Show options'. The editorial guidance explicitly prohibits adding visible Microsoft Learn screenshots or permission captions. The screenshot is also irrelevant to PowerShell Direct, which is the article's topic.",
+      "fix": "Remove the screenshot entirely. Do not include any images from the provided sources. Describe the VMConnect UI steps textually if necessary for context, but do not display the image."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that 'PowerShell is not yet available in the guest' is a cause for the 'A remote session might have ended' error. The source S2 attributes this error to the VM not running, guest OS not supporting PowerShell Direct, or the OS not finishing booting/waiting for input. It does not explicitly state PowerShell is unavailable as a distinct cause, but rather implies the environment isn't ready.",
+      "fix": "Refine the troubleshooting explanation to align with S2: cite that the VM is not running, the guest OS does not support PowerShell Direct, or the OS is still booting/waiting for user input. Avoid asserting PowerShell availability as a separate failure mode not explicitly listed."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states that persistent sessions 'preserve variables across calls'. While technically true for PSSession, the source S2 notes this as a general feature of persistent sessions but warns of a bug in builds before 14500 where omitting credentials causes a crash. The draft mentions the bug but doesn't clarify that variable preservation is a standard PowerShell feature, not specific to PowerShell Direct.",
+      "fix": "Clarify that variable preservation is a standard feature of persistent PowerShell sessions. Ensure the warning about the credential bug in builds before 14500 is clearly linked to the session stability, not the variable preservation feature itself."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'bypassing the network stack entirely'. While PowerShell Direct uses the virtualization interface, it does not necessarily bypass the entire network stack in all architectural interpretations, and the sources describe it as working 'regardless of the network configuration'. The phrasing is slightly imprecise compared to the source text.",
+      "fix": "Change 'bypassing the network stack entirely' to 'regardless of the network configuration or remote management settings', mirroring the source documentation's precise wording to avoid technical overstatement."
+    }
+  ]
+}

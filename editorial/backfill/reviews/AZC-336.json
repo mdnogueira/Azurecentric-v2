@@ -1,0 +1,93 @@
+{
+  "id": "AZC-336",
+  "title": "Compare standalone and embedded investigation workflows",
+  "slug": "compare-standalone-and-embedded-investigation-workflows",
+  "historical_date": "2026-07-29",
+  "input_sha256": "2ede896a3a175971a9cd94432eacef96e9a6e16d4ff3990e6e43452c2578ec6c",
+  "created_at": "2026-10-23T20:03:20.294323+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Compare standalone and embedded Security Copilot workflows, focusing on context anchoring and connector requirements.",
+  "tags": [
+    "microsoft-security-copilot",
+    "security-operations",
+    "investigation-workflows",
+    "sentinel-integration",
+    "generative-ai"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "546fc8520e9443e311cc9df30ab5e0ac79301a9f",
+      "revision_date": "2024-11-06T08:18:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific limitations to embedded workflows in Sentinel that are not covered in the general documentation?",
+    "How does the data retention policy differ between standalone and embedded sessions?",
+    "What are the exact permissions required for a user to invoke Copilot from within Sentinel?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/compare-standalone-and-embedded-investigation-workflows.md",
+  "draft": true,
+  "word_count": 865,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Security Copilot is a generative AI assistant for security operations.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The assistant connects to data sources via plugins and connectors.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that embedded workflows in Sentinel allow Copilot to access specific data like KQL queries and entities. The provided README (S1) contains no information about Sentinel integration, embedded capabilities, or data access scopes. This is a concrete unsupported fact regarding product functionality.",
+      "fix": "Remove specific claims about Sentinel embedded data access. Replace with general statements about context anchoring supported by the README's mention of plugins/connectors, or cite official Microsoft Learn documentation for Sentinel integration specifics."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims embedded workflows reduce the need for manual context injection because the assistant accesses alert data. This implies a specific technical mechanism (automatic data passing) not supported by the provided source. The source only mentions 'connectors' generally.",
+      "fix": "Clarify that context injection depends on the specific connector/plugin implementation. Avoid implying automatic access to structured alert data without citing the specific feature documentation for Sentinel-Copilot integration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states standalone sessions do not automatically inherit metadata from security tools. While likely true, the source does not define the boundary between 'standalone' and 'embedded' technical behaviors. The distinction is inferred rather than sourced.",
+      "fix": "Frame the distinction as operational best practices for context management rather than inherent technical limitations of the standalone mode. Verify the 'no automatic inheritance' claim against official product docs."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section on 'Practical considerations' regarding data privacy and hallucination. While good advice, it is generic and not supported by the specific technical claims in the source text.",
+      "fix": "Keep the hallucination warning as it is standard for generative AI, but remove or generalize the privacy section unless specific connector data handling policies are cited. Ensure the tone remains operational."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'blank canvas' and 'freedom' which are subjective. The source text is a README for contributors, not a user guide for investigation workflows.",
+      "fix": "Tone down marketing language. Focus on the functional difference: initiating a new session vs. invoking via plugin from an existing context. Ensure all workflow descriptions are traceable to feature documentation."
+    }
+  ]
+}

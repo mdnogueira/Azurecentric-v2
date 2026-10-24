@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 580" role="img" aria-labelledby="t d">
+<title id="t">Access Flow in Shared Sentinel Workspace</title>
+<desc id="d">Checkpoints: SOC Team: Has Sentinel Contributor role on Workspace. Sees all data and Sentinel features.; Apps Team: Has Reader role on Resource Group. Sees only logs for those resources via Azure Monitor Logs.; Audit Team: Has Table-level RBAC on OfficeActivity. Sees only that specific table across the workspace.; Sentinel Workspace: Central store. Enforces access rules based on Azure RBAC and table permissions.; Non-Azure Sources: Require explicit azure_resource_id tagging to work with resource-context RBAC.</desc>
+<rect width="1080" height="580" rx="20" fill="#f2f6fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#142c4c}.heading{font-size:25px;font-weight:700}.label{font-size:23px}</style>
+<text x="38" y="40" class="heading">Access Flow in Shared Sentinel Workspace</text>
+<rect x="36" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="134" r="20" fill="#176ea5"/><text x="65" y="142" style="font-size:23px;fill:white">1</text>
+<text x="106" y="139" class="label">SOC Team: Has Sentinel</text>
+<text x="106" y="168" class="label">Contributor role on Workspace.</text>
+<text x="106" y="197" class="label">Sees all data and Sentinel</text>
+<rect x="556" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="134" r="20" fill="#176ea5"/><text x="585" y="142" style="font-size:23px;fill:white">2</text>
+<text x="626" y="139" class="label">Apps Team: Has Reader role on</text>
+<text x="626" y="168" class="label">Resource Group. Sees only logs</text>
+<text x="626" y="197" class="label">for those resources via Azure</text>
+<rect x="36" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="289" r="20" fill="#176ea5"/><text x="65" y="297" style="font-size:23px;fill:white">3</text>
+<text x="106" y="294" class="label">Audit Team: Has Table-level</text>
+<text x="106" y="323" class="label">RBAC on OfficeActivity. Sees</text>
+<text x="106" y="352" class="label">only that specific table</text>
+<rect x="556" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="289" r="20" fill="#176ea5"/><text x="585" y="297" style="font-size:23px;fill:white">4</text>
+<text x="626" y="294" class="label">Sentinel Workspace: Central</text>
+<text x="626" y="323" class="label">store. Enforces access rules</text>
+<text x="626" y="352" class="label">based on Azure RBAC and table</text>
+<rect x="36" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="444" r="20" fill="#176ea5"/><text x="65" y="452" style="font-size:23px;fill:white">5</text>
+<text x="106" y="449" class="label">Non-Azure Sources: Require</text>
+<text x="106" y="478" class="label">explicit azure_resource_id</text>
+<text x="106" y="507" class="label">tagging to work with resource-</text>
+</svg>

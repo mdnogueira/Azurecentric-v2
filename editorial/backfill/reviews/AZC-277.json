@@ -1,0 +1,94 @@
+{
+  "id": "AZC-277",
+  "title": "Review access boundaries before sharing investigation results",
+  "historical_date": "2026-02-14",
+  "created_at": "2026-10-23T23:39:32.890953+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify identity permissions and data scope before sharing Security Copilot investigation results.",
+  "tags": [
+    "security-copilot",
+    "sentinel",
+    "data-governance",
+    "access-control",
+    "ai-security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "546fc8520e9443e311cc9df30ab5e0ac79301a9f",
+      "revision_date": "2024-11-06T08:18:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source text specify the exact Azure RBAC roles required for the Sentinel connector?",
+    "Is there documentation on how Security Copilot handles data residency for the generated output?",
+    "Are there specific guidelines for redacting PII from Copilot-generated summaries?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-access-boundaries-before-sharing-investigation-results.md",
+  "draft": true,
+  "word_count": 811,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Security Copilot is a generative AI assistant for security operations.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Security Copilot connects to data sources like Sentinel via connectors.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Plugins extend Security Copilot capabilities.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites 'Connectors overview' and 'Plugin overview' as primary sources for permission requirements, but the provided source (S1 README) contains no technical details on permissions, roles, or plugin security models. It only lists URLs. This creates a false sense of authoritative backing for specific permission claims.",
+      "fix": "Remove the specific citations to the Connectors and Plugin overview pages within the body text as they are not supported by the provided evidence. State that connector permissions depend on the underlying service (Sentinel) and that community plugins require manual review, without implying the README documents these specifics."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'If they do not have permission, Copilot should not be able to retrieve or summarise them.' This is a strong assertion about enforcement that is not supported by the source. AI models may still generate summaries based on training data or partial context, and 'should' is not a technical guarantee.",
+      "fix": "Rephrase to reflect that Copilot relies on the identity's permissions to access source data, but emphasize that output sensitivity must still be manually verified. Remove the definitive 'should not' claim and replace it with guidance on verifying access boundaries."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests reviewing 'Reader, Contributor, and Security Operator' roles as if these are the standard or only relevant roles for Sentinel. This is vague and potentially misleading, as Sentinel has specific built-in roles (e.g., Sentinel Reader, Sentinel Contributor) and custom roles may be used.",
+      "fix": "Replace the generic role list with a reference to 'Sentinel-specific RBAC roles' and advise checking the official Sentinel documentation for the exact role definitions. Do not invent or list specific roles not present in the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Conclusion' section starting with 'Sharing investigation results... requires careful consideration...' which violates the instruction to remove stock conclusion paragraphs. It also ends with 'Cheers', which is unprofessional for technical documentation.",
+      "fix": "Remove the entire 'Conclusion' section. End the article immediately after the 'Review the output before sharing' section with a concrete verification step, such as 'Verify the final output against the source logs before distribution.'"
+    }
+  ]
+}

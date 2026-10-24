@@ -1,0 +1,125 @@
+{
+  "id": "AZC-153",
+  "title": "Choose a safe approach to PowerShell credential handling",
+  "slug": "choose-a-safe-approach-to-powershell-credential-handling",
+  "historical_date": "2025-03-03",
+  "input_sha256": "3c13681a9e03845e12f49bcd432d150ba1737e3b0a8bac1fd77b889248485a9f",
+  "created_at": "2026-10-23T15:48:01.675579+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define robust PowerShell credential parameters, handle legacy cmdlet constraints, and prevent injection without relying on Invoke-Expression.",
+  "tags": [
+    "powershell",
+    "credential-handling",
+    "security",
+    "script-injection",
+    "best-practices"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/add-credentials-to-powershell-functions.md",
+      "revision": "eb2177e5fcb97fd8078417832768960c1b09e015",
+      "revision_date": "2022-11-16T23:26:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Add Credential support to PowerShell functions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/add-credentials-to-powershell-functions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/eb2177e5fcb97fd8078417832768960c1b09e015/reference/docs-conceptual/learn/deep-dives/add-credentials-to-powershell-functions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/credential-attribute-declaration.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Credential Attribute Declaration",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/credential-attribute-declaration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/cmdlet/credential-attribute-declaration.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/security/preventing-script-injection.md",
+      "revision": "aad23384dd8a40c54d61ea11820e9ad1733291cd",
+      "revision_date": "2025-02-24T19:52:21Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Preventing script injection attacks",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/security/preventing-script-injection",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/aad23384dd8a40c54d61ea11820e9ad1733291cd/reference/docs-conceptual/security/preventing-script-injection.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the SecretManagement module provide a standard way to retrieve credentials for use in functions?",
+    "Are there any specific cmdlets that explicitly reject PSCredential::Empty beyond Invoke-Sqlcmd?",
+    "How does the Credential attribute interact with custom hosts that define different prompts?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-safe-approach-to-powershell-credential-handling.md",
+  "draft": true,
+  "word_count": 866,
+  "claim_support_checks": [
+    {
+      "claim": "A PSCredential object represents a set of security credentials such as a user name and password.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Credential attribute allows a string to be passed as an argument to a PSCredential parameter.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Invoke-Expression is dangerous because it parses and runs whatever string content you provide.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "EscapeSingleQuotedStringContent is a static public method of the PowerShell System.Management.Automation.Language.CodeGeneration class.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft explicitly recommends using `Invoke-Expression` in the 'Preventing script injection attacks' section, despite the source (S3) labeling it dangerous and advising against it. The code examples for injection prevention still rely on `Invoke-Expression` rather than demonstrating safer alternatives like direct parameter binding or `EscapeSingleQuotedStringContent` without it.",
+      "fix": "Remove all `Invoke-Expression` examples. Replace them with direct cmdlet calls (e.g., `Get-Process -Id $ProcId`) or show how to use `EscapeSingleQuotedStringContent` only where strictly necessary, emphasizing that direct binding is the preferred secure method."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims `[System.Management.Automation.PSCredential]::Empty` avoids errors when passing to other cmdlets, but S1 notes this is not universally true and requires workarounds. The draft presents the empty credential default as a robust solution without sufficient warning about legacy cmdlet incompatibilities.",
+      "fix": "Clarify that `[PSCredential]::Empty` is not supported by all cmdlets. Move the legacy cmdlet handling section before the general parameter definition or add a prominent warning that splatting or conditional logic is required for cmdlets like `Invoke-Sqlcmd` or older built-in cmdlets."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests extracting clear-text passwords via `GetNetworkCredential().Password` for `Invoke-Sqlcmd` without explicitly marking the code as illustrative or unrun, and lacks context on the security risk of holding clear-text strings in memory. S1 mentions this but the draft's tone implies it's a standard pattern.",
+      "fix": "Mark the `Invoke-Sqlcmd` example as illustrative/unrun. Add a note that extracting clear-text passwords increases risk and should be avoided if possible. Ensure the code structure is complete and valid PowerShell syntax."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By following these practices...') which violates the editorial guidance to end with a concrete verification or next action and remove generic conclusions.",
+      "fix": "Delete the final paragraph starting with 'By following these practices'. End the article immediately after the 'Verification' section or the final code example."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This approach ensures' in the splatting section, which is a prohibited generic concluding phrase. It also uses 'By following' in the final conclusion.",
+      "fix": "Replace 'This approach ensures...' with a specific statement about the mechanism, e.g., 'This conditional logic prevents the Credential parameter from being bound when empty.' Remove the final 'By following' sentence entirely."
+    }
+  ]
+}

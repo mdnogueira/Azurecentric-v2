@@ -1,0 +1,127 @@
+{
+  "id": "AZC-183",
+  "title": "Investigate a function timeout without changing every setting",
+  "slug": "investigate-a-function-timeout-without-changing-every-setting",
+  "historical_date": "2025-05-26",
+  "input_sha256": "f9364c7b732d700bf5e76d385e628989e1e33fd0d2afaa3882be6859d746a88a",
+  "created_at": "2026-10-23T16:29:24.872261+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Azure Functions timeouts by using built-in diagnostics and streaming logs to isolate the cause before changing configuration.",
+  "tags": [
+    "azure-functions",
+    "troubleshooting",
+    "diagnostics",
+    "logging",
+    "timeout"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-183-learn-1.png",
+      "alt": "Screenshot showing how to search for Durable Functions detector.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/a41012f56060747d927c336d6edead901a976e8d/articles/azure-functions/durable/media/durable-functions-best-practice/search-for-detector.png",
+      "source_id": "S3",
+      "source_revision_date": "2023-04-11T03:06:05Z",
+      "sha256": "33e3906e8cda829511cce912cff7a6652145e80b56809a1f32e6aa1af064dd1e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-diagnostics.md",
+      "revision": "c498bb73e0dd078361eb643bf2399f10430ca1ff",
+      "revision_date": "2021-11-02T09:27:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Functions diagnostics Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-diagnostics",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c498bb73e0dd078361eb643bf2399f10430ca1ff/articles/azure-functions/functions-diagnostics.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/streaming-logs.md",
+      "revision": "9efdc0ed1e5d9615af084802a29ea04ed48e4ced",
+      "revision_date": "2024-09-23T19:02:31Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Stream execution logs in Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/streaming-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9efdc0ed1e5d9615af084802a29ea04ed48e4ced/articles/azure-functions/streaming-logs.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/durable/function-app-diagnostics.md",
+      "revision": "a41012f56060747d927c336d6edead901a976e8d",
+      "revision_date": "2023-04-11T03:06:05Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Functions app diagnostics",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/durable/function-app-diagnostics",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a41012f56060747d927c336d6edead901a976e8d/articles/azure-functions/durable/function-app-diagnostics.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the diagnostic blade cover all types of timeouts or only specific error categories?",
+    "Are there specific thresholds for CPU or memory that trigger the diagnostic suggestions?",
+    "How does sampling in Live Metrics Stream affect the ability to diagnose intermittent timeouts?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-function-timeout-without-changing-every-setting.md",
+  "draft": true,
+  "word_count": 869,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Functions diagnostics is an intelligent and interactive experience to help troubleshoot issues with no configuration or extra cost.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Live Metrics Stream is recommended for monitoring functions running on multiple instances and supports all plan types.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Built-in log streaming supports only a single instance and cannot be used with an app running on Linux in a Consumption plan.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Functions App Diagnostics helps diagnose potential issues in Durable Functions applications and provides potential solutions.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states the diagnostic blade requires 'no extra cost'. Source S1 claims this, but Azure Functions diagnostics is a feature of the Azure Monitor suite, which has its own pricing tiers (e.g., Log Analytics ingestion costs). Stating 'no extra cost' is misleading and potentially inaccurate depending on the user's existing Azure Monitor setup.",
+      "fix": "Clarify that while the diagnostic tool itself is free to use, it may incur costs if it triggers data ingestion into Log Analytics or if Application Insights sampling is adjusted. Remove the absolute 'no extra cost' claim."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that 'High CPU Analysis' or 'Memory Analysis' detectors directly cause or explain timeouts. Source S3 shows these detectors identify resource pressure, but does not link them causally to timeouts. Timeouts are often due to logic errors or external waits, not just resource exhaustion. This is an unsupported inference.",
+      "fix": "Rephrase to state that resource pressure *can* lead to performance degradation or timeouts, but emphasize that timeouts are often caused by logic errors or external dependencies, which logs will reveal. Do not present resource detectors as the primary cause of timeouts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests searching for 'timeout' in the diagnostic blade. Source S1 mentions searching for keywords like 'execution', but does not explicitly list 'timeout' as a supported keyword. This might lead users to a dead end if the detector doesn't exist for that specific term.",
+      "fix": "Change the instruction to search for 'execution' or 'errors' as per Source S1, and note that timeout-specific issues are often found under 'Function App Down or Reporting Errors' rather than a dedicated 'timeout' tile."
+    }
+  ]
+}

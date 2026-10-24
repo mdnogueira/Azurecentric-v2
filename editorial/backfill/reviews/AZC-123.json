@@ -1,0 +1,138 @@
+{
+  "id": "AZC-123",
+  "title": "Understand deployment slots before an App Service swap",
+  "historical_date": "2024-12-09",
+  "created_at": "2026-10-24T00:03:36.953371+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Understand App Service deployment slots: tier limits, sticky settings, and the swap process to prevent downtime.",
+  "tags": [
+    "azure-app-service",
+    "deployment-slots",
+    "zero-downtime",
+    "configuration-management",
+    "swap-operations"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/deploy-staging-slots.md",
+      "revision": "051541f35323666e7af3161e1a84e665ad842cd7",
+      "revision_date": "2024-11-29T20:59:04Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Set up staging environments",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/051541f35323666e7af3161e1a84e665ad842cd7/articles/app-service/deploy-staging-slots.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/scripts/powershell-deploy-staging-environment.md",
+      "revision": "1dcf1f99531cc21d91b44819772c197a352073d4",
+      "revision_date": "2024-06-26T08:26:28Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "PowerShell: Deploy code to staging slot",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/scripts/powershell-deploy-staging-environment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1dcf1f99531cc21d91b44819772c197a352073d4/articles/app-service/scripts/powershell-deploy-staging-environment.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-deployment-technologies.md",
+      "revision": "e1e287a5be9cd9b4fb3e7086170f01c9143e2d00",
+      "revision_date": "2024-11-12T00:55:27Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deployment technologies in Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-deployment-technologies",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e1e287a5be9cd9b4fb3e7086170f01c9143e2d00/articles/azure-functions/functions-deployment-technologies.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source explicitly state the maximum number of slots for Premium vs Isolated tiers, or just that they support more than Standard?",
+    "Is there any documentation on the exact timeout for the warm-up phase before a swap fails?",
+    "Are there specific error codes returned if an instance fails to restart during the swap process?"
+  ],
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-deployment-slots-before-an-app-service-swap.md",
+  "draft": true,
+  "word_count": 1384,
+  "claim_support_checks": [
+    {
+      "claim": "Deployment slots are only available on Standard, Premium, or Isolated App Service plans.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Private endpoints are not cloned when creating a new deployment slot.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "App settings and connection strings are swapped by default, unless marked as sticky.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Swap with preview cannot be used if site authentication is enabled.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Auto swap is not supported for web apps on Linux or Web Apps for Containers.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Long-running operations are abandoned when instances recycle during a swap.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims slots share compute resources and implies no extra charge for the slot itself, but omits that slots consume plan capacity. It also states 'no extra charge' without clarifying that capacity is the cost driver, potentially misleading readers about billing impact.",
+      "fix": "Clarify that while there is no separate fee for the slot resource, it consumes App Service plan capacity. State that costs are driven by the plan tier and instance count, not the slot count, to avoid implying zero cost impact."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft lists 'Hybrid connections' and 'Service endpoints' as swapped in the claims/evidence but omits them from the main text's 'Settings that are swapped' list. The source includes them with an asterisk noting they are 'planned to be unswapped'. This inconsistency creates confusion about current behavior.",
+      "fix": "Align the text with the source's inclusion note. Either exclude these from the 'swapped' list if they are currently unswappable, or explicitly note their status as 'planned to be unswapped' to match the source documentation accurately."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Auto swap is not supported for web apps on Linux'. The source says 'Auto swap isn't supported in web apps on Linux and Web App for Containers.' The draft misses the container limitation, which is a significant exclusion for many users.",
+      "fix": "Update the auto-swap section to explicitly state that it is unsupported for both web apps on Linux and Web Apps for Containers, matching the source's full exclusion criteria."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'zero downtime' in the description and tags. The source states 'eliminate app downtime' and 'no requests are dropped', but 'zero downtime' is a strong guarantee that may not hold in all edge cases (e.g., connection draining issues).",
+      "fix": "Replace 'zero downtime' with 'seamless traffic redirection' or 'no dropped requests' to align with the source's specific claims about request handling during the swap process."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a PowerShell example for `Switch-AzWebAppSlot` with `-SwapWithPreviewAction ApplySlotConfig`. While valid, the draft does not explicitly mark this as illustrative code in the context of the JSON structure, though it does in the text. The JSON `claims` section is redundant with the text.",
+      "fix": "Ensure the JSON `claims` are concise and directly support the text. The draft text already marks the code as illustrative, which is good. Remove redundant claims from JSON if they are fully covered in the text to keep the JSON focused on unique evidence."
+    }
+  ]
+}

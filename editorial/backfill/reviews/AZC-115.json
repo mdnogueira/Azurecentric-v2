@@ -1,0 +1,133 @@
+{
+  "id": "AZC-115",
+  "title": "Investigate a cluster resource that keeps moving between nodes",
+  "historical_date": "2024-11-16",
+  "created_at": "2026-10-24T00:02:16.902748+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate a cluster resource moving between nodes by correlating Failover Clustering events with Storage Spaces Direct Health Service faults.",
+  "tags": [
+    "failover-clustering",
+    "troubleshooting",
+    "windows-server",
+    "storage-spaces-direct",
+    "health-service"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-faults.md",
+      "revision": "82d40d9bc8b9f265ebc898f13e71a069e65d3d18",
+      "revision_date": "2024-10-17T08:27:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service faults",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-faults",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/82d40d9bc8b9f265ebc898f13e71a069e65d3d18/WindowsServerDocs/failover-clustering/health-service-faults.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "revision": "82d40d9bc8b9f265ebc898f13e71a069e65d3d18",
+      "revision_date": "2024-10-17T08:27:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service reports",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-reports",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/82d40d9bc8b9f265ebc898f13e71a069e65d3d18/WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the provided source text cover non-SSD clusters, or is the Health Service fault analysis specific to Storage Spaces Direct?",
+    "Are there specific PowerShell cmdlets for checking resource failure policies that should be included?",
+    "How does the cluster service determine whether to restart a resource on the same node or move it to another node?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-cluster-resource-that-keeps-moving-between-nodes.md",
+  "draft": true,
+  "word_count": 817,
+  "claim_support_checks": [
+    {
+      "claim": "Event 1069 indicates a cluster resource failure and triggers the cluster service's failure policies.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Event 1135 indicates a node was removed from the cluster, often due to communication loss.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Event 1038 indicates a cluster disk resource lost ownership unexpectedly.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Health Service generates faults that are precise, easy to understand, and actionable.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Get-StorageSubSystem Cluster* | Debug-StorageSubSystem returns any faults affecting the Storage Spaces Direct cluster.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft applies Health Service fault analysis (S2, S3) to general Failover Clustering. S2 explicitly states 'Applies to: Windows Server 2016' and describes Storage Spaces Direct (S2D) specific entities like MSFT_StorageSubSystem. S1 covers general clustering events. The draft conflates these distinct subsystems, implying Health Service faults are available for non-S2D clusters.",
+      "fix": "Clarify that the Health Service section applies only to Storage Spaces Direct clusters. For general Failover Clustering, rely solely on Event Viewer logs (S1) and the Validate a Configuration wizard. Remove the implication that Debug-StorageSubSystem is a universal troubleshooting tool."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Event 1038 'can trigger a failover'. S1 describes Event 1038 as 'Ownership... unexpectedly lost' but does not explicitly state it triggers a move; it may trigger a restart or other recovery actions depending on failure policies. The causal link is inferred rather than stated.",
+      "fix": "Rephrase to state that Event 1038 indicates a loss of ownership which *may* lead to a failover or restart, depending on the resource's failure policy. Reference Event 1069 as the indicator of the actual failure event that triggers the policy decision."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking 'hubs, switches, or bridges' for Event 1135. S1 includes this guidance, but modern Windows Server 2025 environments rarely use hubs or bridges. This advice is outdated and potentially confusing for modern administrators.",
+      "fix": "Update the guidance to focus on modern network components like switches, routers, and NIC teaming configurations. Remove references to hubs and bridges as they are obsolete in current enterprise networking contexts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic conclusion paragraph ('A cluster resource moving... is a symptom...'). The editorial guidance explicitly forbids stock conclusion sections and requires ending with a concrete verification or next action.",
+      "fix": "Remove the 'Conclusion' section entirely. End the article with the verification step: 'Use Get-ClusterResource to confirm the resource is stable and online, and monitor the System log for new FailoverClustering events to ensure no recurrence.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft cites S3 (Health Service reports) in the 'Further documentation' list but never uses its content. S3 provides metrics (IOLatency, IOPS), not fault data. Including it implies it is relevant to the fault investigation workflow described.",
+      "fix": "Remove S3 from the 'Further documentation' list unless the article explicitly discusses using metrics for performance-based troubleshooting. Since the focus is on stability/failover, S1 and S2 are sufficient."
+    }
+  ]
+}

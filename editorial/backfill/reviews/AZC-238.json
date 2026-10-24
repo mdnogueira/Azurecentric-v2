@@ -1,0 +1,165 @@
+{
+  "id": "AZC-238",
+  "title": "Review guest access before sharing an Azure application",
+  "slug": "review-guest-access-before-sharing-an-azure-application",
+  "historical_date": "2025-10-27",
+  "input_sha256": "0efdac5cb66eb39c7016bc85ceec6fb0ec370f61be35b00c9475f89bc2a15469",
+  "created_at": "2026-10-23T17:45:34.167364+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Restrict guest directory visibility, enforce MFA via Conditional Access, and automate cleanup using Access Reviews.",
+  "tags": [
+    "entra-id",
+    "guest-access",
+    "conditional-access",
+    "access-reviews",
+    "identity-governance",
+    "security"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-238-learn-1.png",
+      "alt": "Screenshot of Microsoft Entra external collaboration settings page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/f30ddaecfd3a3dc2a1337302f90b86c826557f1c/docs/identity/users/media/users-restrict-guest-permissions/external-collaboration-settings.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-27T16:57:12Z",
+      "sha256": "94d22333ac75cad4ad7613f650ee745da96f5156f9b1e29590a511f76140c38b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-238-learn-2.png",
+      "alt": "Screenshot shows the review type dialog for multi-stage review for guests to self-attest continued access.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/a14ae6254f6e956b15048954363c47ac795f206a/docs/identity/users/media/clean-up-stale-guest-accounts/review-type-multi-stage-review.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-04-25T18:32:46Z",
+      "sha256": "0f25f8c6be4555c05884b10da2f4603e2795897f31af310673197d10d4834180",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/users/users-restrict-guest-permissions.md",
+      "revision": "f30ddaecfd3a3dc2a1337302f90b86c826557f1c",
+      "revision_date": "2025-09-27T16:57:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Restrict guest user access permissions",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/f30ddaecfd3a3dc2a1337302f90b86c826557f1c/docs/identity/users/users-restrict-guest-permissions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/howto-policy-guest-mfa.md",
+      "revision": "71b418aec591a7eb66197528e9be7e9d374cfa02",
+      "revision_date": "2024-09-27T20:28:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Require MFA for guest users with Conditional Access",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-policy-guest-mfa",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/71b418aec591a7eb66197528e9be7e9d374cfa02/docs/identity/conditional-access/howto-policy-guest-mfa.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/users/clean-up-stale-guest-accounts.md",
+      "revision": "a14ae6254f6e956b15048954363c47ac795f206a",
+      "revision_date": "2025-04-25T18:32:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor and clean up stale guest accounts",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/clean-up-stale-guest-accounts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/a14ae6254f6e956b15048954363c47ac795f206a/docs/identity/users/clean-up-stale-guest-accounts.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: ../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md",
+    "Public document removed/moved on 2024-09-30T20:55:05Z; used previous public snapshot. Confirm continued applicability: docs/identity/conditional-access/howto-policy-guest-mfa.md",
+    "Include unavailable: includes/entra-policy-exclude-user.md",
+    "Include unavailable: includes/entra-policy-deploy-template.md",
+    "Include unavailable: includes/entra-entra-governance-license.md"
+  ],
+  "open_questions": [
+    "Does the 'Restricted access' setting affect the ability of guests to access specific applications like SharePoint or Teams if they are explicitly invited, or does it only limit directory visibility?",
+    "Are there any known compatibility issues with the 'Restricted access' setting for specific Microsoft 365 services other than Viva Engage?",
+    "What is the exact impact of the 'Restricted access' setting on the My Apps portal for guests who are members of groups they own?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-guest-access-before-sharing-an-azure-application.md",
+  "draft": true,
+  "word_count": 1089,
+  "claim_support_checks": [
+    {
+      "claim": "Guest users can see the membership of all non-hidden groups by default.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Restricted access prevents guests from seeing group memberships entirely.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Restricted access settings take up to 15 minutes to take effect.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Restricted access does not override application-specific guest settings.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Conditional Access policies should be tested in report-only mode before enabling.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Access Reviews can automatically block and remove inactive guest users.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to 'Select the option to restrict guest user access' in the portal but omits the critical prerequisite: this setting is only available if the tenant is not using the legacy 'Restricted access' default or if the user has the correct role. It also fails to mention that this specific UI path requires the 'User Administrator' role, which is a permission claim not explicitly supported by the source text's 'Sign in as' step alone without referencing the permissions reference link.",
+      "fix": "Explicitly state that the User Administrator role is required. Add a note that the 'Restricted access' option is a new setting and may not appear if the tenant is already configured with the most restrictive legacy settings or if the user lacks the specific role. Reference the permissions documentation for clarity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the PowerShell cmdlet `Update-MgPolicyAuthorizationPolicy` sets the 'most restricted guest permission level' using a 'specific role ID'. It does not provide the actual GUID in the text, forcing the reader to look it up. This is a vague how-to step. The source provides the GUID `2af84b1e-32c8-42b7-82bc-daa82404023b`.",
+      "fix": "Include the specific GUID `2af84b1e-32c8-42b7-82bc-daa82404023b` in the PowerShell example. Show the complete command: `Update-MgPolicyAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that restricting guest permissions 'does not override application-specific guest settings' and advises checking SharePoint/Teams settings. It implies a causal link between the directory restriction and application issues but doesn't explain that the directory restriction affects *visibility* (group membership enumeration), not *access* to the app itself. This could confuse readers into thinking the restriction breaks app access.",
+      "fix": "Clarify that the directory restriction limits what guests can *see* (group memberships, user profiles) but does not revoke their *access* to applications they are invited to. Explain that application-specific sharing settings (like SharePoint external sharing) control actual access, not the directory visibility settings."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'inactive guest insights' and 'Access Reviews' but does not specify the license requirement for Identity Governance features, which is a common blocker. The source explicitly states 'License requirements' and links to a governance license note.",
+      "fix": "Add a clear note that Identity Governance features, including Access Reviews and inactive guest insights, require appropriate Microsoft Entra ID P2 or Identity Governance licenses. This prevents users from hitting licensing errors during implementation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's 'Verification and next steps' section is generic and repetitive. It restates the steps already taken ('Start by reviewing...', 'Next, check...'). The editorial guidance prohibits generic concluding paragraphs beginning with 'By following' or similar structures, and this section feels like a summary rather than a concrete next action.",
+      "fix": "Replace the generic summary with a concrete verification step: 'Verify the restriction by signing in as a test guest user and attempting to view group memberships in the Azure portal. Confirm that only your own profile is visible and group details are obscured.'"
+    }
+  ]
+}

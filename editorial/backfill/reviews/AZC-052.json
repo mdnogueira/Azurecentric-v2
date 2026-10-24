@@ -1,0 +1,97 @@
+{
+  "id": "AZC-052",
+  "title": "Map an Azure workload across its failure domains",
+  "slug": "map-an-azure-workload-across-its-failure-domains",
+  "historical_date": "2024-05-24",
+  "input_sha256": "90d8343d0347f8b63c5488f659a1149211529293bdde059591a6320f3d79bfa9",
+  "created_at": "2026-10-23T23:03:55.889370+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Map a workload across failure domains by distinguishing zonal from zone-redundant services and verifying subscription-specific physical mappings.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-052-learn-1.png",
+      "alt": "Screenshot of physically separate availability zone locations within an Azure region.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/685e59864220061a9adfa9dffe11047ebaa684c5/articles/reliability/media/regions-availability-zones.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-03-19T23:56:55Z",
+      "sha256": "ccfe5d99585e792064a36ea70e350d85963ed34f965a3f2585d36699edd3c64e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/availability-zones-overview.md",
+      "revision": "685e59864220061a9adfa9dffe11047ebaa684c5",
+      "revision_date": "2024-03-19T23:56:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What are Azure availability zones?",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/685e59864220061a9adfa9dffe11047ebaa684c5/articles/reliability/availability-zones-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/availability-zones-baseline.md",
+      "revision": "870e01d2db6c68d3f3ae8f345042e6f4d29cfb0b",
+      "revision_date": "2023-09-12T16:13:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure availability zone migration baseline",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-baseline",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/870e01d2db6c68d3f3ae8f345042e6f4d29cfb0b/articles/reliability/availability-zones-baseline.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-05-24: MicrosoftDocs/azure-docs/articles/reliability/availability-zones-zonal-resource-resiliency.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/map-an-azure-workload-across-its-failure-domains.md",
+  "draft": true,
+  "word_count": 1112,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure SQL Database and App Service 'typically support zone-redundant configurations' and that redundancy 'often requires enabling a specific configuration'. This is misleading; zone redundancy is the default for many PaaS tiers and does not require a specific toggle named 'Zone-redundant high availability' for general availability. This implies unnecessary complexity and potential confusion about default behaviors.",
+      "fix": "Remove the claim that specific configuration toggles are 'often' required for PaaS zone redundancy. State that zone redundancy is the default for supported PaaS services and tiers, and only specific legacy or low-tier configurations might require explicit enablement. Cite the service-specific support page for exact tier requirements."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that for VMSS Flex, you 'must explicitly assign VMs to zones 1, 2, and 3'. This is technically inaccurate; VMSS Flex distributes instances across available zones automatically unless a specific zone is targeted, and you do not need to specify all three zones to achieve zone redundancy. This creates a false operational burden.",
+      "fix": "Clarify that VMSS Flex automatically distributes instances across availability zones by default. Explicit zone assignment is only needed for zonal-specific requirements or when targeting a single zone. Remove the instruction to 'explicitly assign VMs to zones 1, 2, and 3' as a general rule."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using a 'Standard Load Balancer' to distribute traffic across VMSS Flex instances in different zones. While valid for cross-zone load balancing, it omits the more common and recommended 'Azure Load Balancer' (Standard SKU) or 'Application Gateway' context, and fails to mention that Zone-Redundant Standard Load Balancer is required for cross-zone traffic. The phrasing is vague on the specific SKU requirement.",
+      "fix": "Specify that a Zone-Redundant Standard Load Balancer is required to distribute traffic across availability zones. Clarify that internal load balancing within a single zone uses a Zonal Load Balancer. Ensure the distinction between Zonal and Zone-Redundant LB SKUs is explicit."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from the source documentation but places it at the end without a clear operational context or caption linking it to the 'physical vs logical' mapping discussion. The source uses it for a general overview, but the draft's context is specific to subscription mapping verification.",
+      "fix": "Move the screenshot to the 'Verify physical zone mapping' section where the subscription-specific mapping is discussed. Add a caption explaining that this visual represents the physical separation that underlies the logical zone mapping retrieved via the API."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats citations excessively, often appending the full URL in brackets after every sentence. This disrupts reading flow and violates the guidance to 'use a few well-placed source links rather than repeating the same citation after every sentence'.",
+      "fix": "Consolidate citations. Use a single citation at the end of a paragraph or section when multiple sentences derive from the same source. Remove inline bracketed URLs for every claim, relying on the narrative flow and a single reference point for the section."
+    }
+  ]
+}

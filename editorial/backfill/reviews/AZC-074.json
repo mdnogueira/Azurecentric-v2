@@ -1,0 +1,85 @@
+{
+  "id": "AZC-074",
+  "title": "Plan cluster networks around storage and client traffic",
+  "slug": "plan-cluster-networks-around-storage-and-client-traffic",
+  "historical_date": "2024-07-24",
+  "input_sha256": "fe4afc7f95c25e9e76c5751c0cec9fcf17fd405862d3a0c5d619e364b14bcdff",
+  "created_at": "2026-10-23T13:53:20.631836+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan Windows Server 2022 cluster networks using SMB Multichannel for storage and cluster-wide bandwidth controls for live migrations.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/smb-multichannel.md",
+      "revision": "892f300ff647702fd59f6554caa345679996ce4b",
+      "revision_date": "2023-08-04T18:17:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Simplified SMB Multichannel and Multi-NIC Cluster Networks",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/smb-multichannel",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/892f300ff647702fd59f6554caa345679996ce4b/WindowsServerDocs/failover-clustering/smb-multichannel.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/configure-live-migration-smb-bandwidth.md",
+      "revision": "aa2720d722d730c28587e094bdf20ba00a3821a3",
+      "revision_date": "2023-09-26T15:34:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Cluster-wide Live Migration SMB Bandwidth control in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/configure-live-migration-smb-bandwidth",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/aa2720d722d730c28587e094bdf20ba00a3821a3/WindowsServerDocs/failover-clustering/configure-live-migration-smb-bandwidth.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-07-24: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/failover-clustering/storage-architectures.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-cluster-networks-around-storage-and-client-traffic.md",
+  "draft": true,
+  "word_count": 791,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a concluding paragraph starting with 'By separating traffic paths...', which violates the negative constraint against generic concluding paragraphs beginning with 'By following', 'By starting', or 'This approach ensures'.",
+      "fix": "Remove the final concluding paragraph entirely. End the article immediately after the verification steps or the next steps section, as per the editorial guidance to end when the technical question is answered."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the `FS-SMBBW` feature limits bandwidth to 25% 'after installing this feature'. This is misleading; the limit is applied when the cluster parameter is enabled (SetSMBBandwidthLimit=1), not merely by installing the feature. The feature is a prerequisite.",
+      "fix": "Clarify that installing `FS-SMBBW` is a prerequisite, but the 25% default limit is enforced when the cluster-wide SMB bandwidth limit is enabled via the `SetSMBBandwidthLimit` parameter. Distinguish between feature installation and policy activation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Simplified SMB Multichannel 'automatically enables IPv6 Link Local (fe80) IP Address resources'. While true for recognition, it omits that this applies to cluster-only networks and requires checking IPv6 routing to avoid cross-subnet performance issues.",
+      "fix": "Add a note that automatic IPv6 Link Local recognition applies to cluster-only networks and advise verifying IPv6 routing configuration to prevent performance degradation from cross-subnet routing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'North-South subnet' without defining it in the context of the specific diagram or figure provided in the source, potentially confusing readers unfamiliar with the specific Microsoft documentation illustration.",
+      "fix": "Ensure the term 'North-South subnet' is explicitly linked to the source's Figure 2 or clearly defined as the network connecting the workload cluster to the storage cluster, as per S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'RDMA capable NIC cards' as particularly effective but does not mention that this is a recommendation for maximum throughput, not a requirement for Simplified SMB Multichannel to function.",
+      "fix": "Clarify that RDMA is optional and used for maximizing throughput, while Simplified SMB Multichannel works with standard NICs, RSS, and teamed NICs as per S1."
+    }
+  ]
+}

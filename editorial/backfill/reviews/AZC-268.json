@@ -1,0 +1,133 @@
+{
+  "id": "AZC-268",
+  "title": "Measure storage performance without confusing capacity and throughput",
+  "slug": "measure-storage-performance-without-confusing-capacity-and-throughput",
+  "historical_date": "2026-01-19",
+  "input_sha256": "2a4a95f956abde71ece76bec929db73c22f39ab577445cca0beac9dad5a4f0aa",
+  "created_at": "2026-10-23T18:28:56.351565+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish IOPS, throughput and latency for Azure Files and Blob Storage to avoid throttling and performance misdiagnosis.",
+  "tags": [
+    "azure-files",
+    "blob-storage",
+    "performance",
+    "iops",
+    "throughput",
+    "latency"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/storage-performance-checklist-developers.md",
+      "revision": "5937083ec08848f46c45720233a9973206b645d3",
+      "revision_date": "2025-11-19T18:22:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Performance checklist for developers (Azure Blob Storage)",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist-developers",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5937083ec08848f46c45720233a9973206b645d3/articles/storage/blobs/storage-performance-checklist-developers.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/storage-performance-checklist.md",
+      "revision": "5937083ec08848f46c45720233a9973206b645d3",
+      "revision_date": "2025-11-19T18:22:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Performance checklist for Azure Blob Storage",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5937083ec08848f46c45720233a9973206b645d3/articles/storage/blobs/storage-performance-checklist.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/understand-performance.md",
+      "revision": "4f9e3f406305992d05e836c56e676f1e0a90084f",
+      "revision_date": "2025-08-15T22:09:39Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Understand Azure Files performance",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/understand-performance",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4f9e3f406305992d05e836c56e676f1e0a90084f/articles/storage/files/understand-performance.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific Azure Files performance targets for Provisioned v2 vs Pay-as-you-go that should be explicitly listed?",
+    "Is the distinction between standard and premium Blob Storage block sizes (4 MiB vs 256 KiB) clearly linked to the 'high-throughput block blobs' feature in the source?",
+    "Should the article include a specific example of how to calculate queue depth for a multi-threaded application?",
+    "Is the reference to 'Azure Storage scale and performance targets' sufficient, or should a direct link to the specific article be included?",
+    "Are there any known issues with using AzCopy for small files that should be mentioned?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/measure-storage-performance-without-confusing-capacity-and-throughput.md",
+  "draft": true,
+  "word_count": 1103,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Files throughput is calculated by multiplying IOPS by I/O size.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "End-to-end latency includes network and client time, while service latency is only the time within Azure Files.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Files queue depth is determined by the number of clients, files, and threads.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Blob Storage uses 'targets' rather than 'limits' because some values can be increased upon request.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "High-throughput block blobs are activated by block sizes greater than 256 KiB.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims standard block sizes must be 'above 4 MiB' to activate high-throughput block blobs. Source S1 states 'above 4 MiB (standard)' but S2 clarifies that high-throughput block blobs are activated by sizes 'greater than 256 KiB' for premium and implies this is the general mechanism for high-performance ingest. The 4 MiB figure in S1 appears to be a specific recommendation for optimal parallelism or a misinterpretation of the 'standard' account context, whereas the technical trigger for the feature is 256 KiB. This creates a contradictory and technically inaccurate threshold for standard accounts.",
+      "fix": "Align with S2: State that high-throughput block blobs are activated by block sizes greater than 256 KiB. Clarify that while 256 KiB is the activation threshold, larger blocks (e.g., 4 MiB) may be recommended for specific parallelism optimizations in standard accounts, but do not remove the 256 KiB activation fact."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that HDD file shares 'do not guarantee single-digit millisecond read latency' while SSD shares do. Source S3 table indicates HDD provides 'Yes' for write latency but 'No' for read latency single-digit ms. However, the text says 'HDD file shares provide single-digit millisecond write latency'. This is a direct contradiction in the draft's own prose vs its citation. The source table shows HDD Write Latency as 'Yes' (single-digit ms) but Read Latency as 'No'. The draft text is consistent with the table, but the phrasing 'do not guarantee' is weak; the source says 'No', implying it does not meet that target. More critically, the draft implies SSD is the only option for low read latency, ignoring that Provisioned v2 HDD might have different targets not fully detailed here, but strictly based on S3, the claim is supported. However, the draft's claim that 'choice... cannot be changed' is supported by S3.",
+      "fix": "The claim is supported by S3. No change needed for this specific point, but ensure the distinction between 'target' and 'guarantee' is clear. The draft is acceptable here."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Azure Files is a file share service optimised for IOPS and latency, while Blob Storage is an object store optimised for throughput and parallel transfers.' This is a categorical generalization. Source S1 and S2 emphasize that Blob Storage also has strict IOPS and latency targets (e.g., for small blobs) and that performance depends on parallelism. Blob Storage is not exclusively 'optimised for throughput'; it is optimized for scale and throughput *when configured correctly*. The draft oversimplifies the Blob Storage model, potentially misleading users about small-file performance.",
+      "fix": "Refine the distinction: State that Azure Files is designed for file-system semantics with IOPS/latency focus, while Blob Storage is optimized for object-scale throughput. Acknowledge that Blob Storage performance relies heavily on parallelism and block sizes to achieve high throughput, rather than implying it lacks IOPS relevance."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph starting with 'By focusing on the specific metrics...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar structures. This paragraph adds no new technical value and violates the style guide.",
+      "fix": "Remove the final paragraph entirely. End the article after the 'Verify your configuration' section or the decision path, as the technical question is answered."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft cites 'Azure Storage scale and performance targets' with a link to `scalability-targets-standard-account`. Source S1 links to `../../azure-resource-manager/management/azure-subscription-service-limits.md#azure-storage-limits` for the general concept of 'targets' vs 'limits', and `scalability-targets.md` for Blob-specific targets. The draft's link is specific to standard accounts, which is fine, but the text says 'monitor request rates... against the Azure Storage scale and performance targets'. It should clarify that these targets vary by account type (Standard vs Premium) and operation (Read vs Write).",
+      "fix": "Clarify that performance targets vary by storage account type (Standard vs Premium) and operation. Ensure the linked article covers the specific targets relevant to the user's account type, or link to the general scalability targets page."
+    }
+  ]
+}

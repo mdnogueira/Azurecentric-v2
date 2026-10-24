@@ -1,0 +1,142 @@
+{
+  "id": "AZC-045",
+  "title": "Check regional quota before planning a GPU deployment",
+  "slug": "check-regional-quota-before-planning-a-gpu-deployment",
+  "historical_date": "2024-05-04",
+  "input_sha256": "b5876675930d6cb6980ed3e89433d3534fbf20ce4e2815a4f9b8c2d372459f50",
+  "created_at": "2026-10-23T13:14:12.545872+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Check regional GPU core quotas before deploying Azure Batch pools to avoid deployment failures.",
+  "tags": [
+    "azure-batch",
+    "gpu-vm",
+    "quotas",
+    "deployment",
+    "hpc"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-045-learn-1.png",
+      "alt": "Screenshot of Batch account's quota page in the Azure portal. Highlights for the quota page in menu, button to request quota increase, and quota column in resource list.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/d5a5be5e9fc5fcf8a5cbabc9ed0509123ecb51ff/articles/batch/media/batch-quota-limit/account-quota-portal.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-02-03T18:01:27Z",
+      "sha256": "32e8b9afcc884ac7b50a8dda9bae752c879ba0b033629ad71d237db5b3921162",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-quota-limit.md",
+      "revision": "d5a5be5e9fc5fcf8a5cbabc9ed0509123ecb51ff",
+      "revision_date": "2024-02-03T18:01:27Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Service quotas and limits",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-quota-limit",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d5a5be5e9fc5fcf8a5cbabc9ed0509123ecb51ff/articles/batch/batch-quota-limit.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-gpu.md",
+      "revision": "6140f1da765c3b173d595ded389d672d7a48b113",
+      "revision_date": "2024-04-25T06:38:52Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure VM sizes - GPU | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6140f1da765c3b173d595ded389d672d7a48b113/articles/virtual-machines/sizes-gpu.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-technical-overview.md",
+      "revision": "e2ce7cec57e0ac08ed8d1f9775279cf9042e12c5",
+      "revision_date": "2021-12-14T20:44:11Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure Batch runs large parallel jobs in the cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e2ce7cec57e0ac08ed8d1f9775279cf9042e12c5/articles/batch/batch-technical-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to know the specific default values for NCv3 or NVv4 series in all regions, or is the instruction to check the portal sufficient?",
+    "Should the article explicitly mention that Spot nodes have a different quota structure (total core quota without series distinction) if the user might consider Spot for GPU workloads?",
+    "Is the distinction between 'Batch service mode' and 'user subscription mode' clear enough for users who might not know which mode their account is in?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-regional-quota-before-planning-a-gpu-deployment.md",
+  "draft": true,
+  "word_count": 919,
+  "claim_support_checks": [
+    {
+      "claim": "In Batch service mode, core quotas are enforced at the Batch account level, not the subscription level.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "In user subscription mode, Azure Batch core quotas do not apply; subscription quotas are used instead.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Quotas are limits, not capacity guarantees, and can vary based on service changes or user requests.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Default quotas for new Batch accounts in some regions have been reduced, sometimes to zero.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Pools with inter-node communication enabled have a maximum limit of 100 compute nodes in Batch service mode.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims NC and NV VMs only support Standard Disk Storage (HDD). Source S2 states NC and NV support Standard (HDD), but implies other GPU VMs support both Standard and Premium. It does not explicitly restrict NC/NV to HDD-only in a way that excludes Premium for all historical contexts, and the phrasing 'only support... Standard' is a strong categorical claim not fully supported by the nuanced 'All other GPU VMs support... Standard and Premium' which implies NC/NV might be limited, but the source text is slightly ambiguous on whether Premium is strictly forbidden or just not listed. More critically, the draft presents this as a hard constraint for 'GPU workloads' generally, while the source specifies 'NC and NV VMs'.",
+      "fix": "Clarify that the storage limitation applies specifically to NC and NV series VMs, as stated in Source S2. Remove the general implication that all GPU VMs have this restriction. Ensure the distinction between VM series is explicit to avoid misleading users deploying ND or NVv4 series."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Azure enforces core quotas at the subscription level for each VM series.' This is inaccurate for Batch accounts in 'Batch service mode'. Source S1 explicitly states that in Batch service mode, 'Azure Batch core quotas don't apply' and instead 'Batch enforces a core quota limit for each VM series... and a total core quota limit for the entire Batch account.' The quota is at the Batch account level, not the subscription level, in this mode.",
+      "fix": "Correct the statement to reflect that in Batch service mode, quotas are enforced at the Batch account level, not the subscription level. Only in user subscription mode are subscription-level quotas enforced. Cite Source S1 for this distinction."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises checking quotas by navigating to 'Batch accounts' -> 'Quotas'. This is only valid for Batch service mode. For user subscription mode, the Batch account quota page does not reflect the underlying subscription VM core quotas. Source S1 states that for user subscription mode, 'the quotas in your subscription for regional compute cores... are used and enforced' and directs users to the Azure subscription limits documentation. The draft fails to distinguish this critical operational difference.",
+      "fix": "Add a conditional step: if using user subscription mode, check the 'Azure subscription and service limits' page in the portal, not the Batch account Quotas page. Explicitly state that the Batch account Quotas page only shows Batch-specific limits (like active jobs/pools) in service mode, not VM core quotas."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot of the Batch account Quotas page. The editorial guidance prohibits adding visible Microsoft Learn screenshot or permission captions. While the image is used, the context of its usage (for user subscription mode) is misleading as explained in the previous issue. The image should only be used if the text clearly limits its applicability to Batch service mode.",
+      "fix": "Ensure the screenshot is explicitly captioned or contextualized as applicable only to Batch service mode. If the guide is intended for both modes, consider removing the screenshot or splitting the guidance to avoid confusion for users in user subscription mode."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'pool size limits are set by the Batch service and cannot be changed' and cites the 100-node limit for inter-node communication. While accurate per Source S1, this is a minor detail compared to the core quota issue. However, the phrasing 'cannot be changed' might be misinterpreted as a permanent architectural limit rather than a service-defined constraint. It is a factual statement from the source.",
+      "fix": "Retain the information but ensure it is clearly separated from the quota increase discussion. Clarify that these are hard service limits, distinct from the requestable core quotas. No major change needed, but ensure clarity."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "AZC-192",
+  "title": "Investigate a failover that leaves an application unavailable",
+  "historical_date": "2025-06-20",
+  "created_at": "2026-10-23T23:25:47.473721+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot post-failover unavailability by verifying service scope, traffic routing, and data readiness.",
+  "tags": [
+    "disaster-recovery",
+    "failover",
+    "azure-service-health",
+    "dns",
+    "data-replication"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-failover-failback.md",
+      "revision": "71b365548ef8427dd491873340fdc85b4f4a30ff",
+      "revision_date": "2025-03-03T15:37:24Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover and failback",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-failover-failback",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/71b365548ef8427dd491873340fdc85b4f4a30ff/articles/reliability/concept-failover-failback.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "4ca63719858e419d8f7530f97881bcda9e66a67b",
+      "revision_date": "2025-02-27T17:22:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4ca63719858e419d8f7530f97881bcda9e66a67b/articles/reliability/incident-response.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/disaster-recovery-overview.md",
+      "revision": "20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe",
+      "revision_date": "2024-12-10T20:41:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Disaster recovery overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/disaster-recovery-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe/articles/reliability/disaster-recovery-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source text provide specific commands to check replication lag for all database types, or is this service-specific?",
+    "Is there a specific Azure service feature that automatically handles DNS TTL updates during failover, or is this always manual?",
+    "What are the exact steps to force a DNS cache refresh on common client operating systems?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2024-12-10T21:13:56Z; used previous public snapshot. Confirm continued applicability: articles/reliability/disaster-recovery-overview.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/service-health/overview"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-failover-that-leaves-an-application-unavailable.md",
+  "draft": true,
+  "word_count": 1244,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Service Health provides information on issues impacting services and can send automatic incident update alerts.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "DNS TTL affects how quickly clients receive information about a failover.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Data synchronization issues can occur after a failover if the previous primary performed work before failing over.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure status page only shows widespread issues meeting certain criteria.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Passive replication increases RPO by synchronizing in the background.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a 'Next steps' section with generic post-incident review advice (PIR, SLA credits, feedback) that duplicates the source material's structure and adds no troubleshooting value. This violates the instruction to remove stock conclusion paragraphs and end with a concrete verification.",
+      "fix": "Remove the entire 'Next steps' section. Replace it with a concrete verification step, such as confirming the application health probe status or validating DNS resolution against the new primary endpoint, ensuring the article ends on a technical action rather than administrative review."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'If the replication is lagging, the new primary might be missing recent data... In some situations, data synchronization issues require manual intervention.' This conflates failover data consistency with failback remediation. Sources state data sync issues are part of *failback*, not the initial failover unavailability cause.",
+      "fix": "Clarify that post-failover unavailability due to data issues typically stems from the secondary not being fully promoted or ready, not 'lag' in the sense of missing writes during the active phase. Remove the suggestion of manual database resets as a standard troubleshooting step for unavailability, as sources reserve this for failback conflicts."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If you are using zone-redundant services, you might not be affected at all.' This is an unsupported generalization. Zone-redundant services still require the underlying infrastructure to be healthy, and some zonal services might be pinned. The source distinguishes between zonal, zone-redundant, and regional services.",
+      "fix": "Refine the statement to reflect that zone-redundant services are *unlikely* to be affected by a single zone outage, but do not imply they are immune. Advise checking the specific service's reliability guide to confirm its redundancy model, as per the source's recommendation to consult service-specific guides."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'It is tempting to assume the new primary is broken,' which is subjective prose. The source text is more operational, focusing on the process of detection, selection, and redirection. The draft's tone is slightly informal compared to the source's technical precision.",
+      "fix": "Replace subjective language with operational observations. For example, change 'It is tempting to assume...' to 'Post-failover unavailability often results from configuration mismatches rather than component failure.' This aligns with the source's focus on the failover process steps and scope."
+    }
+  ]
+}

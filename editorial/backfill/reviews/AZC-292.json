@@ -1,0 +1,141 @@
+{
+  "id": "AZC-292",
+  "title": "Investigate a live migration that stalls during maintenance",
+  "slug": "investigate-a-live-migration-that-stalls-during-maintenance",
+  "historical_date": "2026-03-27",
+  "input_sha256": "ab29f6d25b01ee64bbb4e0da472a6f611e433d51401c86622d5de45b6543f033",
+  "created_at": "2026-10-23T19:02:52.099541+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot stalled live migrations in Windows Server 2025 by verifying SMB bandwidth limits and cluster network selection.",
+  "tags": [
+    "windows-server",
+    "hyper-v",
+    "live-migration",
+    "smb",
+    "failover-clustering"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-292-learn-1.png",
+      "alt": "Screenshot of two clusters using multiple NICs in the same subnet to leverage SMB multichannel.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/failover-clustering/media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig3.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-02-16T15:59:05Z",
+      "sha256": "9861f4c8188f5bfc8daa9f881aa3345d605ca49e0a6b97beae2652b5e61b2aa8",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/configure-live-migration-smb-bandwidth.md",
+      "revision": "00ccdf662556419762075bc59bb81a968743bd20",
+      "revision_date": "2025-10-24T08:54:20Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Control Live Migration SMB Bandwidth Control Cluster-wide in Windows Server and Azure Local",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/configure-live-migration-smb-bandwidth",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/00ccdf662556419762075bc59bb81a968743bd20/WindowsServerDocs/failover-clustering/configure-live-migration-smb-bandwidth.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/smb-multichannel.md",
+      "revision": "ef9afdb74d7e649d54aeaf104efe28dcd857ff2f",
+      "revision_date": "2026-02-16T15:59:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Simplified SMB Multichannel and Multi-NIC Cluster Networks",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/smb-multichannel",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/failover-clustering/smb-multichannel.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [
+    "Does the user have administrative privileges on the cluster nodes to run the PowerShell commands?",
+    "Are there any specific network configurations or hardware constraints that might affect the SMB bandwidth limit or multichannel settings?",
+    "Is the cluster using a file share witness or a disk witness, and could that impact the migration process?",
+    "Are there any known issues with the switch configuration or network infrastructure that might affect SMB traffic?",
+    "Has the user checked the application event logs for any errors related to the virtual machine or the migration process?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-live-migration-that-stalls-during-maintenance.md",
+  "draft": true,
+  "word_count": 933,
+  "claim_support_checks": [
+    {
+      "claim": "The default SMB bandwidth limit factor is 2500, which reserves 25% of the total bandwidth available to the cluster node.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Cluster-wide SMB bandwidth limits apply only if the cluster nodes run on physical hardware.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Simplified SMB Multichannel and Multi-NIC Cluster Networks automatically enables SMB Multichannel for cluster networks with multiple NICs on the same subnet.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Event 1282 in the Failover Clustering system log indicates a security handshake timeout.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event 1135 in the Failover Clustering system log indicates that a cluster node was removed from the active failover cluster membership.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The PowerShell command `Get-Cluster | %($_.SMBBandwidthLimitFactor=3000)` is syntactically invalid and will fail. The draft omits the required `Set-ClusterParameter` cmdlet structure.",
+      "fix": "Replace with: `Get-Cluster | Set-ClusterParameter -Name SMBBandwidthLimitFactor -Value 3000`."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims the default limit is 25% of 'total bandwidth available to the cluster node'. Source S1 states it is a percentage of 'total bandwidth available to the cluster' (sum of all adapters). This distinction affects capacity planning.",
+      "fix": "Clarify that the factor applies to the aggregate bandwidth of all physical adapters on the node, not just the active migration interface."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking `Get-SMBServerConfiguration` for SMB Multichannel status. Source S2 does not document this cmdlet for cluster network verification; it only mentions it in an FAQ without context for cluster-specific validation.",
+      "fix": "Remove the specific cmdlet recommendation. Instead, advise verifying NIC configuration via Failover Cluster Manager or `Get-ClusterNetwork` to ensure multi-NIC settings are applied correctly."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By checking the SMB bandwidth limit...') that violates the editorial guidance to end with a concrete verification or next action.",
+      "fix": "Delete the final paragraph. End the article after the 'Verify the migration status' section with a specific command like `Get-VM <Name> | Select-Object Status`."
+    }
+  ]
+}

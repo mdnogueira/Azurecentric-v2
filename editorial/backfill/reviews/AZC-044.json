@@ -1,0 +1,94 @@
+{
+  "id": "AZC-044",
+  "title": "Build an Azure Compute Gallery image workflow",
+  "slug": "build-an-azure-compute-gallery-image-workflow",
+  "historical_date": "2024-05-01",
+  "input_sha256": "be6dac3f243d27fb56e1527d7bd3032ff30735927faa713bb082aabe6ac40886",
+  "created_at": "2026-10-23T13:14:35.175785+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Build a repeatable Linux image workflow using Azure VM Image Builder and Azure Compute Gallery, covering permissions, replication, and cleanup.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/azure-compute-gallery.md",
+      "revision": "baa8e2395bafc0f1d1d5c9f03046bf40606b3895",
+      "revision_date": "2024-03-14T01:07:18Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview of Azure Compute Gallery",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/baa8e2395bafc0f1d1d5c9f03046bf40606b3895/articles/virtual-machines/azure-compute-gallery.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/image-builder.md",
+      "revision": "f690c90fb3b1670826bc0b30c7655665f748d900",
+      "revision_date": "2024-02-15T17:54:40Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Azure VM Image Builder with an Azure Compute Gallery for Linux VMs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/image-builder",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f690c90fb3b1670826bc0b30c7655665f748d900/articles/virtual-machines/linux/image-builder.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/shared-image-galleries.md",
+      "revision": "0142789ecd9bd26bbbeb716bdc326d30b739f345",
+      "revision_date": "2024-04-30T21:13:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Share VM images in a compute gallery",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0142789ecd9bd26bbbeb716bdc326d30b739f345/articles/virtual-machines/shared-image-galleries.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-an-azure-compute-gallery-image-workflow.md",
+  "draft": true,
+  "word_count": 1717,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims VM Image Builder creates the image version in the same resource group as the 'source-managed image'. Source S2 explicitly states: 'VM Image Builder supports creating custom images only in the same resource group as the source-managed image.' However, the workflow uses a generalized VM or managed disk as source, not necessarily a 'source-managed image' resource in the context of the gallery RG. More critically, the draft implies the *gallery* is in the same RG as the source, but S2 creates the gallery in `sigResourceGroup` and the source (VM) is often elsewhere. The constraint is that the *Image Builder resource* and the *source* must be in the same RG, not the gallery. This is a confusing and potentially incorrect operational constraint for the user.",
+      "fix": "Clarify that the Azure VM Image Builder resource and the source (VM or managed disk) must reside in the same resource group. The Azure Compute Gallery can be in a different resource group. Update the 'Set Up Variables' section to reflect that `sigResourceGroup` is for the Gallery and Image Builder, while the source VM must be in a group (potentially the same or different) but the Image Builder template must reference the source correctly."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft omits the requirement to register the `Microsoft.ContainerInstance` provider, which is critical for VM Image Builder to provision the build VM. While S2 lists it, the draft's 'Prerequisites' section lists it but the code block only checks `Microsoft.VirtualMachineImages`. The cleanup section also fails to delete the `Microsoft.ContainerInstance` resources (the build VMs) if they are not cleaned up by the template lifecycle, though S2 doesn't explicitly detail CI cleanup, it's a known side effect. More importantly, the draft does not mention that the source VM must be generalized, which is a critical prerequisite for creating a standard image version, though S3 mentions specialized images. The draft's verification step creates a VM from the image, but doesn't verify the image build succeeded before cleanup.",
+      "fix": "Add a verification step to check the image version status using `az sig image-version show` before attempting VM creation. Ensure the provider registration code block includes `Microsoft.ContainerInstance` as shown in S2. Clarify that the source VM must be generalized unless creating a specialized image."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `az sig image-version delete` with a query to find the version starting with `0.`. This is fragile and not a supported general practice. S2 uses this specific hack for the quickstart, but it's not a robust 'how-to' for production workflows. It assumes the version number is always `0.x.x`. S3 mentions version numbers are Major.Minor.Patch. The draft should not present this hack as the standard way to delete versions.",
+      "fix": "Replace the fragile `grep 0.` logic with a more robust method, such as listing versions and selecting the latest or a specific known version ID. Or, advise users to tag versions or use a specific version number if known. The current approach is a quickstart hack, not a general best practice."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description but no actual diagram. The editorial guidance allows diagrams if they illustrate a how-to step, but none is provided. The text is otherwise complete. The 'Considerations' section repeats cost info already in the main text. The structure is repetitive.",
+      "fix": "Remove the redundant 'Considerations for Replication and Cost' section and integrate those points into the main workflow steps where relevant (e.g., when creating the image version or setting up the gallery). Ensure the diagram is either included or removed entirely to avoid confusion."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `az sig` commands which are part of the `az compute` extension. It does not mention installing or ensuring the `compute` extension is available. S2 assumes CLI usage but doesn't explicitly state the extension requirement, though it's implied by the command syntax. This is a minor omission for a 'how-to'.",
+      "fix": "Add a note to ensure the Azure CLI `compute` extension is installed or updated, as `az sig` commands are part of this extension. This ensures the commands run correctly for users with minimal CLI setups."
+    }
+  ]
+}

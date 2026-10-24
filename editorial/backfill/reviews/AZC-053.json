@@ -1,0 +1,130 @@
+{
+  "id": "AZC-053",
+  "title": "Choose objects rather than formatted text for script output",
+  "slug": "choose-objects-rather-than-formatted-text-for-script-output",
+  "historical_date": "2024-05-27",
+  "input_sha256": "6a770bf998ad8b04c7522f9ad6341ad5848d7517f16a8a173a729c3703125361",
+  "created_at": "2026-10-23T13:27:35.808666+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Why PowerShell scripts should handle objects, not text, and how to use Get-Member to verify pipeline data.",
+  "tags": [
+    "powershell",
+    "objects",
+    "pipeline",
+    "get-member",
+    "scripting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/ps101/03-discovering-objects.md",
+      "revision": "485ea0c5585447cf480e878d584f207a7ad9153f",
+      "revision_date": "2022-12-09T14:57:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Discovering objects, properties, and methods",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/03-discovering-objects",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/485ea0c5585447cf480e878d584f207a7ad9153f/reference/docs-conceptual/learn/ps101/03-discovering-objects.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/samples/Viewing-Object-Structure--Get-Member-.md",
+      "revision": "0c0a4bd1a3a1bdd98f419bd2ede245657db09c12",
+      "revision_date": "2022-12-09T16:16:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Viewing object structure",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/samples/Viewing-Object-Structure--Get-Member-",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/0c0a4bd1a3a1bdd98f419bd2ede245657db09c12/reference/docs-conceptual/samples/Viewing-Object-Structure--Get-Member-.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/types-of-cmdlet-output.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Types of Cmdlet Output",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/types-of-cmdlet-output",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/cmdlet/types-of-cmdlet-output.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Should we explicitly mention the difference between NoteProperty and ScriptProperty when discussing Get-Member output?",
+    "Is there a specific example of a cmdlet where PassThru is essential for pipeline continuity that we should highlight?",
+    "Do we need to clarify the behavior of Format-* cmdlets in the pipeline more explicitly for beginners?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-objects-rather-than-formatted-text-for-script-output.md",
+  "draft": true,
+  "word_count": 848,
+  "claim_support_checks": [
+    {
+      "claim": "Cmdlets report success by returning an object via WriteObject, which can be processed by the next command in the pipeline.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Get-Member shows the formal name of the object type and a complete listing of its members.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell determines how to display an object type using information stored in XML files ending in .format.ps1xml.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Get-Service returns a System.ServiceProcess.ServiceController object.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Write-Host and Console.WriteLine bypass the pipeline and send data directly to the host display.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims that piping to `Format-*` results in a `PSCustomObject`. This is factually incorrect; `Format-*` cmdlets output `FormatStartObject`, `FormatData`, and `FormatEndObject` types. This error misleads readers about why subsequent commands fail, as they cannot process these formatting control objects, not because they are 'custom' objects.",
+      "fix": "Correct the type description to 'formatting control objects' or 'format data objects'. Explain that `Format-*` breaks the pipeline because downstream cmdlets expect data objects (like `ServiceController`), not formatting instructions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states `Write-Host` bypasses the pipeline. While true, it omits that `Write-Host` writes to the Host UI stream, not the Success stream. It also implies `Write-Output` is the only alternative, ignoring that simply outputting an object (implicit return) is the standard PowerShell idiom. The distinction between 'bypassing' and 'writing to a different stream' is technically imprecise.",
+      "fix": "Clarify that `Write-Host` writes to the Host UI stream, which is not part of the pipeline. Recommend implicit object output or `Write-Output` for pipeline data, noting that `Write-Output` is often redundant but explicit."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Select-Object` to pick properties for piping. It fails to mention that `Select-Object` creates a new `PSCustomObject` with *selected* properties, potentially stripping methods or specific type information that downstream cmdlets might rely on (e.g., if a cmdlet checks `PSObject.TypeNames`). This can cause subtle failures.",
+      "fix": "Add a note that `Select-Object` creates a new object type. Warn that if a downstream cmdlet expects specific methods or type-specific behavior, selecting properties may break it. Suggest using `-Property` only when necessary for display or specific property access."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `(Get-Service -Name w32time).Stop()` as an example of a method. While valid, it is a destructive action on a system service. The draft mentions 'destructive changes' but does not explicitly warn about the operational risk of stopping critical services in a script, which could lead to system instability if not handled with error checking.",
+      "fix": "Add a warning about the operational impact of calling methods like `Stop()` on critical services. Recommend using `Stop-Service` with `-ErrorAction Stop` and proper error handling in production scripts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims `Get-Member` shows 'a complete listing of its members'. This is misleading because `Get-Member` only shows members defined on the *current* object type and its base types. It does not show members of derived types or members added via `Add-Member` unless the object is specifically inspected. The 'complete' claim is an overstatement.",
+      "fix": "Rephrase to 'Get-Member shows the members defined on the object's type and its base types.' Clarify that it reflects the static type definition, not necessarily all dynamic members or those added at runtime."
+    }
+  ]
+}

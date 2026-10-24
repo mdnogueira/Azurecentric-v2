@@ -1,0 +1,125 @@
+{
+  "id": "AZC-217",
+  "title": "Choose a supported Linux distribution for Hyper-V",
+  "slug": "choose-a-supported-linux-distribution-for-hyper-v",
+  "historical_date": "2025-08-30",
+  "input_sha256": "9f8d03931cd033e72de7904130ded36d1dca2e61d706760cfd825af72e7fc5ad",
+  "created_at": "2026-10-23T21:27:11.095585+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Selecting a supported Linux distribution for Hyper-V requires checking LIS integration, kernel version, and secure boot compatibility.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "virtual-machines",
+    "integration-services",
+    "secure-boot"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md",
+      "revision": "9de647c3eb836bb3932ffb7bd047126ae8d119c6",
+      "revision_date": "2025-06-19T23:23:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported Linux and FreeBSD virtual machines for Hyper-V on Windows Server and Windows",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/9de647c3eb836bb3932ffb7bd047126ae8d119c6/WindowsServerDocs/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-Ubuntu-virtual-machines-on-Hyper-V.md",
+      "revision": "a53afe1b725d15957303737ab22bc09955a06809",
+      "revision_date": "2025-05-01T15:58:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported Ubuntu virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-ubuntu-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a53afe1b725d15957303737ab22bc09955a06809/WindowsServerDocs/virtualization/hyper-v/Supported-Ubuntu-virtual-machines-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md",
+      "revision": "9de647c3eb836bb3932ffb7bd047126ae8d119c6",
+      "revision_date": "2025-06-19T23:23:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "CentOS and Red Hat Enterprise Linux VMs on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/9de647c3eb836bb3932ffb7bd047126ae8d119c6/WindowsServerDocs/virtualization/hyper-v/Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to know about specific kernel version requirements for older distributions?",
+    "Are there any known issues with SR-IOV on specific Linux versions that should be mentioned?",
+    "Should the article include more details on how to verify LIS installation inside the guest OS?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-supported-linux-distribution-for-hyper-v.md",
+  "draft": true,
+  "word_count": 930,
+  "claim_support_checks": [
+    {
+      "claim": "Emulated devices do not provide high performance or full management infrastructure.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Built-in LIS drivers are included in modern distributions and should not be replaced by Microsoft downloads.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Installing separate LIS on RHEL may limit Red Hat support.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Secure boot is enabled by default on Generation 2 VMs and may prevent Linux boot.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Dynamic memory parameters must be in multiples of 128 MB.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a duplicate 'Further documentation' paragraph at the very end, violating editing standards for clean output.",
+      "fix": "Remove the second block of 'Further documentation' links. Keep only the first instance to avoid redundancy and improve readability."
+    },
+    {
+      "severity": "medium",
+      "problem": "The Ubuntu VHD copy workaround (renaming shimx64.efi) is presented as a general step for 'Ubuntu Generation 2 VMs' but is a specific fix for certain image configurations, not a universal requirement.",
+      "fix": "Clarify that this is a specific workaround for boot path issues in cloned images, not a standard setup step for all Ubuntu Gen 2 VMs. Ensure it is clearly marked as an exception handling procedure."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Built-in LIS drivers are included in modern distributions' without defining 'modern'. It also implies RHEL/CentOS 8/9 are the only ones with built-in LIS, ignoring other supported distros like Debian/SUSE listed in S1.",
+      "fix": "Specify that RHEL/CentOS 8+ and Ubuntu 16.04+ have built-in LIS. Avoid vague terms like 'modern' and ensure the scope reflects all supported distros mentioned in the source index (S1)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Dynamic memory... requires careful configuration' but does not mention the 64-bit requirement explicitly in the main text, only in the notes.",
+      "fix": "Move the '64-bit virtual machines only' constraint to the primary bullet point or introductory sentence of the Dynamic Memory section for immediate visibility."
+    }
+  ]
+}

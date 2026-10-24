@@ -1,0 +1,154 @@
+{
+  "id": "AZC-110",
+  "title": "Configure blob soft delete and versioning",
+  "slug": "configure-blob-soft-delete-and-versioning",
+  "historical_date": "2024-11-03",
+  "input_sha256": "3640392af9f0c10afaaa49e05151649031be2db3655ceebee49e13b70b290347",
+  "created_at": "2026-10-23T14:43:12.890149+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable blob soft delete and versioning to protect against accidental deletion and overwrites, with verification steps and cost considerations.",
+  "tags": [
+    "azure-storage",
+    "blob-storage",
+    "soft-delete",
+    "versioning",
+    "data-protection"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-110-learn-1.png",
+      "alt": "Screenshot showing how to enable soft delete in the Azure portal",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/7c4aa5ba6a634acc6884568fe5ba0e10238881aa/articles/storage/blobs/media/soft-delete-blob-enable/blob-soft-delete-configuration-portal.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-06-10T22:02:14Z",
+      "sha256": "d7eccc05b66f3130e4e61cb5cf18caae832a7d72cb0fdec3adb8c65daca0a5ba",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-110-learn-2.png",
+      "alt": "Screenshot showing how to enable blob versioning in Azure portal",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/44c395f09689467ca2f184a3d9d4b3edde5eac24/articles/storage/blobs/media/versioning-enable/portal-enable-versioning.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-01-27T04:21:10Z",
+      "sha256": "9cf1e40cdd57f337c2f93e90a9ec9bd9c8dccb31c43617f39608c19e20003616",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/soft-delete-blob-enable.md",
+      "revision": "7c4aa5ba6a634acc6884568fe5ba0e10238881aa",
+      "revision_date": "2024-06-10T22:02:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable soft delete for blobs",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-enable",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7c4aa5ba6a634acc6884568fe5ba0e10238881aa/articles/storage/blobs/soft-delete-blob-enable.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/versioning-enable.md",
+      "revision": "44c395f09689467ca2f184a3d9d4b3edde5eac24",
+      "revision_date": "2024-01-27T04:21:10Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable and manage blob versioning",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-enable",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/44c395f09689467ca2f184a3d9d4b3edde5eac24/articles/storage/blobs/versioning-enable.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/data-protection-overview.md",
+      "revision": "a2ce1785d9d676bc58da097d84dcfabcd40ad9b4",
+      "revision_date": "2024-10-10T22:10:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Data protection overview",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/data-protection-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a2ce1785d9d676bc58da097d84dcfabcd40ad9b4/articles/storage/blobs/data-protection-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Should the article explicitly mention the API versions used in the ARM templates for current compatibility?",
+    "Is there a specific CLI extension required for hierarchical namespace accounts that should be noted separately?",
+    "Does the 'Delete versions after' lifecycle rule have any specific constraints on other lifecycle rules that need highlighting?",
+    "Are there any known issues with restoring soft-deleted versions in specific regions or account types?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-blob-soft-delete-and-versioning.md",
+  "draft": true,
+  "word_count": 874,
+  "claim_support_checks": [
+    {
+      "claim": "Blob soft delete is enabled by default when creating a new storage account via the Azure portal.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Blob soft delete is not enabled by default when using PowerShell.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Enabling versioning creates a new version on every write or delete operation.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Setting 'Delete versions after' adds a lifecycle management rule.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Soft-deleted blobs are billed at the same rate as active data.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure CLI does not enable soft delete by default during account creation. Source S1 explicitly states this is only true for PowerShell, while the Portal enables it by default. The draft incorrectly generalizes the PowerShell limitation to CLI.",
+      "fix": "Remove the statement that Azure CLI does not enable soft delete by default. Source S1 only specifies that PowerShell does not enable it by default. The CLI section should not include this unsupported claim."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft omits the cost context for blob soft delete. Source S3 states that data in soft-deleted blobs is billed at the same rate as active data until permanently deleted. The draft only mentions versioning costs.",
+      "fix": "Add the specific cost warning for soft delete: 'Data in a soft-deleted blob is billed at the same rate as active data until permanently deleted,' as documented in S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot for soft delete but lacks the corresponding screenshot for versioning in the source list, yet includes one in the draft. Source S2 provides a screenshot for enabling versioning. The draft uses it correctly, but the review must ensure no unrelated screenshots are added.",
+      "fix": "Verify the screenshot path matches the source S2 image. Ensure no permission captions are visible. The draft correctly places the screenshot beside the portal step for versioning."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests verifying configuration by performing a test write, delete, and restore. This is a destructive action that incurs costs and may affect data integrity if not in a non-production environment. The draft mentions non-production but the instruction is vague.",
+      "fix": "Clarify that verification steps should be performed in a test environment to avoid unintended data loss or costs. Explicitly state that restoring soft-deleted blobs is possible only within the retention period."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses an older API version (2019-06-01) for the versioning ARM template, while the soft delete template uses 2023-04-01. Source S2 uses 2019-06-01 for versioning. This is technically correct per source but inconsistent in style.",
+      "fix": "Update the versioning ARM template API version to 2023-04-01 to match the soft delete template and current best practices, ensuring consistency across the article."
+    }
+  ]
+}

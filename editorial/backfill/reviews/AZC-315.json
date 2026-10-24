@@ -1,0 +1,98 @@
+{
+  "id": "AZC-315",
+  "title": "Investigate a CodeQL alert before merging a pull request",
+  "slug": "investigate-a-codeql-alert-before-merging-a-pull-request",
+  "historical_date": "2026-05-30",
+  "input_sha256": "01acc0805b50d4ef91ce7271634ad93077bdddeb11b70d35e5f8f4bcddcc07d0",
+  "created_at": "2026-10-23T19:33:46.668889+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate a CodeQL alert in a pull request: locate the annotation, assess the data flow, and push a fix to pass the check.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests.md",
+      "revision": "d635e8032a8e7b91d057ee8bd61dd844a5303a9c",
+      "revision_date": "2026-01-14T19:15:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Triaging code scanning alerts in pull requests",
+      "url": "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests",
+      "snapshot_url": "https://github.com/github/docs/blob/d635e8032a8e7b91d057ee8bd61dd844a5303a9c/content/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts.md",
+      "revision": "7e40e616e04ab4b9ed575dcdfbf205727150d46d",
+      "revision_date": "2026-01-09T08:44:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "About code scanning alerts",
+      "url": "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts",
+      "snapshot_url": "https://github.com/github/docs/blob/7e40e616e04ab4b9ed575dcdfbf205727150d46d/content/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/code-quality/tutorials/fix-findings-in-prs.md",
+      "revision": "e89f22d0a8d94b6588acb99bded8e85d87c70925",
+      "revision_date": "2026-01-13T10:23:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Fixing code quality findings before merging your pull request",
+      "url": "https://docs.github.com/en/code-security/code-quality/tutorials/fix-findings-in-prs",
+      "snapshot_url": "https://github.com/github/docs/blob/e89f22d0a8d94b6588acb99bded8e85d87c70925/content/code-security/code-quality/tutorials/fix-findings-in-prs.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-01-14T19:34:56Z; used previous public snapshot. Confirm continued applicability: content/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests.md",
+    "Public document removed/moved on 2026-01-09T09:23:31Z; used previous public snapshot. Confirm continued applicability: content/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts.md",
+    "Public document removed/moved on 2026-01-13T10:50:16Z; used previous public snapshot. Confirm continued applicability: content/code-security/code-quality/tutorials/fix-findings-in-prs.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-codeql-alert-before-merging-a-pull-request.md",
+  "draft": true,
+  "word_count": 984,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Invents 'Requesting an override' as a user action. Sources state administrators configure required status checks or severity rules; users cannot request an override. Dismissing is the standard resolution for false positives.",
+      "fix": "Remove the 'Requesting an override' section. Clarify that users fix or dismiss alerts, while administrators configure merge protection rules and severity thresholds."
+    },
+    {
+      "severity": "high",
+      "problem": "Misclassifies 'Dismiss' as a resolution for false positives in PRs. Sources indicate dismissing is for repository-level alerts; PR annotations are removed by fixing the code or pushing changes that resolve the issue.",
+      "fix": "Replace 'Dismiss' with 'Fix the code'. Explain that annotations are removed when the check passes after new commits, not by manual dismissal in the PR view."
+    },
+    {
+      "severity": "medium",
+      "problem": "Includes generic concluding paragraphs starting with 'By following this process' and 'This workflow helps you integrate...', which violates the instruction to remove generic conclusions.",
+      "fix": "Delete all paragraphs beginning with 'By following', 'This approach ensures', and 'This workflow helps you'. End with the concrete verification step."
+    },
+    {
+      "severity": "medium",
+      "problem": "References 'Copilot Autofix' as a general option. Sources restrict this to private repositories and specific query subsets, not all CodeQL alerts.",
+      "fix": "Add a note that Autofix is available only in private repositories and for supported queries, rather than presenting it as a universal option."
+    },
+    {
+      "severity": "low",
+      "problem": "Uses 'Security severity' terminology. Source S2 specifies 'Security severity' is used, but the draft implies it's a separate scale rather than a preference over standard severity.",
+      "fix": "Clarify that 'Security severity' (CVSS) is used in preference to standard severity for determining check failures, as stated in Source S2."
+    }
+  ]
+}

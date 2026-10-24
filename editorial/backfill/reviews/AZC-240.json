@@ -1,0 +1,135 @@
+{
+  "id": "AZC-240",
+  "title": "Connect Sentinel incidents with Defender XDR context",
+  "historical_date": "2025-11-02",
+  "created_at": "2026-10-23T23:36:03.007167+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Connect Defender XDR incidents to Sentinel: enable the connector, manage sync limits, and migrate automation rules.",
+  "tags": [
+    "microsoft-sentinel",
+    "defender-xdr",
+    "incident-management",
+    "security-operations",
+    "azure-portal",
+    "kql"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/connect-microsoft-365-defender.md",
+      "revision": "293c0d306cb201c09cf13f32d3c14377f97e5f26",
+      "revision_date": "2025-09-11T05:28:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Connect Microsoft Defender XDR data to Microsoft Sentinel| Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/293c0d306cb201c09cf13f32d3c14377f97e5f26/articles/sentinel/connect-microsoft-365-defender.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/microsoft-365-defender-sentinel-integration.md",
+      "revision": "f4d96abc79540f968477f7058f868f5fd8cf2430",
+      "revision_date": "2025-10-27T02:46:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Microsoft Defender XDR integration with Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/microsoft-365-defender-sentinel-integration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f4d96abc79540f968477f7058f868f5fd8cf2430/articles/sentinel/microsoft-365-defender-sentinel-integration.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/migrate-playbooks-to-automation-rules.md",
+      "revision": "6d5b0d76cc2de1b8d3b0c4df7af96651d50e107b",
+      "revision_date": "2024-04-17T11:13:16Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Migrate your Microsoft Sentinel alert-trigger playbooks to automation rules | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/migrate-playbooks-to-automation-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6d5b0d76cc2de1b8d3b0c4df7af96651d50e107b/articles/sentinel/migrate-playbooks-to-automation-rules.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "The source mentions 'March 2026' as a deprecation date. Is this date still accurate for the November 2025 context, or should it be verified against the latest documentation?",
+    "The draft mentions 'Active Directory (Preview)' for UEBA. Is the 'Preview' status still current, and does this affect production readiness recommendations?",
+    "The source states 'A refresh might be required to see the latest changes' for sync. Should this be explicitly mentioned in the verification step to manage user expectations?",
+    "The draft mentions 'Ingestion costs' for advanced hunting events. Are there specific retention policies or table-level configurations that should be highlighted to avoid unexpected costs?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2024-04-17T13:45:24Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/migrate-playbooks-to-automation-rules.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove future year reference 2026"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/connect-sentinel-incidents-with-defender-xdr-context.md",
+  "draft": true,
+  "word_count": 844,
+  "claim_support_checks": [
+    {
+      "claim": "The Defender XDR connector streams incidents, alerts, and advanced hunting events into Microsoft Sentinel.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Enabling the connector disables Microsoft Sentinel's incident creation rules for Defender XDR-integrated products to prevent duplicates.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Incidents in Microsoft Sentinel can contain a maximum of 150 alerts.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Alerts and incidents from Defender XDR are ingested into Microsoft Sentinel at no charge.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The alert trigger for playbooks is deprecated effective March 2026.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses a generic 'By following' style conclusion and ends with a list of review questions instead of a concrete verification step. This violates the instruction to end with a concrete verification or decision and remove stock conclusions.",
+      "fix": "Remove the review questions and the final documentation link paragraph. End with the KQL verification step: 'Run `SecurityIncident | where ProviderName == \"Microsoft XDR\"` to confirm ingestion. If empty, wait up to 10 minutes for sync propagation.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the 'Active Directory (Preview)' checkbox is available in the UEBA configuration page. Source S1 marks this as 'Preview' in the text, but the screenshot (S1) and S2 indicate UEBA/Entity sync is part of the standard connector flow, not necessarily a 'Preview' feature requiring specific preview toggles in the final UI. The 'Preview' tag may be outdated or misleading for a November 2025 guide.",
+      "fix": "Verify if 'Active Directory (Preview)' is still the correct UI label in November 2025. If GA, remove '(Preview)'. If still preview, explicitly state it is a preview feature. Ensure the screenshot provided (S1) matches the current UI state described."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Changes... reflect in the other... with no delay. A refresh might be required.' This is contradictory. 'No delay' implies real-time, while 'refresh might be required' implies potential UI lag. This creates confusion about the sync behavior.",
+      "fix": "Clarify: 'Synchronization is near-real-time. However, UI changes in either portal may require a manual page refresh to appear immediately.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Ingestion costs' for advanced hunting events but does not specify that these are charged at standard Log Analytics ingestion rates, nor does it mention that retention can be configured per-table to manage costs. This is a missing cost context.",
+      "fix": "Add: 'Advanced hunting events are charged at standard Log Analytics ingestion rates. Configure per-table retention in Log Analytics to manage costs.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Alerts and incidents from Defender XDR are ingested into Sentinel at no charge.' While true for SecurityAlert/SecurityIncident tables, it does not explicitly mention that this is because they are part of the Defender XDR license benefit, distinguishing them from other Sentinel data sources.",
+      "fix": "Clarify: 'Incident and alert data from Defender XDR is included in your Defender XDR license, so there is no additional Log Analytics ingestion charge for these specific tables.'"
+    }
+  ]
+}

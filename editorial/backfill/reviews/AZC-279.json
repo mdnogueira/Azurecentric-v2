@@ -1,0 +1,159 @@
+{
+  "id": "AZC-279",
+  "title": "Set application scaling rules around measurable demand",
+  "slug": "set-application-scaling-rules-around-measurable-demand",
+  "historical_date": "2026-02-19",
+  "input_sha256": "c8888f3a3372c3a1de612e9c2b98d74b66f0ae5ec44aa1229f8125d761f5e30a",
+  "created_at": "2026-10-23T18:44:20.592098+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define measurable scaling rules for Azure Container Apps using HTTP concurrency thresholds and replica limits.",
+  "tags": [
+    "azure-container-apps",
+    "scaling",
+    "keda",
+    "container-apps",
+    "devops"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-279-learn-1.png",
+      "alt": "Screenshot that shows automatic scaling in Azure portal",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/54e00991c909b6852ff14d09077ea2caedd2e717/articles/app-service/media/manage-automatic-scaling/azure-portal-automatic-scaling.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-01-09T23:21:47Z",
+      "sha256": "1cdb9419798c4cd48a38811626fbfdfd835e33569d825d57b858aba6d821ae83",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-279-learn-2.png",
+      "alt": "Screenshot of Azure Container Apps scale range slider.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/39d47c50e09ed82700d165f5cd5542c0736d699e/articles/container-apps/media/scale-app/azure-container-apps-scale-slide.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-11-04T15:12:03Z",
+      "sha256": "355171b0e9c11036ee5038287482b11caa0ea91b3d1a3a34052b64ae89987019",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/manage-automatic-scaling.md",
+      "revision": "54e00991c909b6852ff14d09077ea2caedd2e717",
+      "revision_date": "2026-01-09T23:21:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "How to Enable Automatic Scaling",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/54e00991c909b6852ff14d09077ea2caedd2e717/articles/app-service/manage-automatic-scaling.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-scale.md",
+      "revision": "2e3bd505d4761b62b84d70c141a771eeb0dd352e",
+      "revision_date": "2026-02-09T21:36:15Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Functions Scale and Hosting",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2e3bd505d4761b62b84d70c141a771eeb0dd352e/articles/azure-functions/functions-scale.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/scale-app.md",
+      "revision": "39d47c50e09ed82700d165f5cd5542c0736d699e",
+      "revision_date": "2025-11-04T15:12:03Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Scaling in Azure Container Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/39d47c50e09ed82700d165f5cd5542c0736d699e/articles/container-apps/scale-app.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 15-second aggregation window for HTTP concurrency apply to all trigger types, or only HTTP?",
+    "What is the exact billing impact of idle replicas in Container Apps, and how does it vary by region?",
+    "Are there any known limitations when using custom KEDA scalers with managed identity authentication in Container Apps?",
+    "How does the platform handle scaling decisions when multiple scaling rules are defined for the same container app?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/set-application-scaling-rules-around-measurable-demand.md",
+  "draft": true,
+  "word_count": 1532,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Container Apps uses KEDA for automatic horizontal scaling based on metrics like HTTP requests and queue messages.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Scaling rules are immutable; changing them creates a new revision of the container app.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "HTTP scaling rules calculate concurrent requests over a 15-second window.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The default HTTP concurrency threshold is 10 requests per replica.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The cool-down period for scaling in from the final replica to zero is 300 seconds by default.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Container Apps jobs do not support HTTP or TCP scaling rules.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The Bicep example for TCP scaling incorrectly uses the `http` metadata block instead of `tcp`. This will cause a schema validation error or fail to configure the intended TCP scaling rule.",
+      "fix": "Replace the `http` block in the TCP Bicep snippet with `tcp: { metadata: { concurrentConnections: '100' } }` to match the JSON and CLI examples provided in the source."
+    },
+    {
+      "severity": "high",
+      "problem": "The text claims the default HTTP concurrency threshold is 10 requests per replica, but the provided CLI example sets it to 100. This inconsistency may confuse users regarding default behavior versus recommended configuration.",
+      "fix": "Clarify that 10 is the default value, but the example explicitly sets 100. Ensure the narrative aligns with the code snippet's intent or adjust the snippet to use the default for simplicity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The article states that setting minimum replicas to 1 eliminates cold start latency. While it reduces it, the source notes that 'cold start isn't really an issue' only for Dedicated plans, and for Container Apps, it depends on minimum replicas being set to 1 or more, but doesn't guarantee zero latency.",
+      "fix": "Rephrase to state that setting minimum replicas to 1 or more 'significantly reduces' or 'mitigates' cold start latency, rather than claiming it is eliminated, to avoid overpromising."
+    },
+    {
+      "severity": "medium",
+      "problem": "The text implies that scaling rules are applied per revision and that multiple active revisions scale independently. However, the source notes that `activeRevisionsMode` should be set to `single` for non-HTTP rules, implying a constraint on concurrent active revisions that isn't fully explained.",
+      "fix": "Add a note that for non-HTTP scaling rules, `activeRevisionsMode` must be set to `single`, limiting concurrent active revisions and affecting how scaling is managed across revisions."
+    },
+    {
+      "severity": "low",
+      "problem": "The article references 'Azure Functions on Container Apps' having auto-configured rules, but the source indicates this is a specific scenario where manual configuration is disabled. The text doesn't clearly distinguish this from general Container Apps configuration.",
+      "fix": "Explicitly state that if the container app is hosting Azure Functions, scaling rules are auto-configured and manual editing is disabled, to prevent users from attempting unsupported manual changes."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AZC-239",
+  "title": "Use Copilot for Security alongside Defender investigations",
+  "slug": "use-copilot-for-security-alongside-defender-investigations",
+  "historical_date": "2025-10-30",
+  "input_sha256": "5a42b0b532e34734a64a5a00fce82dee36f2bc887261a3401329275130abe360",
+  "created_at": "2026-10-23T17:46:41.280625+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Security Copilot sample prompts to query Defender and Sentinel incidents, with clear boundaries on their illustrative nature.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "Sample Prompts/Microsoft Defender and Microsoft Sentinel/Readme.md",
+      "revision": "5d29a8a755ba427a87dbc0dd0ec6b6a11b151f55",
+      "revision_date": "2024-04-02T08:06:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Readme",
+      "url": "https://github.com/Azure/Security-Copilot/blob/5d29a8a755ba427a87dbc0dd0ec6b6a11b151f55/Sample Prompts/Microsoft Defender and Microsoft Sentinel/Readme.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/5d29a8a755ba427a87dbc0dd0ec6b6a11b151f55/Sample Prompts/Microsoft Defender and Microsoft Sentinel/Readme.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-copilot-for-security-alongside-defender-investigations.md",
+  "draft": true,
+  "word_count": 803,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft presents sample prompts as functional instructions. The source is a GitHub Readme explicitly stating these are 'sample prompts' subject to change, not a verified API or guaranteed feature set. The draft implies these queries will reliably execute and return structured data, which is unsupported.",
+      "fix": "Reframe the section to state these are 'example prompt patterns found in the public samples repository' rather than operational instructions. Remove definitive language like 'Copilot can extract' and replace with 'Users may attempt prompts such as...' to reflect the illustrative nature of the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Copilot can 'indicate whether [devices] are compliant with policies' based on the prompt 'show which devices they have used recently and indicate whether they are compliant'. The source lists this as a sample prompt text, not a documented capability. This infers a specific integration between Copilot, Intune, and Defender that is not verified by the source.",
+      "fix": "Clarify that the prompt is a user suggestion. State that the output depends on available data connections. Do not assert that the system actually performs the compliance check; frame it as a query the user might ask, with the caveat that results depend on configured data sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a specific date 'December 31st, 2023' in a prompt example without contextualizing it as a static example. This creates a 'future knowledge' or 'expired content' risk if the article is read after that date, and implies a specific historical event rather than a generic template.",
+      "fix": "Replace the specific date with a placeholder like `<Date>` or 'a specific date'. Explain that the prompt structure allows for temporal filtering, rather than presenting a fixed historical query as a standard example."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft asserts 'The accuracy of the response depends on the data available... Always verify... against source data'. While prudent, this is a generic disclaimer. The source does not discuss accuracy guarantees or verification workflows, only providing the prompt text. The draft adds operational advice not present in the source.",
+      "fix": "Remove the specific instruction to 'verify against source data' as it is not supported by the source. Instead, note that the sample prompts are for illustrative purposes and users should consult official documentation for supported capabilities and data limitations."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "AZC-356",
+  "title": "Plan access separation between security operations teams",
+  "slug": "plan-access-separation-between-security-operations-teams",
+  "historical_date": "2026-09-23",
+  "input_sha256": "6f9c8f171d7f195abb9b57d6ecf420cdb9fc6c9d2f71253e40f808aea00f185f",
+  "created_at": "2026-10-23T20:32:45.458769+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Separate security and operations access in Microsoft Sentinel using resource-context RBAC and table-level RBAC.",
+  "tags": [
+    "microsoft-sentinel",
+    "rbac",
+    "log-analytics",
+    "security-operations",
+    "azure-monitor"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-356-learn-1.png",
+      "alt": "Screenshot of the SOC optimization page in the Defender portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/soc-optimization/media/soc-optimization-access/soc-optimization-xdr.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-04-20T16:05:28Z",
+      "sha256": "44b27189e6d9e5479b44d3306b753babe7dfd8d19908faa5822c3c5f7b8ae0ac",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/soc-optimization/soc-optimization-access.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Optimize security operations",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/soc-optimization/soc-optimization-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/soc-optimization/soc-optimization-access.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/resource-context-rbac.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage access to Microsoft Sentinel data by resource",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/resource-context-rbac",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/resource-context-rbac.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/best-practices-workspace-architecture.md",
+      "revision": "84a67a0abd66436db588f53214fb92c8b4596a1a",
+      "revision_date": "2024-08-15T10:27:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Workspace architecture best practices for Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/best-practices-workspace-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/84a67a0abd66436db588f53214fb92c8b4596a1a/articles/sentinel/best-practices-workspace-architecture.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/soc-optimization/soc-optimization-access.md",
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/resource-context-rbac.md",
+    "Public document removed/moved on 2024-08-15T14:05:10Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/best-practices-workspace-architecture.md"
+  ],
+  "open_questions": [
+    "How does resource-context RBAC interact with Azure Lighthouse when managing workspaces across multiple tenants?",
+    "What are the performance implications of using table-level RBAC versus resource-context RBAC for high-volume log queries?",
+    "Can resource-context RBAC be applied to logs ingested via Microsoft Sentinel data connectors that do not support resource ID tagging?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-access-separation-between-security-operations-teams.md",
+  "draft": true,
+  "word_count": 1459,
+  "claim_support_checks": [
+    {
+      "claim": "Resource-context RBAC allows users to access log data based on the Azure resources they are permitted to view, rather than the workspace itself.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Resource-context RBAC is enabled in Azure Monitor, not within the Microsoft Sentinel blade.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Non-Azure resources like Syslog or CEF do not have built-in resource IDs and require manual configuration for resource-context RBAC.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Table-level RBAC is used to grant access to specific tables, such as OfficeActivity, without granting access to the rest of the workspace.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The SOC should use standard Microsoft Sentinel roles for full workspace access, not resource-context RBAC.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims applications teams 'cannot see the Sentinel-specific tabs like Threat management or SOC optimization.' This is an unsupported categorical claim. Resource-context RBAC restricts data visibility, not UI element rendering. Users might still see the tabs but receive empty results or errors when interacting. The source (S2) states they get 'Log queries and Workbooks only,' which describes the functional experience, not a UI removal.",
+      "fix": "Rephrase to state that users cannot access Sentinel features or view data outside their scope. Remove the specific claim about tab visibility. Clarify that the experience is limited to querying accessible resources via Azure Monitor Logs, as per S2's 'Experience' column."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft instructs to 'Navigate to Azure Monitor > Logs > Access control (IAM)... Ensure that resource-context RBAC is enabled.' This is vague and potentially misleading. S2 refers to 'Manage access to log data and workspaces in Azure Monitor' but does not provide a direct UI path for enabling the feature in the current UI structure. It also omits that this is a workspace-level setting in Azure Monitor, not a Sentinel setting.",
+      "fix": "Direct users to the specific Azure Monitor 'Manage access' documentation link provided in S2. Clarify that enabling resource-context RBAC is a prerequisite configuration in Azure Monitor, not a step within the Sentinel blade. Avoid inventing specific portal navigation paths if not explicitly documented in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that resource-context RBAC is the primary solution for separating SOC and applications teams, suggesting it avoids 'fragmenting your security data into separate workspaces unnecessarily.' While S3 mentions this as a benefit, it also highlights that SOC teams need the 'full Microsoft Sentinel experience,' which resource-context RBAC explicitly does not provide (S2). The draft fails to mention that SOC teams still need workspace-level roles, which might be a security risk if not managed carefully.",
+      "fix": "Explicitly state that SOC teams require workspace-level roles (e.g., Sentinel Contributor) which grants full access, while resource-context RBAC is strictly for non-SOC teams. Emphasize that this separation relies on distinct role assignments, not just the RBAC type. Add a note about the security implication of SOC teams having broad access."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'SOC optimization' in the verification step for SOC access. While S1 shows SOC optimization is part of the Sentinel experience, the draft's primary focus is access separation. Including SOC optimization in the verification list is slightly distracting and not directly related to the RBAC configuration being tested.",
+      "fix": "Remove 'SOC optimization' from the SOC verification step. Focus on core Sentinel features like 'Analytics rules' and 'Incidents' which are more directly relevant to the SOC's operational role and the access model being described. Keep the verification steps concise and relevant to the RBAC configuration."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'You do not assign a specific 'Sentinel' role to these teams.' This is technically accurate for resource-context RBAC, but could be misinterpreted. Users still need Azure RBAC roles (like Reader) on the resources. The phrasing might confuse readers into thinking no permissions are needed.",
+      "fix": "Clarify that while no *Sentinel-specific* roles are assigned, standard Azure RBAC roles (Reader/Contributor) must be assigned to the resources. Ensure the distinction between 'Sentinel roles' and 'Azure RBAC roles' is clear to prevent confusion about permission requirements."
+    }
+  ]
+}

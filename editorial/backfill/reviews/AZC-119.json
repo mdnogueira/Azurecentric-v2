@@ -1,0 +1,129 @@
+{
+  "id": "AZC-119",
+  "title": "Enable GitHub secret scanning and assign alert ownership",
+  "slug": "enable-github-secret-scanning-and-assign-alert-ownership",
+  "historical_date": "2024-11-28",
+  "input_sha256": "c417cf6c0f1361abac9ba9d9bcc3743343533b31f2c29de86f4c1fa5a57251f8",
+  "created_at": "2026-10-23T14:56:09.009197+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable GitHub Secret Scanning and push protection, then assign alert ownership via security configurations.",
+  "tags": [
+    "github-advanced-security",
+    "secret-scanning",
+    "push-protection",
+    "security-configurations",
+    "devops"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories.md",
+      "revision": "9d383d7348e0b792fe25570ee9c51e61639fb154",
+      "revision_date": "2024-07-30T11:48:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configuring secret scanning for your repositories",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories",
+      "snapshot_url": "https://github.com/github/docs/blob/9d383d7348e0b792fe25570ee9c51e61639fb154/content/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository.md",
+      "revision": "2e7adc3bd48f4ba8003b24045d850353299f0cd5",
+      "revision_date": "2024-11-12T18:39:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enabling secret scanning for your repository",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository",
+      "snapshot_url": "https://github.com/github/docs/blob/2e7adc3bd48f4ba8003b24045d850353299f0cd5/content/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/secret-scanning/push-protection-for-repositories-and-organizations.md",
+      "revision": "29cffd185047a8901db7c037330299b3bfb628b9",
+      "revision_date": "2024-07-09T09:19:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Push protection for repositories and organizations",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/push-protection-for-repositories-and-organizations",
+      "snapshot_url": "https://github.com/github/docs/blob/29cffd185047a8901db7c037330299b3bfb628b9/content/code-security/secret-scanning/push-protection-for-repositories-and-organizations.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-07-30T15:28:12Z; used previous public snapshot. Confirm continued applicability: content/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories.md",
+    "Public document removed/moved on 2024-07-09T09:22:38Z; used previous public snapshot. Confirm continued applicability: content/code-security/secret-scanning/push-protection-for-repositories-and-organizations.md"
+  ],
+  "open_questions": [
+    "Does the current Security Configuration policy explicitly override repository-level settings for alert ownership?",
+    "Are there any custom patterns that have not been tested with dry runs before enabling push protection at the enterprise level?",
+    "Is the bypass reason list reviewed regularly to ensure it does not allow unnecessary exceptions?",
+    "Are validity checks enabled for all partner patterns to reduce false positives?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/enable-github-secret-scanning-and-assign-alert-ownership.md",
+  "draft": true,
+  "word_count": 1182,
+  "claim_support_checks": [
+    {
+      "claim": "Secret Scanning can be enabled by any administrator of a public repository.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Push protection requires Advanced Security to be enabled for private repositories.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Delegated bypass allows specific teams to review requests to bypass push protection.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Validity checks can be enabled to automatically check the validity of a secret with the partner.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to navigate to 'Security' in the left-hand menu to find Secret Scanning. The source documentation (S1, S2) explicitly states navigation via 'Settings' > 'Code security and analysis'. This is a critical procedural error that will confuse users.",
+      "fix": "Update the navigation steps to match the source: 'Settings' > 'Code security and analysis'. Remove references to a 'Security' menu item for this specific configuration path."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims 'GitHub does not automatically assign alerts to specific individuals' and suggests manual assignment per alert. The source (S1) describes 'Security Configurations' for organization-level policy enforcement, which is the primary scalable method. Manual per-alert assignment is not the standard workflow described for ownership.",
+      "fix": "Refocus on Security Configurations for ownership. Clarify that manual assignment is for individual alert management (triage), not structural ownership. Remove the implication that manual assignment is a viable primary strategy for 'assigning alert ownership' at scale."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Enabling Secret Scanning generates alerts... It does not, however, stop contributors from pushing secrets.' While true, it omits the nuance that push protection is a separate feature requiring Advanced Security for private repos. The source (S3) clarifies this dependency explicitly.",
+      "fix": "Explicitly state that Push Protection is a distinct feature from Secret Scanning alerts. Cite S3 to clarify that Push Protection in private repos requires Advanced Security to be enabled at the org/enterprise level."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests enabling validity checks for 'all partner patterns' to reduce false positives. S1 notes this is an optional feature ('Enabling validity checks for partner patterns') and implies it sends secrets to partners. It does not claim to reduce false positives universally, but rather verifies validity.",
+      "fix": "Correct the benefit description: validity checks verify if a secret is still active/valid, not necessarily reduce false positives of detection. Note that this is an optional configuration, not a universal requirement."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By following these steps...') which violates the editorial guidance to end with a concrete verification or next action.",
+      "fix": "Remove the concluding paragraph. End with the verification step: 'Check the Security tab to confirm the test alert was generated and assigned to the configured team.'"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "AZC-235",
+  "title": "Plan host storage for Hyper-V virtual machines",
+  "slug": "plan-host-storage-for-hyper-v-virtual-machines",
+  "historical_date": "2025-10-18",
+  "input_sha256": "7852db52b17ba1aade6331ac4b1b49952faeda9230e6813e6870606f8365c5bd",
+  "created_at": "2026-10-23T17:41:55.539642+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Choose a Hyper-V storage architecture for Windows Server 2025 by weighing high availability requirements against scaling flexibility.",
+  "tags": [
+    "hyper-v",
+    "windows-server",
+    "storage-architecture",
+    "storage-spaces-direct",
+    "san",
+    "nas"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "revision": "dedf7198ffe3c5689286b7e61fb3878b57118844",
+      "revision_date": "2025-01-12T23:19:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Physical storage architectures for Hyper-V in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-storage-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/dedf7198ffe3c5689286b7e61fb3878b57118844/WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md",
+      "revision": "ff848743a74c98350b03e1f92319fecc538fc7c3",
+      "revision_date": "2024-08-13T18:02:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan for Hyper-V on Windows Server 2016",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/plan-hyper-v-on-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ff848743a74c98350b03e1f92319fecc538fc7c3/WindowsServerDocs/virtualization/hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Enable-all-integration-services-in-virtual-machines.md",
+      "revision": "459f37daed334e9c93181c42b5221ab4bb66e22d",
+      "revision_date": "2025-10-15T16:20:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable all integration services in virtual machines",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/enable-all-integration-services-in-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/459f37daed334e9c93181c42b5221ab4bb66e22d/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Enable-all-integration-services-in-virtual-machines.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-01-13T10:58:44Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+    "Public document removed/moved on 2024-08-13T20:55:18Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md",
+    "Public document removed/moved on 2025-10-15T16:38:39Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Enable-all-integration-services-in-virtual-machines.md"
+  ],
+  "open_questions": [
+    "Does Windows Server 2025 introduce any new storage protocol support not listed in the 2024/2025 documentation?",
+    "Are there specific node count limits for disaggregated Storage Spaces Direct that differ from the 1-16 storage cluster limit mentioned?",
+    "Is SMB over QUIC fully supported for Hyper-V storage in Windows Server 2025 without additional configuration prerequisites?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-host-storage-for-hyper-v-virtual-machines.md",
+  "draft": true,
+  "word_count": 1129,
+  "claim_support_checks": [
+    {
+      "claim": "Standalone Hyper-V with local disks does not support automatic failover of VM workloads.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hyper-V with SAN or NAS allows independent scaling of compute and storage.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hyperconverged Hyper-V and Storage Spaces Direct clusters can contain between 1 and 16 nodes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Disaggregated Hyper-V with Storage Spaces Direct allows separate scaling of compute and storage clusters.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Windows Server supports SMB over TCP, SMB over QUIC, and SMB over RDMA as network file storage protocols.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Disabled integration services can prevent virtual machine features from operating correctly.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a 'Verification and Next Steps' section advising users to check integration services. This is a VM guest configuration task, not a host storage architecture decision. It creates a logical disconnect and dilutes the focus on storage planning.",
+      "fix": "Remove the entire 'Verification and Next Steps' section. The article should end after the Mixed Architecture Support section, as the technical question of storage architecture selection is fully answered by the preceding content."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Standalone Hyper-V with local disks does not support automatic failover... if the physical host loses power... VMs do not restart on another node.' While true for automatic cluster failover, it omits that VMs *do* restart locally on host reboot. The phrasing implies total data loss or permanent downtime, which is misleading for a standalone server.",
+      "fix": "Clarify that while automatic failover to other nodes is impossible, VMs will restart on the same host upon reboot. This accurately reflects the 'local disk resiliency' context provided in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Each compute cluster can contain between 1 and 64 nodes' for SAN/NAS and '1 and 16 nodes' for S2D. It presents these as hard limits without noting they are specific to the *storage* cluster scaling in disaggregated S2D or the *compute* cluster in SAN/NAS. This can confuse readers about total cluster size vs. storage node count.",
+      "fix": "Explicitly distinguish between compute cluster limits (1-64 nodes for SAN/NAS and disaggregated S2D compute tier) and storage cluster limits (1-16 nodes for disaggregated S2D storage tier). Ensure the reader understands these are separate scaling boundaries."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the full URL citation '[Physical storage architectures for Hyper-V in Windows Server](...)' after nearly every paragraph. This disrupts reading flow and violates the guidance to use 'a few well-placed source links'.",
+      "fix": "Consolidate citations. Place a single source link at the end of each major section (e.g., Standalone, SAN/NAS, S2D) rather than repeating it after every sentence or claim. Use inline links only where specific protocol details are mentioned."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'SMB over QUIC' as a supported protocol but does not clarify that it is primarily for remote access or specific scenarios, not necessarily the primary protocol for local high-performance Hyper-V storage compared to SMB Direct/RDMA. This might mislead users into choosing QUIC for local SAN/NAS performance.",
+      "fix": "Add a brief note that SMB over QUIC is supported but SMB Direct (RDMA) is typically preferred for high-performance local storage networking. This aligns with the source's emphasis on SMB Direct for performance."
+    }
+  ]
+}

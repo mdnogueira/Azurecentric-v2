@@ -1,0 +1,122 @@
+{
+  "id": "AZC-291",
+  "title": "Review certificate expiry across Windows servers",
+  "slug": "review-certificate-expiry-across-windows-servers",
+  "historical_date": "2026-03-24",
+  "input_sha256": "06d49dc49b616b7fe56bc16d6e5ab3a36d4dbab428ef981d0c898ec89e9bc432",
+  "created_at": "2026-10-23T19:01:52.783819+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Review certificate expiry on Windows Server 2025 using PowerShell and the local certificate store.",
+  "tags": [
+    "windows-server-2025",
+    "certificates",
+    "powershell",
+    "pki",
+    "automation"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-cs/certificate-trust.md",
+      "revision": "ed05597c369eba139b325fadc1322b3b591c880a",
+      "revision_date": "2025-05-21T10:23:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Certificates and Trust Management in Windows",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/certificate-trust",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ed05597c369eba139b325fadc1322b3b591c880a/WindowsServerDocs/identity/ad-cs/certificate-trust.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-cs/distribute-certificates-group-policy.md",
+      "revision": "8bcf61410ba0d93591cc43eb168fba86f6c60ffd",
+      "revision_date": "2024-11-26T15:29:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Distribute certificates to Windows devices by using Group Policy",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/distribute-certificates-group-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/8bcf61410ba0d93591cc43eb168fba86f6c60ffd/WindowsServerDocs/identity/ad-cs/distribute-certificates-group-policy.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/core-network-guide/cncg/server-certs/Server-Certificate-Deployment-Planning.md",
+      "revision": "79ebe6bf20524768b259c357913592494f5690b0",
+      "revision_date": "2025-09-22T10:04:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Server Certificate Deployment Planning",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/server-certificate-deployment-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/79ebe6bf20524768b259c357913592494f5690b0/WindowsServerDocs/networking/core-network-guide/cncg/server-certs/Server-Certificate-Deployment-Planning.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the provided source text explicitly confirm the availability of the Cert: drive provider in Windows Server 2025?",
+    "Is the PowerShell syntax for filtering certificates by date consistent across all supported Windows Server versions?",
+    "Are there any specific permissions required for remote PowerShell execution that are not mentioned in the sources?",
+    "How does the CTL Updater handle certificates in disconnected environments as described in S1?",
+    "What is the exact process for importing a new root certificate via Group Policy as hinted in S2?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-certificate-expiry-across-windows-servers.md",
+  "draft": true,
+  "word_count": 1112,
+  "claim_support_checks": [
+    {
+      "claim": "Windows Server 2025 uses PowerShell to access certificate stores via the Cert: drive.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Trusted root certificates are automatically updated by the CTL Updater.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Certificate renewal can be automated using AD CS certificate templates.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "medium",
+      "problem": "The draft claims the Cert: drive works on 'any Windows Server version that supports PowerShell 5.1 or later.' The sources do not support this universal compatibility claim; the Cert: drive is a specific Windows feature, not a generic PowerShell capability. This is an unsupported generalization.",
+      "fix": "Remove the version compatibility claim. State that the Cert: drive is available on Windows Server 2025 (the host baseline) without asserting universal support across all PowerShell 5.1+ versions."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts that 'changes to the root store may require a restart of the services or the server to take effect.' The sources do not specify restart requirements for root store updates. This is an unsupported operational claim that could lead to unnecessary downtime.",
+      "fix": "Remove the specific restart requirement. The sources mention applying policy and restarting for settings to take effect in GPO import, but do not mandate a full server restart for root store changes. Advise verifying service-specific behavior instead."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that if a certificate lacks a private key, it 'might be safe to ignore.' This is vague and potentially dangerous advice. The sources do not provide guidance on ignoring certificates based on private key presence. This is an unsupported operational recommendation.",
+      "fix": "Remove the 'safe to ignore' assertion. Instead, explain that certificates without private keys are typically public certificates or roots, and their management depends on the specific trust model, not a blanket rule."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that the 'RAS and IAS Server' template is the standard for autoenrollment. Source S3 only mentions it as an example for copying in a specific deployment guide. This is a minor overgeneralization of the example.",
+      "fix": "Clarify that the 'RAS and IAS Server' template is an example from the deployment planning guide, not necessarily the only or default template for all server certificate autoenrollment scenarios."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the PowerShell approach 'integrates well with existing automation tools.' This is a vague, unsupported superlative. The sources do not discuss integration capabilities or tool compatibility beyond basic PowerShell remoting.",
+      "fix": "Remove the vague integration claim. Focus on the technical capability of using PowerShell for local and remote queries as described in the sources, without making broad statements about ecosystem integration."
+    }
+  ]
+}

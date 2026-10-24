@@ -1,0 +1,139 @@
+{
+  "id": "AZC-149",
+  "title": "Check connectivity with Azure Network Watcher",
+  "slug": "check-connectivity-with-azure-network-watcher",
+  "historical_date": "2025-02-20",
+  "input_sha256": "4b54f18a590a941418b40a769d023ec45846f88d3312c29ece1eb040c3957cc1",
+  "created_at": "2026-10-23T15:41:06.903795+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Connection troubleshoot to diagnose a single connectivity failure between an Azure VM and a destination, interpreting the hop-by-hop results.",
+  "tags": [
+    "network-watcher",
+    "connection-troubleshoot",
+    "azure-virtual-machines",
+    "networking",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-149-learn-1.png",
+      "alt": "Screenshot showing Traffic analytics feature of Network Watcher.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3003d26298b56e61a9d79c65b9442945778a9d35/articles/network-watcher/media/network-watcher-overview/traffic-analytics.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-02-07T21:38:19Z",
+      "sha256": "d9a28d9a3184b69d5f97a3741603f1d86619701d5cbc6df87432b024c537b931",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/network-watcher/network-watcher-overview.md",
+      "revision": "3003d26298b56e61a9d79c65b9442945778a9d35",
+      "revision_date": "2025-02-07T21:38:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Network Watcher overview",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3003d26298b56e61a9d79c65b9442945778a9d35/articles/network-watcher/network-watcher-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/network-watcher/connection-monitor-overview.md",
+      "revision": "f5c72055b547a9ed760e83bcaf2b2f69064f7a9f",
+      "revision_date": "2024-12-28T19:51:56Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connection monitor overview",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f5c72055b547a9ed760e83bcaf2b2f69064f7a9f/articles/network-watcher/connection-monitor-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/network-watcher/connection-troubleshoot-overview.md",
+      "revision": "5b6e3c3fe20225fa0a7c47f2e12b81ee7ef307bd",
+      "revision_date": "2025-01-27T21:37:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connection troubleshoot overview",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5b6e3c3fe20225fa0a7c47f2e12b81ee7ef307bd/articles/network-watcher/connection-troubleshoot-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the Network Watcher extension need to be manually installed on the source VM, or is it automatically enabled when Network Watcher is enabled in the region?",
+    "What are the specific permissions required for a user to run Connection troubleshoot on a VM they do not own?",
+    "How does Connection troubleshoot handle NAT scenarios where the source IP is translated?",
+    "Are there any limitations on the number of concurrent Connection troubleshoot tests that can be run in a subscription?",
+    "What is the exact behavior of Connection troubleshoot when the destination is an Azure PaaS service with a private endpoint?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-connectivity-with-azure-network-watcher.md",
+  "draft": true,
+  "word_count": 1032,
+  "claim_support_checks": [
+    {
+      "claim": "Connection troubleshoot requires the Network Watcher agent VM extension on the source resource.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Connection troubleshoot can detect issues such as NSG rule blocks, user-defined route drops, and DNS resolution failures.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Connection troubleshoot provides hop-by-hop path analysis including latency and issue details.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Connection troubleshoot is for on-demand testing, whereas Connection monitor is for continuous monitoring.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Contributor or Owner' access is required to install the Network Watcher extension. This is unsupported; the extension is a resource on the VM, and 'Contributor' on the VM is sufficient. It also implies 'Reader' on Network Watcher is needed, which is not documented as a prerequisite for running the tool.",
+      "fix": "State that Contributor access to the source VM is required to install/verify the extension. Remove the specific permission claim for the Network Watcher resource itself, as it is not a documented prerequisite for the diagnostic tool execution."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states 'Test frequency' allows choosing 'once or multiple times'. Source S3 indicates Connection Troubleshoot is a point-in-time test. Source S2 notes Connection Monitor tests at regular intervals. The draft conflates the two tools' capabilities, implying Connection Troubleshoot supports multi-probe frequency selection in the portal UI, which is inaccurate.",
+      "fix": "Clarify that Connection Troubleshoot performs a single diagnostic check (point-in-time). Remove the 'Test frequency' step. If multiple probes are needed, suggest running the test multiple times or using Connection Monitor for continuous monitoring."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot of 'Traffic analytics' (S1) in a guide about 'Connection troubleshoot'. The screenshot is irrelevant to the tool being described and violates the guidance to not add unrelated screenshots. It also lacks a caption, which is allowed, but the content mismatch is the primary defect.",
+      "fix": "Remove the Traffic analytics screenshot. If a screenshot is needed, use one from the Connection Troubleshoot portal documentation (S3) that shows the diagnostic results or configuration form. If no suitable screenshot is available, omit it."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By using Connection troubleshoot effectively...'. This is a generic concluding paragraph that violates the instruction to remove generic conclusions beginning with 'By following', 'By starting', or similar phrases.",
+      "fix": "Delete the final paragraph starting with 'By using Connection troubleshoot effectively...'. End the article with the concrete next steps or verification actions, such as checking the NSG rules or reviewing the hop analysis."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Packet capture allows you to inspect the actual packets... which can help identify issues that are not visible at the network configuration level.' While true, it omits the critical context that Packet Capture is a resource-intensive operation that can impact performance and incurs storage costs, which is a destructive/cost context missing from the draft.",
+      "fix": "Add a note that Packet Capture is a resource-intensive operation that may impact VM performance and incurs storage costs for the captured data. Advise using it judiciously for deep-dive analysis only."
+    }
+  ]
+}

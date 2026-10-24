@@ -1,0 +1,146 @@
+{
+  "id": "AZC-337",
+  "title": "Review connector health and ingestion changes together",
+  "slug": "review-connector-health-and-ingestion-changes-together",
+  "historical_date": "2026-08-01",
+  "input_sha256": "fb216b2e1966de202fc25964fea0b6e848764e6389d9039cc4526f051555860d",
+  "created_at": "2026-10-23T20:06:48.441272+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Monitor Microsoft Sentinel data connectors by combining the SentinelHealth table with the Data collection health workbook to detect ingestion drifts and configure alerts.",
+  "tags": [
+    "microsoft-sentinel",
+    "data-connectors",
+    "health-monitoring",
+    "kql",
+    "workbooks"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-337-learn-1.png",
+      "alt": "Screenshot of a workbook template in the Defender portal that shows the required data types.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/media/monitor-your-data/workbook-template-defender-portal.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-04-20T16:05:28Z",
+      "sha256": "311c2274a3a8fdc11d22e9f2eba881b63c2c5fc379b9e22b4b2c5005d5000430",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/monitor-data-connector-health.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor the health of your Microsoft Sentinel data connectors",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/monitor-data-connector-health",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/monitor-data-connector-health.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/health-audit.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Auditing and health monitoring in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/health-audit",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/health-audit.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/monitor-your-data.md",
+      "revision": "aad9a353dbbb164ea86b8c072c2eeec0902958a4",
+      "revision_date": "2026-04-20T16:05:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Visualize your data using workbooks in Microsoft Sentinel | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/monitor-your-data",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aad9a353dbbb164ea86b8c072c2eeec0902958a4/articles/sentinel/monitor-your-data.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/monitor-data-connector-health.md",
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/health-audit.md",
+    "Public document removed/moved on 2026-04-20T18:51:59Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/monitor-your-data.md"
+  ],
+  "open_questions": [
+    "Does the workbook's anomaly detection cover all connector types, or only those supported by the SentinelHealth table?",
+    "What are the specific prerequisites for using the Agent info tab in the workbook for non-Azure machines?",
+    "How does the workbook handle data from multiple workspaces in a single view?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-connector-health-and-ingestion-changes-together.md",
+  "draft": true,
+  "word_count": 1183,
+  "claim_support_checks": [
+    {
+      "claim": "The SentinelHealth table is not billable.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Health monitoring must be explicitly enabled to populate the SentinelHealth table.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Transient errors are logged only after persisting for more than 60 minutes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Data collection health monitoring workbook is available as a template in the Content hub.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Monitor alert rules are recommended for notifying on health drifts.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to query `_SentinelHealth()` directly in the KQL examples. Source S2 explicitly states that users should use pre-built functions `_SentinelHealth()` and `_SentinelAudit()` instead of querying the tables directly to ensure backward compatibility. However, the draft's KQL snippets use `_SentinelHealth()` as if it were a table name or function call without clarifying it is a function, and the first example uses `*` which might not be supported by the function signature depending on implementation. More critically, the draft implies `_SentinelHealth()` is a table-like entity in the `where` clause, which is syntactically ambiguous compared to the source's explicit instruction to use the function. The source S1 examples query `SentinelHealth` directly, creating a conflict with S2's recommendation. The draft must align with S2's explicit instruction to use the function, not the table name, and ensure the syntax matches the function's expected usage.",
+      "fix": "Update all KQL examples to explicitly use the `_SentinelHealth()` function as instructed in S2, rather than the table name `SentinelHealth`. Ensure the syntax reflects a function call (e.g., `_SentinelHealth() | where ...`) and remove any ambiguity that suggests querying the raw table. Clarify that these functions provide backward compatibility."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the workbook is available in the 'Templates' tab after navigating to 'Threat management > Workbooks'. Source S1 states that users must first 'Install' the workbook from the 'Content hub' before it appears in the 'Workbooks' section (specifically the 'Templates' tab). The draft skips the critical 'Install' step from the Content hub, which is a prerequisite for the workbook to be available for saving or viewing. This omission makes the instructions incomplete and potentially confusing for users who cannot find the template.",
+      "fix": "Add a step to install the 'Data collection health monitoring' workbook from the Content hub before navigating to the Workbooks page. Explicitly state that installation is required for the template to appear in the Templates tab."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that the 'Agent info' tab monitors 'Azure Arc-managed and non-Azure machines'. Source S1 specifies that the 'Azure-managed machines' tab shows only Azure Arc-managed machines, while the 'All machines' tab shows both managed and non-Azure machines. The draft conflates these tabs, implying a single 'Agent info' tab covers both, which is inaccurate. This could lead users to look in the wrong tab for non-Azure machine data.",
+      "fix": "Clarify that the 'Agent info' section has two tabs: 'Azure-managed machines' (for Azure Arc) and 'All machines' (for Azure Arc and non-Azure). Direct users to the 'All machines' tab if they need to monitor non-Azure machines."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Review questions' section at the end. The editorial guidance explicitly states: 'End when the technical question is answered, with a concrete verification or next action. Remove generic concluding paragraphs...'. While not a generic paragraph, this section adds fluff and is not a standard part of a how-to guide's operational flow. It detracts from the direct, actionable nature of the guide.",
+      "fix": "Remove the 'Review questions' section entirely. End the article with the concrete verification step mentioned in the conclusion (checking the workbook and alert rule) or a 'Next steps' link to related documentation, adhering to the guidance to avoid generic or non-operational endings."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions that the workbook is stored as an Azure resource in the workspace's resource group and can have RBAC assigned. Source S3 confirms this. However, the draft does not specify the required permissions ('Workbook reader' or 'Workbook contributor') mentioned in S3. This is a minor omission that could hinder users who lack the necessary permissions to save or edit the workbook.",
+      "fix": "Add a note specifying that users need at least 'Workbook reader' or 'Workbook contributor' permissions on the resource group to save or edit the workbook, as per S3."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "AZC-190",
+  "title": "Investigate an alert that repeatedly closes and reopens",
+  "slug": "investigate-an-alert-that-repeatedly-closes-and-reopens",
+  "historical_date": "2025-06-15",
+  "input_sha256": "30ba21a9a1af2d5fd47ee67a9e73b5ba131cabed4387643eb2f9b5d01c5eea9f",
+  "created_at": "2026-10-23T16:38:00.043091+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate why an Azure Monitor alert instance appears to close and reopen by distinguishing between manual status changes, automatic resolution settings, and repeated firings.",
+  "tags": [
+    "azure-monitor",
+    "alerts",
+    "troubleshooting",
+    "log-alerts",
+    "incident-management"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-190-learn-1.png",
+      "alt": "Screenshot that shows Alerts on the Azure Monitor menu. ",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/media/alerts-managing-alert-instances/alerts-monitor-menu.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "08697cb3be96b24a6520ef9af036f69b62b422c10f343244da7d4cc01e3f8b7d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-190-learn-2.png",
+      "alt": "Screenshot of the Resource health section in a log search alert rule.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/media/log-search-alert-health/log-search-alert-resource-health.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "5996592c98cce9ef8ab21a33c862d7627a7633d82c45033e7cd12ab19624fc1b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-manage-alert-instances.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage your alert instances",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/alerts-manage-alert-instances.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-troubleshoot-log.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot log alerts in Azure Monitor | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot-log",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/alerts-troubleshoot-log.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-troubleshoot.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshooting Azure Monitor alerts and notifications",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/alerts-troubleshoot.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-manage-alert-instances.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-troubleshoot-log.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-troubleshoot.md"
+  ],
+  "open_questions": [
+    "Does the user need to distinguish between metric and log alert resolution logic in more detail?",
+    "Should the article include specific steps for checking the Activity log for disable events?",
+    "Is the explanation of 'Automatically resolve alerts' clear enough for users who may not understand time-based resolution?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-an-alert-that-repeatedly-closes-and-reopens.md",
+  "draft": true,
+  "word_count": 826,
+  "claim_support_checks": [
+    {
+      "claim": "The Alerts page summarizes all alert instances generated in the last 30 days.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Alert processing rules can suppress actions, which can be checked in the alert history tab.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Log search alerts can be configured to automatically resolve after a period of inactivity.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Monitor disables log search alert rules if they fail consistently for a week.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Ingestion latency can cause log search alerts to fire out of order or repeatedly.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Monitor automatically closes alerts if the underlying condition resolves. Source S1 explicitly states that for stateful alerts, the condition is stored until resolved to prevent firing again, and alerts are not automatically closed by the system; they persist until manually closed or the retention period expires. This misleads users about the default behavior of stateful alerts.",
+      "fix": "Remove the statement that the system automatically closes alerts. Clarify that stateful alerts persist until manually closed or the 30-day retention period expires, and that 'resolution' in the context of firing refers to the condition no longer being met, not the alert instance status changing."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft links ingestion latency to alerts firing 'out of order or repeatedly' as a primary cause for the specific symptom of closing/reopening. Source S2 associates latency with misfires or delayed firing, not instance status toggling. The 'closing and reopening' symptom is better explained by manual user response changes or the 'Automatically resolve' setting interacting with data volatility, which the draft mentions but dilutes with the latency claim.",
+      "fix": "Refocus the latency section on delayed or missed alerts rather than instance status toggling. Emphasize that 'closing and reopening' is primarily a result of manual user response changes or the 'Automatically resolve' setting, supported by S1 and S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that 'Automatically resolve alerts' configures the alert to 'only fire once per condition being met'. Source S2 defines this setting as configuring the alert to resolve after a specified period of inactivity, not limiting the number of firings. This is a factual error regarding the feature's behavior.",
+      "fix": "Correct the description of 'Automatically resolve alerts' to state that it resolves the alert instance after a specified period of inactivity, which can cause the alert to fire again if the condition reoccurs, rather than limiting firings."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By systematically checking... Start with the Alerts page...') that adds no new technical value and repeats the structure of the introduction. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar structures.",
+      "fix": "Remove the final paragraph. End the article after the last technical section (Verify permissions and rule health) with a concrete next action, such as checking the Activity log for disable events if the rule is missing."
+    }
+  ]
+}

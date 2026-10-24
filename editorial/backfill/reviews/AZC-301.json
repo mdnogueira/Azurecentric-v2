@@ -1,0 +1,114 @@
+{
+  "id": "AZC-301",
+  "title": "Investigate failed node startup in an Azure Batch pool",
+  "slug": "investigate-failed-node-startup-in-an-azure-batch-pool",
+  "historical_date": "2026-04-21",
+  "input_sha256": "40c7d3f9331740e8f557998175c992adbe3730811ff461647bb9e1a7b55f1657",
+  "created_at": "2026-10-23T19:15:39.099971+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Azure Batch node startup failures by distinguishing pool-level allocation errors from node-level start task and configuration issues.",
+  "tags": [
+    "azure-batch",
+    "troubleshooting",
+    "node-errors",
+    "start-task",
+    "pool-management"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-pool-node-error-checking.md",
+      "revision": "49fe97bb3474354f169a07d5d8195010a90752e6",
+      "revision_date": "2026-03-12T01:12:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Pool and node errors",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-pool-node-error-checking",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/49fe97bb3474354f169a07d5d8195010a90752e6/articles/batch/batch-pool-node-error-checking.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/error-handling.md",
+      "revision": "84e0ffe03d7d5fe607587104e97703d5d3a86ab2",
+      "revision_date": "2026-01-17T15:51:02Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Error handling and detection in Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/error-handling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/84e0ffe03d7d5fe607587104e97703d5d3a86ab2/articles/batch/error-handling.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific steps to upload Batch agent log files for a node that is in an unusable state and cannot be accessed via RDP/SSH?",
+    "How does the behavior of start tasks differ between VirtualMachineConfiguration and CloudServiceConfiguration pools regarding re-entrancy and disk sync?",
+    "Are there any known limitations or specific error codes associated with container download failures in Linux-based Batch pools?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-failed-node-startup-in-an-azure-batch-pool.md",
+  "draft": true,
+  "word_count": 967,
+  "claim_support_checks": [
+    {
+      "claim": "Pool resize failures can be caused by insufficient core quotas, subnet IP exhaustion, or resource locks on the underlying VMSS.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "If a start task fails with waitForSuccess=true, the node state becomes starttaskfailed and is unusable.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Batch does not automatically recover nodes that fail to install application packages or containers.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Reimaging a node reinstalls the OS and reruns start tasks, but is not supported for VirtualMachineConfiguration pools with OS disks.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Disabling task scheduling allows investigation of a node without losing data or causing further task failures.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims reimage is not supported for `VirtualMachineConfiguration` pools. Source S1 explicitly states this restriction only applies to pools using `VirtualMachineConfiguration` with OS disks, implying it is supported for other configurations (e.g., those without OS disk persistence). This is a categorical error that misleads users about supported recovery methods.",
+      "fix": "Clarify that reimage is unsupported specifically for `VirtualMachineConfiguration` pools that utilize OS disks, as stated in the source. Remove the blanket statement implying it is unsupported for all VM configurations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests deleting old jobs or tasks on the node to free up space as a primary recovery method for disk-full nodes. Source S1 notes that deleting jobs triggers deletion of task data, but also warns that the `list-node-files` API only lists Batch-managed directories. The draft omits that tasks might create files elsewhere, which this method won't clean, potentially leaving the node unusable.",
+      "fix": "Add a caveat that deleting jobs only cleans Batch-managed directories. Advise remote investigation if files are stored outside these directories, as the API cannot detect them."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that `starttaskfailed` is the 'most common' startup failure. Source S1 lists multiple causes (app package, container, network, disk full) without ranking them by frequency. This is an unsupported superlative that may misdirect troubleshooting efforts.",
+      "fix": "Remove the word 'most common'. State that `starttaskfailed` is one of several possible states indicating startup issues, alongside `unusable` and others."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions checking `computeNodeError` for details but does not specify that this property is only populated if Batch can determine the cause. Source S1 states that if `computeNodeError` is absent, Batch cannot communicate with the VM. The draft's verification step assumes the property is always present or cleared.",
+      "fix": "Clarify that `computeNodeError` may be null if Batch cannot communicate with the VM. In such cases, the node state is `unusable` but without a specific error code, indicating a communication failure rather than a configuration error."
+    }
+  ]
+}

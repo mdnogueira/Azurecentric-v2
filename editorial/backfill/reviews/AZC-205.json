@@ -1,0 +1,133 @@
+{
+  "id": "AZC-205",
+  "title": "Separate storage bottlenecks from compute bottlenecks",
+  "slug": "separate-storage-bottlenecks-from-compute-bottlenecks",
+  "historical_date": "2025-07-26",
+  "input_sha256": "654d970746d21abf4ba7d7c68492f362d3f0696588cc1ad305eaa84fab73639c",
+  "created_at": "2026-10-23T16:58:21.391620+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish storage latency from compute processing time in Azure Batch using Application Insights custom metrics.",
+  "tags": [
+    "azure-batch",
+    "application-insights",
+    "monitoring",
+    "troubleshooting",
+    "performance"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-205-learn-1.png",
+      "alt": "Screenshot of live stream compute node data.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/media/monitor-application-insights/applicationinsightslivestream.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-06-04T22:56:38Z",
+      "sha256": "91baff5eba0de110210fd9e7b97717bd7170640c1c6755de6ef8984b70082e4d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/monitor-application-insights.md",
+      "revision": "bb9e426cabbe0b3bf597d84424a5b22c16911c3f",
+      "revision_date": "2025-06-04T22:56:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Batch with Azure Application Insights",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/monitor-application-insights",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/monitor-application-insights.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/monitoring-overview.md",
+      "revision": "306b9bc8e6f3ec0a63b16efac6e4992c0365b8e4",
+      "revision_date": "2024-03-07T02:55:30Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/monitoring-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/306b9bc8e6f3ec0a63b16efac6e4992c0365b8e4/articles/batch/monitoring-overview.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-03-08T00:46:49Z; used previous public snapshot. Confirm continued applicability: articles/batch/monitoring-overview.md"
+  ],
+  "open_questions": [
+    "Does the provided code example cover all necessary error handling for production use?",
+    "Are there any specific network configurations required for Batch nodes to access Blob storage efficiently?",
+    "How does the cost of Application Insights scale with the volume of metrics sent from Batch tasks?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-storage-bottlenecks-from-compute-bottlenecks.md",
+  "draft": true,
+  "word_count": 990,
+  "claim_support_checks": [
+    {
+      "claim": "Application Insights allows custom metrics to be tracked from Azure Batch tasks.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The TelemetryClient is used to track custom metrics such as download time.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Application Insights binaries must be staged to compute nodes for telemetry to work.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A telemetry initializer can override the default role name with the Batch pool ID.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Metrics are only logged when tasks are running unless a background process is configured.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Application Insights binaries 'cannot rely on the node image' and 'must be staged'. Source S1 shows the sample uses a Start Task to load binaries for background monitoring, implying they are not pre-installed in the base image, but the absolute 'must' ignores that users might use custom images or other deployment methods. It also omits that the sample code explicitly handles file staging via `FilesToStage`, which is the mechanism described, not a general prohibition on other methods.",
+      "fix": "Clarify that staging is required for the specific sample approach or when the base image lacks the SDK. Reference the sample's use of `FilesToStage` and `StartTask` as the demonstrated pattern rather than a universal constraint. Remove the absolute 'must' and 'cannot rely' phrasing to allow for custom image configurations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `DateTime.Now` for timing metrics. Source S1 uses `DateTime.Now` in the sample, but this is illustrative. In production, `DateTime.Now` can be skewed by clock drift or sleep states. The draft does not mention `Stopwatch` which is the standard .NET practice for high-resolution elapsed time measurement, potentially leading to inaccurate bottleneck analysis.",
+      "fix": "Recommend using `System.Diagnostics.Stopwatch` for measuring elapsed time in the code example, as it is more accurate than `DateTime.Now` for performance measurement. Update the code snippet to use `Stopwatch.StartNew()` and `sw.Elapsed.TotalSeconds`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the telemetry initializer 'must be registered in the ApplicationInsights.config file'. Source S1 shows this registration in the config file for the sample. However, the draft does not mention that in modern .NET Core/.NET 5+ applications, configuration is often handled via `appsettings.json` or code-based setup, making the `.config` file approach obsolete for newer runtimes. The draft assumes a legacy .NET Framework context without stating it.",
+      "fix": "Specify that the `.config` file approach applies to .NET Framework applications as shown in the sample. For .NET Core/.NET 5+, note that telemetry initializers are typically registered in code via `TelemetryConfiguration.Active.TelemetryInitializers.Add()` or dependency injection."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from Source S1 showing 'Live Stream' data. The editorial guidance prohibits adding visible Microsoft Learn screenshots or permission captions. The draft does not explicitly remove the image or caption, risking a violation of the 'no visible screenshot' rule.",
+      "fix": "Remove the screenshot and any associated caption from the draft. Describe the Live Stream view textually if necessary, or omit it entirely as it is not critical to the technical explanation of separating bottlenecks."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Metrics are only logged when tasks are running unless a background process is configured'. Source S1 notes this behavior. However, the draft does not mention that Application Insights also collects infrastructure metrics (like CPU/Memory) from the VM if the Performance Counter Collector is enabled, which might run independently of specific task code. This could confuse users who expect continuous node monitoring without a custom background process.",
+      "fix": "Clarify that custom metrics (like `BlobDownloadSeconds`) are only sent when the task code runs. Note that infrastructure metrics (CPU, Memory) may be collected continuously if the Performance Counter Collector is configured, but this is separate from the custom task-level metrics discussed."
+    }
+  ]
+}

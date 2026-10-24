@@ -1,0 +1,137 @@
+{
+  "id": "AZC-330",
+  "title": "Separate local administration from domain-wide privileges",
+  "slug": "separate-local-administration-from-domain-wide-privileges",
+  "historical_date": "2026-07-12",
+  "input_sha256": "a861b09273d259bdc6fb93064dfde73bfe81a50c145d3a2cacf9c253e38e35cd",
+  "created_at": "2026-10-23T19:56:19.584815+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Restrict local Administrator accounts on Windows Server 2025 using Group Policy to prevent lateral movement.",
+  "tags": [
+    "windows-server",
+    "active-directory",
+    "group-policy",
+    "security",
+    "local-administrator"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-330-learn-1.png",
+      "alt": "Screenshot that shows the Members tab for configuring GPOs to restrict the administrator account on domain-joined systems.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/b81f4cc63976d2a5834df5b805eae0fb0f7114c0/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-09-22T14:06:52Z",
+      "sha256": "d9e30e99434b4e1d406edd9845ce4f0efa5303327ba18d8404601fbcfeba6b04",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md",
+      "revision": "19ec1e900b041efcfa1a9eed73d1c0ac3555e475",
+      "revision_date": "2026-06-30T23:39:31Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Implementing Least-Privilege Administrative Models",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/19ec1e900b041efcfa1a9eed73d1c0ac3555e475/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md",
+      "revision": "b81f4cc63976d2a5834df5b805eae0fb0f7114c0",
+      "revision_date": "2025-09-22T14:06:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Appendix H - Securing Local Administrator Accounts and Groups",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-h--securing-local-administrator-accounts-and-groups",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/b81f4cc63976d2a5834df5b805eae0fb0f7114c0/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/understand-security-groups.md",
+      "revision": "6e20f882e7400d3b423267a6a5e728ad16b2a7c0",
+      "revision_date": "2025-09-22T15:28:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Active Directory Security Groups",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6e20f882e7400d3b423267a6a5e728ad16b2a7c0/WindowsServerDocs/identity/ad-ds/manage/understand-security-groups.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there any specific Windows Server 2025 features that might interact with these user rights assignments in unexpected ways?",
+    "Is it necessary to configure these settings for the domain Administrator account as well, or is the local restriction sufficient?",
+    "How does this GPO interact with other security policies that might allow local Administrator logon?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-local-administration-from-domain-wide-privileges.md",
+  "draft": true,
+  "word_count": 1009,
+  "claim_support_checks": [
+    {
+      "claim": "The local Administrator account is disabled by default on Windows Server 2025.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Group Policy can deny network access, batch job logon, service logon, and RDP logon for the local Administrator account.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Specifying 'Administrator' in the GPO restricts the local account, while 'DOMAIN\\Administrator' restricts the domain account.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Verification of network access denial can be done using the net use command.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot with a visible caption ('Screenshot that shows the Members tab...'). The editorial guidance explicitly forbids visible Microsoft Learn screenshot captions and requires source provenance to be kept in separate review records.",
+      "fix": "Remove the visible caption text from the image markdown. Ensure the image is placed beside the relevant step (GPO creation) as per guidance, but without the descriptive caption text that mimics the source UI."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts 'You need Domain Admin or Enterprise Admin rights to create and link the GPO.' This is an unsupported permission claim. While these are common, delegation of GPO creation/linking is possible via other roles. The source does not specify these exact permissions for this task.",
+      "fix": "Replace the specific permission claim with a general statement that administrative privileges are required to create and link Group Policy Objects, or refer to the specific delegation documentation without asserting a fixed set of roles."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph starting with 'Next steps' that offers vague advice ('look for domain accounts with excessive privileges'). The guidance forbids generic concluding paragraphs and requires ending with a concrete verification or next action.",
+      "fix": "Remove the 'Next steps' section. End the article after the 'Reverting changes' section or the verification steps, as the technical question is answered."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'The local Administrator account is disabled by default on Windows Server 2025.' While supported by S2 ('all versions... in mainstream support'), this is a static fact presented as a current state. The source text is from 2025, and the draft is dated 2026. This is acceptable but risks being outdated if support status changes. More critically, the draft implies this is the *only* reason for the risk, ignoring that enabled legacy accounts are the real vector.",
+      "fix": "Clarify that while disabled by default on modern versions, the restriction is critical for environments with legacy systems or where the account has been manually enabled, as emphasized in the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The verification step for 'Deny log on as a service' uses the Print Spooler service. The source S2 uses this example. However, the draft does not mention reverting the Print Spooler service configuration after testing, which is a destructive context omission if the test fails or leaves the service in a bad state.",
+      "fix": "Add a step to revert the Print Spooler service 'Log On' setting back to 'Local System Account' after verification, as instructed in the source S2 under 'Revert Changes to the Printer Spooler Service'."
+    }
+  ]
+}

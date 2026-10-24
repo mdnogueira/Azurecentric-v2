@@ -1,0 +1,128 @@
+{
+  "id": "AZC-281",
+  "title": "Monitor an HPC run without confusing observations and benchmarks",
+  "slug": "monitor-an-hpc-run-without-confusing-observations-and-benchmarks",
+  "historical_date": "2026-02-24",
+  "input_sha256": "b8ff975f7e849a13b2d2c91a7cdb0d2f71e1caa11198887f7c804f67f9941ab2",
+  "created_at": "2026-10-23T18:46:53.143776+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish Azure Batch operational metrics from Application Insights telemetry to monitor HPC runs effectively.",
+  "tags": [
+    "azure-batch",
+    "application-insights",
+    "hpc",
+    "monitoring",
+    "telemetry"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-281-learn-1.png",
+      "alt": "Screenshot of live stream compute node data.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/media/monitor-application-insights/applicationinsightslivestream.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-06-04T22:56:38Z",
+      "sha256": "91baff5eba0de110210fd9e7b97717bd7170640c1c6755de6ef8984b70082e4d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/monitor-application-insights.md",
+      "revision": "bb9e426cabbe0b3bf597d84424a5b22c16911c3f",
+      "revision_date": "2025-06-04T22:56:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Batch with Azure Application Insights",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/monitor-application-insights",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/monitor-application-insights.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/monitoring-overview.md",
+      "revision": "306b9bc8e6f3ec0a63b16efac6e4992c0365b8e4",
+      "revision_date": "2024-03-07T02:55:30Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/monitoring-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/306b9bc8e6f3ec0a63b16efac6e4992c0365b8e4/articles/batch/monitoring-overview.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-03-08T00:46:49Z; used previous public snapshot. Confirm continued applicability: articles/batch/monitoring-overview.md"
+  ],
+  "open_questions": [
+    "Does the provided code sample cover all necessary Application Insights assemblies for a production environment, or are additional packages required?",
+    "How does the telemetry initializer handle cases where the environment variables are not set, such as during local debugging?",
+    "What is the impact of staging large Application Insights binaries on task startup time for large-scale HPC jobs?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/monitor-an-hpc-run-without-confusing-observations-and-benchmarks.md",
+  "draft": true,
+  "word_count": 1286,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Batch metrics are available by default with a 30-day rolling history, while resource logs require a diagnostic setting.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Application Insights telemetry uses Azure VM Role and VM name by default, which is not suitable for Batch nodes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Environment variables AZ_BATCH_POOL_ID and AZ_BATCH_NODE_ID are available on compute nodes.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Application Insights binaries must be staged to compute nodes via task FilesToStage.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses the deprecated 'Instrumentation Key' concept and `Microsoft.ApplicationInsights.WindowsServer` package. Current Application Insights uses Connection Strings and the `Microsoft.ApplicationInsights.AspNetCore` or generic worker SDKs. The source text is outdated (2024 snapshot referencing pre-2024 practices), but the draft presents it as current guidance without noting the deprecation or migration path.",
+      "fix": "Update the code and instructions to use Connection Strings instead of Instrumentation Keys. Reference the current Application Insights SDK for .NET (generic worker) rather than the legacy Windows Server package. Explicitly note that the source documentation reflects older patterns if retaining the specific code snippets."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the `FilesToStage` approach ensures binaries are present for continuous monitoring via a start task, but the code snippet for the start task (`BatchStartTaskTelemetryRunner.exe`) is incomplete and lacks the necessary configuration context (e.g., how the start task accesses the AI config). It implies a seamless setup that isn't fully supported by the provided code structure.",
+      "fix": "Clarify that the start task example is illustrative. Provide the missing context for how the start task loads the AI configuration (e.g., copying the config file to a known location). Warn that staging large binaries for every task adds overhead, and suggest using Application Packages for better manageability as hinted in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Metrics are available by default... 30-day rolling history' without mentioning that this applies to resource metrics (pools, jobs, tasks) and not custom application telemetry. It conflates the two monitoring layers, potentially leading users to expect custom metrics in the default Batch metrics view.",
+      "fix": "Explicitly distinguish between Azure Batch resource metrics (default, 30-day retention) and Application Insights custom metrics (requires instrumentation, separate retention/pricing). Ensure the reader understands that custom metrics like 'Blob download time' only appear in Application Insights, not the default Batch metrics blade."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot with a credit line 'Used with permission from Microsoft.' which violates the editorial guidance to not add visible permission captions. It also repeats the same source citation style in a way that disrupts flow.",
+      "fix": "Remove the 'Used with permission from Microsoft.' caption from the image. Ensure source links are placed naturally within the text or in a dedicated references section, avoiding repetitive inline citations after every sentence."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with a generic paragraph starting with 'The key to effective monitoring is...', which is discouraged by the editorial guidance. It also includes a 'Next steps' section that is redundant given the source links provided.",
+      "fix": "Remove the generic concluding paragraph. End the article with the concrete verification step: 'Submit a small test job and check the Application Insights Live Stream for traces.' Remove the redundant 'Next steps' section and rely on the provided source links for further reading."
+    }
+  ]
+}

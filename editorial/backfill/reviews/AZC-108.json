@@ -1,0 +1,157 @@
+{
+  "id": "AZC-108",
+  "title": "Create a private endpoint and verify name resolution",
+  "slug": "create-a-private-endpoint-and-verify-name-resolution",
+  "historical_date": "2024-10-28",
+  "input_sha256": "39795a3c47c78a9608e7804c5328d54e4537822f5349e4c52bcb4faab34464fb",
+  "created_at": "2026-10-23T14:41:58.184276+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create a private endpoint for an Azure App Service and verify name resolution using a private DNS zone.",
+  "tags": [
+    "azure-private-link",
+    "private-endpoint",
+    "dns-resolution",
+    "app-service",
+    "networking"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-108-learn-1.png",
+      "alt": "Screenshot of dynamic IP address selection.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/0f60a19988d3b1ad5246f5728033603862af336c/articles/private-link/media/create-private-endpoint-portal/dynamic-ip-address.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-01T12:24:17Z",
+      "sha256": "0d02b7c6341da463c1ecc7892bf0b2bd946636deb1ec492842754279c3fbe781",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-108-learn-2.png",
+      "alt": "Screenshot of Private Link Center.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/917ab49269056f24b3859f21af962276411037a5/articles/private-link/media/private-endpoint-tsg/private-link-center.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-09-09T16:36:58Z",
+      "sha256": "40c9e08df7f7a2af6daf5865c3a10d07bc27089180a050d7caf63062f9f76532",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/create-private-endpoint-portal.md",
+      "revision": "0f60a19988d3b1ad5246f5728033603862af336c",
+      "revision_date": "2024-08-01T12:24:17Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Quickstart: Create a private endpoint - Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/create-private-endpoint-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0f60a19988d3b1ad5246f5728033603862af336c/articles/private-link/create-private-endpoint-portal.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/private-endpoint-dns.md",
+      "revision": "fb2e0c2eaf2c39b5a80d325b71c5a9b621ff7fc4",
+      "revision_date": "2024-10-15T17:23:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Private Endpoint private DNS zone values",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fb2e0c2eaf2c39b5a80d325b71c5a9b621ff7fc4/articles/private-link/private-endpoint-dns.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/troubleshoot-private-endpoint-connectivity.md",
+      "revision": "917ab49269056f24b3859f21af962276411037a5",
+      "revision_date": "2024-09-09T16:36:58Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot Azure Private Endpoint connectivity problems",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-endpoint-connectivity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/917ab49269056f24b3859f21af962276411037a5/articles/private-link/troubleshoot-private-endpoint-connectivity.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/virtual-network-create-with-bastion.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/create-test-virtual-machine.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/portal-clean-up.md"
+  ],
+  "open_questions": [
+    "Does the private DNS zone automatically create records for all subresources of an App Service, or only the 'sites' subresource?",
+    "What is the exact behavior if a static IP is assigned to a private endpoint and that IP is later used by another resource?",
+    "Are there any specific NSG rules required for the private endpoint subnet beyond allowing traffic to the target service?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-private-endpoint-and-verify-name-resolution.md",
+  "draft": true,
+  "word_count": 1306,
+  "claim_support_checks": [
+    {
+      "claim": "Private endpoints can be created for Azure App Services web apps.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The target subresource for an App Service web app private endpoint is 'sites'.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Private DNS zones should be linked to the virtual network to resolve private endpoint IP addresses.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Network security groups and route tables should be enabled on the subnet hosting the private endpoint.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "DNS resolution can be verified using nslookup on the client virtual machine.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the private DNS zone automatically creates an A-record if the recommended naming scheme is used. Source S2 explicitly states that private endpoint private DNS zone configurations will *only* automatically generate if you use the recommended naming scheme, but for App Services, the zone is `privatelink.azurewebsites.net`. The draft implies this works for the specific web app FQDN without clarifying that the automatic record creation is specific to the zone name matching the service's private link domain, and often requires the endpoint to be linked to the zone. More critically, S2 warns against placing records for multiple services in the same zone, which the draft mentions but the automatic creation claim is risky if the zone name doesn't match exactly.",
+      "fix": "Clarify that automatic A-record creation depends on the private DNS zone name matching the specific service's recommended private link domain exactly. For App Services, the zone is `privatelink.azurewebsites.net`. Ensure the text reflects that the record is created for the specific resource ID linked to the endpoint within that zone, and warn that manual records are needed if the zone name deviates."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Enabling the plan does not automatically protect the workload; it merely provides the connectivity option.' This is vague and potentially misleading. The source S1 lists required plans (Basic, Standard, etc.) as a prerequisite for creating the private endpoint. It does not discuss 'protection' in the sense of security posture beyond connectivity. The claim about 'protection' is an unsupported inference about security benefits not detailed in the sources.",
+      "fix": "Remove the speculative statement about 'protection'. Instead, state that specific App Service plans (Basic, Standard, PremiumV2, etc.) are required prerequisites to create a private endpoint, as per S1. Focus on the connectivity capability rather than undefined security benefits."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises: 'Do not place records for multiple services in the same DNS zone.' While S2 warns against this, it specifically refers to 'Existing Private DNS Zones linked to a single Azure service should not be associated with two different Azure service Private Endpoints.' It also says 'Create a DNS zone for each Private Endpoint of like services.' The draft's phrasing is slightly ambiguous. It could be interpreted as 'one zone per service type' vs 'one zone per endpoint'. S2 says 'Create a DNS zone for each Private Endpoint of like services', which is a strong recommendation to avoid conflicts, but the draft's warning is a bit broad. However, the bigger issue is the lack of context on *why* (A-record deletion/conflict).",
+      "fix": "Refine the warning to explicitly state the risk: associating a zone with multiple different service types or endpoints can lead to A-record deletion and resolution failures. Quote S2's caution about 'deletion of the initial A-record' to provide concrete context for the restriction."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description in the JSON metadata but does not render it or reference it in the body. The editorial guidance says 'Do not add an unrelated screenshot merely because it was supplied.' The draft uses the provided screenshots correctly but the diagram node list in the metadata is not utilized in the text. This is a minor structural issue.",
+      "fix": "Remove the diagram metadata from the JSON output if it is not rendered in the final text, or integrate a brief textual description of the flow if it adds value. Ensure the text stands alone without relying on the unrendered diagram nodes."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'The example uses an App Service web app named webapp-1 and a virtual machine named vm-1'. This is consistent with S1. However, S1 also mentions creating a VM via Bastion. The draft assumes the VM exists or is created. The draft's 'Prerequisites' section lists 'A virtual machine in that virtual network... to test connectivity.' This is accurate. No major issue here, but ensure the distinction between creating the VM for testing (as in S1) and having an existing VM is clear if the user doesn't have one.",
+      "fix": "No change needed. The draft accurately reflects the prerequisite of having a VM for testing, which aligns with S1's quickstart flow. Ensure the text implies the VM is ready for the verification steps."
+    }
+  ]
+}

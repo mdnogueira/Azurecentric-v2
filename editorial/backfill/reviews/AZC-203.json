@@ -1,0 +1,132 @@
+{
+  "id": "AZC-203",
+  "title": "Compare App Service and Container Apps for a small service",
+  "slug": "compare-app-service-and-container-apps-for-a-small-service",
+  "historical_date": "2025-07-21",
+  "input_sha256": "1cc98514c64b536267de608777d142c4e4eec048e7a89c9133573ea30743ba36",
+  "created_at": "2026-10-23T16:55:26.809037+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between Azure App Service and Container Apps for a small service by comparing web optimisation, container requirements, and scaling models.",
+  "tags": [
+    "azure-app-service",
+    "azure-container-apps",
+    "cloud-computing",
+    "microservices",
+    "serverless"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/compare-options.md",
+      "revision": "284c2f8341db31e226de90420968d746809b5beb",
+      "revision_date": "2025-07-18T15:47:41Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Comparing Container Apps with other Azure container options",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/compare-options",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/284c2f8341db31e226de90420968d746809b5beb/articles/container-apps/compare-options.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/overview.md",
+      "revision": "b1b1f19ef0d8ad4e2c57ba25ec5fd97e3fbebb12",
+      "revision_date": "2025-07-11T06:51:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Container Apps overview",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b1b1f19ef0d8ad4e2c57ba25ec5fd97e3fbebb12/articles/container-apps/overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-overview.md",
+      "revision": "6abff5d7af509fe34b91a8e6ae25dcd6b016743d",
+      "revision_date": "2025-03-06T23:12:34Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Functions overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6abff5d7af509fe34b91a8e6ae25dcd6b016743d/articles/azure-functions/functions-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source text provide specific details on App Service autoscale features available in Basic tier versus other tiers?",
+    "Are there any specific cost comparisons or quotas mentioned for App Service vs Container Apps for small workloads?",
+    "Is there any information on migration paths between App Service and Container Apps?",
+    "Does the source text mention any specific integration points between App Service and Container Apps beyond general integration?",
+    "Are there any limitations on Container Apps regarding VNet integration or private endpoints mentioned in the provided sources?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/compare-app-service-and-container-apps-for-a-small-service.md",
+  "draft": true,
+  "word_count": 801,
+  "claim_support_checks": [
+    {
+      "claim": "Azure App Service is optimised for web applications and supports deployment using code or containers.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Container Apps is optimised for general purpose containers and microservices, supporting scale to zero.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Container Apps does not provide direct access to Kubernetes APIs, unlike AKS.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Applications scaling on CPU or memory load cannot scale to zero in Container Apps.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Functions can be hosted in App Service plans or Container Apps.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Extra separate plans do not inherently save cost' and 'shared App Service compute is not absence of all tenant isolation'. These are unsupported generalizations not found in the sources. The sources do not discuss App Service pricing tiers, cost implications, or tenant isolation details.",
+      "fix": "Remove the speculative statements about cost savings and tenant isolation. Stick to the sourced fact that App Service is optimized for web apps and supports code or container deployments without making unsupported financial or security claims."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states 'Container Apps requires you to package your application in a container'. This is misleading. While Container Apps runs containers, the source (S1) notes it supports Azure Functions, which can be code-based. The draft ignores that Functions can run on Container Apps, implying a strict container-only requirement for the platform.",
+      "fix": "Clarify that while Container Apps runs containers, it also supports running Azure Functions (which can be code-based) for event-driven scenarios. Do not imply that *all* workloads on Container Apps must be manually packaged containers by the user."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests 'start by deploying a simple web application to both environments if possible'. This is vague operational advice not supported by the sources. The sources provide specific quickstart links but do not recommend a 'deploy to both' comparison strategy as a general best practice for small services.",
+      "fix": "Remove the vague 'deploy to both' recommendation. Instead, direct the reader to the specific quickstart links provided in the sources for their chosen path, as the sources emphasize finding the 'best fit' based on specific scenario needs rather than experimental comparison."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'shared App Service compute is not absence of all tenant isolation'. This phrasing is confusing and technically imprecise. It likely attempts to describe multi-tenant sharing but fails to clearly articulate the isolation model, which is not detailed in the provided sources.",
+      "fix": "Delete this sentence. The sources do not provide details on App Service tenant isolation models. Focus on the supported features: managed hosting, web app optimization, and integration with other Azure services."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies a direct comparison of 'operational complexity' by stating App Service is 'straightforward' while Container Apps has 'many application-specific concepts'. While S1 mentions Container Apps provides 'many application-specific concepts', it does not explicitly label App Service as 'straightforward' or lower complexity in a comparative sense.",
+      "fix": "Rephrase to reflect that Container Apps provides 'many application-specific concepts on top of containers' (S1) and is optimized for microservices, while App Service is 'optimized for web applications' (S1). Avoid subjective labels like 'straightforward' unless sourced."
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "AZC-351",
+  "title": "Plan backup coverage for a Hyper-V workload",
+  "slug": "plan-backup-coverage-for-a-hyper-v-workload",
+  "historical_date": "2026-09-08",
+  "input_sha256": "2d580ba3beb16f758d9541e9bc2b09950b9935ce68ae32fa2353dddf07e11e20",
+  "created_at": "2026-10-23T20:23:43.870216+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan backup coverage for a Hyper-V workload by distinguishing between VSS-based backups and Hyper-V Replica, and verifying recovery points.",
+  "tags": [
+    "hyper-v",
+    "backup",
+    "replication",
+    "windows-server-2025",
+    "disaster-recovery"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/backup-approaches.md",
+      "revision": "a46530caf76fddf6bbe2c8f2db902c22cac162b3",
+      "revision_date": "2025-08-14T14:58:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Hyper-V Backup Approaches",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/backup-approaches",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a46530caf76fddf6bbe2c8f2db902c22cac162b3/WindowsServerDocs/virtualization/hyper-v/backup-approaches.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Virtual-machines-should-be-backed-up-at-least-once-every-week.md",
+      "revision": "459f37daed334e9c93181c42b5221ab4bb66e22d",
+      "revision_date": "2025-10-15T16:20:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Virtual machines should be backed up at least once every week",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/virtual-machines-should-be-backed-up-at-least-once-every-week",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/459f37daed334e9c93181c42b5221ab4bb66e22d/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Virtual-machines-should-be-backed-up-at-least-once-every-week.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Set-up-Hyper-V-Replica.md",
+      "revision": "df14ca997c54299e8e3a3b5ce7941e1e4a403031",
+      "revision_date": "2025-11-07T09:55:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Set up Hyper-V Replica",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/df14ca997c54299e8e3a3b5ce7941e1e4a403031/WindowsServerDocs/virtualization/hyper-v/manage/Set-up-Hyper-V-Replica.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-10-15T16:38:39Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Virtual-machines-should-be-backed-up-at-least-once-every-week.md",
+    "Public document removed/moved on 2025-11-13T17:10:24Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Set-up-Hyper-V-Replica.md"
+  ],
+  "open_questions": [
+    "Does the WMI-based backup method support all versions of Windows Server 2025, or are there specific editions where it is limited?",
+    "What are the exact performance impacts of enabling Resilient Change Tracking on high-I/O workloads?",
+    "How does Hyper-V Replica handle VMs with multiple VHDs located on different storage volumes?",
+    "Are there any known limitations with the Hyper-V VSS writer when used with specific backup software vendors?",
+    "What is the maximum number of VMs that can be effectively backed up using the host VSS writer before performance degrades significantly?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-backup-coverage-for-a-hyper-v-workload.md",
+  "draft": true,
+  "word_count": 1069,
+  "claim_support_checks": [
+    {
+      "claim": "Hyper-V VM backups must include configuration, guest state, and runtime state files to fully capture the VM state.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Hyper-V VSS writer is suitable for small-scale backup operations.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hyper-V WMI-based backup is more scalable than host VSS backup and uses Resilient Change Tracking.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hyper-V Replica creates an offline copy of a live VM and uses asynchronous replication.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Extended replication does not support application-consistent recovery points.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Best practices recommend backing up VMs at least once a week.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Hyper-V Replica is 'not a backup' and 'does not protect against data corruption'. This is misleading; the source (S3) explicitly states that with additional recovery points, you can 'recover data to an earlier point in time', which is a form of protection against corruption if the corruption is detected before the latest recovery point is replicated. The draft ignores this capability.",
+      "fix": "Clarify that while Hyper-V Replica is primarily for disaster recovery, the ability to retain multiple recovery points (up to 24) allows for recovery from data corruption events that occurred prior to the most recent replication cycle, provided the corruption hasn't propagated to the stored recovery points."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that for app-consistent recovery points with Hyper-V Replica, 'the Hyper-V VMM Requestor Service must be running on both primary and secondary Hyper-V servers'. The source (S3) only mentions this requirement in the context of selecting 'Volume Shadow Copy Service (VSS) frequency' for app-consistent snapshots, but does not explicitly state it must run on the *secondary* server for the *creation* of these points on the primary. This is a specific technical detail that may be inaccurate or misinterpreted.",
+      "fix": "Verify the exact requirement for the VMM Requestor Service. If the source only implies it's needed for the VSS process on the primary, remove the claim about it needing to run on the secondary server to avoid technical inaccuracy."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends backing up VMs 'at least once every week' based on S2. However, S2 is a Best Practices Analyzer rule, not a universal mandate. The draft presents this as a hard rule without context that this is a *recommendation* from a specific tool, and that the frequency can be adjusted based on RPO requirements.",
+      "fix": "Rephrase to state that the Best Practices Analyzer recommends weekly backups as a baseline, but the actual frequency should be determined by the organization's RPO requirements, which may necessitate more frequent backups for critical workloads."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's decision flow diagram and text imply a binary choice between 'Backup' and 'Replica'. In reality, a robust strategy often uses both, as hinted in the 'Plan your coverage' section. The structure could be clearer in presenting them as complementary, not mutually exclusive, from the outset.",
+      "fix": "Adjust the introductory section to explicitly state that a comprehensive strategy typically employs both backups (for data corruption/long-term retention) and replication (for rapid site recovery), rather than framing them as a single decision point."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Resilient Change Tracking (RCT)' but does not explain what it is or how it differs from standard change tracking, which might be confusing for readers unfamiliar with the term. The source (S1) mentions it but doesn't define it.",
+      "fix": "Add a brief explanation that RCT is a mechanism used by the WMI-based backup to efficiently track changes to virtual hard disks, reducing the overhead compared to full scans, as implied by its mention in the context of scalability."
+    }
+  ]
+}

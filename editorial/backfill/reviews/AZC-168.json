@@ -1,0 +1,137 @@
+{
+  "id": "AZC-168",
+  "title": "Choose where reusable infrastructure modules should live",
+  "historical_date": "2025-04-14",
+  "created_at": "2026-10-23T23:24:24.820562+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between Bicep private registries and template specs by evaluating tooling constraints and artifact requirements.",
+  "tags": [
+    "bicep",
+    "infrastructure-as-code",
+    "azure-container-registry",
+    "template-specs",
+    "devops"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/modules.md",
+      "revision": "2b440fbfb137918392f255da033939a007568ab5",
+      "revision_date": "2025-04-11T22:08:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2b440fbfb137918392f255da033939a007568ab5/articles/azure-resource-manager/bicep/modules.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/private-module-registry.md",
+      "revision": "2bc2ce229764d12fe5d48ce7187fdaf1c1cb3c0d",
+      "revision_date": "2025-01-09T12:44:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create a private container registry in Azure for Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/private-module-registry",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2bc2ce229764d12fe5d48ce7187fdaf1c1cb3c0d/articles/azure-resource-manager/bicep/private-module-registry.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9dab744dd92a844521ff089faf5b6b3fbd6b391f",
+      "revision_date": "2024-07-11T14:50:01Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9dab744dd92a844521ff089faf5b6b3fbd6b391f/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the private registry preserve the exact same artifact embedding capabilities as local Bicep files, or are there limitations when published?",
+    "Are there any specific RBAC roles required for template specs beyond standard Reader/Contributor, or is it purely resource-level access?",
+    "Can template specs be deployed to scopes other than the subscription containing the template spec resource?",
+    "Is there a performance difference between resolving modules from a private registry versus a template spec in large-scale deployments?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-where-reusable-infrastructure-modules-should-live.md",
+  "draft": true,
+  "word_count": 1076,
+  "claim_support_checks": [
+    {
+      "claim": "Bicep private module registry is built on Azure Container Registry and supports only Bicep.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Template specs can be deployed from the Azure portal, Azure PowerShell, the Azure CLI, and the API.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Bicep supports embedding non-template artifacts using loadTextContent and loadFileAsBase64.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Template specs cannot package non-template artifacts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Private registries require azureADAuthenticationAsArmPolicy to be enabled.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Bicep CLI version 0.4.1008 or later is required to work with module registries.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that 'Basic SKUs do not offer geo-replication or audit logs.' Source S2 explicitly states: 'You can use any of the available registry SKUs for the module registry.' It does not restrict geo-replication to Standard/Premium only in the context of module registry configuration, nor does it list audit logs as a requirement for the registry type itself. This is a specific unsupported constraint.",
+      "fix": "Remove the claim that Basic SKUs lack geo-replication or audit logs. Source S2 allows any SKU. If geo-replication is desired, note it is an ACR feature available in specific SKUs, but do not state it as a blocker for module registry usage or imply Basic SKUs are invalid for this purpose."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Template specs cannot package these additional artifacts' referring to non-template files like scripts. While S1 says 'Template specs can't package these artifacts,' it refers to the specific Bicep functions `loadTextContent` and `loadFileAsBase64`. Template specs can contain ARM templates that reference external URIs. The draft's phrasing implies a total inability to include scripts, which is misleading; they just can't be embedded via Bicep's specific functions.",
+      "fix": "Clarify that template specs cannot use Bicep's `loadTextContent` or `loadFileAsBase64` to embed artifacts directly into the template definition. They can still reference external scripts via URIs in the ARM template, unlike the Bicep registry which preserves the embedded capability."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses :::image directives in the source text but the guidance says 'Do not copy Microsoft Learn :::image directives into Astro posts.' The draft body text does not contain these, but the 'screenshots' section in the brief lists them. The draft body text is clean, but the 'Verification' section is generic. The guidance says 'End with a concrete verification or decision.' The current ending is acceptable but could be tighter.",
+      "fix": "Ensure no :::image directives are present in the final markdown. The draft body is clean. The 'Verification' section is adequate but ensure it doesn't promise 'security on its own' without linking to specific RBAC docs. The current text is acceptable."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Bicep extension version 0.27 or newer' for Go to Definition with source. Source S2 says 'Bicep extension version 0.27 or new is required'. This is a minor typo in the source ('new' vs 'newer') but the draft corrects it. However, the draft also says 'Bicep CLI version 0.27.1 or newer' for publishing with source. S2 says 'Bicep CLI version 0.27.1 or newer'. This is consistent.",
+      "fix": "No changes needed for version numbers. Ensure the distinction between CLI and Extension versions is clear as per S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's 'Decision criteria' section includes 'Do you have existing ACR infrastructure?'. This is a valid consideration but not a technical constraint from the sources. It's an operational preference. The guidance says 'Develop the reader's particular decision instead of copying a product catalogue.' This is borderline but acceptable as a practical consideration.",
+      "fix": "Keep the decision criteria but ensure it doesn't imply ACR is the only way. The draft does this well. No change needed."
+    }
+  ]
+}

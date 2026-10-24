@@ -1,0 +1,145 @@
+{
+  "id": "AZC-276",
+  "title": "Plan identity permissions for a production deployment pipeline",
+  "slug": "plan-identity-permissions-for-a-production-deployment-pipeline",
+  "historical_date": "2026-02-11",
+  "input_sha256": "e8ea762a051d2093dcb45e52a99f29f412449f439f589dec1b9c7c9666c4f771",
+  "created_at": "2026-10-23T21:42:21.757512+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Scope Entra ID roles to app registrations and apply Conditional Access to pipeline service principals.",
+  "tags": [
+    "entra-id",
+    "conditional-access",
+    "rbac",
+    "workload-identity",
+    "deployment-pipeline"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-276-learn-1.png",
+      "alt": "Screenshot of Roles and administrators page in Microsoft Entra admin center.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/06a5d0ec25e10513a214bbe1123e6957e9a538ca/docs/media/common/entra-roles-admins.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-01-01T01:21:06Z",
+      "sha256": "0ac447cb9d12c1d6fa9fdbf4767db112cce80cf950afba49ed3c8c207ca497a7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/workload-identity.md",
+      "revision": "b78836580569b2b3fe0d4edbdefc3aa527895af2",
+      "revision_date": "2026-02-10T23:58:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Microsoft Entra Conditional Access for workload identities",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/b78836580569b2b3fe0d4edbdefc3aa527895af2/docs/identity/conditional-access/workload-identity.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/plan-an-application-integration.md",
+      "revision": "0fd16b2a9b825e6c60d356aff16ace42932183cd",
+      "revision_date": "2025-11-06T02:13:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Get started integrating Microsoft Entra ID with apps",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-an-application-integration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/0fd16b2a9b825e6c60d356aff16ace42932183cd/docs/identity/enterprise-apps/plan-an-application-integration.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "revision": "06a5d0ec25e10513a214bbe1123e6957e9a538ca",
+      "revision_date": "2025-01-01T01:21:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Assign Microsoft Entra roles at different scopes",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/assign-roles-different-scopes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/06a5d0ec25e10513a214bbe1123e6957e9a538ca/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-01-01T22:39:33Z; used previous public snapshot. Confirm continued applicability: docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+    "Include unavailable: includes/portal-update.md"
+  ],
+  "open_questions": [
+    "Does the source specify if named locations must be created before they can be excluded in Conditional Access?",
+    "Is there a specific risk level threshold for service principal risk that is recommended for production pipelines?",
+    "How does the scope of an administrative unit interact with Conditional Access policies if a service principal is a member?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-identity-permissions-for-a-production-deployment-pipeline.md",
+  "draft": true,
+  "word_count": 1077,
+  "claim_support_checks": [
+    {
+      "claim": "Conditional Access for workload identities requires Workload ID Premium licenses.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Conditional Access policies for service principals can only block access.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Roles can be assigned at the application registration scope to limit management authority.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Service principals assigned to groups are not covered by Conditional Access policies assigned to those groups.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Report-only mode allows administrators to estimate the effects of a policy before enforcement.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Application Administrator role can be scoped to a single app registration. Source S3 explicitly states that built-in roles are assigned by default at tenant scope and only custom roles (and some relevant built-in roles depending on resource type) can be scoped to a single resource. It does not confirm Application Administrator supports app registration scoping, creating a risk of failed implementation.",
+      "fix": "Verify if Application Administrator supports app registration scoping in the current documentation. If not, recommend creating a custom role with specific app registration permissions and scoping that custom role, or clarify that built-in role scoping is limited."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft presents the PowerShell code as a complete solution but omits the required scope declaration in Connect-MgGraph. Source S3 shows the need for specific scopes like RoleManagement.ReadWrite.Directory. The draft's snippet is incomplete and may fail if the user's session lacks these permissions, leading to confusion.",
+      "fix": "Update the PowerShell example to include the necessary scopes in Connect-MgGraph, such as 'RoleManagement.ReadWrite.Directory', 'Application.Read.All', and 'User.Read.All', ensuring the code is functional and matches the source's prerequisite guidance."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that adding a service principal to a group does not enforce Conditional Access policies. While true, it implies this is the only way to assign them. It fails to mention that service principals can be assigned directly to the policy as a workload identity, which is the primary method described in Source S1.",
+      "fix": "Clarify that service principals must be assigned directly to the Conditional Access policy as workload identities, not via groups. Emphasize that group assignment is explicitly unsupported for this feature, as per Source S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with a generic paragraph starting with 'By scoping management permissions...'. This violates the editorial guidance to remove generic concluding paragraphs and end with a concrete verification or next action.",
+      "fix": "Remove the concluding paragraph. End the article with the concrete next action: 'Review the sign-in logs after the first enforced deployment to ensure no legitimate requests are being blocked.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Workload Identities Premium licenses' but does not clarify that this is a specific add-on or tier. Source S1 notes that in directories without appropriate licenses, existing policies continue to function but cannot be modified. The draft should reflect this nuance to avoid implying immediate failure for unlicensed tenants.",
+      "fix": "Add a note that existing Conditional Access policies for workload identities continue to function in unlicensed directories, but new policies cannot be created or modified without the Workload Identities Premium license."
+    }
+  ]
+}

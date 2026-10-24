@@ -1,0 +1,96 @@
+{
+  "id": "AZC-176",
+  "title": "Test a planned failover and record the application result",
+  "slug": "test-a-planned-failover-and-record-the-application-result",
+  "historical_date": "2025-05-07",
+  "input_sha256": "bffa8d013d31b763bdf901d00a1fad4ae3f6761ff913a1d1a3cfe53829c7879a",
+  "created_at": "2026-10-23T16:19:08.392491+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Execute a planned failover in a Windows Server failover cluster and verify application health using PowerShell.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/create-failover-cluster.md",
+      "revision": "1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd",
+      "revision_date": "2025-05-01T00:47:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/create-failover-cluster",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd/WindowsServerDocs/failover-clustering/create-failover-cluster.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "revision": "1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd",
+      "revision_date": "2025-05-01T00:47:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd/WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/test-a-planned-failover-and-record-the-application-result.md",
+  "draft": true,
+  "word_count": 991,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses `Move-ClusterGroup` for a planned failover. This cmdlet performs an *unplanned* (forced) failover, which simulates a node crash and does not allow for graceful application shutdown or data flushing. A planned failover requires `Move-ClusterGroup -PreferredNode` or `Move-ClusterNode`, which coordinates the move cleanly. Using the wrong cmdlet invalidates the 'planned' premise and risks data corruption.",
+      "fix": "Replace `Move-ClusterGroup -Name 'MyClusterRole' -Node 'TargetNode'` with `Move-ClusterGroup -Name 'MyClusterRole' -PreferredNode 'TargetNode'`. Explicitly state that this command initiates a planned, coordinated move, distinct from the forced move which bypasses graceful shutdown."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests running `Test-Cluster` on nodes intended for a failover test. `Test-Cluster` is a validation tool for *creating* a new cluster, not for testing an existing one's failover capability. It checks hardware compatibility and network settings but does not simulate or verify the actual failover process of running roles. This is a category error in procedure.",
+      "fix": "Remove the `Test-Cluster` step from the failover testing procedure. Instead, instruct the user to run `Get-Cluster` and `Get-ClusterNode` to verify the current cluster state and node health. Reference S1 only for initial cluster creation context, not for ongoing failover testing."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims `Move-ClusterGroup` (if corrected to planned) 'does not simulate a sudden failure'. This is misleading. A planned failover *is* a test of the cluster's ability to handle a node removal. The distinction is not between 'simulation' and 'reality', but between 'graceful migration' and 'crash recovery'. The current phrasing minimizes the significance of the test.",
+      "fix": "Rephrase to: 'This operation tests the cluster’s ability to migrate the workload gracefully, ensuring services shut down and restart correctly on the target node without data loss. It differs from an unplanned failover, which forces a restart without graceful shutdown.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph starting with 'The key is to treat...'. This violates the editorial guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Delete the final paragraph starting with 'The key is to treat...'. End the article immediately after the 'Record the outcome' section or the specific next action of testing the reverse failover."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions checking Event 1069 (RCM_RESOURCE_FAILURE) as a primary indicator of failure. While valid, Event 1181 (NETRES_RESOURCE_START_ERROR) is more specific to the *start* failure during failover. The draft lists both but doesn't prioritize based on the failover context. Also, the draft lacks a specific command to check the *history* of the failover event, which is crucial for 'recording the outcome'.",
+      "fix": "Add a step to record the failover event using `Get-ClusterLog` or checking Event ID 1177/1135 for quorum/membership changes. Clarify that 1181 is the specific error for service start failure during the move, while 1069 is a general resource failure."
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "AZC-226",
+  "title": "Review drift before applying another infrastructure deployment",
+  "slug": "review-drift-before-applying-another-infrastructure-deployment",
+  "historical_date": "2025-09-24",
+  "input_sha256": "dd15fb35b6d8d4602dc3ea369572cebe2b1c18e8743047c5875e30c9e8ea1d89",
+  "created_at": "2026-10-23T17:27:54.661934+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Bicep What-If to review infrastructure drift and validate changes before committing them to Azure.",
+  "tags": [
+    "bicep",
+    "azure-resource-manager",
+    "infrastructure-as-code",
+    "deployment",
+    "what-if",
+    "azure-cli"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-what-if.md",
+      "revision": "a637e99778920d71f460f1bce90894e09a326272",
+      "revision_date": "2025-09-09T18:33:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep What-If: Preview Changes Before Deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a637e99778920d71f460f1bce90894e09a326272/articles/azure-resource-manager/bicep/deploy-what-if.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "ed91d665a30b65daf1d5fdc8f4a58e2a9a3af7bd",
+      "revision_date": "2025-06-26T11:13:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ed91d665a30b65daf1d5fdc8f4a58e2a9a3af7bd/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-cli.md",
+      "revision": "6f222407557b7ee229409fc2bc6be275f28865a8",
+      "revision_date": "2025-06-03T14:09:49Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy Bicep files with the Azure CLI",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6f222407557b7ee229409fc2bc6be275f28865a8/articles/azure-resource-manager/bicep/deploy-cli.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific permission requirements for subscription-level What-If operations?",
+    "How does What-If handle cross-resource-group dependencies in nested deployments?",
+    "What is the exact behavior of What-If when a resource type is not supported?",
+    "How can we filter out 'noise' from What-If results programmatically?",
+    "What are the performance implications of running What-If on large templates?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-drift-before-applying-another-infrastructure-deployment.md",
+  "draft": true,
+  "word_count": 894,
+  "claim_support_checks": [
+    {
+      "claim": "What-If operation requires the same permissions as a live deployment.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure CLI 2.76.0 or later introduces the --validation-level switch.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "What-If cannot resolve the reference function.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "What-If supports resource group, subscription, management group, and tenant level deployments.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Short-circuiting can occur when ARM cannot fully analyze a module or resource.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses the phrase 'This approach ensures you see the predicted changes and can confirm the deployment manually' in the Confirming deployments section. This violates the editorial guidance to remove generic concluding paragraphs starting with 'This approach ensures'.",
+      "fix": "Delete the sentence 'This approach ensures you see the predicted changes and can confirm the deployment manually [Bicep What-If: Preview Changes Before Deployment](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if).' and end the section after the code block."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft cites Azure CLI 2.14.0 as the requirement for 'basic What-If operations'. Source S1 states that CLI 2.14.0 is required for installation, but S1 also notes that CLI 2.75.0+ provides diagnostics. The draft implies 2.14.0 is sufficient for all 'basic' use, missing the nuance that earlier versions fail silently on diagnostics.",
+      "fix": "Clarify that while Azure CLI 2.14.0+ is required, versions 2.75.0+ are recommended for diagnostic visibility. Update the text to reflect that earlier versions execute the operation but do not display diagnostics for short-circuiting or unevaluated expressions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Next steps' paragraph beginning with 'Review the What-If output carefully...'. The editorial guidance explicitly forbids generic concluding paragraphs starting with 'By following', 'By starting', or 'This approach ensures', and advises ending with a concrete verification or next action.",
+      "fix": "Remove the entire 'Next steps' section. The technical question is answered by the programmatic evaluation and confirmation steps. No generic advice is needed."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the source link citation after almost every sentence and paragraph. This violates the guidance to 'Use a few well-placed source links rather than repeating the same citation after every sentence'.",
+      "fix": "Consolidate citations. Place a single source link at the end of the section or paragraph where the information is introduced, rather than repeating it after every claim or code block."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'What-If cannot resolve the reference function' as a universal limitation. While supported by S1, it should be contextualized that this causes 'noise' (predicted changes) rather than failure, which the draft explains but could be tighter.",
+      "fix": "Ensure the explanation clearly distinguishes that the `reference` function causes the What-If operation to predict a change (noise) rather than failing the operation. The current text is mostly correct but can be condensed to avoid redundancy with the 'noise' section."
+    }
+  ]
+}

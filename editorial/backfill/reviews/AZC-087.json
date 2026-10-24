@@ -1,0 +1,106 @@
+{
+  "id": "AZC-087",
+  "title": "Send and receive an initial Service Bus message",
+  "slug": "send-and-receive-an-initial-service-bus-message",
+  "historical_date": "2024-08-31",
+  "input_sha256": "bde3abfd773884b3762c0ee8f156845fe366df71a09150a79be85c8fe3fc29d9",
+  "created_at": "2026-10-23T14:13:01.801867+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Send and receive an initial Service Bus message using Python, covering namespace setup, authentication, and verification.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-087-learn-1.png",
+      "alt": "Screenshot showing a button to sign in to Azure using Visual Studio.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9993806083c433837f9804c268df75c076daf9b1/articles/service-bus-messaging/media/service-bus-dotnet-get-started-with-queues/azure-sign-button-visual-studio.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-02-03T18:18:24Z",
+      "sha256": "0d9b9f1d5076aaece4bf41c2eafc766f8b2f88c2c0ce12f1354f0ea19bc95fa8",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-quickstart-portal.md",
+      "revision": "608ab0772c4098d104371a69bdcdb1ff4afefea5",
+      "revision_date": "2023-12-11T15:22:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use the Azure portal to create a Service Bus queue",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/608ab0772c4098d104371a69bdcdb1ff4afefea5/articles/service-bus-messaging/service-bus-quickstart-portal.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-dotnet-get-started-with-queues.md",
+      "revision": "9993806083c433837f9804c268df75c076daf9b1",
+      "revision_date": "2024-02-03T18:18:24Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Quickstart - Use Azure Service Bus queues from .NET app",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9993806083c433837f9804c268df75c076daf9b1/articles/service-bus-messaging/service-bus-dotnet-get-started-with-queues.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-python-how-to-use-queues.md",
+      "revision": "eff513243cfcf444a8b44a9a93e26b3e5bdf0425",
+      "revision_date": "2024-02-07T03:42:20Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Get started with Azure Service Bus queues (Python)",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-python-how-to-use-queues",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/eff513243cfcf444a8b44a9a93e26b3e5bdf0425/articles/service-bus-messaging/service-bus-python-how-to-use-queues.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/send-and-receive-an-initial-service-bus-message.md",
+  "draft": true,
+  "word_count": 814,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft omits the `azure-identity` package installation for the passwordless section, which is required for `DefaultAzureCredential`. It also claims Basic tier works for queues without noting the source explicitly recommends Standard for the quickstart to avoid tier confusion, though Basic does support queues. The main issue is the incomplete passwordless prerequisite list.",
+      "fix": "Add `pip install azure-identity` to the passwordless prerequisites section. Clarify that while Basic supports queues, Standard is the recommended tier for most scenarios including topics, aligning with the source's quickstart recommendation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Basic tier does not support topics and subscriptions, though it works for queues.' While factually true, the source S1/S2/S3 explicitly instructs selecting **Standard** for the quickstart and warns that topics/subscriptions aren't supported in Basic. The draft's phrasing might imply Basic is a viable alternative for the quickstart, which contradicts the source's explicit instruction to select Standard.",
+      "fix": "Align with the source's explicit instruction: 'For this quickstart, select Standard.' Remove the suggestion that Basic is a viable alternative for the initial setup to avoid confusion with the source's specific guidance."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a generic 'Verification and next steps' section that begins with 'The key verification point is...'. The editorial guidance forbids generic concluding paragraphs beginning with 'By following', 'By starting', or 'This approach ensures'. While this doesn't start with those exact words, it is a generic concluding paragraph that adds no specific technical value beyond what was already stated in the verification steps.",
+      "fix": "Remove the 'Verification and next steps' section entirely. The verification steps are already covered in the 'Send a message' and 'Receive a message' sections. End with the concrete verification of the Active message count."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Dead-lettered message count should remain 0' in the receive section. This is a negative assertion that adds clutter. The source only mentions checking Active message count and incoming/outgoing counts. It does not mention dead-lettered count as a verification step for a successful receive.",
+      "fix": "Remove the reference to 'Dead-lettered message count'. Focus only on the Active message count dropping to 0, which is the direct verification of successful consumption as per the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's Python code for `send.py` uses `logging_enable=True`. The source S3 also uses `logging_enable=True`. However, the draft's `recv.py` code also uses `logging_enable=True`. This is consistent. No issue here. However, the draft's `send.py` code does not handle the case where the message might be too large for a batch if it were a batch, but it's a single message. The code is correct. The issue is minor: the draft says 'The code below uses the connection string...'. It should explicitly state that this is for the connection string method, which it does. No major issue. I will mark this as low/no issue if I can't find one. Let's look at the 'Choose your authentication method' section. It says 'For this initial test, we will use the Connection String method...'. This is a decision, not a fact. It's fine. Let's look at the 'Create the Service Bus namespace' section. It says 'Basic tier does not support topics and subscriptions, though it works for queues.' This is a factual claim. The source S1 says 'If you want to use topics and subscriptions, choose either Standard or Premium. Topics/subscriptions aren't supported in the Basic pricing tier.' It doesn't explicitly say Basic works for queues, but it implies it by saying 'For this quickstart, select Standard' and the prerequisite is just 'create a namespace'. The source S1 includes `service-bus-create-namespace-portal.md` which says 'For Pricing tier, select the pricing tier (Basic, Standard, or Premium)... For this quickstart, select Standard.' It doesn't explicitly say Basic works for queues, but it's a known fact. However, the source doesn't explicitly state 'Basic works for queues'. It only says 'Topics/subscriptions aren't supported in Basic'. The absence of a statement that Basic works for queues means the draft is inferring a fact not explicitly in the source. Although it is true, the editor guideline says 'Source absence is not proof. Do not invent additional facts.' So, claiming Basic works for queues is an inference. The fix is to remove the claim about Basic working for queues or qualify it as 'known to support queues' but since the source doesn't say it, it's safer to just follow the source's instruction to select Standard.",
+      "fix": "Remove the statement 'Basic tier does not support topics and subscriptions, though it works for queues.' The source only explicitly states that topics/subscriptions are not supported in Basic. It does not explicitly confirm Basic supports queues, so this is an inferred fact. Stick to the source's instruction to select Standard."
+    }
+  ]
+}

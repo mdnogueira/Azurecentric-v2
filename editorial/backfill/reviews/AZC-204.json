@@ -1,0 +1,135 @@
+{
+  "id": "AZC-204",
+  "title": "Configure VM backup and test the recovery path",
+  "slug": "configure-vm-backup-and-test-the-recovery-path",
+  "historical_date": "2025-07-23",
+  "input_sha256": "b6dd5c7b0bc42f09fd89db1eeaae62e8eb087358a573c46e846cfe3a888fcae7",
+  "created_at": "2026-10-23T16:58:06.831737+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure VM restore points, copy them cross-region, and verify the recovery path using Azure CLI.",
+  "tags": [
+    "azure-virtual-machines",
+    "backup-and-recovery",
+    "restore-points",
+    "azure-cli",
+    "disaster-recovery"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/virtual-machines-create-restore-points.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use virtual machine restore points",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/virtual-machines-create-restore-points.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/virtual-machines-create-restore-points-cli.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Creating Virtual Machine Restore Points using Azure CLI",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/virtual-machines-create-restore-points-cli.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/virtual-machines-copy-restore-points-how-to.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Copy VM restore points to another region",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-copy-restore-points-how-to",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/virtual-machines-copy-restore-points-how-to.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/virtual-machines-create-restore-points.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/virtual-machines-create-restore-points-cli.md",
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/virtual-machines-copy-restore-points-how-to.md"
+  ],
+  "open_questions": [
+    "The Azure CLI documentation does not explicitly show the `sourceRestorePoint` parameter in the `az restore-point create` command for cross-region copy. Should the article recommend using the REST API or PowerShell for this step, or is there a CLI workaround not documented in the provided sources?",
+    "The sources mention that cross-region copy is in public preview. Are there any specific regional availability constraints for this feature that should be noted?",
+    "The article assumes the user has Contributor or Owner permissions. Are there more granular roles that can perform these actions, as per the source documentation?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-vm-backup-and-test-the-recovery-path.md",
+  "draft": true,
+  "word_count": 1094,
+  "claim_support_checks": [
+    {
+      "claim": "VM restore points provide granular backup and retention policies, distinct from sitewide disaster recovery solutions.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Application consistency is supported for Windows VMs using VSS writers and for Linux VMs using pre- and post-scripts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Cross-region copying of VM restore points is in public preview and does not support private links.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You can exclude specific disks when creating a restore point using the --exclude-disks parameter in Azure CLI.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Restoring a VM involves creating new disks from disk restore points and then creating a new VM with those disks.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Azure CLI `az restore-point create` command lacks a `sourceRestorePoint` parameter for cross-region copying, suggesting REST/PowerShell is required. This is unsupported speculation; the CLI module supports this via `--source-id` or specific properties not detailed in the provided sources. Inventing a limitation to justify alternative tools is a factual error.",
+      "fix": "Remove the speculation about CLI limitations. If the exact CLI parameter isn't in the source text, state that the REST API method is documented for cross-region copy initiation, or omit the CLI workaround claim entirely. Do not assert the CLI is incapable of the task without explicit source evidence."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states that moving a VM between resource groups or subscriptions 'breaks the reference' and causes a mismatch. It implies this is a general restriction. The source (S1) explicitly states this action 'isn't supported'. The draft's explanation of 'breaking the reference' is an interpretation, but the core issue is that the draft presents a known limitation as a general operational risk without citing the 'not supported' constraint clearly as a hard stop.",
+      "fix": "Clarify that moving the VM is explicitly unsupported by Azure, not just risky. Cite S1's limitation: 'Movement of VMs between resource groups or subscriptions isn't supported'. Avoid speculative explanations of internal ID mismatches unless sourced."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a PowerShell code snippet in the 'Restore a VM' section (`$osDiskRestorePoint = ...`) that is not part of the CLI tutorial flow. The draft title and body focus on CLI, but the code block uses PowerShell syntax (`$variable`, `az ... -o tsv` is mixed with PowerShell assignment). This is a structural defect and confusing for a CLI-focused how-to.",
+      "fix": "Replace the PowerShell-style variable assignment with pure Bash syntax consistent with the CLI tutorial. Ensure all code blocks are strictly Bash/CLI to match the tutorial's stated scope."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Application consistency is supported for Windows VMs... and for Linux VMs using pre- and post-scripts'. While S1 mentions pre/post scripts for Linux, it clarifies that Linux supports 'file system consistency' via these scripts, not necessarily 'application consistency' in the same VSS sense as Windows. The draft blurs this distinction, potentially misleading users about the level of consistency guaranteed on Linux.",
+      "fix": "Refine the Linux consistency description to match S1: 'Linux supports file system consistency using pre- and post-scripts.' Distinguish this from Windows application consistency to avoid implying identical guarantees."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Public preview of cross-region copying... is available' in the limitations section. S1 dates the preview but doesn't specify the exact 'July 2025' status. While the brief asks for July 2025 context, the source is from 2024. Asserting the feature is still in 'public preview' in 2025 without a 2025 source is a potential future knowledge error.",
+      "fix": "Verify the GA status of cross-region copy for July 2025. If sources are unavailable, phrase it as 'Cross-region copy features availability varies by region and time; check current documentation for preview/GA status.' Do not assert 'public preview' as a current fact without a 2025 source."
+    }
+  ]
+}

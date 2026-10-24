@@ -1,0 +1,109 @@
+{
+  "id": "AZC-144",
+  "title": "Investigate an HPC job waiting for compute capacity",
+  "slug": "investigate-an-hpc-job-waiting-for-compute-capacity",
+  "historical_date": "2025-02-05",
+  "input_sha256": "bdd94ab9d6eeb3b15f64ded231619f4f57271fd586ff700067a6ee1981f13f07",
+  "created_at": "2026-10-23T15:33:56.350626+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Azure Batch jobs waiting for compute by checking quotas, VM availability, and autoscale formula logic.",
+  "tags": [
+    "azure-batch",
+    "hpc",
+    "autoscaling",
+    "troubleshooting",
+    "vm-quotas"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-automatic-scaling.md",
+      "revision": "accaa04be5530062ccaec0528e3906bb4251aa79",
+      "revision_date": "2025-01-22T14:39:46Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Autoscale compute nodes in an Azure Batch pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-automatic-scaling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/accaa04be5530062ccaec0528e3906bb4251aa79/articles/batch/batch-automatic-scaling.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-pool-vm-sizes.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Choose VM sizes and images for pools",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-pool-vm-sizes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/batch/batch-pool-vm-sizes.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user's specific workload require a custom autoscale formula or is the sample formula sufficient?",
+    "Are there any specific VM size constraints or preferences not mentioned in the source text?",
+    "Is the user aware of the difference between Batch service mode and user subscription mode quotas?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-an-hpc-job-waiting-for-compute-capacity.md",
+  "draft": true,
+  "word_count": 1013,
+  "claim_support_checks": [
+    {
+      "claim": "Batch service mode accounts have a core limit that restricts scaling, regardless of autoscale formula.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "VM sizes with only remote storage are not supported by Batch.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Pending tasks metric includes tasks in the internal scheduling queue, even if deleted.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims nodes remain in a 'Starting' state if VM sizes are unavailable. Sources state Batch returns a list of supported SKUs and implies provisioning fails or is skipped, but do not describe a persistent 'Starting' state for unavailable SKUs. This misdiagnoses the symptom.",
+      "fix": "Clarify that Batch may fail to provision nodes or the autoscale formula may not reach the target if the SKU is unsupported/unavailable, rather than asserting a specific node state. Refer to the `ListSupportedVirtualMachineSkus` API for verification."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking 'node agent logs' for tasks stuck in 'Waiting' or 'Active' states. The sources do not mention node agent logs for this specific symptom. 'Waiting' tasks are typically queued by the service, not running on nodes, so node logs are irrelevant.",
+      "fix": "Remove the recommendation to check node agent logs for 'Waiting' tasks. Focus on job/task state transitions and pool capacity. Only suggest node logs if tasks are in 'Running' but failing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Batch periodically reviews service metrics data... at an interval that you define.' The sources do not explicitly state users define the evaluation interval in the formula or via a separate setting in the provided text, creating a vague how-to step.",
+      "fix": "Verify if the interval is configurable in the provided source text. If not, remove the claim that users define the interval or cite the specific configuration property if available in other docs, otherwise state Batch evaluates automatically."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that switching VM sizes or regions is a direct fix for availability issues without mentioning cost or time implications. It also claims 'Batch does not support VM SKU sizes that have only remote storage' as a general rule for all operations.",
+      "fix": "Add context that changing regions incurs latency/cost. Clarify that the remote storage restriction applies to the node's local temp disk requirement for Batch, not necessarily all Azure storage features."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'HPC-optimised' and 'GPU-enabled' without specifying that these are specific VM series (e.g., H-series, ND-series) and availability is region-dependent. It treats them as generic categories.",
+      "fix": "Specify that HPC/GPU capabilities depend on specific VM series (like H or ND) and require checking regional availability via the CLI/API, as noted in Source S2."
+    }
+  ]
+}

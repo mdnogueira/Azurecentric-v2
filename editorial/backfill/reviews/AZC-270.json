@@ -1,0 +1,124 @@
+{
+  "id": "AZC-270",
+  "title": "Use ShouldProcess for an infrastructure change function",
+  "slug": "use-shouldprocess-for-an-infrastructure-change-function",
+  "historical_date": "2026-01-25",
+  "input_sha256": "81cd4c3a9546802e892def6a5e2595226846722e484c20d0b1951ef7a754dcab",
+  "created_at": "2026-10-23T18:29:51.393317+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Implement ShouldProcess in PowerShell functions to safely manage infrastructure changes with WhatIf and Confirm support.",
+  "tags": [
+    "powershell",
+    "automation",
+    "infrastructure",
+    "shouldprocess",
+    "cmdletbinding"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/everything-about-shouldprocess.md",
+      "revision": "9a678c09f921271207c639828d360d5958715ca0",
+      "revision_date": "2025-03-24T19:11:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Everything you wanted to know about ShouldProcess",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-shouldprocess",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/9a678c09f921271207c639828d360d5958715ca0/reference/docs-conceptual/learn/deep-dives/everything-about-shouldprocess.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/creating-a-cmdlet-that-modifies-the-system.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Creating a Cmdlet that Modifies the System",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/creating-a-cmdlet-that-modifies-the-system",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/cmdlet/creating-a-cmdlet-that-modifies-the-system.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/help/writing-help-for-windows-powershell-scripts-and-functions.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Writing Help for PowerShell Scripts and Functions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/help/writing-help-for-windows-powershell-scripts-and-functions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/help/writing-help-for-windows-powershell-scripts-and-functions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should ShouldProcess be implemented in compiled C# cmdlets compared to PowerShell functions?",
+    "What are the best practices for documenting ShouldProcess support in help topics?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-shouldprocess-for-an-infrastructure-change-function.md",
+  "draft": true,
+  "word_count": 732,
+  "claim_support_checks": [
+    {
+      "claim": "SupportsShouldProcess attribute enables WhatIf and Confirm parameters.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "ConfirmImpact High forces confirmation prompt.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "ShouldProcess returns false for WhatIf.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Nested calls require explicit parameter passing.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims that specifying `-Force` allows the user to bypass the `ShouldProcess` check. This is factually incorrect. `ShouldProcess` handles `-WhatIf` and `-Confirm` prompts. `-Force` is a custom parameter that must be explicitly coded to skip internal logic or nested calls, but it does not override the `ShouldProcess` mechanism itself. The code example `if ($Force -or $PSCmdlet.ShouldProcess(...))` is misleading because it implies `-Force` negates the need for `ShouldProcess` evaluation, which is not how the common parameters work.",
+      "fix": "Clarify that `-Force` is a custom switch that bypasses *your* internal confirmation logic or nested calls, not the `ShouldProcess` infrastructure. The `ShouldProcess` call should remain the gatekeeper for `-WhatIf`/`-Confirm`. Remove the implication that `-Force` overrides `ShouldProcess`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that `-WhatIf` and `-Confirm` are 'not automatically passed to nested calls'. While true for the *execution* of the nested command's logic if not coded correctly, the draft's example `Update-ChildResource -WhatIf:$WhatIfPreference` relies on the automatic variable `$WhatIfPreference`. This variable is set by the caller, but relying on it without explicit parameter passing in the nested function's signature can be fragile. More importantly, the draft omits the standard practice of passing `-Confirm:$false` to nested calls to prevent double-prompting, which it mentions later but not in the context of the primary nested call example.",
+      "fix": "Explicitly state that nested calls must explicitly pass `-Confirm:$false` to prevent double-prompting if the parent handles confirmation. Clarify that `-WhatIf` propagation depends on the nested function also implementing `SupportsShouldProcess` and using the passed preference or parameter."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that `ConfirmImpact` values are `Low`, `Medium`, and `High`. It omits `None`. While `None` is rarely used for destructive actions, it is a valid value that suppresses confirmation even if `-Confirm` is specified. The draft's explanation of `$ConfirmPreference` interaction is slightly vague regarding `None`.",
+      "fix": "Add `None` to the list of `ConfirmImpact` values. Briefly explain that `None` suppresses confirmation prompts even when `-Confirm` is specified, which is useful for non-interactive scripts where you want to ensure no prompts occur."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description for 'ShouldProcess Flow' but no actual diagram or image is provided. The editorial guidance prohibits adding visible screenshots or captions, but a textual description of a flow diagram is acceptable if it adds value. However, the nodes are generic and don't add significant technical insight beyond the text.",
+      "fix": "Remove the diagram description as it is redundant with the text. If a visual aid is necessary, ensure it is a simple, clear flowchart that explicitly shows the decision points for `-WhatIf` and `-Confirm` without relying on external images."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Infrastructure automation scripts' and 'WebServer01' as examples. This is vague and doesn't provide concrete technical context. The editorial guidance advises against vague how-to steps and to develop the reader's particular decision. The example should be more specific to a common infrastructure task, like stopping a service or deleting a resource, to make the `ShouldProcess` benefit clearer.",
+      "fix": "Replace the generic 'Update configuration' with a specific, destructive action like 'Stop-Service' or 'Remove-AzResourceGroup'. This makes the need for `-WhatIf` and `-Confirm` more tangible and aligns with the 'destructive/cost context' requirement."
+    }
+  ]
+}

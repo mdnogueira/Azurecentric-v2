@@ -1,0 +1,98 @@
+{
+  "id": "AZC-099",
+  "title": "Plan Security Compute Unit usage for a small pilot",
+  "slug": "plan-security-compute-unit-usage-for-a-small-pilot",
+  "historical_date": "2024-10-03",
+  "input_sha256": "e652e7e4e0676fddd5ee487a329807a6f245aa99c441d32decfac207d6dd3a9b",
+  "created_at": "2026-10-23T14:27:40.332764+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan Microsoft Copilot for Security pilot usage by understanding SCU drivers and monitoring actual consumption against estimates.",
+  "tags": [
+    "microsoft-copilot-for-security",
+    "security-compute-units",
+    "cost-management",
+    "pilot-planning",
+    "sentinel"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "a6f3ba73e1ad766d5279b63bd333414e3a59b89a",
+      "revision_date": "2024-04-11T07:40:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The provided source (S1) is a README for a community repository and does not contain specific SCU pricing details or consumption metrics. The article relies on general knowledge about SCU models which may not be fully verified by the source.",
+    "The article estimates SCU consumption per query (1-5 SCUs) but this is not explicitly stated in the provided source. This needs verification against official Microsoft documentation.",
+    "The article mentions monitoring usage metrics but does not provide specific steps or UI paths for accessing them in Copilot for Security, as this information is not in the source."
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-security-compute-unit-usage-for-a-small-pilot.md",
+  "draft": true,
+  "word_count": 830,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Copilot for Security uses a consumption-based model measured in Security Compute Units (SCUs).",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The service integrates with existing Microsoft security products.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "SCU consumption is driven by query complexity, data volume, plugin usage, and frequency.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites a GitHub README for community contributions as evidence for SCU pricing, consumption drivers, and integration details. The source contains no technical data on Security Compute Units, pricing tiers, or usage metrics. This is a fundamental source mismatch.",
+      "fix": "Replace the source citation with official Microsoft Learn documentation regarding Microsoft Copilot for Security pricing and architecture. The README is irrelevant to the technical claims made in the body."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft provides specific SCU estimates (1-5 SCUs per query) and calculation examples. These figures are not supported by the provided source and likely reflect unverified general knowledge or hallucination. Presenting them as factual guidance risks misleading budget planning.",
+      "fix": "Remove specific numerical estimates. State that SCU consumption varies by query complexity and data volume, and direct users to the official pricing calculator or documentation for current unit costs."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims users can monitor SCU consumption via 'Azure subscription cost alerts'. This conflates service-specific usage metrics with general Azure billing alerts. The source provides no evidence for this specific monitoring capability or UI path.",
+      "fix": "Clarify that usage monitoring is handled within the Copilot for Security interface or specific service metrics, not generic Azure subscription cost alerts. Verify the exact location of usage data in official docs before stating."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts integration with 'Microsoft Defender for Cloud' as a primary integration. While plausible, the source only mentions 'existing Microsoft security products' generally. The claim is unsupported by the specific evidence provided.",
+      "fix": "Generalize the integration claim to 'Microsoft security products' or cite specific documentation confirming Defender for Cloud integration. Do not infer specific product integrations from the generic README text."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph starting with 'By starting with a clear estimate...'. This is a generic closing that adds no technical value and violates the instruction to end with a concrete verification or next action.",
+      "fix": "Remove the concluding paragraph. End with a concrete next action, such as directing the user to the official pricing page or the specific documentation for setting up the pilot environment."
+    }
+  ]
+}

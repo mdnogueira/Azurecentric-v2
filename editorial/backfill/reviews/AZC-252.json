@@ -1,0 +1,130 @@
+{
+  "id": "AZC-252",
+  "title": "Plan an in-place Windows Server upgrade around dependencies",
+  "slug": "plan-an-in-place-windows-server-upgrade-around-dependencies",
+  "historical_date": "2025-12-05",
+  "input_sha256": "2df170c9bda126ba1b514f2fcd56e2fafe2ae96ceb9d53d70f525118b5874663",
+  "created_at": "2026-10-23T21:36:02.709965+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan an in-place Windows Server upgrade by verifying supported paths, isolating dependencies, and executing a controlled feature update.",
+  "tags": [
+    "windows-server",
+    "in-place-upgrade",
+    "server-management",
+    "operating-system",
+    "migration"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/perform-in-place-upgrade.md",
+      "revision": "bf0839f427e220b0104dd3353948eb35e184b1ef",
+      "revision_date": "2025-04-25T13:11:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Perform an In-Place Upgrade of Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/perform-in-place-upgrade",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/bf0839f427e220b0104dd3353948eb35e184b1ef/WindowsServerDocs/get-started/perform-in-place-upgrade.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/upgrade-overview.md",
+      "revision": "825a9b7a89b5e872e1542287bec3a6904fb08c83",
+      "revision_date": "2025-09-12T09:12:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of Windows Server upgrades | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/825a9b7a89b5e872e1542287bec3a6904fb08c83/WindowsServerDocs/get-started/upgrade-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/upgrade-conversion-options.md",
+      "revision": "c170fbb0048e90a7ae9874b13f91c6523c673776",
+      "revision_date": "2025-08-18T09:21:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Upgrade and conversion options for Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-conversion-options",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/c170fbb0048e90a7ae9874b13f91c6523c673776/WindowsServerDocs/get-started/upgrade-conversion-options.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific prerequisites for upgrading Windows Server 2012 R2 with Configuration Manager installed?",
+    "Are there any known issues with specific third-party applications during in-place upgrades?",
+    "What is the exact process for reverting an in-place upgrade if it fails immediately after the first restart?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-an-in-place-windows-server-upgrade-around-dependencies.md",
+  "draft": true,
+  "word_count": 950,
+  "claim_support_checks": [
+    {
+      "claim": "In-place upgrades for nonclustered systems can jump up to four versions when targeting Windows Server 2025.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "In-place upgrades are not supported on clustered systems.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "NIC Teaming must be disabled before an in-place upgrade.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "In-place upgrades from Windows Storage Server Editions are not supported.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "You can convert from Standard to Datacenter edition during an in-place upgrade.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Windows Server 2012 can upgrade to 2012 R2. Source S2 explicitly states 'Windows Server 2012 | Yes | Yes' under columns for 2012 R2 and 2016, but the table row for 'Windows Server 2012' shows 'Yes' under 2012 R2. However, standard upgrade paths usually skip 2012->2012R2 as a 'feature update' in the same sense, or rather, the table in S2 shows 2012 can upgrade to 2012 R2. Wait, looking at S2 table: Row 'Windows Server 2012', Col 'Windows Server 2012 R2' is 'Yes'. So this is supported. However, the draft says 'Windows Server 2012 can upgrade to 2012 R2 or 2016'. This is factually correct per S2. No issue here.",
+      "fix": ""
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states 'Windows Server 2012 R2 can upgrade to 2016, 2019, or 2025'. Source S2 table shows 2012 R2 can upgrade to 2016, 2019, and 2025. This is correct. However, the draft omits 2022. The table shows 'Yes' for 2022. This is a factual omission of a supported path.",
+      "fix": "Add '2022' to the list of supported upgrades for Windows Server 2012 R2, as Source S2 confirms it is supported."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'You can convert it to a retail version during the upgrade' for evaluation versions. Source S3 distinguishes between 'in-place upgrade (feature update)' and 'license conversion'. It states evaluation versions can be converted to retail, but this is a separate process (DISM) often done before or after, not necessarily 'during' the setup.exe feature update flow described in S1. S1's setup.exe flow assumes a licensed version or prompts for a key. S3 says 'If you're starting with an evaluation version, convert it to the retail version first'. The draft's phrasing implies it's a step within the setup.exe feature update, which is misleading.",
+      "fix": "Clarify that converting an evaluation version to retail is a separate prerequisite step using DISM or slmgr, not a built-in option within the setup.exe feature update flow for retaining settings."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a section 'Key considerations' listing 'Configuration Manager' prerequisites. Source S1 notes this applies to 'Windows Server 2012 or Windows Server 2012 R2 server with Configuration Manager installed'. The draft presents this as a general consideration without specifying the source OS constraint, potentially misleading admins on newer OS versions.",
+      "fix": "Specify that the Configuration Manager pre/post-upgrade instructions apply specifically to Windows Server 2012 and 2012 R2 sources, as per Source S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's 'Verify the upgrade' section suggests re-enabling NIC Teaming. Source S3 says 'You can re-enable it after the upgrade is complete'. The draft does not mention verifying NIC Teaming functionality post-upgrade, which is a best practice but not explicitly required by the source. This is minor.",
+      "fix": "Remove the specific instruction to 'Re-enable NIC Teaming' as a verification step, or frame it as a post-upgrade configuration task rather than a verification of success, to align strictly with the source's 're-enable' instruction."
+    }
+  ]
+}

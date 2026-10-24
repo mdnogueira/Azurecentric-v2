@@ -1,0 +1,127 @@
+{
+  "id": "AZC-222",
+  "title": "Store application settings outside a container image",
+  "historical_date": "2025-09-12",
+  "created_at": "2026-10-23T23:31:04.908831+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Store configuration outside Azure Functions images using app settings to avoid rebuilds and manage secrets securely.",
+  "tags": [
+    "azure-functions",
+    "app-settings",
+    "container-security",
+    "managed-identity",
+    "configuration-management"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/reference-app-settings.md",
+      "revision": "d1b68593db3b59c6118ffd31ef434267843a12d9",
+      "revision_date": "2025-09-09T14:21:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Environment Variables and App Settings Reference",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d1b68593db3b59c6118ffd31ef434267843a12d9/articles/app-service/reference-app-settings.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-app-settings.md",
+      "revision": "36387811a6225b06193d12a340908b835195c967",
+      "revision_date": "2025-09-05T04:48:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "App settings reference for Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/36387811a6225b06193d12a340908b835195c967/articles/azure-functions/functions-app-settings.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-how-to-use-azure-function-app-settings.md",
+      "revision": "36387811a6225b06193d12a340908b835195c967",
+      "revision_date": "2025-09-05T04:48:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Configure function app settings in Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/36387811a6225b06193d12a340908b835195c967/articles/azure-functions/functions-how-to-use-azure-function-app-settings.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "How does the platform handle app setting changes in a multi-instance deployment?",
+    "What are the specific limits on app setting size and complexity?",
+    "How can we verify that managed identity is correctly configured for a specific resource?",
+    "Are there any performance implications of reading large numbers of environment variables?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-python#environment-variables"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/store-application-settings-outside-a-container-image.md",
+  "draft": true,
+  "word_count": 810,
+  "claim_support_checks": [
+    {
+      "claim": "App settings are stored encrypted in the function app configuration.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Changes to app settings require a restart of the function app.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "App settings are injected into the container as environment variables.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Managed identity can be used to avoid storing connection strings in app settings.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the platform automatically injects managed identity tokens when `AzureWebJobsStorage` is set to a specific `Identity=SystemAssigned` connection string. Sources do not support this syntax; managed identity for storage requires the `AzureWebJobsSecretStorageKeyVaultUri` pattern or direct SDK configuration, not a connection string parameter.",
+      "fix": "Remove the `Identity=SystemAssigned` connection string example. Explain that managed identity is configured via the function app's identity blade and used by the SDK/runtime, or reference `AzureWebJobsSecretStorageKeyVaultUri` for key storage."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states that setting `AzureWebJobsStorage` with `Identity=SystemAssigned` avoids storing connection strings. This is factually incorrect based on the sources. Managed identity does not replace the storage account connection string in `AzureWebJobsStorage` via a special parameter; it replaces the need for secrets in Key Vault or requires specific SDK support.",
+      "fix": "Clarify that `AzureWebJobsStorage` typically holds the connection string. If using managed identity for storage access, explain the specific SDK mechanism or Key Vault integration, rather than inventing a connection string syntax."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using deployment slots to 'swap configurations without interrupting traffic' to handle app setting restarts. While slots allow swapping, the sources explicitly state that changing app settings requires a restart, and slot swaps are not database rollbacks or guaranteed interruption-free for all deployments.",
+      "fix": "Remove the promise of 'no interruption'. State that slots allow swapping the *target* configuration, but the app still restarts to apply new settings. Verify behavior with a warm-up check."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims `az functionapp config appsettings list` 'masks values'. The sources do not state this; they show the command returns settings. In the portal, you must select 'Show values' to see them, implying they are masked by default, but the CLI output format is not described as masking in the provided text.",
+      "fix": "Remove the claim about CLI masking. Describe the portal behavior (Show values) accurately. Verify CLI output behavior against the specific source documentation if known, otherwise omit the masking claim."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `CUSTOM_FUNCTION_APP_SETTING=12345` as an example. While valid, the sources show `az functionapp config appsettings set` syntax. The draft's bash example uses backslashes for line continuation, which is valid in Bash but the draft labels it generally. Ensure the code block explicitly states it is Bash.",
+      "fix": "Add a language specifier to the code block (e.g., `bash`) to clarify the shell syntax. Ensure the example matches the source's `az functionapp config appsettings set` command structure exactly."
+    }
+  ]
+}

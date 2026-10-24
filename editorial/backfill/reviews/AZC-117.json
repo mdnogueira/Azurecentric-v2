@@ -1,0 +1,151 @@
+{
+  "id": "AZC-117",
+  "title": "Azure Local: understand the operating model announced at Ignite",
+  "slug": "azure-local-understand-the-operating-model-announced-at-ignite",
+  "historical_date": "2024-11-23",
+  "input_sha256": "e8fc4f509df469fbf1a2ab17d059c1f17d42be69e61eebb2961c41586f276270",
+  "created_at": "2026-10-23T14:56:04.690344+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Clarify the Azure Local operating model: cloud-connected infrastructure enabled by Azure Arc, with customer-operated hardware and control.",
+  "tags": [
+    "azure-local",
+    "azure-stack-hci",
+    "azure-arc",
+    "hybrid-cloud",
+    "ignite-2024"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://techcommunity.microsoft.com/blog/azurearcblog/introducing-azure-local-cloud-infrastructure-for-distributed-locations-enabled-b/4296017/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "unknown",
+      "published_at": "unknown",
+      "checked_at": "2026-10-23T11:52:59.811528+00:00",
+      "title": "Azure Local: understand the operating model announced at Ignite",
+      "url": "https://techcommunity.microsoft.com/blog/azurearcblog/introducing-azure-local-cloud-infrastructure-for-distributed-locations-enabled-b/4296017/",
+      "snapshot_url": "https://techcommunity.microsoft.com/blog/azurearcblog/introducing-azure-local-cloud-infrastructure-for-distributed-locations-enabled-b/4296017/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2024-12-03T15:13:54.077-08:00"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/agent-overview.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of the Azure Connected Machine agent",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/agent-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/overview.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Arc-enabled servers Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/plan-at-scale-deployment.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan and deploy Azure Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/plan-at-scale-deployment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/plan-at-scale-deployment.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/agent-overview.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/overview.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-lighthouse-supported-service.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/plan-at-scale-deployment.md",
+    "Announcement may have later updates; exclude information introduced after 2024-11-23"
+  ],
+  "open_questions": [
+    "What are the specific prequalification criteria for disconnected operations?",
+    "How does the Local identity option (without Active Directory) handle VM live migration in production workloads?",
+    "What is the exact hardware validation process for non-Premier solutions?",
+    "How does Azure Migrate to Azure Local (preview) handle VMDK conversion for complex dependencies?",
+    "What are the specific network requirements for 1 Gbps Ethernet high availability configurations?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/azure-local-understand-the-operating-model-announced-at-ignite.md",
+  "draft": true,
+  "word_count": 1443,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Local is the new name for Azure Stack HCI, not a separate product.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Local is enabled by Azure Arc and includes its capabilities.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Customers own the hardware and have operational control.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Updates are non-disruptive in multi-node environments.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Disconnected operations require prequalification.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Local 'includes all the capabilities of Azure Arc built-in'. S1 clarifies Azure Local is enabled *by* Azure Arc and includes its capabilities, but S2/S3 show Azure Arc is a separate service/agent stack. This phrasing risks confusing Azure Local (the infrastructure workload) with Azure Arc (the management plane).",
+      "fix": "Rewrite to state Azure Local is 'enabled by Azure Arc' and 'extends Azure management' to distributed locations. Clarify that while Azure Arc capabilities are integrated, the underlying architecture relies on the Azure Arc agent stack (S2) for connectivity and identity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states disconnected operations allow 'complete air-gapped operations'. S1 specifies this is 'in preview' and 'only available to customers who prequalify'. The draft omits these critical constraints, implying general availability and universal access, which is misleading.",
+      "fix": "Explicitly mark disconnected operations as 'in preview' and 'prequalification-only'. Remove 'complete air-gapped' as a definitive feature; instead, describe it as a 'disconnected mode' that mimics connected operations for qualified customers."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Local 'orchestrates moving workloads... to ensure that updates... are non-disruptive (workloads keep running)'. S1 uses this phrasing, but S2/S3 note that Azure Arc outages or agent issues can disconnect machines. The draft implies guaranteed zero-downtime without noting potential risks or the 'preview' nature of some HA features.",
+      "fix": "Clarify that workload migration during updates is a feature of the Azure Local orchestration layer, but note that availability depends on cluster health and network stability. Avoid implying 'non-disruptive' is guaranteed in all failure scenarios."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Azure Local is generally available... Version 2411 is available now'. S1 confirms GA for production use. However, it also lists many features (Local Identity, Disconnected Ops, Network Segmentation, Trusted Launch) as 'in preview'. The draft mixes GA and preview status without clear sectioning, potentially confusing users about which features are production-ready.",
+      "fix": "Add a clear distinction between GA features (core infrastructure, VMs, AKS) and Preview features (Local Identity, Disconnected Ops, Network Security Groups, Trusted Launch, Azure Migrate). Use headings or bullet points to separate these statuses."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Migrate (in preview)' for VMware migration. S1 confirms this. However, the draft does not specify that this is a 'preview' feature, which could lead users to expect full production support and SLA coverage for migration tools that are still in development.",
+      "fix": "Explicitly label 'Azure Migrate to Azure Local' as 'in preview' throughout the text. Clarify that this feature is for evaluation and early adoption, not yet for production migration workloads."
+    }
+  ]
+}

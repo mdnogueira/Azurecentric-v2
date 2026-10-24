@@ -1,0 +1,106 @@
+{
+  "id": "AZC-219",
+  "title": "Troubleshoot a managed identity that cannot reach a resource",
+  "slug": "troubleshoot-a-managed-identity-that-cannot-reach-a-resource",
+  "historical_date": "2025-09-04",
+  "input_sha256": "08fff71044f7c003e9d29d8c9d915892cbec44054f40959c6416f191dd7952f4",
+  "created_at": "2026-10-23T17:16:38.440051+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot managed identity access failures by verifying assignment, checking control-plane state, and confirming RBAC scope.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-219-learn-1.png",
+      "alt": "Screenshot showing a policy violation.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/c10629696e27d3dcf56848711ad3de55a6e99675/docs/identity/managed-identities-azure-resources/media/known-issues/policy-violation.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-07-23T13:40:53Z",
+      "sha256": "2ee702eec1019def692546df1e8b3de9d66a009de236f7b7763bda206519d9c4",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/managed-identities-azure-resources/known-issues.md",
+      "revision": "9c7422758773f1c34658dc13eef1f9a85286a5d4",
+      "revision_date": "2025-07-31T07:05:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Known issues with managed identities",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/known-issues",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/9c7422758773f1c34658dc13eef1f9a85286a5d4/docs/identity/managed-identities-azure-resources/known-issues.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/managed-identities-azure-resources/managed-identities-faq.md",
+      "revision": "c10629696e27d3dcf56848711ad3de55a6e99675",
+      "revision_date": "2025-07-23T13:40:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Managed identities for Azure resources frequently asked questions",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identities-faq",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/c10629696e27d3dcf56848711ad3de55a6e99675/docs/identity/managed-identities-azure-resources/managed-identities-faq.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/managed-identities-azure-resources/managed-identity-best-practice-recommendations.md",
+      "revision": "9c7422758773f1c34658dc13eef1f9a85286a5d4",
+      "revision_date": "2025-07-31T07:05:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best practice recommendations for managed system identities",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identity-best-practice-recommendations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/9c7422758773f1c34658dc13eef1f9a85286a5d4/docs/identity/managed-identities-azure-resources/managed-identity-best-practice-recommendations.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/troubleshoot-a-managed-identity-that-cannot-reach-a-resource.md",
+  "draft": true,
+  "word_count": 944,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly states that managed identity tokens are cached for 'around 24 hours' and that permission changes take 'several hours' to propagate. Source S2 and S3 clarify that the 24-hour cache is for the *back-end service URI*, not the token itself. Token expiration is 90 days (rotated at 45 days). The delay in permission propagation is due to token claims caching, but the specific '24-hour' figure is a misinterpretation of the source text regarding URI caching.",
+      "fix": "Correct the token caching explanation. State that tokens are valid for 90 days but rotated at 45 days. Clarify that permission changes may take time to reflect because Azure RBAC evaluates permissions against claims in the cached access token, not because the token itself is cached for 24 hours. Remove the '24 hours' claim for token caching."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `az resource list` to verify if a specific VM has a system-assigned identity. This command lists *all* resources in the scope, which is inefficient and potentially misleading for troubleshooting a single resource. It does not directly confirm the identity status of the specific VM being troubleshooted without filtering by name, which the draft omits in the code block.",
+      "fix": "Replace the generic `az resource list` command with a specific query for the VM, e.g., `az vm show -n <VM Name> -g <Resource Group> --query identity` to explicitly verify the identity type and principal ID of the target resource."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that if a subscription is transferred between directories, managed identities 'do not update automatically' and must be manually recreated. While S1 and S2 mention this workaround, the phrasing implies a universal failure mode for all transfers. It fails to distinguish between the identity object itself (which might persist but break) and the *assignment* (which definitely breaks). The 'delete and recreate' step for user-assigned identities is destructive and should be framed as a last resort or specific workaround for broken assignments, not just 're-creation'.",
+      "fix": "Clarify that subscription transfer breaks the *link* between the resource and the identity. For user-assigned identities, the identity object may still exist but the assignment is invalid. Recommend re-assigning the existing identity first before suggesting deletion and recreation, which is more disruptive."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot reference in the source data but the editorial guidance prohibits adding visible Microsoft Learn screenshots. The draft body text does not explicitly reference the screenshot, but the source data includes it. The draft text about Azure Policy denial is accurate but lacks the visual context if the user expects it. However, since the guidance says 'Do not add an unrelated screenshot merely because it was supplied', and the draft doesn't mention it, this is a low issue regarding source alignment.",
+      "fix": "Ensure no screenshot is included in the final output. The text regarding Azure Policy denial is sufficient without the image. Remove any implicit expectation of the screenshot from the source metadata."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'If the managed identity is still failing... consider whether the target resource supports managed identities.' This is a valid check, but the draft does not provide a link to the status page in the body text, only in the final 'Next steps' style paragraph. The guidance requires 'few well-placed source links'.",
+      "fix": "Move the link to the [services that support managed identities](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identities-status) to the section where compatibility is first discussed, rather than burying it in the conclusion."
+    }
+  ]
+}

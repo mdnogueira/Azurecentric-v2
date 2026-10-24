@@ -1,0 +1,164 @@
+{
+  "id": "AZC-295",
+  "title": "Set useful boundaries for security exemptions",
+  "slug": "set-useful-boundaries-for-security-exemptions",
+  "historical_date": "2026-04-04",
+  "input_sha256": "a689ef212320931d77d3e19d478e0846d87c4d2c29b391a3b35e4df64c89e6df",
+  "created_at": "2026-10-23T19:07:17.347175+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish governance rules for remediation SLAs from suppression rules for alert noise in Defender for Cloud.",
+  "tags": [
+    "defender-for-cloud",
+    "governance-rules",
+    "suppression-rules",
+    "security-posture",
+    "alert-management"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-295-learn-1.png",
+      "alt": "Screenshot of page for adding a governance rule.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/governance-rules/add-rule.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "c6fe3a690fdbe4e5e571e4c06d8284cbb08e89d0fb3d22675b519e2186e7e8c0",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-295-learn-2.png",
+      "alt": "Screenshot of the Create suppression rule button in the Suppression rules page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/alerts-suppression-rules/create-new-suppression-rule.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "33e9f251bd43c4d5efacdce05ad11300d28d1ee0903fb94045c685fdbea7eb2c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/governance-rules.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Drive remediation of recommendations with governance rules",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/governance-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/governance-rules.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/alerts-suppression-rules.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Suppressing false positives or other unwanted security alerts",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-suppression-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/alerts-suppression-rules.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/security-policy-concept.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Security policies in Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/security-policy-concept",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/security-policy-concept.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/governance-rules.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/alerts-suppression-rules.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/security-policy-concept.md"
+  ],
+  "open_questions": [
+    "Does the governance rule priority system apply to both management group and subscription level rules simultaneously, or are they evaluated separately?",
+    "Are there any specific limitations on the number of governance rules that can be applied to a single subscription?",
+    "Can suppression rules be applied to custom recommendations, or only to built-in alerts?",
+    "What is the exact behavior of the 'simulate' feature for suppression rules? Does it affect the secure score?",
+    "Are there any specific permissions required for the 'Security Admin' role to create suppression rules versus governance rules?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/set-useful-boundaries-for-security-exemptions.md",
+  "draft": true,
+  "word_count": 1185,
+  "claim_support_checks": [
+    {
+      "claim": "Governance rules assign owners and due dates to security recommendations to drive remediation accountability.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Suppression rules automatically dismiss specific security alerts to reduce noise from false positives.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Governance rules require the Defender CSPM plan to be enabled.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Suppression rules can be created using the Azure portal or REST API for subscriptions.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Governance rules can apply a grace period so that resources do not affect the secure score until they are overdue.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Suppression rules do not apply to alerts that were never triggered on the subscription or management group before the rule was created.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Contributor role grants permission to create governance rules. Source S1 explicitly lists 'Contributor, Security Admin, or Owner' for governance rules, but Source S2 lists only 'Security Admin and Owner' for suppression rules. The draft's permission table and text for suppression rules are correct, but the governance rule permission claim is misleadingly inclusive compared to the specific 'Security Admin' requirement often emphasized in security contexts, though technically Contributor is listed. However, the bigger issue is the 'Decision criteria' section implies Contributor works for both, which is false for suppression rules.",
+      "fix": "Clarify that while Contributor is listed for governance rules in S1, it is explicitly excluded for suppression rules in S2. Update the 'Common pitfalls' section to explicitly warn that Contributor role is insufficient for suppression rules, requiring Security Admin or Owner."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states suppression rules can be applied to management groups using Azure Policy. While S2 mentions this, it does not provide details on how Azure Policy interacts with Defender for Cloud suppression rules specifically, potentially implying a direct UI feature. The draft lacks the nuance that this is a legacy or indirect method compared to the native portal/API for subscriptions.",
+      "fix": "Add a note that using Azure Policy for management group suppression is a specific configuration path distinct from the native Defender for Cloud portal experience, and verify if this is still the recommended primary method or if it's deprecated/limited."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims governance rules 'do not hide findings'. While true that they don't suppress, the 'grace period' feature effectively hides the finding from the Secure Score impact, which might be misinterpreted as hiding the finding itself. The distinction between 'hiding from score' and 'hiding from view' needs to be precise.",
+      "fix": "Refine the language to specify that grace periods prevent impact on the Secure Score, but the recommendations remain visible in the Governance Report and recommendations list until remediated or expired."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Defender for Servers, Defender for Storage' as examples of paid plans for suppression rules. S2 states suppression rules are available for 'Commercial clouds' and 'National' clouds but doesn't explicitly tie them to specific plan names like 'Defender for Servers' in the provided text, though it implies paid plans are required. This is a minor inference.",
+      "fix": "Verify if the specific plan names are explicitly linked to suppression rule availability in the source documentation. If not, generalize to 'paid Defender for Cloud plans' to avoid unsupported specificity."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's 'Verification' section suggests checking the Security Alerts page for suppressed alerts. S2 notes that suppressed alerts are dismissed, but doesn't explicitly state where to view them post-dismissal (e.g., in a 'Suppressed' tab or history). The draft implies they just disappear from the active list, which is true, but lacks guidance on auditability.",
+      "fix": "Add a step to verify suppression rules by checking the 'Suppression rules' list in the Security Alerts page to confirm the rule is active and simulating its impact, rather than just checking the active alerts list."
+    }
+  ]
+}

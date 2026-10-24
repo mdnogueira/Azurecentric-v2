@@ -1,0 +1,143 @@
+{
+  "id": "AZC-303",
+  "title": "Pin provider and module versions in an Azure deployment",
+  "slug": "pin-provider-and-module-versions-in-an-azure-deployment",
+  "historical_date": "2026-04-27",
+  "input_sha256": "179814c83bd75e073908ff7513d910b69b39c02387120f5f7bd5ed444b89a93e",
+  "created_at": "2026-10-23T19:19:15.959705+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Pin Bicep module versions to ensure reproducible deployments and prevent drift from upstream changes.",
+  "tags": [
+    "bicep",
+    "infrastructure-as-code",
+    "azure-container-registry",
+    "template-specs",
+    "versioning"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-303-learn-1.png",
+      "alt": "Screenshot that shows Azure Verified Modules.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9a1c7f047f984c0fb378e0cea44917b47b6234d5/articles/azure-resource-manager/bicep/media/modules/bicep-azure-verified-modules-avm.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-12-10T18:36:19Z",
+      "sha256": "90184b7b44fa59f3256610ac1de24730a4d55b1b12f4939b6cf0ce58655bb347",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-303-learn-2.png",
+      "alt": "Screenshot of bicep module registry with source.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/60f4a01fbba5705676dabf056aec253b72ff2cde/articles/azure-resource-manager/bicep/media/private-module-registry/bicep-module-with-source-manifest.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-02-25T17:21:13Z",
+      "sha256": "6c9766c09d590611012cf1cfd8cf4a4bac09ebaf13a0a7edf8f46f690b49f7fa",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9a1c7f047f984c0fb378e0cea44917b47b6234d5",
+      "revision_date": "2025-12-10T18:36:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9a1c7f047f984c0fb378e0cea44917b47b6234d5/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/modules.md",
+      "revision": "9a1c7f047f984c0fb378e0cea44917b47b6234d5",
+      "revision_date": "2025-12-10T18:36:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9a1c7f047f984c0fb378e0cea44917b47b6234d5/articles/azure-resource-manager/bicep/modules.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/private-module-registry.md",
+      "revision": "60f4a01fbba5705676dabf056aec253b72ff2cde",
+      "revision_date": "2026-02-25T17:21:13Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create a private container registry in Azure for Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/private-module-registry",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/60f4a01fbba5705676dabf056aec253b72ff2cde/articles/azure-resource-manager/bicep/private-module-registry.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the Bicep CLI restore command automatically update pinned versions if a newer version is available in the registry?",
+    "How does the Bicep extension handle version resolution when multiple aliases are defined in bicepconfig.json?",
+    "Are there any performance implications of using highly specific version tags in large-scale deployments?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/pin-provider-and-module-versions-in-an-azure-deployment.md",
+  "draft": true,
+  "word_count": 862,
+  "claim_support_checks": [
+    {
+      "claim": "Bicep modules can be sourced from public registries, private ACR registries, or template specs.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Public Azure Verified Modules are available in a public registry and use the br/public alias.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Private module registries are hosted on Azure Container Registry and require specific CLI versions.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Template specs allow versioning modules independently of the Bicep file.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Bicep CLI publish command creates an ARM template JSON file in the registry.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims that omitting a tag causes the deployment to 'always pull the latest available version.' Source S2 explicitly states that non-Azure Verified Modules are retired from the public registry, and AVMs use specific version tags. The 'latest' tag behavior is not universal for all registry types (e.g., private ACRs may not have a 'latest' tag by default), making this a misleading generalization about drift.",
+      "fix": "Clarify that unpinned references resolve to the default tag of the specific registry type. Note that for private ACRs, the behavior depends on whether a 'latest' tag exists. Remove the absolute claim that unpinned references always equal 'latest' across all sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that using template specs allows updating module content 'without changing the Bicep file in every repository.' This is technically incorrect. The Bicep file contains the reference `ts/...:version`. To use updated content, the version in the Bicep file must be updated to point to the new template spec version. The draft confuses the storage location with the reference mechanism.",
+      "fix": "Correct the explanation: Template specs allow versioning the *content* independently, but the Bicep file still requires an update to the version tag in the reference to consume the new content. Emphasize that the Bicep file remains the binding agent."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description ('Module Version Pinning Flow') which is not rendered in the text and adds no technical value. It also uses informal closing ('Cheers.') which violates the professional tone expected in technical documentation.",
+      "fix": "Remove the diagram description as it is not supported by the source text and does not render. Replace the informal sign-off with a concrete next action, such as running `az bicep restore` to verify local cache versions."
+    }
+  ]
+}

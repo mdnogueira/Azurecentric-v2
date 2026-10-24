@@ -1,0 +1,110 @@
+{
+  "id": "AZC-344",
+  "title": "Document the network path before an infrastructure change",
+  "slug": "document-the-network-path-before-an-infrastructure-change",
+  "historical_date": "2026-08-19",
+  "input_sha256": "4a3e4fb81787952767d9ffaaf2c58cc86ae1d173039bd6c5e1673e7b0d6b514e",
+  "created_at": "2026-10-23T20:15:13.976923+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Document the network path before an infrastructure change using Network Watcher topology and effective routes.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-344-learn-1.png",
+      "alt": "Screenshot shows how to search for Network Watcher in the Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/e67313319311dfcbb8fe3ef85475d6fa48b9ff97/articles/network-watcher/media/network-watcher-portal-search.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-07-31T18:15:42Z",
+      "sha256": "e988e63d6060ac9598ffd18ec6e7eb2f426bbc8f960f2e818c5fd96c85c84b7d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-344-learn-2.png",
+      "alt": "Screenshot of network interface in VM settings.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/b45d67ee9f8f07d8c2f2a9a9f9a6f0955c00a76b/articles/virtual-network/media/diagnose-network-routing-problem/view-nics.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-09-05T05:35:12Z",
+      "sha256": "c96e47eaf173b66975641f9d14c296bdcbe299fd0ec262f14fa5b5851a2f9fa8",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/network-watcher/network-insights-topology.md",
+      "revision": "e67313319311dfcbb8fe3ef85475d6fa48b9ff97",
+      "revision_date": "2026-07-31T18:15:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "View Topology",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/network-insights-topology",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e67313319311dfcbb8fe3ef85475d6fa48b9ff97/articles/network-watcher/network-insights-topology.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/diagnose-network-routing-problem.md",
+      "revision": "b45d67ee9f8f07d8c2f2a9a9f9a6f0955c00a76b",
+      "revision_date": "2025-09-05T05:35:12Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Diagnose an Azure virtual machine routing problem",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b45d67ee9f8f07d8c2f2a9a9f9a6f0955c00a76b/articles/virtual-network/diagnose-network-routing-problem.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/network-watcher-resource-graph-topology.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/document-the-network-path-before-an-infrastructure-change.md",
+  "draft": true,
+  "word_count": 1295,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims topology allows filtering by 'Route Tables'. S1 lists supported resource types and does not include Route Tables. This is an unsupported feature claim that will mislead users attempting to filter the graph view.",
+      "fix": "Remove 'Route Tables' from the list of filterable resource types in the 'Map the resource relationships' section. Stick to S1's supported list (e.g., Virtual Networks, Network Interfaces)."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states effective routes are returned 'if the VM is in the running state'. S2 specifies output is returned if the *network interface* is in a running state (or attached to a running VM). This distinction is critical for NICs not attached to active VMs.",
+      "fix": "Correct the condition to match S2: 'Output is only returned if the network interface is attached to a running VM.' Ensure the CLI examples reflect this dependency."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies topology provides 'traffic insights' and 'connectivity insights' as standard features of the view. S1 notes these are only available when Connection Monitor and Traffic Analytics are explicitly enabled. The draft omits this prerequisite context.",
+      "fix": "Add a note that Traffic and Connectivity tabs require enabled Connection Monitor and Traffic Analytics/Flow Logs, respectively, as per S1. Clarify that the base topology view shows resource relationships regardless."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses specific example names ('vm-1445', 'test-rg') without clearly marking them as illustrative placeholders for the user's environment. This can cause confusion if users copy-paste without modification.",
+      "fix": "Explicitly label the CLI examples as illustrative. Use generic placeholders like `<nic-name>` and `<resource-group>` or clearly state 'Replace with your values' to avoid confusion."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph starting with 'The goal is not to predict...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar rhetorical closings.",
+      "fix": "Remove the final paragraph entirely. End the article after the 'Verify the change' section with a concrete next action, such as consulting additional documentation for complex BGP scenarios."
+    }
+  ]
+}

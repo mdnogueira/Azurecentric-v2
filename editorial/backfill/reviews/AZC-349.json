@@ -1,0 +1,148 @@
+{
+  "id": "AZC-349",
+  "title": "Create a recovery checklist for a Windows infrastructure server",
+  "slug": "create-a-recovery-checklist-for-a-windows-infrastructure-server",
+  "historical_date": "2026-09-03",
+  "input_sha256": "93620a828091481570b7f3874913ffa80b2da0351f970829319ea8c417a41159",
+  "created_at": "2026-10-23T20:23:05.352578+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Prepare a recovery checklist for a Windows infrastructure server using Windows Server Backup and wbadmin.",
+  "tags": [
+    "windows-server",
+    "active-directory",
+    "backup-and-recovery",
+    "wbadmin",
+    "forest-recovery"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-349-learn-1.png",
+      "alt": "Screenshot that highlights the selected Windows Server Backup option.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/media/a31518eb8f4ce532c957c9f4b61db202.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-02-16T15:59:05Z",
+      "sha256": "838780d5091e45c01edbf4bc202918b8f39f34c970f10c235540572739b0fe22",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-349-learn-2.png",
+      "alt": "Screenshot that highlights the Windows Server Backup menu option.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/f8c9eec68bbccf1bcaf2f367a0e4bdb7d84e1711/WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/media/fullbackup1.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-08-22T23:23:22Z",
+      "sha256": "f1b22798b7156c843588a0b137455fbeba88e5737f023233ad78c772728e24d3",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-guide.md",
+      "revision": "ef9afdb74d7e649d54aeaf104efe28dcd857ff2f",
+      "revision_date": "2026-02-16T15:59:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Active Directory Forest Recovery Guide",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-guide",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-guide.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-backing-up-a-full-server.md",
+      "revision": "ef9afdb74d7e649d54aeaf104efe28dcd857ff2f",
+      "revision_date": "2026-02-16T15:59:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "AD Forest Recovery - Backing up a full server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-backing-up-a-full-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ef9afdb74d7e649d54aeaf104efe28dcd857ff2f/WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-backing-up-a-full-server.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-backing-up-system-state.md",
+      "revision": "f8c9eec68bbccf1bcaf2f367a0e4bdb7d84e1711",
+      "revision_date": "2025-08-22T23:23:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "AD Forest Recovery - Backing up the System State data",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-backing-up-system-state",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/f8c9eec68bbccf1bcaf2f367a0e4bdb7d84e1711/WindowsServerDocs/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-backing-up-system-state.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Should the checklist include specific steps for verifying AD replication after restoration?",
+    "Are there any specific prerequisites for restoring a system state backup to a different hardware configuration?",
+    "How should the checklist handle scenarios where the backup destination is unavailable during recovery?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-recovery-checklist-for-a-windows-infrastructure-server.md",
+  "draft": true,
+  "word_count": 1154,
+  "claim_support_checks": [
+    {
+      "claim": "A Bare Metal Recovery (BMR) backup is recommended for restoring a server to different hardware or a different operating system instance.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Windows Server Backup is not installed by default on Windows Server 2012 R2 and newer.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The wbadmin command-line utility can be used to perform full server and system state backups.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "System state backups include the Active Directory database, SYSVOL, and the boot files.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes two screenshots with visible permission captions ('Used with permission from Microsoft') and alt-text descriptions that violate the editorial guidance to not add visible permission captions or screenshot captions.",
+      "fix": "Remove the 'Used with permission from Microsoft' credit lines and any visible caption text from the image paths or metadata. Ensure images are presented without permission overlays."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Windows Server Backup is not installed by default on Windows Server 2025.' Source S2 only confirms this for 2012 R2 and newer, but does not explicitly verify Windows Server 2025 availability status, making this a potential unsupported extrapolation for the specific 2026 context.",
+      "fix": "Verify the default installation status for Windows Server 2025 specifically. If unconfirmed, rephrase to 'Windows Server Backup is typically not installed by default' or cite the general trend from S2 without asserting the 2025 specific fact as absolute."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'System state backups include... the boot files.' Source S3 lists 'System State' but does not explicitly list 'boot files' in the provided text snippet. Source S2 mentions 'Full server' includes OS/apps, but S3's definition of System State is limited in the provided text.",
+      "fix": "Remove the explicit claim that System State includes 'boot files' unless supported by the full S3 content. Rely on the source's explicit list: 'Active Directory database, SYSVOL, and the boot files' is not in the S3 text provided; S3 only says 'System State'. Adjust to match source precision."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph: 'By establishing a clear backup strategy... you reduce the risk...'. This violates the guidance to remove generic concluding paragraphs beginning with 'By following' or similar.",
+      "fix": "Delete the final paragraph starting with 'By establishing a clear backup strategy...'. End the article with the verification step or the checklist example."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses `wbadmin get items` to verify backup integrity. The source S2/S3 do not mention `wbadmin get items` for verification; they only show `start backup` and `start systemstatebackup`. Using an unsupported command for verification is a factual error.",
+      "fix": "Remove the `wbadmin get items` verification step. Instead, instruct users to check the 'Backup History' in the GUI or verify file existence on the target drive, as implied by the 'Verify the backup' section's general advice."
+    }
+  ]
+}

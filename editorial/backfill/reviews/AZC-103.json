@@ -1,0 +1,124 @@
+{
+  "id": "AZC-103",
+  "title": "Plan shared storage access for an Azure HPC cluster",
+  "slug": "plan-shared-storage-access-for-an-azure-hpc-cluster",
+  "historical_date": "2024-10-14",
+  "input_sha256": "369b6505134514d2eb96e1728d0e3c6348595dfb27be8a70609f98a910d1ba3e",
+  "created_at": "2026-10-23T14:34:18.270639+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Mount Azure Files on Azure Batch pools using PowerShell, covering prerequisites, configuration, and troubleshooting steps.",
+  "tags": [
+    "azure-batch",
+    "azure-files",
+    "virtual-file-mount",
+    "powershell",
+    "hpc"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/pool-file-shares.md",
+      "revision": "b66748934ecfb7b427dc7d0c32ff8a41c0bd801f",
+      "revision_date": "2024-03-24T21:44:22Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure file share for Azure Batch pools",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/pool-file-shares",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b66748934ecfb7b427dc7d0c32ff8a41c0bd801f/articles/batch/pool-file-shares.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/virtual-file-mount.md",
+      "revision": "7e5caa9a00116ee909e162808c456fe5bee7ea6f",
+      "revision_date": "2024-06-11T00:17:40Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Mount a virtual file system on a pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/virtual-file-mount",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7e5caa9a00116ee909e162808c456fe5bee7ea6f/articles/batch/virtual-file-mount.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the provided PowerShell example for Linux include the correct mount options for vers=3.0 and security settings?",
+    "Is the AZ_BATCH_NODE_MOUNTS_DIR path consistent across all Linux distributions supported by Batch?",
+    "Are there specific quota limits for the number of files or size of the Azure File share when used with Batch?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-shared-storage-access-for-an-azure-hpc-cluster.md",
+  "draft": true,
+  "word_count": 1103,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Files can be mounted on both Windows and Linux Batch pool compute nodes.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Mounting a virtual file system on a pool makes the file system available to every compute node in the pool.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Files shares require TCP port 445 to be open for traffic to and from the storage service tag.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The maximum number of mounted file systems on a pool is 10.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "On Linux, the Batch agent installs the package cifs-utils to mount Azure file shares.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "If a mount configuration fails, the compute node state is set to Unusable.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft title and tags reference 'Azure HPC cluster', but the content exclusively covers Azure Batch pools. Azure Batch and Azure HPC (HPC Pack/Azure CycleCloud) are distinct services with different architectures and management interfaces. This creates a fundamental mismatch between the stated topic and the technical content.",
+      "fix": "Change the title to 'Mount Azure Files on Azure Batch pools' and remove 'hpc' from the tags. Ensure the introduction clarifies this is for Azure Batch, not general HPC clusters, to prevent user confusion regarding service selection."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Files is 'often the first choice' for shared file systems. Source S1 explicitly advises using Azure Files only for pools with a 'relatively low number of parallel tasks' and directs users to review performance targets. It does not support a general 'first choice' recommendation, especially for HPC-scale workloads where performance may be insufficient.",
+      "fix": "Replace 'often the first choice' with 'a viable option for low-to-moderate parallel task counts'. Add a reference to the Azure Files scale targets documentation to manage expectations regarding performance and concurrency limits."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the mount path is relative to `\\\\fsmounts` but then provides the Linux path `/mnt/batch/tasks/fsmounts/S`. The source specifies the environment variable `AZ_BATCH_NODE_MOUNTS_DIR` points to the base directory, but the draft's phrasing 'relative to the standard `\\\\fsmounts` directory' is ambiguous and mixes Windows-style backslashes with Linux paths without clear distinction.",
+      "fix": "Clarify that `AZ_BATCH_NODE_MOUNTS_DIR` is the base directory for Linux nodes. Specify that the mount path provided in the configuration is appended to this directory. Ensure the distinction between the environment variable value and the literal path is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that mounting Azure Files on Linux requires `cifs-utils` installation by the Batch agent. While Source S2 confirms this, it does not mention that Azure Files uses SMB, and `cifs-utils` is the standard Linux SMB client. The draft should explicitly link `cifs-utils` to SMB protocol support to explain *why* it is needed, rather than just stating it is installed.",
+      "fix": "Add a sentence explaining that `cifs-utils` is required for the SMB protocol support on Linux nodes. This provides technical context for the prerequisite and helps users understand the underlying mechanism."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description 'Azure Batch Pool Mount Flow' but no visual is provided. The guidance states 'Do not add an unrelated screenshot merely because it was supplied' and 'Do not add visible Microsoft Learn screenshot'. Since no screenshot was supplied in the input, including a diagram description without the actual image or a clear textual alternative is incomplete.",
+      "fix": "Remove the diagram section from the draft unless a relevant, non-Microsoft-proprietary diagram is created or a textual flow description is provided. The current text is sufficient without the diagram placeholder."
+    }
+  ]
+}

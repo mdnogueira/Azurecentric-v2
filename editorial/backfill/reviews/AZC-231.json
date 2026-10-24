@@ -1,0 +1,134 @@
+{
+  "id": "AZC-231",
+  "title": "Define health checks across application and infrastructure layers",
+  "slug": "define-health-checks-across-application-and-infrastructure-layers",
+  "historical_date": "2025-10-07",
+  "input_sha256": "879ce93029e7fc866097028707d98030d6ed724a69c1387d3c4e263da3f27beb",
+  "created_at": "2026-10-23T17:35:47.429684+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define health checks to distinguish transient faults from outages, supporting business continuity decisions during service disruptions.",
+  "tags": [
+    "health-checks",
+    "business-continuity",
+    "high-availability",
+    "disaster-recovery",
+    "azure-monitor",
+    "incident-response"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "297ed3fede45b3785bda973110241a420f0e621b",
+      "revision_date": "2024-02-23T13:07:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/297ed3fede45b3785bda973110241a420f0e621b/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "4ca63719858e419d8f7530f97881bcda9e66a67b",
+      "revision_date": "2025-02-27T17:22:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4ca63719858e419d8f7530f97881bcda9e66a67b/articles/reliability/incident-response.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "revision": "7e08273db53ac42613c421a2b93edc24c6bc2bee",
+      "revision_date": "2025-10-06T18:47:30Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What are business continuity, high availability, and disaster recovery?",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7e08273db53ac42613c421a2b93edc24c6bc2bee/articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-02-23T16:05:23Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-guidance-overview.md"
+  ],
+  "open_questions": [
+    "What specific thresholds should be used for health check failures to trigger different levels of incident response?",
+    "How should health checks be configured for multi-region active-active architectures?",
+    "What is the recommended frequency for health checks based on workload criticality tiers?",
+    "How can health check results be correlated with Azure Service Health alerts in an automated way?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/define-health-checks-across-application-and-infrastructure-layers.md",
+  "draft": true,
+  "word_count": 1134,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Service Health provides information on issues impacting subscriptions but does not assess application health.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Public Azure Status page only shows widespread issues meeting specific criteria.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "High availability addresses day-to-day transient faults, while disaster recovery addresses uncommon catastrophic outages.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Zone-redundant services are unlikely to be affected by a single availability zone outage.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Health checks should validate critical business flows, not just component availability.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that health checks 'are the operational definition of your Service Level Objectives (SLOs).' Sources define SLOs as business commitments and health checks as internal diagnostics. Equating them is a categorical error that misleads readers about the nature of SLOs.",
+      "fix": "Rephrase to state that health checks provide the telemetry data used to measure compliance with SLOs, rather than defining them. Clarify that SLOs are business targets while health checks are technical verification mechanisms."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends 'Chaos Engineering' as a verification step. The provided sources do not mention chaos engineering or fault injection testing. This introduces an external methodology not supported by the supplied documentation.",
+      "fix": "Replace 'Chaos Engineering' with 'regular review and testing' or 'failover drills' as implied by the source guidance on reviewing disaster recovery plans. Remove the specific term 'chaos engineering' to stay within source bounds."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that infrastructure health checks should verify if 'managed disks attached and accessible.' The sources do not specify disk-level health checks as part of the general reliability guidance. This is an unsupported technical detail that may not apply to all infrastructure types.",
+      "focus": "Remove specific disk accessibility checks. Focus on general resource status (running state) and connectivity as described in the sources, which are sufficient for the high-level guidance provided."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic paragraphs starting with 'By defining...' and 'End your incident response review...'. The editorial guidance explicitly forbids generic concluding paragraphs and advises ending with a concrete verification or next action.",
+      "fix": "Remove the concluding paragraphs. End the article with the 'Verify and refine' section, specifically the point about updating criticality tiers, which serves as a concrete next action."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states health checks should be 'aligned with your SLOs' regarding frequency. The sources discuss SLOs as business commitments but do not explicitly link health check frequency to SLOs in the provided text. This is a slight inference.",
+      "fix": "Clarify that health check frequency should align with the 'recovery metrics' or 'risk classification' defined in the business continuity plan, as these are the technical parameters derived from SLOs in the sources."
+    }
+  ]
+}

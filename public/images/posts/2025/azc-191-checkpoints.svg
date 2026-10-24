@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 580" role="img" aria-labelledby="t d">
+<title id="t">Azure Files vs Blob Storage Decision Flow</title>
+<desc id="d">Checkpoints: Application Data Access Pattern; Requires File System API (e.g., System.IO); Requires Object API (e.g., HTTP/REST); Azure Files; Azure Blob Storage; Protocol Support (SMB/NFS vs HTTP/HTTPS)</desc>
+<rect width="1080" height="580" rx="20" fill="#f2f6fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#142c4c}.heading{font-size:25px;font-weight:700}.label{font-size:23px}</style>
+<text x="38" y="40" class="heading">Azure Files vs Blob Storage Decision Flow</text>
+<rect x="36" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="134" r="20" fill="#176ea5"/><text x="65" y="142" style="font-size:23px;fill:white">1</text>
+<text x="106" y="139" class="label">Application Data Access</text>
+<text x="106" y="168" class="label">Pattern</text>
+<rect x="556" y="100" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="134" r="20" fill="#176ea5"/><text x="585" y="142" style="font-size:23px;fill:white">2</text>
+<text x="626" y="139" class="label">Requires File System API</text>
+<text x="626" y="168" class="label">(e.g., System.IO)</text>
+<rect x="36" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="289" r="20" fill="#176ea5"/><text x="65" y="297" style="font-size:23px;fill:white">3</text>
+<text x="106" y="294" class="label">Requires Object API (e.g.,</text>
+<text x="106" y="323" class="label">HTTP/REST)</text>
+<rect x="556" y="255" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="289" r="20" fill="#176ea5"/><text x="585" y="297" style="font-size:23px;fill:white">4</text>
+<text x="626" y="294" class="label">Azure Files</text>
+<rect x="36" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="72" cy="444" r="20" fill="#176ea5"/><text x="65" y="452" style="font-size:23px;fill:white">5</text>
+<text x="106" y="449" class="label">Azure Blob Storage</text>
+<rect x="556" y="410" width="488" height="126" rx="12" fill="white" stroke="#176ea5" stroke-width="2"/>
+<circle cx="592" cy="444" r="20" fill="#176ea5"/><text x="585" y="452" style="font-size:23px;fill:white">6</text>
+<text x="626" y="449" class="label">Protocol Support (SMB/NFS vs</text>
+<text x="626" y="478" class="label">HTTP/HTTPS)</text>
+</svg>

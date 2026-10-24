@@ -1,0 +1,120 @@
+{
+  "id": "AZC-085",
+  "title": "Use dependency information to plan migration waves",
+  "slug": "use-dependency-information-to-plan-migration-waves",
+  "historical_date": "2024-08-24",
+  "input_sha256": "83d2b312f9c6a70e9500b0682b4420a8e0a97e93ce785f81d3a7cc19f8b60e66",
+  "created_at": "2026-10-23T14:08:24.896281+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Azure Migrate dependency analysis to group servers into migration waves, avoiding outages and identifying decommission candidates.",
+  "tags": [
+    "azure-migrate",
+    "migration-planning",
+    "dependency-analysis",
+    "cloud-adoption"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/concepts-dependency-visualization.md",
+      "revision": "092f3b07b624fad3aa0b2d30041cf35e8455ea6d",
+      "revision_date": "2024-06-28T10:14:14Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Dependency analysis in Azure Migrate Discovery and assessment",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/concepts-dependency-visualization",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/092f3b07b624fad3aa0b2d30041cf35e8455ea6d/articles/migrate/concepts-dependency-visualization.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/concepts-migration-planning.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Build a migration plan with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/migrate/concepts-migration-planning.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-08-24: MicrosoftDocs/azure-docs/articles/migrate/how-to-plan-create-waves.md"
+  ],
+  "open_questions": [
+    "Does the agentless analysis cover all physical server types or only specific hypervisors?",
+    "What is the exact data retention period for agentless dependency maps in the portal?",
+    "Are there specific network firewall rules required for the Azure Migrate appliance to poll TCP data?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-dependency-information-to-plan-migration-waves.md",
+  "draft": true,
+  "word_count": 1018,
+  "claim_support_checks": [
+    {
+      "claim": "Agentless dependency analysis captures TCP connection data every five minutes and sends processed data to Azure Migrate every six hours.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Agent-based analysis requires a Log Analytics workspace in East US, Southeast Asia, or West Europe.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Agentless analysis is generally available for VMware VMs, Hyper-V VMs, bare-metal servers, and servers on other public clouds like AWS and GCP.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Dependency analysis helps identify servers that must be migrated together and servers that can be decommissioned.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Agent-based analysis provides data on number of connections, latency, and data transfer information.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states agent-based dependency maps can be viewed for '1 hour only'. Source S1 says agent-based maps are 'Map can be viewed over an hour only' but agentless is 'one hour to 30 days'. The draft reverses or conflates these, implying agent-based is more limited in duration than agentless, whereas the source text is ambiguous but generally agentless has the 30-day export/view capability while agent-based relies on Log Analytics queries. More critically, the draft claims agent-based allows viewing a 'group of servers' map, which S1 confirms, but the duration restriction is poorly explained.",
+      "fix": "Clarify that agentless visualization supports viewing dependency maps for a single server over a duration of one hour to 30 days. Agent-based visualization supports single or group server maps but is limited to a one-hour view window in the portal interface, with historical data available via Log Analytics queries."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims agentless analysis is 'Generally Available for... bare-metal servers'. Source S1 confirms this. However, the draft implies this is a universal capability without noting that agentless discovery for physical servers often requires specific appliance configurations or network tap/span port access, which is a significant operational constraint not mentioned. The text presents it as a simple 'no agent' benefit.",
+      "fix": "Add a note that agentless discovery for physical servers requires the Azure Migrate appliance to be positioned to capture network traffic (e.g., via SPAN ports or network taps), which may involve additional infrastructure setup compared to VM-based discovery."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Agent-based analysis is not supported in Azure Government'. Source S1 confirms this. However, it does not explain the implication for users in that environment. The draft presents this as a simple fact without guiding the user on alternatives or confirming if agentless is the only option there.",
+      "fix": "Explicitly state that for Azure Government environments, agent-based dependency analysis is unavailable, so users must rely on agentless analysis for dependency visualization."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests 'Export the dependency data as a CSV for the last 30 days' for verification. Source S1 states 'Last 30 days data can be downloaded in a CSV format' for agentless. It does not explicitly state CSV export is available for agent-based (which uses Log Analytics queries). The draft conflates the export capability across both methods.",
+      "fix": "Clarify that CSV export of dependency data is a feature of agentless analysis. For agent-based analysis, data is accessed and queried via Log Analytics, not exported as a simple CSV from the portal interface in the same manner."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph: 'The next step is to set up the dependency visualization... This structured approach turns a complex migration into a series of manageable, low-risk steps.' This is generic advice and violates the guidance to remove generic concluding paragraphs.",
+      "fix": "Remove the final concluding paragraph. End with the concrete action of setting up the chosen dependency analysis method and creating the first server groups."
+    }
+  ]
+}

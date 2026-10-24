@@ -1,0 +1,155 @@
+{
+  "id": "AZC-354",
+  "title": "Build a repeatable privileged-access review",
+  "slug": "build-a-repeatable-privileged-access-review",
+  "historical_date": "2026-09-16",
+  "input_sha256": "b0bacb874fac3c63afe5bdce9c2fd09dc88def28dd57d9e517b179f0f682fd41",
+  "created_at": "2026-10-23T20:28:16.682552+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use role-assignable groups and PIM to manage privileged access reviews, ensuring clear separation between group membership and role eligibility.",
+  "tags": [
+    "entra-id",
+    "privileged-access-management",
+    "role-based-access-control",
+    "pim",
+    "security"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-354-learn-1.png",
+      "alt": "Screenshot of option to make group a role-assignable group.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/ad2392b54e54af312a83c1095d1532609ac46a05/docs/identity/role-based-access-control/media/groups-create-eligible/eligible-switch.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-06-15T16:35:27Z",
+      "sha256": "26b32784aeb586e70f93427d60a16a6bf5a87891a9f5e44f28ed1f8d70dd1dc0",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-354-learn-2.png",
+      "alt": "Screenshot of Assignments page to remove a role assignment.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/ad2392b54e54af312a83c1095d1532609ac46a05/docs/identity/role-based-access-control/media/groups-remove-assignment/remove-assignment.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-06-15T16:35:27Z",
+      "sha256": "59c77534076105452faaf16b7c7eafe0332871767bcb944cfda09c9cfab1c6ee",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/groups-create-eligible.md",
+      "revision": "ad2392b54e54af312a83c1095d1532609ac46a05",
+      "revision_date": "2026-06-15T16:35:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a role-assignable group in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-create-eligible",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/ad2392b54e54af312a83c1095d1532609ac46a05/docs/identity/role-based-access-control/groups-create-eligible.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/groups-remove-assignment.md",
+      "revision": "ad2392b54e54af312a83c1095d1532609ac46a05",
+      "revision_date": "2026-06-15T16:35:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Remove Microsoft Entra role assignments",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-remove-assignment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/ad2392b54e54af312a83c1095d1532609ac46a05/docs/identity/role-based-access-control/groups-remove-assignment.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/security-planning.md",
+      "revision": "71c5eed3578535b0614b574325d4c0c8c8dd866a",
+      "revision_date": "2026-02-19T18:22:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure access practices for administrators in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/71c5eed3578535b0614b574325d4c0c8c8dd866a/docs/identity/role-based-access-control/security-planning.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the article clearly distinguish between the control plane permissions of Privileged Role Administrator and data plane access?",
+    "Is the distinction between static role-assignable groups and PIM eligible assignments clear enough for a practitioner?",
+    "Are the PowerShell examples sufficiently explained for users who might not be familiar with Microsoft Graph PowerShell?",
+    "Is the emergency access account guidance sufficiently detailed for a repeatable review process?",
+    "Does the article avoid implying that role-assignable groups are the only way to manage privileged access?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-repeatable-privileged-access-review.md",
+  "draft": true,
+  "word_count": 1012,
+  "claim_support_checks": [
+    {
+      "claim": "Role-assignable groups allow Microsoft Entra roles to be assigned to the group rather than individual users.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Privileged Role Administrator is required to create role-assignable groups.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Removing a user from a role-assignable group removes their role assignment.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "PIM allows for eligible role assignments which require activation.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Emergency access accounts should be cloud-only and not assigned to specific individuals.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that removing a user from a role-assignable group 'automatically removes the role assignment'. This is technically incorrect for PIM-managed eligible assignments. In PIM, the eligible assignment persists in the PIM store even if the user is removed from the underlying group, requiring explicit removal of the PIM assignment to fully revoke access.",
+      "fix": "Clarify that removing a user from the group revokes *active* access for eligible assignments, but the *eligible* assignment record may remain in PIM. Explicitly state that PIM eligible assignments must be removed via PIM interfaces or APIs to fully clean up the assignment history and eligibility status."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Privileged Role Administrator... does not give you data-plane access to the resources those roles protect'. This is an unsupported generalization. While the role itself is a control-plane permission, a Privileged Role Administrator can assign themselves the Global Administrator role (if permitted by policy), thereby gaining data-plane access. The distinction is between the role's inherent definition and its potential to grant broader access.",
+      "fix": "Rephrase to: 'The Privileged Role Administrator role is a control-plane permission for managing identities. It does not inherently grant data-plane access to resources like Exchange or SharePoint, but users can assign themselves other roles that do, subject to organizational policies.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using PIM for 'eligible assignments' as an optional step but implies it's just an 'auditability' layer. It fails to mention that PIM introduces Just-In-Time (JIT) activation requirements, which fundamentally changes the access model from static to dynamic. This omission misleads users about the operational impact of enabling PIM.",
+      "fix": "Add a note explaining that PIM eligible assignments require users to actively request and activate the role, often with MFA and justification, rather than just providing auditability. Highlight that this changes the user experience from immediate access to request-based access."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot of the 'Assignments' page in PIM (S2 source) in Step 4, but the context is removing a user from a group. The screenshot shows the PIM interface, not the group membership page. This is misleading as the user is instructed to go to the group's 'Members' blade, not the PIM assignments page.",
+      "fix": "Remove the PIM screenshot from Step 4. Replace it with a screenshot of the Group Members page or remove the image entirely if no suitable source is available, ensuring the visual matches the action of managing group membership."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'By using role-assignable groups and PIM, you create a repeatable and auditable process...'. This is a generic concluding paragraph that adds no technical value and violates the guidance to remove generic concluding paragraphs.",
+      "fix": "Delete the final paragraph starting with 'By using role-assignable groups...'. End the article after the 'Common mistakes to avoid' section or with a concrete next step, such as 'Next, configure Conditional Access policies to enforce MFA for these privileged roles.'"
+    }
+  ]
+}

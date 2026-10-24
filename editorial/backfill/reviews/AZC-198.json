@@ -1,0 +1,157 @@
+{
+  "id": "AZC-198",
+  "title": "Investigate agentless vulnerability findings before remediation",
+  "slug": "investigate-agentless-vulnerability-findings-before-remediation",
+  "historical_date": "2025-07-07",
+  "input_sha256": "293f7079b0868fbf653ca6183108649f967f4a38e6553f07d4155fb6e2f414be",
+  "created_at": "2026-10-23T16:49:36.144773+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate agentless vulnerability findings by verifying scan scope, inventory freshness, and exploitability context before remediation.",
+  "tags": [
+    "defender-for-cloud",
+    "vulnerability-management",
+    "agentless-scanning",
+    "container-security",
+    "vm-security"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-198-learn-1.png",
+      "alt": "Screenshot of link for the settings of the Defender plans for Azure accounts.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/enable-vulnerability-assessment-agentless/defender-plan-settings-azure.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "c157cc086f1cfee1009b378b024b6bf6325dca031f03005dcbf12b6be110feae",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-198-learn-2.png",
+      "alt": "Screenshot showing the line for recommendation container registry images should have vulnerability findings resolved.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/cb72f7c344a9f483e4d0633e0905d576c3533678/articles/defender-for-cloud/media/view-and-remediate-vulnerability-assessment-findings/open-recommendations-page.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-04-02T06:28:14Z",
+      "sha256": "57ee8460e48447d44468587080132ba75d38d30a43860f674f31afb4acba6167",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/agentless-vulnerability-assessment-azure.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Vulnerability assessments for Azure with Microsoft Defender Vulnerability Management",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/agentless-vulnerability-assessment-azure",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/agentless-vulnerability-assessment-azure.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/enable-agentless-scanning-vms.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable agentless scanning for VMs",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/enable-agentless-scanning-vms",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/enable-agentless-scanning-vms.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/view-and-remediate-vulnerability-assessment-findings.md",
+      "revision": "cb72f7c344a9f483e4d0633e0905d576c3533678",
+      "revision_date": "2024-04-02T06:28:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How-to view and remediate vulnerability assessment findings for registry images",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/view-and-remediate-vulnerability-assessment-findings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cb72f7c344a9f483e4d0633e0905d576c3533678/articles/defender-for-cloud/view-and-remediate-vulnerability-assessment-findings.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/agentless-vulnerability-assessment-azure.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/enable-agentless-scanning-vms.md",
+    "Public document removed/moved on 2024-04-02T15:39:27Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/view-and-remediate-vulnerability-assessment-findings.md"
+  ],
+  "open_questions": [
+    "Does the source document specify the exact latency for the first scan after enabling agentless scanning for a new VM?",
+    "Are there any known limitations for agentless scanning on specific Linux distributions or Windows Server versions not listed in the general support matrix?",
+    "How does the agentless scanner handle VMs that are deallocated or stopped for extended periods?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-agentless-vulnerability-findings-before-remediation.md",
+  "draft": true,
+  "word_count": 1371,
+  "claim_support_checks": [
+    {
+      "claim": "Agentless scanning for container images in ACR is triggered on push, import, and pull, with daily rescans for recent images.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Agentless scanning for VMs is enabled by default when Defender for Servers P2 or CSPM is enabled, provided no other integrated vulnerability assessment solutions are active.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Defender for Cloud provides exploitability information to help determine actual risk.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Machines can be excluded from agentless scanning using pre-existing environment tags.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Agentless scanning for CMK encrypted disks requires specific permissions on Key Vaults.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly states that agentless scanning for VMs is enabled by default when Defender for Servers P2 or CSPM is enabled. Source S2 clarifies that agentless scanning is enabled by default only if no existing integrated vulnerability assessment solutions are enabled. If MDVM or BYOL is already active, agentless scanning is not automatically enabled.",
+      "fix": "Correct the claim to state that agentless scanning is enabled by default only in the absence of other integrated vulnerability assessment solutions. If MDVM or BYOL is present, agentless scanning must be manually enabled or configured to show results for machines without agents."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft conflates VM inventory refresh rates with container image vulnerability report update frequencies. It attributes the 7-hour and 2-hour inventory refresh rates (specific to AKS agentless discovery) to VM investigation, which is misleading. VM agentless scanning does not have these specific inventory refresh intervals documented in the provided sources.",
+      "fix": "Remove the reference to 7-hour and 2-hour inventory refresh rates in the VM section. Reserve these details for the AKS/container runtime context. For VMs, focus on the general discovery cycle and the fact that vulnerability reports are updated based on the scan engine's schedule, without inventing specific refresh intervals."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that 'not applicable' resources in the recommendation tab are due to Private Link access issues. Source S3 states 'not applicable' includes resources where the recommendation cannot give a definitive answer, but does not explicitly list Private Link as a reason for this status. Private Link access is a prerequisite for scanning, not a status indicator.",
+      "fix": "Clarify that 'not applicable' indicates the recommendation cannot provide a definitive answer for the resource. Do not attribute this status to Private Link issues. Instead, note that scanning requires access to the registry, and failures may result in no data rather than a 'not applicable' status."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes two screenshots with visible permission captions or alt-text that imply permission requirements. The guidance prohibits visible permission captions. The alt-text for the first screenshot describes the settings link, not permissions.",
+      "fix": "Remove any visible permission captions from the screenshots. Ensure alt-text describes the visual content (e.g., 'Defender plan settings for Azure') without referencing permissions. The provided screenshots do not have visible captions, so ensure the final output does not add them."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic advice ('End your investigation by confirming...') and a 'Next steps' section that repeats information already covered. This violates the instruction to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Remove the generic concluding paragraph and the 'Next steps for verification' section. End the article after the 'Verify remediation scope and exclusions' section, with a direct instruction to check the recommendation status in the portal after remediation."
+    }
+  ]
+}

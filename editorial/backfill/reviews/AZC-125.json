@@ -1,0 +1,121 @@
+{
+  "id": "AZC-125",
+  "title": "Configure an Azure Batch pool for a repeatable compute job",
+  "slug": "configure-an-azure-batch-pool-for-a-repeatable-compute-job",
+  "historical_date": "2024-12-14",
+  "input_sha256": "c9c164b1ad1bb7d84b0a03c7e82f323ee07f858b7c0f49d62a993292e8a6bd21",
+  "created_at": "2026-10-23T15:05:06.746074+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure a repeatable Azure Batch pool using start tasks, scaling, and job constraints for consistent compute.",
+  "tags": [
+    "azure-batch",
+    "compute-automation",
+    "start-tasks",
+    "scaling",
+    "jobs-and-tasks"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/nodes-and-pools.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Nodes and pools in Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/nodes-and-pools",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/batch/nodes-and-pools.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/jobs-and-tasks.md",
+      "revision": "27e864f82787bb9a7ed7186378d1c4b5f24f113d",
+      "revision_date": "2024-06-24T07:50:30Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Jobs and tasks in Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/jobs-and-tasks",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/27e864f82787bb9a7ed7186378d1c4b5f24f113d/articles/batch/jobs-and-tasks.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What is the specific command line syntax for the start task in the user's environment?",
+    "Are there any specific network requirements for the nodes to access the Azure Storage account for resource files?",
+    "What is the expected duration of the start task, and does it fit within the node's initialization timeout?",
+    "How should the application handle idempotency if the start task is run multiple times?",
+    "What is the maximum number of nodes allowed in the pool based on the Batch account quota?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-an-azure-batch-pool-for-a-repeatable-compute-job.md",
+  "draft": true,
+  "word_count": 1441,
+  "claim_support_checks": [
+    {
+      "claim": "A start task runs on every node when it joins the pool and when it is restarted or reimaged.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Automatic scaling allows the pool to adjust the number of nodes based on a formula evaluated periodically.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Spot nodes may be preempted when Azure has insufficient surplus capacity.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Job priority determines the order of scheduling within a pool, but does not preempt running tasks in lower priority jobs.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The start task can fail if there is an issue copying its resource files or if the process returns a nonzero exit code.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The code example uses `ScaleFormula` with a string literal, but the source documentation describes automatic scaling via formulas that require specific syntax and context. The code omits the `CloudPool` constructor details and `ScalePolicy` vs `ScaleFormula` distinction, potentially misleading users about the API shape.",
+      "fix": "Clarify that `ScaleFormula` is a property of the pool configuration but note that the exact SDK property name and usage may vary by version. Mark the code as illustrative and unrun, advising users to consult the specific SDK documentation for the correct property assignment."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Spot nodes are 'significantly cheaper' without citing specific pricing tiers or conditions. It also suggests mixing Spot and Dedicated nodes in the same pool without explaining the operational complexity or potential scheduling implications beyond 'assigning targets'.",
+      "fix": "Remove subjective terms like 'significantly cheaper' and refer to the Batch Pricing page for actual costs. Briefly mention that mixing node types requires careful management of target counts and that preemption can affect job completion time."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that 'nodes will transition from idle to running as they are allocated and the start task executes.' This oversimplifies the node lifecycle. Nodes may be in a 'starting' or 'unusable' state during start task execution, and failures can leave them in an error state indefinitely if not handled.",
+      "fix": "Correct the state transition description to include 'starting' and 'unusable' states. Emphasize that start task failures can prevent nodes from becoming 'idle' and require manual intervention or specific monitoring to resolve."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'application packages are also installed via the start task process,' which is slightly misleading. Application packages are installed by the Batch agent, not the start task itself, although the start task can trigger their installation or use them.",
+      "fix": "Clarify that the Batch agent handles application package installation, and the start task can be used to invoke or configure these packages, but the agent manages the actual deployment."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft advises 'regularly reviewing the pool configuration and scaling policies' without specifying what to review or how often. This is vague and lacks actionable guidance.",
+      "fix": "Specify that reviews should focus on scaling formula effectiveness, node quota usage, and start task performance metrics to ensure efficiency and cost-effectiveness."
+    }
+  ]
+}

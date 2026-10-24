@@ -1,0 +1,131 @@
+{
+  "id": "AZC-157",
+  "title": "Choose VHDX settings around capacity and performance needs",
+  "historical_date": "2025-03-15",
+  "created_at": "2026-10-23T23:23:02.955225+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Select VHDX settings by balancing capacity, resilience and storage protocol support against your workload requirements.",
+  "tags": [
+    "hyper-v",
+    "vhdx",
+    "windows-server",
+    "storage",
+    "best-practices"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "revision": "dedf7198ffe3c5689286b7e61fb3878b57118844",
+      "revision_date": "2025-01-12T23:19:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Physical storage architectures for Hyper-V in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-storage-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/dedf7198ffe3c5689286b7e61fb3878b57118844/WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Use-at-least-SMB-protocol-version-3.0-for-file-shares-that-store-files-for-virtual-machines.md",
+      "revision": "da913042d23db47e0a7154c41108595300ff195d",
+      "revision_date": "2025-01-16T21:23:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use at least SMB protocol version 3.0 for file shares that store files for virtual machines.",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/use-at-least-smb-protocol-version-3.0-for-file-shares-that-store-files-for-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/da913042d23db47e0a7154c41108595300ff195d/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Use-at-least-SMB-protocol-version-3.0-for-file-shares-that-store-files-for-virtual-machines.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Avoid-using-VHD-format-differencing-virtual-hard-disks-on-virtual-machines.md",
+      "revision": "da913042d23db47e0a7154c41108595300ff195d",
+      "revision_date": "2025-01-16T21:23:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Avoid using VHD-format differencing virtual hard disks on virtual machines that run server workloads in a production environment",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/avoid-using-vhd-format-differencing-virtual-hard-disks-on-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/da913042d23db47e0a7154c41108595300ff195d/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Avoid-using-VHD-format-differencing-virtual-hard-disks-on-virtual-machines.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source text specify the exact performance overhead percentage for dynamically expanding disks compared to fixed disks?",
+    "Are there specific SMB 3.x versions recommended over others for Hyper-V workloads?",
+    "What is the maximum number of dynamically expanding disks per VM in Windows Server 2025?",
+    "Does Storage Spaces Direct support VHDX differencing disks natively, or are there limitations?",
+    "Are there specific IOPS thresholds that dictate the choice between fixed and dynamic disks?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2025-01-13T10:58:44Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/hyper-v-storage-architecture.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/use-at-least-SMB-protocol-version-3.0-for-file-shares-that-store-files-for-virtual-machines",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/avoid-using-VHD-format-differencing-virtual-hard-disks-on-virtual-machines"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-vhdx-settings-around-capacity-and-performance-needs.md",
+  "draft": true,
+  "word_count": 989,
+  "claim_support_checks": [
+    {
+      "claim": "VHDX format protects against corruption during power failures, unlike VHD.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "VHD format is unsupported for new server workloads in production due to consistency risks.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "SMB protocol version 3.0 or later is required for file shares storing VM files.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Windows Server 2012 and later support VHDX, but earlier versions do not.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Hyper-V supports multiple storage architectures including SAN, NAS, and Storage Spaces Direct.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims SMB 3.0 is 'required' and 'not supported' for older versions. Source S2 states Microsoft 'does not support this configuration' (using <SMB 3.0), which is a support constraint, not a technical impossibility. The draft also implies SMB 3.0 is the only option, ignoring SMB 3.1.1 or other supported protocols.",
+      "fix": "Clarify that using SMB versions lower than 3.0 is unsupported by Microsoft and triggers a Best Practices Analyzer error. State that SMB 3.0 or later is the supported baseline, rather than implying a hard technical block or ignoring newer SMB versions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts VHDX is the 'recommended format' and 'standard' for new workloads. Source S3 only warns against VHD *differencing* disks in production. It does not explicitly recommend VHDX for all new workloads or label it the 'standard'. The draft overgeneralizes a specific warning about differencing disks to a general format recommendation.",
+      "fix": "Reframe the VHDX recommendation based on the specific risks of VHD differencing disks (power failure corruption) and size limits. Avoid categorical claims that VHDX is the universal 'standard' or 'recommended' format for all scenarios, as the source only addresses differencing disk risks."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states dynamically expanding disks 'can introduce performance overhead' and 'latency spikes'. Source S1 and S3 do not quantify this or explicitly link dynamic expansion to latency spikes in the provided text. This is a common knowledge assumption not supported by the supplied evidence.",
+      "fix": "Remove specific claims about 'latency spikes' and 'performance overhead' unless sourced. State that dynamic disks grow as data is written, which requires underlying storage space, but do not assert performance impacts not found in the provided sources."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cheers' sign-off and a 'Further documentation' section at the end. The editorial guidance explicitly forbids generic concluding paragraphs and stock conclusions. The tone is informal and inconsistent with the 'Explainer' format.",
+      "fix": "Remove the 'Cheers' sign-off and the 'Further documentation' list. End the article with the concrete verification step: 'Verify your configuration by running the Best Practices Analyzer on your Hyper-V hosts.' Ensure the tone remains professional and operational."
+    }
+  ]
+}

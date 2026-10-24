@@ -1,0 +1,141 @@
+{
+  "id": "AZC-049",
+  "title": "Create virtual network peering and verify the routing path",
+  "slug": "create-virtual-network-peering-and-verify-the-routing-path",
+  "historical_date": "2024-05-16",
+  "input_sha256": "1de1d4d6491719c856d1b41a31b837f47717d970928b5b7520eb529bb5248a93",
+  "created_at": "2026-10-23T13:19:36.026267+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create virtual network peerings with Azure CLI and verify the routing path using effective route tables.",
+  "tags": [
+    "virtual-network",
+    "peering",
+    "azure-cli",
+    "networking",
+    "routing"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-049-learn-1.png",
+      "alt": "Screenshot of peering configuration page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2e619e5a370f731bd980a28dbe4347a0a703b5fa/articles/virtual-network/media/virtual-network-manage-peering/add-peering.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-03-15T17:13:37Z",
+      "sha256": "1d49dcdb0f1cb59381ab2105bdb626328527ab17974d59d2cb0e6d00c384205e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-manage-peering.md",
+      "revision": "2e619e5a370f731bd980a28dbe4347a0a703b5fa",
+      "revision_date": "2024-03-15T17:13:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create, change, or delete an Azure virtual network peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2e619e5a370f731bd980a28dbe4347a0a703b5fa/articles/virtual-network/virtual-network-manage-peering.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-peering-overview.md",
+      "revision": "64b85bb2c717dab10b34360f747d9f6b7ea19bc4",
+      "revision_date": "2024-02-24T03:41:34Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Virtual Network peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/64b85bb2c717dab10b34360f747d9f6b7ea19bc4/articles/virtual-network/virtual-network-peering-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/create-peering-different-deployment-models-subscriptions.md",
+      "revision": "cc0918818cbc2056b28e3955edccdff490f288e8",
+      "revision_date": "2024-02-08T00:39:48Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create an Azure virtual network peering - different deployment models - different subscriptions",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/create-peering-different-deployment-models-subscriptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cc0918818cbc2056b28e3955edccdff490f288e8/articles/virtual-network/create-peering-different-deployment-models-subscriptions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to configure user-defined routes for service chaining, or is default peering sufficient for their use case?",
+    "Are there any existing network security group rules that might block traffic between the peered virtual networks?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-virtual-network-peering-and-verify-the-routing-path.md",
+  "draft": true,
+  "word_count": 866,
+  "claim_support_checks": [
+    {
+      "claim": "Virtual network peering connects virtual networks in the same or different regions through the Azure backbone network.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Traffic between peered virtual networks is private and uses the Microsoft backbone infrastructure.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "You must create peering in both directions; it is not automatically bidirectional.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Global virtual network peering has constraints with basic load balancers.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Default Azure name resolution does not work across peered virtual networks.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims deleting a peering is unilateral ('you only need to delete the peering from one side'). S1 and S2 indicate peerings are distinct resources in each VNet. Deleting one side leaves the other side in a 'Deleting' or invalid state until also removed, potentially causing routing confusion or errors.",
+      "fix": "Clarify that peerings are unidirectional resources. To fully remove the connection, delete the peering from both VNet A to B and B to A. Verify both are removed."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states `--allow-vnet-access` is explicitly needed to make intent clear, implying it's not default. S1 states this option is selected by default. While explicit is good, the claim that it's required for connectivity is misleading as it's the default behavior.",
+      "fix": "Note that `--allow-vnet-access` is the default behavior. Explicitly setting it is optional but clarifies intent. Remove implication that it must be set for basic connectivity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions verifying effective routes to confirm the peering. It does not specify that this requires Network Watcher or the `az network vnet effective-route-table` command. Without specifying the tool/command, the step 'examine the effective routes' is vague and unactionable for CLI users.",
+      "fix": "Specify the command: `az network vnet effective-route-table show --resource-group <rg> --name <vnet> --interface-id <nic-id>`. This provides a concrete verification step."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Global virtual network peering has constraints with basic load balancers' but does not specify that this applies to *global* peering specifically, not local. S2 distinguishes these constraints. Readers might incorrectly assume all peering has this limitation.",
+      "fix": "Specify that the basic load balancer constraint applies specifically to *global* virtual network peering, not local peering within the same region."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'nominal charge' for traffic. S2 confirms charges apply. However, it doesn't mention that egress charges apply to the source VNet and ingress to the destination, or that gateway transit incurs additional gateway costs. This lacks cost context.",
+      "fix": "Clarify that standard VNet peering data transfer charges apply (egress from source, ingress to destination). Gateway transit incurs additional gateway data processing charges."
+    }
+  ]
+}

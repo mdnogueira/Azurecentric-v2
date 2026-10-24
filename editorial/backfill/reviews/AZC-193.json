@@ -1,0 +1,121 @@
+{
+  "id": "AZC-193",
+  "title": "Read and validate JSON configuration in PowerShell",
+  "historical_date": "2025-06-23",
+  "created_at": "2026-10-23T23:26:11.968453+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Read and validate JSON configuration in PowerShell using native cmdlets, with explicit scope and verification steps.",
+  "tags": [
+    "powershell",
+    "json",
+    "configuration",
+    "validation",
+    "scripting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/powershell-commands.md",
+      "revision": "e4fabb7ebbd9bbe7f589f5cdcac320f6c23b4f77",
+      "revision_date": "2024-03-07T14:55:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is a PowerShell command?",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/powershell-commands",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/e4fabb7ebbd9bbe7f589f5cdcac320f6c23b4f77/reference/docs-conceptual/powershell-commands.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/samples/Getting-WMI-Objects--Get-CimInstance-.md",
+      "revision": "9a678c09f921271207c639828d360d5958715ca0",
+      "revision_date": "2025-03-24T19:11:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Getting WMI objects with Get-CimInstance",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/samples/Getting-WMI-Objects--Get-CimInstance-",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/9a678c09f921271207c639828d360d5958715ca0/reference/docs-conceptual/samples/Getting-WMI-Objects--Get-CimInstance-.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/samples/Selecting-Parts-of-Objects--Select-Object-.md",
+      "revision": "9a678c09f921271207c639828d360d5958715ca0",
+      "revision_date": "2025-03-24T19:11:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Selecting parts of objects",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/samples/Selecting-Parts-of-Objects--Select-Object-",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/9a678c09f921271207c639828d360d5958715ca0/reference/docs-conceptual/samples/Selecting-Parts-of-Objects--Select-Object-.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "What is the best practice for handling large JSON files in PowerShell?",
+    "Are there any performance considerations when using ConvertFrom-Json with very large JSON structures?",
+    "How does PowerShell handle JSON null values compared to missing properties?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/read-and-validate-json-configuration-in-powershell.md",
+  "draft": true,
+  "word_count": 538,
+  "claim_support_checks": [
+    {
+      "claim": "ConvertFrom-Json is a cmdlet in the Microsoft.PowerShell.Utility module.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Get-Content reads files as strings.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "JSON objects become PSCustomObjects in PowerShell.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites WMI/Select-Object sources (S2, S3) for JSON parsing claims. S1 defines cmdlets but does not mention ConvertFrom-Json or its module. S2/S3 discuss WMI and Select-Object, which are irrelevant to JSON parsing. This misleads readers about source provenance.",
+      "fix": "Remove citations S2 and S3 from the JSON parsing sections. Replace S1 with a direct citation to the official ConvertFrom-Json documentation (e.g., Microsoft.PowerShell.Utility module docs) to support the claim that it is a built-in cmdlet."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'ConvertFrom-Json can often handle an array of strings' but states `-Raw` is 'more predictable'. In PowerShell 7+, `ConvertFrom-Json` natively accepts an array of strings (one JSON object per line) without error. The claim that `-Raw` avoids 'potential issues' is vague and technically inaccurate for standard JSON arrays.",
+      "fix": "Clarify that `-Raw` is required only if the file contains a single JSON object spread across multiple lines or if you want to ensure the input is a single string. For line-delimited JSON (NDJSON), passing the array directly is standard and efficient."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that JSON numbers become `System.Int64` or `System.Double`. This is implementation-specific behavior of the .NET JSON parser used by PowerShell. It does not cover `System.Decimal` or `System.Single` which may appear depending on the JSON source. The claim is overly categorical.",
+      "fix": "State that numeric types map to .NET types such as `Int64`, `Double`, or `Decimal` depending on the JSON value's format and magnitude. Avoid listing specific types as exhaustive rules."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Summary of steps' section and a 'Cheers' sign-off, which are generic concluding paragraphs. The guidance guidance explicitly forbids stock conclusion sections and generic sign-offs.",
+      "fix": "Remove the 'Summary of steps' and 'Cheers' sections. End the article immediately after the error handling example with a concrete verification step, such as checking the `$config` object's properties."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'JSON types map to .NET types... Strings become System.String'. While true, it omits that JSON `null` becomes `$null` in PowerShell, which is critical for validation logic. The validation example checks `$null -eq $config.DatabaseConnection`, which conflates missing properties and explicit nulls.",
+      "fix": "Clarify that JSON `null` values are represented as `$null` in PowerShell, indistinguishable from missing properties without additional schema validation. Recommend using `$PSObject.Properties.Contains()` if distinguishing missing keys from null values is required."
+    }
+  ]
+}

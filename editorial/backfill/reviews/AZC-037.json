@@ -1,0 +1,85 @@
+{
+  "id": "AZC-037",
+  "title": "Choose generation 1 or generation 2 for a Hyper-V VM",
+  "slug": "choose-generation-1-or-generation-2-for-a-hyper-v-vm",
+  "historical_date": "2024-04-13",
+  "input_sha256": "ceef0c3744847a281a6d10bdf0f48e8d7001455bf131d006cd9194e07f58fa4d",
+  "created_at": "2026-10-23T13:03:21.274831+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between Hyper-V generation 1 and 2 VMs by checking guest OS support, boot requirements, and feature needs.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md",
+      "revision": "3afbb152283ca9c2a60e8baa8130aa98a3047a39",
+      "revision_date": "2024-04-02T15:30:10Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Should I create a generation 1 or 2 virtual machine in Hyper-V?",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/3afbb152283ca9c2a60e8baa8130aa98a3047a39/WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Hyper-V-feature-compatibility-by-generation-and-guest.md",
+      "revision": "e057d07062045e3a97715861a3a762434ce23dd9",
+      "revision_date": "2021-07-27T15:51:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Hyper-V feature compatibility by generation and guest",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-feature-compatibility-by-generation-and-guest",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e057d07062045e3a97715861a3a762434ce23dd9/WindowsServerDocs/virtualization/hyper-v/Hyper-V-feature-compatibility-by-generation-and-guest.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-04-13: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/generation-2-virtual-machine-security-features.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-generation-1-or-generation-2-for-a-hyper-v-vm.md",
+  "draft": true,
+  "word_count": 1436,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Virtual Fibre Channel is a feature available on Generation 2 but not Generation 1. Source S2 explicitly lists Virtual Fibre Channel as supported on both Generation 1 and Generation 2. This is a factual error regarding feature parity.",
+      "fix": "Remove Virtual Fibre Channel from the list of Generation 2-exclusive features. It is supported on both generations according to the feature compatibility table. Ensure other exclusivity claims are verified against S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that Generation 2 VMs are generally preferred for Azure uploads due to their modern feature set. Source S1 only confirms support for both generations (with fixed VHD constraints) and links to Gen2 capabilities, but does not explicitly recommend Gen2 for Azure uploads over Gen1 in that specific context.",
+      "fix": "Remove the recommendation that Gen2 is preferred for Azure uploads. State only that both are supported if using fixed VHDs, and link to the Azure Gen2 documentation for capability details without asserting a preference for upload scenarios."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that migrating a Gen1 VM to Gen2 is 'not a simple conversion process' and requires creating a new VM. While true, this is a destructive/cost implication not explicitly detailed in the provided sources, which only state the generation cannot be changed.",
+      "fix": "Clarify that the generation is immutable. Instead of vague 'not simple' language, state that because the generation cannot be changed, a new VM must be provisioned and workloads migrated, implying operational effort without inventing complexity details."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Decision summary' checklist that repeats information already covered in the body. This adds redundancy and breaks the flow of the operational guidance.",
+      "fix": "Remove the 'Decision summary' section. The preceding sections sufficiently guide the user through OS, boot, and feature checks. End with the verification step or source links to maintain conciseness."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Virtual NUMA' is available on both generations in the feature list context but doesn't clarify it's a Gen 1/2 parity feature, potentially confusing readers looking for Gen 2 advantages. Source S2 lists it under Compute for both.",
+      "fix": "Ensure the distinction between parity features (like Virtual NUMA, Live Migration) and Gen 2 exclusive features (like Secure Boot, Hot-add NIC) is clear. Do not list parity features in the 'Gen 2 but not Gen 1' section."
+    }
+  ]
+}

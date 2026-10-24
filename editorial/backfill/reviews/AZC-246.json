@@ -1,0 +1,154 @@
+{
+  "id": "AZC-246",
+  "title": "Protect a workflow secret with Key Vault",
+  "slug": "protect-a-workflow-secret-with-key-vault",
+  "historical_date": "2025-11-19",
+  "input_sha256": "f192d170d9b444babeaceb8067b114cf365f913b3230d7bea7a642cb887ea4ff",
+  "created_at": "2026-10-23T17:57:13.358885+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Protect workflow secrets in Azure Logic Apps by using managed identities for Key Vault access and enabling input/output obscuring in run history.",
+  "tags": [
+    "logic-apps",
+    "key-vault",
+    "security",
+    "managed-identity",
+    "run-history"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-246-learn-1.png",
+      "alt": "Screenshot shows Azure portal, workflow designer, and trigger or action with opened settings.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/644255a716a8a37b2544767acf71e06a07fb2840/articles/logic-apps/media/logic-apps-securing-a-logic-app/open-action-trigger-settings-standard.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-10-23T19:30:15Z",
+      "sha256": "27b1f3e1288631a6cadb8440a26b8ad171d44e897306c799a787b6168d78468d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-246-learn-2.png",
+      "alt": "Screenshot that shows how to enable a system-assigned managed identity.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/d53cffa801f978f71a984ba8525b925c8cd8d4f0/articles/api-management/media/api-management-howto-use-managed-service-identity/enable-system-identity.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-09-05T05:22:46Z",
+      "sha256": "3c3b821cea9090e4a61799781953821521e3a6d0b31fc2b71e668f83114c4141",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/logic-apps-securing-a-logic-app.md",
+      "revision": "644255a716a8a37b2544767acf71e06a07fb2840",
+      "revision_date": "2025-10-23T19:30:15Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Secure access and data in workflows",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/644255a716a8a37b2544767acf71e06a07fb2840/articles/logic-apps/logic-apps-securing-a-logic-app.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-howto-use-managed-service-identity.md",
+      "revision": "d53cffa801f978f71a984ba8525b925c8cd8d4f0",
+      "revision_date": "2025-09-05T05:22:46Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Managed Identities in Azure API Management | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d53cffa801f978f71a984ba8525b925c8cd8d4f0/articles/api-management/api-management-howto-use-managed-service-identity.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/configure-credential-connection.md",
+      "revision": "b1480bd1b91db4d2261a8d501e3bfc89e0529aab",
+      "revision_date": "2025-10-09T20:48:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Set up Multiple Connections",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/configure-credential-connection",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b1480bd1b91db4d2261a8d501e3bfc89e0529aab/articles/api-management/configure-credential-connection.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "open_questions": [
+    "Does the Logic Apps Key Vault connector support user-assigned managed identities in all regions?",
+    "What is the exact behavior of obscured outputs when passed to a Compose action?",
+    "Are there any performance implications of using obscured inputs/outputs in high-throughput workflows?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/protect-a-workflow-secret-with-key-vault.md",
+  "draft": true,
+  "word_count": 930,
+  "claim_support_checks": [
+    {
+      "claim": "Logic Apps can retrieve secrets from Key Vault using managed identities.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Run history can obscure inputs and outputs to prevent secret leakage.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Obscuring inputs or outputs disables logging to Log Analytics.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Some actions do not support obscuring inputs or outputs.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Managed identities allow Logic Apps to access Key Vault without storing secrets.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly implies Logic Apps Standard workflows use 'Access policies' for Key Vault access. Source S1 specifies that Standard workflows use Azure RBAC roles (e.g., Key Vault Secrets User) and do not support the legacy Access policies model described in the draft's step 3.",
+      "fix": "Replace 'Access policies' steps with Azure RBAC role assignment instructions. Specify that the Logic App's managed identity must be assigned the 'Key Vault Secrets User' role (or similar) on the Key Vault resource, not just 'Get/List' via access policies."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims obscuring outputs hides them in Log Analytics. Source S1 states obscured data is not sent to Log Analytics, but the draft's 'Verify' step suggests checking run history for obscuring, which is correct, but the 'Cleanup' section implies standard deletion without mentioning that obscured data removal is automatic and does not require manual log scrubbing.",
+      "fix": "Clarify that obscured data is excluded from Log Analytics storage entirely. Remove the implication that manual log scrubbing is needed. Ensure the verification step focuses on the Run History UI, as Log Analytics will not contain the data to verify."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Compose' action outputs are not obscured if used as inputs to a downstream action without Secure Inputs. Source S1 clarifies that if a downstream action uses hidden outputs as inputs, the downstream action's inputs are hidden, but Secure Inputs is NOT enabled. The draft's explanation is confusing and potentially misleading about the 'Secure Outputs' setting on Compose.",
+      "fix": "Rewrite the Compose section to strictly follow S1: Compose only supports Secure Inputs. If it receives hidden outputs, its inputs are hidden. Its outputs are NOT hidden unless Secure Inputs is manually enabled on the Compose action itself. Do not suggest enabling 'Secure Outputs' on Compose as it doesn't exist."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft references 'Use Managed Identities in Azure API Management' (S2) for Logic Apps. While the concept is similar, S2 is specific to API Management. The draft should rely primarily on S1 for Logic Apps specifics. The reference to S2 is irrelevant to the Logic Apps workflow secret protection."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section with generic advice. The guidance does not need to be removed, but the 'Further documentation' link to S2 and S3 is misleading as they are about API Management, not Logic Apps. This distracts from the primary Logic Apps security guidance.",
+      "fix": "Remove references to S2 and S3 from the 'Further documentation' section. Keep only S1 as the relevant source for Logic Apps security. Ensure the cleanup instructions are specific to Logic Apps and Key Vault resources."
+    }
+  ]
+}

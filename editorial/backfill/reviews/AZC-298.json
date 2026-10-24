@@ -1,0 +1,131 @@
+{
+  "id": "AZC-298",
+  "title": "Build an incident triage workbook for the operations team",
+  "historical_date": "2026-04-13",
+  "created_at": "2026-10-23T23:41:21.530562+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Build a Microsoft Sentinel incident triage workbook using the workbook editor and gallery template export.",
+  "tags": [
+    "microsoft-sentinel",
+    "workbooks",
+    "incident-triage",
+    "kql",
+    "gallery-templates"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/sentinel-workbook-creation.md",
+      "revision": "e2507938b2a97d1c5db073fc57046b84254900a0",
+      "revision_date": "2026-03-25T00:35:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create Workbooks for Microsoft Sentinel Solutions",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/sentinel-workbook-creation",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e2507938b2a97d1c5db073fc57046b84254900a0/articles/sentinel/sentinel-workbook-creation.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/top-workbooks.md",
+      "revision": "293c0d306cb201c09cf13f32d3c14377f97e5f26",
+      "revision_date": "2025-09-11T05:28:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Commonly used Microsoft Sentinel workbooks",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/top-workbooks",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/293c0d306cb201c09cf13f32d3c14377f97e5f26/articles/sentinel/top-workbooks.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/incident-navigate-triage.md",
+      "revision": "d80742741c689930b54015cec72839805dbc8074",
+      "revision_date": "2025-09-11T05:00:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Basic incident tasks for Microsoft Sentinel incidents in the Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/incident-navigate-triage",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d80742741c689930b54015cec72839805dbc8074/articles/sentinel/incident-navigate-triage.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source text specify the exact KQL queries needed for a triage workbook, or should we leave them as placeholders?",
+    "Is there any information on how to handle permissions for the gallery template publishing process?",
+    "Are there any specific limitations or best practices for workbook performance mentioned in the sources?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/active-directory/fundamentals/active-directory-secure-privileged-access-roles#directory-readers"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-an-incident-triage-workbook-for-the-operations-team.md",
+  "draft": true,
+  "word_count": 859,
+  "claim_support_checks": [
+    {
+      "claim": "The Microsoft Sentinel Responder role is required to investigate incidents.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Guest users need the Directory Reader role to assign incidents.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Workbooks can be created from templates or from scratch.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Gallery templates require specific metadata properties.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Incident Overview workbook helps with triage and investigation.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Claims Contributor/Owner roles are required to create/edit workbooks. S1 describes publishing workflows without specifying workspace-level RBAC, and S3 only mandates Responder for incident triage. Assigning high-privilege roles for workbook creation is unsupported and insecure.",
+      "fix": "Remove the specific Contributor/Owner claim. State that workspace access is required, but do not specify the exact RBAC role for workbook editing as it is not defined in the provided sources. Rely on the Responder role mentioned for triage contexts."
+    },
+    {
+      "severity": "high",
+      "problem": "Invents a 'Content hub' template source for custom workbooks. S1 specifies using the '+ New' button or prebuilt templates within the Workbooks tab. S2 lists prebuilt workbooks but does not mention a 'Content hub' for deploying custom templates. This misleads users on where to find templates.",
+      "fix": "Replace 'Content hub' references with the '+ New' button in the Workbooks tab (S1) or the prebuilt templates available there. Cite S1 for template availability."
+    },
+    {
+      "severity": "medium",
+      "problem": "Suggests skipping GitHub steps for internal sharing by 'simply sharing the workbook JSON file'. S1 details a rigid GitHub-based publishing process for gallery templates. It does not support ad-hoc JSON sharing as a valid alternative workflow, creating a false dichotomy.",
+      "fix": "Remove the suggestion to skip GitHub steps for internal sharing. The sources only describe the GitHub-based gallery publishing process. If internal sharing is needed, users must manage the JSON file manually, but this is not a documented feature of the workbook tool itself."
+    },
+    {
+      "severity": "medium",
+      "problem": "Implies the 'Incident Overview' workbook is a template for building custom triage workbooks. S2 describes it as a prebuilt workbook for triage, not a template source. S1 distinguishes between prebuilt templates and creating from scratch. The draft conflates these.",
+      "fix": "Clarify that 'Incident Overview' is a prebuilt workbook to use, not a template to fork. For custom builds, refer to the '+ New' option in S1."
+    },
+    {
+      "severity": "low",
+      "problem": "Uses 'Content hub' terminology which is not present in the provided sources (S1, S2, S3). S2 mentions 'Content hub' in the context of deploying solutions, but the draft uses it for template sourcing, which is ambiguous and unsupported by the specific text provided.",
+      "fix": "Replace 'Content hub' with 'prebuilt templates' available in the Workbooks tab (S1) or 'prebuilt workbooks' listed in S2. Ensure terminology matches the source text exactly."
+    }
+  ]
+}

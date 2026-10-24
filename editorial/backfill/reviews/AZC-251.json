@@ -1,0 +1,125 @@
+{
+  "id": "AZC-251",
+  "title": "Test a reusable function with Pester",
+  "slug": "test-a-reusable-function-with-pester",
+  "historical_date": "2025-12-02",
+  "input_sha256": "07ea0a9b75ce78e7f8988ea17d14bd39d8feef87305c0b15b269f911ba0fac6e",
+  "created_at": "2026-10-23T21:34:25.898615+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Test a PowerShell function with Pester by packaging it as a module for predictable scoping and isolation.",
+  "tags": [
+    "powershell",
+    "pester",
+    "testing",
+    "modules",
+    "scripting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/how-to-write-a-powershell-script-module.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to Write a PowerShell Script Module",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/module/how-to-write-a-powershell-script-module.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/writing-a-windows-powershell-module.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Writing a Windows PowerShell Module",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/writing-a-windows-powershell-module",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/module/writing-a-windows-powershell-module.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/help/writing-help-for-windows-powershell-scripts-and-functions.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Writing Help for PowerShell Scripts and Functions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/help/writing-help-for-windows-powershell-scripts-and-functions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/help/writing-help-for-windows-powershell-scripts-and-functions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the provided source text specify the exact version of Pester required for these examples?",
+    "Are there any specific permissions required to run Invoke-Pester in a restricted environment?",
+    "How should the module be versioned if multiple versions are installed in the PSModulePath?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/test-a-reusable-function-with-pester.md",
+  "draft": true,
+  "word_count": 1046,
+  "claim_support_checks": [
+    {
+      "claim": "A script module is a PowerShell script saved with a .psm1 extension.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Export-ModuleMember is used to control user access to functions or variables.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Get-Help displays help topics for scripts and functions if they are saved in the correct locations.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Modules can be used to package and distribute cohesive libraries of functions.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims a function in a script file is 'hard to test consistently' due to scope issues. This is misleading; dot-sourcing is a standard, reliable method for testing script functions without packaging them as modules. The draft creates a false dichotomy, implying modules are the only 'reliable' way, which ignores common PowerShell development workflows.",
+      "fix": "Reframe the module approach as one option for packaging and isolation, not the sole reliable method. Acknowledge that dot-sourcing is valid for simple script testing. Remove the categorical assertion that script files are inherently difficult to test."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that `Export-ModuleMember` prevents 'naming conflicts'. This is inaccurate. `Export-ModuleMember` controls what is visible in the global scope upon import; it does not prevent naming conflicts with existing commands in the session or other modules. Conflicts are resolved by precedence, not export lists.",
+      "fix": "Clarify that `Export-ModuleMember` restricts the module's public interface, hiding internal helpers. Remove the claim about preventing naming conflicts, as this is a misconception of how PowerShell command resolution works."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that `Import-Module` dependencies in the `.psm1` file ensure context for tests. However, if the test file also imports the module, and the module imports dependencies, the test file might not see the dependencies if they are not exported by the module. The draft lacks clarity on dependency management in tests.",
+      "fix": "Explicitly state that if the module imports dependencies, those dependencies must also be available to the test process. If the module does not export them, the test file may need to import them directly, or the module manifest should be used to manage dependencies."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section 'Clean up after testing' which suggests removing the module with `Remove-Module`. While technically correct, this is often unnecessary in Pester tests as they run in isolated scopes. The advice is generic and adds little value for most users.",
+      "fix": "Condense the cleanup section. Note that Pester typically isolates test runs, so manual cleanup is rarely needed. Remove the generic advice about 'tidy environments' as it is not a technical requirement for testing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses 'illustrative example' for code but does not mark it as 'unrun' or explicitly state it is for demonstration. The guidance on mocking `Get-Date` is correct, but the context of 'real scenario' interactions is vague. It does not explain how to mock complex external calls.",
+      "fix": "Mark the code blocks as illustrative. Briefly explain that mocking external calls requires understanding the command's parameters and output types. Ensure the mocking example aligns with the function's actual parameter binding."
+    }
+  ]
+}

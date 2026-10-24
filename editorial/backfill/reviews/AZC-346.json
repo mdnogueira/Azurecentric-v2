@@ -1,0 +1,138 @@
+{
+  "id": "AZC-346",
+  "title": "Review storage access after rotating an application identity",
+  "historical_date": "2026-08-26",
+  "created_at": "2026-10-23T23:47:40.523059+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify storage access after rotating an application identity by checking RBAC propagation, revoking legacy SAS tokens, and disabling Shared Key auth.",
+  "tags": [
+    "azure-storage",
+    "managed-identities",
+    "rbac",
+    "shared-key-authorization",
+    "azure-files"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/authorize-data-access.md",
+      "revision": "9656d6c3a103d19d44c6fcc49b1391adc8590214",
+      "revision_date": "2025-08-14T21:54:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Authorize operations for data access",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9656d6c3a103d19d44c6fcc49b1391adc8590214/articles/storage/common/authorize-data-access.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/files-managed-identities.md",
+      "revision": "bbd9c63109eb88662f22c8be54388b09f6e2e3ea",
+      "revision_date": "2026-08-13T20:54:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use Managed Identities with Azure Files",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-managed-identities",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bbd9c63109eb88662f22c8be54388b09f6e2e3ea/articles/storage/files/files-managed-identities.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/scripts/storage-common-rotate-account-keys-cli.md",
+      "revision": "806fb7df31b8431910f5ffa6a8bc4b0d2ed05d2b",
+      "revision_date": "2025-06-17T17:58:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure CLI Script Sample - Rotate storage account access keys",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/scripts/storage-common-rotate-account-keys-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/806fb7df31b8431910f5ffa6a8bc4b0d2ed05d2b/articles/storage/scripts/storage-common-rotate-account-keys-cli.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does disabling Shared Key access affect any Azure services that rely on trusted access with Shared Key for internal operations?",
+    "What is the exact propagation time for RBAC role assignments in Azure Storage?",
+    "Are there any specific network configuration changes required when switching from Shared Key to Managed Identity authentication?",
+    "How can an administrator verify that a user delegation SAS token has been revoked if it was signed with Microsoft Entra credentials?",
+    "What are the specific kernel requirements for Linux clients to support SMB managed identity authentication?"
+  ],
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/quickstarts-free-trial-note.md",
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/cli-launch-cloud-shell-sign-in.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/cli-clean-up-resources.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-storage-access-after-rotating-an-application-identity.md",
+  "draft": true,
+  "word_count": 1026,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft recommends using Microsoft Entra ID with managed identities to authorize requests against blob, queue, and table data.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Shared Key authorization should be disallowed for storage accounts to prevent legacy key-based access.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "For Azure Files accessed over SMB using managed identities, the required role is Storage File Data SMB MI Admin.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "To enable SMBOAuth on an existing storage account, use the Azure portal, Azure PowerShell, or Azure CLI.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Regenerating the primary or secondary storage account access key invalidates the old key.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to disable 'Allow Shared Key access' to revoke legacy access. This is dangerous because it breaks any application or Azure service relying on Shared Key (including internal trusted access). It does not revoke SAS tokens signed with the account key, nor does it remove the old identity's RBAC permissions. The fix is to explicitly revoke SAS tokens, remove old RBAC assignments, and rotate keys, while noting that disabling Shared Key is a separate hardening step, not a revocation mechanism.",
+      "fix": "Clarify that disabling Shared Key only blocks key-based auth, not SAS or RBAC. Instruct to explicitly revoke SAS tokens and remove old role assignments. Note that disabling Shared Key may break existing services."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims disabling Shared Key access prevents clients using old storage account keys. However, SAS tokens signed with the account key remain valid even if Shared Key is disabled. The draft fails to mention that SAS revocation requires deleting stored access policies or regenerating keys, which is a critical step for complete revocation.",
+      "fix": "Add explicit steps to revoke SAS tokens by deleting stored access policies or regenerating keys. Clarify that disabling Shared Key does not invalidate existing SAS tokens."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that role assignments can take 'a few minutes' to propagate. This is vague and potentially misleading, as propagation can take longer under load or due to consistency models. It also fails to mention that RBAC changes are eventually consistent and may require cache clearing or retries in automation.",
+      "fix": "Replace 'a few minutes' with 'eventually consistent, typically within minutes but potentially longer'. Advise checking assignment status and retrying operations if failures persist immediately after assignment."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Summary of verification' section and a concluding paragraph starting with 'By following these steps...'. These are generic stock conclusions that add no technical value and violate the editorial guidance to remove stock conclusions and end with a concrete verification.",
+      "fix": "Remove the 'Summary of verification' section and the final concluding paragraph. End the article with the final verification step or next action."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Linux clients require specific kernel support' for SMB managed identity. This is vague and unsupported by the provided sources, which only list supported OS versions (Azure Linux 3.0, Ubuntu 22.04/24.04, RHEL 9.6+, SLES 15 SP6+). It does not specify what kernel support is needed.",
+      "fix": "Replace vague 'kernel support' with the specific supported OS versions listed in S2. Remove the implication of arbitrary kernel requirements."
+    }
+  ]
+}

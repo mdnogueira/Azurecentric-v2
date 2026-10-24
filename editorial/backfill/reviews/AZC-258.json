@@ -1,0 +1,125 @@
+{
+  "id": "AZC-258",
+  "title": "Ask focused questions about an identity-related incident",
+  "slug": "ask-focused-questions-about-an-identity-related-incident",
+  "historical_date": "2025-12-22",
+  "input_sha256": "7d9481aca7edcdea5fbca092702da2ab3409423cc8ad9e4a5765b368cb230304",
+  "created_at": "2026-10-23T18:14:13.239750+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Security Copilot prompts to investigate Entra risky users systematically.",
+  "tags": [
+    "entra-id",
+    "security-copilot",
+    "incident-response",
+    "threat-intelligence",
+    "identity-security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "Promptbook samples/Entra Risky User investigation.md",
+      "revision": "9207edc6d06f62481f5afe714e5a4b6482d0ee91",
+      "revision_date": "2024-08-18T22:35:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Entra Risky User investigation",
+      "url": "https://github.com/Azure/Security-Copilot/blob/9207edc6d06f62481f5afe714e5a4b6482d0ee91/Promptbook samples/Entra Risky User investigation.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/9207edc6d06f62481f5afe714e5a4b6482d0ee91/Promptbook samples/Entra Risky User investigation.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 'Natural Language to KQL' plugin provide a direct interface for these queries, or is it a backend transformer for the other plugins?",
+    "Are there specific permissions required for the Security Copilot user to access the Microsoft Entra and MDTI plugins?",
+    "How does the investigation handle users who are not flagged as 'risky' but still show suspicious activity?",
+    "Is the 'executive report' output format fixed, or can it be customised?",
+    "What is the data retention period for the login attempts retrieved by the plugin?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/ask-focused-questions-about-an-identity-related-incident.md",
+  "draft": true,
+  "word_count": 1019,
+  "claim_support_checks": [
+    {
+      "claim": "Security Copilot uses specific plugins to investigate Entra Risky Users.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The investigation starts by determining if a user is risky and why.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Authentication methods enabled for the user are a key part of the investigation.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Login attempts from the past 30 days, including IP addresses, are retrieved.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "IP reputation is checked using Microsoft Defender Threat Intelligence.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "IPs are validated against known threat actors.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Group memberships are listed to assess potential impact.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Remediation steps are recommended based on the findings.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft presents Security Copilot promptbook text as KQL code blocks. The source (S1) explicitly lists these as natural language prompts for plugins, not KQL queries. Labeling them as KQL is technically incorrect and misleading for users expecting query syntax.",
+      "fix": "Remove the ```kql ``` code fences and the label 'KQL'. Present the text as natural language prompts or instructions for the Security Copilot interface. Clarify that these are inputs for the Microsoft Entra and MDTI plugins, not direct database queries."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims Security Copilot 'automates' data gathering and 'streamlines' the process, implying a fully autonomous workflow. The source only provides a manual promptbook for an analyst to execute. There is no evidence of automated execution or backend transformation by a 'Natural Language to KQL' plugin in the provided text.",
+      "fix": "Reframe the tool as an assistant that generates structured questions or reports based on analyst input. Remove claims of automation. Specify that the analyst must manually execute these prompts or review the generated outputs, rather than the tool acting autonomously."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes generic concluding paragraphs starting with 'By following this structured approach...' and 'The investigation is complete when...'. These are fluff that do not add technical value and violate the guidance to end with a concrete verification or next action.",
+      "fix": "Delete all generic concluding paragraphs. End the article immediately after the 'Verification' section or the final prompt example. Ensure the final sentence provides a concrete next step, such as 'Review the generated report and implement the recommended remediation steps in the Entra portal.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that the investigation 'starts' with checking risk status and implies a linear, mandatory sequence. The source is a promptbook for generating a report, not a rigid procedural standard. It does not mandate this order or exclude other investigative paths.",
+      "fix": "Describe the steps as a recommended workflow for generating a comprehensive report, not a mandatory sequence. Use language like 'A typical investigation workflow includes...' rather than 'The first step is...'. Acknowledge that analysts may pivot based on initial findings."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses vague terms like 'immediate pressure' and 'scattered approach' without technical substance. The 'Verification' section is generic and does not specify how to verify the *accuracy* of the Copilot output, only that steps were implemented.",
+      "fix": "Replace vague prose with specific operational guidance. For verification, instruct the user to cross-reference the Copilot-generated report with raw logs in Microsoft Entra ID or Defender XDR to ensure the plugin's natural language interpretation matches the underlying data."
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "AZC-066",
+  "title": "Keep environment configuration separate from deployment logic",
+  "slug": "keep-environment-configuration-separate-from-deployment-logic",
+  "historical_date": "2024-07-03",
+  "input_sha256": "ed105a6ff7f97657f3506472b39544b61753843bd767f1163c9a54023a435c0f",
+  "created_at": "2026-10-23T13:45:36.436675+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Apply the configuration set pattern in Bicep to decouple environment-specific settings from resource definitions.",
+  "tags": [
+    "bicep",
+    "configuration-set-pattern",
+    "infrastructure-as-code",
+    "azure-resource-manager",
+    "best-practices"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/patterns-configuration-set.md",
+      "revision": "6cf048634c76c0c09fea342bf7d1a349c5c983ed",
+      "revision_date": "2023-06-23T22:26:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Configuration set pattern",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/patterns-configuration-set",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6cf048634c76c0c09fea342bf7d1a349c5c983ed/articles/azure-resource-manager/bicep/patterns-configuration-set.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/parameters.md",
+      "revision": "18fd465d7ed2f04493baf4c93fdce34c6ec81eb0",
+      "revision_date": "2024-06-20T22:57:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Parameters in Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/18fd465d7ed2f04493baf4c93fdce34c6ec81eb0/articles/azure-resource-manager/bicep/parameters.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "6cf048634c76c0c09fea342bf7d1a349c5c983ed",
+      "revision_date": "2023-06-23T22:26:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6cf048634c76c0c09fea342bf7d1a349c5c983ed/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the configuration set pattern support dynamic configuration changes without redeployment?",
+    "How does the pattern handle environments that require a mix of production and non-production settings?",
+    "What is the performance impact of using a large configuration map variable?",
+    "Can the configuration map be stored in a separate file for better organization?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/keep-environment-configuration-separate-from-deployment-logic.md",
+  "draft": true,
+  "word_count": 720,
+  "claim_support_checks": [
+    {
+      "claim": "The configuration set pattern uses a single parameter to select a predefined set of values.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The @allowed decorator restricts parameter values to a specified array.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Variables in Bicep infer their data type from the resolved value.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses 'P2v3' as a valid App Service Plan SKU. This is not a valid SKU name in Azure App Service (valid names are like 'P2v3' only in specific legacy contexts or typos; standard is 'P2v3' is invalid, likely meant 'P2v3' is a typo for 'P2v3' which doesn't exist, or 'P2v3' is confused with 'P2v3' tier. Actually, 'P2v3' is not a valid SKU. Valid Premium V3 SKUs are 'P2v3' is incorrect. The source S1 lists 'P2V3' (uppercase). The draft uses 'P2v3' (lowercase v). Bicep is case-sensitive for resource properties? No, but SKU names are case-sensitive strings. 'P2V3' is the correct string. 'P2v3' will fail validation.",
+      "fix": "Change 'P2v3' to 'P2V3' to match the source S1 example and Azure's actual SKU naming convention. Ensure case sensitivity is respected in Bicep string literals for resource properties."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Variables in Bicep infer their data type from the resolved value' as a general rule, but the source S3 says 'When you define a variable, the data type isn't needed. Variables infer the type from the resolve value.' This is accurate. However, the draft's code block for `configurations` uses string keys. In Bicep, object keys must be valid identifiers or quoted strings. The draft uses unquoted keys like `non-production`. This is a syntax error in Bicep. Keys with hyphens must be quoted.",
+      "fix": "Quote the object keys in the `configurations` variable: `var configurations = { 'non-production': { ... }, 'production': { ... } }`. Unquoted keys with hyphens cause compilation errors in Bicep."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `resourceGroup().location` for resources. While valid, it does not mention that this resolves at deployment time. More importantly, the draft implies this pattern is a complete solution. It misses the context that this pattern is specifically for 't-shirt sizing' (S1) and may not scale well for complex environments, which the draft acknowledges but doesn't warn about the maintenance burden of updating the map for every new environment.",
+      "fix": "Clarify that this pattern is best for distinct, limited environment profiles (as per S1). Add a note that adding new environments requires updating the variable map, which can become cumbersome if the number of environments grows significantly."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Prerequisites' and 'Steps' section that is generic and not specific to the Bicep pattern itself. The source S1 does not provide deployment steps. The draft's 'Verification' section is also generic. This adds fluff without technical value.",
+      "fix": "Remove the generic 'Prerequisites', 'Steps', and 'Cleanup' sections. Focus on the Bicep syntax and pattern logic. If deployment steps are needed, link to standard Bicep deployment documentation rather than repeating generic CLI steps."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'This code is an illustrative example. It demonstrates how the configuration map is accessed. In a real deployment, you would need to ensure that the resource names are unique...'. This is redundant and vague. The source S3 recommends using `uniqueString()` for names, but the draft doesn't implement it in the code example, only mentions it in text.",
+      "fix": "Update the code example to include `uniqueString()` for resource names as recommended by S3 best practices. Remove the vague text warning about uniqueness and instead show the correct implementation."
+    }
+  ]
+}

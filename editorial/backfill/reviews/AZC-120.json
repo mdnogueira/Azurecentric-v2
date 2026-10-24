@@ -1,0 +1,155 @@
+{
+  "id": "AZC-120",
+  "title": "Investigate a failed sign-in using Entra logs",
+  "slug": "investigate-a-failed-sign-in-using-entra-logs",
+  "historical_date": "2024-12-01",
+  "input_sha256": "175622050090b7778d18d36caa751e6366b13746245ebcad9175432ab4f6e265",
+  "created_at": "2026-10-23T14:59:25.501441+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate a failed Entra sign-in by isolating error codes, checking CA status, and using the Diagnostics tool.",
+  "tags": [
+    "entra-id",
+    "sign-in-logs",
+    "conditional-access",
+    "troubleshooting",
+    "mfa"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-120-learn-1.png",
+      "alt": "Screenshot of the diagnostic results for MFA proofup.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/10e6b6101b7273e13f3ce272dfaa2ba7f28186a7/docs/identity/monitoring-health/media/concept-sign-in-diagnostics-scenarios/diagnostic-result-mfa-proofup.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-10-02T21:49:22Z",
+      "sha256": "adc72398906ad9e8919e35a9782a10587260ea83049e163ad04bbdae8fc810b7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-120-learn-2.png",
+      "alt": "Screenshot of the sign-in details, with several details highlighted.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/690651a190e86ba98bf877093db9c658ddc602ed/docs/identity/monitoring-health/media/howto-troubleshoot-sign-in-errors/troubleshoot-sign-in-details.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-11-11T16:29:41Z",
+      "sha256": "7d61c8b102864176ca7ba037b3631c08faa80c12202ab7de5341ca6887f1dd63",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/monitoring-health/concept-sign-in-diagnostics-scenarios.md",
+      "revision": "10e6b6101b7273e13f3ce272dfaa2ba7f28186a7",
+      "revision_date": "2024-10-02T21:49:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Common sign-in diagnostics AD scenarios",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-in-diagnostics-scenarios",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/10e6b6101b7273e13f3ce272dfaa2ba7f28186a7/docs/identity/monitoring-health/concept-sign-in-diagnostics-scenarios.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/monitoring-health/howto-troubleshoot-sign-in-errors.md",
+      "revision": "690651a190e86ba98bf877093db9c658ddc602ed",
+      "revision_date": "2024-11-11T16:29:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to troubleshoot sign-in errors",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-troubleshoot-sign-in-errors",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/690651a190e86ba98bf877093db9c658ddc602ed/docs/identity/monitoring-health/howto-troubleshoot-sign-in-errors.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/monitoring-health/concept-sign-in-log-activity-details.md",
+      "revision": "e655257a0dc38351751ab788b7938ae2fc404e21",
+      "revision_date": "2024-11-20T20:12:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Learn about the sign-in log activity details",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-in-log-activity-details",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/e655257a0dc38351751ab788b7938ae2fc404e21/docs/identity/monitoring-health/concept-sign-in-log-activity-details.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-10-02T23:37:10Z; used previous public snapshot. Confirm continued applicability: docs/identity/monitoring-health/concept-sign-in-diagnostics-scenarios.md"
+  ],
+  "open_questions": [
+    "How does the sign-in log date and time localization affect troubleshooting when users report issues in different time zones?",
+    "What is the exact impact of log aggregation delays on the accuracy of the Authentication Details tab for immediate troubleshooting?",
+    "Are there specific scenarios where the Correlation ID is guaranteed to be accurate, or is it always client-dependent?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-failed-sign-in-using-entra-logs.md",
+  "draft": true,
+  "word_count": 1118,
+  "claim_support_checks": [
+    {
+      "claim": "Reports Reader is the least privileged role required to access sign-in logs in the admin center.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Sign-in logs record failures and provide structured data to pinpoint where the authentication flow broke.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Sign-in Diagnostics tool provides recommendations for resolving problems without needing to involve Microsoft support.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Conditional Access status 'Not Applied' means the sign-in did not match the policy criteria.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "MFA proofup errors occur when users do not complete the initial MFA setup.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot with a visible permission caption ('Reports Reader role is the least privileged role...'). The editorial guidance explicitly forbids adding visible permission captions to screenshots.",
+      "fix": "Remove the text overlay or caption from the screenshot image. Keep the permission requirement in the preceding body text as a standalone sentence, not as part of the image visual."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Conditional Access status of Success... does not guarantee the sign-in succeeded'. This is misleading. 'Success' in the CA tab means the policy was evaluated and granted access. It does not mean the *sign-in* succeeded (which is a separate log status).",
+      "fix": "Clarify that 'Success' in the Conditional Access tab indicates the policy was applied and granted access, while the overall sign-in status (Success/Failure) is found in the Basic info tab. Ensure the distinction between CA evaluation result and sign-in outcome is precise."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The sign-in log date and time are localized to the time zone of the person viewing the log'. This is a UI behavior, not a log property. The log itself stores UTC. The draft implies the log data is localized, which is technically inaccurate.",
+      "fix": "Rephrase to state that the *display* in the admin center is localized to the viewer's time zone, whereas the underlying log data is stored in UTC. This distinction is critical for accurate forensic analysis."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists 'Unresolved Constraints' as a separate section. This is redundant because these points (time zone localization, aggregation delays, CA not applying to Windows Hello) are already covered in the main body or are standard known behaviors.",
+      "fix": "Remove the 'Unresolved Constraints' section. Integrate the key points about time zone localization and aggregation delays into the relevant 'Interpret' and 'Check' sections where they are first mentioned to maintain flow."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Error code insight' as a feature of the Sign-in Diagnostics tool. While S1 mentions 'Error code insights' as a scenario, it is not explicitly a *tool* feature but rather a fallback display in the logs/diagnostics when no specific scenario matches.",
+      "fix": "Clarify that 'Error code insights' are displayed when the diagnostic tool cannot match the sign-in to a specific known scenario, providing general error code explanations rather than specific diagnostic recommendations."
+    }
+  ]
+}

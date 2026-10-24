@@ -1,0 +1,142 @@
+{
+  "id": "AZC-332",
+  "title": "Review integration-service health across a Hyper-V host",
+  "slug": "review-integration-service-health-across-a-hyper-v-host",
+  "historical_date": "2026-07-17",
+  "input_sha256": "470590343244ae910d2c4cf3fb6be33c89de16b7f8e072478dc7d2bb865cd5cd",
+  "created_at": "2026-10-23T19:59:19.429050+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Check Hyper-V integration service health on Windows Server 2025 using PowerShell and the Services snap-in.",
+  "tags": [
+    "hyper-v",
+    "integration-services",
+    "windows-server-2025",
+    "powershell",
+    "virtualization"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-332-learn-1.png",
+      "alt": "Screen shot that shows the Windows Services pane",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/a67a8c2abcdc729692a24f904778f0b5e8f67773/WindowsServerDocs/virtualization/hyper-v/manage/media/HVServices.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-02-16T16:23:09Z",
+      "sha256": "d1ad1d345ee38b010a2e13d68ae71739e36e5de28718251a0cdf3869ba14e27e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/integration-services.md",
+      "revision": "2c3189b60cb9fb4a75393d5e4298b9799cfef777",
+      "revision_date": "2025-10-30T17:18:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Hyper-V Integration Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/integration-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/2c3189b60cb9fb4a75393d5e4298b9799cfef777/WindowsServerDocs/virtualization/hyper-v/integration-services.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "revision": "a67a8c2abcdc729692a24f904778f0b5e8f67773",
+      "revision_date": "2026-02-16T16:23:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Hyper-V Integration Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a67a8c2abcdc729692a24f904778f0b5e8f67773/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Enable-all-integration-services-in-virtual-machines.md",
+      "revision": "459f37daed334e9c93181c42b5221ab4bb66e22d",
+      "revision_date": "2025-10-15T16:20:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable all integration services in virtual machines",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/enable-all-integration-services-in-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/459f37daed334e9c93181c42b5221ab4bb66e22d/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Enable-all-integration-services-in-virtual-machines.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-10-15T16:38:39Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Enable-all-integration-services-in-virtual-machines.md"
+  ],
+  "open_questions": [
+    "How to handle integration service issues for Linux guests not using current kernels?",
+    "What are the specific steps for manually updating integration services on older Hyper-V hosts?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-integration-service-health-across-a-hyper-v-host.md",
+  "draft": true,
+  "word_count": 997,
+  "claim_support_checks": [
+    {
+      "claim": "The Get-VMIntegrationService cmdlet returns the current state of each integration service for a specified virtual machine.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Status field in Get-VM output is determined by the heartbeat service.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Each integration service you want to use must be enabled on both the host and guest to function correctly.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "PowerShell Direct allows running commands inside the guest without a network connection.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Integration services for Windows guests are updated by default via Windows Update.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims PowerShell Direct requires the host to be Windows Server 2016 or later and the guest to be Windows 10 or later. Source S1 states PowerShell Direct was added in 'Windows Server TP3, Windows 10' and is 'only available on Windows 10/Windows Server Technical Preview 3 or later hosts and guests.' While Server 2016 is technically later than TP3, the source text explicitly ties the availability to the TP3/Win10 threshold, and the draft's phrasing implies a stricter or different requirement than the source's 'TP3 or later' language. More critically, the draft omits the source's explicit note that PowerShell Direct is 'under active development' (in the source context), which might be considered outdated but the source text itself contains this caveat. However, the main issue is the potential inaccuracy of the specific version constraint if the source is interpreted strictly. Actually, looking closer, S1 says 'Windows Server Technical Preview 3 or later'. Server 2016 is later. So this is factually supported. Let's look for a better high severity issue. The draft says 'The Status field is determined by the heartbeat service.' S1 says 'The Status field is determined by the heartbeat service.' This is supported. \n\nLet's look at the Linux section. The draft says 'Linux guests using current kernels contain integration services built in'. S2 says 'Linux guests using current kernels contain integration services built in'. Supported.\n\nLet's look at the 'Guest Service Interface' note. S2 says 'Disabled by default.' The draft does not mention this default state in the enable/disable section, but it does show it as False in the example output. This is a missing context issue.\n\nLet's look at the 'Summary' section. The draft ends with 'By following these steps...'. The editorial guidance says: 'Remove generic concluding paragraphs beginning "
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a generic concluding paragraph starting with 'By following these steps...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or 'This approach ensures'. This adds no technical value and violates the style guide.",
+      "fix": "Delete the entire 'Summary of checks' section and the concluding paragraph 'By following these steps...'. The technical content is already covered in the body. End the article after the 'Keep integration services up to date' section or with a direct verification step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'Guest Service Interface' is disabled by default in the example output but fails to explicitly state this fact in the text. Source S2 explicitly notes: 'Disabled by default. See PowerShell Direct using Copy-Item'. This is a missing context for users who might be confused why it is off.",
+      "fix": "Add a note in the 'Enable or disable integration services' section stating that the Guest Service Interface is disabled by default, as documented in S2. Reference the PowerShell Direct documentation for file copying alternatives."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'Integration Services' and 'Integration Components' interchangeably. While S1 and S2 clarify they are often called integration components, the draft should consistently use the primary term 'Integration Services' as per the source titles and avoid unnecessary synonym variation that might confuse readers about whether they are different entities.",
+      "fix": "Standardize on 'Integration Services' throughout the text. Use 'integration components' only when quoting or referring to the driver set specifically as per S2's distinction. Ensure consistent terminology."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Summary of checks' list which is redundant with the body content. The editorial guidance advises to 'End when the technical question is answered, with a concrete verification or next action.' A summary list is not a concrete next action.",
+      "fix": "Replace the 'Summary of checks' list with a concrete next action, such as 'If all services are OK but issues persist, check the guest OS event logs for Hyper-V related errors.' This provides a specific troubleshooting step rather than a recap."
+    }
+  ]
+}

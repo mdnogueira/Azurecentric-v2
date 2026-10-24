@@ -1,0 +1,144 @@
+{
+  "id": "AZC-364",
+  "title": "Investigate a policy remediation task that did not run",
+  "slug": "investigate-a-policy-remediation-task-that-did-not-run",
+  "historical_date": "2026-10-14",
+  "input_sha256": "a5b654482f1142c000c3227f4e9e4057f255957c7681e237c65e2f0a7ebe3a6e",
+  "created_at": "2026-10-23T20:42:04.001495+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a stalled Azure Policy remediation task by verifying identity replication, role assignments, and definition prerequisites.",
+  "tags": [
+    "azure-policy",
+    "remediation",
+    "managed-identities",
+    "troubleshooting",
+    "rbac"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-364-learn-1.png",
+      "alt": "Screenshot of a policy assignment creating a system-assigned managed identity in East US with Log Analytics Contributor permissions.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/30f55f8581c413cb12a9e3c4c9351b9ad79685b7/articles/governance/policy/media/remediate-resources/remediation-tab.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-10-09T23:51:23Z",
+      "sha256": "0c72075ebc65b28383f2ea1a9132f882319b513511246595e8bc38f92e6d28e7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/governance/policy/how-to/remediate-resources.md",
+      "revision": "30f55f8581c413cb12a9e3c4c9351b9ad79685b7",
+      "revision_date": "2025-10-09T23:51:23Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Remediate non-compliant resources",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/30f55f8581c413cb12a9e3c4c9351b9ad79685b7/articles/governance/policy/how-to/remediate-resources.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/governance/policy/troubleshoot/general.md",
+      "revision": "afc5a7b5c197b8ea2449d469ca8c6213123792ef",
+      "revision_date": "2026-06-12T03:40:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot common errors",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/troubleshoot/general",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/afc5a7b5c197b8ea2449d469ca8c6213123792ef/articles/governance/policy/troubleshoot/general.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/governance/policy/concepts/assignment-structure.md",
+      "revision": "a404a6abd3de4275ac00471ae996ec31443b9aeb",
+      "revision_date": "2026-09-17T22:52:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Details of the policy assignment structure",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/assignment-structure",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a404a6abd3de4275ac00471ae996ec31443b9aeb/articles/governance/policy/concepts/assignment-structure.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What is the exact error message when the remediation task fails?",
+    "Is the policy definition custom or built-in?",
+    "Was the policy assignment created via the portal, SDK, or CLI?",
+    "Are there any resource exclusions or exemptions in the scope?",
+    "Has the managed identity had sufficient time to replicate in Microsoft Entra ID?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-policy-remediation-task-that-did-not-run.md",
+  "draft": true,
+  "word_count": 905,
+  "claim_support_checks": [
+    {
+      "claim": "Remediation tasks for deployIfNotExists or modify policies use a managed identity associated with the policy assignment.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "If the assignment is created through an SDK, the roles must be manually granted to the managed identity.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The new managed identity must complete replication through Microsoft Entra ID before it can be granted the needed roles.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Changing a policy definition does not automatically update the assignment or the associated managed identity.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Remediation tasks can be started for deployIfNotExists policies even when enforcementMode is set to DoNotEnforce.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot with a visible caption ('This image illustrates...'). The editorial guidance explicitly forbids visible Microsoft Learn screenshot captions and requires source provenance to be kept in separate review records only.",
+      "fix": "Remove the paragraph starting with 'This image illustrates...' and the caption text. Keep the image tag if it directly illustrates the step, but ensure no explanatory text is visible in the final output."
+    },
+    {
+      "severity": "high",
+      "problem": "The PowerShell code example is syntactically invalid. It uses `-RoleDefinitionId $roleDefId` where `$roleDefId` is a short name (GUID), but `New-AzRoleAssignment` requires the full Resource ID. It also references undefined `$resourceGroup` and `$assignment` variables without context.",
+      "fix": "Correct the code to use the full role definition ID (e.g., `$roleDefId` should be the full path or use `New-AzRoleAssignment` with the correct parameter structure). Add comments marking it as illustrative and unrun, and define the necessary variables or scope context."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'If the task is failing due to a deny policy, check the Activity log'. This is misleading; `deployIfNotExists`/`modify` remediation failures are typically permission/identity issues, not 'deny' policies. 'Deny' is a separate effect mentioned in S2 but conflated here.",
+      "fix": "Remove the reference to 'deny policy' in the context of remediation task failure. Clarify that remediation failures are usually due to missing RBAC permissions on the managed identity, not policy denial effects."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The location of the managed identity does not affect its operation'. While S1 says this, it omits that system-assigned identities are tied to the assignment scope's region for deployment purposes, and user-assigned must be in the same tenant. This is vague technical guidance.",
+      "fix": "Clarify that while the identity's *location* property doesn't change its operational capability, system-assigned identities are created in the assignment's scope region, and user-assigned identities must reside in the same tenant."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft ends with a generic concluding paragraph ('For a visual reference... Further documentation...'). The guidance requires ending with a concrete verification or next action and removing generic concluding paragraphs.",
+      "fix": "Remove the final two paragraphs. End the article immediately after the troubleshooting steps or the image reference, with no generic summary or 'Further documentation' list."
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "AZC-046",
+  "title": "Build a migration inventory before selecting a migration method",
+  "slug": "build-a-migration-inventory-before-selecting-a-migration-method",
+  "historical_date": "2024-05-08",
+  "input_sha256": "f5581ae7140b1045f112fc85bc48f14f62520be3c3d15be9da7058241541eb81",
+  "created_at": "2026-10-23T13:15:01.230946+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Azure Migrate to build a migration inventory before selecting a method, avoiding assumptions about workload suitability.",
+  "tags": [
+    "azure-migrate",
+    "migration",
+    "assessment",
+    "inventory",
+    "cloud-adoption"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-046-learn-1.png",
+      "alt": "Screenshot displays the options in Overview.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9d9f9bbd0ac6060f0d71f68210a9950f2c13142d/articles/migrate/media/create-manage-projects/assess-migrate-servers-inline.png",
+      "source_id": "S2",
+      "source_revision_date": "2023-06-30T06:44:32Z",
+      "sha256": "48e4e98b30c1c5bd3681e58f5c3a1736cb5c6ab1bb297af739b9bd0809b3ed3c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/how-to-assess.md",
+      "revision": "9d9f9bbd0ac6060f0d71f68210a9950f2c13142d",
+      "revision_date": "2023-06-30T06:44:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Add assessment tools in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/how-to-assess",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9d9f9bbd0ac6060f0d71f68210a9950f2c13142d/articles/migrate/how-to-assess.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/create-manage-projects.md",
+      "revision": "9d9f9bbd0ac6060f0d71f68210a9950f2c13142d",
+      "revision_date": "2023-06-30T06:44:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create and manage projects",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/create-manage-projects",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9d9f9bbd0ac6060f0d71f68210a9950f2c13142d/articles/migrate/create-manage-projects.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-05-08: MicrosoftDocs/azure-docs/articles/migrate/concepts-overview.md"
+  ],
+  "open_questions": [
+    "Does the assessment data collection period need to be standardized across all servers for accurate comparison?",
+    "Are there specific network connectivity requirements for the discovery appliances that need to be documented before deployment?",
+    "How should dependencies between servers be visualized and exported for migration planning?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-migration-inventory-before-selecting-a-migration-method.md",
+  "draft": true,
+  "word_count": 766,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Migrate projects store discovery, assessment, and migration metadata.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Contributor or Owner permissions are required to create an Azure Migrate project.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The geography setting determines where metadata is stored, not the target migration region.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Azure Migrate Discovery and assessment tool is automatically added when creating a project with the Discover, assess and migrate option.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Classic Azure Migrate projects are retiring and cannot be upgraded.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that choosing Azure Site Recovery (ASR) or App Service is a 'common mistake' based on 'general preference' rather than workload characteristics. This is an unsupported categorical claim and subjective opinion not found in the sources. It misrepresents the tools' valid use cases and lacks evidence.",
+      "fix": "Remove the judgmental language about 'common mistakes' and 'general preference.' State neutrally that Azure Migrate provides data to inform the selection of appropriate services like ASR, App Service, or VMs based on specific assessment results."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims assessment results 'highlight dependencies between servers.' While Azure Migrate can assess dependencies, the provided sources (S1, S2) do not explicitly state that the assessment tool outputs dependency maps. S1 mentions discovering/assessing SQL Server from VMware, and S2 mentions storing metadata. The dependency feature is not detailed in the supplied text.",
+      "fix": "Remove the specific claim about dependency highlighting unless supported by a source. Focus on the documented outputs: CPU, memory, disk, and network usage data for sizing, as implied by the 'assessment' context in S1 and the project storage description in S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using Azure Site Recovery for 'complex multi-tier applications' as a likely alternative. This implies ASR is the standard for complexity, which is not a supported general rule. ASR is for replication/DR, not necessarily migration of complex tiers. The sources do not compare ASR vs. App Service suitability.",
+      "fix": "Replace the specific recommendation of ASR for complex apps with a neutral statement that assessment data helps determine if workloads are suitable for lift-and-shift (VMs), platform services (App Service), or other Azure offerings based on technical requirements."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Wait for the project to deploy. This may take a few minutes.' Source S2 says 'Wait for a few minutes for the project to deploy.' This is supported. However, the draft adds 'The project is now ready to receive discovery data' immediately after. S2 does not explicitly state the project is 'ready' instantly, only that it deploys. This is a minor inference.",
+      "fix": "Keep the timing but soften the readiness claim. State that once deployment completes, the project is available to add assessment tools, as per S1's instruction to add tools after project creation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'fragmented spreadsheets or manual estimates' as a negative alternative. This is external context not present in the sources. While logical, it is not a technical fact derived from S1 or S2.",
+      "fix": "Remove the reference to spreadsheets. Focus on the technical benefit: Azure Migrate centralizes metadata in a project, enabling structured assessment and migration planning as described in S2."
+    }
+  ]
+}
