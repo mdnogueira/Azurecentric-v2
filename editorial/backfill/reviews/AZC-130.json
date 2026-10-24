@@ -1,0 +1,158 @@
+{
+  "id": "AZC-130",
+  "title": "Choose alert thresholds around an actionable response",
+  "slug": "choose-alert-thresholds-around-an-actionable-response",
+  "historical_date": "2024-12-29",
+  "input_sha256": "a824af895ed1b3fb25fd82263308017f59df6b8176b01ad594127ff8e8b6bd97",
+  "created_at": "2026-10-23T15:14:19.204174+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Align alert thresholds with response capabilities: static, dynamic, and log search strategies.",
+  "tags": [
+    "azure-monitor",
+    "alerts",
+    "thresholds",
+    "dynamic-thresholds",
+    "log-search",
+    "action-groups"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-130-learn-1.png",
+      "alt": "Screenshot that shows popular signals when creating an alert rule.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/7acde6dfa435e1bc304a52e693a943421361dc4d/articles/azure-monitor/alerts/media/alerts-create-new-alert-rule/alerts-popular-signals.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-03-11T18:45:36Z",
+      "sha256": "dd46c09954d02b44a59518b40091f6ef85ab76d52f1bb6e8ceed779688f262ae",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-130-learn-2.png",
+      "alt": "Screenshot that shows steps to edit an existing log search alert rule.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/media/alerts-create-log-alert-rule/alerts-edit-log-search-alert-rule.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "cda97894c109eb039cbd845b6f600ee039814853f883090c7a54da61e2a694f2",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-create-metric-alert-rule.md",
+      "revision": "7acde6dfa435e1bc304a52e693a943421361dc4d",
+      "revision_date": "2024-03-11T18:45:36Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create Azure Monitor metric alert rules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-metric-alert-rule",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7acde6dfa435e1bc304a52e693a943421361dc4d/articles/azure-monitor/alerts/alerts-create-metric-alert-rule.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-create-log-alert-rule.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create Azure Monitor log search alert rules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/alerts-create-log-alert-rule.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-dynamic-thresholds.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create an Azure Monitor metric alert with dynamic thresholds",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/alerts-dynamic-thresholds.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-03-12T18:40:28Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-create-metric-alert-rule.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-create-log-alert-rule.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-dynamic-thresholds.md"
+  ],
+  "open_questions": [
+    "Does the current response runbook account for the time between alert firing and remediation?",
+    "Are there any new resources that lack the three-day historical data required for dynamic thresholds?",
+    "Have log search queries been tested with the intended one-minute frequency to ensure they do not contain unsupported operations?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-alert-thresholds-around-an-actionable-response.md",
+  "draft": true,
+  "word_count": 1425,
+  "claim_support_checks": [
+    {
+      "claim": "Static thresholds are appropriate for hard constraints like capacity limits.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Dynamic thresholds use machine learning to calculate thresholds based on historical patterns.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Dynamic thresholds require at least three days and 30 samples before triggering an alert.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Log search alert permissions depend on the last user who edited the rule if no managed identity is used.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "One-minute frequency log search alerts may fail if the query contains unsupported operations.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims dynamic thresholds are recommended for 'metrics with low dispersion, such as availability and error rate'. Source S3 lists these as supported but explicitly recommends them for 'noisy metrics, such as machine CPU or memory'. Availability/error rates are typically stable, not noisy, making this recommendation misleading and potentially incorrect for the stated use case.",
+      "fix": "Remove 'metrics with low dispersion, such as availability and error rate' from the list of recommended metrics for dynamic thresholds. Retain 'noisy metrics, such as machine CPU or memory' as the primary recommendation, as supported by Source S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that for log search alerts, 'If you select more than one dimension value... each time series... is charged separately'. This conflates metric alert billing logic with log search alerts. Source S2 confirms dimension splitting for log alerts but does not specify billing per time series in the same way S1 does for metrics. This is an unsupported financial claim.",
+      "fix": "Remove the specific claim about billing per time series for log search alert dimensions. State only that dimensions split the evaluation into separate alert instances, referencing Source S2, without asserting a specific billing model not explicitly documented for log alerts."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that 'Number of violations' is a setting available for both metric and log search alerts to reduce noise. While Source S1 (metric) and S2 (log) both mention 'Number of violations', the draft presents it as a universal noise-reduction strategy without clarifying that for log alerts, it applies to query result counts, not metric deviations. This lacks precision.",
+      "fix": "Clarify that 'Number of violations' in log search alerts refers to the number of times the query returns results exceeding the threshold, distinct from metric deviations. Ensure the distinction between metric deviation counting and log result counting is explicit."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Verification and next actions' section with generic advice ('define the action group...'). This violates the editorial guidance to end with a concrete verification or next action and remove generic concluding paragraphs. It also repeats source links unnecessarily.",
+      "fix": "Remove the generic 'Verification and next actions' section. End the article after the log search alert section with a concrete step, such as testing the query with the intended frequency, as suggested in the review questions, without repeating source links."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Dynamic thresholds... help prevent noisy (low precision) or wide (low recall) thresholds'. Source S3 states they help 'prevent noisy (low precision) or wide (low recall) thresholds that don't have an expected pattern'. The draft omits 'that don't have an expected pattern', implying dynamic thresholds prevent all such issues, which is an overstatement.",
+      "fix": "Rephrase to state that dynamic thresholds help prevent noisy or wide thresholds for metrics that exhibit expected patterns, aligning with Source S3's specific condition regarding patterned behavior."
+    }
+  ]
+}

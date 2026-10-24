@@ -1,0 +1,125 @@
+{
+  "id": "AZC-194",
+  "title": "Review event logs around a Windows infrastructure change",
+  "slug": "review-event-logs-around-a-windows-infrastructure-change",
+  "historical_date": "2025-06-25",
+  "input_sha256": "d567e2f089738df0d76186fd419f855ad5254bd4688274b1c04fa943b0a9fb0d",
+  "created_at": "2026-10-23T16:43:50.900585+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Review Windows infrastructure changes by correlating Server Manager alerts, specific security event IDs, and Windows Admin Center management logs.",
+  "tags": [
+    "windows-server-2025",
+    "event-logging",
+    "server-manager",
+    "windows-admin-center",
+    "security-auditing"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/server-manager/view-and-configure-performance-event-and-service-data.md",
+      "revision": "aafacc669c05d45aeec75f8fd5d39a8c6423fde9",
+      "revision_date": "2025-05-19T12:39:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "View and Configure Performance Event and Service Data",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/server-manager/view-and-configure-performance-event-and-service-data",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/aafacc669c05d45aeec75f8fd5d39a8c6423fde9/WindowsServerDocs/administration/server-manager/view-and-configure-performance-event-and-service-data.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/Appendix-L--Events-to-Monitor.md",
+      "revision": "dcc6b7ac4524033b882159c914119a4270624459",
+      "revision_date": "2025-05-30T18:02:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Appendix L - Events to Monitor",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/dcc6b7ac4524033b882159c914119a4270624459/WindowsServerDocs/identity/ad-ds/plan/Appendix-L--Events-to-Monitor.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/manage/windows-admin-center/use/logging.md",
+      "revision": "d97779a8da2f1d6de4e14e9bb0bf70403f748918",
+      "revision_date": "2025-06-03T22:55:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Event Logging in Windows Admin Center",
+      "url": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/logging",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/d97779a8da2f1d6de4e14e9bb0bf70403f748918/WindowsServerDocs/manage/windows-admin-center/use/logging.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the provided source text specify the exact steps to configure audit policies in Group Policy, or only that they need to be configured?",
+    "Are there any specific Event IDs mentioned in the sources that are unique to Windows Server 2025 compared to previous versions?",
+    "Does the source text provide guidance on how to interpret the 'Delegation' field in Windows Admin Center logs beyond it being a Boolean?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-event-logs-around-a-windows-infrastructure-change.md",
+  "draft": true,
+  "word_count": 1207,
+  "claim_support_checks": [
+    {
+      "claim": "Server Manager collects Critical, Error, and Warning events by default from Application, Setup, and System logs.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Windows Admin Center logs management actions to the WindowsAdminCenter event channel with EventID 4000.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Default audit policies in Windows may not capture all security events, requiring explicit configuration.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Event ID 4719 indicates a system audit policy change and is considered high criticality.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Server Manager collects events from the 'Setup' log by default. Source S1 states the defaults are 'Application', 'Setup', and 'System'. However, the text then says 'If your change involved a specific service installation... the Setup log is likely where you will find the confirmation'. This implies Setup is a standard log for all changes, but S1 only lists it as a default collection source, not a specific indicator of service installation success. The phrasing is misleading.",
+      "fix": "Clarify that while 'Setup' is a default collection source, it is not exclusively for service installations. Remove the implication that Setup logs are the primary place for service installation confirmation without citing specific Event IDs or logs that are actually designated for that purpose (e.g., Microsoft-Windows-Setup)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Event ID 1102, where the audit log was cleared, is also high criticality'. Source S2 lists Event ID 1102 as 'Medium to High' criticality, not strictly 'High'. This distinction is important for triage. The draft also lists Event ID 4719 as 'High', which is correct per S2, but the inconsistency in 1102's classification is a factual error.",
+      "fix": "Correct the criticality of Event ID 1102 to 'Medium to High' as per Source S2. Ensure all Event ID criticality levels in the table and text match the 'Potential Criticality' column in Source S2 exactly."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking Event ID 6145 for Group Policy errors. Source S2 lists Event ID 6145 as 'Medium' criticality with the summary 'One or more errors occurred while processing security policy in the Group Policy objects.' The draft does not mention this is a 'Medium' criticality event, potentially overstating its immediate urgency compared to 'High' events, though it does mention it later. The table omits 6145.",
+      "fix": "Add Event ID 6145 to the table with its correct 'Medium' criticality. Clarify that while it indicates errors, it is not a 'High' criticality event requiring immediate investigation unless it occurs unexpectedly."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Windows Admin Center logs only actions on the managed server. Events aren't logged if a user accesses a server for read-only purposes.' Source S3 confirms this. However, the draft does not specify that these logs are written to the 'WindowsAdminCenter' event channel on the *managed* server, not the gateway. The text says 'on the managed server' but the phrasing 'logs management activities performed on the servers' could be ambiguous.",
+      "fix": "Explicitly state that the `WindowsAdminCenter` event channel is located on the *managed* server, not the gateway, to avoid confusion about where to find these logs. Source S3 says 'logging actions to the WindowsAdminCenter event channel in the event log of the managed server.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions using Event ID ranges like `1,3,5-99,-76` in Server Manager. Source S1 confirms this syntax. However, the draft does not warn that this feature is specific to the 'Events detail View' dialog box in Server Manager and does not apply to the raw Event Viewer. This could lead to confusion if the user tries to use this syntax in Event Viewer.",
+      "fix": "Clarify that the Event ID range syntax (e.g., `1,3,5-99,-76`) is specific to the Server Manager 'Events detail View' dialog box and is not a standard Event Viewer query syntax. This prevents users from attempting to use it in other tools."
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "AZC-148",
+  "title": "Design retry behaviour without creating duplicate work",
+  "slug": "design-retry-behaviour-without-creating-duplicate-work",
+  "historical_date": "2025-02-17",
+  "input_sha256": "41688c82633b147a3285db90e9dc3b0fc0059aebe15679f7db99f8eddb9cf107",
+  "created_at": "2026-10-23T15:41:38.854300+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Design retry policies for Azure API Management, Logic Apps, and Event Grid to ensure reliability without creating duplicate work.",
+  "tags": [
+    "azure-api-management",
+    "logic-apps",
+    "event-grid",
+    "retry-policies",
+    "idempotency",
+    "integration"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-148-learn-1.png",
+      "alt": "Screenshot shows workflow designer and current action details pane with selected Settings tab.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f81b39edf3ac3a95907958df6f812cab9c3d93e2/articles/logic-apps/media/error-exception-handling/configure-run-after.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-01-27T04:06:48Z",
+      "sha256": "7588de8ed7acb525d01d606df1e3da06558a143edce965ee5b30d582399a78df",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-148-learn-2.png",
+      "alt": "Screenshot sowing the Additional Features tab of Event Subscription page with Batching section highlighted. ",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9fb061f0acfe62daa0e5ee82e9746a235daf92b3/articles/event-grid/media/delivery-and-retry/batch-settings.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-11-18T21:17:22Z",
+      "sha256": "aff062976683a322d251bdd4d7704f2297eeff555759bad009921d034840c5d6",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/retry-policy.md",
+      "revision": "d7168c5a53e2336b2aff110b6d00bd04a5ef7339",
+      "revision_date": "2025-02-15T00:10:21Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure API Management policy reference - retry | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/retry-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d7168c5a53e2336b2aff110b6d00bd04a5ef7339/articles/api-management/retry-policy.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/error-exception-handling.md",
+      "revision": "f81b39edf3ac3a95907958df6f812cab9c3d93e2",
+      "revision_date": "2025-01-27T04:06:48Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Handle errors and exceptions in workflows",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/error-exception-handling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f81b39edf3ac3a95907958df6f812cab9c3d93e2/articles/logic-apps/error-exception-handling.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/event-grid/delivery-and-retry.md",
+      "revision": "9fb061f0acfe62daa0e5ee82e9746a235daf92b3",
+      "revision_date": "2024-11-18T21:17:22Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Event Grid delivery and retry",
+      "url": "https://learn.microsoft.com/en-us/azure/event-grid/delivery-and-retry",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9fb061f0acfe62daa0e5ee82e9746a235daf92b3/articles/event-grid/delivery-and-retry.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the APIM `retry` policy buffer the request body by default, and how does this impact large payloads?",
+    "Are there specific Logic Apps connectors that do not support retry policies, and what is the fallback behavior?",
+    "How does Event Grid handle retries for Azure Service Bus destinations specifically, given the 'Disabled' and 'Full' outcomes?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "targeted_bulk_revision": "Replaced invalid object navigation or incomplete retry fragments; live integration execution not performed.",
+  "file": "src/content/posts/en/design-retry-behaviour-without-creating-duplicate-work.md",
+  "draft": true,
+  "word_count": 704,
+  "claim_support_checks": [
+    {
+      "claim": "APIM retry policy re-executes child policies until a condition is false or count is exhausted.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Logic Apps default retry policy for HTTP actions is exponential with up to 4 retries.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Event Grid provides durable delivery with at-least-once semantics and may send duplicates.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Event Grid retry schedule includes exponential backoff up to 24 hours.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims APIM `forward-request` sends the request again, implying body duplication. S1 shows `buffer-request-body=\"true\"` is required to read/forward the body. Without this, the body stream is consumed on the first attempt and unavailable for retries, causing failures, not just duplicates. The draft omits this critical configuration detail.",
+      "fix": "Update the APIM example to include `buffer-request-body=\"true\"` in the `forward-request` element. Explicitly state that without buffering, the request body cannot be re-read for subsequent retry attempts, leading to immediate failure rather than successful duplication."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states Logic Apps sends up to 4 retries. S2 specifies this is the *number of retries*, meaning 1 initial attempt + 4 retries = 5 total attempts. The draft's phrasing 'up to 4 retries' is technically correct but the example code shows `count: 4`. The text implies the total attempts might be 4. More critically, it fails to mention that `count` is limited to 90 for Fixed/Exponential policies, a specific constraint not highlighted.",
+      "fix": "Clarify that `count` refers to the number of *additional* retry attempts after the initial failure. Add the constraint that `count` is limited to 90 for Fixed and Exponential policies in Logic Apps, as per S2 limits table."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Event Grid 'guarantees at-least-once delivery'. S3 states it 'tries to deliver... at least once' and uses 'best effort' for retries. It also notes that duplicates might still be received even if the endpoint responds within 3 minutes. The word 'guarantee' is too strong and potentially misleading regarding the 'best effort' nature of the retry queue and potential drops during probation or dead-lettering.",
+      "fix": "Replace 'guarantees' with 'aims for' or 'provides durable delivery with at-least-once semantics'. Explicitly mention that duplicates are possible even with successful responses and that delivery is 'best effort' during retries, as noted in S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Guid.NewGuid()` in APIM for idempotency. While valid, it doesn't address the cost of generating and transmitting this header, nor does it mention that the backend *must* support this specific header for deduplication. It presents it as a universal solution without noting the backend dependency or potential performance overhead of header generation/parsing.",
+      "fix": "Add a note that this approach requires backend support for the `X-Correlation-ID` header and deduplication logic. Mention that generating GUIDs adds minor overhead and that the backend must enforce uniqueness constraints to prevent duplicates effectively."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions Event Grid 'probation' but doesn't explain that during probation, events might be dead-lettered or dropped *without* further delivery attempts depending on the error code. S3 details specific probation durations and outcomes (e.g., 'NotFound' leads to 5 minutes probation). The draft oversimplifies this as 'delay delivery'.",
+      "fix": "Clarify that during probation, Event Grid may skip delivery attempts entirely and proceed directly to dead-lettering or dropping events, depending on the specific error code (e.g., NotFound, Unauthorized). Reference the specific probation durations and outcomes from S3 for accuracy."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "AZC-172",
+  "title": "Plan a private endpoint for a Storage account",
+  "slug": "plan-a-private-endpoint-for-a-storage-account",
+  "historical_date": "2025-04-25",
+  "input_sha256": "56cdc92f2e3877d563496db67febde7fd0714636b5babcd5c53d50952b79d629",
+  "created_at": "2026-10-23T16:14:01.462640+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan private endpoints for Azure Storage by mapping services, managing DNS, and configuring firewalls.",
+  "tags": [
+    "azure-storage",
+    "private-endpoints",
+    "private-link",
+    "dns-configuration",
+    "networking"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-private-endpoints.md",
+      "revision": "79aa02d82a80f299b36f293f72120619908b19d6",
+      "revision_date": "2024-11-05T23:45:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use private endpoints",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/79aa02d82a80f299b36f293f72120619908b19d6/articles/storage/common/storage-private-endpoints.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/storage-files-networking-overview.md",
+      "revision": "26a11e039d7648473d550d02bfb77a5c047a1b18",
+      "revision_date": "2024-05-10T20:49:39Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Networking considerations for Azure Files",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-networking-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/26a11e039d7648473d550d02bfb77a5c047a1b18/articles/storage/files/storage-files-networking-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2025-04-25: MicrosoftDocs/azure-docs/articles/storage/common/storage-network-security-overview.md"
+  ],
+  "open_questions": [
+    "Does the user need to configure DNS forwarding for on-premises clients, or is VNet-only access sufficient?",
+    "Are there any specific firewall rules required for the secondary region in RA-GRS scenarios?",
+    "How should the consent flow be handled if the user creating the private endpoint is not the storage account owner?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-a-private-endpoint-for-a-storage-account.md",
+  "draft": true,
+  "word_count": 906,
+  "claim_support_checks": [
+    {
+      "claim": "A separate private endpoint is required for each storage service (Blob, File, DFS, etc.).",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Creating a private endpoint does not block public access; the firewall must be configured separately.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "DNS resolution is critical for routing traffic to the private IP address.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "NFS is supported on Standard (GPv2) and Premium file shares with LRS/ZRS redundancy.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims NFS is only supported on Premium file shares. Source S2 confirms NFS is supported on Standard (GPv2) file shares with LRS/ZRS redundancy, contradicting the draft's restriction.",
+      "fix": "Correct the claim to state that NFS is supported on both Standard (GPv2) and Premium file shares, provided the storage account uses LRS or ZRS redundancy."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states copying blobs via NFS is 'not yet supported' as a general fact. Source S1 restricts this limitation to copying *between* storage accounts using private endpoints. It does not address general NFS copy operations outside this specific cross-account private endpoint context.",
+      "fix": "Clarify that copying blobs between storage accounts using private endpoints via NFS is unsupported, rather than stating a universal prohibition on NFS copy operations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises configuring DNS to delegate the `privatelink` subdomain for on-premises clients. Source S1 suggests delegating the `privatelink` subdomain or configuring A records. The draft omits the alternative of configuring specific A records, which may be preferred for precision.",
+      "fix": "Include the option to manually configure A records for the `privatelink` subdomain as an alternative to zone delegation, as supported by Source S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that creating a private endpoint for Data Lake Storage (DFS) automatically requires a Blob endpoint due to redirection. While true, it fails to mention that specific DFS-only operations (like ACL management) explicitly require the DFS endpoint, which is a distinct reason for the dual requirement.",
+      "fix": "Explicitly state that DFS operations like Manage ACL require the DFS endpoint specifically, in addition to redirection needs, to justify the dual endpoint requirement."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests checking the 'Networking' blade for endpoint status. Source S1 notes that consent requests are managed through the 'Private endpoints' tab for the storage account. The draft conflates the general networking view with the specific consent management interface.",
+      "fix": "Specify that pending consent requests are managed via the 'Private endpoints' tab within the storage account's Networking settings, as per Source S1."
+    }
+  ]
+}

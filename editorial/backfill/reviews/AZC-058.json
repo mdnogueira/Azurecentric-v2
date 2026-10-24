@@ -1,0 +1,131 @@
+{
+  "id": "AZC-058",
+  "title": "Keep Azure Firewall rules consistent with Firewall Policy",
+  "slug": "keep-azure-firewall-rules-consistent-with-firewall-policy",
+  "historical_date": "2024-06-10",
+  "input_sha256": "e839872dd3728235a23f92d876ddd9148cfebbf6fde89c175d437592c6145b4f",
+  "created_at": "2026-10-23T13:33:35.727045+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Align Azure Firewall rule priorities with the policy hierarchy to ensure predictable traffic filtering and avoid performance degradation.",
+  "tags": [
+    "azure-firewall",
+    "firewall-policy",
+    "network-security",
+    "rule-configuration",
+    "performance"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/policy-rule-sets.md",
+      "revision": "6bec9940aac554b0129f626da6b7b04ce96b9979",
+      "revision_date": "2024-05-09T17:44:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Firewall policy rule sets",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/policy-rule-sets",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6bec9940aac554b0129f626da6b7b04ce96b9979/articles/firewall/policy-rule-sets.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/firewall-best-practices.md",
+      "revision": "9af85af02f914a33b6bfbde09e50a06eed1f6a59",
+      "revision_date": "2023-12-04T15:25:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Firewall best practices for performance",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/firewall-best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9af85af02f914a33b6bfbde09e50a06eed1f6a59/articles/firewall/firewall-best-practices.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/overview.md",
+      "revision": "260c58d757202c36cbd60ff062d0623260447ed1",
+      "revision_date": "2024-02-26T18:14:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is Azure Firewall?",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/260c58d757202c36cbd60ff062d0623260447ed1/articles/firewall/overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How does the firewall handle conflicting rules across different rule collection groups with the same priority?",
+    "What is the exact impact of IDPS Alert + Deny mode on rule processing order?",
+    "Are there specific limits on the number of rule collections per rule collection group?",
+    "How does Azure Firewall Manager influence the consistency of firewall policies across multiple subscriptions?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/keep-azure-firewall-rules-consistent-with-firewall-policy.md",
+  "draft": true,
+  "word_count": 904,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Firewall processes traffic in a strict hierarchy of rule collection groups, rule collections, and individual rules.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Default rule collection groups have preset priorities that cannot be modified.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Rule collections within a group are processed based on their priority values.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Individual rules within a collection are processed in a top-down approach without priority values.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Exceeding rule limitations can affect firewall performance and cause latency.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Firewall has 'Standard, Premium, and Basic' SKUs (S3). As of June 2024, Azure Firewall Basic was retired and removed from the service. This is a factual error regarding product availability.",
+      "fix": "Remove references to Azure Firewall Basic. Update the SKU overview to reflect only Standard and Premium, noting that Basic is no longer available for new deployments."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states: 'If you want to process application rules before network rules, create a custom application rule collection group with a priority value lower than 200.' This is technically impossible because Application rules cannot reside in a Network rule collection group, and DNAT/Network/Application groups are distinct types with fixed processing sequences relative to each other in the default hierarchy, though custom groups can override priority, the type mismatch makes this specific example invalid.",
+      "fix": "Clarify that rule collection groups are typed (DNAT, Network, Application). You cannot mix rule types across groups. To change processing order, you create custom groups of the *same* type with specific priorities, or rely on the fact that DNAT is processed before Network, which is processed before Application by default design, and custom groups can interleave if they are distinct types but the example given is logically flawed."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises: 'Prioritise rules with the highest number of hits to ensure they are processed first.' This is misleading. Rules are processed top-down within a collection. Priority values apply to collections/groups, not individual rules. Placing high-hit rules first in a collection is good, but 'prioritizing rules' via priority values is not how individual rules work.",
+      "fix": "Correct the advice: 'Place high-hit rules at the top of their rule collection to ensure they are evaluated first, reducing processing time for subsequent rules in the same collection.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' step: 'Remove any unused rule collections or groups.' This is vague and potentially destructive without context on dependencies (e.g., if a group is referenced by a Firewall Manager policy or has dependent resources).",
+      "fix": "Remove the generic cleanup step or specify that users should verify no other policies or firewalls reference the collections before deletion, citing the need to check for dependencies."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By following these steps, you can ensure...'. This is a generic concluding paragraph that adds no technical value and violates the guidance to end with a concrete verification or next action.",
+      "fix": "Remove the final concluding paragraph. End with the verification step: 'Monitor Azure Firewall logs and latency metrics to confirm the new rule processing order matches your security and performance expectations.'"
+    }
+  ]
+}

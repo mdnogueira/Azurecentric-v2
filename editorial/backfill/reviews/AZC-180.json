@@ -1,0 +1,157 @@
+{
+  "id": "AZC-180",
+  "title": "Decide where Azure RBAC assignments should live",
+  "slug": "decide-where-azure-rbac-assignments-should-live",
+  "historical_date": "2025-05-18",
+  "input_sha256": "25c100ded274eccc851262f683ca58d3dbd5bae4df0d765c1356d765a30e3dab",
+  "created_at": "2026-10-23T16:25:54.707340+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide whether to assign Microsoft Entra roles at tenant, application, or administrative unit scope to match the boundary of the user's responsibility.",
+  "tags": [
+    "entra-id",
+    "rbac",
+    "role-scoping",
+    "least-privilege",
+    "application-administration",
+    "administrative-units"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-180-learn-1.png",
+      "alt": "Screenshot of Roles and administrators page in Microsoft Entra admin center.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/06a5d0ec25e10513a214bbe1123e6957e9a538ca/docs/media/common/entra-roles-admins.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-01-01T01:21:06Z",
+      "sha256": "0ac447cb9d12c1d6fa9fdbf4767db112cce80cf950afba49ed3c8c207ca497a7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-180-learn-2.png",
+      "alt": "Screenshot of Roles and administrators page in Microsoft Entra admin center.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/a14ae6254f6e956b15048954363c47ac795f206a/docs/media/common/entra-roles-admins.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-04-25T18:32:46Z",
+      "sha256": "0ac447cb9d12c1d6fa9fdbf4767db112cce80cf950afba49ed3c8c207ca497a7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "revision": "06a5d0ec25e10513a214bbe1123e6957e9a538ca",
+      "revision_date": "2025-01-01T01:21:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Assign Microsoft Entra roles at different scopes",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/assign-roles-different-scopes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/06a5d0ec25e10513a214bbe1123e6957e9a538ca/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/manage-roles-portal.md",
+      "revision": "a14ae6254f6e956b15048954363c47ac795f206a",
+      "revision_date": "2025-04-25T18:32:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Assign Microsoft Entra roles",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/a14ae6254f6e956b15048954363c47ac795f206a/docs/identity/role-based-access-control/manage-roles-portal.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/security-planning.md",
+      "revision": "a14ae6254f6e956b15048954363c47ac795f206a",
+      "revision_date": "2025-04-25T18:32:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure access practices for administrators in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/a14ae6254f6e956b15048954363c47ac795f206a/docs/identity/role-based-access-control/security-planning.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-01-01T22:39:33Z; used previous public snapshot. Confirm continued applicability: docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+    "Include unavailable: includes/portal-update.md"
+  ],
+  "open_questions": [
+    "The draft claims service principals can be assigned roles scoped to application registrations, but S1 and S2 only mention assigning roles to users or groups at the app scope. Is this claim supported by other documentation not provided here, or should it be removed entirely?",
+    "The draft asserts that removing a role assignment does not necessarily revoke existing tokens or sessions. This is a future knowledge assumption not supported by the provided sources. S1-S3 do not discuss token lifecycle or session invalidation mechanics upon role removal. Should this be removed or rephrased as a general security practice?",
+    "The draft states that Global Administrator does not support scoping to individual resources. S1 and S2 confirm that Global Administrator is a built-in role that can be assigned at the application registration scope. Is this a contradiction in the source material, or does Global Administrator have specific restrictions not mentioned in the provided text?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/decide-where-azure-rbac-assignments-should-live.md",
+  "draft": true,
+  "word_count": 1264,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Entra ID supports assigning roles at tenant, application registration, and administrative unit scopes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Roles assigned at the application registration scope apply only to that specific app, not the entire tenant.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Administrative unit scoped roles apply to managing members of the unit, not the unit object itself.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Assigning roles requires the Privileged Role Administrator role at the tenant level.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Administrative unit role assignments require Microsoft Entra ID P1 or P2 licenses for the administrators.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly states that Global Administrator does not support scoping to individual resources. S1 and S2 confirm that Global Administrator is a built-in role that can be assigned at the application registration scope, allowing management of a single app without tenant-wide privileges.",
+      "fix": "Remove the claim that Global Administrator is always tenant-wide. Clarify that while it is a high-privilege role, it can be scoped to application registrations or administrative units, just like other built-in roles, to limit blast radius."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims service principals can be assigned roles scoped to application registrations. S1 and S2 only mention assigning roles to users or groups at the app scope. While S1 notes service principals can be assigned at the admin unit scope (with caveats), it does not support app scope assignment for service principals.",
+      "fix": "Remove the statement that service principals can be assigned roles scoped to application registrations. Limit app scope assignments to users and role-assignable groups as supported by the provided documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that removing a role assignment does not revoke existing tokens or sessions. This is a future knowledge assumption not supported by the provided sources. S1-S3 do not discuss token lifecycle or session invalidation mechanics upon role removal.",
+      "fix": "Remove the specific claim about token revocation. Instead, advise verifying access in the admin center or using conditional access policies if immediate session termination is required, as token behavior is not covered in the source material."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that administrative unit scoped roles apply to 'members within that unit' generally. S1 clarifies that permissions apply only when managing members *of the administrative unit itself* and do not apply to tenant-wide settings. The draft's explanation of 'managing a subset of users' is slightly vague regarding the specific permission boundaries.",
+      "fix": "Refine the explanation to explicitly state that admin unit scoped roles restrict management actions to the members of that unit, preventing access to tenant-wide settings or users outside the unit, as detailed in S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a PowerShell code block for assigning roles at the application scope. While illustrative, it lacks the `Connect-MgGraph` step which is a prerequisite mentioned in S1 and S2. The code assumes an active session.",
+      "fix": "Add a comment or note indicating that `Connect-MgGraph` with appropriate scopes (e.g., `Application.Read.All`, `RoleManagement.ReadWrite.Directory`) is required before running the assignment code, consistent with S1 and S2 prerequisites."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "AZC-057",
+  "title": "Understand Linux integration services on Hyper-V",
+  "slug": "understand-linux-integration-services-on-hyper-v",
+  "historical_date": "2024-06-08",
+  "input_sha256": "19180742efe40b7aa1d0810957228818b2893fa6bb40b5b3f270bc5b0be1939e",
+  "created_at": "2026-10-23T13:31:52.716976+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify Linux Hyper-V integration services are active on Windows Server 2022 using kernel modules and daemons.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-057-learn-1.png",
+      "alt": "Screen shot that shows the Windows Services pane",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/manage/media/HVServices.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-05-01T20:22:55Z",
+      "sha256": "d1ad1d345ee38b010a2e13d68ae71739e36e5de28718251a0cdf3869ba14e27e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Hyper-V Integration Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Feature Descriptions for Linux and FreeBSD virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-linux-integration-services-on-hyper-v.md",
+  "draft": true,
+  "word_count": 881,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims enabling a host service does not automatically start the guest daemon. Source S1 states: 'When you enable a service in the host, it automatically starts running in the guest.' The draft's manual start instruction (`sudo hv_kvp_daemon`) contradicts the documented automatic behavior, potentially causing confusion about service lifecycle management.",
+      "fix": "Correct the text to reflect that enabling the service in Hyper-V automatically starts the corresponding daemon in the Linux guest. Remove the instruction to manually start daemons as a standard verification step, noting that manual intervention is only for troubleshooting stopped services."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft suggests checking integration service versions by 'querying kernel parameters' for Linux. Source S1 only provides a Registry query method for Windows guests (`REG QUERY...`). There is no documented command in the sources to query Linux integration service versions. This is an unsupported fact/invention.",
+      "fix": "Remove the Linux version check instruction. State that Linux integration services are built into the kernel and are updated by updating the kernel package, as noted in Source S1. Do not provide a command that does not exist in the sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a concluding paragraph starting with 'By following these steps...' which is explicitly prohibited by the editorial guidance. It also repeats source citations unnecessarily.",
+      "fix": "Remove the final two paragraphs entirely. End the article after the troubleshooting steps or the verification action. Ensure source links are placed naturally rather than repeated after every sentence."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends checking for missing daemons by running `compgen -c hv_`. Source S1 shows this output but does not explicitly define `compgen` as the standard method for checking availability, nor does it guarantee this command works on all distros. It is a shell builtin, not a system command.",
+      "fix": "Clarify that `compgen` is a shell builtin used to list available commands in the current shell environment, not a system utility. Advise users to check their distribution's package manager for available Hyper-V tools if daemons are missing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'dynamic memory' failing if services aren't running. Source S2 describes Dynamic Memory features (Hot-Add/Ballooning) but does not explicitly link them to the failure of `hv_kvp_daemon` or `hv_utils` in the same way it links Heartbeat to state tracking. This is a vague causal claim.",
+      "fix": "Refine the claim to state that Dynamic Memory relies on the balloon driver (part of `hv_utils`), but avoid implying that stopping daemons like KVP breaks memory management. Focus on the specific services mentioned in S1 (Heartbeat, Shutdown, Time Sync) for direct impact."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": "AZC-242",
+  "title": "Apply a consistent patching approach to Azure servers",
+  "slug": "apply-a-consistent-patching-approach-to-azure-servers",
+  "historical_date": "2025-11-07",
+  "input_sha256": "5b45ecc36343e30171656e4eea2fcc98b3e6e8012e43926519ae2ce0d310d343",
+  "created_at": "2026-10-23T17:52:06.158839+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Azure VM patching modes to balance platform orchestration control with guest OS autonomy.",
+  "tags": [
+    "azure-virtual-machines",
+    "patch-management",
+    "automatic-patching",
+    "availability-first",
+    "linux",
+    "windows"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/automatic-vm-guest-patching.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Automatic Guest Patching for Azure Virtual Machines and Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/automatic-vm-guest-patching",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/automatic-vm-guest-patching.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/understand-vm-reboots.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Understand VM reboots",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/understand-vm-reboots",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/understand-vm-reboots.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/run-scripts-in-vm.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Run scripts in an Azure Linux VM",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/run-scripts-in-vm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/linux/run-scripts-in-vm.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/automatic-vm-guest-patching.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/understand-vm-reboots.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/linux/run-scripts-in-vm.md"
+  ],
+  "open_questions": [
+    "Are there any specific network requirements for Linux VMs to access patch repositories when using AutomaticByPlatform?",
+    "How does the patching schedule differ for Virtual Machine Scale Sets in Flexible orchestration mode compared to single-instance VMs?",
+    "What is the exact process for switching between AutomaticByOS and Manual modes on Windows VMs, given the constraint mentioned in the source?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/apply-a-consistent-patching-approach-to-azure-servers.md",
+  "draft": true,
+  "word_count": 900,
+  "claim_support_checks": [
+    {
+      "claim": "AutomaticByPlatform mode is supported for both Linux and Windows VMs and follows availability-first principles.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "AutomaticByOS mode is only available for Windows VMs and does not support availability-first patching.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Linux VMs default to ImageDefault mode, which does not support availability-first patching.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Custom images are not supported for AutomaticByPlatform patching.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure orchestrates updates in phases to limit the blast radius of faulty patches.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `AutomaticByOS` is the default for Windows VMs if no patch mode is specified. Source S1 states `AutomaticByOS` is the default only if no other patch mode is specified, but `AutomaticByPlatform` is the recommended mode for availability-first. More critically, the draft implies `AutomaticByOS` is a simple toggle, whereas S1 notes `enableAutomaticUpdates` is settable only at creation for certain transitions, and `AutomaticByPlatform` disables native AU. The draft's description of `AutomaticByOS` as 'leaving native AU enabled' is accurate, but the claim that it is the default 'if no other patch mode is specified' ignores that `AutomaticByPlatform` is often the intended default for new deployments in managed environments. However, the bigger issue is the CLI command.",
+      "fix": "The CLI command `az vm show ... --query \"osProfile.linuxConfiguration.patchSettings.patchMode\"` is invalid for Windows VMs. S1 specifies `osProfile.windowsConfiguration.patchSettings.patchMode` for Windows. The draft's verification section uses a Linux query for a general verification step, which will fail on Windows VMs. Correct the query to handle both OS types or specify it is Linux-only."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states `AutomaticByPlatform` 'disables the native Windows Automatic Updates service'. S1 confirms this by setting `NoAutoUpdate` to 1. However, it also states `AutomaticByOS` 'leaves the native Windows Automatic Updates service enabled'. S1 confirms this sets `NoAutoUpdate` to 0. The draft's claim that `AutomaticByOS` 'does not support availability-first patching' is correct. The issue is the suggestion that `AutomaticByOS` is a viable alternative for 'consistent, controlled patching' in production. S1 explicitly states `AutomaticByPlatform` is required for availability-first. The draft should clarify that `AutomaticByOS` offers no platform-level blast radius control.",
+      "fix": "Clarify that `AutomaticByOS` provides no platform-level orchestration or blast radius control, making it unsuitable for workloads requiring the availability-first guarantees of `AutomaticByPlatform`. Remove the implication that `AutomaticByOS` is a 'consistent' approach for production fleets compared to `AutomaticByPlatform`."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims `AutomaticByPlatform` is supported for 'both Linux and Windows VMs, provided they are created from supported platform images'. S1 confirms this. However, the draft's JSON example for Linux uses `api-version=2020-12-01` in the URL (implied by the REST API section in S1, though the draft's code block doesn't show the URL, the text says 'REST API for Linux VMs' and shows a PUT). S1's REST API example uses `api-version=2020-12-01`. This is consistent. The issue is the claim that `AutomaticByPlatform` 'disables the native Windows Automatic Updates service'. This is true, but the draft fails to mention that for Linux, `AutomaticByPlatform` does not disable the OS's native package manager (e.g., apt/yum) in the same way, but rather takes over the patching responsibility. S1 says for Linux, it sets `patchMode=AutomaticByPlatform`. It doesn't explicitly say it disables the native package manager's automatic updates, but it does manage the patches. The draft's distinction is slightly misleading for Linux.",
+      "fix": "Refine the Linux section to clarify that `AutomaticByPlatform` takes over patch management via the Azure VM Agent, rather than 'disabling' a native service in the same explicit manner as Windows. Ensure the JSON example matches the S1 structure exactly, including `provisionVMAgent: true`."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description: `Azure VM Patching Orchestration Flow` with nodes like `VM Creation`, `Patch Mode Selection`, etc. The editorial guidance states: 'Do not add visible Microsoft Learn screenshot or permission captions. Keep source provenance in the separate review records.' and 'Do not invent an azcmagent uninstall subcommand.' The draft does not have a diagram image, but the metadata includes a `diagram` object. The guidance says 'When an example needs code, give a small complete working structure...'. The draft's code is illustrative. The issue is the `diagram` metadata itself is not a defect in the text, but the text doesn't reference it. However, the guidance says 'Vary the opening and structure. Do not copy the example's...'. The draft's opening is fine. The main issue is the CLI command in the verification section.",
+      "fix": "Remove the `diagram` metadata object from the draft if it is not rendered in the final output, or ensure the text references it. More importantly, fix the CLI command in the verification section to be OS-specific or provide both Linux and Windows queries as per S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states: 'Switching between modes on Windows VMs has constraints. For instance, you cannot switch between `AutomaticByOS` and `Manual` modes directly. You must first switch to `AutomaticByPlatform` as an intermediate step if needed.' S1 says: 'Switching between AutomaticByOS and Manual modes is not supported.' It does not say you can switch via `AutomaticByPlatform`. S1 says: 'Switching between AutomaticByPlatform and Manual modes is supported on VMs that have `osProfile.windowsConfiguration.enableAutomaticUpdates=false`. Similarly switching between AutomaticByPlatform and AutomaticByOS modes is supported on VMs that have `osProfile.windowsConfiguration.enableAutomaticUpdates=true`.' This implies a path: `AutomaticByOS` -> `AutomaticByPlatform` (requires `enableAutomaticUpdates=true`) -> `Manual` (requires `enableAutomaticUpdates=false`). But `AutomaticByOS` has `enableAutomaticUpdates=true`. So you can go `AutomaticByOS` -> `AutomaticByPlatform`. Then from `AutomaticByPlatform`, can you go to `Manual`? S1 says `AutomaticByPlatform` to `Manual` is supported if `enableAutomaticUpdates=false`. But `AutomaticByPlatform` sets `NoAutoUpdate=1`, which corresponds to `enableAutomaticUpdates=false`? S1 says `AutomaticByPlatform` sets `NoAutoUpdate=1`. `Manual` also sets `NoAutoUpdate=1`. So the transition `AutomaticByPlatform` -> `Manual` should be possible. The draft's claim that you 'must first switch to `AutomaticByPlatform`' is likely correct, but S1 explicitly says 'Switching between AutomaticByOS and Manual modes is not supported', which might mean the direct switch is unsupported, but the indirect path is not explicitly confirmed as supported. The draft presents it as a fact.",
+      "fix": "Clarify the transition constraints. S1 states 'Switching between AutomaticByOS and Manual modes is not supported.' It does not explicitly confirm the indirect path via `AutomaticByPlatform` is supported, although it is implied by the individual transition rules. Rephrase to: 'Direct switching between `AutomaticByOS` and `Manual` is not supported. Transitions may require intermediate steps, but specific path support depends on the `enableAutomaticUpdates` state.'"
+    }
+  ]
+}

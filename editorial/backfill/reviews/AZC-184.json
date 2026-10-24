@@ -1,0 +1,115 @@
+{
+  "id": "AZC-184",
+  "title": "Investigate a VM that cannot complete provisioning",
+  "slug": "investigate-a-vm-that-cannot-complete-provisioning",
+  "historical_date": "2025-05-28",
+  "input_sha256": "4f78e56ca821f3128136b52598e937fe05e659d6e5aa2c1c286af9904e742169",
+  "created_at": "2026-10-23T16:29:52.006864+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a VM stuck in provisioning by checking instance view, activity logs, and boot diagnostics.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-184-learn-1.png",
+      "alt": "Screenshot of the VM insights 'Logical Disk Performance' view.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/media/monitor-vm/vminsights-01.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-20T00:18:50Z",
+      "sha256": "19acebf0690a526c5cc0d93d1d1d95f3dc75a9b3af0ec134f61cc71a7c0b809a",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot autoscale with Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/monitor-vm.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Azure Virtual Machines",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/monitor-vm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/monitor-vm.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/vm-support-help.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Virtual Machine support and help options",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-support-help",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/vm-support-help.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/monitor-vm.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-activity-log.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-analyze-data.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/vm-support-help.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-vm-that-cannot-complete-provisioning.md",
+  "draft": true,
+  "word_count": 1053,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly implies that checking VM Insights or Azure Monitor Agent (AMA) status is relevant for a VM stuck in 'provisioning'. A VM in provisioning state is not yet running the guest OS, so agents cannot be installed, running, or reporting metrics. This step is technically impossible and misleading for the stated problem.",
+      "fix": "Remove the entire 'Verify the Azure Monitor Agent and VM Insights' section. A VM in provisioning state cannot have running agents. Focus troubleshooting on Host Metrics (to confirm if the VM resource exists and is powered on) and Boot Diagnostics (to see if the guest OS is attempting to boot)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Activity Logs record 'failure reasons' for provisioning. While Activity Logs show deployment events, they often do not contain detailed OS-level provisioning errors. The draft fails to mention that for provisioning hangs, one must check the 'Instance View' (Statuses) in the portal or Resource Explorer to see specific provisioning states (e.g., VMProvisioningTimeout, PowerState/deallocated).",
+      "fix": "Clarify that Activity Logs show control-plane events (like 'Create Virtual Machine' succeeded/failed), but detailed provisioning status requires checking the VM's 'Instance View' or 'Statuses' blade for specific error codes like 'VMProvisioningTimeout' or 'ProvisioningState'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests enabling Boot Diagnostics manually by specifying a storage account, implying this is a standard troubleshooting step for a hanging VM. However, Boot Diagnostics is enabled by default. More importantly, if the VM is stuck in provisioning, the storage account for boot diagnostics might not be created yet, or the VM might not have access to it, leading to a confusing error loop.",
+      "fix": "Note that Boot Diagnostics is enabled by default. If it fails to capture data, the issue is likely deeper than configuration. Do not suggest manual storage account setup as a primary troubleshooting step for a *hanging* VM, as this adds complexity without resolving the root cause of the hang."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes 'Review Questions' that are not answered in the text, such as 'What is the specific error code if the VM fails to provision due to a resource quota issue?' This creates a disconnect between the content and the reader's expectations.",
+      "fix": "Remove the 'Review Questions' section. The draft should be self-contained. If a question is raised, it must be answered in the body. Alternatively, integrate the answers into the relevant sections (e.g., mention common error codes in the Activity Log section)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'Hyper-V session' which is technically accurate for the host, but the phrasing 'If the host metrics show no activity, the provisioning service itself may be waiting on a dependency or has failed silently' is vague. It does not guide the user to check the 'Instance View' or 'Statuses' which are the concrete indicators of this state.",
+      "fix": "Replace vague language with concrete actions. Instead of 'waiting on a dependency', instruct the user to check the 'Instance View' for specific provisioning states like 'Provisioning' or 'Failed'. Provide the exact path in the portal to find these statuses."
+    }
+  ]
+}

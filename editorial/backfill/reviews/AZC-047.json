@@ -1,0 +1,131 @@
+{
+  "id": "AZC-047",
+  "title": "Use what-if to review an Azure deployment",
+  "slug": "use-what-if-to-review-an-azure-deployment",
+  "historical_date": "2024-05-11",
+  "input_sha256": "8891e6af1a24ee91dcd10b31b750fa6d9b1423f88f67b4495c0d697be85b6938",
+  "created_at": "2026-10-23T13:20:14.503085+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Preview Bicep deployment changes using the Azure Resource Manager what-if operation to verify creates, modifications, and deletions before applying them.",
+  "tags": [
+    "bicep",
+    "azure-cli",
+    "azure-powershell",
+    "deployment",
+    "what-if",
+    "azure-resource-manager"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-what-if.md",
+      "revision": "edc6e64f12463d19a21df264febe1155fb2fb857",
+      "revision_date": "2023-09-06T19:16:20Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep deployment what-if",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/edc6e64f12463d19a21df264febe1155fb2fb857/articles/azure-resource-manager/bicep/deploy-what-if.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-cli.md",
+      "revision": "88b1d8a6f03f0b96992c1b8a5a40b2ce4deb0c63",
+      "revision_date": "2024-03-22T14:57:45Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy resources with Azure CLI and Bicep files | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/88b1d8a6f03f0b96992c1b8a5a40b2ce4deb0c63/articles/azure-resource-manager/bicep/deploy-cli.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "6cf048634c76c0c09fea342bf7d1a349c5c983ed",
+      "revision_date": "2023-06-23T22:26:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6cf048634c76c0c09fea342bf7d1a349c5c983ed/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the what-if operation support template specs directly, or only via template links which are not supported?",
+    "How does the what-if operation handle dependencies on resources outside the deployment scope?",
+    "Are there specific API versions where the what-if operation behaves differently for certain resource types?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-what-if-to-review-an-azure-deployment.md",
+  "draft": true,
+  "word_count": 1020,
+  "claim_support_checks": [
+    {
+      "claim": "The what-if operation predicts changes without modifying resources.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Permissions for what-if are the same as for deployment.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The reference function cannot be resolved by what-if.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "What-if supports resource group, subscription, management group, and tenant scopes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Delete change type only applies in complete mode.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure CLI does not support deploying remote Bicep files directly, citing a link to a JSON template article. This is unsupported and misleading; the restriction applies to ARM JSON templates via CLI, while Bicep files are typically local. The source S2 explicitly states 'Azure CLI doesn't support deploying remote Bicep files' but the reasoning is conflated with JSON template deployment limitations in the draft's prose.",
+      "fix": "Clarify that Azure CLI requires local Bicep files for direct deployment, or that remote Bicep files must be built to JSON first. Remove the implication that this is a general remote template restriction, as Bicep CLI can handle remote sources differently. Cite S2 accurately."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the what-if operation 'validates the Bicep file for errors' in S2's context but does not explicitly distinguish between syntax validation and change prediction. It also claims 'Delete' applies to Bicep complete mode, which is true, but the draft implies this is a general Bicep feature rather than an ARM template deployment mode interaction.",
+      "fix": "Specify that 'Delete' changes appear only when the deployment mode is set to 'Complete'. Clarify that what-if predicts changes based on the template's intent, not just syntax. Ensure the distinction between Bicep syntax and ARM deployment modes is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'noise' in the output regarding default properties being reported as deleted. It states this is expected to be filtered out as the operation matures. This is a temporal claim that may become outdated or is speculative. The source S1 mentions this behavior but does not guarantee future filtering.",
+      "fix": "Remove the speculative statement about future filtering. State that properties set as defaults may appear as deletions in the what-if output, which is a known limitation of the current implementation. Advise users to ignore these specific 'noise' entries."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This approach ensures you see the predicted changes and can decide whether to proceed.' This is a generic concluding paragraph that adds no technical value and violates the editorial guidance to remove generic conclusions.",
+      "fix": "Delete the entire paragraph starting with 'This approach ensures...'. End the section with the verification steps or the limits discussion, as the technical question of how to use what-if is already answered."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description in the metadata but does not include the actual image or a reference to a provided screenshot. The editorial guidance requires including supplied screenshots if they illustrate a how-to step. Since no screenshot was supplied in the 'screenshots' array, this is a minor omission in the draft's structure, but the text itself is fine.",
+      "fix": "Since no screenshot was provided in the source data, remove the 'diagram' metadata from the draft to avoid confusion. Ensure the text description of the flow is sufficient without relying on a missing visual aid."
+    }
+  ]
+}

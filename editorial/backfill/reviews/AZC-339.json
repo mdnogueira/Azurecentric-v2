@@ -1,0 +1,152 @@
+{
+  "id": "AZC-339",
+  "title": "Investigate disk latency before resizing a virtual machine",
+  "slug": "investigate-disk-latency-before-resizing-a-virtual-machine",
+  "historical_date": "2026-08-06",
+  "input_sha256": "6ddeacabc0b51d345e711fc0e1cfc692b9d470fa9c3c3ef6ac567eaddb6423b0",
+  "created_at": "2026-10-23T20:07:25.868525+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish host saturation from guest latency using LUN mapping before resizing a VM.",
+  "tags": [
+    "azure-virtual-machines",
+    "disk-latency",
+    "azure-monitor",
+    "troubleshooting",
+    "vm-insights"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-339-learn-1.png",
+      "alt": "Screenshot of the VM insights 'Logical Disk Performance' view.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/media/monitor-vm/vminsights-01.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-20T00:18:50Z",
+      "sha256": "19acebf0690a526c5cc0d93d1d1d95f3dc75a9b3af0ec134f61cc71a7c0b809a",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/monitor-vm.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Azure Virtual Machines",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/monitor-vm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/monitor-vm.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/azure-to-guest-disk-mapping.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to map Azure Disks to Linux VM guest disks",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/azure-to-guest-disk-mapping",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/linux/azure-to-guest-disk-mapping.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/windows/azure-to-guest-disk-mapping.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to map Azure Disks to Windows VM guest disks",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/azure-to-guest-disk-mapping",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/windows/azure-to-guest-disk-mapping.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/monitor-vm.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-activity-log.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-analyze-data.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/linux/azure-to-guest-disk-mapping.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/windows/azure-to-guest-disk-mapping.md"
+  ],
+  "open_questions": [
+    "Does the source explicitly state that resizing a VM will resolve host-level latency if the SKU is changed to one with higher IOPS limits?",
+    "Is there any information in the sources about the specific performance counters collected by the default VM Insights DCR for disks?",
+    "Are there any prerequisites for using the `lsscsi` command on all Linux distributions?",
+    "Does the source mention any specific thresholds for host metrics that indicate a bottleneck?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-disk-latency-before-resizing-a-virtual-machine.md",
+  "draft": true,
+  "word_count": 877,
+  "claim_support_checks": [
+    {
+      "claim": "Host metrics are available by default without additional setup.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Guest metrics require the Azure Monitor Agent and a data collection rule.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "LUNs are used to map Azure disks to guest disks when multiple disks of the same size are attached.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Azure CLI can be used to retrieve the LUN of data disks.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "VM Insights installs the Azure Monitor Agent and sets up a default data collection rule.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims host metrics show 'latency'. Source S1 lists 'Disk Read/Write Bytes/sec' and 'Operations/sec' as host metrics. It does not list 'Disk Read/Write Latency' as a host metric. Host metrics reflect host-side utilization, not guest-side latency. Using 'latency' for host metrics is technically inaccurate and misleading for troubleshooting.",
+      "fix": "Replace 'latency' with 'utilization' or 'throughput' when referring to host metrics. Clarify that host metrics indicate host-side saturation, while guest metrics (via AMA) are required to measure actual disk latency from the OS perspective."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft suggests checking 'Disk Read Bytes/sec' to identify latency issues. High bytes/sec indicates throughput, not latency (IOPS/queue depth). The source S1 does not link these specific metrics to latency diagnosis. This confuses throughput saturation with latency, leading to incorrect troubleshooting paths.",
+      "fix": "Specify that host metrics show utilization/throughput. To diagnose latency, the guide must explicitly state that guest-level metrics (collected via AMA/VM Insights) are required, as host metrics alone cannot measure guest-side latency. Remove the implication that host bytes/sec measures latency."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that resizing a VM with a larger SKU will resolve host-level saturation if the current SKU is at its limit. Source S1 mentions scaling based on load but does not guarantee that a larger SKU resolves host saturation, which may be due to physical host constraints or storage tier limits, not just VM SKU.",
+      "fix": "Clarify that resizing might help if the bottleneck is VM-specific resource limits, but host saturation can also result from physical host contention or storage tier limits. Advise checking storage tier performance limits before assuming a VM SKU change will resolve host-level issues."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states that if guest latency is high but host latency is low, the issue is likely in the guest OS or application. This is a reasonable inference but is not explicitly supported by the sources. The sources do not provide a definitive causal link for this specific scenario.",
+      "fix": "Rephrase to indicate this is a likely cause rather than a definitive conclusion. Suggest investigating guest-side factors like I/O scheduling, drivers, or application configuration, as supported by the general troubleshooting guidance in S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from S1 (VM insights 'Logical Disk Performance' view) but does not explicitly link it to the step of checking guest metrics via VM Insights. The visual review is pending, and the caption is missing, which is allowed, but the context is weak.",
+      "fix": "Ensure the screenshot is placed directly next to the step describing how to view guest disk performance via VM Insights or AMA. Add a brief caption or text reference to explain what the screenshot shows (e.g., 'Example of guest disk performance counters in VM Insights')."
+    }
+  ]
+}

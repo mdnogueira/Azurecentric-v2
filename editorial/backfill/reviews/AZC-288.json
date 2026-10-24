@@ -1,0 +1,142 @@
+{
+  "id": "AZC-288",
+  "title": "Plan regional recovery without overlooking identity and DNS",
+  "slug": "plan-regional-recovery-without-overlooking-identity-and-dns",
+  "historical_date": "2026-03-16",
+  "input_sha256": "14b41499e0597ae646412fd346999ee6fac2025ec0897de17ba0a63ec91216b7",
+  "created_at": "2026-10-23T18:57:30.648228+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan regional recovery by defining RTO/RPO, configuring DNS failover, and managing identity dependencies.",
+  "tags": [
+    "disaster-recovery",
+    "dns",
+    "identity",
+    "azure-site-recovery",
+    "rto-rpo"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-288-learn-1.png",
+      "alt": "Screenshot of RTO and RPO durations in hours.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe/articles/reliability/media/disaster-recovery-rpo-rto.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-12-10T20:41:53Z",
+      "sha256": "63e6f881e19d2bf5c91213b077b61c7bafa4f61f41f235e0a0fcdd52b296204c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/disaster-recovery-overview.md",
+      "revision": "20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe",
+      "revision_date": "2024-12-10T20:41:53Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Disaster recovery overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/disaster-recovery-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/20f30f33abb6ccd1ce1f778e4f4ebf5b5889cafe/articles/reliability/disaster-recovery-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-failover-failback.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover and failback",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-failover-failback",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/concept-failover-failback.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-dns.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability in Azure DNS",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-dns",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/reliability-dns.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-12-10T21:13:56Z; used previous public snapshot. Confirm continued applicability: articles/reliability/disaster-recovery-overview.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/concept-failover-failback.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-dns.md"
+  ],
+  "open_questions": [
+    "Does the current identity provider configuration support seamless authentication in the secondary region without additional latency or caching issues?",
+    "Are there any on-premises identity federation points that need to be accessible from the secondary region during a failover?",
+    "Has the DNS TTL been tested against the actual RTO requirement to ensure it meets the business SLA?",
+    "What is the specific procedure for resolving data conflicts during failback if the primary site accepted writes during the outage?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-regional-recovery-without-overlooking-identity-and-dns.md",
+  "draft": true,
+  "word_count": 1106,
+  "claim_support_checks": [
+    {
+      "claim": "RPO is the maximum acceptable data loss measured in time, while RTO is the maximum acceptable downtime.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure DNS failover uses standard DNS mechanisms and requires a low TTL to meet RTO.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Failover involves redirecting traffic from unhealthy instances to healthy ones, which can be at the replica, zone, or region scope.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft Entra ID is a global service, but application identity dependencies must be explicitly configured for DR.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Azure AD authentication' requires specific secondary region configuration for token validation, implying regional dependency. Sources state Entra ID is global and handles authentication; the bottleneck is usually application logic or regional data endpoints, not the auth service itself. This misleads readers into configuring non-existent regional identity failover.",
+      "fix": "Clarify that Entra ID is global. Focus on ensuring the application in the secondary region can validate tokens (standard behavior) and that any regional data dependencies (like user profiles) are replicated. Remove the implication that Entra ID itself needs regional failover configuration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft presents the Azure CLI command with a hardcoded resource group '123' as a concrete example. While marked illustrative, it risks being copied directly. The source S3 uses generic placeholders. The draft also implies this specific command is the standard automation method without mentioning Azure Functions or Logic Apps as more common production patterns.",
+      "fix": "Replace '123' with a placeholder like '<resource-group>'. Explicitly state that while CLI works, production automation typically uses Azure Functions or Logic Apps triggered by health checks, as suggested by the source's mention of 'Azure functions or within a third-party monitoring application'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If you are using Azure AD Domain Services... you must replicate those as well.' Azure AD Domain Services (AAD DS) is a managed service with specific availability options. The source S2 mentions 'Azure AD Domain Services' only in the context of identity components, but does not detail replication. AAD DS is not typically 'replicated' by the user in the same way VMs are; it relies on Microsoft's backend or requires a different architecture (like AD FS or hybrid).",
+      "fix": "Remove the specific claim about replicating AAD DS. Instead, advise checking the specific service's DR capabilities in the service reliability guide (S2). If AAD DS is used, note that it is a managed service and consult its specific availability documentation, rather than suggesting user-managed replication."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph starting with 'To verify your plan...' which is a generic closing. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar. It also repeats the 'tabletop exercise' advice which is good, but the framing is generic.",
+      "fix": "Remove the final paragraph entirely. End with the concrete verification step: 'Run a tabletop exercise including identity and network teams to walk through the failover process, including DNS updates and identity validation, ensuring it meets your RTO.' This is a concrete next action, not a generic summary."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Azure DNS provides a reliable mechanism for this switch, but it requires careful configuration.' This is vague. The source S3 specifies that the DNS server is outside the failover zone, insulating it. The draft misses this key architectural benefit that justifies using DNS for DR.",
+      "fix": "Add the specific architectural detail from S3: 'Because the Azure DNS servers are outside the failover zone, they remain available even if your application region is down. This insulation is why DNS is a reliable mechanism for routing traffic during a regional outage.'"
+    }
+  ]
+}

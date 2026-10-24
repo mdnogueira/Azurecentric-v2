@@ -1,0 +1,122 @@
+{
+  "id": "AZC-272",
+  "title": "Document a cluster recovery procedure before it is needed",
+  "slug": "document-a-cluster-recovery-procedure-before-it-is-needed",
+  "historical_date": "2026-01-30",
+  "input_sha256": "b3b2e531655688715e682f45c4a5d36365ff5f72ae0eebcde933288598bb5b72",
+  "created_at": "2026-10-23T18:32:39.595760+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Document cluster recovery procedures for quorum loss, covering ForceQuorum and PreventQuorum modes.",
+  "tags": [
+    "failover-clustering",
+    "quorum",
+    "disaster-recovery",
+    "windows-server",
+    "powershell"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/recover-failover-cluster-without-quorum.md",
+      "revision": "16dafaddc757fb0b4ad7e5f8da33fbfc888fbcd4",
+      "revision_date": "2025-09-12T09:49:23Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Recover a failover cluster without quorum in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/recover-failover-cluster-without-quorum",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/16dafaddc757fb0b4ad7e5f8da33fbfc888fbcd4/WindowsServerDocs/failover-clustering/recover-failover-cluster-without-quorum.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [
+    "What specific steps should be taken if the cluster database is corrupt after recovery?",
+    "How does dynamic quorum management affect the recovery process in multisite clusters?",
+    "What are the implications of losing configuration changes while a node was not participating in the cluster?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/document-a-cluster-recovery-procedure-before-it-is-needed.md",
+  "draft": true,
+  "word_count": 631,
+  "claim_support_checks": [
+    {
+      "claim": "Forcing a cluster to start without quorum overrides quorum configuration and starts the cluster in ForceQuorum mode.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Starting a node with PreventQuorum prevents it from forming a split cluster.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Event ID 1177 indicates quorum loss.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims that forcing a cluster start 'overrides your cluster quorum configuration settings' and 'all quorum configuration settings are ignored'. This is misleading; it temporarily bypasses quorum checks for startup but does not delete or permanently ignore the configuration. The cluster reverts to normal behavior when quorum is regained.",
+      "fix": "Clarify that ForceQuorum is a temporary startup override, not a configuration change. State that the cluster reverts to normal quorum enforcement once sufficient votes are available, as per S1."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states that if the cluster loses a node and loses quorum while in ForceQuorum mode, 'it goes offline again'. This is technically inaccurate. A cluster in ForceQuorum mode stays online until manually stopped or if the node itself fails. It does not automatically go offline due to subsequent node loss unless the remaining node count drops below the new forced threshold.",
+      "fix": "Remove the claim that the cluster automatically goes offline after losing a node in ForceQuorum mode. Explain that the cluster remains online in the forced state until quorum is restored or the service is stopped."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking Event ID 1177 'after recovery' to ensure no further issues exist. Event 1177 is a historical log of the quorum loss event, not a live health check. It does not indicate current cluster health or ongoing issues.",
+      "fix": "Rephrase to indicate that Event 1177 confirms the quorum loss event occurred. Recommend using Get-ClusterNode and Get-ClusterQuorum to verify current health, as Event 1177 is a static log entry."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists 'Shared storage... accessible by all nodes' as a prerequisite for the recovery procedure itself. While true for the cluster's existence, the ForceQuorum/PreventQuorum commands do not require shared storage access to execute; they manage the cluster service state.",
+      "fix": "Clarify that shared storage is a prerequisite for the cluster's normal operation, not for executing the specific PowerShell recovery commands for quorum loss."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that 'Start Cluster Service' in Failover Cluster Manager automatically starts a node with PreventQuorum. The source (S1) notes this is an alternative to 'Force Cluster Start' but does not explicitly state it sets PreventQuorum by default in all contexts; it depends on the node's previous state and cluster configuration.",
+      "fix": "Verify the exact behavior of 'Start Cluster Service' vs 'Force Cluster Start' in the GUI. If 'Start Cluster Service' does not guarantee PreventQuorum, recommend using the PowerShell -PreventQuorum flag explicitly for clarity."
+    }
+  ]
+}

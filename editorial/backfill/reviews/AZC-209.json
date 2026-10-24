@@ -1,0 +1,130 @@
+{
+  "id": "AZC-209",
+  "title": "Investigate asymmetric routing through an Azure firewall",
+  "slug": "investigate-asymmetric-routing-through-an-azure-firewall",
+  "historical_date": "2025-08-07",
+  "input_sha256": "cc1e04badc02f6ddad604f504075a6f7ba96d58a68c36a3e922f46615fef1b37",
+  "created_at": "2026-10-23T17:03:27.663554+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Diagnose asymmetric routing drops at Azure Firewall by confirming path asymmetry and applying SNAT or routing fixes.",
+  "tags": [
+    "azure-firewall",
+    "asymmetric-routing",
+    "expressroute",
+    "network-troubleshooting",
+    "stateful-firewall"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/overview.md",
+      "revision": "3e8d404f4a0cd07beb9a0dc82f110d303227b491",
+      "revision_date": "2025-05-30T15:31:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "What is Azure Firewall?",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3e8d404f4a0cd07beb9a0dc82f110d303227b491/articles/firewall/overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/expressroute/expressroute-asymmetric-routing.md",
+      "revision": "809dcf560f8c9fd6ccd1c5321ecaa957bfc4289a",
+      "revision_date": "2024-09-04T23:12:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure ExpressRoute: Asymmetric routing",
+      "url": "https://learn.microsoft.com/en-us/azure/expressroute/expressroute-asymmetric-routing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/809dcf560f8c9fd6ccd1c5321ecaa957bfc4289a/articles/expressroute/expressroute-asymmetric-routing.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/firewall-best-practices.md",
+      "revision": "9531328f492fb4bb04da39580a3ecbd6daea5922",
+      "revision_date": "2025-06-06T20:45:58Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Firewall best practices for performance",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/firewall-best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9531328f492fb4bb04da39580a3ecbd6daea5922/articles/firewall/firewall-best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the article sufficiently explain how to configure SNAT in Azure Firewall specifically, or is it too generic?",
+    "Are there any specific Azure Firewall metrics that directly indicate asymmetric routing drops?",
+    "Is the distinction between Azure Firewall Basic, Standard, and Premium relevant to this troubleshooting scenario?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-asymmetric-routing-through-an-azure-firewall.md",
+  "draft": true,
+  "word_count": 1143,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Firewall is a fully stateful firewall that drops packets if it does not have prior state information about the flow.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Asymmetric routing occurs when return traffic takes a different path from the original outgoing flow.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "A firewall drops packets that are part of an existing flow if it has no prior state information about the initial flow.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Traceroute is the best way to verify if network traffic is traversing the expected path.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Source-based NAT can be used to solve asymmetric routing by ensuring return traffic takes a specific path.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft suggests using traceroute to verify asymmetric routing. S2 explicitly states traceroute validates the *outbound* path (e.g., server to destination), not the return path. Asymmetric routing involves different paths for outbound and return traffic; traceroute cannot directly observe the return leg from the client's perspective.",
+      "fix": "Clarify that traceroute validates the outbound path only. To verify the return path, use packet captures on the firewall or check Azure Firewall logs for dropped packets due to missing state, rather than relying on a single traceroute command to prove asymmetry."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Firewall is 'fully stateful' and drops packets if it lacks state. While true, S2 notes this is a general stateful device behavior. The draft fails to mention that Azure Firewall's high availability and multi-instance architecture inherently create this risk, which is a key design consideration often overlooked in troubleshooting.",
+      "fix": "Add context that Azure Firewall's multi-instance, high-availability design means return traffic may hit a different instance than the one that saw the outbound flow. This explains *why* the state mismatch occurs in Azure specifically, not just in generic networking."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic advice: 'By aligning your routing advertisements... you can ensure... This is not a limitation... but a fundamental requirement.' This violates the guidance to remove generic concluding paragraphs starting with 'By following' or similar structures.",
+      "fix": "Remove the final two paragraphs entirely. End the article after the Verification section with a concrete next action, such as 'Monitor Azure Firewall metrics for dropped packets to confirm the fix is effective.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies SNAT is a simple configuration change on the 'edge firewall' without specifying how this interacts with Azure Firewall if it is the edge. S2 describes SNAT on an on-premises edge device. The draft does not clarify if the Azure Firewall itself is performing the SNAT or if it's an on-premises device, creating ambiguity for Azure-centric readers.",
+      "fix": "Explicitly state whether the SNAT is performed on an on-premises device or within Azure (e.g., using Azure NAT Gateway or Firewall SNAT rules). If using Azure Firewall, clarify that SNAT must be configured on the device handling the return path to ensure state consistency."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions checking 'Azure Firewall logs' to ensure packets are no longer dropped. S3 discusses metrics and alerts but does not specify a log field for 'asymmetric routing drops'. Without a specific log query or metric name, this step is vague and potentially unactionable.",
+      "fix": "Specify the exact metric or log to check. For example, monitor the 'DroppedPackets' metric or check the 'AzureFirewallApplicationRule' or 'AzureFirewallNetworkRule' logs for 'Drop' actions with no corresponding 'Allow' in the state table context, if available in the specific SKU documentation."
+    }
+  ]
+}

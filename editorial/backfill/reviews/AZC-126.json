@@ -1,0 +1,139 @@
+{
+  "id": "AZC-126",
+  "title": "Investigate an Arc-enabled server that appears disconnected",
+  "slug": "investigate-an-arc-enabled-server-that-appears-disconnected",
+  "historical_date": "2024-12-18",
+  "input_sha256": "cff51100074ddb4d3e74bdda7a7214713b1498d411b7532eb4330e2b5fcf0955",
+  "created_at": "2026-10-23T15:08:23.916574+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot an Azure Arc-enabled server showing as disconnected by checking agent logs, network connectivity, and resource state.",
+  "tags": [
+    "azure-arc",
+    "troubleshooting",
+    "hybrid-compute",
+    "azcmagent",
+    "connectivity"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/troubleshoot-agent-onboard.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot Azure Connected Machine agent connection issues",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/troubleshoot-agent-onboard",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/troubleshoot-agent-onboard.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/azcmagent-logs.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "azcmagent logs CLI reference",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/azcmagent-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/azcmagent-logs.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/ssh-arc-troubleshoot.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot SSH access to Azure Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/ssh-arc-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/ssh-arc-troubleshoot.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/troubleshoot-agent-onboard.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/azcmagent-logs.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/ssh-arc-troubleshoot.md"
+  ],
+  "open_questions": [
+    "Does the agent have specific timeout settings that might cause intermittent disconnections?",
+    "Are there known issues with specific proxy configurations that are not covered by the general check?",
+    "What is the exact procedure for verifying the HIMDS service status on different Linux distributions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-an-arc-enabled-server-that-appears-disconnected.md",
+  "draft": true,
+  "word_count": 1206,
+  "claim_support_checks": [
+    {
+      "claim": "The agent logs are located at specific paths on Windows and Linux.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The azcmagent logs command collects log files into a ZIP archive.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The azcmagent check command tests connectivity to required endpoints.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Error AZCM0026 indicates network configuration errors or unavailable services.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Error AZCM0061-0070 indicates the agent service is not responding.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The --force-local-only flag can be used to disconnect if the resource no longer exists.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Invents 'himds' service for Linux. Sources specify HIMDS is a Windows service. Linux agent logs are in /var/opt/azcmagent/log/.",
+      "fix": "Remove HIMDS references for Linux. State that Linux uses the azcmagent systemd service. Cite S1 for log paths and S1 for HIMDS being Windows-specific."
+    },
+    {
+      "severity": "high",
+      "problem": "Invents 'Azure Connected Machine Onboarding' role. S1 cites 'Required Permissions' but does not name this specific role. S3 cites 'Owner' or 'Contributor' for SSH, not general onboarding.",
+      "fix": "Remove specific role name. Advise verifying permissions against the 'Required Permissions' section in S1 or using Owner/Contributor roles as implied by S3 for resource changes."
+    },
+    {
+      "severity": "medium",
+      "problem": "Misinterprets azcmagent logs output. S2 states it collects logs into a ZIP archive. Draft claims it contains 'verbose output if enabled'.",
+      "fix": "Clarify that azcmagent logs creates a ZIP file. It does not display verbose output to the console. Cite S2 for the ZIP functionality."
+    },
+    {
+      "severity": "medium",
+      "problem": "Suggests deleting Azure resource for AZCM0081/0105. S1 says 'Delete the resource... and try connecting again'. Draft implies this fixes 'corrupted' state generally.",
+      "fix": "Limit resource deletion advice to specific errors (AZCM0081, AZCM0105) or when local disconnect fails. Warn that deletion is destructive. Cite S1."
+    },
+    {
+      "severity": "low",
+      "problem": "Vague 'Verify the service is running' for Linux. S1 only mentions HIMDS for Windows. No Linux service name provided in sources.",
+      "fix": "Specify checking the azcmagent systemd service status on Linux. Do not invent service names. Cite S1 for Windows HIMDS, infer Linux standard service management."
+    }
+  ]
+}

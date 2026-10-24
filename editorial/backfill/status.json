@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-23T23:59:06.527731+00:00",
+  "generated_at": "2026-10-24T08:22:00.325833+00:00",
   "repository": "mdnogueira/Azurecentric-v2",
   "total_planned": 366,
-  "written": 32,
-  "remaining": 334,
+  "written": 366,
+  "remaining": 0,
   "written_ids": [
     "AZC-001",
     "AZC-002",
@@ -36,1685 +36,347 @@
     "AZC-029",
     "AZC-030",
     "AZC-031",
-    "AZC-032"
+    "AZC-032",
+    "AZC-033",
+    "AZC-034",
+    "AZC-035",
+    "AZC-036",
+    "AZC-037",
+    "AZC-038",
+    "AZC-039",
+    "AZC-040",
+    "AZC-041",
+    "AZC-042",
+    "AZC-043",
+    "AZC-044",
+    "AZC-045",
+    "AZC-046",
+    "AZC-047",
+    "AZC-048",
+    "AZC-049",
+    "AZC-050",
+    "AZC-051",
+    "AZC-052",
+    "AZC-053",
+    "AZC-054",
+    "AZC-055",
+    "AZC-056",
+    "AZC-057",
+    "AZC-058",
+    "AZC-059",
+    "AZC-060",
+    "AZC-061",
+    "AZC-062",
+    "AZC-063",
+    "AZC-064",
+    "AZC-065",
+    "AZC-066",
+    "AZC-067",
+    "AZC-068",
+    "AZC-069",
+    "AZC-070",
+    "AZC-071",
+    "AZC-072",
+    "AZC-073",
+    "AZC-074",
+    "AZC-075",
+    "AZC-076",
+    "AZC-077",
+    "AZC-078",
+    "AZC-079",
+    "AZC-080",
+    "AZC-081",
+    "AZC-082",
+    "AZC-083",
+    "AZC-084",
+    "AZC-085",
+    "AZC-086",
+    "AZC-087",
+    "AZC-088",
+    "AZC-089",
+    "AZC-090",
+    "AZC-091",
+    "AZC-092",
+    "AZC-093",
+    "AZC-094",
+    "AZC-095",
+    "AZC-096",
+    "AZC-097",
+    "AZC-098",
+    "AZC-099",
+    "AZC-100",
+    "AZC-101",
+    "AZC-102",
+    "AZC-103",
+    "AZC-104",
+    "AZC-105",
+    "AZC-106",
+    "AZC-107",
+    "AZC-108",
+    "AZC-109",
+    "AZC-110",
+    "AZC-111",
+    "AZC-112",
+    "AZC-113",
+    "AZC-114",
+    "AZC-115",
+    "AZC-116",
+    "AZC-117",
+    "AZC-118",
+    "AZC-119",
+    "AZC-120",
+    "AZC-121",
+    "AZC-122",
+    "AZC-123",
+    "AZC-124",
+    "AZC-125",
+    "AZC-126",
+    "AZC-127",
+    "AZC-128",
+    "AZC-129",
+    "AZC-130",
+    "AZC-131",
+    "AZC-132",
+    "AZC-133",
+    "AZC-134",
+    "AZC-135",
+    "AZC-136",
+    "AZC-137",
+    "AZC-138",
+    "AZC-139",
+    "AZC-140",
+    "AZC-141",
+    "AZC-142",
+    "AZC-143",
+    "AZC-144",
+    "AZC-145",
+    "AZC-146",
+    "AZC-147",
+    "AZC-148",
+    "AZC-149",
+    "AZC-150",
+    "AZC-151",
+    "AZC-152",
+    "AZC-153",
+    "AZC-154",
+    "AZC-155",
+    "AZC-156",
+    "AZC-157",
+    "AZC-158",
+    "AZC-159",
+    "AZC-160",
+    "AZC-161",
+    "AZC-162",
+    "AZC-163",
+    "AZC-164",
+    "AZC-165",
+    "AZC-166",
+    "AZC-167",
+    "AZC-168",
+    "AZC-169",
+    "AZC-170",
+    "AZC-171",
+    "AZC-172",
+    "AZC-173",
+    "AZC-174",
+    "AZC-175",
+    "AZC-176",
+    "AZC-177",
+    "AZC-178",
+    "AZC-179",
+    "AZC-180",
+    "AZC-181",
+    "AZC-182",
+    "AZC-183",
+    "AZC-184",
+    "AZC-185",
+    "AZC-186",
+    "AZC-187",
+    "AZC-188",
+    "AZC-189",
+    "AZC-190",
+    "AZC-191",
+    "AZC-192",
+    "AZC-193",
+    "AZC-194",
+    "AZC-195",
+    "AZC-196",
+    "AZC-197",
+    "AZC-198",
+    "AZC-199",
+    "AZC-200",
+    "AZC-201",
+    "AZC-202",
+    "AZC-203",
+    "AZC-204",
+    "AZC-205",
+    "AZC-206",
+    "AZC-207",
+    "AZC-208",
+    "AZC-209",
+    "AZC-210",
+    "AZC-211",
+    "AZC-212",
+    "AZC-213",
+    "AZC-214",
+    "AZC-215",
+    "AZC-216",
+    "AZC-217",
+    "AZC-218",
+    "AZC-219",
+    "AZC-220",
+    "AZC-221",
+    "AZC-222",
+    "AZC-223",
+    "AZC-224",
+    "AZC-225",
+    "AZC-226",
+    "AZC-227",
+    "AZC-228",
+    "AZC-229",
+    "AZC-230",
+    "AZC-231",
+    "AZC-232",
+    "AZC-233",
+    "AZC-234",
+    "AZC-235",
+    "AZC-236",
+    "AZC-237",
+    "AZC-238",
+    "AZC-239",
+    "AZC-240",
+    "AZC-241",
+    "AZC-242",
+    "AZC-243",
+    "AZC-244",
+    "AZC-245",
+    "AZC-246",
+    "AZC-247",
+    "AZC-248",
+    "AZC-249",
+    "AZC-250",
+    "AZC-251",
+    "AZC-252",
+    "AZC-253",
+    "AZC-254",
+    "AZC-255",
+    "AZC-256",
+    "AZC-257",
+    "AZC-258",
+    "AZC-259",
+    "AZC-260",
+    "AZC-261",
+    "AZC-262",
+    "AZC-263",
+    "AZC-264",
+    "AZC-265",
+    "AZC-266",
+    "AZC-267",
+    "AZC-268",
+    "AZC-269",
+    "AZC-270",
+    "AZC-271",
+    "AZC-272",
+    "AZC-273",
+    "AZC-274",
+    "AZC-275",
+    "AZC-276",
+    "AZC-277",
+    "AZC-278",
+    "AZC-279",
+    "AZC-280",
+    "AZC-281",
+    "AZC-282",
+    "AZC-283",
+    "AZC-284",
+    "AZC-285",
+    "AZC-286",
+    "AZC-287",
+    "AZC-288",
+    "AZC-289",
+    "AZC-290",
+    "AZC-291",
+    "AZC-292",
+    "AZC-293",
+    "AZC-294",
+    "AZC-295",
+    "AZC-296",
+    "AZC-297",
+    "AZC-298",
+    "AZC-299",
+    "AZC-300",
+    "AZC-301",
+    "AZC-302",
+    "AZC-303",
+    "AZC-304",
+    "AZC-305",
+    "AZC-306",
+    "AZC-307",
+    "AZC-308",
+    "AZC-309",
+    "AZC-310",
+    "AZC-311",
+    "AZC-312",
+    "AZC-313",
+    "AZC-314",
+    "AZC-315",
+    "AZC-316",
+    "AZC-317",
+    "AZC-318",
+    "AZC-319",
+    "AZC-320",
+    "AZC-321",
+    "AZC-322",
+    "AZC-323",
+    "AZC-324",
+    "AZC-325",
+    "AZC-326",
+    "AZC-327",
+    "AZC-328",
+    "AZC-329",
+    "AZC-330",
+    "AZC-331",
+    "AZC-332",
+    "AZC-333",
+    "AZC-334",
+    "AZC-335",
+    "AZC-336",
+    "AZC-337",
+    "AZC-338",
+    "AZC-339",
+    "AZC-340",
+    "AZC-341",
+    "AZC-342",
+    "AZC-343",
+    "AZC-344",
+    "AZC-345",
+    "AZC-346",
+    "AZC-347",
+    "AZC-348",
+    "AZC-349",
+    "AZC-350",
+    "AZC-351",
+    "AZC-352",
+    "AZC-353",
+    "AZC-354",
+    "AZC-355",
+    "AZC-356",
+    "AZC-357",
+    "AZC-358",
+    "AZC-359",
+    "AZC-360",
+    "AZC-361",
+    "AZC-362",
+    "AZC-363",
+    "AZC-364",
+    "AZC-365",
+    "AZC-366"
   ],
-  "missing": [
-    {
-      "id": "AZC-033",
-      "title": "Write a reusable function with clear parameters",
-      "historical_date": "2024-04-01"
-    },
-    {
-      "id": "AZC-034",
-      "title": "Copilot for Security is available: plan a controlled first investigation",
-      "historical_date": "2024-04-03"
-    },
-    {
-      "id": "AZC-035",
-      "title": "Configure a Windows Server 2022 host using PowerShell",
-      "historical_date": "2024-04-06"
-    },
-    {
-      "id": "AZC-036",
-      "title": "Validate Windows Server nodes before creating a cluster",
-      "historical_date": "2024-04-10"
-    },
-    {
-      "id": "AZC-037",
-      "title": "Choose generation 1 or generation 2 for a Hyper-V VM",
-      "historical_date": "2024-04-13"
-    },
-    {
-      "id": "AZC-038",
-      "title": "Configure Secure Boot for a supported Linux guest",
-      "historical_date": "2024-04-15"
-    },
-    {
-      "id": "AZC-039",
-      "title": "Compare Defender plan coverage across subscriptions",
-      "historical_date": "2024-04-18"
-    },
-    {
-      "id": "AZC-040",
-      "title": "Choose system-assigned or user-assigned managed identities",
-      "historical_date": "2024-04-21"
-    },
-    {
-      "id": "AZC-041",
-      "title": "What Copilot for Security can help a security team investigate",
-      "historical_date": "2024-04-23"
-    },
-    {
-      "id": "AZC-042",
-      "title": "Create a useful KQL query for an initial investigation",
-      "historical_date": "2024-04-26"
-    },
-    {
-      "id": "AZC-043",
-      "title": "Use managed identity to read an application secret from Key Vault",
-      "historical_date": "2024-04-29"
-    },
-    {
-      "id": "AZC-044",
-      "title": "Build an Azure Compute Gallery image workflow",
-      "historical_date": "2024-05-01"
-    },
-    {
-      "id": "AZC-045",
-      "title": "Check regional quota before planning a GPU deployment",
-      "historical_date": "2024-05-04"
-    },
-    {
-      "id": "AZC-046",
-      "title": "Build a migration inventory before selecting a migration method",
-      "historical_date": "2024-05-08"
-    },
-    {
-      "id": "AZC-047",
-      "title": "Use what-if to review an Azure deployment",
-      "historical_date": "2024-05-11"
-    },
-    {
-      "id": "AZC-048",
-      "title": "Use managed identity for a supported workflow connection",
-      "historical_date": "2024-05-13"
-    },
-    {
-      "id": "AZC-049",
-      "title": "Create virtual network peering and verify the routing path",
-      "historical_date": "2024-05-16"
-    },
-    {
-      "id": "AZC-050",
-      "title": "Choose a Log Analytics workspace boundary",
-      "historical_date": "2024-05-19"
-    },
-    {
-      "id": "AZC-051",
-      "title": "Use Microsoft Entra permissions to access blob data",
-      "historical_date": "2024-05-21"
-    },
-    {
-      "id": "AZC-052",
-      "title": "Map an Azure workload across its failure domains",
-      "historical_date": "2024-05-24"
-    },
-    {
-      "id": "AZC-053",
-      "title": "Choose objects rather than formatted text for script output",
-      "historical_date": "2024-05-27"
-    },
-    {
-      "id": "AZC-054",
-      "title": "Plan a Windows Server patching and rollback window",
-      "historical_date": "2024-05-29"
-    },
-    {
-      "id": "AZC-055",
-      "title": "Create a small failover cluster with a clear network design",
-      "historical_date": "2024-06-01"
-    },
-    {
-      "id": "AZC-056",
-      "title": "Create and verify a Hyper-V virtual switch",
-      "historical_date": "2024-06-05"
-    },
-    {
-      "id": "AZC-057",
-      "title": "Understand Linux integration services on Hyper-V",
-      "historical_date": "2024-06-08"
-    },
-    {
-      "id": "AZC-058",
-      "title": "Keep Azure Firewall rules consistent with Firewall Policy",
-      "historical_date": "2024-06-10"
-    },
-    {
-      "id": "AZC-059",
-      "title": "Use Privileged Identity Management for Azure administration",
-      "historical_date": "2024-06-13"
-    },
-    {
-      "id": "AZC-060",
-      "title": "Prepare permissions before onboarding Copilot for Security",
-      "historical_date": "2024-06-16"
-    },
-    {
-      "id": "AZC-061",
-      "title": "Turn a detection requirement into an analytics rule",
-      "historical_date": "2024-06-18"
-    },
-    {
-      "id": "AZC-062",
-      "title": "Configure Application Insights for an application deployment",
-      "historical_date": "2024-06-21"
-    },
-    {
-      "id": "AZC-063",
-      "title": "Use Trusted Launch when creating a supported virtual machine",
-      "historical_date": "2024-06-24"
-    },
-    {
-      "id": "AZC-064",
-      "title": "Prepare a repeatable HPC compute image",
-      "historical_date": "2024-06-26"
-    },
-    {
-      "id": "AZC-065",
-      "title": "Assess a server estate with Azure Migrate",
-      "historical_date": "2024-06-29"
-    },
-    {
-      "id": "AZC-066",
-      "title": "Keep environment configuration separate from deployment logic",
-      "historical_date": "2024-07-03"
-    },
-    {
-      "id": "AZC-067",
-      "title": "Choose a Service Bus queue or topic for an integration",
-      "historical_date": "2024-07-06"
-    },
-    {
-      "id": "AZC-068",
-      "title": "Use network security groups with clear traffic ownership",
-      "historical_date": "2024-07-08"
-    },
-    {
-      "id": "AZC-069",
-      "title": "Use data collection rules to control server telemetry",
-      "historical_date": "2024-07-11"
-    },
-    {
-      "id": "AZC-070",
-      "title": "Create a narrowly scoped shared access signature",
-      "historical_date": "2024-07-14"
-    },
-    {
-      "id": "AZC-071",
-      "title": "Set RPO and RTO before selecting a recovery design",
-      "historical_date": "2024-07-16"
-    },
-    {
-      "id": "AZC-072",
-      "title": "Handle script failures using try, catch and ErrorAction",
-      "historical_date": "2024-07-19"
-    },
-    {
-      "id": "AZC-073",
-      "title": "Use Windows Admin Center for a defined administration task",
-      "historical_date": "2024-07-22"
-    },
-    {
-      "id": "AZC-074",
-      "title": "Plan cluster networks around storage and client traffic",
-      "historical_date": "2024-07-24"
-    },
-    {
-      "id": "AZC-075",
-      "title": "Build a repeatable virtual machine with PowerShell",
-      "historical_date": "2024-07-27"
-    },
-    {
-      "id": "AZC-076",
-      "title": "Configure networking inside an Ubuntu Hyper-V guest",
-      "historical_date": "2024-07-31"
-    },
-    {
-      "id": "AZC-077",
-      "title": "Trace a blocked outbound connection in Azure Firewall logs",
-      "historical_date": "2024-08-03"
-    },
-    {
-      "id": "AZC-078",
-      "title": "Replace a service principal secret with workload identity federation",
-      "historical_date": "2024-08-05"
-    },
-    {
-      "id": "AZC-079",
-      "title": "Set up an initial Copilot for Security investigation session",
-      "historical_date": "2024-08-08"
-    },
-    {
-      "id": "AZC-080",
-      "title": "Troubleshoot a Sentinel connector that stopped sending data",
-      "historical_date": "2024-08-11"
-    },
-    {
-      "id": "AZC-081",
-      "title": "Troubleshoot an application that fails to start in App Service",
-      "historical_date": "2024-08-13"
-    },
-    {
-      "id": "AZC-082",
-      "title": "Check Azure quota before a compute deployment fails",
-      "historical_date": "2024-08-16"
-    },
-    {
-      "id": "AZC-083",
-      "title": "Prepare Azure administrators for mandatory multifactor authentication",
-      "historical_date": "2024-08-19"
-    },
-    {
-      "id": "AZC-084",
-      "title": "Understand where an RDMA network helps an MPI workload",
-      "historical_date": "2024-08-21"
-    },
-    {
-      "id": "AZC-085",
-      "title": "Use dependency information to plan migration waves",
-      "historical_date": "2024-08-24"
-    },
-    {
-      "id": "AZC-086",
-      "title": "Choose a state boundary for Azure Terraform deployments",
-      "historical_date": "2024-08-28"
-    },
-    {
-      "id": "AZC-087",
-      "title": "Send and receive an initial Service Bus message",
-      "historical_date": "2024-08-31"
-    },
-    {
-      "id": "AZC-088",
-      "title": "Diagnose a route that sends traffic to the wrong next hop",
-      "historical_date": "2024-09-02"
-    },
-    {
-      "id": "AZC-089",
-      "title": "Investigate a server that stopped sending logs",
-      "historical_date": "2024-09-05"
-    },
-    {
-      "id": "AZC-090",
-      "title": "Investigate a storage request that returns an authorisation error",
-      "historical_date": "2024-09-08"
-    },
-    {
-      "id": "AZC-091",
-      "title": "Review a workload against the Well-Architected reliability pillar",
-      "historical_date": "2024-09-10"
-    },
-    {
-      "id": "AZC-092",
-      "title": "Export an Azure inventory without losing object structure",
-      "historical_date": "2024-09-13"
-    },
-    {
-      "id": "AZC-093",
-      "title": "Configure a file share with clear Windows permissions",
-      "historical_date": "2024-09-16"
-    },
-    {
-      "id": "AZC-094",
-      "title": "Configure and verify a cluster witness",
-      "historical_date": "2024-09-18"
-    },
-    {
-      "id": "AZC-095",
-      "title": "Choose fixed or dynamic memory for a VM",
-      "historical_date": "2024-09-21"
-    },
-    {
-      "id": "AZC-096",
-      "title": "Investigate a Linux guest with a missing network adapter",
-      "historical_date": "2024-09-25"
-    },
-    {
-      "id": "AZC-097",
-      "title": "Connect GitHub repositories to Defender for Cloud",
-      "historical_date": "2024-09-28"
-    },
-    {
-      "id": "AZC-098",
-      "title": "Connect GitHub Actions to Azure using OpenID Connect",
-      "historical_date": "2024-09-30"
-    },
-    {
-      "id": "AZC-099",
-      "title": "Plan Security Compute Unit usage for a small pilot",
-      "historical_date": "2024-10-03"
-    },
-    {
-      "id": "AZC-100",
-      "title": "Map entities so incidents contain useful context",
-      "historical_date": "2024-10-06"
-    },
-    {
-      "id": "AZC-101",
-      "title": "Give an App Service application private access to a database",
-      "historical_date": "2024-10-08"
-    },
-    {
-      "id": "AZC-102",
-      "title": "Decide when a virtual machine scale set is appropriate",
-      "historical_date": "2024-10-11"
-    },
-    {
-      "id": "AZC-103",
-      "title": "Plan shared storage access for an Azure HPC cluster",
-      "historical_date": "2024-10-14"
-    },
-    {
-      "id": "AZC-104",
-      "title": "Test a migration before scheduling the production cutover",
-      "historical_date": "2024-10-16"
-    },
-    {
-      "id": "AZC-105",
-      "title": "Azure Cobalt 100 VMs: check Arm compatibility before moving a workload",
-      "historical_date": "2024-10-19"
-    },
-    {
-      "id": "AZC-106",
-      "title": "Use a remote backend for Terraform state in Azure",
-      "historical_date": "2024-10-23"
-    },
-    {
-      "id": "AZC-107",
-      "title": "Investigate messages in a Service Bus dead-letter queue",
-      "historical_date": "2024-10-26"
-    },
-    {
-      "id": "AZC-108",
-      "title": "Create a private endpoint and verify name resolution",
-      "historical_date": "2024-10-28"
-    },
-    {
-      "id": "AZC-109",
-      "title": "Build an Azure workbook around an operational question",
-      "historical_date": "2024-10-31"
-    },
-    {
-      "id": "AZC-110",
-      "title": "Configure blob soft delete and versioning",
-      "historical_date": "2024-11-03"
-    },
-    {
-      "id": "AZC-111",
-      "title": "Windows Server 2025 is available: what belongs in the evaluation plan",
-      "historical_date": "2024-11-05"
-    },
-    {
-      "id": "AZC-112",
-      "title": "Choose availability zones without assuming application resilience",
-      "historical_date": "2024-11-08"
-    },
-    {
-      "id": "AZC-113",
-      "title": "Investigate a module that loads in one shell but not another",
-      "historical_date": "2024-11-11"
-    },
-    {
-      "id": "AZC-114",
-      "title": "Investigate a Windows service that fails after a restart",
-      "historical_date": "2024-11-13"
-    },
-    {
-      "id": "AZC-115",
-      "title": "Investigate a cluster resource that keeps moving between nodes",
-      "historical_date": "2024-11-16"
-    },
-    {
-      "id": "AZC-116",
-      "title": "Configure a virtual network adapter and VLAN",
-      "historical_date": "2024-11-20"
-    },
-    {
-      "id": "AZC-117",
-      "title": "Azure Local: understand the operating model announced at Ignite",
-      "historical_date": "2024-11-23"
-    },
-    {
-      "id": "AZC-118",
-      "title": "Check time synchronisation in a Linux VM",
-      "historical_date": "2024-11-25"
-    },
-    {
-      "id": "AZC-119",
-      "title": "Enable GitHub secret scanning and assign alert ownership",
-      "historical_date": "2024-11-28"
-    },
-    {
-      "id": "AZC-120",
-      "title": "Investigate a failed sign-in using Entra logs",
-      "historical_date": "2024-12-01"
-    },
-    {
-      "id": "AZC-121",
-      "title": "Build a prompt that produces a useful incident summary",
-      "historical_date": "2024-12-03"
-    },
-    {
-      "id": "AZC-122",
-      "title": "Choose retention settings around investigation needs",
-      "historical_date": "2024-12-06"
-    },
-    {
-      "id": "AZC-123",
-      "title": "Understand deployment slots before an App Service swap",
-      "historical_date": "2024-12-09"
-    },
-    {
-      "id": "AZC-124",
-      "title": "Configure a scale set health probe before autoscaling",
-      "historical_date": "2024-12-11"
-    },
-    {
-      "id": "AZC-125",
-      "title": "Configure an Azure Batch pool for a repeatable compute job",
-      "historical_date": "2024-12-14"
-    },
-    {
-      "id": "AZC-126",
-      "title": "Investigate an Arc-enabled server that appears disconnected",
-      "historical_date": "2024-12-18"
-    },
-    {
-      "id": "AZC-127",
-      "title": "Investigate a deployment that failed after creating some resources",
-      "historical_date": "2024-12-21"
-    },
-    {
-      "id": "AZC-128",
-      "title": "Use message sessions when processing order matters",
-      "historical_date": "2024-12-23"
-    },
-    {
-      "id": "AZC-129",
-      "title": "Plan private DNS zones before adding private endpoints",
-      "historical_date": "2024-12-26"
-    },
-    {
-      "id": "AZC-130",
-      "title": "Choose alert thresholds around an actionable response",
-      "historical_date": "2024-12-29"
-    },
-    {
-      "id": "AZC-131",
-      "title": "Choose a lifecycle policy around data access patterns",
-      "historical_date": "2024-12-31"
-    },
-    {
-      "id": "AZC-132",
-      "title": "Document an application dependency map for a recovery exercise",
-      "historical_date": "2025-01-03"
-    },
-    {
-      "id": "AZC-133",
-      "title": "Add structured logging to an infrastructure script",
-      "historical_date": "2025-01-06"
-    },
-    {
-      "id": "AZC-134",
-      "title": "Choose an Active Directory site and subnet design",
-      "historical_date": "2025-01-08"
-    },
-    {
-      "id": "AZC-135",
-      "title": "Use Cluster-Aware Updating with a tested maintenance process",
-      "historical_date": "2025-01-11"
-    },
-    {
-      "id": "AZC-136",
-      "title": "Investigate a VM that cannot boot from installation media",
-      "historical_date": "2025-01-15"
-    },
-    {
-      "id": "AZC-137",
-      "title": "Plan memory allocation for Linux on Hyper-V",
-      "historical_date": "2025-01-18"
-    },
-    {
-      "id": "AZC-138",
-      "title": "Roll out GitHub push protection without disrupting developers",
-      "historical_date": "2025-01-20"
-    },
-    {
-      "id": "AZC-139",
-      "title": "Separate Azure control-plane roles from data-plane permissions",
-      "historical_date": "2025-01-23"
-    },
-    {
-      "id": "AZC-140",
-      "title": "Use promptbooks for repeatable security investigations",
-      "historical_date": "2025-01-26"
-    },
-    {
-      "id": "AZC-141",
-      "title": "Use a watchlist to enrich a detection query",
-      "historical_date": "2025-01-28"
-    },
-    {
-      "id": "AZC-142",
-      "title": "Add a health check before enabling application scale-out",
-      "historical_date": "2025-01-31"
-    },
-    {
-      "id": "AZC-143",
-      "title": "Use Azure Bastion to administer a private VM",
-      "historical_date": "2025-02-03"
-    },
-    {
-      "id": "AZC-144",
-      "title": "Investigate an HPC job waiting for compute capacity",
-      "historical_date": "2025-02-05"
-    },
-    {
-      "id": "AZC-145",
-      "title": "Choose what to manage through Azure Arc",
-      "historical_date": "2025-02-08"
-    },
-    {
-      "id": "AZC-146",
-      "title": "Deploy infrastructure through a federated pipeline identity",
-      "historical_date": "2025-02-12"
-    },
-    {
-      "id": "AZC-147",
-      "title": "PowerShell 7.5 is available: review compatibility before upgrading automation",
-      "historical_date": "2025-02-15"
-    },
-    {
-      "id": "AZC-148",
-      "title": "Design retry behaviour without creating duplicate work",
-      "historical_date": "2025-02-17"
-    },
-    {
-      "id": "AZC-149",
-      "title": "Check connectivity with Azure Network Watcher",
-      "historical_date": "2025-02-20"
-    },
-    {
-      "id": "AZC-150",
-      "title": "Use Azure Policy to report on missing configuration",
-      "historical_date": "2025-02-23"
-    },
-    {
-      "id": "AZC-151",
-      "title": "Mount an Azure file share from a Windows server",
-      "historical_date": "2025-02-25"
-    },
-    {
-      "id": "AZC-152",
-      "title": "Plan an outage test that produces useful evidence",
-      "historical_date": "2025-02-28"
-    },
-    {
-      "id": "AZC-153",
-      "title": "Choose a safe approach to PowerShell credential handling",
-      "historical_date": "2025-03-03"
-    },
-    {
-      "id": "AZC-154",
-      "title": "Check DNS configuration before investigating a domain problem",
-      "historical_date": "2025-03-05"
-    },
-    {
-      "id": "AZC-155",
-      "title": "GitHub Code Security and Secret Protection: plan for the new product choices",
-      "historical_date": "2025-03-08"
-    },
-    {
-      "id": "AZC-156",
-      "title": "Understand Cluster Shared Volumes in a Hyper-V design",
-      "historical_date": "2025-03-12"
-    },
-    {
-      "id": "AZC-157",
-      "title": "Choose VHDX settings around capacity and performance needs",
-      "historical_date": "2025-03-15"
-    },
-    {
-      "id": "AZC-158",
-      "title": "Expand a Linux guest disk and verify the file system",
-      "historical_date": "2025-03-17"
-    },
-    {
-      "id": "AZC-159",
-      "title": "Review infrastructure security findings during a pull request",
-      "historical_date": "2025-03-20"
-    },
-    {
-      "id": "AZC-160",
-      "title": "Run an access review for privileged group membership",
-      "historical_date": "2025-03-23"
-    },
-    {
-      "id": "AZC-161",
-      "title": "Understand the boundary between a generated answer and evidence",
-      "historical_date": "2025-03-25"
-    },
-    {
-      "id": "AZC-162",
-      "title": "Build an automation rule with a clear owner",
-      "historical_date": "2025-03-28"
-    },
-    {
-      "id": "AZC-163",
-      "title": "Deploy an Azure Functions application with clear configuration boundaries",
-      "historical_date": "2025-03-31"
-    },
-    {
-      "id": "AZC-164",
-      "title": "Understand the trade-offs of Azure Spot Virtual Machines",
-      "historical_date": "2025-04-02"
-    },
-    {
-      "id": "AZC-165",
-      "title": "Review repository protection as GitHub security product choices change",
-      "historical_date": "2025-04-05"
-    },
-    {
-      "id": "AZC-166",
-      "title": "Compare scale-up and scale-out for a compute workload",
-      "historical_date": "2025-04-09"
-    },
-    {
-      "id": "AZC-167",
-      "title": "Apply Azure Policy to Arc-enabled servers",
-      "historical_date": "2025-04-12"
-    },
-    {
-      "id": "AZC-168",
-      "title": "Choose where reusable infrastructure modules should live",
-      "historical_date": "2025-04-14"
-    },
-    {
-      "id": "AZC-169",
-      "title": "Filter an Event Grid subscription around a consumer need",
-      "historical_date": "2025-04-17"
-    },
-    {
-      "id": "AZC-170",
-      "title": "Choose a VPN gateway around connectivity requirements",
-      "historical_date": "2025-04-20"
-    },
-    {
-      "id": "AZC-171",
-      "title": "Schedule server updates with Azure Update Manager",
-      "historical_date": "2025-04-22"
-    },
-    {
-      "id": "AZC-172",
-      "title": "Plan a private endpoint for a Storage account",
-      "historical_date": "2025-04-25"
-    },
-    {
-      "id": "AZC-173",
-      "title": "Build a recovery runbook with an explicit validation step",
-      "historical_date": "2025-04-28"
-    },
-    {
-      "id": "AZC-174",
-      "title": "Use remoting to inspect several Windows servers",
-      "historical_date": "2025-04-30"
-    },
-    {
-      "id": "AZC-175",
-      "title": "Apply a baseline Windows Firewall configuration",
-      "historical_date": "2025-05-03"
-    },
-    {
-      "id": "AZC-176",
-      "title": "Test a planned failover and record the application result",
-      "historical_date": "2025-05-07"
-    },
-    {
-      "id": "AZC-177",
-      "title": "Use production checkpoints with a clear recovery purpose",
-      "historical_date": "2025-05-10"
-    },
-    {
-      "id": "AZC-178",
-      "title": "Investigate a Linux guest that enters an emergency shell",
-      "historical_date": "2025-05-12"
-    },
-    {
-      "id": "AZC-179",
-      "title": "Use attack paths to prioritise exposed Azure resources",
-      "historical_date": "2025-05-15"
-    },
-    {
-      "id": "AZC-180",
-      "title": "Decide where Azure RBAC assignments should live",
-      "historical_date": "2025-05-18"
-    },
-    {
-      "id": "AZC-181",
-      "title": "Review the plugins available to a Copilot for Security session",
-      "historical_date": "2025-05-20"
-    },
-    {
-      "id": "AZC-182",
-      "title": "Decide which response steps belong in a playbook",
-      "historical_date": "2025-05-23"
-    },
-    {
-      "id": "AZC-183",
-      "title": "Investigate a function timeout without changing every setting",
-      "historical_date": "2025-05-26"
-    },
-    {
-      "id": "AZC-184",
-      "title": "Investigate a VM that cannot complete provisioning",
-      "historical_date": "2025-05-28"
-    },
-    {
-      "id": "AZC-185",
-      "title": "Record GPU driver and library versions in a workload image",
-      "historical_date": "2025-05-31"
-    },
-    {
-      "id": "AZC-186",
-      "title": "Plan rollback before a server migration",
-      "historical_date": "2025-06-04"
-    },
-    {
-      "id": "AZC-187",
-      "title": "Add validation before deploying a Bicep change",
-      "historical_date": "2025-06-07"
-    },
-    {
-      "id": "AZC-188",
-      "title": "Put an API behind Azure API Management",
-      "historical_date": "2025-06-09"
-    },
-    {
-      "id": "AZC-189",
-      "title": "Build a route table for a controlled outbound path",
-      "historical_date": "2025-06-12"
-    },
-    {
-      "id": "AZC-190",
-      "title": "Investigate an alert that repeatedly closes and reopens",
-      "historical_date": "2025-06-15"
-    },
-    {
-      "id": "AZC-191",
-      "title": "Compare Azure Files and Blob Storage for an application",
-      "historical_date": "2025-06-17"
-    },
-    {
-      "id": "AZC-192",
-      "title": "Investigate a failover that leaves an application unavailable",
-      "historical_date": "2025-06-20"
-    },
-    {
-      "id": "AZC-193",
-      "title": "Read and validate JSON configuration in PowerShell",
-      "historical_date": "2025-06-23"
-    },
-    {
-      "id": "AZC-194",
-      "title": "Review event logs around a Windows infrastructure change",
-      "historical_date": "2025-06-25"
-    },
-    {
-      "id": "AZC-195",
-      "title": "Investigate a cluster validation report before dismissing warnings",
-      "historical_date": "2025-06-28"
-    },
-    {
-      "id": "AZC-196",
-      "title": "Export and import a Hyper-V virtual machine",
-      "historical_date": "2025-07-02"
-    },
-    {
-      "id": "AZC-197",
-      "title": "Use SSH for routine Linux guest administration",
-      "historical_date": "2025-07-05"
-    },
-    {
-      "id": "AZC-198",
-      "title": "Investigate agentless vulnerability findings before remediation",
-      "historical_date": "2025-07-07"
-    },
-    {
-      "id": "AZC-199",
-      "title": "Plan Arc-enabled Windows Server 2025 Hotpatch with its baseline reboots",
-      "historical_date": "2025-07-10"
-    },
-    {
-      "id": "AZC-200",
-      "title": "Require stronger authentication for privileged operations",
-      "historical_date": "2025-07-13"
-    },
-    {
-      "id": "AZC-201",
-      "title": "Investigate an answer that lacks the expected security context",
-      "historical_date": "2025-07-15"
-    },
-    {
-      "id": "AZC-202",
-      "title": "Use Content Hub templates with a production review",
-      "historical_date": "2025-07-18"
-    },
-    {
-      "id": "AZC-203",
-      "title": "Compare App Service and Container Apps for a small service",
-      "historical_date": "2025-07-21"
-    },
-    {
-      "id": "AZC-204",
-      "title": "Configure VM backup and test the recovery path",
-      "historical_date": "2025-07-23"
-    },
-    {
-      "id": "AZC-205",
-      "title": "Separate storage bottlenecks from compute bottlenecks",
-      "historical_date": "2025-07-26"
-    },
-    {
-      "id": "AZC-206",
-      "title": "Connect a Linux server to Azure Arc",
-      "historical_date": "2025-07-30"
-    },
-    {
-      "id": "AZC-207",
-      "title": "Import an existing Azure resource into a Terraform workflow",
-      "historical_date": "2025-08-02"
-    },
-    {
-      "id": "AZC-208",
-      "title": "Separate API authentication from subscription keys",
-      "historical_date": "2025-08-04"
-    },
-    {
-      "id": "AZC-209",
-      "title": "Investigate asymmetric routing through an Azure firewall",
-      "historical_date": "2025-08-07"
-    },
-    {
-      "id": "AZC-210",
-      "title": "Review log ingestion cost alongside retention requirements",
-      "historical_date": "2025-08-10"
-    },
-    {
-      "id": "AZC-211",
-      "title": "Check DNS when a private file share is unreachable",
-      "historical_date": "2025-08-12"
-    },
-    {
-      "id": "AZC-212",
-      "title": "Review resilience trade-offs in a cost-constrained workload",
-      "historical_date": "2025-08-15"
-    },
-    {
-      "id": "AZC-213",
-      "title": "Check native command exit codes in an automation script",
-      "historical_date": "2025-08-18"
-    },
-    {
-      "id": "AZC-214",
-      "title": "Use group policy to configure a small server estate",
-      "historical_date": "2025-08-20"
-    },
-    {
-      "id": "AZC-215",
-      "title": "Plan storage availability across cluster nodes",
-      "historical_date": "2025-08-23"
-    },
-    {
-      "id": "AZC-216",
-      "title": "Investigate a checkpoint chain before deleting files",
-      "historical_date": "2025-08-27"
-    },
-    {
-      "id": "AZC-217",
-      "title": "Choose a supported Linux distribution for Hyper-V",
-      "historical_date": "2025-08-30"
-    },
-    {
-      "id": "AZC-218",
-      "title": "Configure malware scanning for an Azure Storage account",
-      "historical_date": "2025-09-01"
-    },
-    {
-      "id": "AZC-219",
-      "title": "Troubleshoot a managed identity that cannot reach a resource",
-      "historical_date": "2025-09-04"
-    },
-    {
-      "id": "AZC-220",
-      "title": "Define useful pilot outcomes without assuming productivity gains",
-      "historical_date": "2025-09-07"
-    },
-    {
-      "id": "AZC-221",
-      "title": "Investigate a rule that creates too many incidents",
-      "historical_date": "2025-09-09"
-    },
-    {
-      "id": "AZC-222",
-      "title": "Store application settings outside a container image",
-      "historical_date": "2025-09-12"
-    },
-    {
-      "id": "AZC-223",
-      "title": "Choose ephemeral OS disks when the workload permits it",
-      "historical_date": "2025-09-15"
-    },
-    {
-      "id": "AZC-224",
-      "title": "Plan data movement before moving an HPC workload to Azure",
-      "historical_date": "2025-09-17"
-    },
-    {
-      "id": "AZC-225",
-      "title": "Review agent logs when an Arc extension fails",
-      "historical_date": "2025-09-20"
-    },
-    {
-      "id": "AZC-226",
-      "title": "Review drift before applying another infrastructure deployment",
-      "historical_date": "2025-09-24"
-    },
-    {
-      "id": "AZC-227",
-      "title": "Trace a failed request through an API Management policy",
-      "historical_date": "2025-09-27"
-    },
-    {
-      "id": "AZC-228",
-      "title": "Choose Load Balancer or Application Gateway for a workload",
-      "historical_date": "2025-09-29"
-    },
-    {
-      "id": "AZC-229",
-      "title": "Use resource health information during an incident",
-      "historical_date": "2025-10-02"
-    },
-    {
-      "id": "AZC-230",
-      "title": "Use Azure File Sync with a deliberate endpoint design",
-      "historical_date": "2025-10-05"
-    },
-    {
-      "id": "AZC-231",
-      "title": "Define health checks across application and infrastructure layers",
-      "historical_date": "2025-10-07"
-    },
-    {
-      "id": "AZC-232",
-      "title": "Decide when parallel execution improves a script",
-      "historical_date": "2025-10-10"
-    },
-    {
-      "id": "AZC-233",
-      "title": "Investigate a time synchronisation problem on Windows Server",
-      "historical_date": "2025-10-13"
-    },
-    {
-      "id": "AZC-234",
-      "title": "Review cluster event logs during a node failure",
-      "historical_date": "2025-10-15"
-    },
-    {
-      "id": "AZC-235",
-      "title": "Plan host storage for Hyper-V virtual machines",
-      "historical_date": "2025-10-18"
-    },
-    {
-      "id": "AZC-236",
-      "title": "Check storage and network drivers in a Linux guest",
-      "historical_date": "2025-10-22"
-    },
-    {
-      "id": "AZC-237",
-      "title": "Choose between network security groups, Azure Firewall and WAF",
-      "historical_date": "2025-10-25"
-    },
-    {
-      "id": "AZC-238",
-      "title": "Review guest access before sharing an Azure application",
-      "historical_date": "2025-10-27"
-    },
-    {
-      "id": "AZC-239",
-      "title": "Use Copilot for Security alongside Defender investigations",
-      "historical_date": "2025-10-30"
-    },
-    {
-      "id": "AZC-240",
-      "title": "Connect Sentinel incidents with Defender XDR context",
-      "historical_date": "2025-11-02"
-    },
-    {
-      "id": "AZC-241",
-      "title": "Configure a custom domain and HTTPS for a web application",
-      "historical_date": "2025-11-04"
-    },
-    {
-      "id": "AZC-242",
-      "title": "Apply a consistent patching approach to Azure servers",
-      "historical_date": "2025-11-07"
-    },
-    {
-      "id": "AZC-243",
-      "title": "Set a budget boundary around a compute experiment",
-      "historical_date": "2025-11-10"
-    },
-    {
-      "id": "AZC-244",
-      "title": "Understand the operating model of Azure Local",
-      "historical_date": "2025-11-12"
-    },
-    {
-      "id": "AZC-245",
-      "title": "Troubleshoot deployment permissions without assigning Owner",
-      "historical_date": "2025-11-15"
-    },
-    {
-      "id": "AZC-246",
-      "title": "Protect a workflow secret with Key Vault",
-      "historical_date": "2025-11-19"
-    },
-    {
-      "id": "AZC-247",
-      "title": "Configure health probes that reflect application readiness",
-      "historical_date": "2025-11-22"
-    },
-    {
-      "id": "AZC-248",
-      "title": "Apply diagnostic settings consistently across Azure resources",
-      "historical_date": "2025-11-24"
-    },
-    {
-      "id": "AZC-249",
-      "title": "Plan an immutable storage policy before retaining regulated data",
-      "historical_date": "2025-11-27"
-    },
-    {
-      "id": "AZC-250",
-      "title": "Choose a deployment approach that limits the impact of failure",
-      "historical_date": "2025-11-30"
-    },
-    {
-      "id": "AZC-251",
-      "title": "Test a reusable function with Pester",
-      "historical_date": "2025-12-02"
-    },
-    {
-      "id": "AZC-252",
-      "title": "Plan an in-place Windows Server upgrade around dependencies",
-      "historical_date": "2025-12-05"
-    },
-    {
-      "id": "AZC-253",
-      "title": "Choose failover priorities around application dependencies",
-      "historical_date": "2025-12-08"
-    },
-    {
-      "id": "AZC-254",
-      "title": "Configure Hyper-V Replica for a defined recovery scenario",
-      "historical_date": "2025-12-10"
-    },
-    {
-      "id": "AZC-255",
-      "title": "Investigate slow disk access in a Linux VM",
-      "historical_date": "2025-12-13"
-    },
-    {
-      "id": "AZC-256",
-      "title": "Assign owners to cloud security recommendations",
-      "historical_date": "2025-12-17"
-    },
-    {
-      "id": "AZC-257",
-      "title": "Use Conditional Access authentication strengths carefully",
-      "historical_date": "2025-12-20"
-    },
-    {
-      "id": "AZC-258",
-      "title": "Ask focused questions about an identity-related incident",
-      "historical_date": "2025-12-22"
-    },
-    {
-      "id": "AZC-259",
-      "title": "Use Advanced Hunting to test a Defender XDR hypothesis",
-      "historical_date": "2025-12-25"
-    },
-    {
-      "id": "AZC-260",
-      "title": "Plan certificate renewal before the production release",
-      "historical_date": "2025-12-28"
-    },
-    {
-      "id": "AZC-261",
-      "title": "Diagnose a VM boot problem using serial console evidence",
-      "historical_date": "2025-12-30"
-    },
-    {
-      "id": "AZC-262",
-      "title": "Choose a placement approach for tightly coupled compute jobs",
-      "historical_date": "2026-01-02"
-    },
-    {
-      "id": "AZC-263",
-      "title": "Prepare a hybrid server patching workflow",
-      "historical_date": "2026-01-05"
-    },
-    {
-      "id": "AZC-264",
-      "title": "Use deployment outputs without exposing secrets",
-      "historical_date": "2026-01-07"
-    },
-    {
-      "id": "AZC-265",
-      "title": "Compare Event Hubs and Service Bus for an ingestion workload",
-      "historical_date": "2026-01-10"
-    },
-    {
-      "id": "AZC-266",
-      "title": "Plan ExpressRoute resilience beyond the primary connection",
-      "historical_date": "2026-01-14"
-    },
-    {
-      "id": "AZC-267",
-      "title": "Plan permissions for an operations automation identity",
-      "historical_date": "2026-01-17"
-    },
-    {
-      "id": "AZC-268",
-      "title": "Measure storage performance without confusing capacity and throughput",
-      "historical_date": "2026-01-19"
-    },
-    {
-      "id": "AZC-269",
-      "title": "Record a recovery decision before an infrastructure change",
-      "historical_date": "2026-01-22"
-    },
-    {
-      "id": "AZC-270",
-      "title": "Use ShouldProcess for an infrastructure change function",
-      "historical_date": "2026-01-25"
-    },
-    {
-      "id": "AZC-271",
-      "title": "Check SMB settings before changing a file-service workload",
-      "historical_date": "2026-01-27"
-    },
-    {
-      "id": "AZC-272",
-      "title": "Document a cluster recovery procedure before it is needed",
-      "historical_date": "2026-01-30"
-    },
-    {
-      "id": "AZC-273",
-      "title": "Review CPU compatibility before moving a VM",
-      "historical_date": "2026-02-02"
-    },
-    {
-      "id": "AZC-274",
-      "title": "Plan Linux guest backup around application consistency",
-      "historical_date": "2026-02-04"
-    },
-    {
-      "id": "AZC-275",
-      "title": "Review the regulatory compliance dashboard in Defender for Cloud",
-      "historical_date": "2026-02-07"
-    },
-    {
-      "id": "AZC-276",
-      "title": "Plan identity permissions for a production deployment pipeline",
-      "historical_date": "2026-02-11"
-    },
-    {
-      "id": "AZC-277",
-      "title": "Review access boundaries before sharing investigation results",
-      "historical_date": "2026-02-14"
-    },
-    {
-      "id": "AZC-278",
-      "title": "Choose a detection exclusion or a rule change",
-      "historical_date": "2026-02-16"
-    },
-    {
-      "id": "AZC-279",
-      "title": "Set application scaling rules around measurable demand",
-      "historical_date": "2026-02-19"
-    },
-    {
-      "id": "AZC-280",
-      "title": "Choose availability zones during the initial VM design",
-      "historical_date": "2026-02-22"
-    },
-    {
-      "id": "AZC-281",
-      "title": "Monitor an HPC run without confusing observations and benchmarks",
-      "historical_date": "2026-02-24"
-    },
-    {
-      "id": "AZC-282",
-      "title": "Review identity and DNS dependencies before a migration",
-      "historical_date": "2026-02-27"
-    },
-    {
-      "id": "AZC-283",
-      "title": "Plan ownership and deletion behaviour for an infrastructure stack",
-      "historical_date": "2026-03-02"
-    },
-    {
-      "id": "AZC-284",
-      "title": "Add correlation identifiers across an integration workflow",
-      "historical_date": "2026-03-04"
-    },
-    {
-      "id": "AZC-285",
-      "title": "Use DNS Private Resolver for hybrid name resolution",
-      "historical_date": "2026-03-07"
-    },
-    {
-      "id": "AZC-286",
-      "title": "Check a failed runbook using its job evidence",
-      "historical_date": "2026-03-11"
-    },
-    {
-      "id": "AZC-287",
-      "title": "Protect an application against accidental blob deletion",
-      "historical_date": "2026-03-14"
-    },
-    {
-      "id": "AZC-288",
-      "title": "Plan regional recovery without overlooking identity and DNS",
-      "historical_date": "2026-03-16"
-    },
-    {
-      "id": "AZC-289",
-      "title": "PowerShell 7.6 LTS: prepare an automation compatibility check",
-      "historical_date": "2026-03-19"
-    },
-    {
-      "id": "AZC-290",
-      "title": "Pin module versions for a repeatable automation job",
-      "historical_date": "2026-03-22"
-    },
-    {
-      "id": "AZC-291",
-      "title": "Review certificate expiry across Windows servers",
-      "historical_date": "2026-03-24"
-    },
-    {
-      "id": "AZC-292",
-      "title": "Investigate a live migration that stalls during maintenance",
-      "historical_date": "2026-03-27"
-    },
-    {
-      "id": "AZC-293",
-      "title": "Use PowerShell Direct for Windows guest administration",
-      "historical_date": "2026-03-30"
-    },
-    {
-      "id": "AZC-294",
-      "title": "Review Linux guest shutdown during host maintenance",
-      "historical_date": "2026-04-01"
-    },
-    {
-      "id": "AZC-295",
-      "title": "Set useful boundaries for security exemptions",
-      "historical_date": "2026-04-04"
-    },
-    {
-      "id": "AZC-296",
-      "title": "Review application consent and service principal permissions",
-      "historical_date": "2026-04-08"
-    },
-    {
-      "id": "AZC-297",
-      "title": "Keep an analyst review step in a repeatable promptbook",
-      "historical_date": "2026-04-11"
-    },
-    {
-      "id": "AZC-298",
-      "title": "Build an incident triage workbook for the operations team",
-      "historical_date": "2026-04-13"
-    },
-    {
-      "id": "AZC-299",
-      "title": "Trace a request through application and platform logs",
-      "historical_date": "2026-04-16"
-    },
-    {
-      "id": "AZC-300",
-      "title": "Separate compute image versions from application releases",
-      "historical_date": "2026-04-19"
-    },
-    {
-      "id": "AZC-301",
-      "title": "Investigate failed node startup in an Azure Batch pool",
-      "historical_date": "2026-04-21"
-    },
-    {
-      "id": "AZC-302",
-      "title": "Validate a migrated server before closing the change",
-      "historical_date": "2026-04-24"
-    },
-    {
-      "id": "AZC-303",
-      "title": "Pin provider and module versions in an Azure deployment",
-      "historical_date": "2026-04-27"
-    },
-    {
-      "id": "AZC-304",
-      "title": "Investigate a workflow trigger that fires unexpectedly",
-      "historical_date": "2026-04-29"
-    },
-    {
-      "id": "AZC-305",
-      "title": "Investigate a private endpoint that resolves to a public address",
-      "historical_date": "2026-05-02"
-    },
-    {
-      "id": "AZC-306",
-      "title": "Connect a change record to a useful monitoring check",
-      "historical_date": "2026-05-06"
-    },
-    {
-      "id": "AZC-307",
-      "title": "Investigate throttling before changing a Storage account design",
-      "historical_date": "2026-05-09"
-    },
-    {
-      "id": "AZC-308",
-      "title": "Check hidden dependencies after an application failover",
-      "historical_date": "2026-05-11"
-    },
-    {
-      "id": "AZC-309",
-      "title": "Investigate a scheduled script that works interactively",
-      "historical_date": "2026-05-14"
-    },
-    {
-      "id": "AZC-310",
-      "title": "Investigate a server update that repeatedly fails",
-      "historical_date": "2026-05-17"
-    },
-    {
-      "id": "AZC-311",
-      "title": "Review split-brain risk in a stretched infrastructure design",
-      "historical_date": "2026-05-19"
-    },
-    {
-      "id": "AZC-312",
-      "title": "Review the revised cost assumptions for Arc-enabled Windows Server Hotpatch",
-      "historical_date": "2026-05-22"
-    },
-    {
-      "id": "AZC-313",
-      "title": "Investigate a virtual switch after a host network change",
-      "historical_date": "2026-05-25"
-    },
-    {
-      "id": "AZC-314",
-      "title": "Understand checkpoints for a Linux application",
-      "historical_date": "2026-05-27"
-    },
-    {
-      "id": "AZC-315",
-      "title": "Investigate a CodeQL alert before merging a pull request",
-      "historical_date": "2026-05-30"
-    },
-    {
-      "id": "AZC-316",
-      "title": "Investigate an unexpected Conditional Access result",
-      "historical_date": "2026-06-03"
-    },
-    {
-      "id": "AZC-317",
-      "title": "Check permissions when a security plugin cannot retrieve data",
-      "historical_date": "2026-06-06"
-    },
-    {
-      "id": "AZC-318",
-      "title": "Check entity mapping when related alerts remain separate",
-      "historical_date": "2026-06-08"
-    },
-    {
-      "id": "AZC-319",
-      "title": "Restrict access to an application deployment endpoint",
-      "historical_date": "2026-06-11"
-    },
-    {
-      "id": "AZC-320",
-      "title": "Move configuration out of a manually maintained VM",
-      "historical_date": "2026-06-14"
-    },
-    {
-      "id": "AZC-321",
-      "title": "Plan checkpoint and restart behaviour for long-running jobs",
-      "historical_date": "2026-06-16"
-    },
-    {
-      "id": "AZC-322",
-      "title": "Separate an infrastructure move from application modernisation",
-      "historical_date": "2026-06-19"
-    },
-    {
-      "id": "AZC-323",
-      "title": "Review infrastructure changes as an application dependency",
-      "historical_date": "2026-06-22"
-    },
-    {
-      "id": "AZC-324",
-      "title": "Use API Management policies for a controlled backend change",
-      "historical_date": "2026-06-24"
-    },
-    {
-      "id": "AZC-325",
-      "title": "Choose NAT Gateway when stable outbound connectivity matters",
-      "historical_date": "2026-06-27"
-    },
-    {
-      "id": "AZC-326",
-      "title": "Design a dashboard with clear service ownership",
-      "historical_date": "2026-07-01"
-    },
-    {
-      "id": "AZC-327",
-      "title": "Choose managed disks around workload I/O patterns",
-      "historical_date": "2026-07-04"
-    },
-    {
-      "id": "AZC-328",
-      "title": "Run a Well-Architected review with the operations team",
-      "historical_date": "2026-07-06"
-    },
-    {
-      "id": "AZC-329",
-      "title": "Build an automation script that can resume after a failure",
-      "historical_date": "2026-07-09"
-    },
-    {
-      "id": "AZC-330",
-      "title": "Separate local administration from domain-wide privileges",
-      "historical_date": "2026-07-12"
-    },
-    {
-      "id": "AZC-331",
-      "title": "Validate a cluster after a network or storage change",
-      "historical_date": "2026-07-14"
-    },
-    {
-      "id": "AZC-332",
-      "title": "Review integration-service health across a Hyper-V host",
-      "historical_date": "2026-07-17"
-    },
-    {
-      "id": "AZC-333",
-      "title": "Create a repeatable Ubuntu guest configuration",
-      "historical_date": "2026-07-20"
-    },
-    {
-      "id": "AZC-334",
-      "title": "Build a security review into a new Azure workload",
-      "historical_date": "2026-07-22"
-    },
-    {
-      "id": "AZC-335",
-      "title": "Use group-based administration without hiding excessive access",
-      "historical_date": "2026-07-25"
-    },
-    {
-      "id": "AZC-336",
-      "title": "Compare standalone and embedded investigation workflows",
-      "historical_date": "2026-07-29"
-    },
-    {
-      "id": "AZC-337",
-      "title": "Review connector health and ingestion changes together",
-      "historical_date": "2026-08-01"
-    },
-    {
-      "id": "AZC-338",
-      "title": "Plan a rollback that includes application configuration",
-      "historical_date": "2026-08-03"
-    },
-    {
-      "id": "AZC-339",
-      "title": "Investigate disk latency before resizing a virtual machine",
-      "historical_date": "2026-08-06"
-    },
-    {
-      "id": "AZC-340",
-      "title": "Separate job input data from temporary compute storage",
-      "historical_date": "2026-08-09"
-    },
-    {
-      "id": "AZC-341",
-      "title": "Investigate an assessment with incomplete server data",
-      "historical_date": "2026-08-11"
-    },
-    {
-      "id": "AZC-342",
-      "title": "Test a module using a disposable development environment",
-      "historical_date": "2026-08-14"
-    },
-    {
-      "id": "AZC-343",
-      "title": "Plan an integration that can recover after an outage",
-      "historical_date": "2026-08-17"
-    },
-    {
-      "id": "AZC-344",
-      "title": "Document the network path before an infrastructure change",
-      "historical_date": "2026-08-19"
-    },
-    {
-      "id": "AZC-345",
-      "title": "Export a small Azure resource inventory with PowerShell",
-      "historical_date": "2026-08-22"
-    },
-    {
-      "id": "AZC-346",
-      "title": "Review storage access after rotating an application identity",
-      "historical_date": "2026-08-26"
-    },
-    {
-      "id": "AZC-347",
-      "title": "Use recovery evidence to refine an availability target",
-      "historical_date": "2026-08-29"
-    },
-    {
-      "id": "AZC-348",
-      "title": "Separate configuration, execution and reporting in PowerShell",
-      "historical_date": "2026-08-31"
-    },
-    {
-      "id": "AZC-349",
-      "title": "Create a recovery checklist for a Windows infrastructure server",
-      "historical_date": "2026-09-03"
-    },
-    {
-      "id": "AZC-350",
-      "title": "Plan maintenance with only one spare node",
-      "historical_date": "2026-09-06"
-    },
-    {
-      "id": "AZC-351",
-      "title": "Plan backup coverage for a Hyper-V workload",
-      "historical_date": "2026-09-08"
-    },
-    {
-      "id": "AZC-352",
-      "title": "Check kernel changes after a Linux guest update",
-      "historical_date": "2026-09-11"
-    },
-    {
-      "id": "AZC-353",
-      "title": "Find gaps between enabled Defender plans and protected resources",
-      "historical_date": "2026-09-14"
-    },
-    {
-      "id": "AZC-354",
-      "title": "Build a repeatable privileged-access review",
-      "historical_date": "2026-09-16"
-    },
-    {
-      "id": "AZC-355",
-      "title": "Document the evidence behind a generated incident timeline",
-      "historical_date": "2026-09-19"
-    },
-    {
-      "id": "AZC-356",
-      "title": "Plan access separation between security operations teams",
-      "historical_date": "2026-09-23"
-    },
-    {
-      "id": "AZC-357",
-      "title": "Separate staging and production identities for a PaaS application",
-      "historical_date": "2026-09-26"
-    },
-    {
-      "id": "AZC-358",
-      "title": "Plan VM maintenance around application recovery requirements",
-      "historical_date": "2026-09-28"
-    },
-    {
-      "id": "AZC-359",
-      "title": "Review networking requirements before selecting an accelerator VM",
-      "historical_date": "2026-10-01"
-    },
-    {
-      "id": "AZC-360",
-      "title": "Build a migration handover the operations team can use",
-      "historical_date": "2026-10-04"
-    },
-    {
-      "id": "AZC-361",
-      "title": "Resolve a Terraform state lock without losing deployment history",
-      "historical_date": "2026-10-06"
-    },
-    {
-      "id": "AZC-362",
-      "title": "Document and test manual replay of failed messages",
-      "historical_date": "2026-10-09"
-    },
-    {
-      "id": "AZC-363",
-      "title": "Review network boundaries before connecting another environment",
-      "historical_date": "2026-10-12"
-    },
-    {
-      "id": "AZC-364",
-      "title": "Investigate a policy remediation task that did not run",
-      "historical_date": "2026-10-14"
-    },
-    {
-      "id": "AZC-365",
-      "title": "Plan a storage recovery exercise with a verifiable outcome",
-      "historical_date": "2026-10-17"
-    },
-    {
-      "id": "AZC-366",
-      "title": "Create a practical workload readiness checklist",
-      "historical_date": "2026-10-21"
-    }
-  ],
+  "missing": [],
   "historical_start": "2024-01-01",
   "historical_end": "2026-10-22",
   "publication_approved": false,
   "screenshot_caption_policy": "No visible Microsoft Learn permission captions, per user instruction. Provenance retained in asset/review records.",
   "code_validation": "Examples are unrun unless an individual review record states a specific static check.",
-  "review_status": "All posts remain draft:true for author review. No deployment or publication occurred.",
-  "scope": "Files delivered in this draft pull request; other local drafts await technical review"
+  "review_status": "All posts remain draft:true for author review. No deployment or publication occurred."
 }

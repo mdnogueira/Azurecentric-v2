@@ -1,0 +1,153 @@
+{
+  "id": "AZC-278",
+  "title": "Choose a detection exclusion or a rule change",
+  "slug": "choose-a-detection-exclusion-or-a-rule-change",
+  "historical_date": "2026-02-16",
+  "input_sha256": "9ee3de099b3ed09cb1da11ab4beff8194f60bdb46bde5da820bceb08dc96780a",
+  "created_at": "2026-10-23T18:41:42.317768+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide whether to exclude entities or adjust rule logic in Microsoft Sentinel to reduce false positives.",
+  "tags": [
+    "microsoft-sentinel",
+    "detection-tuning",
+    "false-positives",
+    "analytics-rules",
+    "kql"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-278-learn-1.png",
+      "alt": "Screenshot of list of analytics rules with recommendation indicator.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/932b4444a60811544c00ccf121e71d7b664edff2/articles/sentinel/media/detection-tuning/rule-list-with-insight.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-10-29T04:34:05Z",
+      "sha256": "19c884ad0c380ed162fe293a1df15641d693c2cd3f2078c089e85dd12a052916",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-278-learn-2.png",
+      "alt": "Screenshot of selection of analytics health workbook from content hub.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c7dcc1a224ce4211fac670ff1fa18bd93c94d213/articles/sentinel/media/monitor-analytics-rule-integrity/select-workbook-from-content-hub.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-10-30T09:24:35Z",
+      "sha256": "518f0c1d23c14d58d857867a0a90493e97f3c46c451e9b75d727878f4c57ccca",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/detection-tuning.md",
+      "revision": "932b4444a60811544c00ccf121e71d7b664edff2",
+      "revision_date": "2025-10-29T04:34:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Get fine-tuning recommendations for your analytics rules in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/detection-tuning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/932b4444a60811544c00ccf121e71d7b664edff2/articles/sentinel/detection-tuning.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/configure-content.md",
+      "revision": "d43e811f4075035576db23faf4dd93afa3b6ecb9",
+      "revision_date": "2025-07-27T07:03:44Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Microsoft Sentinel content",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/configure-content",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d43e811f4075035576db23faf4dd93afa3b6ecb9/articles/sentinel/configure-content.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/monitor-analytics-rule-integrity.md",
+      "revision": "c7dcc1a224ce4211fac670ff1fa18bd93c94d213",
+      "revision_date": "2025-10-30T09:24:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor the health and audit the integrity of your Microsoft Sentinel analytics rules",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/monitor-analytics-rule-integrity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c7dcc1a224ce4211fac670ff1fa18bd93c94d213/articles/sentinel/monitor-analytics-rule-integrity.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 14-day window for tuning insights cover enough historical data for all environments?",
+    "What is the exact performance impact of adding multiple entity exclusions to a high-volume rule?",
+    "Are there any limits to the number of entities that can be excluded in a single rule?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-detection-exclusion-or-a-rule-change.md",
+  "draft": true,
+  "word_count": 1084,
+  "claim_support_checks": [
+    {
+      "claim": "Tuning insights are based on a 14-day analysis of incident history and classifications.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Entity exclusion recommendations are generated by machine learning models based on closed false positive incidents.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Rule execution health and audit logs are stored in SentinelHealth and SentinelAudit tables.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Scheduled rules are retried five times on the same window if they fail.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "NRT rules consider failed windows in the next run for up to 60 failures.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft presents the KQL exclusion example as a complete, working solution. However, the source (S1) describes excluding entities via the UI's 'plus-sign' which modifies the rule logic internally, not by manually appending a `where` clause to the KQL. The provided code is illustrative but risks misleading users into thinking they must manually edit KQL for this specific ML-driven feature, potentially breaking entity mapping or other rule properties.",
+      "fix": "Clarify that the UI-based exclusion adds filters to the rule's logic automatically. Mark the KQL snippet strictly as an illustrative example of the logical effect, not the method of implementation. Explicitly state that users should use the 'plus-sign' in the Tuning insights pane to apply these exclusions, preserving the rule's structure and entity mappings."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the 'Results simulation' feature is used to test logic changes. Source S1 places 'Results simulation' above the tuning insights, while S2 lists it as a separate capability. The draft implies simulation is the primary verification tool for the *new* logic, but doesn't clarify if simulation supports the *modified* query state or only the current one. This creates ambiguity about whether the user can simulate the *future* state before saving.",
+      "fix": "Verify if 'Results simulation' allows testing of *unsaved* logic changes. If not, correct the instruction to state that simulation validates the *current* rule state, and users must save changes to see the impact on future alerts. Remove the implication that simulation is a pre-save validation tool for arbitrary logic edits unless explicitly supported by the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that tuning insights are 'not accurate' if incidents are not classified. Source S1 says the recommendations are 'dependent on there being any recommendations to show' and are based on 'incidents that you closed and classified as false positive'. It does not state the insights are 'inaccurate' otherwise, but rather that they may not exist or be relevant. This is a strong unsupported negative claim.",
+      "fix": "Rephrase to: 'Tuning recommendations for entity exclusions are generated based on incidents you have closed and classified as false positives. If no such classifications exist, these specific recommendations will not be available.' Remove the word 'inaccurate' and the implication of negative accuracy, focusing on availability instead."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a decision flow diagram description that implies a linear process. Source S1 indicates tuning is a 'continuous process'. The draft's structure suggests a one-time fix, which contradicts the source's emphasis on ongoing optimization. The 'Decision criteria' table also simplifies the choice, ignoring cases where both exclusion and logic changes might be needed.",
+      "fix": "Add a note that tuning is iterative. Update the decision criteria to reflect that entity exclusion and logic changes are not mutually exclusive and may be applied in combination. Remove the implication that the process ends after one adjustment."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions using the 'Analytics Health & Audit' workbook to monitor impact. Source S3 describes installing this workbook from the Content Hub. The draft does not mention the prerequisite of installing the workbook solution, which is a necessary step for the user to follow the instruction. This is a missing procedural step.",
+      "fix": "Add a step to install the 'Analytics Health & Audit' workbook from the Content Hub before attempting to use it for monitoring. Reference Source S3 for the installation instructions."
+    }
+  ]
+}

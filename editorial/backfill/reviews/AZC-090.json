@@ -1,0 +1,124 @@
+{
+  "id": "AZC-090",
+  "title": "Investigate a storage request that returns an authorisation error",
+  "slug": "investigate-a-storage-request-that-returns-an-authorisation-error",
+  "historical_date": "2024-09-08",
+  "input_sha256": "e17ed25d8ad7945cf65605a2d9281c5b51e251ce7591aae88b176a59186a04fc",
+  "created_at": "2026-10-23T14:16:38.022059+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Azure Storage authorisation errors by identifying the auth method, checking account settings, and verifying data-plane permissions.",
+  "tags": [
+    "azure-storage",
+    "authorization",
+    "troubleshooting",
+    "microsoft-entra-id",
+    "sas",
+    "shared-key"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/authorize-data-access.md",
+      "revision": "9bc1f6e742e6bff9921e4f043d035e26f07e425b",
+      "revision_date": "2024-06-11T13:43:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Authorize operations for data access",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9bc1f6e742e6bff9921e4f043d035e26f07e425b/articles/storage/common/authorize-data-access.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-rest-api-auth.md",
+      "revision": "f49b2fbe8948d2e7bde701908d2c8094aef5867a",
+      "revision_date": "2023-11-13T20:55:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Call REST API operations with Shared Key authorization",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-rest-api-auth",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f49b2fbe8948d2e7bde701908d2c8094aef5867a/articles/storage/common/storage-rest-api-auth.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-09-08: MicrosoftDocs/azure-docs/articles/storage/common/storage-network-security-overview.md"
+  ],
+  "open_questions": [
+    "Does the draft adequately distinguish between management-plane and data-plane permissions for all auth methods?",
+    "Is the explanation of trusted access clear enough for troubleshooting Shared Key errors when Shared Key is disabled?",
+    "Are the prerequisites for On-premises AD DS sync to Microsoft Entra ID sufficiently highlighted?",
+    "Is the distinction between User Delegation SAS and Account SAS clear for troubleshooting file/queue errors?",
+    "Does the troubleshooting flow cover all common auth methods without being too verbose?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-storage-request-that-returns-an-authorisation-error.md",
+  "draft": true,
+  "word_count": 1041,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Storage supports authorization with Microsoft Entra ID, Shared Key, SAS, and anonymous access.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "User delegation SAS is only supported for blob storage.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft recommends disallowing Shared Key authorization for storage accounts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Files over SMB supports On-premises AD DS authentication.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Shared Key authorization uses HMAC SHA256 and Base64 encoding for signatures.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft recommends testing by generating a SAS token with the account key if Shared Key is disabled. This is logically impossible because disabling Shared Key authorization prevents the use of the account key for data access, including SAS generation that relies on it.",
+      "fix": "Remove the suggestion to generate account-key-based SAS tokens when Shared Key is disabled. Instead, suggest verifying if the failing request is actually using a trusted access mechanism or if the client is misconfigured to use Shared Key."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Files over SMB requires Microsoft Entra Domain Services or Microsoft Entra Kerberos. It omits support for On-premises Active Directory Domain Services (AD DS), which is a supported authorization option for Azure Files (SMB) as per S1.",
+      "fix": "Update the section on Azure Files to include On-premises AD DS as a supported identity provider for SMB authentication, alongside Entra Domain Services and Entra Kerberos."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that a role assignment at the resource group or subscription scope does not automatically grant data-plane access. While true, it implies RBAC is the only data-plane control. It fails to mention that Shared Key and SAS are alternative data-plane authorization methods that bypass RBAC entirely.",
+      "fix": "Clarify that RBAC applies only to Microsoft Entra ID authentication. If Shared Key or SAS is used, RBAC assignments are irrelevant to data access permissions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a C# code snippet for a REST request using HTTP (`http://contosorest.blob.core.windows.net`). This contradicts the security best practice of using HTTPS and the S1 recommendation to disallow Shared Key. It also uses an outdated API version.",
+      "fix": "Remove the insecure HTTP code example. If code is needed, provide a minimal, illustrative example using Microsoft Entra ID authentication or a user delegation SAS with HTTPS, noting it is unrun."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with a generic paragraph starting with 'By systematically checking...'. This violates the editorial guidance to remove generic concluding paragraphs and ensure the response ends with a concrete verification or next action.",
+      "fix": "Delete the final concluding paragraph. End the article immediately after the diagnostic logging section or the specific next step for verifying the fix."
+    }
+  ]
+}

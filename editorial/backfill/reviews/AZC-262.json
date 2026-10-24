@@ -1,0 +1,116 @@
+{
+  "id": "AZC-262",
+  "title": "Choose a placement approach for tightly coupled compute jobs",
+  "historical_date": "2026-01-02",
+  "created_at": "2026-10-23T23:37:40.608093+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Azure Batch pools across availability zones, handling SKU constraints and inter-node communication limits.",
+  "tags": [
+    "azure-batch",
+    "availability-zones",
+    "fault-tolerance",
+    "compute",
+    "infrastructure"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/create-pool-availability-zones.md",
+      "revision": "8f9326b302d5eaf4ff61196e7ef42822b2eeabc3",
+      "revision_date": "2025-06-04T22:53:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create a pool across availability zones",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/create-pool-availability-zones",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8f9326b302d5eaf4ff61196e7ef42822b2eeabc3/articles/batch/create-pool-availability-zones.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/nodes-and-pools.md",
+      "revision": "bb9e426cabbe0b3bf597d84424a5b22c16911c3f",
+      "revision_date": "2025-06-04T22:56:38Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Nodes and pools in Azure Batch",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/nodes-and-pools",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/nodes-and-pools.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the provided .NET SDK example accurately reflect the current API version and namespace for BatchAccountPoolData?",
+    "Is the REST API version 2021-01-01.13.0 still the recommended version for this operation in January 2026?",
+    "Are there any additional constraints for zonal pools when using Spot VMs?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/rest/api/compute/resourceskus/list",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-placement-approach-for-tightly-coupled-compute-jobs.md",
+  "draft": true,
+  "word_count": 832,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Batch pools can be configured to span availability zones to protect against datacenter-level failures.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Batch service automatically distributes nodes across all available zones; users cannot specify the allocation ratio.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A zonal pool cannot be created if inter-node communication is enabled and the VM SKU supports InfiniBand.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Users must validate that their VM SKU is supported in more than one zone before creating a zonal pool.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims users can verify node distribution across zones by checking pool details. The provided sources do not state that the Batch API or Portal exposes per-node availability zone data. This is an unsupported verification step.",
+      "fix": "Remove the specific instruction to verify zone distribution via pool details. Instead, advise verifying success by confirming the pool reaches the target node count without quota or SKU errors, as the sources do not document a method to inspect individual node zones."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that inter-node communication and InfiniBand are mutually exclusive with zonal placement entirely. The source only prohibits this combination for VM SKUs that support InfiniBand. Non-InfiniBand SKUs can use both.",
+      "fix": "Clarify that the restriction applies only when using VM SKUs that support InfiniBand. Users can enable inter-node communication with zonal placement if they select a VM SKU that does not support InfiniBand."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a REST API example with `enableInterNodeCommunication: false` but does not explicitly state that this field is required to be false for the InfiniBand constraint, nor does it explain that omitting it might default to true or cause issues if the SKU supports InfiniBand.",
+      "fix": "Add a note explaining that `enableInterNodeCommunication` must be explicitly set to `false` if the selected VM SKU supports InfiniBand, to avoid the zonal placement conflict described in the constraints section."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `standard_a1` in the source text example but `standard_ds1_v2` in the draft's REST example. While `standard_ds1_v2` is more modern, the draft should ensure consistency or explain the choice, as `standard_a1` is a legacy size.",
+      "fix": "The draft's choice of `standard_ds1_v2` is appropriate. Ensure the text explicitly mentions that the VM size must be a valid, zone-supported SKU, rather than just using it as an example without context."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's review questions ask about API versions and Spot VM constraints. The sources do not provide information on Spot VM constraints for zonal pools, making the question unanswerable from the provided evidence.",
+      "fix": "Remove the review question about Spot VM constraints as it cannot be answered from the provided sources. Keep the question about API versions if relevant to the 2026 context, but note that the source uses `2021-01-01.13.0`."
+    }
+  ]
+}

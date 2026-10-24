@@ -1,0 +1,124 @@
+{
+  "id": "AZC-038",
+  "title": "Configure Secure Boot for a supported Linux guest",
+  "historical_date": "2024-04-15",
+  "created_at": "2026-10-23T23:50:54.817043+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Secure Boot for a Linux guest on Hyper-V using the correct UEFI template and verify the setting.",
+  "tags": [
+    "hyper-v",
+    "secure-boot",
+    "linux",
+    "generation-2",
+    "virtual-machines"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/learn-more/Generation-2-virtual-machine-security-settings-for-Hyper-V.md",
+      "revision": "ab31226521118f3e864d854082350f381a7e6993",
+      "revision_date": "2021-12-08T15:19:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Generation 2 virtual machine security settings for Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ab31226521118f3e864d854082350f381a7e6993/WindowsServerDocs/virtualization/hyper-v/learn-more/Generation-2-virtual-machine-security-settings-for-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "1fd77610875dbbab52ebdb393d598bd529073ba5",
+      "revision_date": "2022-06-23T20:23:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1fd77610875dbbab52ebdb393d598bd529073ba5/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the Linux distribution support Secure Boot out-of-the-box with the Microsoft UEFI Certificate Authority template?",
+    "What are the specific steps to sign a custom kernel for Secure Boot if it is not trusted by the template?",
+    "How does Secure Boot interact with kernel updates in different Linux distributions?",
+    "Are there any performance impacts of enabling Secure Boot on Linux virtual machines?"
+  ],
+  "research_warnings": [
+    "No revision before 2024-04-15: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/generation-2-virtual-machine-security-features.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-Hyper-V"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-secure-boot-for-a-supported-linux-guest.md",
+  "draft": true,
+  "word_count": 745,
+  "claim_support_checks": [
+    {
+      "claim": "Secure Boot is enabled by default for Generation 2 virtual machines.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Secure Boot prevents unauthorized firmware, operating systems, or UEFI drivers from running at boot time.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Microsoft UEFI Certificate Authority template is used for Linux distributions.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Secure Boot is only available for Generation 2 virtual machines.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Shielded Virtual Machines require Secure Boot to be enabled.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Shielded Virtual Machines require Secure Boot. Source S1 states Secure Boot is 'selected and enforced' when Shielding is enabled, but does not state it is a prerequisite for enabling Shielding itself. This reverses the logical dependency.",
+      "fix": "Rewrite the Shielding section to state that enabling Shielding enforces Secure Boot, rather than Secure Boot being a prerequisite for Shielding. Remove the implication that Secure Boot must be configured before Shielding can be set up."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests signing kernels or disabling Secure Boot for unsupported distributions without context. It implies a universal need for manual signing, ignoring that many modern Linux distros are pre-certified. It also lacks the destructive context of disabling Secure Boot.",
+      "fix": "Clarify that manual signing is only needed for custom/untrusted kernels. Explicitly warn that disabling Secure Boot removes the boot integrity protection. Reference the supported distro list for out-of-the-box compatibility."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the same citation URL after every sentence, violating the guidance to use a few well-placed source links. It also uses a generic concluding paragraph starting with 'This configuration ensures...', which is prohibited.",
+      "fix": "Consolidate citations to the primary source (S1) at the end of relevant sections. Remove the 'Summary of steps' and the final concluding paragraph. End with the concrete verification step of restarting the VM."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Summary of steps' section which is redundant with the 'Verify' and 'Confirm' sections. The guidance explicitly states to remove stock conclusion and summary sections.",
+      "fix": "Delete the 'Summary of steps' section entirely. Integrate the final verification action (restart and check boot) into the 'Confirm the setting is active' section as the final step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that 'Microsoft UEFI Certificate Authority' is the only template for Linux. While true for standard Hyper-V, it omits the 'Open Source Shielded VM' template mentioned in S1 for Linux-based shielded VMs, which is a valid alternative in specific contexts.",
+      "fix": "Add a note that the 'Open Source Shielded VM' template is available for Linux if using Shielded VMs with a specific guardian key, ensuring completeness without overcomplicating the standard guide."
+    }
+  ]
+}

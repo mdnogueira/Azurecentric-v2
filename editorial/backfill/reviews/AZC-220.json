@@ -1,0 +1,104 @@
+{
+  "id": "AZC-220",
+  "title": "Define useful pilot outcomes without assuming productivity gains",
+  "slug": "define-useful-pilot-outcomes-without-assuming-productivity-gains",
+  "historical_date": "2025-09-07",
+  "input_sha256": "0e064fcd3de0bbe5b7809179a4e25e67fab7e45616d957589d32c11e7918e0d4",
+  "created_at": "2026-10-23T17:17:42.684332+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define measurable pilot outcomes for Microsoft Security Copilot using operational baselines and supported integrations.",
+  "tags": [
+    "security-copilot",
+    "pilot",
+    "measurable-outcomes",
+    "ai-assistant",
+    "security-operations"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "546fc8520e9443e311cc9df30ab5e0ac79301a9f",
+      "revision_date": "2024-11-06T08:18:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What specific baseline metrics are available for the chosen pilot scenarios?",
+    "Are there any known limitations of Security Copilot for the selected scenarios?",
+    "How will the quality and reliability of community plugins be evaluated?",
+    "What is the plan for monitoring the tool's performance over time?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/define-useful-pilot-outcomes-without-assuming-productivity-gains.md",
+  "draft": true,
+  "word_count": 826,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Security Copilot is a generative AI-powered assistant for security operations.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Security Copilot product documentation outlines specific capabilities such as threat hunting and incident response assistance.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Security Copilot community repository provides guidance on contributing plugins and connectors.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The tool is designed to be integrated with existing security tools via connectors.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites a GitHub README for operational capabilities (plugins/connectors) and uses it to justify pilot metrics. The source is a contribution guide for open-source code, not product documentation. It does not describe Security Copilot's features, plugin architecture, or connector integration. Relying on this for technical claims is unsupported.",
+      "fix": "Replace citations of the GitHub README with official Microsoft Learn documentation (e.g., 'get-started-security-copilot' or 'plugin_overview'). The README only covers code contribution procedures, not product functionality or pilot-relevant features."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft implies Security Copilot has a native plugin architecture for ticketing integration based on the GitHub repo's 'KQL Plugin' example. The source shows a sample YAML for a community contribution, not a supported, documented feature of the commercial product. This misleads readers about out-of-the-box extensibility.",
+      "fix": "Clarify that community plugins are experimental code contributions, not supported product features. Remove implications that ticketing integration is a standard capability. Direct readers to official connector documentation for supported integrations."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests measuring 'accuracy of classification' as a pilot metric. Security Copilot is an assistant, not an autonomous classifier. It generates text/recommendations. Measuring its 'accuracy' requires defining ground truth and evaluation methodology, which is complex and not supported by the source. This metric is vague and potentially misleading.",
+      "fix": "Refocus metrics on user-assisted outcomes, such as 'time to first response' or 'number of steps to gather initial context.' Avoid 'accuracy' unless defining a rigorous human-in-the-loop evaluation framework."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states the tool empowers teams to 'protect at the speed and scale of AI.' This is marketing language from the README, not a measurable operational claim. It sets unrealistic expectations for a pilot focused on concrete outcomes.",
+      "fix": "Remove the marketing phrase. Replace with neutral language describing the tool as an assistant that provides information synthesis and guidance, as per official product descriptions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends using community plugins for the pilot without warning about stability or support. The source is a community repository with no SLA. Using unsanctioned code in a pilot introduces risk.",
+      "fix": "Add a caution that community plugins are not supported by Microsoft and may break. Recommend testing them in an isolated environment before considering any production use."
+    }
+  ]
+}

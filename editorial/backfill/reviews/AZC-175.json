@@ -1,0 +1,120 @@
+{
+  "id": "AZC-175",
+  "title": "Apply a baseline Windows Firewall configuration",
+  "slug": "apply-a-baseline-windows-firewall-configuration",
+  "historical_date": "2025-05-03",
+  "input_sha256": "1bf4563459b5ef49aa04542ccd02cf779f2abb42054b5ca876bcd86a3fca20a5",
+  "created_at": "2026-10-23T22:22:52.999692+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Windows Firewall for BranchCache and NPS on Server 2025 using documented ports and service configurations.",
+  "tags": [
+    "windows-server-2025",
+    "branchcache",
+    "radius",
+    "firewall",
+    "nps"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md",
+      "revision": "1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd",
+      "revision_date": "2025-05-01T00:47:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Firewall Rules for Non-Domain Members to Allow BranchCache Traffic",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/branchcache/deploy/configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd/WindowsServerDocs/networking/branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/technologies/nps/nps-firewalls-configure.md",
+      "revision": "1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd",
+      "revision_date": "2025-05-01T00:47:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Firewalls for RADIUS Traffic",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-firewalls-configure",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1b3b9124c8c2c3efaa9a684c4532eb9f7b7975fd/WindowsServerDocs/networking/technologies/nps/nps-firewalls-configure.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/security/windows-authentication/group-policy-settings-used-in-windows-authentication.md",
+      "revision": "a1387d7340b88fd90b9765bbb8d847b303acda2a",
+      "revision_date": "2025-05-01T15:22:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Group Policy Settings Used in Windows Authentication",
+      "url": "https://learn.microsoft.com/en-us/windows-server/security/windows-authentication/group-policy-settings-used-in-windows-authentication",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a1387d7340b88fd90b9765bbb8d847b303acda2a/WindowsServerDocs/security/windows-authentication/group-policy-settings-used-in-windows-authentication.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does Windows Server 2025 introduce any new default firewall rules for BranchCache or NPS that differ from Server 2019?",
+    "Are there any specific Group Policy settings for Windows Server 2025 that automate the BranchCache firewall rule creation?",
+    "What is the impact of the IAS service SID change on other services that might depend on the NETWORK SERVICE account?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/apply-a-baseline-windows-firewall-configuration.md",
+  "draft": true,
+  "word_count": 961,
+  "claim_support_checks": [
+    {
+      "claim": "BranchCache distributed cache mode requires allowing multicast traffic for MS-PCCRD discovery.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "NPS requires a unique SID for the IAS service on Windows Server 2019 to function with default firewall rules.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "BranchCache MS-PCCRR traffic uses HTTP 1.1 on port 80.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that Windows Server 2019 required a specific SID change for NPS firewall exceptions and implies this is a legacy issue to be verified in 2025. The source (S2) states this requirement is for Server 2019 but does not confirm it is resolved or changed in 2025. Asserting it is 'legacy' or 'not a universal requirement for 2025' without 2025-specific documentation is an unsupported inference about product behavior.",
+      "fix": "Remove the assertion that the 2019 SID issue is resolved or legacy in 2025. State that the 2019 documentation requires the SID change for that version. For 2025, advise verifying if the default exceptions work, but do not claim the 2019 behavior is obsolete or that the fix is optional troubleshooting rather than a documented requirement for the service account configuration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends using `netsh advfirewall firewall delete rule` in the Cleanup section. While `netsh` is valid, it is deprecated in favor of PowerShell cmdlets (`NetSecurity` module) in modern Windows Server versions. The draft fails to provide the PowerShell equivalent, which is the preferred operational method for Server 2025.",
+      "fix": "Add PowerShell examples for removing BranchCache rules using `Remove-NetFirewallRule`. Replace or supplement the `netsh` cleanup commands with PowerShell equivalents to align with current best practices for Windows Server 2025 administration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that for NPS, 'Windows Defender Firewall should automatically create exceptions during NPS installation.' This is a generalization that may not hold true for all installation scenarios or configurations in Server 2025. The source (S2) states exceptions are 'automatically configured... during the installation' but notes the 2019 SID issue. It does not guarantee automatic creation in all 2025 contexts.",
+      "fix": "Qualify the statement about automatic rule creation. State that NPS installation *typically* creates exceptions, but verify their presence. Do not present it as a guaranteed behavior for Server 2025 without explicit source confirmation for that specific version."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram node for 'Domain Controller' in the BranchCache/NPS flow. The sources (S1, S2) do not explicitly define the Domain Controller as a direct node in the firewall traffic flow for BranchCache distributed cache or NPS RADIUS traffic in the context of the firewall rules described. BranchCache distributed cache is peer-to-peer; NPS authenticates against AD but the firewall rules focus on NPS and clients/proxies.",
+      "fix": "Review the diagram nodes. Ensure the Domain Controller is only included if it is directly involved in the traffic flow that requires firewall configuration as described in the sources. For BranchCache distributed cache, the DC is not a traffic endpoint for the cache rules. For NPS, the DC is the authentication target, but the firewall rules are for NPS. Clarify the diagram's scope."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'BranchCache diagnostic tools' in the verification section without specifying which tools or how to access them. The source (S1) does not detail specific diagnostic tools, only event logs and rule verification.",
+      "fix": "Remove vague references to 'BranchCache diagnostic tools' unless specific tools (like `BranchCache` PowerShell cmdlets or Event Viewer paths) are documented in the sources. Stick to the verification steps provided in the sources: checking firewall rules and event logs."
+    }
+  ]
+}

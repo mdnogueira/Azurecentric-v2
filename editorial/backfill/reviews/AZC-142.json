@@ -1,0 +1,153 @@
+{
+  "id": "AZC-142",
+  "title": "Add a health check before enabling application scale-out",
+  "slug": "add-a-health-check-before-enabling-application-scale-out",
+  "historical_date": "2025-01-31",
+  "input_sha256": "52cbc5230ecfe1777dfe964c026ef5e45dcf2f046bca28cfacd52592b5602cd4",
+  "created_at": "2026-10-23T15:31:24.201496+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable App Service Health check to protect scaling events by removing unhealthy instances from the load balancer.",
+  "tags": [
+    "azure-app-service",
+    "health-check",
+    "automatic-scaling",
+    "availability",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-142-learn-1.png",
+      "alt": "Screenshot that shows how to enable Health check in the Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9d2278bed2a1ab16bd66ed55a7898236d2825f46/articles/app-service/media/app-service-monitor-instances-health-check/azure-portal-navigation-health-check.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-01-27T11:28:57Z",
+      "sha256": "8c3d9e31d06cfd953eae9740c344fe20e86163b146ff9ac3db6083927e6321ed",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-142-learn-2.png",
+      "alt": "Screenshot of always ready instances",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/917ab49269056f24b3859f21af962276411037a5/articles/app-service/media/manage-automatic-scaling/azure-portal-always-ready-instances.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-09-09T16:36:58Z",
+      "sha256": "a6e507185748474a50f23afc9a83f78b47c6d3f62369d5e63ee06474c2a41aee",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/monitor-instances-health-check.md",
+      "revision": "9d2278bed2a1ab16bd66ed55a7898236d2825f46",
+      "revision_date": "2025-01-27T11:28:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Monitor the health of App Service instances",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/monitor-instances-health-check",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9d2278bed2a1ab16bd66ed55a7898236d2825f46/articles/app-service/monitor-instances-health-check.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/health-probes.md",
+      "revision": "c68450cbbe0baaeddcb08abcbee44c6aaca055ef",
+      "revision_date": "2024-11-26T17:23:54Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Health probes in Azure Container Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/health-probes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c68450cbbe0baaeddcb08abcbee44c6aaca055ef/articles/container-apps/health-probes.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/manage-automatic-scaling.md",
+      "revision": "917ab49269056f24b3859f21af962276411037a5",
+      "revision_date": "2024-09-09T16:36:58Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "How to enable automatic scaling",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/917ab49269056f24b3859f21af962276411037a5/articles/app-service/manage-automatic-scaling.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the Health check path need to be accessible via HTTPS if HTTPS Only is enabled?",
+    "What is the exact impact of `WEBSITE_HEALTHCHECK_MAXUNHEALTHYWORKERPERCENT` on the load balancer rotation?",
+    "How does Health check interact with deployment slots during a swap operation?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/add-a-health-check-before-enabling-application-scale-out.md",
+  "draft": true,
+  "word_count": 1454,
+  "claim_support_checks": [
+    {
+      "claim": "Health check pings a user-defined path at one-minute intervals to determine instance health.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "App Service removes unhealthy instances from the load balancer if they fail to respond with a 200-299 status code.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Automatic scaling prewarms instances to buffer against cold starts during scale-out events.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Health check configuration changes restart the App Service app.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The x-ms-auth-internal-token header is only available on App Service for Windows.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Health check pings new instances during scale-out to ensure readiness. Source S1 states Health check pings instances at 1-minute intervals generally. It does not state that Health check gates the addition of instances to the load balancer during the automatic scaling process; rather, it removes unhealthy instances from rotation. Automatic scaling relies on internal health assessments, not the user-defined Health check path, for provisioning decisions.",
+      "fix": "Clarify that Health check protects existing traffic by removing unhealthy instances, while Automatic Scaling uses internal metrics for provisioning. Remove the implication that the user-defined Health check path prevents traffic to new instances during the scale-out event itself."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the Health check status metric aggregates successful pings and displays failures only when deemed unhealthy, with a default threshold of 10 minutes. Source S1 confirms this behavior. However, the draft omits that this metric is only available when Health check is enabled and does not reflect real-time ping failures, which can mislead troubleshooting of transient issues.",
+      "fix": "Retain the 10-minute threshold detail but explicitly note that this metric reflects the load-balancing status, not individual ping results. Advise using Application Insights or Log Analytics for granular ping failure visibility if needed."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `WEBSITE_HEALTHCHECK_MAXPINGFAILURES` to allow more time for initialization. Source S1 limits this setting to 2-10. If an app takes longer than 10 minutes to start (10 pings * 1 minute), this setting cannot help. The draft fails to mention that for slow-starting apps, the `initialDelaySeconds` equivalent is not configurable in App Service Health Check, unlike Container Apps.",
+      "fix": "Clarify that `WEBSITE_HEALTHCHECK_MAXPINGFAILURES` only extends the failure tolerance window up to 10 minutes. For apps taking longer to start, recommend ensuring the app starts quickly or using staging slots to swap in pre-warmed instances, as Health Check cannot delay the initial check."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot from S1 showing the Health Check enablement in the portal. The editorial guidance prohibits visible Microsoft Learn screenshot captions but allows screenshots if they directly illustrate a how-to step. The draft uses the screenshot correctly beside the step, but the alt text and credit are redundant with the source metadata.",
+      "fix": "Keep the screenshot as it illustrates the step. Remove the explicit 'Used with permission' credit text from the image source if it appears in the final rendered HTML, as the guidance requires keeping source provenance in separate review records, not in the visible content."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions that Health check does not follow 302 redirects and may fail with 307 if HTTPS Only is disabled but HTTPS redirect is enabled. Source S1 confirms this. However, the draft does not mention that Health Check requests are sent via HTTPS if HTTPS Only is enabled, otherwise HTTP. This context is crucial for understanding why a 307 might occur.",
+      "fix": "Add a brief note that Health Check uses HTTPS if 'HTTPS Only' is enabled, otherwise HTTP. This explains the 307 behavior when the app redirects HTTP to HTTPS but the platform sends HTTP."
+    }
+  ]
+}

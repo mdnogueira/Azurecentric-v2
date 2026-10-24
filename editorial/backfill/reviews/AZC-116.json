@@ -1,0 +1,117 @@
+{
+  "id": "AZC-116",
+  "title": "Configure a virtual network adapter and VLAN",
+  "slug": "configure-a-virtual-network-adapter-and-vlan",
+  "historical_date": "2024-11-20",
+  "input_sha256": "8aa31c366352a980e2497faa95c3fe9de3801fe1811ef311fa9dea4ed493afcf",
+  "created_at": "2026-10-23T14:51:39.604419+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Hyper-V virtual network adapters and VLANs using GUI and PowerShell, clarifying tagging scope and prerequisites.",
+  "tags": [
+    "hyper-v",
+    "vlan",
+    "windows-server",
+    "networking",
+    "powershell"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/deploy/configure-virtual-local-area-networks-for-hyper-v.md",
+      "revision": "82d40d9bc8b9f265ebc898f13e71a069e65d3d18",
+      "revision_date": "2024-10-17T08:27:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure virtual local area networks for Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/configure-virtual-local-area-networks-for-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/82d40d9bc8b9f265ebc898f13e71a069e65d3d18/WindowsServerDocs/virtualization/hyper-v/deploy/configure-virtual-local-area-networks-for-hyper-v.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/deploy/configure-virtual-local-areal-networks-for-Hyper-V.md",
+      "revision": "ff848743a74c98350b03e1f92319fecc538fc7c3",
+      "revision_date": "2024-08-13T18:02:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure virtual local area networks for Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/configure-virtual-local-areal-networks-for-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ff848743a74c98350b03e1f92319fecc538fc7c3/WindowsServerDocs/virtualization/hyper-v/deploy/configure-virtual-local-areal-networks-for-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-11-20: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/virtual-switch.md",
+    "Public document removed/moved on 2024-08-13T20:55:18Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/deploy/configure-virtual-local-areal-networks-for-Hyper-V.md"
+  ],
+  "open_questions": [
+    "Does Windows Server Hyper-V Manager GUI provide a direct way to set trunk mode without PowerShell?",
+    "Are there specific performance implications when using trunk mode for virtual network adapters?",
+    "How does Hyper-V handle VLAN tagging if the physical switch port is misconfigured?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-a-virtual-network-adapter-and-vlan.md",
+  "draft": true,
+  "word_count": 934,
+  "claim_support_checks": [
+    {
+      "claim": "VLANs require physical network adapters and switches that support 802.1q VLAN tagging.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The virtual switch can be configured to tag traffic for the management operating system.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Virtual machines can be configured to use a specific VLAN ID on their network adapter.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Virtual network adapters can be configured in trunk mode using PowerShell.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The PowerShell example for trunk mode uses an invalid syntax. The source only mentions using Set-VMNetworkAdapterVlan for trunk mode but does not specify the parameter structure. The draft invents `-AllowedVlanIds \"100,200,300\"` which is not documented in the provided sources and likely incorrect for this cmdlet (which typically uses `-TrunkVlanId` or similar specific parameters depending on the exact version).",
+      "fix": "Remove the specific trunk mode PowerShell example. State that trunk mode is configured via Set-VMNetworkAdapterVlan as referenced in the source, but do not provide unverified code syntax. Mark any code as illustrative only if kept, but better to omit to avoid hallucination."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'All traffic passing through the physical network adapter... will now be tagged... unless they override the setting.' This is misleading. The 'Enable virtual LAN identification for management operating system' setting on the virtual switch only tags traffic for the management OS. VM traffic is only tagged if the VM's adapter is explicitly configured with a VLAN ID. The draft implies a global tagging behavior that doesn't exist.",
+      "fix": "Clarify that the virtual switch VLAN ID setting applies specifically to the management OS traffic. VM traffic tagging requires explicit configuration on each VM's network adapter. Remove the implication that all VM traffic is automatically tagged by the switch setting."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description and 'review questions' which are not part of the core how-to content and add fluff. The 'review questions' section is not actionable guidance.",
+      "fix": "Remove the 'review_questions' section and the diagram description from the main body. Keep the focus on the operational steps for configuring VLANs."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'This ensures that traffic leaving the virtual machine is tagged correctly before it reaches the physical switch.' This is a strong claim. If the physical switch port is not configured as a trunk or access port for that VLAN, the traffic will be dropped or misrouted. The draft mentions this in troubleshooting but not as a prerequisite risk.",
+      "fix": "Add a brief note in prerequisites or configuration that the physical switch port must be configured to accept the tagged traffic (trunk or access) to avoid connectivity issues."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Access mode means the adapter will only send and receive traffic tagged with VLAN 100.' This is technically imprecise. In Hyper-V, 'Access' mode (default) means the VM sends untagged frames, and the Hyper-V switch adds the tag. The VM itself does not see tags. The draft's description might confuse users about where tagging occurs.",
+      "fix": "Clarify that in Access mode, the VM sends untagged frames, and the Hyper-V virtual switch handles the 802.1q tagging before sending to the physical network. The VM OS is unaware of the VLAN tag."
+    }
+  ]
+}

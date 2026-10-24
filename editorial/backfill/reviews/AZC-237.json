@@ -1,0 +1,130 @@
+{
+  "id": "AZC-237",
+  "title": "Choose between network security groups, Azure Firewall and WAF",
+  "slug": "choose-between-network-security-groups-azure-firewall-and-waf",
+  "historical_date": "2025-10-25",
+  "input_sha256": "adf3f1246b0cfd0bccf37f96955ef64640a2909c560f8aacc9c8aec090156379",
+  "created_at": "2026-10-23T17:44:46.452797+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Compare Azure Firewall SKUs and NSGs to choose the right network security layer for your workload.",
+  "tags": [
+    "azure-firewall",
+    "network-security-groups",
+    "waf",
+    "networking",
+    "security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/overview.md",
+      "revision": "ba437e0e04155dee55bec1bd5ea51611933ea61d",
+      "revision_date": "2025-09-30T20:21:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is Azure Firewall?",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ba437e0e04155dee55bec1bd5ea51611933ea61d/articles/firewall/overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/choose-firewall-sku.md",
+      "revision": "06772ffea402e6df0df1c39dcede73091a60ba70",
+      "revision_date": "2025-09-18T21:56:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choose the right Azure Firewall SKU to meet your needs",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/choose-firewall-sku",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/06772ffea402e6df0df1c39dcede73091a60ba70/articles/firewall/choose-firewall-sku.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/firewall-best-practices.md",
+      "revision": "964521c2f919246e3c59138dce66463b251fd01e",
+      "revision_date": "2025-10-14T17:01:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Firewall best practices for performance",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/firewall-best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/964521c2f919246e3c59138dce66463b251fd01e/articles/firewall/firewall-best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source text provide specific guidance on when to use NSGs versus Azure Firewall for east-west traffic within a hub-and-spoke topology?",
+    "Are there any specific cost comparisons between NSGs and Azure Firewall SKUs provided in the sources?",
+    "What are the exact prerequisites for deploying Azure Firewall Premium in terms of network architecture?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-between-network-security-groups-azure-firewall-and-waf.md",
+  "draft": true,
+  "word_count": 1098,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Firewall is a stateful firewall as a service that inspects east-west and north-south traffic.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Firewall Basic supports Threat Intel alert mode only and has a fixed scale unit.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Firewall Standard offers L3-L7 filtering and autoscaling up to 30 Gbps.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Firewall Premium includes signature-based IDPS and outbound TLS termination.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Exceeding rule limitations can affect Azure Firewall performance and cause latency.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Firewall Basic has a 'fixed scale unit with two virtual machine backend instances'. Source S1 lists this as a limitation, but S2's feature table does not explicitly confirm the 'two VM' count for Basic, only listing 'Built-in HA' and 'Availability zones' as supported. The specific 'two VM' detail is not in the provided S2 comparison table, making the claim partially unsupported by the full source set provided for the SKU comparison.",
+      "fix": "Verify the 'two VM' claim against the specific 'Azure Firewall Basic features' section in S1 or S2. If S2's table is the primary comparison source, remove the specific 'two VM' detail and stick to 'Fixed scale unit' and '250 Mbps throughput' which are explicitly in S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Azure Firewall Premium includes 'URL filtering (full path - including SSL termination)'. Source S1 mentions 'URL filtering' under Premium, but S2's table specifies 'URL filtering (full path - including SSL termination)' only for Premium. However, S1 does not explicitly mention 'full path' or 'SSL termination' in the Premium description text, only 'URL filtering'. The specific detail 'full path' is only in S2. This is a minor conflation but acceptable if S2 is considered part of the 'Premium' definition.",
+      "fix": "Ensure the 'full path' and 'SSL termination' details for URL filtering are attributed to the Premium SKU based on S2's table, as S1's text is less specific. The current draft is mostly accurate but could be clearer on source attribution for the specific 'full path' claim."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Firewall Standard supports 'autoscaling to manage peak traffic up to 30 Gbps'. Source S2 states 'Cloud scalability (auto-scale as traffic grows) Up to 30 Gbps' for Standard. However, S1 states Azure Firewall is 'fully stateful firewall as a service... featuring built-in high availability and unlimited cloud scalability'. The term 'unlimited' in S1 might contradict the '30 Gbps' cap in S2 if not clarified as a per-hub limit. The draft uses 'autoscaling' which is correct, but the '30 Gbps' is a specific limit, not just a peak.",
+      "fix": "Clarify that 30 Gbps is the maximum throughput for Standard, not just a 'peak' that can be exceeded via autoscaling. The source S2 explicitly lists 'Up to 30 Gbps' under scalability, implying a hard limit for that SKU."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a decision summary that repeats points already made. The section 'Decision summary' is redundant given the detailed sections above. The instruction says 'End when the technical question is answered... Remove generic concluding paragraphs'. This summary is not generic but is repetitive.",
+      "fix": "Remove the 'Decision summary' section as it adds no new information and repeats the 'When to use' section. End with the 'Performance and monitoring considerations' section or a brief next step."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Firewall Manager' in the S1 source but does not explicitly discuss it in the main text, only in the 'Choose Azure Firewall SKUs' section implicitly via 'centralised management'. S1 explicitly states 'Azure Firewall Manager allows you to centrally manage Azure Firewalls across multiple subscriptions'. The draft mentions 'centralised management' for Premium/Standard but doesn't name the tool.",
+      "fix": "Add a brief mention of Azure Firewall Manager as the tool for centralized management across subscriptions, as highlighted in S1, to provide a more complete picture of management capabilities."
+    }
+  ]
+}

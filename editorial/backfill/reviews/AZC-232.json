@@ -1,0 +1,94 @@
+{
+  "id": "AZC-232",
+  "title": "Decide when parallel execution improves a script",
+  "slug": "decide-when-parallel-execution-improves-a-script",
+  "historical_date": "2025-10-10",
+  "input_sha256": "987752d61d1db4f2c2b658f785e27e4e9694a20f2d0a4e17ac0857ff87e40e02",
+  "created_at": "2026-10-23T17:36:47.181498+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide when parallel execution improves a script using PowerShell 7.5 performance data.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/dev-cross-plat/performance/parallel-execution.md",
+      "revision": "00a338228da1ecc898c1456dd32dfd9037f93fd6",
+      "revision_date": "2025-05-19T17:32:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Optimize performance using parallel execution",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/dev-cross-plat/performance/parallel-execution",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/00a338228da1ecc898c1456dd32dfd9037f93fd6/reference/docs-conceptual/dev-cross-plat/performance/parallel-execution.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/dev-cross-plat/performance/script-authoring-considerations.md",
+      "revision": "ceaddb06f5253661a8b72903604b42cd76125efa",
+      "revision_date": "2025-08-25T17:37:39Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell scripting performance considerations",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/dev-cross-plat/performance/script-authoring-considerations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/ceaddb06f5253661a8b72903604b42cd76125efa/reference/docs-conceptual/dev-cross-plat/performance/script-authoring-considerations.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/write-progress-across-multiple-threads.md",
+      "revision": "9a678c09f921271207c639828d360d5958715ca0",
+      "revision_date": "2025-03-24T19:11:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Displaying progress while multi-threading",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/write-progress-across-multiple-threads",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/9a678c09f921271207c639828d360d5958715ca0/reference/docs-conceptual/learn/deep-dives/write-progress-across-multiple-threads.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/decide-when-parallel-execution-improves-a-script.md",
+  "draft": true,
+  "word_count": 1094,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft presents specific timing results (e.g., Start-Process: 0.26s) as factual performance benchmarks. Source S1 explicitly states these are illustrative ratios from a single run and that actual times vary by hardware and workload. Presenting them as definitive metrics misleads readers about expected performance.",
+      "fix": "Remove specific timing values. State that Start-Process avoids job overhead and is generally faster for single commands, while Start-Job has the highest overhead due to process creation. Advise readers to benchmark their specific workloads."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims synchronized hashtables are 'required' to share state between parallel threads. Source S3 presents this as a solution for tracking progress, but does not state it is the only or strictly required method for all state sharing (e.g., output collection via pipeline). This is an overgeneralization.",
+      "fix": "Rephrase to indicate synchronized hashtables are a common pattern for thread-safe state updates like progress reporting, rather than a universal requirement for all state sharing scenarios."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a code snippet calling `Measure-Parallel` but omits the function definition, which is critical for the code to work. Source S1 provides the full function. The draft's code is incomplete and unrunnable as presented.",
+      "fix": "Include the full `Measure-Parallel` function definition from Source S1 or explicitly mark the snippet as illustrative and incomplete, referencing the source for the full implementation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft asserts that parallel execution 'introduces overhead and complexity that can make a script slower, or harder to debug'. While true, this is a general statement. The source S1 specifically notes `Start-Job` serialization limits usefulness. The draft should be more specific about *why* it might be slower (e.g., serialization overhead, process creation).",
+      "fix": "Specify that overhead comes from process creation (Start-Job) or serialization/deserialization, rather than just 'complexity'. Reference S1's note on serialization limiting object utility."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions `ForEach-Object -Parallel` is 'generally the most efficient option for pipeline-based parallelism'. Source S1 concludes `Start-Process` is fastest for single external commands, and `ForEach-Object -Parallel` has low overhead for PowerShell code. The claim is slightly imprecise regarding the workload type.",
+      "fix": "Clarify that `ForEach-Object -Parallel` is efficient for pipeline-based PowerShell code execution, while `Start-Process` is faster for external commands. Avoid the blanket 'most efficient' claim."
+    }
+  ]
+}

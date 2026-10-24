@@ -1,0 +1,157 @@
+{
+  "id": "AZC-171",
+  "title": "Schedule server updates with Azure Update Manager",
+  "slug": "schedule-server-updates-with-azure-update-manager",
+  "historical_date": "2025-04-22",
+  "input_sha256": "f4790bcf9c01f8b87874773232c13d171dc31d6971768a7f2b060a7efa1135df",
+  "created_at": "2026-10-23T16:14:31.660743+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to schedule recurring OS updates for Azure and Arc VMs using Azure Update Manager maintenance configurations.",
+  "tags": [
+    "azure-update-manager",
+    "scheduled-patching",
+    "maintenance-configurations",
+    "azure-policy",
+    "vm-updates"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-171-learn-1.png",
+      "alt": "Screenshot that shows the Scheduled patching basics page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2ba35b4b812ebb926bf7f8eecaa4a7459f5c9b31/articles/update-manager/media/scheduled-updates/scheduled-patching-basics-page.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-12-06T17:38:09Z",
+      "sha256": "fea36a8b363d1a302490c1398d1649d723a4ccc52b5610cfa9369ae30f72fbde",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-171-learn-2.png",
+      "alt": "Screenshot that shows an example of installing one-time updates.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c917a8f1dfd918da55b431ee2778aeed1a3f3641/articles/update-manager/media/deploy-updates/install-updates-now-inline.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-03-07T05:17:52Z",
+      "sha256": "33b9f2eccb696f2f4245b622d1277107d67dbb9df391e00097bb7da99d997ff4",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/update-manager/overview.md",
+      "revision": "a3e2e7f6ca7b3a8f6525812fefb82aa1cde750f9",
+      "revision_date": "2025-02-18T03:59:50Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Update Manager overview",
+      "url": "https://learn.microsoft.com/en-us/azure/update-manager/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a3e2e7f6ca7b3a8f6525812fefb82aa1cde750f9/articles/update-manager/overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/update-manager/scheduled-patching.md",
+      "revision": "2ba35b4b812ebb926bf7f8eecaa4a7459f5c9b31",
+      "revision_date": "2024-12-06T17:38:09Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Scheduling recurring updates in Azure Update Manager",
+      "url": "https://learn.microsoft.com/en-us/azure/update-manager/scheduled-patching",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2ba35b4b812ebb926bf7f8eecaa4a7459f5c9b31/articles/update-manager/scheduled-patching.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/update-manager/deploy-updates.md",
+      "revision": "c917a8f1dfd918da55b431ee2778aeed1a3f3641",
+      "revision_date": "2025-03-07T05:17:52Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy updates and track results in Azure Update Manager",
+      "url": "https://learn.microsoft.com/en-us/azure/update-manager/deploy-updates",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c917a8f1dfd918da55b431ee2778aeed1a3f3641/articles/update-manager/deploy-updates.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 235-minute maximum duration for one-time updates apply to scheduled maintenance configurations as well, or is it strictly for on-demand deployments?",
+    "Are there specific RBAC roles required for the System Assigned Managed Identity used by the Azure Policy remediation, or does the built-in policy definition handle this automatically?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/schedule-server-updates-with-azure-update-manager.md",
+  "draft": true,
+  "word_count": 1003,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Update Manager is the unified service for managing updates across Azure VMs, on-premises servers, and Arc-connected machines.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "For Azure VMs, patch orchestration mode must be set to Customer Managed Schedules to use customer-defined maintenance configurations.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Driver updates are not supported by Azure Update Manager.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The maximum maintenance window for scheduled configurations is 3 hours 55 minutes.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Hourly schedules are not supported in the portal but can be used through the API.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Windows Update history in VM properties does not show updates installed via Azure Update Manager.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies Azure Update Manager is the only option by stating 'you need to migrate' and 'retired... so Azure Update Manager is now the unified service'. It omits that Azure Automation Update Management is still available for existing customers until August 2024 retirement, and that Azure Update Manager is a *new* unified service, not just a replacement. It also fails to mention that 'Customer Managed Schedules' is a prerequisite specifically for Azure VMs, not Arc.",
+      "fix": "Clarify that Azure Automation Update Management is retired as of August 31, 2024, and Azure Update Manager is the recommended successor. Explicitly state that 'Customer Managed Schedules' is required for Azure VMs but not for Arc-enabled machines."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'The portal interface does not support hourly schedules'. Source S2 states: 'The hourly option isn't supported in the portal but can be used through the API'. The draft is accurate but lacks the nuance that it *is* supported programmatically. More importantly, it omits the 'Maximum duration' limit of 235 minutes for one-time updates (Source S3) vs 3h55m for scheduled maintenance configurations, creating potential confusion for users attempting one-time deployments.",
+      "fix": "Specify that hourly schedules are available via API only. Clarify the distinction between the 3-hour 55-minute maintenance window for scheduled configurations (Source S2) and the 235-minute maximum duration for one-time updates (Source S3)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Azure Update Manager uses a maintenance control schedule instead of creating its own schedules'. This is misleading. It creates a 'Maintenance Configuration' resource which *uses* the Maintenance Control feature for Azure VMs. For Arc/On-prem, it uses its own orchestration. The draft conflates the underlying mechanism with the user-facing resource. It also fails to mention that driver updates are not supported, which is a critical limitation for some users.",
+      "fix": "Clarify that Azure Update Manager creates 'Maintenance Configurations' which leverage Azure Maintenance Control for Azure VMs. Explicitly state that driver updates are not supported by Azure Update Manager (Source S2, S3)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends using Azure Policy for dynamic scoping but does not mention the 'Dynamic Scope' feature of Azure Update Manager itself, which allows grouping machines by tags/regions without Policy. Source S1 lists 'Dynamic Scoping' as a key benefit. The draft over-relies on Policy as the only scaling mechanism.",
+      "fix": "Mention that Azure Update Manager supports 'Dynamic Scopes' for grouping machines by criteria (tags, regions) directly, in addition to Azure Policy integration, as a native feature for managing scope at scale."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'The Windows Update history in the VM properties does not show updates installed via Azure Update Manager'. While true, it omits that the 'Installed Updates' view in Control Panel shows CBS updates (Source S3). The draft's 'Verify and monitor' section is incomplete regarding where to find historical data for non-Azure VMs.",
+      "fix": "Clarify that for Azure VMs, Update Manager History is the primary source. For other machines, or to see CBS updates, users can check Control Panel > Programs > Installed Updates. Ensure the distinction between Azure VM history and general OS history is clear."
+    }
+  ]
+}

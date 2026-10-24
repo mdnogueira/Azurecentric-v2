@@ -1,0 +1,109 @@
+{
+  "id": "AZC-166",
+  "title": "Compare scale-up and scale-out for a compute workload",
+  "slug": "compare-scale-up-and-scale-out-for-a-compute-workload",
+  "historical_date": "2025-04-09",
+  "input_sha256": "a0070f40cee372863a6ec4f254e735d5b4104bb7c7d84531362c16590d3933de",
+  "created_at": "2026-10-23T16:05:17.360738+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Compare scale-up and scale-out for Azure Batch workloads using autoscale formulas and node sizing.",
+  "tags": [
+    "azure-batch",
+    "autoscaling",
+    "vm-sizes",
+    "compute-optimization",
+    "cloud-architecture"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-automatic-scaling.md",
+      "revision": "89cdf41d2d454e4eed49b127d5098b774a0f0fc1",
+      "revision_date": "2025-04-02T21:29:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Autoscale compute nodes in an Azure Batch pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-automatic-scaling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/89cdf41d2d454e4eed49b127d5098b774a0f0fc1/articles/batch/batch-automatic-scaling.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-pool-vm-sizes.md",
+      "revision": "cb70dd4da80344348b4d6a5c7c9fce521a7217f0",
+      "revision_date": "2025-04-08T02:59:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Choose VM sizes and images for pools",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-pool-vm-sizes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cb70dd4da80344348b4d6a5c7c9fce521a7217f0/articles/batch/batch-pool-vm-sizes.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific cost implications for using Spot VMs in autoscale formulas?",
+    "How does the $NodeDeallocationOption impact task completion time for different workloads?",
+    "What are the best practices for handling node preemption in Spot VM scenarios?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/compare-scale-up-and-scale-out-for-a-compute-workload.md",
+  "draft": true,
+  "word_count": 918,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Batch autoscale formulas use service-defined variables like $PendingTasks to determine node count.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You cannot change the VM size of an existing node in a Batch pool.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Batch supports almost all VM sizes available in Azure for Virtual Machine configuration pools.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Invented VM example: 'Standard_D4s_v3' is not listed in the provided sources. The sources mention 'FX' and 'Mv2' series but do not provide specific SKU examples or performance characteristics for D-series, making the cost/efficiency comparison speculative.",
+      "fix": "Remove specific SKU examples like 'Standard_D4s_v3'. Use generic descriptors (e.g., '4 vCPU VM') and rely on the source-provided command `az batch location list-skus` to demonstrate how to find valid sizes, avoiding unsupported performance claims."
+    },
+    {
+      "severity": "medium",
+      "problem": "Unsupported causal claim: States 'fewer nodes can be provisioned within the same core quota' as a limitation of scale-up. While true due to core consumption, the source does not frame this as a 'limitation' of scale-up itself, but rather a quota constraint. The phrasing implies scale-up is inherently inferior rather than a trade-off.",
+      "fix": "Rephrase to: 'Larger VM sizes consume more cores from your Batch account quota, potentially limiting the total number of nodes you can provision compared to smaller sizes, subject to your account's core limits.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "Vague/Unsupported cost claim: Asserts scale-out is 'generally more cost-effective for bursty workloads' and larger nodes 'might be more cost-effective if they reduce overhead.' The sources do not provide pricing data or overhead metrics to support these generalizations.",
+      "fix": "Remove absolute cost-effectiveness claims. State that cost depends on specific VM pricing and workload characteristics, and advise using the `az batch location list-skus` command and Azure pricing calculator for accurate estimation."
+    },
+    {
+      "severity": "low",
+      "problem": "Missing context on Spot VMs: The draft ignores the 'Preempted nodes' formula and Spot VM considerations present in Source S1, despite the review questions asking about them. This creates a gap in the 'scale-out' strategy discussion regarding cost-saving options.",
+      "fix": "Add a brief note that scale-out strategies can incorporate Spot VMs using variables like `$TargetLowPriorityNodes` and `$PreemptedNodeCount` to reduce costs, referencing the 'Preempted nodes' formula example from S1."
+    },
+    {
+      "severity": "low",
+      "problem": "Prose defect: The 'Verification and Next Steps' section contains generic advice ('monitor... adjust...') and repeats the 'cannot change size' constraint already stated in the 'Scale-Up' section, adding redundancy without new operational value.",
+      "fix": "Remove the redundant 'Verification' section. Conclude with the specific next action: 'Use `az batch location list-skus` to validate available VM sizes in your target region before creating the pool.'"
+    }
+  ]
+}

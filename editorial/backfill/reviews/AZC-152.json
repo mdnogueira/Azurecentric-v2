@@ -1,0 +1,134 @@
+{
+  "id": "AZC-152",
+  "title": "Plan an outage test that produces useful evidence",
+  "slug": "plan-an-outage-test-that-produces-useful-evidence",
+  "historical_date": "2025-02-28",
+  "input_sha256": "b98cde271e89599945c2267e6edd17bfada417695db934c3627aa5e164b433a4",
+  "created_at": "2026-10-23T15:45:56.405736+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan controlled outage tests using Chaos Studio to verify recovery logic, distinguishing control plane resilience from workload configuration.",
+  "tags": [
+    "chaos-studio",
+    "service-health",
+    "disaster-recovery",
+    "availability-zones",
+    "business-continuity"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-chaos-studio.md",
+      "revision": "4f57d4f04aa9edba690f1b691335d982f335e4da",
+      "revision_date": "2024-11-21T22:25:21Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability in Azure Chaos Studio",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-chaos-studio",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4f57d4f04aa9edba690f1b691335d982f335e4da/articles/reliability/reliability-chaos-studio.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/business-continuity-management-program.md",
+      "revision": "aa65007c6058f5708b19b42a0e3ac6c931e59987",
+      "revision_date": "2024-12-16T02:23:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Business continuity management program in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aa65007c6058f5708b19b42a0e3ac6c931e59987/articles/reliability/business-continuity-management-program.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "4ca63719858e419d8f7530f97881bcda9e66a67b",
+      "revision_date": "2025-02-27T17:22:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4ca63719858e419d8f7530f97881bcda9e66a67b/articles/reliability/incident-response.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-12-16T03:01:28Z; used previous public snapshot. Confirm continued applicability: articles/reliability/business-continuity-management-program.md"
+  ],
+  "open_questions": [
+    "Does the current Chaos Studio documentation specify the exact permissions required for the 'inject faults' action, or is it covered under general Contributor/Owner roles?",
+    "Are there specific prerequisites for enabling Chaos Studio in all the listed regions, such as specific resource types or configurations?",
+    "How does the 'zone down experience' described in S1 impact the collection of experiment metadata if the control plane is also affected?",
+    "Is there a recommended tool or script for automating the verification of data integrity after a Chaos Studio experiment?",
+    "What is the exact process for mapping logical availability zones to physical zones in a specific subscription, as mentioned in S3?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-an-outage-test-that-produces-useful-evidence.md",
+  "draft": true,
+  "word_count": 1104,
+  "claim_support_checks": [
+    {
+      "claim": "Chaos Studio's control plane is zone-redundant in supported regions.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Chaos Studio does not support cross-region failover.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure does not automatically replicate services over if there is a failure.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft tests services in canary environments to simulate total region failure.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Service Health provides automatic incident update alerts.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Chaos Studio 'supports zone redundancy as a default configuration' and that resources are 'automatically distributed'. Source S1 states Chaos Studio *resources* (the control plane) are zone-redundant, not the target workloads. This misleads users into thinking their VMs are automatically zone-redundant.",
+      "fix": "Clarify that Chaos Studio's *control plane* is zone-redundant. Target workloads (e.g., VMs) are not automatically zone-redundant; users must configure them. The tool injects faults; it does not auto-configure resilience."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to 'select the availability zone as the target' for a zone-level test. Chaos Studio targets specific Azure resources (e.g., VMs, NICs), not availability zones directly. This is a technical inaccuracy that would cause configuration errors.",
+      "fix": "Correct the step to specify targeting specific resources (e.g., Virtual Machines) within the scope of the experiment. Explain that the fault action (e.g., 'Stop VM') affects the resource, which may reside in a specific zone."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Chaos Studio 'does not support service-enabled cross-region failover'. While true, it implies this is a limitation of Chaos Studio rather than the services themselves. It fails to distinguish between Chaos Studio's scope and the service's capability.",
+      "fix": "Rephrase to: 'Chaos Studio operates within a single region. It cannot trigger cross-region failover because it does not manage cross-region replication or failover logic for services. Such actions require service-specific configurations.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using Azure Service Health to 'monitor the resources during the experiment'. Service Health reports *Microsoft-initiated* incidents or status changes, not real-time telemetry of user workloads. It is not a monitoring tool for experiment verification.",
+      "fix": "Replace with Azure Monitor or Application Insights for real-time telemetry (availability, latency). Use Service Health only to verify if the *Chaos Studio service itself* or underlying Azure infrastructure is degraded, not the user's app health."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph: 'By running controlled outage tests... you can reduce the risk...'. This violates the guidance to remove generic concluding paragraphs and end with a concrete next action.",
+      "fix": "Remove the final paragraph. End with a concrete verification step, such as: 'Review the experiment results in the Chaos Studio portal and update your runbook with the observed recovery time objectives.'"
+    }
+  ]
+}

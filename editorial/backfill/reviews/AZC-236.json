@@ -1,0 +1,144 @@
+{
+  "id": "AZC-236",
+  "title": "Check storage and network drivers in a Linux guest",
+  "slug": "check-storage-and-network-drivers-in-a-linux-guest",
+  "historical_date": "2025-10-22",
+  "input_sha256": "27dd6076d66ffde0427c7ceca9e1e18697bb48226a63d19c20821eb837fa7991",
+  "created_at": "2026-10-23T17:44:03.830926+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify Linux Hyper-V integration drivers and daemons using host PowerShell and guest commands.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "integration-services",
+    "troubleshooting",
+    "drivers"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-236-learn-1.png",
+      "alt": "Screen shot that shows the Windows Services pane",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/manage/media/HVServices.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-22T10:09:02Z",
+      "sha256": "d1ad1d345ee38b010a2e13d68ae71739e36e5de28718251a0cdf3869ba14e27e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Hyper-V Integration Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "revision": "a244f23072b2d8f4243146372c506a8948406cd3",
+      "revision_date": "2025-08-11T10:54:11Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Feature Descriptions for Linux and FreeBSD virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a244f23072b2d8f4243146372c506a8948406cd3/WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-08-11T13:30:23Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md"
+  ],
+  "open_questions": [
+    "Does Windows Server 2025 require a specific minimum kernel version for full integration service support, or is any current kernel sufficient?",
+    "Are there any known issues with hv_fcopy_daemon on specific Linux distributions that might require manual installation?",
+    "How does the host handle integration services if the guest kernel is updated but the host is not?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-storage-and-network-drivers-in-a-linux-guest.md",
+  "draft": true,
+  "word_count": 837,
+  "claim_support_checks": [
+    {
+      "claim": "Hyper-V Integration Services enhance virtual machine performance and provide convenience features by leveraging two-way communication with the Hyper-V host.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Linux integration services driver is named hv_utils.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "hv_vss_daemon is required to create live Linux virtual machine backups.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Linux guests using current kernels contain integration services built in.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You can check if hv_utils is loaded using lsmod | grep hv_utils.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to restart daemons via command line (kill/sudo). Source S1 explicitly states: 'As a best practice, you should only control integration services from Hyper-V... The matching service in the guest operating system stops or starts automatically when you change its status in Hyper-V.' Manual daemon management contradicts this and may cause instability.",
+      "fix": "Remove the manual daemon restart steps. Instruct users to enable/disable services via the host using `Enable-VMIntegrationService` or Hyper-V Manager, noting that the guest service starts/stops automatically in response."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims `hv_netvsc` and `hv_storvsc` presence confirms synthetic drivers are active. Source S1 lists these as modules used by `hv_vmbus`, not as the primary driver name. Source S2 describes 'Hyper-V specific Storage/Network device' features but does not map them to these specific module names in the verification step. This is a technical inaccuracy in driver identification.",
+      "fix": "Clarify that `hv_vmbus` is the bus driver and `hv_utils` is the core integration service driver. Verify synthetic functionality by checking host-side service status (Heartbeat, Shutdown) rather than assuming specific guest kernel module names indicate full driver health."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that checking `hv_utils` and daemons is sufficient to verify 'storage and network drivers'. Source S2 lists specific features (Jumbo frames, SR-IOV, etc.) that require additional configuration or hardware support. The draft omits that synthetic drivers alone do not guarantee all advanced network/storage features are active or supported.",
+      "fix": "Add a note that basic synthetic drivers provide core functionality, but advanced features (like SR-IOV or Jumbo Frames) require specific host/guest configurations and hardware support as detailed in Source S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft repeats the source citation link after almost every sentence and code block. This creates visual clutter and violates the guidance to 'Use a few well-placed source links rather than repeating the same citation after every sentence'.",
+      "fix": "Consolidate citations. Place a single source link at the end of the relevant section or paragraph, rather than after every claim or code snippet. Ensure the reading flow is conversational."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests checking `hv_kvp_daemon` for memory statistics. Source S1 and S2 describe KVP for key-value pairs and Dynamic Memory as separate features (Ballooning/Hot-Add). While KVP reports memory info, the draft conflates the daemon's purpose with the memory management mechanism itself.",
+      "fix": "Clarify that `hv_kvp_daemon` handles data exchange (including memory stats reporting), while Dynamic Memory operations are managed by the host via the balloon driver (`hv_balloon`), not directly by the KVP daemon."
+    }
+  ]
+}

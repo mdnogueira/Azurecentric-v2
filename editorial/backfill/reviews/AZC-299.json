@@ -1,0 +1,160 @@
+{
+  "id": "AZC-299",
+  "title": "Trace a request through application and platform logs",
+  "slug": "trace-a-request-through-application-and-platform-logs",
+  "historical_date": "2026-04-16",
+  "input_sha256": "17b3c4c9d7a58a03295608c50d92c674b6d9db1e2cdb5c8f0a41529ed5e4d0fc",
+  "created_at": "2026-10-23T19:12:15.194418+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Trace requests through Azure App Service and Functions using Application Insights Live Metrics and platform diagnostic logs.",
+  "tags": [
+    "azure-app-service",
+    "azure-functions",
+    "application-insights",
+    "diagnostic-logs",
+    "live-metrics",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-299-learn-1.png",
+      "alt": "Screenshot showing how to view Live Metrics Stream in the portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/cb6e08246d3d466793601b31b8bd60a3763a53e3/articles/azure-functions/media/functions-monitoring/live-metrics-stream.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-12-17T20:22:53Z",
+      "sha256": "92c92838baf6163ec93fd3d474e856e1925785b4302347b5382068040e815e29",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-299-learn-2.png",
+      "alt": "Screenshot that shows selections for displaying diagnostic settings and adding a diagnostic setting.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/325c75583dda04bae47dc591cc544cfaa3978957/articles/app-service/media/troubleshoot-diagnostic-logs/diagnostic-settings-page.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-08-12T15:36:24Z",
+      "sha256": "5a3e15087a10d2c1e99c7ad1ddbf11acd5537da0daf9d20079186fc7dc94b08c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/monitor-app-service.md",
+      "revision": "c3db28293b010aeb991d21fcbc63e481412afe39",
+      "revision_date": "2026-03-12T01:22:09Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Monitor Azure App Service",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c3db28293b010aeb991d21fcbc63e481412afe39/articles/app-service/monitor-app-service.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/streaming-logs.md",
+      "revision": "cb6e08246d3d466793601b31b8bd60a3763a53e3",
+      "revision_date": "2025-12-17T20:22:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Stream Execution Logs in Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/streaming-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cb6e08246d3d466793601b31b8bd60a3763a53e3/articles/azure-functions/streaming-logs.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/troubleshoot-diagnostic-logs.md",
+      "revision": "325c75583dda04bae47dc591cc544cfaa3978957",
+      "revision_date": "2025-08-12T15:36:24Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable Diagnostic Logging",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/325c75583dda04bae47dc591cc544cfaa3978957/articles/app-service/troubleshoot-diagnostic-logs.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-insights.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-resource-types.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics.md"
+  ],
+  "open_questions": [
+    "Does the built-in log stream for Azure Functions on Linux Consumption plan truly not work, or is it just limited to a single instance?",
+    "Are there any specific prerequisites for enabling Application Insights on older App Service stacks like PHP or Java that differ from the .NET/Node.js examples?",
+    "How does the sampling rate in Live Metrics affect the ability to trace rare errors, and is there a way to adjust it?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/trace-a-request-through-application-and-platform-logs.md",
+  "draft": true,
+  "word_count": 1122,
+  "claim_support_checks": [
+    {
+      "claim": "Live Metrics Stream is the recommended way to view streaming logs for Azure Functions as it supports all plan types and multiple instances.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Built-in log streaming for Azure Functions supports only a single instance and cannot be used with an app running on Linux in a Consumption plan.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Application Insights integration requires enabling the feature in the Azure portal, which restarts the app.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Built-in log streams in App Service show logs from the /home/LogFiles directory and are limited to a single instance.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Diagnostic settings can be used to send logs to storage accounts, event hubs, and Log Analytics workspaces.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses a screenshot from S3 (Diagnostic Settings page) to illustrate the 'Built-in logs' section. S3's screenshot shows the Diagnostic Settings configuration, not the 'Log stream' UI. This misleads the reader about where to find the built-in log stream.",
+      "fix": "Remove the screenshot from the 'Use built-in logs' section. The source S2 provides a screenshot for the built-in log stream in the portal; use that if a visual is required, or remove the image entirely to avoid confusion."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims built-in log streaming 'may not work at all on Linux' for Functions Consumption plans. S2 states it 'can't be used with an app running on Linux in a Consumption plan.' The draft's hedging ('may not work') is inaccurate and contradicts the source's definitive restriction.",
+      "fix": "Correct the statement to match S2: 'Built-in log streaming is not supported for Azure Functions running on Linux in a Consumption plan.' Remove the speculative 'may not work' phrasing."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a concluding paragraph starting with 'By using Application Insights... This approach allows you to...'. This violates the editorial guidance to remove generic concluding paragraphs beginning with 'By following', 'By starting', or similar structures.",
+      "fix": "Delete the final paragraph starting with 'By using Application Insights Live Metrics...'. End the article after the 'Verify the trace' section or the CLI command examples."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states built-in streams 'do not provide the correlation IDs'. While true for the raw stream view, S3 and S1 show that enabling Application Insights (which the draft recommends) provides this correlation. The draft contrasts the two methods but fails to clarify that the 'correlation' benefit comes from the AI integration, not the stream itself, which is slightly confusing.",
+      "fix": "Clarify that the built-in stream shows raw logs without the aggregated correlation view, whereas Live Metrics (powered by AI) provides the correlated trace. Ensure the distinction between 'raw log output' and 'correlated telemetry' is explicit."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Web server logs' in the built-in stream section. S3 notes Web Server Logging is only available for Windows apps. The draft implies it's available for both App Service and Functions generally, which might mislead Linux users.",
+      "fix": "Specify that Web Server Logging (IIS/W3C) is specific to Windows App Service. For Functions, the built-in stream primarily shows application logs. Adjust the text to reflect platform-specific availability."
+    }
+  ]
+}

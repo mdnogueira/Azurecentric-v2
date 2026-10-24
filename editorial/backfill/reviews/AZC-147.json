@@ -1,0 +1,155 @@
+{
+  "id": "AZC-147",
+  "title": "PowerShell 7.5 is available: review compatibility before upgrading automation",
+  "historical_date": "2025-02-15",
+  "created_at": "2026-10-23T23:23:16.450348+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Review PowerShell 7.5 compatibility before upgrading automation, focusing on .NET 9 changes and module support.",
+  "tags": [
+    "powershell",
+    "azure-automation",
+    "net-9",
+    "compatibility",
+    "upgrade"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://devblogs.microsoft.com/powershell/announcing-powershell-7-5-ga/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2025-02-12T21:34:13+00:00",
+      "published_at": "2025-02-12T21:34:13+00:00",
+      "checked_at": "2026-10-23T11:53:00.040416+00:00",
+      "title": "PowerShell 7.5 is available: review compatibility before upgrading automation",
+      "url": "https://devblogs.microsoft.com/powershell/announcing-powershell-7-5-ga/",
+      "snapshot_url": "https://devblogs.microsoft.com/powershell/announcing-powershell-7-5-ga/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2025-02-12T21:34:58+00:00"
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md",
+      "revision": "76e7822af488af90b2ebf072f30da42a0acadb41",
+      "revision_date": "2024-12-17T19:36:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Migrating from Windows PowerShell 5.1 to PowerShell 7",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/76e7822af488af90b2ebf072f30da42a0acadb41/reference/docs-conceptual/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/differences-from-windows-powershell.md",
+      "revision": "f60b3a440ad449d1f22981f254a748d1d0a85380",
+      "revision_date": "2024-04-02T18:13:24Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Differences between Windows PowerShell 5.1 and PowerShell 7.x",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f60b3a440ad449d1f22981f254a748d1d0a85380/reference/docs-conceptual/whats-new/differences-from-windows-powershell.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/module-compatibility.md",
+      "revision": "5090bddd6aa6c9d88d8279566731f9c67766f637",
+      "revision_date": "2023-06-28T18:28:51Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell 7 module compatibility",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/module-compatibility",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5090bddd6aa6c9d88d8279566731f9c67766f637/reference/docs-conceptual/whats-new/module-compatibility.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the specific Azure Automation runbook environment support .NET 9 dependencies for all custom modules?",
+    "Are there any internal modules not listed in the public compatibility table that require validation?",
+    "What is the rollback procedure if a critical module fails in PowerShell 7.5?"
+  ],
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2025-02-15"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove future year reference 2026",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#msi",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#zip",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-support-lifecycle"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/powershell-7-5-is-available-review-compatibility-before-upgrading-automation.md",
+  "draft": true,
+  "word_count": 972,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell 7.5 is built on .NET 9 and is a standard support release for 18 months.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell 7.4 is the current LTS release, supported until November 2026.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell 7.2 reached end of support on 8 November 2024.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell 7 installs side-by-side with Windows PowerShell 5.1 using separate paths and executables.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Az PowerShell module recommends PowerShell 7.0.6 LTS or higher.",
+      "source_id": "S4",
+      "span_found": false
+    },
+    {
+      "claim": "Breaking changes in .NET can affect PowerShell scripts, especially those calling .NET methods directly.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft invents an 'Azure Automation Runtime versions' portal blade and specific ARM template capabilities for switching PowerShell 7.5. The sources only discuss general installation methods (MSI, ZIP, Snap) and side-by-side coexistence. There is no evidence that Azure Automation runbook environments allow direct runtime version switching via a portal setting or that this is the standard upgrade path.",
+      "fix": "Remove the Azure Automation specific upgrade steps. Focus on the general compatibility review and testing strategy supported by the sources. If Azure Automation support for PS 7.5 is not documented in the provided sources, omit the specific infrastructure upgrade instructions to avoid inventing features."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'PowerShell 7.2 reached end of support on 8 November 2024' as a reason to upgrade. Source S1 states support ended, but Source S1 also identifies 7.4 as the 'current LTS'. The draft implies 7.2 is the only alternative, ignoring that 7.4 is the recommended LTS for stability. This creates a false dichotomy between 7.5 (standard) and 7.2 (EOL), ignoring the stable 7.4 LTS option.",
+      "fix": "Clarify that while 7.2 is EOL, 7.4 is the current LTS release supported until Nov 2026. Frame the decision as choosing between the stable 7.4 LTS and the new 7.5 standard release, rather than implying 7.2 is a viable current option."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'PowerShell 7 uses separate profiles... Ensure your automation scripts reference the correct paths.' This is vague and potentially misleading. Source S2 details the specific path changes (e.g., `$HOME\\Documents\\PowerShell`), but automation scripts should generally not hardcode profile paths. The draft also suggests running `Enable-PSRemoting` in Azure Automation, which is irrelevant for managed runbook workers.",
+      "fix": "Remove the instruction to update profile paths in automation scripts, as this is an end-user configuration detail, not an automation script requirement. Remove the `Enable-PSRemoting` step for Azure Automation, as remoting configuration is not applicable to managed runbook workers."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'PowerShell 7.5 is now generally available' but does not explicitly cite the announcement date (Feb 12, 2025) from Source S1, which is crucial for historical context. The draft also omits the Snap Store ownership change mentioned in Source S1 comments, which is a relevant operational detail for Linux automation.",
+      "fix": "Add the announcement date (Feb 12, 2025) to the introduction. Briefly mention the Snap Store maintenance change for Linux users as a practical consideration for deployment, citing the source discussion."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram node 'Verify .NET 9 API Usage' which is vague. Source S3 provides specific examples of breaking changes (e.g., `Split` overloads). The draft mentions `New-Object` but does not provide a concrete example of the breaking change or how to verify it.",
+      "fix": "Replace the vague diagram node with a specific action: 'Test .NET method overloads (e.g., String.Split)'. Add a brief note in the text about checking specific .NET method signatures if scripts use direct .NET calls, referencing Source S3."
+    }
+  ]
+}

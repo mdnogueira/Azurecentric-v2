@@ -1,0 +1,137 @@
+{
+  "id": "AZC-224",
+  "title": "Plan data movement before moving an HPC workload to Azure",
+  "slug": "plan-data-movement-before-moving-an-hpc-workload-to-azure",
+  "historical_date": "2025-09-17",
+  "input_sha256": "4f4ae3083c86d880ffcc19d88eafbbaf8bdaa3f7bf2741e1aa8451eec2f42d2d",
+  "created_at": "2026-10-23T17:26:10.028538+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan data movement for HPC workloads by choosing the right storage mount strategy for Azure Batch pools.",
+  "tags": [
+    "azure-batch",
+    "hpc",
+    "data-movement",
+    "azure-files",
+    "blobfuse",
+    "storage"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-rendering-storage-data-movement.md",
+      "revision": "620c6863058598118e6c421a78f1b58724748403",
+      "revision_date": "2025-08-29T16:14:36Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Storage and data movement for rendering",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-rendering-storage-data-movement",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/620c6863058598118e6c421a78f1b58724748403/articles/batch/batch-rendering-storage-data-movement.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/pool-file-shares.md",
+      "revision": "bb9e426cabbe0b3bf597d84424a5b22c16911c3f",
+      "revision_date": "2025-06-04T22:56:38Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure file share for Azure Batch pools",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/pool-file-shares",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/pool-file-shares.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/virtual-file-mount.md",
+      "revision": "bb9e426cabbe0b3bf597d84424a5b22c16911c3f",
+      "revision_date": "2025-06-04T22:56:38Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Mount a virtual file system on a pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/virtual-file-mount",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb9e426cabbe0b3bf597d84424a5b22c16911c3f/articles/batch/virtual-file-mount.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to configure specific firewall rules for the storage account to allow access from the Batch pool subnet?",
+    "What are the specific performance implications of using Blobfuse caching on nodes with small local temporary storage?",
+    "How does the cost of Azure Files compare to Blob Storage for high-concurrency workloads?",
+    "Are there any specific IAM roles required for the Batch service to access the storage account for mounting?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-data-movement-before-moving-an-hpc-workload-to-azure.md",
+  "draft": true,
+  "word_count": 1287,
+  "claim_support_checks": [
+    {
+      "claim": "Blobfuse allows mounting Azure Blob containers as a file system on Linux VMs.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Files supports mounting on both Windows and Linux Batch pools.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Blobfuse is not supported on Windows pools.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Mounting a virtual file system is not supported on pools created before August 8, 2019.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The maximum number of mounted file systems on a pool is 10.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Files mounts persist across tasks on the same node.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states Azure Files shares must be mounted each time a task runs because the connection is not persisted. S3 explicitly states mounting happens when a node joins, restarts, or is reimaged, and S2 confirms concurrent mounting is supported. This misleads users about connection persistence and operational overhead.",
+      "fix": "Correct the statement to reflect that mounts are configured at the pool level and persist across tasks on the same node. Clarify that the Batch agent handles mounting when nodes join or restart, rather than per-task."
+    },
+    {
+      "severity": "medium",
+      "problem": "The PowerShell example for Linux uses the drive letter 'S' in the mount configuration. S3 shows Linux mounts use directory paths (e.g., `/mnt/batch/tasks/fsmounts/S`) and environment variables, not drive letters. This is technically inaccurate for Linux environments.",
+      "fix": "Update the Linux example to use a directory path for the mount point and reference the `AZ_BATCH_NODE_MOUNTS_DIR` environment variable for accessing files, consistent with S3's Linux instructions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Blobfuse caches files on the node's local SSD. S1 mentions 'local SSD' but S3 and general Azure Batch knowledge indicate nodes use temporary storage (which may be HDD or SSD depending on size). Assuming SSD is an unsupported generalization.",
+      "fix": "Change 'local SSD' to 'local temporary storage' or 'node's local disk' to accurately reflect that the caching location depends on the specific VM size and storage configuration, not universally SSD."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' paragraph beginning with 'Before deploying...'. The editorial guidance explicitly forbids generic concluding paragraphs starting with such phrases.",
+      "fix": "Remove the entire 'Next steps' section. End the article after the verification troubleshooting steps, as the technical question is answered."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses outdated azcopy syntax in the text description (`/source:. /dest:...`). S1 shows this legacy syntax, but modern azcopy uses `azcopy copy`. While S1 is the source, the example is illustrative and should be noted as such or updated to current standards if possible, but strictly adhering to S1, it's a 'legacy' reference.",
+      "fix": "Mark the azcopy example as illustrative of legacy syntax or update to current `azcopy copy` syntax if supported by the broader context, or explicitly label it as 'legacy example from documentation' to avoid confusion for users running modern azcopy."
+    }
+  ]
+}

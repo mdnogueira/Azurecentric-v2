@@ -1,0 +1,130 @@
+{
+  "id": "AZC-154",
+  "title": "Check DNS configuration before investigating a domain problem",
+  "slug": "check-dns-configuration-before-investigating-a-domain-problem",
+  "historical_date": "2025-03-05",
+  "input_sha256": "515f414142bbd58236625fb9ae8a93060dfc113f75956c8fcaeb981f2f018554",
+  "created_at": "2026-10-23T15:49:03.927679+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot domain name resolution failures by checking DNS server configuration, recursion, and delegation before investigating application issues.",
+  "tags": [
+    "dns",
+    "troubleshooting",
+    "active-directory",
+    "windows-server",
+    "name-resolution"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/Reviewing-DNS-Concepts.md",
+      "revision": "e28a2171cdb0461e6808c79f9e78cae1970b0051",
+      "revision_date": "2025-01-06T16:31:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reviewing DNS Concepts",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/reviewing-dns-concepts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e28a2171cdb0461e6808c79f9e78cae1970b0051/WindowsServerDocs/identity/ad-ds/plan/Reviewing-DNS-Concepts.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/identity/ad-ds/plan/DNS-and-AD-DS.md",
+      "revision": "e28a2171cdb0461e6808c79f9e78cae1970b0051",
+      "revision_date": "2025-01-06T16:31:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "DNS and AD DS",
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/dns-and-ad-ds",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e28a2171cdb0461e6808c79f9e78cae1970b0051/WindowsServerDocs/identity/ad-ds/plan/DNS-and-AD-DS.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/networking/dns/troubleshoot/troubleshoot-dns-server.md",
+      "revision": "27c808f36a6012b42fe9b576bbd7bfb389dc4810",
+      "revision_date": "2022-10-31T09:55:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshooting DNS Servers",
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/27c808f36a6012b42fe9b576bbd7bfb389dc4810/WindowsServerDocs/networking/dns/troubleshoot/troubleshoot-dns-server.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The sources do not specify how to handle cases where the DNS server is listening on a non-standard port, other than checking for packet filters.",
+    "The sources do not provide details on how to verify Active Directory replication health specifically in the context of DNS zone data, only that it might be a cause.",
+    "The sources do not explain how to distinguish between a paused zone and an overloaded server beyond the nslookup response codes."
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-dns-configuration-before-investigating-a-domain-problem.md",
+  "draft": true,
+  "word_count": 891,
+  "claim_support_checks": [
+    {
+      "claim": "AD DS uses DNS name resolution services to allow clients to locate domain controllers and for domain controllers to communicate.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "DNS servers answer queries from cache, from hosted zones, or by querying other servers.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Recursive name resolution can be achieved using root hints or forwarding.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Broken delegations can be tested by querying for NS records with recursion off.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Zone transfer issues can be checked by forcing a zone refresh on the secondary server.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft concludes with a generic paragraph starting with 'By systematically checking...', which violates the instruction to remove generic concluding paragraphs. This adds no operational value and repeats the structure of the preceding sections.",
+      "fix": "Delete the final paragraph entirely. End the article immediately after the 'Test for broken delegations' section, as the technical question is fully answered by the verification steps provided in that section."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims flushing the resolver cache rules out 'stale cached data' but does not specify that `dnscmd /clearcache` requires administrative privileges. The source text explicitly states 'administrative Command Prompt window'. Omitting this permission context may cause permission errors for standard users.",
+      "fix": "Add 'Run in an administrative Command Prompt' to the step describing `dnscmd /clearcache` and 'Run in an administrative PowerShell window' for `Clear-DnsServerCache` to ensure the user has the necessary permissions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests testing root hints by querying for NS records of the root server. However, it does not explain that this test verifies the *server's* ability to reach the root, not the *root hints configuration* itself. If the server cannot reach the root, the hints might be correct but the network blocked. The distinction between network connectivity and configuration is vague.",
+      "fix": "Clarify that a timeout indicates either non-functioning root hints OR a network/firewall issue preventing access to the root servers. Explicitly state that verifying connectivity (ping) is the next step to distinguish between these two causes."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'DNS is the foundation that Active Directory Domain Services (AD DS) relies on'. While true, the source text is more precise: 'AD DS uses DNS... to make it possible for clients to locate domain controllers'. The draft's phrasing is slightly hyperbolic and less technically precise than the source.",
+      "fix": "Replace 'DNS is the foundation that AD DS relies on' with 'AD DS uses DNS name resolution services to enable clients to locate domain controllers and for controllers to communicate', aligning closer with the source text in S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions checking if the zone is 'paused' or 'overloaded' based on 'Server failure' or 'Query refused'. The source text links 'paused' to the General tab and 'overloaded' to the response. The draft implies these are the only two causes, missing other potential reasons for 'Query refused' (e.g., access control lists).",
+      "fix": "Add 'or restricted by access control' to the list of potential causes for 'Query refused' to avoid implying that only pause/overload states cause this response, ensuring the troubleshooting path is not prematurely narrowed."
+    }
+  ]
+}

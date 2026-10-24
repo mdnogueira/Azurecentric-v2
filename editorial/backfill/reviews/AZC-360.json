@@ -1,0 +1,127 @@
+{
+  "id": "AZC-360",
+  "title": "Build a migration handover the operations team can use",
+  "historical_date": "2026-10-04",
+  "created_at": "2026-10-23T23:47:57.275694+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Structure a migration handover using Azure Migrate data to ensure operational readiness.",
+  "tags": [
+    "azure-migrate",
+    "migration-handover",
+    "operations-readiness",
+    "dependency-mapping",
+    "assessment"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/prepare-for-migration.md",
+      "revision": "e011c818b34f3177fcc7285f7bcd72c0a1168f62",
+      "revision_date": "2026-09-24T08:59:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Prepare machines for migration with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/prepare-for-migration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e011c818b34f3177fcc7285f7bcd72c0a1168f62/articles/migrate/prepare-for-migration.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/concepts-migration-planning.md",
+      "revision": "e011c818b34f3177fcc7285f7bcd72c0a1168f62",
+      "revision_date": "2026-09-24T08:59:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Build a migration plan with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e011c818b34f3177fcc7285f7bcd72c0a1168f62/articles/migrate/concepts-migration-planning.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/how-to-migrate.md",
+      "revision": "e011c818b34f3177fcc7285f7bcd72c0a1168f62",
+      "revision_date": "2026-09-24T08:59:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Add migration tools in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/how-to-migrate",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e011c818b34f3177fcc7285f7bcd72c0a1168f62/articles/migrate/how-to-migrate.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the handover process include a specific template for the 'Post-Migration Verification' checklist?",
+    "How should the handover document handle workloads with 'Readiness unknown' status?",
+    "Is there a defined process for updating the handover document if dependencies change after migration?",
+    "Should the handover document include cost implications for the right-sized VMs recommended by Azure Migrate?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/motivations"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-a-migration-handover-the-operations-team-can-use.md",
+  "draft": true,
+  "word_count": 943,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Migrate assessment reports classify servers into four readiness states, which should be used to determine handover readiness.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Dependency visualization in Azure Migrate maps server relationships and ports, which is critical for defining post-migration connectivity.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Manual preparation steps, such as SAN policy configuration and fstab updates, must be documented and verified before migration.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Migrating end-of-support OS like Windows Server 2008 to Azure provides security updates.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Migrate OS upgrade uses a Custom Script Extension to perform an in-place upgrade. The source (S2) states Azure Migrate OS upgrade uses a Custom Script Extension, but the draft implies this is a general feature for all Windows migrations rather than a specific option. More critically, the draft does not distinguish between the 'Migration and modernization' tool (for VMs) and 'Azure Data Migration Service' (for databases), conflating their capabilities.",
+      "fix": "Clarify that the OS upgrade feature is a specific option within the Migration and modernization tool, not a universal behavior. Explicitly separate the guidance for VM migration (Migration and modernization) from database migration (Azure DMS) as described in S2. Remove the implication that all Windows migrations include an in-place upgrade capability."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that migrating end-of-support OS like Windows Server 2008 to Azure provides 'free three years of security updates'. While S2 mentions this, it is a specific historical offer/feature that may not be universally applicable or current in October 2026 without explicit verification. The draft presents it as a standard benefit without caveats about eligibility or duration limits.",
+      "fix": "Add a caveat that the security update extension is a specific feature subject to eligibility and may have time limits. Verify if this 'free three years' offer is still active in October 2026. If uncertain, phrase it as 'may provide extended security updates' and link to the specific end-of-support documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests that the operations team must 'manually configure the NSG rules' based on the dependency map. While true, it omits the context that Azure Migrate's dependency visualization is primarily for planning and may not provide real-time, automated NSG configuration. The draft implies a direct, simple mapping that might not account for complex network topologies or existing security policies.",
+      "fix": "Clarify that the dependency map is a planning tool for identifying required connectivity, not an automated configuration source. Emphasize that NSG rules must be designed and implemented based on security best practices and organizational policies, using the map as input, not as a direct instruction set."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Post-Migration Verification' checklist item but does not provide specific, actionable steps for verifying 'service status' or 'connectivity to dependencies'. This is vague and relies on the operations team's existing knowledge, which the handover is supposed to supplement.",
+      "fix": "Provide concrete examples for the verification checklist, such as 'Verify SQL Server service is running and listening on port 1433' or 'Ping the application server from the database server'. Link these checks to the specific dependencies identified in the map."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Hybrid Benefit' and 'Reserved Instances' as cost-saving options but does not explain how these impact the handover. The operations team needs to know if these benefits are applied to the migrated VMs to manage costs correctly.",
+      "fix": "Add a section in the handover record for 'Cost Management Configuration', noting whether Azure Hybrid Benefit or Reserved Instances are applied. Provide instructions for the operations team on how to verify these settings in the Azure portal or via PowerShell."
+    }
+  ]
+}

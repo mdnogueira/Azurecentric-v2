@@ -1,0 +1,152 @@
+{
+  "id": "AZC-259",
+  "title": "Use Advanced Hunting to test a Defender XDR hypothesis",
+  "slug": "use-advanced-hunting-to-test-a-defender-xdr-hypothesis",
+  "historical_date": "2025-12-25",
+  "input_sha256": "b2bf9b769965071d332887bc8bf815f846c7783a75d41f8dfa7f8d6e9f0591bc",
+  "created_at": "2026-10-23T18:14:41.208197+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Defender XDR Advanced Hunting to test a threat hypothesis with KQL, then validate findings before creating detection rules.",
+  "tags": [
+    "advanced-hunting",
+    "defender-xdr",
+    "microsoft-sentinel",
+    "threat-hunting",
+    "kql"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-259-learn-1.png",
+      "alt": "Screenshot of the hunting bookmarks table in the Log Analytics workspace.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/d5966b062c8d7ecdec74cb3b3c85b1e38b81cfeb/articles/sentinel/media/hunting/bookmark-table.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-10-10T09:00:25Z",
+      "sha256": "35a19e28ca082d32a4c06553bb4246cbd51f66b741ba8bff07371b9f84370c3d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-259-learn-2.png",
+      "alt": "Screenshot of custom time range.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/microsoft-365-docs/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/media/custom-time-range.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-04-23T02:31:27Z",
+      "sha256": "5902b3c7903c974f9f8e12c60a34d37818ea0134977d9260c5ca754276126bcb",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/hunting.md",
+      "revision": "d5966b062c8d7ecdec74cb3b3c85b1e38b81cfeb",
+      "revision_date": "2025-10-10T09:00:25Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Hunting capabilities in Microsoft Sentinel| Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/hunting",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d5966b062c8d7ecdec74cb3b3c85b1e38b81cfeb/articles/sentinel/hunting.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/microsoft-365-docs",
+      "path": "microsoft-365/security/defender/advanced-hunting-overview.md",
+      "revision": "bbffa703a5a0110b300ca66c9e0a596e6a158ed8",
+      "revision_date": "2024-04-23T02:31:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview - Advanced hunting",
+      "url": "https://github.com/MicrosoftDocs/microsoft-365-docs/blob/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/security/defender/advanced-hunting-overview.md",
+      "snapshot_url": "https://github.com/MicrosoftDocs/microsoft-365-docs/blob/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/security/defender/advanced-hunting-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/microsoft-365-docs",
+      "path": "microsoft-365/security/defender/advanced-hunting-behaviorentities-table.md",
+      "revision": "bbffa703a5a0110b300ca66c9e0a596e6a158ed8",
+      "revision_date": "2024-04-23T02:31:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "BehaviorEntities table in the advanced hunting schema",
+      "url": "https://github.com/MicrosoftDocs/microsoft-365-docs/blob/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/security/defender/advanced-hunting-behaviorentities-table.md",
+      "snapshot_url": "https://github.com/MicrosoftDocs/microsoft-365-docs/blob/bbffa703a5a0110b300ca66c9e0a596e6a158ed8/microsoft-365/security/defender/advanced-hunting-behaviorentities-table.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-04-23T03:02:50Z; used previous public snapshot. Confirm continued applicability: microsoft-365/security/defender/advanced-hunting-overview.md",
+    "Public document removed/moved on 2024-04-23T03:02:50Z; used previous public snapshot. Confirm continued applicability: microsoft-365/security/defender/advanced-hunting-behaviorentities-table.md"
+  ],
+  "open_questions": [
+    "The draft conflates Microsoft Defender XDR Advanced Hunting with Microsoft Sentinel Hunts. It suggests using Sentinel bookmarks to validate Defender XDR findings, but these are distinct data stores (Defender XDR tables vs. Log Analytics). Sentinel cannot directly query Defender XDR tables without integration, and the workflow described is technically incoherent.",
+    "The KQL example uses `Signer == \"\"` to find unsigned processes. This is syntactically incorrect for KQL; empty strings are rarely stored this way, and `Signer` often contains nulls or specific values. This will likely return zero results or errors, misleading the user.",
+    "The draft claims Advanced Hunting data is updated every 15 minutes for entity data and 'almost immediately' for event data. This is a generalization that ignores ingestion delays, data freshness limits, and potential latency in Defender XDR, which can vary by workload.",
+    "The draft states that creating a custom detection rule in Advanced Hunting 'runs automatically'. It omits the critical context that this requires proper licensing, role permissions, and that the rule must be explicitly saved and enabled in the detection management portal, not just created in the query editor."
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-advanced-hunting-to-test-a-defender-xdr-hypothesis.md",
+  "draft": true,
+  "word_count": 951,
+  "claim_support_checks": [
+    {
+      "claim": "Advanced Hunting allows exploration of up to 30 days of raw data.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Advanced Hunting data uses UTC timezone for queries.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft Sentinel is generally available in the Microsoft Defender portal.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Bookmarks in Sentinel allow preserving relevant queries and annotating findings.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft conflates Microsoft Defender XDR Advanced Hunting with Microsoft Sentinel Hunts. It suggests using Sentinel bookmarks to validate Defender XDR findings, but these are distinct data stores (Defender XDR tables vs. Log Analytics). Sentinel cannot directly query Defender XDR tables without integration, and the workflow described is technically incoherent.",
+      "fix": "Remove the Sentinel validation section. Focus solely on Defender XDR Advanced Hunting for testing hypotheses. If Sentinel is required, explain that data must first be forwarded to Log Analytics, which is not implied by the current text."
+    },
+    {
+      "severity": "high",
+      "problem": "The KQL example uses `Signer == \"\"` to find unsigned processes. This is syntactically incorrect for KQL; empty strings are rarely stored this way, and `Signer` often contains nulls or specific values. This will likely return zero results or errors, misleading the user.",
+      "fix": "Replace with a valid pattern, such as `where Signer == \"\" or isempty(Signer)` or `where Signer !startswith \"Microsoft\"`. Mark clearly as illustrative and unrun, noting that schema specifics may vary."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Advanced Hunting data is updated every 15 minutes for entity data and 'almost immediately' for event data. This is a generalization that ignores ingestion delays, data freshness limits, and potential latency in Defender XDR, which can vary by workload.",
+      "fix": "Qualify the timing claims. State that data availability depends on sensor transmission and service processing, and advise checking the specific table's documentation for expected latency rather than asserting fixed intervals."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that creating a custom detection rule in Advanced Hunting 'runs automatically'. It omits the critical context that this requires proper licensing, role permissions, and that the rule must be explicitly saved and enabled in the detection management portal, not just created in the query editor.",
+      "fix": "Clarify that Advanced Hunting queries are for investigation. To create a detection rule, users must use the 'Create Alert Rule' workflow in the Defender portal, which involves configuring severity, tactics, and enabling the rule, not just saving a query."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot of the Sentinel bookmarks table in Log Analytics but attributes it to validating Defender XDR findings. This is visually and contextually misleading as the screenshot depicts a Sentinel/Log Analytics artifact, not a Defender XDR interface element.",
+      "fix": "Remove the Sentinel screenshot. If a screenshot is needed, use one from the Defender XDR Advanced Hunting interface (e.g., the query builder or results view) that directly corresponds to the step being described."
+    }
+  ]
+}

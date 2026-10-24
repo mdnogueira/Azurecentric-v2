@@ -1,0 +1,132 @@
+{
+  "id": "AZC-350",
+  "title": "Plan maintenance with only one spare node",
+  "slug": "plan-maintenance-with-only-one-spare-node",
+  "historical_date": "2026-09-06",
+  "input_sha256": "d132f26d1069e1ffb61ef1fcb880e957cda251cdfd6fd3fc887f83e0231e8b4a",
+  "created_at": "2026-10-23T20:23:25.260691+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan maintenance on a two-node cluster with one spare node using CAU, ensuring quorum is maintained by moving roles before maintenance.",
+  "tags": [
+    "failover-clustering",
+    "cluster-aware-updating",
+    "quorum",
+    "windows-server-2025",
+    "maintenance"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/cluster-aware-updating.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Cluster-Aware Updating overview",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/cluster-aware-updating",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/cluster-aware-updating.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/cluster-aware-updating-requirements.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Cluster-Aware Updating requirements and best practices",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/cluster-aware-updating-requirements",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/cluster-aware-updating-requirements.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "revision": "75d309def26d9fd18a08303db8bd4b449cbf372c",
+      "revision_date": "2025-09-22T10:07:26Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/75d309def26d9fd18a08303db8bd4b449cbf372c/WindowsServerDocs/failover-clustering/failover-clustering-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does Windows Server 2025 have any specific requirements for CAU that differ from previous versions?",
+    "Are there any known issues with CAU and specific clustered roles in Windows Server 2025?",
+    "What is the recommended quorum witness type for a two-node cluster in a branch office scenario?",
+    "How does CAU handle pre-update and post-update scripts in a two-node cluster?",
+    "Are there any performance implications of using a file share witness versus a cloud witness?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-maintenance-with-only-one-spare-node.md",
+  "draft": true,
+  "word_count": 680,
+  "claim_support_checks": [
+    {
+      "claim": "CAU automates the update process by putting each node into maintenance mode, moving clustered roles, installing updates, and restarting the node.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "In a two-node cluster, the quorum model is typically 'Node Majority', requiring a majority of votes for the cluster to remain operational.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "With a witness, the quorum model becomes 'Node and File Share Majority', allowing the cluster to remain operational if one node is in maintenance mode.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "You can add a file share witness using the Set-ClusterQuorum cmdlet.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "CAU can be invoked using the Invoke-CauRun cmdlet.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims a two-node cluster 'cannot survive the loss of one node while the other is in maintenance mode' without a witness. This is factually incorrect for CAU. CAU moves clustered roles off the node being updated before putting it into maintenance mode. Since the roles are active on the remaining node, that node maintains quorum (1 vote) and the cluster remains healthy. A witness is only required if the node is rebooted or fails while holding roles, or for specific quorum models like Node Only with an even number of nodes, but CAU's sequential nature avoids this.",
+      "fix": "Remove the assertion that a witness is required to maintain quorum during CAU updates. Clarify that CAU moves roles first, allowing the remaining node to hold quorum. Mention that a witness is beneficial for fault tolerance against simultaneous node failure or power loss, but not strictly required for the sequential CAU process itself."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Set-ClusterQuorum -FileShareWitness` to add a witness. This cmdlet is not standard; the correct cmdlet is `Set-ClusterQuorum -NodeAndFileShareMajority` or `Set-ClusterQuorum -FileShareMajority` depending on the desired model, or using the GUI. Furthermore, the draft implies the witness is needed for the CAU process itself, which is misleading as noted in Issue 1.",
+      "fix": "Correct the PowerShell command to `Set-ClusterQuorum -NodeAndFileShareMajority -WitnessPath '\\\\Server\\Share'`. Remove the implication that this step is mandatory for CAU to function, as CAU works without a witness if roles are moved first."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Windows Server 2025 introduces several improvements to failover clustering and CAU' without citing specific features or changes. This is vague and potentially misleading if no specific CAU changes exist in 2025 compared to 2022.",
+      "fix": "Remove the vague claim about 'several improvements' unless specific, documented changes for Windows Server 2025 are cited. If no specific CAU changes are documented, state that CAU functionality remains consistent with previous versions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'The remaining node has only 1 vote, which is not a majority of the original 2. The cluster will lose quorum and shut down.' This is incorrect because quorum is calculated based on the *current* configured quorum model and active votes, not the 'original' count. In a Node Majority model with 2 nodes, if one node is offline (but roles moved), the remaining node has 1 vote. If the quorum model is Node Majority, 1 out of 2 is not a majority, so the cluster *would* lose quorum if the node is truly offline. However, CAU puts the node in maintenance mode, which might still count as a vote depending on configuration, but more importantly, the roles are moved. The key error is the assumption that the node's vote is lost *before* the roles are moved or that the cluster shuts down *during* the role move. The cluster shuts down if quorum is lost *while* roles are running. CAU prevents this by moving roles first.",
+      "fix": "Clarify that CAU moves clustered roles to the surviving node *before* putting the target node into maintenance mode. This ensures the surviving node holds the workloads and, if a witness is present, maintains quorum. Without a witness, a 2-node cluster in Node Majority mode *does* lose quorum if one node is completely offline, but CAU's sequence (move roles, then maintenance) is designed to avoid this by keeping the surviving node active and healthy. If no witness is used, the cluster *will* lose quorum if the node is rebooted or fails while in maintenance mode, but the initial role move keeps it up. The draft's logic is flawed."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft implies that a two-node cluster *must* have a witness to use CAU. This is a dangerous misconception. While a witness is best practice for high availability, CAU can technically run on a 2-node cluster without a witness if the administrator accepts the risk that a node failure during maintenance (or a power outage) will cause quorum loss. The draft presents the witness as a technical requirement for CAU to function, which is false. CAU will execute, but the cluster is vulnerable.",
+      "fix": "Rephrase to state that while CAU can run on a 2-node cluster without a witness, it is highly recommended to configure a witness to prevent quorum loss in case of unexpected node failure or power loss during the maintenance window. Do not present the witness as a strict prerequisite for CAU execution."
+    }
+  ]
+}

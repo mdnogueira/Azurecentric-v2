@@ -1,0 +1,131 @@
+{
+  "id": "AZC-129",
+  "title": "Plan private DNS zones before adding private endpoints",
+  "historical_date": "2024-12-26",
+  "created_at": "2026-10-24T00:05:33.473297+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan private DNS zones before adding private endpoints to ensure correct resolution and avoid connectivity failures.",
+  "tags": [
+    "azure-private-link",
+    "private-dns",
+    "private-endpoints",
+    "dns-configuration",
+    "networking"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/private-endpoint-dns.md",
+      "revision": "91e07a4dfdc19862fe0136239783003c8099fab9",
+      "revision_date": "2024-12-19T22:00:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Private Endpoint private DNS zone values",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/91e07a4dfdc19862fe0136239783003c8099fab9/articles/private-link/private-endpoint-dns.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/dns/private-dns-overview.md",
+      "revision": "356b100e9f430ab719042b17f04d0412eb5e4082",
+      "revision_date": "2024-08-09T20:03:48Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "What is Azure Private DNS?",
+      "url": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/356b100e9f430ab719042b17f04d0412eb5e4082/articles/dns/private-dns-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/private-endpoint-overview.md",
+      "revision": "afd98e575793c62a502c5dc77e4c732827e1a30a",
+      "revision_date": "2024-12-04T21:14:46Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "What is a private endpoint?",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/afd98e575793c62a502c5dc77e4c732827e1a30a/articles/private-link/private-endpoint-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the article clearly distinguish between the DNS requirements for different Azure services (e.g., Storage vs. SQL)?",
+    "Is the explanation of split-horizon DNS clear enough for a practitioner to implement without confusion?",
+    "Are the troubleshooting steps specific enough to address common DNS resolution failures?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-private-dns-zones-before-adding-private-endpoints.md",
+  "draft": true,
+  "word_count": 1339,
+  "claim_support_checks": [
+    {
+      "claim": "A private endpoint alone does not disable public access or fix DNS.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Existing Private DNS Zones linked to a single Azure service should not be associated with two different Azure service Private Endpoints.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Private endpoint private DNS zone configurations will only automatically generate if you use the recommended naming scheme.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You can create private endpoints only on a General Purpose v2 (GPv2) storage account.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Private DNS provides a reliable and secure DNS service for your virtual networks without the need to configure a custom DNS solution.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure creates a CNAME on public DNS that redirects to the private domain. This is factually incorrect; Azure creates an A record pointing to the public IP. The 'privatelink' domain is a separate private zone, not a redirect target of the public zone.",
+      "fix": "Remove the claim about public CNAME redirection. State that public DNS resolves to the public IP, while the private DNS zone (using the recommended privatelink naming) provides the A record for the private IP. Cite S1 and S3 for correct resolution mechanics."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states existing private DNS zones linked to a single service should not be associated with two different Azure service Private Endpoints. This is a misinterpretation. The caution applies to mixing *different* Azure services in one zone or overwriting records. A single zone can host records for multiple endpoints of the *same* service type.",
+      "fix": "Clarify that one zone per service type (e.g., `privatelink.blob.core.windows.net`) is standard. Warn against placing records for *different* services (e.g., Storage and SQL) in the same zone, which causes conflicts. Cite S1 caution block."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that private endpoint DNS configuration is always manual or requires explicit linking during creation. It omits that using the recommended naming scheme allows Azure to automatically configure the DNS integration (auto-registration of the endpoint's A record) without manual intervention.",
+      "fix": "Explicitly state that using the recommended zone names enables automatic DNS configuration for the private endpoint. Mention that manual configuration is only needed if deviating from the recommended naming. Cite S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests creating separate DNS zones for each subresource (blob, file, etc.) of Azure Storage. While true for distinct FQDNs, it misses that these are distinct *zones*, not just records. The draft conflates 'zones' and 'records' in the Storage example, potentially confusing readers about zone scope.",
+      "fix": "Clarify that Azure Storage requires *separate private DNS zones* for each subresource (blob, file, queue, table) because they have different FQDNs. Do not imply they share a zone. Cite S1 table for distinct zone names."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic conclusion paragraph starting with 'Planning your private DNS zones is not an afterthought...'. This violates the editorial guidance to remove stock conclusion sections and end with a concrete verification or next action.",
+      "fix": "Remove the entire 'Conclusion' section. End the article immediately after the 'Handling Split-Horizon DNS' section or the verification steps, ensuring the final sentence is a concrete action like 'Verify resolution using nslookup.'"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "AZC-080",
+  "title": "Troubleshoot a Sentinel connector that stopped sending data",
+  "slug": "troubleshoot-a-sentinel-connector-that-stopped-sending-data",
+  "historical_date": "2024-08-11",
+  "input_sha256": "af478dcd3cef3656f34db0dda14dea947ea4543e7030bd1f97e68d51b59a0956",
+  "created_at": "2026-10-23T14:01:44.007806+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a Microsoft Sentinel data connector that has stopped sending data using health monitoring.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-080-learn-1.png",
+      "alt": "Screenshot of a workbook template with required data types shown in the details pane.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3039337ab866fdd436bc9652f525b29ce7c40f34/articles/sentinel/media/monitor-your-data/workbook-template-azure-portal.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-05-30T16:47:46Z",
+      "sha256": "d2409d31939f51f8bd6f4004a54dae8672e44f808296b49b5cb4eefd84204e70",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/monitor-data-connector-health.md",
+      "revision": "76d700c2ebedfe6247bb83b01feedc54a0d97f81",
+      "revision_date": "2024-02-11T19:30:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor the health of your Microsoft Sentinel data connectors",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/monitor-data-connector-health",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/76d700c2ebedfe6247bb83b01feedc54a0d97f81/articles/sentinel/monitor-data-connector-health.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/health-audit.md",
+      "revision": "b81c1edc70960fbdbc5066dc0c6130cdc2e03f31",
+      "revision_date": "2024-08-04T06:56:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Auditing and health monitoring in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/health-audit",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b81c1edc70960fbdbc5066dc0c6130cdc2e03f31/articles/sentinel/health-audit.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/monitor-your-data.md",
+      "revision": "3039337ab866fdd436bc9652f525b29ce7c40f34",
+      "revision_date": "2024-05-30T16:47:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Visualize your data using workbooks in Microsoft Sentinel | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/monitor-your-data",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3039337ab866fdd436bc9652f525b29ce7c40f34/articles/sentinel/monitor-your-data.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/troubleshoot-a-sentinel-connector-that-stopped-sending-data.md",
+  "draft": true,
+  "word_count": 1010,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the SentinelHealth table is 'only populated if you have turned on the health monitoring feature' and implies it must be enabled to query. Source S1 states the table is created at the first success or failure event, and S2 notes it is in Preview. The draft omits the critical context that this is a Preview feature with limited connector support, potentially misleading users into thinking it is a universal, GA solution.",
+      "fix": "Clarify that SentinelHealth is a Preview feature with limited connector support (S1). Explicitly state that it is not a universal replacement for general data volume checks and is not available for all connectors, requiring alternative methods for unsupported types."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft instructs users to search for 'health' in the Content Hub to find the workbook. S1 specifies searching for 'health' in the Workbooks Templates tab or Content Hub, but S3 details the specific navigation path. The draft's step 1 ('Content hub') and step 2 ('Install') conflates two different installation methods described in S1 (Content Hub vs. Workbooks Templates). This creates ambiguity about whether the user should install from Content Hub or save from Templates.",
+      "fix": "Align steps with S1: Either install via Content Hub or save from Workbooks > Templates. Provide a single, clear path. For example: 'In Workbooks > Templates, search for Data collection health monitoring, then select Save to create an editable copy.' Remove the redundant Content Hub step if focusing on the workbook template."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the SentinelHealth table 'is only populated if you have turned on the health monitoring feature' and cites S2. However, S1 states the table is created at the first success or failure event. S2 mentions enabling health monitoring is required to start collecting data. The draft fails to mention that the SentinelHealth table is in Preview (S1, S2), which carries legal and stability implications. This omission is a significant context gap for production troubleshooting.",
+      "fix": "Add a clear disclaimer that SentinelHealth is in Preview (S1, S2). Clarify that while enabling health monitoring is required, the table's availability is limited to specific connectors (S1). Do not present it as a definitive source for all connectors."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's Kusto query uses `SentinelHealth` directly. S2 recommends using the pre-built function `_SentinelHealth()` for backward compatibility. The draft's query is functional but not best practice according to S2. Additionally, the draft does not mention that the SentinelHealth table is not billable (S2), which is useful context for users concerned about cost.",
+      "fix": "Update the Kusto query to use `_SentinelHealth()` as recommended by S2. Add a note that the SentinelHealth table is not billable (S2), which may reassure users about cost implications of frequent querying."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's conclusion 'This proactive approach ensures that you are aware...' is a generic concluding paragraph. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or 'This approach ensures'.",
+      "fix": "Remove the final concluding paragraph. End with the verification step: 'If the connector is still not sending data after your changes, check the ExtendedProperties column again for new error messages.'"
+    }
+  ]
+}

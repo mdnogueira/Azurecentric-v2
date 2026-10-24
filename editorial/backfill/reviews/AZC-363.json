@@ -1,0 +1,137 @@
+{
+  "id": "AZC-363",
+  "title": "Review network boundaries before connecting another environment",
+  "slug": "review-network-boundaries-before-connecting-another-environment",
+  "historical_date": "2026-10-12",
+  "input_sha256": "1d1b7413567722e176c910e8ffe81d07994dfc0d042ab323382b9349aa3e123b",
+  "created_at": "2026-10-23T20:41:12.071133+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Review address spaces and peering constraints before connecting virtual networks to avoid routing conflicts and connectivity failures.",
+  "tags": [
+    "azure-virtual-network",
+    "peering",
+    "networking",
+    "security",
+    "architecture"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/concepts-and-best-practices.md",
+      "revision": "5d01c89a14c3b67b31fa94104e4068ed043110a3",
+      "revision_date": "2025-12-09T10:45:12Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Virtual Network Concepts and Best Practices",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5d01c89a14c3b67b31fa94104e4068ed043110a3/articles/virtual-network/concepts-and-best-practices.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/virtual-network-peering-overview.md",
+      "revision": "8f168d469a8d1063c209dc46a9fd39b606bc9d90",
+      "revision_date": "2026-09-17T02:26:23Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Virtual Network Peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8f168d469a8d1063c209dc46a9fd39b606bc9d90/articles/virtual-network/virtual-network-peering-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/secure-virtual-network.md",
+      "revision": "4dab96af27a3c909687325c1275044dfc5ce7291",
+      "revision_date": "2026-09-28T21:49:46Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Secure your Azure Virtual Network deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/secure-virtual-network",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4dab96af27a3c909687325c1275044dfc5ce7291/articles/virtual-network/secure-virtual-network.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/security/zero-trust-security-horizontal.md"
+  ],
+  "open_questions": [
+    "How should the summarizedGatewayPrefixes property be configured for complex hub-and-spoke topologies?",
+    "What are the specific VM size limitations for Azure Virtual Network encryption?",
+    "How does Azure Virtual Network Manager connectivity configurations scale beyond traditional peering limits in practice?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-network-boundaries-before-connecting-another-environment.md",
+  "draft": true,
+  "word_count": 925,
+  "claim_support_checks": [
+    {
+      "claim": "Peering fails if address spaces overlap.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Peering is not transitive.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Global peering has constraints with basic load balancers.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Gateway transit allows spoke to use hub's gateway.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Default connectivity between peered networks is open.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "NSG flow logs are being retired.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims resizing address space works 'without downtime on the currently peered address space' and advises syncing after 'every resize'. Source S2 states peers 'must sync' and recommends running sync after every operation, but does not claim zero downtime for the peering session itself, nor does it support the implication that sync is a mandatory operational step for every single change rather than a recommendation for consistency. The 'no downtime' claim is risky for production systems.",
+      "fix": "Clarify that while the peering relationship remains active, address space changes require a sync operation to propagate. Remove the absolute 'without downtime' phrasing to avoid implying the peering state is unaffected by the underlying configuration change process. Cite S2's recommendation to sync after operations for consistency."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'You can't route between virtual networks with a UDR that specifies an Azure ExpressRoute gateway as the next hop type.' Source S2 confirms this constraint. However, the draft presents this as a general routing limitation without context that this applies specifically to UDR next-hop types in the context of peering. It is technically accurate but lacks the nuance that this is a specific peering constraint, not a general UDR limitation.",
+      "fix": "Retain the constraint but explicitly frame it as a limitation of Virtual Network Peering with UDRs, as stated in S2. Ensure the reader understands this prevents using an ExpressRoute gateway as a next-hop for traffic destined for a peered VNet via UDR."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'Azure Virtual Network encryption' and its limitations. Source S3 describes this feature but the draft does not include the specific constraints (e.g., supported VM sizes, Accelerated Networking requirements) that are critical for implementation. This is a vague how-to step omission for a security feature.",
+      "fix": "Add a specific warning to verify supported VM sizes and Accelerated Networking requirements before enabling Azure Virtual Network encryption, as detailed in S3. Do not present it as a universal setting."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section on 'Verify connectivity and routing' suggesting checking effective routes. While supported by S2, the draft does not mention that this verification is part of troubleshooting, not a pre-requisite step for creation. It implies a procedural step that might be unnecessary for simple peerings.",
+      "fix": "Reframe the verification step as a troubleshooting or validation action using Network Watcher, rather than a mandatory pre-creation step. Cite S2's 'Troubleshoot' section."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'NSG flow logs are being retired' and cites S3. However, the draft does not mention the migration path to 'virtual network flow logs' which is the primary action item for users. This is a missing destructive/cost context (legacy resource retirement).",
+      "fix": "Explicitly state that NSG flow logs are retiring and users must migrate to virtual network flow logs, as per S3. Include the deadline (Sept 30, 2027) and the restriction on creating new NSG flow logs after June 30, 2025."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "AZC-266",
+  "title": "Plan ExpressRoute resilience beyond the primary connection",
+  "slug": "plan-expressroute-resilience-beyond-the-primary-connection",
+  "historical_date": "2026-01-14",
+  "input_sha256": "933efbf3a86e303a173a2d054406ed8540613e25fcf944a3982eda8babb5fe5e",
+  "created_at": "2026-10-23T18:25:47.194126+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan ExpressRoute disaster recovery using geo-redundant circuits and BGP path selection.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-266-learn-1.png",
+      "alt": "Screenshot of configuring connection weight via Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/b163398b134f2251d2a24bfdba02ed6e0551d16e/articles/expressroute/media/designing-for-disaster-recovery-with-expressroute-pvt/configure-weight.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-09T12:03:25Z",
+      "sha256": "c2553c39264febff366ecb81dc66f8b6b06383f0c8a46dd70bdd0893575aa41f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-266-learn-2.png",
+      "alt": "Screenshot of the ExpressRoute cheat sheet for accessing information quickly.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c9ce326462ba65afd1ef40895dd4b420e4762606/articles/expressroute/media/expressroute-introduction/cheat-sheet.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-11-10T20:37:12Z",
+      "sha256": "8d2bd3aefad8fe66b6d9197618f55ba7ee87ac127b86bcd7885b84aad2e49531",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering.md",
+      "revision": "b163398b134f2251d2a24bfdba02ed6e0551d16e",
+      "revision_date": "2025-09-09T12:03:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure ExpressRoute: Designing for disaster recovery",
+      "url": "https://learn.microsoft.com/en-us/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b163398b134f2251d2a24bfdba02ed6e0551d16e/articles/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/expressroute/expressroute-introduction.md",
+      "revision": "c9ce326462ba65afd1ef40895dd4b420e4762606",
+      "revision_date": "2025-11-10T20:37:12Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure ExpressRoute Overview: Connect over a private connection",
+      "url": "https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c9ce326462ba65afd1ef40895dd4b420e4762606/articles/expressroute/expressroute-introduction.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/expressroute/virtual-network-connectivity-guidance.md",
+      "revision": "2666ad40250d82d8e4383fb672286eaa8f770da9",
+      "revision_date": "2025-06-06T20:14:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connectivity between virtual networks over Azure ExpressRoute",
+      "url": "https://learn.microsoft.com/en-us/azure/expressroute/virtual-network-connectivity-guidance",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2666ad40250d82d8e4383fb672286eaa8f770da9/articles/expressroute/virtual-network-connectivity-guidance.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-expressroute-resilience-beyond-the-primary-connection.md",
+  "draft": true,
+  "word_count": 1406,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot captioned 'Screenshot of configuring connection weight via Azure portal.' The editorial guidance explicitly forbids adding visible Microsoft Learn screenshot or permission captions. The image is also redundant as the source already contains it.",
+      "fix": "Remove the image insertion and any associated caption text. The guidance states: 'Do not add visible Microsoft Learn screenshot or permission captions.' Rely on the textual description of the configuration step instead."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that using different metros 'lowers the chance of a single event taking out both links.' This is a probabilistic claim presented as a general fact without defining the scope of 'single event' (e.g., metro-specific vs. regional). It lacks the nuance that geopolitical region boundaries define this risk.",
+      "fix": "Clarify that selecting a secondary location in a different metro within the same geopolitical region reduces risk from metro-specific failures, but note that cross-geopolitical redundancy requires Premium SKU. Cite the specific constraint regarding geopolitical regions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Azure load-balances on-premises bound traffic across a maximum of 4 ExpressRoute circuits using ECMP.' This is a specific technical limit that may vary by gateway type or configuration. It is presented as a universal rule without qualifying that this applies to the specific scenario of identical route advertisements.",
+      "fix": "Qualify the ECMP limit by specifying it applies when routes are advertised identically. Ensure the context makes clear this is the default behavior before path selection techniques are applied, as described in the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeatedly cites the same source URL for every claim, creating visual clutter and breaking reading flow. The guidance advises using 'a few well-placed source links rather than repeating the same citation after every sentence.'",
+      "fix": "Consolidate citations. Use a single link at the start of the section or paragraph where the source is first introduced, rather than appending the URL after every individual claim or sentence."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Enabling BFD... may take up to 180 seconds under some failure conditions.' This is a specific performance metric that might be misleading if interpreted as a guaranteed worst-case for all scenarios. It lacks context on what 'some failure conditions' entails.",
+      "fix": "Retain the 180-second figure but explicitly attribute it to the source's warning about 'some failure conditions' to avoid implying it is the standard convergence time for all BFD-enabled circuits."
+    }
+  ]
+}

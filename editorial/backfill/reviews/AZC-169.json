@@ -1,0 +1,148 @@
+{
+  "id": "AZC-169",
+  "title": "Filter an Event Grid subscription around a consumer need",
+  "slug": "filter-an-event-grid-subscription-around-a-consumer-need",
+  "historical_date": "2025-04-17",
+  "input_sha256": "d632de034a94d60a34b88533d5e2f6e91fefa9c0aa3d7ced9eb363212edca047",
+  "created_at": "2026-10-23T21:19:20.704636+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Filter Event Grid subscriptions by type, subject, or data to target specific consumer needs and reduce noise.",
+  "tags": [
+    "event-grid",
+    "filtering",
+    "subscriptions",
+    "azure-cli",
+    "cloud-events"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-169-learn-1.png",
+      "alt": "Screenshot showing the Create Subscription page with event types selected.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/cee4f19b2d5f3358831949575f1df5176e1cba02/articles/event-grid/media/how-to-filter-events/filter-create-subscription-system-topic.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-01-22T23:06:53Z",
+      "sha256": "09f7562a24c5746e0c2392987957180b1f7ac35570d9b4337732e78bc5e21ae5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-169-learn-2.png",
+      "alt": "Screenshot showing Event Grid event subscriptions.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3ef21b08e403579869b049931d39fe118ede2756/articles/event-grid/media/create-view-manage-event-subscriptions/event-subscriptions.png",
+      "source_id": "S2",
+      "source_revision_date": "2023-11-16T19:38:42Z",
+      "sha256": "c5d12c3b87fe0b84159336a5b0e17f52b1c13121eeae643f87ed09bf7253b7d2",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/event-grid/how-to-filter-events.md",
+      "revision": "cee4f19b2d5f3358831949575f1df5176e1cba02",
+      "revision_date": "2025-01-22T23:06:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "How to filter events for Azure Event Grid",
+      "url": "https://learn.microsoft.com/en-us/azure/event-grid/how-to-filter-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/cee4f19b2d5f3358831949575f1df5176e1cba02/articles/event-grid/how-to-filter-events.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/event-grid/create-view-manage-event-subscriptions.md",
+      "revision": "3ef21b08e403579869b049931d39fe118ede2756",
+      "revision_date": "2023-11-16T19:38:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create, view, and manage Azure Event Grid event subscriptions in namespace topics",
+      "url": "https://learn.microsoft.com/en-us/azure/event-grid/create-view-manage-event-subscriptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3ef21b08e403579869b049931d39fe118ede2756/articles/event-grid/create-view-manage-event-subscriptions.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/event-grid/concepts.md",
+      "revision": "1b0ed605624c778c567c2fda131b29a146f709f4",
+      "revision_date": "2024-12-13T03:55:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Concepts (push delivery) in Event Grid basic",
+      "url": "https://learn.microsoft.com/en-us/azure/event-grid/concepts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1b0ed605624c778c567c2fda131b29a146f709f4/articles/event-grid/concepts.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the advanced filter support nested boolean logic for combining multiple data conditions?",
+    "What is the maximum number of advanced filters allowed per subscription?",
+    "Are there any performance implications for using complex advanced filters on high-throughput topics?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/filter-an-event-grid-subscription-around-a-consumer-need.md",
+  "draft": true,
+  "word_count": 958,
+  "claim_support_checks": [
+    {
+      "claim": "Event Grid supports filtering by event type, subject, and advanced data properties.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Advanced filtering on event data is not currently supported for namespace topics.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Subject filtering supports prefix and suffix matching, but not partial substring matching.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Event subscriptions can have an expiration date set to automatically clean them up.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes two screenshots with visible Microsoft Learn source URLs in the markdown links. This violates the editorial guidance to not add visible Microsoft Learn screenshot or permission captions.",
+      "fix": "Remove the URL links from the image markdown syntax. Use only the local image path and alt text. Do not link to the raw GitHub content."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims advanced filtering is 'not supported' for namespace topics. Source S2 states it 'isn't currently supported' and 'will be available in a future release.' Using 'not supported' implies a permanent architectural limitation rather than a current feature gap.",
+      "fix": "Change the wording to 'currently unsupported' or 'not yet available' to accurately reflect the temporary nature of the limitation described in Source S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states subject filtering is 'case-insensitive by default' and can be enabled via `isSubjectCaseSensitive`. Source S1 shows this property in ARM templates but does not explicitly state the default behavior in the text, nor does it mention a CLI flag for case sensitivity. This is an unsupported inference.",
+      "fix": "Remove the claim about default case sensitivity. Only state that case-sensitive matching can be configured via the portal or ARM template property `isSubjectCaseSensitive` as shown in Source S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that 'A high number of dropped events indicates your filters are working as intended.' This is a vague operational claim. Dropped events can also indicate misconfiguration, endpoint failures, or rate limiting, not just effective filtering.",
+      "fix": "Rephrase to suggest monitoring dropped events as a metric for filter effectiveness, but clarify that investigation is needed to distinguish between intentional drops and delivery errors."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding section 'Verification and next steps' with advice to 'monitor delivery metrics' and 'adjust filters.' This is a generic concluding paragraph that adds little technical value and violates the guidance to end with a concrete verification or next action.",
+      "fix": "Remove the generic concluding paragraphs. End the article after the test verification steps or the link to advanced filtering documentation."
+    }
+  ]
+}

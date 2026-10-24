@@ -1,0 +1,143 @@
+{
+  "id": "AZC-040",
+  "title": "Choose system-assigned or user-assigned managed identities",
+  "slug": "choose-system-assigned-or-user-assigned-managed-identities",
+  "historical_date": "2024-04-21",
+  "input_sha256": "37523ef26224f46dd3c57ebf9026c98afa63618fe00f8c5fb2b19c7a6760710a",
+  "created_at": "2026-10-23T13:07:54.899442+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Compare system-assigned and user-assigned managed identities to decide which fits your workload lifecycle and permission requirements.",
+  "tags": [
+    "managed-identities",
+    "azure-security",
+    "entra-id",
+    "best-practices",
+    "authentication"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-040-learn-1.png",
+      "alt": "Screenshot of searching for managed identities in the portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/f6e27efc9cff56562b13ea738e41954d9094f64f/docs/identity/managed-identities-azure-resources/media/developer-introduction/managed-identities-search.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-02-12T20:02:01Z",
+      "sha256": "8fd6bf9ec6704cbebc5e0cff92732151c36129b737a9e1d1f0034cf6f84e0b7b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/managed-identities-azure-resources/overview.md",
+      "revision": "f6e27efc9cff56562b13ea738e41954d9094f64f",
+      "revision_date": "2024-02-12T20:02:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Managed identities for Azure resources",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/f6e27efc9cff56562b13ea738e41954d9094f64f/docs/identity/managed-identities-azure-resources/overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/managed-identities-azure-resources/overview-for-developers.md",
+      "revision": "f6e27efc9cff56562b13ea738e41954d9094f64f",
+      "revision_date": "2024-02-12T20:02:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Developer introduction and guidelines",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview-for-developers",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/f6e27efc9cff56562b13ea738e41954d9094f64f/docs/identity/managed-identities-azure-resources/overview-for-developers.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-04-21: MicrosoftDocs/entra-docs/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity.md"
+  ],
+  "open_questions": [
+    "Are there specific Azure services that do not support user-assigned managed identities, requiring the use of system-assigned identities?",
+    "What are the exact cost implications of using user-assigned managed identities compared to system-assigned ones?",
+    "How does the token acquisition process differ between system-assigned and user-assigned identities in terms of performance or latency?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-system-assigned-or-user-assigned-managed-identities.md",
+  "draft": true,
+  "word_count": 1448,
+  "claim_support_checks": [
+    {
+      "claim": "System-assigned managed identities are tied to the lifecycle of a single Azure resource and are deleted when the resource is deleted.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "User-assigned managed identities are standalone Azure resources with an independent lifecycle and can be associated with multiple resources.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "System-assigned identities cannot be shared across resources, while user-assigned identities can.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "User-assigned managed identities are recommended for most scenarios where workloads run on multiple resources or need pre-authorization.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Azure Identity library's DefaultAzureCredential can be used in development with user credentials and in production with managed identities without code changes.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "You need a role such as Managed Identity Contributor to create a user-assigned managed identity.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "You need a role such as Managed Identity Operator to associate a user-assigned identity with an Azure resource.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims user-assigned managed identities are 'recommended for most scenarios' based on S2. This is a categorical claim about workload suitability that contradicts the general principle of least privilege and simplicity. S1 lists specific use cases (multi-resource, pre-authorization) without a universal recommendation. This may mislead users into over-engineering simple single-resource workloads.",
+      "fix": "Remove the phrase 'recommended for most scenarios'. Instead, list the specific scenarios from S1 where user-assigned is appropriate (e.g., shared across multiple resources, pre-authorization, frequent resource recycling). Frame the choice as a trade-off between lifecycle coupling and permission sharing, not a universal best practice."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes three screenshots from S2 (portal steps for creating and assigning identities) without visible permission captions, which violates the editorial guidance. Additionally, the text describes portal steps in detail, which can become outdated and clutter the comparison focus.",
+      "fix": "Remove all screenshots. The guidance states 'Do not add visible Microsoft Learn screenshot or permission captions.' Replace the detailed portal walkthrough with a concise reference to the documentation or a high-level summary of the steps, focusing on the conceptual differences rather than UI navigation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that 'Managed identities can be used at no extra cost' (implied by S1's benefit list) but does not clarify that while the identity itself is free, the resources using it (VMs, App Services) incur standard costs. This could be misinterpreted as the entire solution being free.",
+      "fix": "Clarify that while the managed identity resource and token acquisition are free, the underlying Azure resources (compute, storage) still incur their standard costs. Avoid implying the entire architecture is cost-free."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a C# code example for accessing Blob Storage using `DefaultAzureCredential`. While supported by S2, the code is illustrative and omits error handling and full context, which might lead to copy-paste errors in production. The guidance requires marking illustrative code as unrun.",
+      "fix": "Add a clear disclaimer that the code is illustrative and unrun. Ensure the code snippet includes necessary `using` statements and handles potential exceptions, or explicitly state it is a partial example for demonstration purposes only."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By carefully considering... you can choose the right type...', which is a generic concluding paragraph starting with 'By...'. This violates the instruction to remove generic concluding paragraphs.",
+      "fix": "Remove the final concluding paragraph. End the article with the verification step or a direct link to further documentation, as per the guidance to 'End when the technical question is answered, with a concrete verification or next action.'"
+    }
+  ]
+}

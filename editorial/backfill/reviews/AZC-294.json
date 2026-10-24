@@ -1,0 +1,131 @@
+{
+  "id": "AZC-294",
+  "title": "Review Linux guest shutdown during host maintenance",
+  "slug": "review-linux-guest-shutdown-during-host-maintenance",
+  "historical_date": "2026-04-01",
+  "input_sha256": "610e7180904bb51e79a191a1f0afa15a7eae30fa72ffcd8831d23381ee7e0052",
+  "created_at": "2026-10-23T19:06:06.380117+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Ensure Linux guests shut down cleanly during Hyper-V host maintenance by verifying Integration Services, not checkpoint types.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "virtual-machines",
+    "integration-services",
+    "host-maintenance"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "revision": "6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb",
+      "revision_date": "2025-08-11T22:13:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choose between standard or production checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/choose-between-standard-or-production-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb/WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "0bf43567aa8837d4780a5dc03c2abf8328224140",
+      "revision_date": "2025-12-02T09:41:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0bf43567aa8837d4780a5dc03c2abf8328224140/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported SUSE Linux Enterprise Server (SLES) virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-suse-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-08-14T14:58:55Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md"
+  ],
+  "open_questions": [
+    "Does the 'Take a standard checkpoint if a production checkpoint can't be taken' option have any impact on graceful shutdown if production checkpoints are enabled but fail for some reason?",
+    "Are there any specific Linux kernel parameters or configurations that might interfere with the Hyper-V VSS daemon during shutdown?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-linux-guest-shutdown-during-host-maintenance.md",
+  "draft": true,
+  "word_count": 1085,
+  "claim_support_checks": [
+    {
+      "claim": "Hyper-V relies on Integration Services to coordinate graceful shutdowns with the guest operating system.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "SLES 12 SP3 and later have built-in Hyper-V integration services.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Installing the Microsoft-provided LIS package is not supported for distributions with built-in LIS.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Production checkpoints use backup technology inside the guest to create a point-in-time image.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Standard checkpoints capture the state of a running VM using saved state technology and are for development/test.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly claims that standard checkpoints result in a 'hard power cut' and that production checkpoints 'enable the host to interact... to perform a graceful shutdown.' Sources state production checkpoints use guest backup technology for consistency, while standard checkpoints capture saved state. Neither mechanism inherently dictates the shutdown method during host maintenance; graceful shutdown is primarily driven by Hyper-V Integration Services (Time Synchronization/Heartbeat/Shutdown), not checkpoint type.",
+      "fix": "Remove the causal link between checkpoint type and graceful shutdown behavior. Clarify that graceful shutdown relies on Integration Services. Explain that production checkpoints ensure data consistency during snapshotting, while standard checkpoints capture volatile state. Do not claim standard checkpoints cause hard power cuts during maintenance."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts that if production checkpoints fail, the host 'falls back to a standard checkpoint' or that the 'Take a standard checkpoint if a production checkpoint can't be taken' option is relevant to shutdown. Source S1 states this checkbox determines whether a standard checkpoint is taken *if a production checkpoint cannot be taken*, but does not link this to host maintenance shutdown sequences. This misrepresents the feature's purpose.",
+      "fix": "Clarify that the fallback checkbox only affects checkpoint creation, not host-initiated shutdowns. Remove the implication that this setting influences graceful shutdown reliability. Focus on Integration Services for shutdown coordination."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends checking `systemctl status hv_vss_daemon` to verify shutdown capability. Source S3 notes that for SLES, LIS is built-in and the Microsoft LIS package 'doesn't work.' It does not mention `hv_vss_daemon` as a universal indicator for graceful shutdown. This service is specific to VSS/backup, not general shutdown signaling.",
+      "fix": "Remove the specific `hv_vss_daemon` verification step as a proxy for graceful shutdown. Instead, advise verifying that Integration Services are installed and functioning, as these handle the shutdown signals. Cite S3 for built-in LIS support in SLES."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a PowerShell example `Get-VM -VMName \"LinuxVM\" | Get-VMSnapshot | Select-Object CheckpointType` to check the *default* checkpoint type. This command lists *existing* snapshots, not the VM's default configuration for *new* snapshots. It fails to address the user's need to verify the setting for future operations.",
+      "fix": "Replace the PowerShell example with a command that retrieves the VM's current checkpoint settings, such as `Get-VM -VMName \"LinuxVM\" | Select-Object CheckpointType` (if available in the module version) or advise checking via Hyper-V Manager settings as described in S1. Clarify that existing snapshots do not reflect the new default."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that production checkpoints are required for 'production workloads' to avoid data loss during maintenance. Source S1 states production checkpoints are 'supported for all production workloads' but does not mandate them for data safety during shutdown. Standard checkpoints are for dev/test, but the distinction is about snapshot consistency, not shutdown safety.",
+      "fix": "Rephrase to state that production checkpoints are recommended for production workloads to ensure consistent snapshots using guest backup technology. Do not claim they are required for data safety during shutdown, which is handled by Integration Services."
+    }
+  ]
+}

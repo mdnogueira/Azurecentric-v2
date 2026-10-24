@@ -1,0 +1,137 @@
+{
+  "id": "AZC-265",
+  "title": "Compare Event Hubs and Service Bus for an ingestion workload",
+  "slug": "compare-event-hubs-and-service-bus-for-an-ingestion-workload",
+  "historical_date": "2026-01-10",
+  "input_sha256": "e6ddee974ea27d0007fa78fdaecde663f37450ddcf00034e76669d6539762cc1",
+  "created_at": "2026-10-23T18:23:16.582271+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Choose between Event Hubs and Service Bus for ingestion by matching data semantics to service capabilities.",
+  "tags": [
+    "azure-event-hubs",
+    "azure-service-bus",
+    "messaging",
+    "architecture",
+    "ingestion"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/compare-messaging-services.md",
+      "revision": "96c5dfdb395367effb63bdfd82ac8d66367fabc1",
+      "revision_date": "2025-04-29T17:46:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Compare Azure messaging services",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/compare-messaging-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/96c5dfdb395367effb63bdfd82ac8d66367fabc1/articles/service-bus-messaging/compare-messaging-services.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/event-hubs/resource-governance-overview.md",
+      "revision": "c05c808aedb78d45f9e4f37026b4f81a8c047748",
+      "revision_date": "2024-02-03T18:11:49Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Resource governance with application groups",
+      "url": "https://learn.microsoft.com/en-us/azure/event-hubs/resource-governance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c05c808aedb78d45f9e4f37026b4f81a8c047748/articles/event-hubs/resource-governance-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-messaging-overview.md",
+      "revision": "dab38a5357ff0d1297ab80c405321ca80d51cd76",
+      "revision_date": "2025-07-18T19:07:48Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Introduction to Azure Service Bus",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/dab38a5357ff0d1297ab80c405321ca80d51cd76/articles/service-bus-messaging/service-bus-messaging-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to know about specific pricing tiers for Event Hubs vs Service Bus for ingestion workloads?",
+    "Are there specific latency benchmarks for Event Hubs vs Service Bus that should be included?",
+    "Should the article include more details on how to integrate Event Hubs with other Azure services for ingestion?",
+    "Is the distinction between 'events' and 'messages' clear enough for the target audience?",
+    "Are there any specific compliance or security considerations for Event Hubs and Service Bus that should be highlighted?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/compare-event-hubs-and-service-bus-for-an-ingestion-workload.md",
+  "draft": true,
+  "word_count": 1150,
+  "claim_support_checks": [
+    {
+      "claim": "Event Hubs is designed for big data streaming and can process millions of events per second.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Service Bus is an enterprise message broker intended for applications requiring transactions and ordering.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Event Hubs provides at least once delivery of an event.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Service Bus provides optional ordered delivery of messages.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Application groups in Event Hubs allow throttling policies for client applications.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Service Bus supports transactions for atomic operations on messaging entities.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Service Bus provides 'instantaneous consistency' and 'reliable asynchronous message delivery that requires polling'. Source S1 lists these as characteristics, but S3 clarifies Service Bus uses 'pull mode' and is 'serverless messaging'. The term 'instantaneous consistency' is a vague, unsupported superlative not found in the source definitions of reliability or transactions. 'Requires polling' is misleading as S3 notes long-polling is an optimization, not a requirement.",
+      "fix": "Remove 'instantaneous consistency' and 'requires polling'. Replace with 'strong durability' and 'pull-based delivery model'. Cite S1 for the feature list but qualify with S3's explanation of pull mode and serverless nature to avoid implying inefficient busy-polling."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Event Hubs 'does not guarantee order unless you use partitions and process them accordingly'. This is vague and potentially misleading. Source S1 states Event Hubs provides 'at least once delivery' but does not mention ordering guarantees. Source S2 discusses throttling but not ordering. The draft invents a specific technical mechanism ('use partitions') as the sole condition for ordering, whereas ordering in Event Hubs is partition-scoped, not global, and requires specific consumer logic.",
+      "fix": "Clarify that Event Hubs guarantees ordering only within a single partition, not globally. Remove the vague 'unless you use partitions' phrasing. State that global ordering is not supported, contrasting with Service Bus's session-based FIFO, as implied by the 'Events vs messages' distinction in S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Service Bus 'does not have an equivalent to application groups' and relies on 'namespace-level quotas'. Source S3 does not mention application groups, but Source S2 explicitly limits application groups to Event Hubs Premium/Dedicated tiers. The draft implies Service Bus lacks fine-grained client governance entirely, which is an unsupported categorical claim. Service Bus has quotas, but the comparison is incomplete.",
+      "fix": "Remove the categorical claim that Service Bus lacks equivalent governance. Instead, state that Event Hubs offers specific 'application groups' for client-level throttling (S2), while Service Bus manages throughput via namespace tiers and standard Azure limits (S3). Avoid implying Service Bus has no client-level controls."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Related content' section with generic links and a 'Further documentation' section with redundant links. The guidance prohibits generic concluding paragraphs and repetitive citations. The structure is repetitive and adds no operational value.",
+      "fix": "Remove the 'Further documentation' section. Keep only the 'Related content' links if they add distinct value, or remove them entirely to end with the concrete verification step. Ensure the article ends with the decision verification, not a bibliography."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'introduces unnecessary complexity or performance bottlenecks' when discussing misusing the services. This is a vague, unsupported superlative. The sources do not quantify 'bottlenecks' or define 'unnecessary complexity'.",
+      "fix": "Replace with specific technical consequences. For example, 'Service Bus may incur higher costs and lower throughput for high-volume telemetry, while Event Hubs lacks the transactional guarantees required for order processing.' Base this on the distinct purposes defined in S1."
+    }
+  ]
+}

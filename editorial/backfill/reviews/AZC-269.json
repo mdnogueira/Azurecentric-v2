@@ -1,0 +1,134 @@
+{
+  "id": "AZC-269",
+  "title": "Record a recovery decision before an infrastructure change",
+  "slug": "record-a-recovery-decision-before-an-infrastructure-change",
+  "historical_date": "2026-01-22",
+  "input_sha256": "e69c489e63222d3ee14a5533454f4f61b24832edf11854aacde4ae461677469b",
+  "created_at": "2026-10-23T18:29:16.181307+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Establish a pre-defined recovery decision record to prevent rushed actions during infrastructure changes or incidents.",
+  "tags": [
+    "azure-reliability",
+    "incident-response",
+    "business-continuity",
+    "disaster-recovery",
+    "azure-service-health"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/incident-response.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/business-continuity-management-program.md",
+      "revision": "aa65007c6058f5708b19b42a0e3ac6c931e59987",
+      "revision_date": "2024-12-16T02:23:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Business continuity management program in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aa65007c6058f5708b19b42a0e3ac6c931e59987/articles/reliability/business-continuity-management-program.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-failover-failback.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover and failback",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-failover-failback",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/concept-failover-failback.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/incident-response.md",
+    "Public document removed/moved on 2024-12-16T03:01:28Z; used previous public snapshot. Confirm continued applicability: articles/reliability/business-continuity-management-program.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/concept-failover-failback.md"
+  ],
+  "open_questions": [
+    "Does the current Azure Service Health API provide a structured way to export incident scope data for automated decision logging?",
+    "How should the 'Pre-recorded Decision' be stored to ensure it is tamper-proof and accessible during a regional outage?",
+    "Are there specific Azure Monitor alerts that can trigger the creation of a decision record automatically?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/record-a-recovery-decision-before-an-infrastructure-change.md",
+  "draft": true,
+  "word_count": 729,
+  "claim_support_checks": [
+    {
+      "claim": "Rushed decisions during an incident can make things worse, so actions should be thought through.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Service Health provides information on issues impacting services and automatic incident update alerts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Failover can result in data loss if recent changes weren't replicated between regions before downtime started.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Microsoft does not publish RTO or RPOs for services because this data is for internal measures only.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Failover generally consists of detecting a failure, choosing to fail over, selecting a new primary, and redirecting requests.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies a direct causal link between infrastructure changes and outages, suggesting one should record a decision 'before' a change to handle concurrent incidents. Sources describe incident response as reactive to disruptions, not a pre-change checklist item. This misrepresents the operational context of incident response.",
+      "fix": "Reframe the guidance as a 'Pre-incident Decision Protocol' or 'Runbook Entry' created during normal operations, rather than a step taken immediately before a change. Clarify that this record is consulted when an incident occurs, regardless of whether a change is in progress."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the decision prevents 'scope creep' and provides an 'audit trail for post-incident review'. While logical, the sources do not explicitly link decision logging to scope creep prevention or audit trails. This is an unsupported inference about the utility of the practice.",
+      "fix": "Remove the claims about scope creep and audit trails. Focus on the source-supported benefit: avoiding rushed decisions that worsen the situation or cause data loss. Cite S1's warning against rushed actions as the primary justification."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests recording 'RTO is 15 minutes' or 'RTO is 30 minutes' in the decision. Source S2 explicitly states Microsoft does not publish RTO/RPOs and that these are internal measures. While customer-defined RTOs are valid, the draft's example might imply these are standard service metrics rather than customer-defined targets.",
+      "fix": "Clarify that RTO/RPO values in the decision record are customer-defined business targets, not Microsoft service metrics. Ensure the example distinguishes between the service's capability and the organization's specific recovery objectives."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section 'Verification and Next Steps' with generic advice like 'monitor the impact closely'. This is vague and lacks specific, source-supported verification steps for the decision itself.",
+      "fix": "Replace generic monitoring advice with specific actions from S1, such as checking Azure Service Health for incident status updates or reviewing the Post Incident Review (PIR) after the event. Remove the concluding paragraph starting with 'The goal is not...'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'deployment pipeline is green', which is a DevOps term not present in the sources. This introduces external jargon that may not align with the source's terminology.",
+      "fix": "Replace 'deployment pipeline is green' with source-aligned language such as 'the change is approved' or 'the maintenance window is active'. Keep the focus on the incident response context provided in S1."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "id": "AZC-105",
+  "title": "Azure Cobalt 100 VMs: check Arm compatibility before moving a workload",
+  "slug": "azure-cobalt-100-vms-check-arm-compatibility-before-moving-a-workload",
+  "historical_date": "2024-10-19",
+  "input_sha256": "a3965d2912c4468e8edc85f975d87dcad5f9bb05e839a62dfc5a848ed18ce7f3",
+  "created_at": "2026-10-23T21:08:04.564569+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Verify Arm compatibility and select the correct Cobalt 100 VM series before migrating workloads to the new general-purpose and memory-optimized sizes.",
+  "tags": [
+    "azure-virtual-machines",
+    "arm-architecture",
+    "cobalt-100",
+    "migration",
+    "compatibility"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://azure.microsoft.com/en-us/blog/azure-cobalt-100-based-virtual-machines-are-now-generally-available/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2024-10-16T16:00:00+00:00",
+      "published_at": "2024-10-16T16:00:00+00:00",
+      "checked_at": "2026-10-23T11:52:51.039701+00:00",
+      "title": "Azure Cobalt 100 VMs: check Arm compatibility before moving a workload",
+      "url": "https://azure.microsoft.com/en-us/blog/azure-cobalt-100-based-virtual-machines-are-now-generally-available/",
+      "snapshot_url": "https://azure.microsoft.com/en-us/blog/azure-cobalt-100-based-virtual-machines-are-now-generally-available/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2024-12-02T17:11:36+00:00"
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-gpu.md",
+      "revision": "4f1d4c10d8baf82f58715af831f3714aa730b1e8",
+      "revision_date": "2024-06-06T16:39:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure VM sizes - GPU | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4f1d4c10d8baf82f58715af831f3714aa730b1e8/articles/virtual-machines/sizes-gpu.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes.md",
+      "revision": "9fc9fbcc3679d1720c34fa1798c86bb8e0b91fb4",
+      "revision_date": "2024-05-24T16:37:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "VM sizes",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9fc9fbcc3679d1720c34fa1798c86bb8e0b91fb4/articles/virtual-machines/sizes.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/dedicated-host-compute-optimized-skus.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Compute Optimized Azure Dedicated Host SKUs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/dedicated-host-compute-optimized-skus",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/dedicated-host-compute-optimized-skus.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-06-06T17:28:13Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/sizes-gpu.md",
+    "Public document removed/moved on 2024-06-05T23:38:14Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/sizes.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/dedicated-host-compute-optimized-skus.md",
+    "Announcement may have later updates; exclude information introduced after 2024-10-19"
+  ],
+  "open_questions": [
+    "Does the source explicitly state which Windows Server versions are supported on Cobalt 100 VMs?",
+    "Are there any specific driver requirements for Cobalt 100 VMs that differ from previous Arm VMs?",
+    "Is there a list of incompatible x86 libraries or frameworks that users should be aware of?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/azure-cobalt-100-vms-check-arm-compatibility-before-moving-a-workload.md",
+  "draft": true,
+  "word_count": 1210,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Cobalt 100-based VMs are based on Microsoft's first 64-bit Arm-based CPU.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Cobalt 100 VMs offer up to 50% better price performance than previous generation Arm-based VMs.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "AKS supports mixing x86 and Arm architecture nodes within the same cluster.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Ubuntu packages are largely available for Arm, facilitating transition.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Dpsv6 and Dplsv6 are general purpose VMs with up to 96 vCPUs.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Deploying an x86-based OS image on an Arm VM will fail'. This is technically inaccurate; the deployment typically succeeds but the guest OS fails to boot or run because the architecture is incompatible. The error is in the guest execution, not the Azure resource creation.",
+      "fix": "Rewrite to state: 'Deploying an x86-based OS image on an Arm VM results in a guest OS that cannot boot or execute code, as the binary architecture is incompatible with the Cobalt 100 silicon.' Remove the implication that the Azure deployment API rejects the request."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'You can mix x86 and Arm architecture nodes within the same cluster' without clarifying that this applies to AKS agent pools, not necessarily the control plane or all node types. It implies a universal capability that might mislead users regarding node pool configuration constraints.",
+      "fix": "Specify that 'Azure Kubernetes Service (AKS) supports creating separate Arm64 agent node pools within a cluster, allowing you to mix x86 and Arm nodes at the pool level.' This clarifies the scope of the mixed-architecture support."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft cites 'up to 50% better price performance' and 'up to 1.4x CPU performance' as general facts. These are comparative metrics against previous generation Arm VMs, not absolute guarantees. The draft presents them as universal performance characteristics, which is misleading for specific workloads.",
+      "fix": "Contextualize these metrics: 'Compared to previous generation Azure Arm-based VMs, Cobalt 100 VMs offer up to 50% better price performance and up to 1.4x CPU performance for specific benchmarks.' Add a disclaimer that actual performance varies by workload."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' section with generic advice ('Verify compatibility, test thoroughly...') and a concluding paragraph that adds no technical value. This violates the guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Remove the generic 'Next steps' and concluding paragraphs. End the article with the concrete action: 'Use the Azure Virtual Machines selector tool to identify available Cobalt 100 sizes in your target region and verify pricing before deployment.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the source citation link after every paragraph and bullet point. This creates visual clutter and disrupts reading flow, violating the guidance to use a few well-placed source links rather than repeating citations.",
+      "fix": "Consolidate citations. Place a single source link at the end of the section or paragraph where the information is presented, rather than after every sentence or bullet point. Ensure the link is relevant to the specific claim."
+    }
+  ]
+}

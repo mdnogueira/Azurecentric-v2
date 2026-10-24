@@ -1,0 +1,153 @@
+{
+  "id": "AZC-111",
+  "title": "Windows Server 2025 is available: what belongs in the evaluation plan",
+  "historical_date": "2024-11-05",
+  "created_at": "2026-10-24T00:03:48.362883+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Windows Server 2025 evaluation plan: audit upgrade paths, removed features, and new security defaults.",
+  "tags": [
+    "windows-server-2025",
+    "upgrade-planning",
+    "security",
+    "active-directory",
+    "deprecation"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://www.microsoft.com/en-us/windows-server/blog/2024/11/04/windows-server-2025-now-generally-available-with-advanced-security-improved-performance-and-cloud-agility/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2024-11-04T15:30:00+00:00",
+      "published_at": "2024-11-04T15:30:00+00:00",
+      "checked_at": "2026-10-23T11:52:55.043827+00:00",
+      "title": "Windows Server 2025 is available: what belongs in the evaluation plan",
+      "url": "https://www.microsoft.com/en-us/windows-server/blog/2024/11/04/windows-server-2025-now-generally-available-with-advanced-security-improved-performance-and-cloud-agility/",
+      "snapshot_url": "https://www.microsoft.com/en-us/windows-server/blog/2024/11/04/windows-server-2025-now-generally-available-with-advanced-security-improved-performance-and-cloud-agility/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2026-06-24T16:29:23+00:00"
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/whats-new-windows-server-2025.md",
+      "revision": "35e57208af69609e3436566ca70816d0bb913bf3",
+      "revision_date": "2024-11-04T14:39:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What's new in Windows Server 2025",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/whats-new-windows-server-2025",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/35e57208af69609e3436566ca70816d0bb913bf3/WindowsServerDocs/get-started/whats-new-windows-server-2025.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/removed-deprecated-features-windows-server-2025.md",
+      "revision": "eaab2fbc51adf674d1e9570dea142e79c5461dee",
+      "revision_date": "2024-10-25T17:01:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Features removed or no longer developed starting with Windows Server 2025",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server-2025",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/eaab2fbc51adf674d1e9570dea142e79c5461dee/WindowsServerDocs/get-started/removed-deprecated-features-windows-server-2025.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/upgrade-overview.md",
+      "revision": "eaab2fbc51adf674d1e9570dea142e79c5461dee",
+      "revision_date": "2024-10-25T17:01:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of Windows Server upgrades | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/eaab2fbc51adf674d1e9570dea142e79c5461dee/WindowsServerDocs/get-started/upgrade-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Are there specific application dependencies on deprecated features like WMIC or VBScript that need to be identified before the evaluation?",
+    "What is the current licensing model for hotpatching, and how does it impact the cost-benefit analysis for different workloads?",
+    "Are there any known compatibility issues with third-party applications when upgrading from Windows Server 2012 R2 to 2025?",
+    "How does the new 32k database page size feature affect existing AD DS environments during the upgrade process?",
+    "What are the specific requirements for enabling Credential Guard by default, and how can we verify it is enabled post-upgrade?"
+  ],
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2024-11-05"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove future year reference 2025"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/windows-server-2025-is-available-what-belongs-in-the-evaluation-plan.md",
+  "draft": true,
+  "word_count": 1420,
+  "claim_support_checks": [
+    {
+      "claim": "Windows Server 2025 is generally available as of November 4, 2024.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "In-place upgrades to Windows Server 2025 are supported from Windows Server 2012 R2 and later.",
+      "source_id": "S4",
+      "span_found": false
+    },
+    {
+      "claim": "The IIS 6 Management Console, Wordpad, SMTP Server, and PowerShell 2.0 Engine are removed in Windows Server 2025.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Credential Guard is enabled by default in Windows Server 2025 on devices that meet the requirements.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Hotpatching for Windows Server 2025 is in preview and requires a monthly subscription for Standard or Datacenter editions on non-Azure environments.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "NTLM, L2TP, PPTP, and NLB are deprecated in Windows Server 2025.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites a non-existent URL for Hotpatching GA. The provided source S1 is the Nov 4 announcement; the July 1, 2025 GA date appears in a separate 'Related post' (S1's 'Related posts' section), not in the main text of S1. The draft attributes the July 1 date to a specific link that is not the primary source for the announcement.",
+      "fix": "Remove the specific citation for the July 1 date from the Hotpatching paragraph or cite the 'Related post' URL if available in the source list. If not, state the GA date is mentioned in related announcements without a direct inline citation to the main blog post, or omit the specific date if not in the primary source text."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Hotpatching... requires a monthly subscription for Standard or Datacenter editions'. Source S1 states it requires a subscription but does not explicitly restrict it to Standard/Datacenter in the main text, though it mentions 'Standard or Datacenter running on... servers'. The 'no additional cost' clause is for Azure Edition. The draft's phrasing implies a strict edition requirement that might be misleading if Azure Edition is also a subscription model.",
+      "fix": "Clarify that the subscription is required for on-premises/multicloud servers running Standard or Datacenter editions, while Azure Edition VMs have no additional cost. Ensure the distinction between the subscription service and the VM edition is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Credential Guard is enabled by default... on devices that meet the requirements'. Source S2 confirms this. However, the draft does not mention that this applies to devices meeting specific hardware requirements (TPM 2.0, Secure Boot, etc.), which is a critical detail for an evaluation plan.",
+      "fix": "Add a note that 'devices that meet the requirements' refers to hardware prerequisites like TPM 2.0 and Secure Boot, as detailed in the Credential Guard configuration documentation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists 'Windows Server 2025' in the upgrade path table for 'Windows Server 2012' as '-', which is correct. However, it states 'If you are still running Windows Server 2012 (non-R2), an in-place upgrade to 2025 is not supported'. This is accurate per S4. But the draft could be clearer that 2012 R2 is the minimum supported version for in-place upgrade.",
+      "fix": "Rephrase to explicitly state: 'In-place upgrades are supported starting from Windows Server 2012 R2. Windows Server 2012 (non-R2) is not supported for in-place upgrade to 2025.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'System Center 2025' is available concurrently. Source S1 mentions it. However, the draft does not provide a citation for System Center 2025's availability in the main text, only in the intro. The 'Related posts' in S1 confirm its GA, but the main text of S1 does not detail it.",
+      "fix": "Add a citation to the System Center 2025 announcement (S1's related post or a separate source if available) when mentioning its availability, or remove the specific mention if it distracts from the Windows Server 2025 evaluation focus."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "AZC-174",
+  "title": "Use remoting to inspect several Windows servers",
+  "slug": "use-remoting-to-inspect-several-windows-servers",
+  "historical_date": "2025-04-30",
+  "input_sha256": "cce7fb04e81446d5b3b4b9636c843084660c6d1f5919f9f66fd2e7db596140b6",
+  "created_at": "2026-10-23T16:18:26.196102+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Inspect multiple Windows servers using PowerShell remoting, distinguishing WSMan configuration from simple cmdlet parameters.",
+  "tags": [
+    "powershell",
+    "remoting",
+    "windows",
+    "invoke-command",
+    "pssession",
+    "wsman"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/ps101/08-powershell-remoting.md",
+      "revision": "eae5a8b3bf4902ab7eadc527fc9d8dd100172829",
+      "revision_date": "2025-03-26T18:49:25Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell remoting",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/08-powershell-remoting",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/eae5a8b3bf4902ab7eadc527fc9d8dd100172829/reference/docs-conceptual/learn/ps101/08-powershell-remoting.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/security/remoting/Running-Remote-Commands.md",
+      "revision": "6557c934231754b51a32d1bb02157aa07810fb2c",
+      "revision_date": "2025-03-24T19:13:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Running Remote Commands",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/Running-Remote-Commands",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/6557c934231754b51a32d1bb02157aa07810fb2c/reference/docs-conceptual/security/remoting/Running-Remote-Commands.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/security/remoting/WSMan-Remoting-in-PowerShell.md",
+      "revision": "f6c5d08db5a8facd9c2ae60ddf0eaf7660a77a73",
+      "revision_date": "2025-01-27T16:02:03Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Using WS-Management (WSMan) Remoting in PowerShell",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/WSMan-Remoting-in-PowerShell",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6c5d08db5a8facd9c2ae60ddf0eaf7660a77a73/reference/docs-conceptual/security/remoting/WSMan-Remoting-in-PowerShell.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How does the user handle authentication if Kerberos is not available and CredSSP is disabled by default?",
+    "What are the specific firewall port requirements for HTTPS-based remoting if HTTP is blocked?",
+    "How does the user manage session timeouts and automatic cleanup in a long-running automation script?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-remoting-to-inspect-several-windows-servers.md",
+  "draft": true,
+  "word_count": 1044,
+  "claim_support_checks": [
+    {
+      "claim": "Enable-PSRemoting configures WinRM to receive requests, starts the service, and creates a firewall exception.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Invoke-Command returns deserialized objects which are inert snapshots and cannot have methods called on them locally.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Persistent sessions allow multiple commands to be run without the overhead of creating a new session for each command.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "WSMan remoting is supported between Windows systems but support on non-Windows platforms is limited due to outdated dependencies.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Enable-PSRemoting creates two endpoints: one with a simple name and one with the full version number.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `Enable-PSRemoting` creates an endpoint named `PowerShell.7.4` when run in PowerShell 7.4. Source S3 states it creates endpoints named `PowerShell.7.4` and `PowerShell.7.4.7`. The draft omits the version-specific endpoint, which is a concrete factual error regarding the cmdlet's behavior.",
+      "fix": "Update the text to state that `Enable-PSRemoting` creates two endpoints: one with the simple name (e.g., `PowerShell.7.4`) and one with the full version number (e.g., `PowerShell.7.4.7`)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Invoke-Command` with `-ComputerName` for 'quick checks' but fails to mention that cmdlets like `Get-Service` with `-ComputerName` do not require remoting configuration. This omits a critical distinction between WSMan remoting and simple RPC/WMI-based cmdlet remoting, potentially leading users to configure WinRM unnecessarily for simple queries.",
+      "fix": "Clarify that `Get-Service -ComputerName` uses RPC/WMI and does not require `Enable-PSRemoting`, whereas `Invoke-Command` requires WSMan configuration. Distinguish these two approaches."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states `Invoke-Command` returns deserialized objects and you 'cannot call methods like `Start()` or `Stop()` on these objects directly'. While true for local execution, the draft's own example shows calling `.Start()` inside the script block. The phrasing is ambiguous and could mislead users into thinking method calls are impossible in remoting contexts generally.",
+      "fix": "Reword to specify that methods cannot be called on the *returned deserialized objects* in the local session, but can be invoked within the remote script block. Align with S1's explanation of 'inert snapshots'."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By using persistent sessions...') and a final verification sentence ('Verify your results...'). These are redundant and violate the instruction to remove generic concluding paragraphs and end with a concrete verification or next action.",
+      "fix": "Remove the final two paragraphs. End the article with the troubleshooting section or the cleanup command, as the verification step is implicit in the output inspection."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions importing commands from a remote session ('Import-PSSession') in the persistent sessions section but provides no code or explanation. This is a vague how-to step that distracts from the main topic of inspection and lacks the concrete structure required.",
+      "fix": "Remove the reference to `Import-PSSession` from the persistent sessions section as it is not demonstrated or explained. If relevant, move it to a separate advanced section or remove it to maintain focus."
+    }
+  ]
+}

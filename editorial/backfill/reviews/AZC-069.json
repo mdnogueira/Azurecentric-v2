@@ -1,0 +1,153 @@
+{
+  "id": "AZC-069",
+  "title": "Use data collection rules to control server telemetry",
+  "slug": "use-data-collection-rules-to-control-server-telemetry",
+  "historical_date": "2024-07-11",
+  "input_sha256": "281c8adae0fefa2108e62fd3cbbc31e5a1ffd07276c133780ef45be031ad9406",
+  "created_at": "2026-10-23T20:59:48.977627+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Control server telemetry by creating and associating Azure Monitor data collection rules with virtual machines.",
+  "tags": [
+    "azure-monitor",
+    "data-collection-rules",
+    "azure-monitor-agent",
+    "log-analytics",
+    "virtual-machines"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-069-learn-1.png",
+      "alt": "Screenshot that shows the Create button on the Data Collection Rules screen.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/5aa330ae970242355f1954a869f6cbf442b3ca0e/articles/azure-monitor/essentials/media/data-collection-rule-create-edit/data-collection-rules-updated.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-06-17T13:07:52Z",
+      "sha256": "e47ae9b649f462fe4b6baf2da1910d50150dd73a8219fefe5513d42cc47fd2f2",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-069-learn-2.png",
+      "alt": "Screenshot that shows the Create button on the Data Collection Rules screen.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/54516a61e9f02571b0a84846b8acb831cb0790fd/articles/azure-monitor/agents/media/data-collection-rule-azure-monitor-agent/data-collection-rules-updated.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-06-24T19:30:42Z",
+      "sha256": "e47ae9b649f462fe4b6baf2da1910d50150dd73a8219fefe5513d42cc47fd2f2",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/data-collection-rule-overview.md",
+      "revision": "225a010a4e6dfebb017eec3c67c6c9dfb7976fd6",
+      "revision_date": "2024-05-23T22:06:24Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Data collection rules in Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/225a010a4e6dfebb017eec3c67c6c9dfb7976fd6/articles/azure-monitor/essentials/data-collection-rule-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/data-collection-rule-create-edit.md",
+      "revision": "5aa330ae970242355f1954a869f6cbf442b3ca0e",
+      "revision_date": "2024-06-17T13:07:52Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create and edit data collection rules (DCRs) in Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-create-edit",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5aa330ae970242355f1954a869f6cbf442b3ca0e/articles/azure-monitor/essentials/data-collection-rule-create-edit.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/agents/data-collection-rule-azure-monitor-agent.md",
+      "revision": "54516a61e9f02571b0a84846b8acb831cb0790fd",
+      "revision_date": "2024-06-24T19:30:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Collect events and performance counters from virtual machines with Azure Monitor Agent",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/data-collection-rule-azure-monitor-agent",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/54516a61e9f02571b0a84846b8acb831cb0790fd/articles/azure-monitor/agents/data-collection-rule-azure-monitor-agent.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 'All' platform type in the portal wizard allow a single DCR to collect both Windows and Linux syslog data simultaneously, or does it require separate endpoints?",
+    "What is the exact API version required for the data collection rule association resource in Bicep templates to ensure compatibility with current ARM deployments?",
+    "Are there specific limits on the number of data collection rules that can be associated with a single virtual machine?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-data-collection-rules-to-control-server-telemetry.md",
+  "draft": true,
+  "word_count": 1087,
+  "claim_support_checks": [
+    {
+      "claim": "DCRs are stored in Azure and can be centrally deployed and managed.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Azure portal wizard automatically installs the Azure Monitor Agent on resources that do not have it.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Performance counters can be sent to both Azure Monitor Metrics and Azure Monitor Logs.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Arc-enabled servers do not support the Azure Monitor Metrics destination for performance counters.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "XPath queries can be used to filter Windows events in custom data sources.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Arc-enabled servers 'currently only support Logs for metrics'. Source S2 states they do not support the Azure Monitor Metrics destination, but does not restrict this to 'only Logs'. This phrasing implies other destinations are unavailable or that the limitation is specific to the 'Metrics' destination type rather than the general capability, which is imprecise. More critically, the draft omits the cost context for data collection, which is a key driver for using DCRs.",
+      "fix": "Clarify that Arc-enabled servers do not support sending performance counters to Azure Monitor Metrics. Add a note about ingestion costs when configuring data sources, referencing the cost optimization guidance in S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes two screenshots with identical alt text and visual content (both showing the 'Create' button). Source S2 and S3 provide these images. The guidance states not to add unrelated screenshots. Since they are identical, including both is redundant and violates the 'Do not add an unrelated screenshot' principle if one is deemed unnecessary. The second image (from S3) adds no new information.",
+      "fix": "Remove the second screenshot. Use the single unique screenshot from S2/S3 to illustrate the 'Create' action. Ensure the alt text accurately reflects the specific step it accompanies if the context differs, but here they are identical."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'You can send data to one or more Log Analytics workspaces (multihoming)'. While true, it fails to mention that this requires a Data Collection Endpoint (DCE) if the DCR and Workspace are in different regions, or if specific data types (like Linux Syslog) are used. The draft mentions DCEs in step 2 but doesn't explicitly link the multihoming capability to the DCE requirement in the 'Collect and deliver' section.",
+      "fix": "Explicitly state that multihoming to multiple workspaces, especially across regions or for specific log types, requires the configuration of a Data Collection Endpoint as defined in the DCR."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a Bicep template for the association but omits the DCR creation template. While the CLI example shows DCR creation, the Bicep example only shows the association. This creates an incomplete IaC picture. The source S2 provides both, but the draft only includes the association part.",
+      "fix": "Either include a minimal Bicep snippet for DCR creation as well, or clarify that the Bicep example focuses on the association resource, which is scoped to the VM, while the DCR is a separate resource."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Monitor supports up to 20 XPath expressions per rule'. Source S3 says 'Azure Monitor data collection rules support up to 20'. This is a specific limit. However, the draft does not clarify if this is per data source or per rule. The source implies per rule, but the context of '20 expressions' might be ambiguous to a user trying to filter multiple logs.",
+      "fix": "Clarify that the 20 XPath expression limit applies per data collection rule, not per data source, to help users plan their filtering strategy accurately."
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "AZC-359",
+  "title": "Review networking requirements before selecting an accelerator VM",
+  "slug": "review-networking-requirements-before-selecting-an-accelerator-vm",
+  "historical_date": "2026-10-01",
+  "input_sha256": "16f634a29fb7edd7a889ed336b81778fead2aa4a738c9e4d6956ecf3a097b494",
+  "created_at": "2026-10-23T20:36:48.888023+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan Azure Batch networking for GPU pools by checking subnet IP capacity, storage tier limits, and communication modes before provisioning.",
+  "tags": [
+    "azure-batch",
+    "virtual-network",
+    "gpu-vm",
+    "networking",
+    "subnet-planning"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-359-learn-1.png",
+      "alt": "Screenshot of the Pools page in a Batch account that highlights the Pools option in the left side navigation and add button on the Pools page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/979582c7b192772869ac6a304063b3a9e261ace7/articles/batch/media/batch-virtual-network/batch-add-pool.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-06-17T06:58:01Z",
+      "sha256": "edd438e74f9d013f0dd4d749c130bcdd6b787467d421ed3a69247376dc7c0648",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/sizes-gpu.md",
+      "revision": "4f1d4c10d8baf82f58715af831f3714aa730b1e8",
+      "revision_date": "2024-06-06T16:39:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure VM sizes - GPU | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4f1d4c10d8baf82f58715af831f3714aa730b1e8/articles/virtual-machines/sizes-gpu.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-virtual-network.md",
+      "revision": "979582c7b192772869ac6a304063b3a9e261ace7",
+      "revision_date": "2026-06-17T06:58:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Provision a pool in a virtual network",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-virtual-network",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/979582c7b192772869ac6a304063b3a9e261ace7/articles/batch/batch-virtual-network.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-06-06T17:28:13Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/sizes-gpu.md"
+  ],
+  "open_questions": [
+    "Does the user need to explicitly request a quota increase for NSGs, public IPs, and load balancers if they plan to exceed the default subscription limits for these resources?",
+    "Are there specific NSG rules required for the BatchNodeManagement.*region* service tag in simplified communication mode if a private endpoint is not used?",
+    "How does the user verify that the GPU drivers are correctly installed and functional on the compute nodes after the pool is created?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-networking-requirements-before-selecting-an-accelerator-vm.md",
+  "draft": true,
+  "word_count": 1233,
+  "claim_support_checks": [
+    {
+      "claim": "ND A100 v4-series VMs include 8 NVIDIA A100 GPUs with 200 Gigabit Mellanox InfiniBand HDR connections.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "N-series VMs can only be deployed in the Resource Manager deployment model.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "NC and NV VMs only support VM disks that are backed by Standard Disk Storage (HDD).",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "NVv4 VMs currently support only Windows guest operating systems.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "For each 100 dedicated or low-priority nodes, Batch creates one network security group (NSG), one public IP address, and one load balancer.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "If the subnet doesn't have enough unassigned IP addresses, the pool partially allocates the compute nodes, and a resize error occurs.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "For pools without public IP addresses using simplified communication mode and with a node management private endpoint, an NSG isn't needed.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Avoid using 172.17.0.0/16 for Azure Batch pool VNet because it's the default for Docker bridge network and might conflict.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a concluding paragraph starting with 'By aligning...' which violates the directive to remove generic concluding paragraphs beginning with 'By following', 'By starting', or similar phrases. This adds no technical value and dilutes the operational focus.",
+      "fix": "Delete the final paragraph entirely. End the article after the verification steps regarding subnet exhaustion and pool deletion constraints, as this provides a concrete next action without generic summary prose."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'NC and NV VMs only support VM disks that are backed by Standard Disk Storage (HDD)' and implies this is a hard constraint affecting infrastructure support. While S1 states this, it omits that NCv3/NC T4_v3 are legacy. It also fails to mention that NVv4 supports only Windows, a critical deployment constraint for VDI workloads mentioned in the same section.",
+      "fix": "Clarify that NCv3/NC T4_v3 are legacy sizes with HDD-only disk support. Add the constraint that NVv4 VMs support only Windows guest operating systems to prevent invalid Linux deployments for VDI scenarios."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Batch creates one network security group (NSG)... for each 100 dedicated or low-priority nodes' as a universal rule. It fails to distinguish that for pools using Simplified communication mode without public IPs and with a node management private endpoint, an NSG is not created. This misleads users about resource quota planning for private endpoints.",
+      "fix": "Explicitly state that NSGs are not created for pools using Simplified communication mode with a node management private endpoint. Clarify that the 1 NSG per 100 nodes rule applies to classic mode or simplified mode without private endpoints."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft links to 'hpccompute-gpu-windows' for NVIDIA drivers but does not specify that this extension is for Windows. It mentions installing drivers manually but omits the specific Linux driver setup documentation link provided in S1, creating an incomplete guide for Linux users.",
+      "fix": "Ensure the NVIDIA driver section explicitly links to the Linux driver setup documentation (linux/n-series-driver-setup.md) alongside the Windows extension link, or clarify that the extension is Windows-only and manual installation is required for Linux."
+    }
+  ]
+}

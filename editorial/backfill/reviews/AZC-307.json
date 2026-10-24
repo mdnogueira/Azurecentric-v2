@@ -1,0 +1,124 @@
+{
+  "id": "AZC-307",
+  "title": "Investigate throttling before changing a Storage account design",
+  "slug": "investigate-throttling-before-changing-a-storage-account-design",
+  "historical_date": "2026-05-09",
+  "input_sha256": "7312831e3abccda79aa3335482ece3b2a5aea9767991782360af395bb0e97f6f",
+  "created_at": "2026-10-23T21:44:35.168681+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Azure Storage throttling by verifying error codes and targets before redesigning the account.",
+  "tags": [
+    "azure-storage",
+    "throttling",
+    "performance",
+    "blob-storage",
+    "troubleshooting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/storage-performance-checklist.md",
+      "revision": "5937083ec08848f46c45720233a9973206b645d3",
+      "revision_date": "2025-11-19T18:22:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Performance checklist for Azure Blob Storage",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5937083ec08848f46c45720233a9973206b645d3/articles/storage/blobs/storage-performance-checklist.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/file-sync/file-sync-throttling.md",
+      "revision": "e601177b74b01a02844f97bb1d298a5d61cd0270",
+      "revision_date": "2025-10-21T22:05:38Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure File Sync Throttling Limits",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-throttling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e601177b74b01a02844f97bb1d298a5d61cd0270/articles/storage/file-sync/file-sync-throttling.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/scalability-targets-standard-account.md",
+      "revision": "b335e4942a0a7cfc19a5f4d91c4fa42310322f98",
+      "revision_date": "2025-10-31T21:11:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Scalability and performance targets for standard storage accounts",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b335e4942a0a7cfc19a5f4d91c4fa42310322f98/articles/storage/common/scalability-targets-standard-account.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific metrics in Azure Monitor that directly expose partition-level throttling versus account-level throttling?",
+    "How does the 'refill rate' mentioned in File Sync throttling (S2) compare to Blob Storage throttling behavior, and is it relevant for Blob Storage troubleshooting?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-throttling-before-changing-a-storage-account-design.md",
+  "draft": true,
+  "word_count": 822,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Storage returns error code 503 or 500 when partition limits are reached.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Standard GPv2 accounts have a default request rate target of 40,000 rps in most regions.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "High-throughput block blobs are activated by blob or block sizes greater than 256 KiB.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Premium block blob storage accounts are recommended for high transaction rates beyond standard targets.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims error code 500 (Operation Timeout) is 'not a specific throttling indicator' and requires 'distinct investigation'. Source S1 explicitly lists 500 alongside 503 as a response when partition limits are reached, indicating it is a valid throttling symptom in this context.",
+      "fix": "Correct the statement to reflect that both 503 and 500 are documented responses for partition-level throttling. Advise checking request rates against targets to distinguish between throttling and other transient failures, rather than dismissing 500 as unrelated."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using 'separate storage accounts per region for shared data'. Source S1 recommends this for 'multiple regions with different data needs' or to reduce latency, but suggests 'object replication policies' for 'shared data' to move it closer to clients, not necessarily separate accounts for sharing.",
+      "fix": "Clarify that separate accounts are for isolating workloads or regions with distinct needs. For shared data, reference object replication or CDN as the primary mechanisms for distribution, reserving separate accounts for strict isolation or distinct scaling requirements."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeatedly cites 'Performance checklist for Azure Blob Storage' for account-level targets (40k rps, 60 Gbps). These specific numerical targets are defined in 'Scalability and performance targets for standard storage accounts' (S3), not the general checklist (S1).",
+      "fix": "Move citations of specific numerical limits (request rates, ingress/egress) to Source S3. Keep S1 citations for general optimization strategies like partition naming, block sizes, and backoff policies."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that high-throughput block blobs are 'not affected by partition naming'. While S1 states they 'aren't affected by partition naming', it does not mean partitioning is irrelevant for all scaling. The phrasing might mislead readers into ignoring partition keys entirely for large blobs.",
+      "fix": "Refine the explanation to state that high-throughput mode bypasses the *per-partition request rate limit* associated with small blocks, but note that overall account limits still apply. Ensure the distinction between partition-level and account-level scaling is clear."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Summary of actions' section that repeats information already covered in detail. This adds verbosity without adding new technical value, violating the guidance to end when the question is answered.",
+      "fix": "Remove the 'Summary of actions' section. The preceding sections already provide a logical flow from symptom identification to resolution. End with the verification step in the 'Verify with monitoring and testing' section."
+    }
+  ]
+}

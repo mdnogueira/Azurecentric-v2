@@ -1,0 +1,96 @@
+{
+  "id": "AZC-250",
+  "title": "Choose a deployment approach that limits the impact of failure",
+  "slug": "choose-a-deployment-approach-that-limits-the-impact-of-failure",
+  "historical_date": "2025-11-30",
+  "input_sha256": "574842a54f19ff2570049be4f7b80e0d37b3d96fd4f90ea344a1bdae306fdb65",
+  "created_at": "2026-10-23T18:02:16.486566+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between zone-redundant and zonal deployments to limit failure impact, balancing latency needs against operational complexity.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/availability-zones-enable-zone-resiliency.md",
+      "revision": "74b4f0e8ec26f55c494a8844ab846e119ec8d044",
+      "revision_date": "2025-11-27T02:17:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable Zone Resiliency for Azure Workloads",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-enable-zone-resiliency",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/74b4f0e8ec26f55c494a8844ab846e119ec8d044/articles/reliability/availability-zones-enable-zone-resiliency.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/availability-zones-zonal-resource-resiliency.md",
+      "revision": "47fbad1f5838c69dec6f064054522864307e8412",
+      "revision_date": "2025-11-25T22:12:25Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Zonal Resources and Zone Resiliency",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-zonal-resource-resiliency",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/47fbad1f5838c69dec6f064054522864307e8412/articles/reliability/availability-zones-zonal-resource-resiliency.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/availability-zones-baseline.md",
+      "revision": "11583cc5122a86d6594cb282d50d9723148d102f",
+      "revision_date": "2025-02-24T21:34:25Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure availability zone migration baseline",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-baseline",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/11583cc5122a86d6594cb282d50d9723148d102f/articles/reliability/availability-zones-baseline.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-02-24T21:49:27Z; used previous public snapshot. Confirm continued applicability: articles/reliability/availability-zones-baseline.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-deployment-approach-that-limits-the-impact-of-failure.md",
+  "draft": true,
+  "word_count": 1283,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states Azure Blob Storage incurs a 'moderate cost increase' for ZRS. Source S1 lists the cost impact as 'Moderate cost increase' but also notes that enabling zones doesn't add cost for many services, and the table explicitly links to reliability guides for specifics. The draft presents this as a universal fact without qualifying that ZRS pricing is distinct from standard LRS and varies by region/tier, potentially misleading users about the nature of the cost (storage redundancy vs. feature fee).",
+      "fix": "Clarify that ZRS pricing differs from LRS and varies by region/tier, rather than stating a flat 'moderate increase'. Reference the specific reliability guide for Blob Storage for exact pricing details, noting that the 'moderate' label in the source table is a generalization."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Application Gateway v2 is 'always zone redundant'. Source S1's table lists it as 'Always zone resilient' with 'N/A' cost impact, but the text notes 'Some services are zone redundant by default... while other services might need you to configure zone redundancy.' The draft omits that this applies only to regions supporting zones and specific SKUs (v2), and doesn't mention that v1 is not zone redundant, which is a common migration trap.",
+      "fix": "Specify that this applies to Application Gateway v2 in regions supporting availability zones. Add a note that v1 is not zone redundant and requires migration to v2 to achieve zone resilience, preventing confusion for users on older SKUs."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using 'Azure Load Balancer and Application Gateway' for traffic routing in zonal deployments. Source S2 explicitly states you must 'ensure that it's zone-resilient'. Standard Azure Load Balancer is zonal, not zone-redundant, by default. Using a zonal load balancer in a zonal deployment creates a single point of failure if the load balancer's zone fails, contradicting the goal of resilience. The draft fails to distinguish between zonal and zone-redundant load balancers.",
+      "fix": "Clarify that for zonal deployments, you must use a zone-redundant load balancer (or Application Gateway v2) to avoid a single point of failure. Explicitly state that standard Azure Load Balancer is zonal and requires specific configuration or alternative services to achieve zone resilience."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that 'Azure SQL Database' can be made zone redundant via 'specific settings'. Source S1 lists Azure SQL Database as 'Always zone resilient' in the table, but the text says 'Some services are zone redundant by default... while other services might need you to configure zone redundancy.' The draft's vague 'specific settings' phrasing is misleading for SQL Database, which is automatically zone redundant in supported regions without user configuration.",
+      "fix": "Correct the description for Azure SQL Database to state it is automatically zone redundant in supported regions. Reserve 'specific settings' for services that require explicit enablement, such as App Service or Blob Storage, to avoid implying unnecessary configuration steps for SQL Database."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Functions' in the list of services to prioritize for zone redundancy. Source S1 lists Azure Functions under 'Compute services' but does not explicitly state it is 'Always zone resilient' or provide a specific zone configuration approach in the table (unlike App Service or Container Apps). The draft assumes zone redundancy without source confirmation for Functions, which may have different support levels depending on the plan (Consumption vs. Premium).",
+      "fix": "Verify the zone redundancy support for Azure Functions in the specific source table. If not explicitly listed as 'Always zone resilient' or 'Enablement', remove it from the definitive list or qualify it with 'check service-specific reliability guide' to avoid unsupported claims."
+    }
+  ]
+}

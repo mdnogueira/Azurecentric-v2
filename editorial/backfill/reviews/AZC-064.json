@@ -1,0 +1,120 @@
+{
+  "id": "AZC-064",
+  "title": "Prepare a repeatable HPC compute image",
+  "historical_date": "2024-06-26",
+  "created_at": "2026-10-23T23:54:09.170024+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create a repeatable HPC compute image for Azure Batch using snapshots and Azure Compute Gallery, with correct permissions and pool sizing.",
+  "tags": [
+    "azure-batch",
+    "azure-compute-gallery",
+    "hpc",
+    "virtual-machines",
+    "infrastructure-as-code"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-custom-images.md",
+      "revision": "ed0cc0416f66d1778c3a584296005a5c1af883c5",
+      "revision_date": "2024-03-18T06:35:00Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use a managed image to create a custom image pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-custom-images",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ed0cc0416f66d1778c3a584296005a5c1af883c5/articles/batch/batch-custom-images.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-sig-images.md",
+      "revision": "8486ec0add0830e4c4ef4418f1787500f5de4827",
+      "revision_date": "2024-03-19T19:55:42Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use the Azure Compute Gallery to create a custom image pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-sig-images",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8486ec0add0830e4c4ef4418f1787500f5de4827/articles/batch/batch-sig-images.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "What is the exact process for migrating an existing pool using a managed image to an Azure Compute Gallery image before the March 2026 retirement?",
+    "Are there specific performance benchmarks for pools using Shared Images versus managed images in terms of node startup time for different VM sizes?",
+    "How does the node agent SKU selection interact with specific Linux distributions in the Shared Image, and where is the definitive list of supported SKUs for each image version?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove future year reference 2026"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/prepare-a-repeatable-hpc-compute-image.md",
+  "draft": true,
+  "word_count": 1117,
+  "claim_support_checks": [
+    {
+      "claim": "Using snapshots is recommended over generalized VMs for creating Batch pool images to ensure reliability.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Support for creating a Batch pool using only a managed image is being retired.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Reader permissions are inadequate for accessing Shared Images in Batch pools.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Using Azure Compute Gallery can improve pool provisioning performance.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Third-party Marketplace images cannot be used as a base for managed images in Batch.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims third-party images cannot be used as a base for the 'direct managed image method' but implies they are usable via Azure Compute Gallery. Source S1 explicitly states third-party images require Azure Compute Gallery, but S2 notes that if the base image has purchase plan info, the gallery image must have identical info. The draft omits the critical constraint that the gallery image definition must preserve the purchase plan, which is a common failure point for third-party HPC images.",
+      "fix": "Clarify that while Azure Compute Gallery supports third-party images, the gallery image definition must explicitly include the identical purchase plan information from the base Marketplace image. Add a step to verify purchase plan details using `az sig image-definition show` or PowerShell cmdlets to prevent provisioning failures."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that for pools with up to 300 instances, you should keep at least one replica. This is a recommendation for performance, not a hard limit. The draft also mentions a 2500 node limit for managed images but fails to mention that Shared Images allow larger pools via replicas. The '15 minutes per 1,000 VMs' resize timeout rule is presented as a general rule, but S2 specifies 'at least 15 minutes' for every 1,000 VMs, implying a cumulative calculation, not a flat rate.",
+      "fix": "Rephrase the replica guidance as a performance recommendation to reduce provisioning latency, not a strict requirement. Clarify that the resize timeout is cumulative (e.g., 30 minutes for 2,000 VMs) and should be adjusted based on pool size to prevent resize failures."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises not to install Azure extensions like the Custom Script extension. While S1 and S2 warn against pre-installed extensions causing problems, they do not explicitly ban all extensions. Some extensions (like Custom Script) might be needed for post-provisioning setup if baked into the image, though the guidance suggests avoiding them. The draft's absolute prohibition might be too restrictive if the user intends to bake in extension configurations. However, the sources explicitly say 'If the image contains a preinstalled extension, Azure may encounter problems'.",
+      "fix": "Retain the warning against pre-installing extensions but clarify that this is to avoid deployment conflicts with the Batch node agent. If extensions are required, they should be installed via start tasks or user scripts post-provisioning, not baked into the image, to ensure compatibility."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `Standard_E8s_v3` as an example VM size. While valid, it does not specify if this size is supported by Batch for the specific OS image used. S1 and S2 refer to `ListSupportedImages` API. The draft should explicitly mention verifying VM size availability for the chosen image SKU, as not all VM sizes are supported for all images.",
+      "fix": "Add a note to verify that the chosen VM size is supported for the specific base image SKU using the Batch `ListSupportedImages` API or CLI command before creating the pool, as unsupported combinations will cause allocation failures."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'HPC' workloads but does not address specific HPC networking requirements like RDMA or high-performance networking (HPN) which might require specific VM sizes or configurations. The sources do not cover HPC-specific networking, but the draft's focus on HPC implies these needs. The draft should clarify that the image preparation steps are generic and do not cover HPC-specific network optimizations.",
+      "fix": "Add a disclaimer that the image preparation steps are generic and do not include HPC-specific network optimizations (e.g., RDMA configuration). Users requiring high-performance networking should configure those settings separately or use VM sizes that support them, as the image itself does not guarantee network performance."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "AZC-297",
+  "title": "Keep an analyst review step in a repeatable promptbook",
+  "slug": "keep-an-analyst-review-step-in-a-repeatable-promptbook",
+  "historical_date": "2026-04-11",
+  "input_sha256": "f23d59aa26b11f70ab2ab027cf77d3a2e05b84af2a60d65b12f6b5a8e6d2076f",
+  "created_at": "2026-10-23T19:10:00.246064+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use PowerShell scripts to manage Security Copilot Promptbooks, including a mandatory analyst review step in the JSON structure.",
+  "tags": [
+    "security-copilot",
+    "promptbooks",
+    "automation",
+    "powershell",
+    "incident-response"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "Promptbook samples/Powershell to Manage Promptbooks/readme.md",
+      "revision": "3081c3b2a4d14d2f8c5383a3f31c7bd503862477",
+      "revision_date": "2024-11-06T08:35:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "readme",
+      "url": "https://github.com/Azure/Security-Copilot/blob/3081c3b2a4d14d2f8c5383a3f31c7bd503862477/Promptbook samples/Powershell to Manage Promptbooks/readme.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/3081c3b2a4d14d2f8c5383a3f31c7bd503862477/Promptbook samples/Powershell to Manage Promptbooks/readme.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The scripts require manual token extraction from Edge. Is there a more secure or automated way to handle token lifecycle in a production environment?",
+    "The scripts are unpublished and unsupported. What is the recommended long-term strategy for Promptbook management as Microsoft evolves the service?",
+    "The download process removes plugins. How should analysts manage plugin dependencies when migrating Promptbooks between tenants?",
+    "The region URI is hardcoded in line 11 of the script. How should users in non-eastus regions manage this without modifying the script source?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/keep-an-analyst-review-step-in-a-repeatable-promptbook.md",
+  "draft": true,
+  "word_count": 995,
+  "claim_support_checks": [
+    {
+      "claim": "Promptbook management scripts use unpublished APIs and are not officially supported.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Promptbook inputs require case-sensitive variable matching between promptbookinputs and prompts.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Downloaded Promptbooks have source identification fields removed and visibility set to Private.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Access tokens for Promptbook scripts must be obtained from a browser session, not Azure CLI.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Promptbook JSON files must be placed in the ./Uploads folder for the upload script.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the analyst review step causes the prompt to 'pause for analyst input'. The source describes sequential prompt execution. There is no evidence of a 'pause' or 'branching' mechanism in the JSON structure or API. This misrepresents the tool's capability as interactive workflow control rather than sequential text generation.",
+      "fix": "Clarify that the 'review step' is a logical prompt asking for human assessment in the chat interface, not a technical pause or conditional branch in the execution engine. Remove the implication of automated branching based on the input."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the token is invalid after logout. The source says the token is valid for a 'fixed amount of time' and logout is for security reasons to prevent reuse, not because logout invalidates it immediately. This is a factual inaccuracy regarding token lifecycle.",
+      "fix": "Correct the statement to reflect that the token expires after a fixed time. Log out to prevent unauthorized reuse of the active token, not to invalidate it immediately."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies the PowerShell scripts are the primary or recommended way to manage Promptbooks. The source explicitly labels them as 'unpublished', 'not officially supported', and 'subject to change'. This could lead users to rely on unstable tooling for production.",
+      "fix": "Emphasize that these scripts are for prototyping/internal tooling only. Direct users to official Microsoft Learn documentation for supported management methods, if available, or clearly state the risk of using unsupported scripts in production."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram node 'JSON validated against schema'. The source does not mention a formal schema validation step, only JSON syntax errors (commas) and variable name mismatches causing HTTP errors. This invents a validation step not described.",
+      "fix": "Remove the 'validated against schema' node. Replace with 'JSON structure and variable names verified manually or via formatter'. The source only mentions syntax and variable name checks."
+    }
+  ]
+}

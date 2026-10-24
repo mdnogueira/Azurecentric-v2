@@ -1,0 +1,135 @@
+{
+  "id": "AZC-033",
+  "title": "Write a reusable function with clear parameters",
+  "slug": "write-a-reusable-function-with-clear-parameters",
+  "historical_date": "2024-04-01",
+  "input_sha256": "31dc99cd281ba0b10b10e84feb93f2148727eeb8f2bff4747c1ff252f07a537b",
+  "created_at": "2026-10-23T12:56:02.853462+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Write reusable PowerShell functions with clear parameters, validation, and help.",
+  "tags": [
+    "powershell",
+    "functions",
+    "parameters",
+    "validation",
+    "help"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/ps101/09-functions.md",
+      "revision": "eb2177e5fcb97fd8078417832768960c1b09e015",
+      "revision_date": "2022-11-16T23:26:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Functions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/eb2177e5fcb97fd8078417832768960c1b09e015/reference/docs-conceptual/learn/ps101/09-functions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/help/writing-help-for-windows-powershell-scripts-and-functions.md",
+      "revision": "90480e1766559adc01f8eff8b66311adbdfb268a",
+      "revision_date": "2023-07-10T20:08:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Writing Help for PowerShell Scripts and Functions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/help/writing-help-for-windows-powershell-scripts-and-functions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/90480e1766559adc01f8eff8b66311adbdfb268a/reference/docs-conceptual/developer/help/writing-help-for-windows-powershell-scripts-and-functions.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/cmdlet-parameters.md",
+      "revision": "f6d5658a690c8a9c0e9195bf410e4cba7159c7c0",
+      "revision_date": "2021-09-17T19:27:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Cmdlet Parameters",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-parameters",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/f6d5658a690c8a9c0e9195bf410e4cba7159c7c0/reference/docs-conceptual/developer/cmdlet/cmdlet-parameters.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How to handle pipeline input in advanced functions?",
+    "How to use parameter sets in functions?",
+    "How to create XML-based help for functions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/write-a-reusable-function-with-clear-parameters.md",
+  "draft": true,
+  "word_count": 1103,
+  "claim_support_checks": [
+    {
+      "claim": "Use an approved verb and prefix the noun to prevent naming conflicts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Use the same parameter names as default cmdlets for consistency.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Add CmdletBinding to enable common parameters like Verbose and Debug.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Use SupportsShouldProcess to enable WhatIf and Confirm.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Validate input early using parameter validation attributes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Document functions using comment-based help.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The `Set-MrServiceState` example passes an array to `Start-Service -ComputerName` inside an `if` block. `Start-Service` does not accept multiple computer names via the `-ComputerName` parameter in a single call; it requires individual calls or `Invoke-Command`. This code will fail or behave unexpectedly.",
+      "fix": "Refactor the example to iterate over `$ComputerName` and call `Start-Service` for each, or use `Invoke-Command`. Ensure the `ShouldProcess` check is inside the loop or handles the array context correctly."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a generic concluding paragraph starting with 'By following these steps...'. This violates the editorial guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Delete the final paragraph. End the article immediately after the `Remove-Item` example or the final verification step."
+    },
+    {
+      "severity": "low",
+      "problem": "Repetitive citation style: '[Functions](url)' and '[Writing Help...](url)' are appended after almost every sentence and code block. This disrupts reading flow and violates the guidance to use a few well-placed source links.",
+      "fix": "Consolidate citations. Place one source link at the end of the relevant section or paragraph, rather than repeating it after every claim or code snippet."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses 'I' and 'my' (e.g., 'I recommend', 'my function'), which is inconsistent with the objective, instructional tone expected in technical documentation.",
+      "fix": "Replace first-person pronouns with imperative or passive voice (e.g., 'Use an approved verb', 'Prefix the noun')."
+    },
+    {
+      "severity": "medium",
+      "problem": "The `Get-MrDefaultComputer` example uses `$env:COMPUTERNAME` as a default value. While valid, it is not a 'clear parameter' example for general reuse as it ties the function to the local machine context, which may confuse users expecting a generic default.",
+      "fix": "Clarify that `$env:COMPUTERNAME` is a specific pattern for local-only defaults. Consider using a more generic default like `'localhost'` or explicitly documenting the local-machine assumption."
+    }
+  ]
+}

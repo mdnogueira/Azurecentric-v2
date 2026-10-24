@@ -1,0 +1,147 @@
+{
+  "id": "AZC-256",
+  "title": "Assign owners to cloud security recommendations",
+  "slug": "assign-owners-to-cloud-security-recommendations",
+  "historical_date": "2025-12-17",
+  "input_sha256": "71c3d56b5f85b9d6dc997b95a0e84160089d1a58f2687a6b0dc1bb4533fd2b31",
+  "created_at": "2026-10-23T18:10:07.882876+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Assign owners to security recommendations using Defender for Cloud governance rules to drive accountability and track remediation SLAs.",
+  "tags": [
+    "defender-for-cloud",
+    "governance",
+    "security-posture",
+    "remediation",
+    "azure-policy"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-256-learn-1.png",
+      "alt": "Screenshot that shows you where the toggle is for the permissions management is located.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/enable-permissions-management/permissions-management-on.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "f73611f7c13c6c183472316bd95d168c29d3aef25aff6b285f10ab0c56d05b78",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-256-learn-2.png",
+      "alt": "Screenshot of page for adding a governance rule.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/governance-rules/add-rule.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "c6fe3a690fdbe4e5e571e4c06d8284cbb08e89d0fb3d22675b519e2186e7e8c0",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/enable-permissions-management.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable Permissions Management (CIEM)",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/enable-permissions-management",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/enable-permissions-management.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/security-policy-concept.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Security policies in Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/security-policy-concept",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/security-policy-concept.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/governance-rules.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Drive remediation of recommendations with governance rules",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/governance-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/governance-rules.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/enable-permissions-management.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/security-policy-concept.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/governance-rules.md"
+  ],
+  "open_questions": [
+    "Does the governance report provide real-time status or is it updated periodically?",
+    "Can governance rules be applied to AWS and GCP resources in the same way as Azure?",
+    "What happens to existing recommendations when a new governance rule is created?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/assign-owners-to-cloud-security-recommendations.md",
+  "draft": true,
+  "word_count": 894,
+  "claim_support_checks": [
+    {
+      "claim": "Governance rules require Contributor, Security Admin, or Owner permissions.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Governance rules can assign owners by resource tag or email address.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Rules with lower priority values take precedence.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Remediation timeframes are fixed at 7, 14, 30, or 90 days.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Weekly notifications are sent to owners and their managers by default.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims governance rules are unavailable without the Defender CSPM plan. Source S3 explicitly lists 'Contributor', 'Security Admin', or 'Owner' permissions as prerequisites but does not mandate the CSPM plan for governance rules. This contradicts the source text and may mislead users about licensing requirements.",
+      "fix": "Remove the statement that the CSPM plan is a mandatory prerequisite for governance rules. Retain the permission requirements (Contributor, Security Admin, or Owner) as cited in S3. Clarify that while CSPM enables other features, governance rules rely on specific RBAC roles."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the due date is calculated from the 'discovery date'. Source S3 specifies the timeframe is from 'when the recommendation is found by the rule'. This implies the date is set when the rule first matches the recommendation, not necessarily the initial system discovery. This distinction affects SLA accuracy for recurring or re-evaluated findings.",
+      "fix": "Refine the explanation to state that the due date is calculated from the date the recommendation is identified by the governance rule, consistent with Source S3. This ensures accuracy regarding how the SLA timer starts for existing vs. new findings."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By assigning owners... you transform security recommendations...'). The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar structures. This adds fluff without technical value.",
+      "fix": "Delete the final paragraph starting with 'Governance rules are a powerful tool...'. End the article immediately after the verification steps or the link to custom recommendations, as per the instruction to 'End when the technical question is answered'."
+    }
+  ]
+}

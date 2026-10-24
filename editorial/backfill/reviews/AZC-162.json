@@ -1,0 +1,153 @@
+{
+  "id": "AZC-162",
+  "title": "Build an automation rule with a clear owner",
+  "slug": "build-an-automation-rule-with-a-clear-owner",
+  "historical_date": "2025-03-28",
+  "input_sha256": "b835d914a1bbc6445040d6e30cd36c79e139aa65a7ed002d2a6b299b8c9f8cb2",
+  "created_at": "2026-10-23T16:01:34.239305+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create Microsoft Sentinel automation rules with clear scope, triggers, and verification steps.",
+  "tags": [
+    "microsoft-sentinel",
+    "automation-rules",
+    "incident-management",
+    "soar",
+    "security-operations"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-162-learn-1.png",
+      "alt": "Screenshot of creating a new automation rule in the Automation page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/62ca7491a8abd30fad8e1a33902d762b1c2ea120/articles/sentinel/media/create-manage-use-automation-rules/add-rule-automation.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-02-16T08:59:17Z",
+      "sha256": "a69b3e84efddcc7a1c41d1d3c3f25976fd68e93a32a8253533eb37fabdc1506d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-162-learn-2.png",
+      "alt": "Screenshot showing how to filter automation rules grid.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/ef18e8b16a7ed1a8a49fcd5ecdee77d574b69de4/articles/sentinel/media/create-tasks-automation-rule/filter-grid-on-actions.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-09-11T12:07:34Z",
+      "sha256": "47791984facccd9a7e8265e476bcd90a17d1f482964ee5700e64a8b02754ca18",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/create-manage-use-automation-rules.md",
+      "revision": "62ca7491a8abd30fad8e1a33902d762b1c2ea120",
+      "revision_date": "2025-02-16T08:59:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create and use Microsoft Sentinel automation rules to manage response",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/create-manage-use-automation-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/62ca7491a8abd30fad8e1a33902d762b1c2ea120/articles/sentinel/create-manage-use-automation-rules.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/automate-incident-handling-with-automation-rules.md",
+      "revision": "ffd359c56c8ffe96260e4733f927350e1eb1561c",
+      "revision_date": "2025-02-06T11:35:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Automate threat response in Microsoft Sentinel with automation rules | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/automate-incident-handling-with-automation-rules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ffd359c56c8ffe96260e4733f927350e1eb1561c/articles/sentinel/automate-incident-handling-with-automation-rules.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/create-tasks-automation-rule.md",
+      "revision": "ef18e8b16a7ed1a8a49fcd5ecdee77d574b69de4",
+      "revision_date": "2024-09-11T12:07:34Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create incident tasks in Microsoft Sentinel using automation rules",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/create-tasks-automation-rule",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ef18e8b16a7ed1a8a49fcd5ecdee77d574b69de4/articles/sentinel/create-tasks-automation-rule.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How does the rule order interact with the update trigger queue?",
+    "Are there any performance implications for rules with complex OR conditions?",
+    "How can we audit which automation rules have run on a specific incident?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-an-automation-rule-with-a-clear-owner.md",
+  "draft": true,
+  "word_count": 1131,
+  "claim_support_checks": [
+    {
+      "claim": "Automation rules can be triggered by incident creation, incident update, or alert creation.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Incident-triggered automation is generally preferable to alert-triggered automation.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Tag conditions can be evaluated individually or as a collection.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Actions are executed in the order they are listed in the rule.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Microsoft Sentinel Responder role is required to view and edit incidents.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts the 'Microsoft Sentinel Responder' role is required to create automation rules. The source (S3) states this role is required to 'view and edit incidents', which is a prerequisite for the workflow, but the source does not explicitly state it is the permission required to *create* the automation rule itself (which typically requires Contributor or Security Admin). This conflates the permission to create the rule with the permission to act on the incidents it manages.",
+      "fix": "Clarify that the Microsoft Sentinel Responder role is required to view and edit incidents, which is necessary for the automation rule's actions to take effect, while noting that creating the rule itself may require broader permissions like Contributor."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims conditions are 'case-insensitive' without qualification. Source S1 specifies that for 'When incident is created' or 'updated' triggers, conditions are case-insensitive. However, for 'When alert is created', the only condition is 'Analytic rule name', and S1 does not explicitly guarantee case-insensitivity for this specific trigger/condition combination in the same manner, nor does it cover all edge cases. The generalization is risky.",
+      "fix": "Restrict the 'case-insensitive' claim to incident-based triggers as explicitly stated in S1, or remove the absolute claim and advise users to verify case sensitivity for alert-based conditions against the specific documentation for that trigger type."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Alert-triggered automation for alerts created by Microsoft Defender XDR is not available in the Defender portal' in the context of general alert automation. While S2 notes this specific limitation, the draft's phrasing might imply a broader restriction on alert triggers in the Defender portal. The source S2 explicitly limits this to 'Alert-triggered automation for alerts created by Microsoft Defender XDR'.",
+      "fix": "Specify that the limitation applies specifically to alerts created by Microsoft Defender XDR, not all alert-triggered automation in the Defender portal, to avoid confusion with alerts from Sentinel analytics rules."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph: 'Automation rules are a powerful tool... By defining clear scope... you can streamline your SOC operations...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar phrases, and demands ending with a concrete verification or next action.",
+      "fix": "Remove the final concluding paragraph entirely. End the article after the 'Verify the rule' section, which already provides a concrete next action (checking rule execution and order)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'Which incidents need an owner, and who should get them?' as an opening. The editorial guidance advises against the 'Which ...? It sounds ...' construction and requests a 'direct operational observation, decision or symptom'.",
+      "fix": "Replace the opening question with a direct statement, such as: 'Ambiguous incident ownership creates response delays. Automation rules in Microsoft Sentinel can assign owners automatically, but only if the scope and trigger are defined precisely.'"
+    }
+  ]
+}

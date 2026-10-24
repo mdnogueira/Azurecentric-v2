@@ -1,0 +1,98 @@
+{
+  "id": "AZC-161",
+  "title": "Understand the boundary between a generated answer and evidence",
+  "slug": "understand-the-boundary-between-a-generated-answer-and-evidence",
+  "historical_date": "2025-03-25",
+  "input_sha256": "64c20fee5f6865f81e8b852e14ab73a2f1279b0453f5333b40303e156f9a4ef4",
+  "created_at": "2026-10-23T15:56:56.015073+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Distinguish Security Copilot's generative answers from source evidence to maintain operational integrity.",
+  "tags": [
+    "security-copilot",
+    "ai-assurance",
+    "security-operations",
+    "evidence-verification",
+    "generative-ai"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "546fc8520e9443e311cc9df30ab5e0ac79301a9f",
+      "revision_date": "2024-11-06T08:18:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How does Security Copilot handle hallucinations in its generated answers?",
+    "What are the specific limitations of the KQL plugin in terms of data accuracy?",
+    "Are there any built-in mechanisms in Security Copilot to flag low-confidence answers?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-the-boundary-between-a-generated-answer-and-evidence.md",
+  "draft": true,
+  "word_count": 956,
+  "claim_support_checks": [
+    {
+      "claim": "Security Copilot is a generative AI-powered assistant for security operations.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The assistant empowers teams to protect at the speed and scale of AI.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Security Copilot can be extended with plugins and connectors.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that Security Copilot 'does not inherently possess a live, authoritative connection' and that plugins only 'attempt to access data.' This is a vague, unsupported generalization. The README links to specific documentation for connectors and plugins, implying defined integration capabilities rather than probabilistic attempts. The text invents a 'hypothesis' workflow not present in the source.",
+      "fix": "Remove speculative claims about the model's internal mechanics. State that Security Copilot integrates with data sources via connectors and plugins as documented. Direct users to the official plugin and connector documentation for specific integration behaviors and limitations instead of describing them as unreliable or hypothetical."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims that treating a summary as fact 'can lead to incorrect remediation decisions' and that verification is 'not optional.' These are categorical, unqualified warnings not supported by the provided README. The source text focuses on contribution steps and general product description, lacking specific operational warnings or mandatory workflow requirements.",
+      "fix": "Reframe as general best practices for AI-assisted operations. Avoid absolute terms like 'not optional' or definitive causal links to 'incorrect remediation' unless sourced. Use neutral language such as 'analysts should verify critical findings' rather than prescribing mandatory procedural constraints based on the provided text."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Conclusion' section with generic advice ('treat every output as a hypothesis') and a sign-off ('Cheers, Marcos'). The editorial guidance explicitly forbids generic concluding paragraphs beginning with phrases like 'By following' or 'This approach ensures' and advises ending with concrete verification or next actions.",
+      "fix": "Remove the 'Conclusion' section and the sign-off. End the article with a concrete next action, such as linking to the 'Get Started' or 'Plugin Overview' documentation. Ensure the tone remains objective and operational, removing personal signatures and repetitive summary statements."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that Security Copilot 'predicts text based on patterns in its training data' as the sole explanation for its behavior. While technically true for LLMs, the source (README) defines it as a 'generative AI-powered assistant' for 'daily operations.' The draft invents a detailed technical explanation of 'synthesis, not direct database querying' that is not present in the provided source material.",
+      "fix": "Align the technical description with the source's definition. Describe Security Copilot as an assistant that aggregates information via connectors and plugins. Avoid inventing internal architectural details about 'synthesis' or 'training data patterns' that are not explicitly stated in the provided README or linked documentation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft references 'Microsoft Defender for Cloud' as a specific plugin example. The provided README (S1) only lists generic links to 'plugin_overview' and 'connectors-overview' without enumerating specific supported plugins like Defender for Cloud in the text. This is an unsupported specific claim based on external knowledge not present in the source.",
+      "fix": "Remove the specific mention of 'Microsoft Defender for Cloud' as an example plugin. Instead, refer generally to 'supported plugins and connectors' and link to the official plugin overview page where the full list of supported integrations is documented."
+    }
+  ]
+}

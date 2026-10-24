@@ -1,0 +1,124 @@
+{
+  "id": "AZC-034",
+  "title": "Copilot for Security is available: plan a controlled first investigation",
+  "slug": "copilot-for-security-is-available-plan-a-controlled-first-investigation",
+  "historical_date": "2024-04-03",
+  "input_sha256": "6a80e6b7ca13c2ad1b54efe0be9f5b3c7c404836cd0dbd18bd82633a531ffcc4",
+  "created_at": "2026-10-23T12:59:29.527348+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan a controlled first investigation with Microsoft Security Copilot, covering licensing, scope, and initial promptbook creation.",
+  "tags": [
+    "microsoft-security-copilot",
+    "security-operations",
+    "ai-in-security",
+    "incident-response",
+    "licensing"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2024-03-13T16:00:00+00:00",
+      "published_at": "2024-03-13T16:00:00+00:00",
+      "checked_at": "2026-10-23T11:52:29.062435+00:00",
+      "title": "Copilot for Security is available: plan a controlled first investigation",
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/",
+      "snapshot_url": "https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2025-09-22T08:57:43+00:00"
+    },
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "053892bb4c3acfa28429ee055d0c291a7d96123f",
+      "revision_date": "2024-04-02T07:28:32Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/053892bb4c3acfa28429ee055d0c291a7d96123f/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/053892bb4c3acfa28429ee055d0c291a7d96123f/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2024-04-03"
+  ],
+  "open_questions": [
+    "What are the specific permissions required to access the standalone portal versus embedded experiences?",
+    "How does the pay-as-you-go model calculate costs for embedded vs. standalone usage?",
+    "Are there any data residency restrictions for the standalone portal?",
+    "What is the exact process for integrating third-party knowledge bases in preview?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/copilot-for-security-is-available-plan-a-controlled-first-investigation.md",
+  "draft": true,
+  "word_count": 855,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Security Copilot became generally available on 1 April 2024.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The service uses a provisioned pay-as-you-go licensing model.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Custom promptbooks allow customers to create and save their own series of natural language prompts.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Copilot can process prompts and respond in eight languages with a multilingual interface for 25 different languages.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Copilot is informed by large-scale data and threat intelligence, including more than 78 trillion security signals processed by Microsoft each day.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides a JSON structure for a 'promptbook' as an illustrative example. The source (S1) only describes promptbooks as 'series of natural language prompts' and does not provide a JSON schema or file format. This invents a technical specification for a feature that is described only conceptually.",
+      "fix": "Remove the JSON code block. Replace it with a textual description of how to create a promptbook via the Copilot interface, citing the source's description of saving 'natural language prompts for common security workstreams'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Copilot 'should provide references to the underlying data' and instructs users to 'check the cited sources'. The source (S1) does not mention citation, sourcing, or reference mechanisms. This assumes a transparency feature not documented in the provided text.",
+      "fix": "Remove the instruction to verify citations. Instead, advise users to 'cross-reference Copilot’s insights with your existing security logs' as suggested by the draft's own 'Verify data sources' section, without claiming Copilot provides explicit citations."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims the standalone portal is 'often the safest starting point' because it avoids impacting 'production security controls'. This is a subjective judgment not supported by the source. The source lists embedded experiences as 'in preview' or 'coming soon', but does not rank safety.",
+      "fix": "Rephrase to reflect that the standalone portal allows testing 'without immediate integration into specific product workflows', noting that embedded experiences like Entra and Intune are 'in preview' per the source, rather than asserting safety superiority."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that 'existing Microsoft 365 or Defender licenses include Copilot capabilities' is a false assumption, stating 'licensing is separate'. While S1 mentions a new 'pay-as-you-go' model, it does not explicitly state that existing Defender licenses *exclude* Copilot, only that Copilot has its own consumption model. This is a slight overstatement of exclusion.",
+      "fix": "Clarify that Copilot uses a 'separate provisioned pay-as-you-go licensing model' and requires 'purchase starting April 1, 2024', without explicitly denying inclusion in other licenses unless the source confirms that exclusion."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Microsoft Security Exposure Management' and 'Adaptive Protection' in the context of 'expanded end-to-end protection' but does not link them to Copilot's investigation capabilities. This dilutes the 'controlled first investigation' focus with unrelated product announcements.",
+      "fix": "Remove the paragraphs on Security Exposure Management and Adaptive Protection. Focus solely on Copilot's capabilities (promptbooks, language support, embedded integrations) as described in the 'New Copilot for Security product innovations' section of the source."
+    }
+  ]
+}

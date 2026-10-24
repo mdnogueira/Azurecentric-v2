@@ -1,0 +1,136 @@
+{
+  "id": "AZC-210",
+  "title": "Review log ingestion cost alongside retention requirements",
+  "slug": "review-log-ingestion-cost-alongside-retention-requirements",
+  "historical_date": "2025-08-10",
+  "input_sha256": "27f7b3beca27dfdbc9ad92b8d7977a0b4edf0810b764e4b4b645bdadba3edb2a",
+  "created_at": "2026-10-23T17:05:21.274975+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Control Azure Monitor Logs costs by aligning table plans, retention, and commitment tiers with actual ingestion and query patterns.",
+  "tags": [
+    "azure-monitor",
+    "log-analytics",
+    "cost-management",
+    "data-retention",
+    "table-plans"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-210-learn-1.png",
+      "alt": "Screenshot that shows the Log Analytics Workspace insights overview tab.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/logs/media/log-analytics-workspace-insights-overview/at-resource.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "fe9bebea8bd034b7b920c3228d800f1202de26551ae279d3ecaaa92b20f7420f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/logs/log-analytics-workspace-overview.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Log Analytics workspace overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/logs/log-analytics-workspace-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/best-practices-data-collection.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Monitor best practices: Configure data collection",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/best-practices-data-collection",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/best-practices-data-collection.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/logs/cost-logs.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Monitor Logs cost calculations and options",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/logs/cost-logs.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/logs/log-analytics-workspace-overview.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/best-practices-data-collection.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/logs/cost-logs.md"
+  ],
+  "open_questions": [
+    "Are there specific scenarios where Auxiliary tables are preferred over Basic tables?",
+    "How does the query cost for Basic/Auxiliary tables compare to standard tables for typical workloads?",
+    "What is the exact impact of long-term retention retrieval costs on overall billing?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-log-ingestion-cost-alongside-retention-requirements.md",
+  "draft": true,
+  "word_count": 1053,
+  "claim_support_checks": [
+    {
+      "claim": "Data volume is measured in GB and calculated from the string representation of stored columns, excluding standard columns.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Basic and Auxiliary table plans reduce ingestion charges but incur query costs.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Commitment tiers offer lower per-GB rates for consistent ingestion over 100 GB/day, but unused capacity is paid for.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Deleting a custom table does not remove data or stop retention charges.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides a step-by-step UI navigation guide (Open workspace -> Logs -> Tables) which is vague and prone to breaking as UI changes. It lacks a programmatic or policy-based approach for scale, which is critical for cost management.",
+      "fix": "Replace the UI steps with a reference to Azure Policy or ARM/Bicep templates for enforcing table plans. Cite the 'Manage tables' documentation for the specific API/CLI commands rather than describing transient portal clicks."
+    },
+    {
+      "severity": "medium",
+      "problem": "The claim that commitment tiers 'can save up to 30 percent' is a superlative without context. It implies a universal benefit, ignoring that pay-as-you-go may be cheaper for fluctuating or low-volume workloads below the commitment threshold.",
+      "fix": "Rephrase to state that commitment tiers offer lower per-GB rates for consistent ingestion above 100 GB/day. Explicitly warn that overages are billed at the tier rate and unused capacity is paid for, making them unsuitable for highly variable loads."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Deleting a custom table does not remove data... so retention charges continue to apply.' This is misleading. While the table definition remains, the data is subject to retention policies. If retention is set to 0, charges stop. The draft omits this destructive context.",
+      "fix": "Clarify that deleting the table definition does not automatically purge the underlying data if retention periods are still active. State that to stop retention charges, one must explicitly reduce the retention period to zero or purge the data, not just delete the table object."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the source citation '[Azure Monitor Logs cost calculations and options]' after nearly every sentence. This disrupts reading flow and violates the guidance to use a few well-placed source links.",
+      "fix": "Consolidate citations. Place a single source link at the end of the paragraph or section where the information is introduced, rather than repeating it after every factual claim or sentence."
+    }
+  ]
+}

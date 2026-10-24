@@ -1,0 +1,125 @@
+{
+  "id": "AZC-076",
+  "title": "Configure networking inside an Ubuntu Hyper-V guest",
+  "slug": "configure-networking-inside-an-ubuntu-hyper-v-guest",
+  "historical_date": "2024-07-31",
+  "input_sha256": "c52fd4761b54ada8c45e4b522a69b788abdfa1a68ee655b2994ed77c0691dd02",
+  "created_at": "2026-10-23T23:08:10.550084+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Ubuntu networking on Windows Server 2022 Hyper-V using external switches, correct adapters, and static MACs.",
+  "tags": [
+    "hyper-v",
+    "ubuntu",
+    "virtual-switch",
+    "networking",
+    "windows-server-2022"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-switch-for-Hyper-V-virtual-machines.md",
+      "revision": "42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3",
+      "revision_date": "2022-12-07T14:07:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create and configure a virtual switch with Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-switch-for-Hyper-V-virtual-machines.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/plan/plan-hyper-v-networking-in-windows-server.md",
+      "revision": "42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3",
+      "revision_date": "2022-12-07T14:07:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan for Hyper-V networking in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/plan-hyper-v-networking-in-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/42dd5fe52e4f5d3fe866fdf9719578df0eedd1f3/WindowsServerDocs/virtualization/hyper-v/plan/plan-hyper-v-networking-in-windows-server.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "6b10f29e43b07da7e1626119b27f7ff0e29cb88a",
+      "revision_date": "2024-05-01T20:22:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6b10f29e43b07da7e1626119b27f7ff0e29cb88a/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the specific Ubuntu version require any additional kernel parameters for optimal Hyper-V networking?",
+    "Are there any known issues with Ubuntu 22.04 and the Hyper-V integration services on Windows Server 2022?",
+    "How does the virtual switch handle traffic if the physical NIC fails, and is this relevant for the Ubuntu guest?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-networking-inside-an-ubuntu-hyper-v-guest.md",
+  "draft": true,
+  "word_count": 681,
+  "claim_support_checks": [
+    {
+      "claim": "An external virtual switch connects VMs to a physical network by binding to a physical NIC.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Hyper-V-specific network adapters are recommended for Linux VMs over legacy adapters.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Static MAC addresses should be used for Linux VMs to prevent network configuration loss.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Administrative rights are required to create and configure virtual switches.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the host will be prompted to confirm disruption when creating the switch, but the PowerShell `New-VMSwitch` command does not trigger this interactive prompt; the prompt only appears in Hyper-V Manager. This misleads users expecting immediate feedback.",
+      "fix": "Remove the sentence about the interactive prompt in the PowerShell section. Clarify that the prompt is specific to the GUI workflow, or note that PowerShell execution continues silently unless `-Force` is used with specific scenarios."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that enabling management OS sharing is optional for guest connectivity, but does not explicitly state that the host's IP configuration on that NIC will change, potentially breaking remote management sessions if the host relies on that NIC for management.",
+      "fix": "Add a warning that enabling management OS sharing reconfigures the host's IP stack on the bound NIC, which may disrupt existing remote connections to the host."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests Ubuntu may show random interface names if both legacy and Hyper-V adapters are attached, but does not explain that this is due to udev naming conflicts. It also omits that modern Ubuntu uses predictable naming (e.g., ens4) regardless, making the 'random' claim vague and potentially outdated.",
+      "fix": "Clarify that modern Ubuntu uses predictable network interface names. Retain the recommendation to remove legacy adapters for performance and driver consistency, but remove the specific claim about 'random' names as it is not the primary behavior in recent Ubuntu versions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions VLAN configuration via `Set-VMNetworkAdapterVlan` but does not specify that this cmdlet targets the VM's network adapter, not the switch itself, and requires the adapter to be connected to a switch that supports VLANs. This could confuse users trying to set switch-level VLANs.",
+      "fix": "Clarify that `Set-VMNetworkAdapterVlan` configures the VLAN for a specific VM's network adapter, not the virtual switch globally. Mention that switch-level VLANs are configured via `Set-VMSwitch` or Hyper-V Manager."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with a generic summary paragraph ('This setup provides...') and a list of further reading links, which violates the instruction to remove stock conclusions and end with a concrete verification.",
+      "fix": "Remove the final summary paragraph and the list of further reading links. End the article immediately after the verification step (e.g., 'If `ip addr` shows an IP and `ping` succeeds, the configuration is complete.')"
+    }
+  ]
+}

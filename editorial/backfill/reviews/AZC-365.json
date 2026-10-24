@@ -1,0 +1,144 @@
+{
+  "id": "AZC-365",
+  "title": "Plan a storage recovery exercise with a verifiable outcome",
+  "slug": "plan-a-storage-recovery-exercise-with-a-verifiable-outcome",
+  "historical_date": "2026-10-17",
+  "input_sha256": "0a9b221e3b1066779452873286c25374d8aa5810d9642249473d2759f45d9988",
+  "created_at": "2026-10-23T20:44:52.777315+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan a storage recovery exercise using customer-managed failover, verifying Last Sync Time and handling Azure Files constraints.",
+  "tags": [
+    "azure-storage",
+    "disaster-recovery",
+    "failover",
+    "azure-files",
+    "geo-redundancy"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-365-learn-1.png",
+      "alt": "Screenshot showing redundancy and failover status.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/296c2f74588ac1dfb9f8498f7bb442188e91170a/articles/storage/common/media/storage-initiate-account-failover/portal-failover-redundancy.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-04-22T16:33:28Z",
+      "sha256": "2147fa2779268cf9a0fcfc6d4864653a9140530d10bed915c3c4c1f762217c1a",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-disaster-recovery-guidance.md",
+      "revision": "d0e6b4d5c17af840ad5e4ab1c3f3f1db675bc1f0",
+      "revision_date": "2026-07-17T16:34:24Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure storage disaster recovery planning and failover",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d0e6b4d5c17af840ad5e4ab1c3f3f1db675bc1f0/articles/storage/common/storage-disaster-recovery-guidance.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-initiate-account-failover.md",
+      "revision": "296c2f74588ac1dfb9f8498f7bb442188e91170a",
+      "revision_date": "2026-04-22T16:33:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Initiate a storage account failover",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-initiate-account-failover",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/296c2f74588ac1dfb9f8498f7bb442188e91170a/articles/storage/common/storage-initiate-account-failover.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/files-disaster-recovery.md",
+      "revision": "bbc9c6d61b2f635ce0ec1f0282c6b91a56c657b3",
+      "revision_date": "2026-07-29T21:15:23Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Disaster Recovery and Failover for Azure Files",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-disaster-recovery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bbc9c6d61b2f635ce0ec1f0282c6b91a56c657b3/articles/storage/files/files-disaster-recovery.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "open_questions": [
+    "Does the LST value reliably reflect file-level consistency for Azure Data Lake Storage accounts with hierarchical namespace enabled, or are there known discrepancies?",
+    "What is the exact time window for 'system snapshot creation' to trigger after user activity in the new secondary region post-planned failover?",
+    "Are there specific Azure CLI or PowerShell cmdlets to explicitly verify that Azure File Sync control plane has been updated by Microsoft Support?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-a-storage-recovery-exercise-with-a-verifiable-outcome.md",
+  "draft": true,
+  "word_count": 1129,
+  "claim_support_checks": [
+    {
+      "claim": "Failover requires geo-redundant storage configuration and initial synchronization to complete first.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Planned failover preserves geo-redundancy, while unplanned failover converts the account to LRS.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Files requires stopping all client activity before planned failover to avoid inconsistency.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Last Sync Time (LST) indicates the point up to which data is guaranteed to be replicated to the secondary.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure File Sync requires manual support intervention to update the control plane after a storage account failover.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a visible screenshot with a caption ('The Redundancy page shows...'). This violates the explicit editorial guidance to not add visible permission/edition captions and to keep source provenance in separate review records.",
+      "fix": "Remove the image caption text entirely. Keep the image link if it directly illustrates the step, but ensure no descriptive text appears below it that mimics a caption. Rely on the surrounding prose to explain the visual context."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Files typically has an RPO of 15 minutes or less. Source S3 states this is the typical interval for system snapshots but explicitly notes 'there's currently no SLA on how long it takes to replicate data'. Citing a specific time window as a typical RPO is misleading without the 'no SLA' caveat.",
+      "fix": "Remove the specific '15 minutes' claim. Instead, state that replication is asynchronous and the RPO depends on the Last Sync Time lag. Advise checking LST to estimate actual data loss risk rather than relying on a fixed time estimate."
+    },
+    {
+      "severity": "medium",
+      "problem": "The PowerShell example for checking file handles uses `Get-AzStorageFileHandle` but does not show how to construct the `$ctx` variable or specify the storage account context, making the code incomplete and potentially unrunnable for a reader.",
+      "fix": "Add the necessary context creation step (e.g., `Get-AzStorageAccountKey` and `New-AzStorageContext`) or explicitly mark the code as illustrative and incomplete, noting that the context object requires valid credentials and account details."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states that after an unplanned failover, the original primary region is 'deleted'. Source S1 clarifies that the *copy of the data* in the original primary region is deleted, not the region itself or the account infrastructure. This is a semantic inaccuracy.",
+      "fix": "Rephrase to: 'The data in the original primary region is deleted, and the account is converted to LRS in the new primary region.' This accurately reflects the data loss aspect without implying infrastructure deletion."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that Azure File Sync control plane updates are part of the standard failover process. Source S3 indicates this requires contacting Microsoft Support, which is an external, non-automated step not covered by the standard failover commands.",
+      "fix": "Clarify that the Azure File Sync control plane update is a separate, manual support ticket process that occurs *after* the storage failover, not part of the automated failover workflow. Ensure the reader understands this is a post-failover administrative task."
+    }
+  ]
+}

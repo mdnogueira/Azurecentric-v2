@@ -1,0 +1,131 @@
+{
+  "id": "AZC-187",
+  "title": "Add validation before deploying a Bicep change",
+  "slug": "add-validation-before-deploying-a-bicep-change",
+  "historical_date": "2025-06-07",
+  "input_sha256": "80c2d69cc6c9a96fffcb8e69ff05d9f000bffff6cae0a1977e26b0301b398c32",
+  "created_at": "2026-10-23T16:34:17.019260+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use the Bicep linter to catch best practice violations before deployment, configuring rules via bicepconfig.json.",
+  "tags": [
+    "bicep",
+    "linter",
+    "infrastructure-as-code",
+    "azure-resource-manager",
+    "ci-cd",
+    "best-practices"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/linter.md",
+      "revision": "4f352a389f687fe8b8c72ecc26181f702a8ec809",
+      "revision_date": "2025-06-06T18:43:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use Bicep linter",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/linter",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4f352a389f687fe8b8c72ecc26181f702a8ec809/articles/azure-resource-manager/bicep/linter.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/bicep-config-linter.md",
+      "revision": "4f352a389f687fe8b8c72ecc26181f702a8ec809",
+      "revision_date": "2025-06-06T18:43:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Linter settings for Bicep config",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-config-linter",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4f352a389f687fe8b8c72ecc26181f702a8ec809/articles/azure-resource-manager/bicep/bicep-config-linter.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9dab744dd92a844521ff089faf5b6b3fbd6b391f",
+      "revision_date": "2024-07-11T14:50:01Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9dab744dd92a844521ff089faf5b6b3fbd6b391f/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the linter catch all deployment errors, or only syntax and best practice violations?",
+    "Are there any performance implications of running the linter on very large Bicep files?",
+    "How does the linter handle custom modules or external dependencies?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/add-validation-before-deploying-a-bicep-change.md",
+  "draft": true,
+  "word_count": 874,
+  "claim_support_checks": [
+    {
+      "claim": "The Bicep linter checks for syntax errors and best practice violations.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The linter is integrated into the Bicep CLI and the Bicep extension for Visual Studio Code.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Default linter rules are set to the warning level.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You can customize linter rules using a bicepconfig.json file.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The linter can be integrated into CI/CD pipelines.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the linter catches 'syntax errors'. Source S1 states it checks for 'syntax errors and best practice violations', but the Bicep compiler (build) is the primary validator for syntax. The linter specifically targets 'best practice violations' and static analysis issues. Claiming it catches syntax errors without distinguishing it from the compiler is misleading and technically imprecise.",
+      "fix": "Clarify that the linter focuses on best practice violations and static analysis, while the Bicep CLI `build` command handles syntax validation and compilation. Remove the implication that the linter replaces the compiler for syntax checking."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states: 'Using the linter is not optional for serious infrastructure-as-code workflows.' This is a subjective, unsupported superlative/categorical claim. The sources do not define 'serious' workflows or mandate linter usage. This violates the guidance against unsupported superlatives and categorical claims about workload suitability.",
+      "fix": "Remove the absolute statement. Rephrase to describe the linter as a recommended tool for enforcing standards, without asserting it is mandatory for 'serious' workflows. Focus on the benefits of catching violations early rather than prescribing a workflow requirement."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `bicep build` to fail pipelines due to linter errors. Source S2 clarifies that `Warning` level violations do not cause the build to fail, only `Error` level violations do. The draft implies `bicep build` inherently fails on linter warnings, which is incorrect. It fails only if rules are explicitly set to `error`.",
+      "fix": "Clarify that `bicep build` fails only if linter rules are configured with `level: error`. Explain that warnings appear in output but do not stop the build unless explicitly configured to do so in `bicepconfig.json`."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section suggesting removing the linter step from CI/CD is a valid action, albeit 'not recommended'. This is vague and lacks concrete context on the impact. It also repeats the 'not recommended' sentiment without adding value. The sources do not provide guidance on 'cleaning up' linter integration in CI/CD.",
+      "fix": "Remove the 'Cleanup' section. It adds no technical value and repeats the 'not recommended' advice without providing specific consequences or alternatives. Focus on the verification and integration steps instead."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims the linter catches 'syntax errors'. Source S1 says 'syntax errors and best practice violations'. However, the Bicep CLI `lint` command is distinct from `build`. The `lint` command does not compile, so it cannot fully validate syntax in the same way `build` does. The distinction is important for CI/CD accuracy.",
+      "fix": "Specify that `bicep lint` checks for best practices and potential issues, while `bicep build` validates syntax and compiles. Ensure the CI/CD example uses `bicep build` for full validation, as `lint` alone may miss syntax errors that `build` would catch."
+    }
+  ]
+}

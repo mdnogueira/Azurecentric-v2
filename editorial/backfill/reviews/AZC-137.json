@@ -1,0 +1,118 @@
+{
+  "id": "AZC-137",
+  "title": "Plan memory allocation for Linux on Hyper-V",
+  "historical_date": "2025-01-18",
+  "created_at": "2026-10-24T00:06:00.809895+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan Linux VM memory on Hyper-V: verify distribution support, configure limits correctly, and avoid hot-add failures.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "memory",
+    "virtual-machines",
+    "windows-server"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md",
+      "revision": "ff848743a74c98350b03e1f92319fecc538fc7c3",
+      "revision_date": "2024-08-13T18:02:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan for Hyper-V on Windows Server 2016",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/plan-hyper-v-on-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/ff848743a74c98350b03e1f92319fecc538fc7c3/WindowsServerDocs/virtualization/hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "da913042d23db47e0a7154c41108595300ff195d",
+      "revision_date": "2025-01-16T21:23:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/da913042d23db47e0a7154c41108595300ff195d/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "revision": "da913042d23db47e0a7154c41108595300ff195d",
+      "revision_date": "2025-01-16T21:23:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Supported SUSE Linux Enterprise Server (SLES) virtual machines on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-suse-virtual-machines-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/da913042d23db47e0a7154c41108595300ff195d/WindowsServerDocs/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the specific Linux distribution in use support dynamic memory hot-add and ballooning for the target Windows Server version?",
+    "Are the dynamic memory limits set in multiples of 128MB to prevent hot-add failures on Windows Server 2016+?",
+    "Is the minimum memory set high enough to prevent the guest OS from becoming unresponsive under memory pressure?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-13T20:55:18Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-memory-allocation-for-linux-on-hyper-v.md",
+  "draft": true,
+  "word_count": 754,
+  "claim_support_checks": [
+    {
+      "claim": "Static memory allocation assigns a fixed amount of RAM to the VM, simplifying capacity planning.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Dynamic memory support varies by Linux distribution version, with SLES 12 SP3+ supporting hot-add and ballooning.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Windows Server 2016+ recommends setting dynamic memory parameters in multiples of 128MB to avoid failures.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Dynamic memory operations can fail if the guest OS is running too low on memory.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft applies a Windows Server 2016/2012-specific constraint (128MB multiples) to Linux VMs. Source S3 explicitly restricts this requirement to 'Windows Server 2016 or Windows Server 2012 operating systems' regarding the host/LIS interaction, not as a universal Linux guest rule. Applying it to Linux is an unsupported generalization.",
+      "fix": "Clarify that the 128MB multiple requirement is specific to Windows Server 2016/2012 hosts or specific LIS versions. State that modern Linux distributions typically do not have this strict alignment requirement, or remove the recommendation for Linux VMs to avoid confusion."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft cites 'SLES 12 SP3 and later' for dynamic memory support. Source S3 shows SLES 12 SP1 and SP2 also support ballooning (though not hot-add). This inaccuracy misrepresents the feature availability matrix for older SLES versions.",
+      "fix": "Update the claim to reflect that SLES 12 SP1+ supports ballooning, while hot-add is available from SP3 onwards. Reference the specific feature columns in Source S3 for accuracy."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic 'Conclusion' section summarizing static vs. dynamic memory. The editorial guidance explicitly forbids stock conclusion paragraphs, requiring the article to end with a concrete verification or next action.",
+      "fix": "Remove the 'Conclusion' section. End the article with a specific verification step, such as checking the VM's memory status in Hyper-V Manager or validating the dynamic memory configuration using PowerShell cmdlets."
+    }
+  ]
+}

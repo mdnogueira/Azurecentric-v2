@@ -1,0 +1,120 @@
+{
+  "id": "AZC-213",
+  "title": "Check native command exit codes in an automation script",
+  "historical_date": "2025-08-18",
+  "created_at": "2026-10-23T23:28:37.055743+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Native commands in PowerShell only set $LASTEXITCODE. Use a wrapper to trigger try/catch.",
+  "tags": [
+    "powershell",
+    "error-handling",
+    "native-commands",
+    "exit-codes",
+    "troubleshooting"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "revision": "00cf5c066354ad8feec5869fb3cffa8a1b7be22b",
+      "revision_date": "2025-03-24T19:08:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Everything you wanted to know about exceptions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/00cf5c066354ad8feec5869fb3cffa8a1b7be22b/reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/error-reporting-concepts.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Error Reporting Concepts",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/error-reporting-concepts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/cmdlet/error-reporting-concepts.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/cmdlet/windows-powershell-error-reporting.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Windows PowerShell Error Reporting",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/windows-powershell-error-reporting",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/cmdlet/windows-powershell-error-reporting.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the behavior of -ErrorAction Stop on native commands vary between PowerShell versions?",
+    "Are there any specific native commands that do not follow the standard exit code convention?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-native-command-exit-codes-in-an-automation-script.md",
+  "draft": true,
+  "word_count": 847,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell does not treat non-zero exit codes from native commands as terminating errors by default.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The -ErrorAction Stop parameter can be used on native commands to make PowerShell throw a terminating error on failure.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The $LASTEXITCODE variable holds the exit code of the last native command executed.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `-ErrorAction Stop` on native commands makes PowerShell throw a terminating error. This is factually incorrect; `-ErrorAction` applies to cmdlets/functions, not native executables. Native commands only set `$LASTEXITCODE`. The source S1 only discusses `-ErrorAction Stop` for cmdlets and `Write-Error`, not native binaries.",
+      "fix": "Remove the section claiming `-ErrorAction Stop` affects native commands. Clarify that native commands do not support `-ErrorAction` and rely solely on `$LASTEXITCODE` or wrapper functions to trigger exceptions."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft misattributes the evidence for `$LASTEXITCODE` to S1. S1 ('Everything you wanted to know about exceptions') does not mention `$LASTEXITCODE` or native command exit codes; it discusses PowerShell exceptions, `try/catch`, and `Write-Error`. The claim lacks source support in the provided documents.",
+      "fix": "Remove the citation to S1 for the `$LASTEXITCODE` claim. Since no source explicitly defines `$LASTEXITCODE`, either omit the citation or mark the claim as general knowledge without specific source backing in this set. Do not invent evidence."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the exception thrown by the wrapper is `System.Management.Automation.RuntimeException`. While `throw` often results in this, the specific type depends on what is thrown. The source S1 shows `throw` creating a `RuntimeException`, but the draft presents this as a universal rule for the wrapper, ignoring that `throw` with a string creates a `RuntimeException` but other types might be used.",
+      "fix": "Clarify that `throw` with a string creates a `RuntimeException`, as shown in S1. Avoid stating it as a fixed type for all native failures, especially if the wrapper were modified to throw typed exceptions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph starting with 'By following these steps...'. The editorial guidance explicitly forbids stock conclusion paragraphs and requires ending with a concrete verification or decision.",
+      "fix": "Remove the 'Summary' and 'By following...' sections. End the article immediately after the 'Common pitfalls' section or the final verification example."
+    },
+    {
+      "severity": "low",
+      "problem": "The review questions ask about version-specific behavior of `-ErrorAction Stop` on native commands. Since `-ErrorAction Stop` does not work on native commands, the question is based on a false premise derived from the draft's error.",
+      "fix": "Replace the review questions with valid troubleshooting scenarios, such as distinguishing between 'Command Not Found' exceptions and `$LASTEXITCODE` checks, or handling non-terminating errors from cmdlets versus native commands."
+    }
+  ]
+}

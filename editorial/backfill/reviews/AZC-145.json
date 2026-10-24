@@ -1,0 +1,147 @@
+{
+  "id": "AZC-145",
+  "title": "Choose what to manage through Azure Arc",
+  "slug": "choose-what-to-manage-through-azure-arc",
+  "historical_date": "2025-02-08",
+  "input_sha256": "00bedea7afe3d41ba23e366aa512f57ff13a83b84f2ac8020b26742e781e4b64",
+  "created_at": "2026-10-23T15:35:27.216686+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide whether Azure Arc-enabled servers fits your hybrid estate by defining scope, establishing governance foundations, and planning phased deployment.",
+  "tags": [
+    "azure-arc",
+    "hybrid-cloud",
+    "server-management",
+    "azure-policies",
+    "rbac"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-145-learn-1.png",
+      "alt": "Screenshot of Azure portal showing tags applied to a server.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/media/organize-inventory-servers/server-tags.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "3149a25959022844459711001826c3450e427e7adf0df12818716e33154d5eb7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/overview.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Arc-enabled servers Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/plan-at-scale-deployment.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan and deploy Azure Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/plan-at-scale-deployment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/plan-at-scale-deployment.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/organize-inventory-servers.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to organize and inventory servers using hierarchies, tagging, and reporting",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/organize-inventory-servers",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/organize-inventory-servers.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/overview.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-lighthouse-supported-service.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/plan-at-scale-deployment.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/organize-inventory-servers.md"
+  ],
+  "open_questions": [
+    "Does the current documentation specify exact minimum OS versions for all supported Linux distributions, or is a link to prerequisites required?",
+    "Are there specific network port requirements beyond general Azure connectivity that should be detailed in the deployment phase?",
+    "How does the expiration mechanism interact with managed identity rotation in a fully automated environment?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-what-to-manage-through-azure-arc.md",
+  "draft": true,
+  "word_count": 1106,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Arc-enabled servers is designed for managing resources outside of Azure, not native Azure VMs.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Connected Machine agent does not replace the Azure Monitor Agent.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Onboarding requires specific Azure RBAC roles.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Update Management cannot be enabled directly from an Arc-enabled server.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Instance metadata is stored in the region specified during onboarding.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a visible screenshot of the Azure portal with a caption. Editorial guidance explicitly forbids adding visible Microsoft Learn screenshots or permission captions to the article body.",
+      "fix": "Remove the image tag and caption entirely. If the visual is essential, reference the source documentation URL or describe the UI state textually without embedding the image."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'adding Arc provides no management benefit for the compute layer itself' for Azure VMs. This is an unsupported categorical claim. Arc enables specific Azure-native features (like Policy/Tags) on Azure VMs that may not be available or are handled differently via native APIs.",
+      "fix": "Clarify that Arc is designed for *hybrid* management consistency. State that native Azure VMs are managed via Compute APIs, while Arc is for non-Azure resources, avoiding absolute statements about 'no benefit'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'data at rest remains within that Azure geography' without mentioning cost implications or the fact that Log Analytics data (collected by AMA) incurs separate ingestion/storage costs, which is a key decision factor.",
+      "fix": "Add a brief note that while metadata stays in the region, monitoring data (logs/metrics) stored in Log Analytics incurs standard Azure Monitor costs, influencing region and workspace selection."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses repetitive citation formatting: '[Source] [Source] [Source]' in multiple paragraphs, disrupting reading flow. The guidance requires 'a few well-placed source links rather than repeating the same citation after every sentence'.",
+      "fix": "Consolidate citations. Place one relevant link per paragraph or section where the claim originates, rather than appending a link to every sentence or clause."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with a generic summary paragraph: 'The decision to use Azure Arc-enabled servers rests on...'. The guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar structural closures.",
+      "fix": "Remove the final summary paragraph. End the article with the concrete verification step regarding agent health or the next logical action, such as reviewing the pilot plan."
+    }
+  ]
+}

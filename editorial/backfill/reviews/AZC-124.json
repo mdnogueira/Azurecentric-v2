@@ -1,0 +1,129 @@
+{
+  "id": "AZC-124",
+  "title": "Configure a scale set health probe before autoscaling",
+  "slug": "configure-a-scale-set-health-probe-before-autoscaling",
+  "historical_date": "2024-12-11",
+  "input_sha256": "78b1b9c40dd30bb962b126d3b10c38bc837657ee1f1f6dcc427af408979fc7b9",
+  "created_at": "2026-10-23T15:04:20.926634+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Application Health extension for VMSS instance repairs and upgrades before enabling metric-based autoscaling.",
+  "tags": [
+    "azure-virtual-machine-scale-sets",
+    "autoscaling",
+    "application-health",
+    "instance-repairs",
+    "vmss-orchestration"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of autoscale with Azure Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use Application Health extension with Azure Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Autoscale Virtual Machine Scale Sets in the Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal.md"
+  ],
+  "open_questions": [
+    "Does the Application Health extension support Linux VMs in the same way as Windows VMs?",
+    "What are the specific prerequisites for enabling Automatic Instance Repairs in a scale set?",
+    "How does the Application Health extension interact with rolling upgrades if both are enabled?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-a-scale-set-health-probe-before-autoscaling.md",
+  "draft": true,
+  "word_count": 870,
+  "claim_support_checks": [
+    {
+      "claim": "The Application Health extension monitors application health from inside the VM and is used for instance repairs and upgrades.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Only one source of health monitoring can be used for a Virtual Machine Scale Set, either an Application Health Extension or a Health Probe.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Rich Health States support an Initializing state for newly created instances, which is not available in Binary Health States.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Automatic Instance Repairs can be enabled to replace instances marked as Unhealthy or Unknown.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a JSON snippet for the Application Health extension that combines 'port' and 'requestPath' for an HTTP protocol. Source S2 explicitly states 'requestPath' is mandatory for HTTP/HTTPS and 'port' is optional, but the schema implies mutual exclusivity or specific usage. More critically, the draft presents this as a 'working structure' without noting it is illustrative or unrun, and the JSON structure is incomplete (missing top-level resource context for deployment).",
+      "fix": "Mark the JSON code block as illustrative/unrun. Clarify that for HTTP/HTTPS, 'requestPath' is required and 'port' is optional, whereas for TCP, 'port' is required and 'requestPath' is not allowed. Ensure the JSON snippet reflects the specific protocol settings accurately as per S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'You cannot use both simultaneously for orchestration purposes; you must choose one source of health monitoring for the scale set.' This is a categorical claim. Source S2 states 'Only one source of health monitoring can be used... either an Application Health Extension or a Health Probe.' However, the draft fails to distinguish between the Load Balancer probe (used for traffic distribution) and the Extension (used for orchestration). The Load Balancer probe can still exist for traffic, just not for orchestration decisions like repairs/upgrades.",
+      "fix": "Refine the statement to specify that only one source can be used for *orchestration* (repairs/upgrades). Clarify that the Load Balancer health probe remains necessary for traffic distribution but does not drive instance repairs or upgrades, which are the domain of the Application Health Extension."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests enabling 'Automatic Instance Repairs' and configuring it via the portal. It implies this is a simple toggle. Source S2 mentions 'Automatic Instance Repairs' but does not detail the specific portal UI steps or the 'repair policy' settings (simultaneous repairs, max repairs per hour) as described in the draft. This introduces specific UI details and configuration options not present in the provided sources.",
+      "fix": "Remove the specific UI steps and configuration details for 'Automatic Instance Repairs' (e.g., 'toggle Enable automatic instance repairs', 'repair policy'). State generally that repairs can be enabled and configured, referencing the broader documentation for specific steps, as the provided source S2 does not contain these granular UI details."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'This combination provides a robust foundation for managing scale set reliability and availability.' This is a generic, promotional assertion not supported by the technical sources. The sources describe functionality, not subjective quality assessments like 'robust foundation'.",
+      "fix": "Remove the concluding sentence. End with a concrete verification step or next action, such as checking the instance health status in the portal after deploying the extension, as suggested in the 'Verify the Configuration' section."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'If the application is hung or the service is down, the VM may still report low CPU usage, and the autoscale engine will not trigger a repair.' While technically true that autoscaling doesn't repair, the phrasing implies autoscaling *could* trigger a repair if the condition were different, which is misleading. Autoscaling scales capacity; it does not repair instances. The Application Health Extension triggers repairs.",
+      "fix": "Clarify that autoscaling rules manage instance count based on metrics, while instance repairs are a separate orchestration feature driven by health status. State that autoscaling does not replace unhealthy instances; only the Application Health Extension (with repairs enabled) does."
+    }
+  ]
+}

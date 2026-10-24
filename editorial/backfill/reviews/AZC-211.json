@@ -1,0 +1,120 @@
+{
+  "id": "AZC-211",
+  "title": "Check DNS when a private file share is unreachable",
+  "slug": "check-dns-when-a-private-file-share-is-unreachable",
+  "historical_date": "2025-08-12",
+  "input_sha256": "83adf7401c180ea0125a5f097be5257f028bbce69c734452e8544c9d7267c264",
+  "created_at": "2026-10-23T17:06:42.120906+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot Azure Files mount failures over private endpoints by verifying DNS forwarding and resolving cross-tenant conflicts.",
+  "tags": [
+    "azure-files",
+    "private-endpoints",
+    "dns-forwarding",
+    "troubleshooting",
+    "networking"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/storage-files-networking-dns.md",
+      "revision": "3e29f371547b49794dc23c230b04eb86aa963235",
+      "revision_date": "2025-06-17T17:43:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure DNS forwarding for Azure Files",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-networking-dns",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3e29f371547b49794dc23c230b04eb86aa963235/articles/storage/files/storage-files-networking-dns.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/files/storage-files-networking-overview.md",
+      "revision": "ad98c9a348bd1bebd51b88772a9a16f3de5f95d7",
+      "revision_date": "2025-07-02T21:01:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Networking Considerations for Azure Files",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-networking-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ad98c9a348bd1bebd51b88772a9a16f3de5f95d7/articles/storage/files/storage-files-networking-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-network-security-overview.md",
+      "revision": "22b105937ed50e44d8ec9bbb5442e1098bda229a",
+      "revision_date": "2025-07-02T16:25:27Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Storage Network security",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22b105937ed50e44d8ec9bbb5442e1098bda229a/articles/storage/common/storage-network-security-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there any specific firewall rules that might block SMB traffic even if DNS is correct?",
+    "What are the exact steps to configure a cross-tenant private endpoint if the standard forwarding fails?",
+    "How does the DNS resolution behave if the storage account is in a different region than the VNet?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-dns-when-a-private-file-share-is-unreachable.md",
+  "draft": true,
+  "word_count": 1038,
+  "claim_support_checks": [
+    {
+      "claim": "Private endpoints do not automatically block public access to the storage account.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Forwarding core.windows.net to Azure DNS affects all queries for this public domain.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure private DNS service is accessible from within a virtual network via the reserved IP address 168.63.129.16.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The cleanup section uses `Remove-DnsServerConditionalForwarderZone -Name \"core.windows.net\"`. The source code uses `$storageAccountEndpoint` (e.g., `core.windows.net`), but the fix instruction implies removing the zone by the literal string \"core.windows.net\" without noting the variable dependency or that the zone name is dynamic based on the cloud environment. This is a vague how-to step that may fail if the suffix differs (e.g., US Gov).",
+      "fix": "Update the cleanup command to use the variable `$storageAccountEndpoint` or explicitly state that the zone name matches the environment's storage suffix (e.g., `core.windows.net` for public cloud). Ensure the example matches the dynamic variable used in the configuration steps for consistency."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the issue is 'almost certainly DNS resolution' and that the public endpoint is 'often blocked'. This is an unsupported categorical claim. The source notes that creating a private endpoint does *not* block the public endpoint by default. The failure could be due to firewall rules, routing, or SMB encryption settings, not just DNS.",
+      "fix": "Remove the definitive claim 'almost certainly DNS resolution'. State that DNS misconfiguration is a common cause when private endpoints are used, but verify firewall rules and routing first. Clarify that private endpoints do not automatically block public access."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft omits the critical warning from S1 regarding cross-tenant resolution issues. It mentions the issue in a separate section but fails to warn that forwarding `core.windows.net` affects *all* queries, potentially breaking access to other tenants' public storage accounts if not handled. This is missing destructive/cost context (breakage of other services).",
+      "fix": "Move the cross-tenant warning to a prominent 'Prerequisites' or 'Warnings' section before configuration steps. Explicitly state that forwarding the entire `core.windows.net` zone impacts all storage account resolutions, not just the target one."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph starting with 'By ensuring that your on-premises DNS servers...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar structures.",
+      "fix": "Remove the final concluding paragraph entirely. End the article after the 'Cross-tenant considerations' or 'Cleanup' section, or with a direct verification step."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `Clear-DnsClientCache` in the verification step. This cmdlet clears the cache on the *local* machine running the command. The draft instructs running it on the 'on-premises DNS server' but the cmdlet is for the client cache. To clear the DNS server cache, `Clear-DnsServerCache` should be used. This is a vague/incorrect how-to step.",
+      "fix": "Change `Clear-DnsClientCache` to `Clear-DnsServerCache` when instructing to clear the cache on the DNS server. Keep `Clear-DnsClientCache` for client-side verification."
+    }
+  ]
+}

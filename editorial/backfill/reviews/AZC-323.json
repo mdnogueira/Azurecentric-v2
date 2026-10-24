@@ -1,0 +1,149 @@
+{
+  "id": "AZC-323",
+  "title": "Review infrastructure changes as an application dependency",
+  "slug": "review-infrastructure-changes-as-an-application-dependency",
+  "historical_date": "2026-06-22",
+  "input_sha256": "d27e33e888ca2878378162547eb7fb4659436ba97c3959e79356f321915bd91c",
+  "created_at": "2026-10-23T19:45:34.223068+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Map infrastructure changes to application dependencies using Bicep modules, explicit scoping, and property references.",
+  "tags": [
+    "bicep",
+    "infrastructure-as-code",
+    "azure-resource-manager",
+    "deployment",
+    "modules"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-323-learn-1.png",
+      "alt": "Screenshot of Visual Studio Code Bicep resource visualizer",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/fa91c9dd975e99eba2d8e105d639bc2b20edc200/articles/azure-resource-manager/bicep/media/resource-dependencies/bicep-resource-visualizer.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-12-08T17:21:26Z",
+      "sha256": "0d276cc08df5bb8953dfc1f1ac30f01bfc80105588321a85e5246bf9d73eff8e",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-323-learn-2.png",
+      "alt": "Screenshot that shows Azure Verified Modules.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/187458a376ce6ff9fbbb4d5a91e4cf1916ff61c0/articles/azure-resource-manager/bicep/media/modules/bicep-azure-verified-modules-avm.png",
+      "source_id": "S3",
+      "source_revision_date": "2026-06-12T21:01:03Z",
+      "sha256": "90184b7b44fa59f3256610ac1de24730a4d55b1b12f4939b6cf0ce58655bb347",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9a1c7f047f984c0fb378e0cea44917b47b6234d5",
+      "revision_date": "2025-12-10T18:36:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9a1c7f047f984c0fb378e0cea44917b47b6234d5/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/resource-dependencies.md",
+      "revision": "fa91c9dd975e99eba2d8e105d639bc2b20edc200",
+      "revision_date": "2025-12-08T17:21:26Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Set resource dependencies in Bicep",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa91c9dd975e99eba2d8e105d639bc2b20edc200/articles/azure-resource-manager/bicep/resource-dependencies.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/modules.md",
+      "revision": "187458a376ce6ff9fbbb4d5a91e4cf1916ff61c0",
+      "revision_date": "2026-06-12T21:01:03Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep modules",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/187458a376ce6ff9fbbb4d5a91e4cf1916ff61c0/articles/azure-resource-manager/bicep/modules.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the article clearly explain how to handle circular dependencies between modules?",
+    "Is there a specific example of how to troubleshoot a deployment failure caused by a missing dependency?",
+    "Are there any performance implications of using modules versus inline resources that should be mentioned?",
+    "How does the article address the case where the infrastructure module is in a different subscription or tenant?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-infrastructure-changes-as-an-application-dependency.md",
+  "draft": true,
+  "word_count": 940,
+  "claim_support_checks": [
+    {
+      "claim": "Bicep modules allow you to encapsulate infrastructure definitions into separate files, creating a deployment unit that Azure Resource Manager treats as a single resource.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Implicit dependencies are created when one resource declaration references another resource in the same deployment.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "You can set the scope for a module to be different from the scope for the Bicep file that contains it.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Verified Modules are prebuilt, pretested, and preverified modules that you can use to deploy resources on Azure.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The Bicep resource visualizer can be used to visualize the dependencies between resources in a Bicep file.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims referencing module outputs creates an implicit dependency. Sources state implicit dependencies arise from referencing resource properties (e.g., `storageAccount.id`), not module outputs. Module outputs are deployment-time values, not resource properties, so this distinction is technically inaccurate.",
+      "fix": "Clarify that implicit dependencies are formed by referencing resource properties via symbolic names. Note that while module outputs are not implicit dependencies, referencing them in subsequent module parameters or resource properties does create the necessary deployment order."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using the Azure Portal or CLI to view the 'deployment graph' to verify dependency order. Sources only describe the VS Code Bicep Resource Visualizer for visualizing dependencies. The Portal/CLI do not provide a visual dependency graph of the template structure.",
+      "fix": "Remove references to Portal/CLI for viewing dependency graphs. Direct readers to use the VS Code Bicep Resource Visualizer to inspect the dependency structure before deployment, as this is the only tool mentioned for visualizing these relationships."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that infrastructure changes in separate files without references cause no dependency issues. It fails to mention that if the infrastructure module is not referenced, the application deployment cannot wait for it, leading to race conditions. It misses the explicit `dependsOn` alternative for non-property references.",
+      "fix": "Explain that if infrastructure is not referenced by properties, no implicit dependency exists. To enforce order without property references, users must use explicit `dependsOn` declarations, though this is rare. Emphasize that property references are the preferred method for managing these dependencies."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses a screenshot from S2 (Visual Studio Code Bicep resource visualizer) but does not explicitly link it to the step of visualizing dependencies in the text flow, making it feel inserted. The guidance on 'verifying' is vague.",
+      "fix": "Place the screenshot immediately after the instruction to use the VS Code visualizer. Ensure the text explicitly states that this tool helps identify missing links or bottlenecks in the deployment graph, matching the source's description of the visualizer's purpose."
+    }
+  ]
+}

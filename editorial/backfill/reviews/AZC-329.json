@@ -1,0 +1,125 @@
+{
+  "id": "AZC-329",
+  "title": "Build an automation script that can resume after a failure",
+  "slug": "build-an-automation-script-that-can-resume-after-a-failure",
+  "historical_date": "2026-07-09",
+  "input_sha256": "7897c0b861491700b1306725bd68e4f56446479fb5b0a68532e88c71eff4dea5",
+  "created_at": "2026-10-23T19:54:59.666638+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Resume PowerShell automation using typed exception handling, efficient state tracking, and resource cleanup.",
+  "tags": [
+    "powershell",
+    "error-handling",
+    "automation",
+    "resilience",
+    "state-management"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "revision": "7baf66776aea350bef39470600f075e85f30d7ef",
+      "revision_date": "2026-04-02T20:03:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Everything you wanted to know about exceptions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/7baf66776aea350bef39470600f075e85f30d7ef/reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/scheduling-jobs-with-the-windows-powershell-api.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Scheduling Jobs with the Windows PowerShell API",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/scheduling-jobs-with-the-windows-powershell-api",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/scheduling-jobs-with-the-windows-powershell-api.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/dev-cross-plat/performance/script-authoring-considerations.md",
+      "revision": "fb4fea7bf2b39620b270f3d632465e275caf7d8b",
+      "revision_date": "2026-01-22T01:07:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell scripting performance considerations",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/dev-cross-plat/performance/script-authoring-considerations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/fb4fea7bf2b39620b270f3d632465e275caf7d8b/reference/docs-conceptual/dev-cross-plat/performance/script-authoring-considerations.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "How should the state file be handled if multiple script instances might run concurrently?",
+    "What is the best practice for atomic state file updates to prevent corruption?",
+    "How can we ensure that the state file is updated only after the work is truly complete, not just after the main action?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/build-an-automation-script-that-can-resume-after-a-failure.md",
+  "draft": true,
+  "word_count": 855,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell has three categories of errors: non-terminating, statement-terminating, and script-terminating.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A `finally` block runs every time, whether an exception occurs or not, ensuring cleanup code executes.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Array addition is inefficient in PowerShell versions prior to 7.5 because it creates a new array for each operation.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Using a `[List<T>]` object is faster than array addition for large collections.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims updating state *after* work is safer for idempotent operations, but this creates a window where a crash leaves the item unprocessed yet the script might assume success if logic is flawed, or worse, if the state is updated *before* work, a crash causes duplicates. The draft's logic is contradictory: it says 'most common mistake is to update after' but then uses 'update after' in the code. It fails to address the 'partial state' risk it mentions.",
+      "fix": "Clarify that for idempotent operations, updating state *before* work (optimistic) or using a transactional log is safer. If updating after, ensure the state write is the *last* step and handle partial writes. The current code updates state inside the try block *after* work, which is fine, but the text's warning about 'partial state' is vague and misleading without a concrete solution like a two-phase commit or a pending state file."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses `Get-Content | ConvertFrom-Json` to read a JSON file, which is inefficient for large state files. It also uses array addition (`$ProcessedItems += $Item`) inside a loop, which is explicitly warned against in Source S3 for performance reasons (creates new arrays each time).",
+      "fix": "Replace `$ProcessedItems += $Item` with `[System.Collections.Generic.List[Object]]::new()` as recommended in Source S3. Use `Get-Content -Raw` for JSON parsing to improve performance. Cite Source S3 for the performance warning."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'The solution is not to make the script immortal, but to make it stateful.' This is a vague, unsupported superlative. It implies state files are the only or best solution, ignoring other mechanisms like job states, databases, or cloud-native state management. It also doesn't address the 'future knowledge' aspect of the prompt's context (2026), though the sources are from 2025/2026.",
+      "fix": "Remove the 'immortal' metaphor. State that state files are *one* approach for simple scenarios, but note limitations like concurrency and atomicity. Provide a concrete verification step, such as checking the state file integrity after a simulated crash."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Decision criteria' section that is generic and repetitive. It lists 'Idempotency', 'State Persistence', etc., without providing specific, actionable guidance on *how* to implement these in the context of the provided code. It ends with 'By addressing these points...', which is a generic concluding paragraph.",
+      "fix": "Remove the generic 'Decision criteria' and 'By addressing...' conclusion. Replace with a concrete next action: 'Verify the state file content after execution to ensure only completed items are listed.' Keep the reading flow conversational and direct."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `Write-Host` for output, which Source S3 warns can be slower and doesn't go to the pipeline or transcripts. It also uses `Start-Sleep` which is not an error handling technique.",
+      "fix": "Replace `Write-Host` with `Write-Output` or `Write-Warning`/`Write-Error` as appropriate for pipeline compatibility. Remove `Start-Sleep` from the core logic example as it's not relevant to error handling. Cite Source S3 for `Write-Host` performance warnings."
+    }
+  ]
+}

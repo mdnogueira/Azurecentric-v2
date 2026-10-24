@@ -1,0 +1,131 @@
+{
+  "id": "AZC-225",
+  "title": "Review agent logs when an Arc extension fails",
+  "slug": "review-agent-logs-when-an-arc-extension-fails",
+  "historical_date": "2025-09-20",
+  "input_sha256": "e97e3f491e595281e6e6011c43693675d35526366d29d2ff3a09ca9f4dbb8d6e",
+  "created_at": "2026-10-23T17:24:46.663359+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Diagnose Arc extension failures by separating agent diagnostics from Guest Config extension logs.",
+  "tags": [
+    "azure-arc",
+    "troubleshooting",
+    "vm-extensions",
+    "azcmagent",
+    "logs"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/azcmagent-logs.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "azcmagent logs CLI reference",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/azcmagent-logs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/azcmagent-logs.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/troubleshoot-agent-onboard.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot Azure Connected Machine agent connection issues",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/troubleshoot-agent-onboard",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/troubleshoot-agent-onboard.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/troubleshoot-vm-extensions.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot Azure Arc-enabled servers VM extension issues",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/troubleshoot-vm-extensions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/troubleshoot-vm-extensions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/azcmagent-logs.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/troubleshoot-agent-onboard.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/troubleshoot-vm-extensions.md"
+  ],
+  "open_questions": [
+    "Does the azcmagent logs command include logs from all extensions, or only those managed by the Connected Machine agent?",
+    "Are there any permissions required to read the GuestConfig log directories on Linux?",
+    "Is there a specific log file for each extension, or are all logs for a single extension in one file?",
+    "What is the exact format of the error code 52 message in the Log Analytics agent logs?",
+    "Are there any known issues with the azcmagent logs command on specific Linux distributions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-agent-logs-when-an-arc-extension-fails.md",
+  "draft": true,
+  "word_count": 795,
+  "claim_support_checks": [
+    {
+      "claim": "The azcmagent logs command collects log files for the Azure connected machine agent and extensions into a ZIP archive.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The --full flag collects all log files on the system instead of just the most recent.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Guest Config logs for extensions are stored in specific directories on Windows and Linux.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Extension-specific logs are stored in subdirectories named after the extension.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Error code 52 in the Log Analytics agent status message indicates a missing dependency.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `azcmagent logs` collects logs for 'extensions'. Source S1 states it collects logs for the 'Azure connected machine agent and extensions', but S3 clarifies VM extension logs are managed by Guest Config and stored in separate paths. The command primarily aggregates agent logs; extension-specific logs require checking GuestConfig directories separately. This conflates two distinct logging mechanisms.",
+      "fix": "Clarify that `azcmagent logs` gathers agent diagnostics, while extension-specific logs reside in GuestConfig directories. Explicitly state that the ZIP archive contains agent logs, and users must manually check GuestConfig paths for extension details, as the command does not bundle extension handler logs."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests running `azcmagent logs` to verify if 'no new errors are appearing' after a fix. This is an operational misstep. The command creates a static ZIP archive; it does not provide a live stream or a mechanism to 'verify' ongoing health. Verification should rely on portal status or checking specific log files for recent timestamps, not re-running a collection command.",
+      "fix": "Replace the verification step with checking the Azure portal for extension status (`Succeeded`) and reviewing the most recent entries in the specific extension log files (e.g., `ext_mgr_logs`) for successful completion markers, rather than re-collecting a static archive."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies `azcmagent logs` captures 'output from azcmagent commands... during installation'. While S1 says it collects logs, S2 indicates verbose logs are written to specific file paths (`azcmagent.log`). The draft does not explain that `azcmagent logs` is a wrapper that zips these existing files. It risks confusing users who expect the command to actively record new verbose output during the collection process itself.",
+      "fix": "Clarify that `azcmagent logs` archives existing log files from disk. If verbose logging is needed for future troubleshooting, users must run commands with `--verbose` beforehand, as the collection command itself does not enable verbose logging retroactively."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Guest Config service' manages extension logs. While S3 references these paths, it does not explicitly name 'Guest Config' as the service managing them in the provided text snippet, though it is implied by the path structure. More importantly, the draft does not warn that these directories may require elevated privileges to read, which is a common friction point for users.",
+      "fix": "Add a note that reading GuestConfig log directories may require administrator/root privileges, consistent with S2's requirement for elevated context for `azcmagent` commands. This prevents permission errors during the troubleshooting step."
+    }
+  ]
+}

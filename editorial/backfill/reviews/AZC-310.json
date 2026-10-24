@@ -1,0 +1,122 @@
+{
+  "id": "AZC-310",
+  "title": "Investigate a server update that repeatedly fails",
+  "slug": "investigate-a-server-update-that-repeatedly-fails",
+  "historical_date": "2026-05-17",
+  "input_sha256": "5b319188a12e601a635ce8fb0d7a81dc3f313f2021aa927ccc63a95c000d4178",
+  "created_at": "2026-10-23T19:27:28.812431+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a Windows Server 2025 update failing repeatedly by verifying WSUS approval scope, synchronisation health, and client reporting.",
+  "tags": [
+    "wsus",
+    "windows-server-2025",
+    "troubleshooting",
+    "windows-update",
+    "system-administration"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-server-update-services/deploy/1-install-the-wsus-server-role.md",
+      "revision": "48fd05321fd0fe328b1977597b554d884ca5e35d",
+      "revision_date": "2026-02-16T15:35:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Step 1 - Install the WSUS Server Role",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/deploy/1-install-the-wsus-server-role",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/48fd05321fd0fe328b1977597b554d884ca5e35d/WindowsServerDocs/administration/windows-server-update-services/deploy/1-install-the-wsus-server-role.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-server-update-services/manage/update-management-with-windows-server-update-services.md",
+      "revision": "91a157a434aefa801f69e0a3c78d05dde5f340bf",
+      "revision_date": "2025-08-07T21:58:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Update Management with Windows Server Update Services",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/manage/update-management-with-windows-server-update-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/91a157a434aefa801f69e0a3c78d05dde5f340bf/WindowsServerDocs/administration/windows-server-update-services/manage/update-management-with-windows-server-update-services.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-server-update-services/manage/updates-operations.md",
+      "revision": "49ea7cbdffb7c4f27ec890a0356e913132572930",
+      "revision_date": "2025-10-15T15:55:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Updates Operations",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/manage/updates-operations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/49ea7cbdffb7c4f27ec890a0356e913132572930/WindowsServerDocs/administration/windows-server-update-services/manage/updates-operations.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source text provide specific error codes and their meanings for Windows Server 2025?",
+    "Is there information on how to check the WSUS database integrity in the provided sources?",
+    "Are there specific Group Policy settings for configuring the WSUS client location mentioned in the sources?",
+    "Does the source text cover the use of wuauclt /detectnow for forcing a client scan?",
+    "Is there information on scaling WSUS server resources in the provided sources?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-server-update-that-repeatedly-fails.md",
+  "draft": true,
+  "word_count": 877,
+  "claim_support_checks": [
+    {
+      "claim": "WSUS requires explicit approval of updates for them to be installed on client computers.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "WSUS synchronisation status can be checked in the administration console under Options > Synchronizations.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The WindowsUpdate.log file on the client provides detailed information about update process errors.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft recommends 'wuauclt /detectnow' to force a client scan. This command is deprecated and removed in Windows 10/Server 2016 and later, including Windows Server 2025. It will fail or be ignored.",
+      "fix": "Replace with 'Start-Service wuauserv' or 'Invoke-WsusServerCleanup' context. Use 'Get-WindowsUpdateLog' for log retrieval. Cite modern client management docs."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims 'WSUS synchronisation status can be checked... under Options > Synchronizations' and cites S2. S2 is an overview page with no such path. S3 and S1 also do not support this specific UI path.",
+      "fix": "Remove the specific UI path claim or verify against current WSUS console docs. S2 only mentions checking the home page. Do not invent navigation steps not in sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft lists specific error codes (0x80070005, 0x80240017, 0x800f081f) and their meanings. None of the provided sources (S1, S2, S3) contain these codes or definitions.",
+      "fix": "Remove the specific error code list. Sources do not support these technical details. Advise checking logs generally as S2 suggests, without inventing specific hex codes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking 'WSUS database integrity' and using the Cleanup Wizard to fix corruption. S3 states the Cleanup Wizard removes obsolete/declined updates, not that it repairs database corruption.",
+      "fix": "Clarify that the Cleanup Wizard manages disk space and obsolete records. Do not claim it fixes database integrity issues. Remove unsupported diagnostic steps."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies 'WindowsUpdate.log' is the primary detailed log. Modern Windows Server versions use 'WindowsUpdate.log' (legacy) or 'Setupact.log'/'DISM.log'. The source S2 only vaguely mentions 'application logs'.",
+      "fix": "Align with S2's vague guidance or cite specific modern log locations if known from external valid sources. Avoid implying WindowsUpdate.log is the sole diagnostic tool for Server 2025."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "AZC-328",
+  "title": "Run a Well-Architected review with the operations team",
+  "slug": "run-a-well-architected-review-with-the-operations-team",
+  "historical_date": "2026-07-06",
+  "input_sha256": "91eb074697a71e78ff4243a4f0dacbf7b13e9f5de2625bb84b3f09dc4b1c7f8a",
+  "created_at": "2026-10-23T19:53:13.926756+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Run a Well-Architected review by mapping service-specific reliability guides to operational responsibilities and verifying RPO/RTO assumptions.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "297ed3fede45b3785bda973110241a420f0e621b",
+      "revision_date": "2024-02-23T13:07:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/297ed3fede45b3785bda973110241a420f0e621b/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/overview-reliability-guidance.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability Guides for Azure Services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview-reliability-guidance",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/overview-reliability-guidance.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-community-training.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability in Microsoft Community Training",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-community-training",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/reliability-community-training.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-02-23T16:05:23Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-guidance-overview.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/overview-reliability-guidance.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-community-training.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/run-a-well-architected-review-with-the-operations-team.md",
+  "draft": true,
+  "word_count": 878,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites 'Reliability in Azure SQL Database' as the source for RPO/RTO metrics. The provided sources (S1, S2) do not contain this specific guide or its content. S1 lists Azure SQL guides but does not provide the text for RPO/RTO values. The draft invents specific operational details (geo-restore enablement, retention periods) without source support.",
+      "fix": "Replace the Azure SQL example with a service explicitly detailed in the sources, such as Microsoft Community Training (S3), which provides specific RPO (12 hours) and RTO (48 hours) figures for managed disaster recovery. Ensure all metric claims are traceable to the provided source text."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Community Training' is an Azure service with reliability guides. While S3 exists, S2 (the 2026 overview) does not list 'Microsoft Community Training' in its main table, listing only 'Microsoft Community Training' in the 'Reliability guides by service' table in S2? Actually, S2 lists 'Microsoft Community Training' at the bottom. However, S3 describes it as a 'cloud-based solution' rather than a standard PaaS/IaaS service. The draft treats it as a generic Azure service example without clarifying its specific nature, potentially misleading readers about standard Azure service reliability patterns.",
+      "fix": "Clarify that 'Microsoft Community Training' is a specific solution with unique DR procedures (manual failover, consent required) rather than a standard Azure service. Use it as a specific case study for 'managed DR' vs 'custom DR' rather than a general example of Azure service reliability."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'If the deployment does not meet the SLA requirements, the team needs to understand the risk and whether additional measures are needed.' This implies a binary pass/fail against SLA. The sources (S1, S2) indicate SLAs change based on configuration, but do not provide a mechanism for 'additional measures' to fix an SLA gap other than changing the configuration (e.g., adding zones). The draft is vague on how to 'meet' SLA requirements if the current config doesn't.",
+      "fix": "Specify that meeting SLA requirements typically involves adjusting the deployment configuration (e.g., enabling availability zones or multi-region redundancy) as described in the service-specific guides. Remove vague references to 'additional measures' and focus on configuration changes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'Azure SQL-Managed Instance' in S1's table but does not provide a reliability guide link in S2 for it? S2 lists 'Reliability in Azure SQL Managed Instance'. However, the draft's example for 'Azure SQL Database' is not supported by the text of S1 or S2, which only provide links. The draft invents the content of the guide (RPO/RTO details) for SQL DB.",
+      "fix": "Remove the specific RPO/RTO claims for Azure SQL Database. Use the general statement from S2 that guides 'describe... RPO and RTO' without citing specific values unless they are from a provided source like S3. Ensure all examples are backed by the provided source text."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By focusing on the service-specific reliability guides... you can ensure that the reliability review is practical and actionable.' This is a generic concluding paragraph that adds no technical value. The guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar.",
+      "fix": "Remove the final two paragraphs. End the article with the concrete next step: 'Schedule a follow-up meeting to review the progress on the action items and to ensure that the changes are implemented correctly.'"
+    }
+  ]
+}

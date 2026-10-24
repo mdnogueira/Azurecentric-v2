@@ -1,0 +1,147 @@
+{
+  "id": "AZC-208",
+  "title": "Separate API authentication from subscription keys",
+  "slug": "separate-api-authentication-from-subscription-keys",
+  "historical_date": "2025-08-04",
+  "input_sha256": "9d6ce4f6cf032242974915863a2ffe45613e2420bd1997f94899ab0caf601f2b",
+  "created_at": "2026-10-23T17:02:31.311179+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Separate API authentication from subscription keys in Azure API Management using OAuth 2.0 and JWT validation.",
+  "tags": [
+    "api-management",
+    "oauth-2.0",
+    "authentication",
+    "authorization",
+    "security",
+    "jwt"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-208-learn-1.png",
+      "alt": "Screenshot of enabling Microsoft Entra ID in the developer portal overview page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/782e1cfadfc6ba60371effb33aa41dc74fce88bd/articles/api-management/media/api-management-howto-aad/enable-azure-ad-portal.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-03-12T23:13:37Z",
+      "sha256": "18a4ea8b7dba359192a84d81cfd9a6addcc8ed3631b0bcc464bf62badd363c17",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/authentication-authorization-overview.md",
+      "revision": "0e46dea1d06a4b2ff2d46f3d5a8ef14bf88575b4",
+      "revision_date": "2025-03-13T00:05:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "API authentication and authorization - Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/authentication-authorization-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0e46dea1d06a4b2ff2d46f3d5a8ef14bf88575b4/articles/api-management/authentication-authorization-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-howto-aad.md",
+      "revision": "782e1cfadfc6ba60371effb33aa41dc74fce88bd",
+      "revision_date": "2025-03-12T23:13:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Authorize access to API Management developer portal by using Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-aad",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/782e1cfadfc6ba60371effb33aa41dc74fce88bd/articles/api-management/api-management-howto-aad.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-howto-oauth2.md",
+      "revision": "c2a5f7f8667bd925f4354d72ceee5459958741ae",
+      "revision_date": "2025-01-06T22:45:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Authorize test console of API Management developer portal - OAuth 2.0",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-oauth2",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c2a5f7f8667bd925f4354d72ceee5459958741ae/articles/api-management/api-management-howto-oauth2.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md"
+  ],
+  "open_questions": [
+    "Does the `validate-azure-ad-token` policy offer any specific advantages over `validate-jwt` for Microsoft Entra ID that should be highlighted?",
+    "Are there any specific security baselines or recommendations for API Management that should be referenced alongside OAuth 2.0 configuration?",
+    "How does the cost model for API Management tiers affect the availability of OAuth 2.0 features?",
+    "Is there a recommended approach for handling token refresh in the developer portal test console?",
+    "What are the best practices for managing client secrets in Microsoft Entra ID for API Management?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-api-authentication-from-subscription-keys.md",
+  "draft": true,
+  "word_count": 1118,
+  "claim_support_checks": [
+    {
+      "claim": "Subscription keys are not a strong form of authentication on their own.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "API Management supports OAuth 2.0 authorization between the client and the gateway, or between the gateway and the backend.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The validate-jwt policy can be used to check the audience claim in an access token.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The developer portal can be secured using Microsoft Entra ID for user sign-in.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Managed connections allow API Management to handle OAuth 2.0 flows to backend SaaS services.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the `validate-azure-ad-token` policy offers specific advantages over `validate-jwt` for Microsoft Entra ID, but the provided sources do not detail these advantages or compare them. S1 only notes it is available for the 'special case' of Entra ID. This is an unsupported comparative claim.",
+      "fix": "Remove the comparative claim about advantages. State only that `validate-azure-ad-token` is available for Entra ID scenarios as an alternative to `validate-jwt`, per S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that enabling OAuth 2.0 in the developer portal test console automatically enables API authentication for all APIs. S3 clarifies that configuring OAuth 2.0 user authorization only enables the test console as a client; each API must be individually configured to use that server, and token validation must be configured separately.",
+      "fix": "Clarify that configuring the OAuth server in the portal does not automatically secure APIs. Explicitly state that APIs must be individually configured to use the server and policies must be added for validation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `validate-jwt` to check the audience claim against the backend API's client ID. S3's example policy checks the `aud` claim against the backend-app-client-id, but S1 notes that for Scenario 1 (Client to Backend), the audience is the backend, while for Scenario 2 (Client to Gateway), the audience is the gateway. The draft conflates these without specifying the scenario context for the code example.",
+      "fix": "Specify that the audience claim value depends on the OAuth scenario. For Scenario 1, it is the backend client ID; for Scenario 2, it is the API Management gateway client ID. Update the code comment to reflect this distinction."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'enabling OAuth 2.0 does not automatically disable public access'. This is vague and potentially misleading. S1 indicates subscription keys are for access control, but OAuth configuration is separate. The draft should clarify that OAuth configuration is independent of subscription key requirements or public/private API settings.",
+      "fix": "Rephrase to clarify that OAuth 2.0 configuration is independent of subscription key requirements. State that APIs can require both OAuth tokens and subscription keys, or just one, depending on policy configuration."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'token leakage' and 'replay attacks' as risks of subscription keys without source support. S1 only states subscription keys are not a 'strong form of authentication'. The draft invents specific attack vectors not present in the provided sources.",
+      "fix": "Remove specific attack vector claims. Stick to the source's assertion that subscription keys are not a strong authentication mechanism and are better suited for tracking or basic access control when used with other methods."
+    }
+  ]
+}

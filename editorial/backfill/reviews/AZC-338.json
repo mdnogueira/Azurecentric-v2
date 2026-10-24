@@ -1,0 +1,135 @@
+{
+  "id": "AZC-338",
+  "title": "Plan a rollback that includes application configuration",
+  "slug": "plan-a-rollback-that-includes-application-configuration",
+  "historical_date": "2026-08-03",
+  "input_sha256": "883cfa6633199ef12c3faff23e425a3df4803fba46a84d54aa878f211f1038b2",
+  "created_at": "2026-10-23T20:07:51.927237+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan a rollback for App Service slots by managing sticky configuration and using swap with preview to validate settings before traffic switches.",
+  "tags": [
+    "azure-app-service",
+    "deployment-slots",
+    "rollback",
+    "configuration-management",
+    "swap-with-preview"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-338-learn-1.png",
+      "alt": "Screenshot that shows selections for configuring a new deployment slot called 'staging' in the portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/15c28eaf8db295ca400bfa52eaa5e9fc917306c8/articles/app-service/media/web-sites-staged-publishing/configure-new-slot.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-11-28T12:50:32Z",
+      "sha256": "d0bf62804c2a349c52e0c625755af91776525997b077be4d4a02c3d4a4cb2285",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/deploy-staging-slots.md",
+      "revision": "15c28eaf8db295ca400bfa52eaa5e9fc917306c8",
+      "revision_date": "2025-11-28T12:50:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Set Up Staging Environments",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/15c28eaf8db295ca400bfa52eaa5e9fc917306c8/articles/app-service/deploy-staging-slots.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-deployment-technologies.md",
+      "revision": "16f553e697314a3bd41badd135d52b1dfb8b976a",
+      "revision_date": "2026-04-16T21:14:49Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deployment technologies in Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-deployment-technologies",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/16f553e697314a3bd41badd135d52b1dfb8b976a/articles/azure-functions/functions-deployment-technologies.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found"
+  ],
+  "open_questions": [
+    "How does the behavior of sticky settings interact with the WEBSITE_OVERRIDE_PRESERVE_DEFAULT_STICKY_SLOT_SETTINGS app setting?",
+    "What are the exact steps to configure sticky settings via Azure CLI or PowerShell?",
+    "Are there any known issues with swap with preview and specific authentication providers?",
+    "How does the swap operation handle managed identities, which are not swapped?",
+    "What is the impact of swap on WebJobs schedulers, which are not swapped?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-a-rollback-that-includes-application-configuration.md",
+  "draft": true,
+  "word_count": 1071,
+  "claim_support_checks": [
+    {
+      "claim": "App settings and connection strings can be configured to stick to a slot and not swap.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Swap with preview pauses the swap operation after applying configuration to the source slot.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Private endpoints are not cloned across deployment slots.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Swap with preview is not supported if site authentication is enabled in one of the slots.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Auto swap is not supported in web apps on Linux and in Web App for Containers.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the rollback procedure is 'straightforward' and implies a simple swap restores the previous state. It fails to mention that swapping slots also swaps the code. If the 'old code' is currently in the staging slot (after the failed swap), swapping back restores the old code, but the draft's logic on 'Phase 1' validation during rollback is confusingly described as applying production config to staging, which is correct, but the overall narrative minimizes the complexity of ensuring the 'old code' is actually in the correct slot to be swapped back.",
+      "fix": "Clarify that a rollback swap exchanges both code and swapped settings. Emphasize that to restore the 'last known good' state, the slot containing the good code must be in the source position. The draft's Step 2 description is technically accurate but lacks the critical context that the 'old code' must have been preserved in the staging slot during the initial failed swap."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states: 'If you changed an app setting in the staging slot to test a new feature, that setting will swap into production. If you then swap back, the old code returns, but it brings the new setting with it.' This is misleading. If the setting was NOT marked as sticky, it swaps. If you swap back, the setting (now in production) swaps back to staging (where the old code is). The old code in staging gets the new setting. This is correct. However, the draft implies this is a problem with the 'rollback' itself, rather than a design choice. It fails to explicitly recommend marking such settings as sticky BEFORE the initial swap if they are environment-specific or risky.",
+      "fix": "Rephrase to explicitly advise marking risky or environment-specific app settings as 'sticky' (slot-specific) BEFORE performing the initial swap. This ensures they remain in the staging slot and do not propagate to production, simplifying rollback by keeping configuration isolated."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a section 'Deployment technologies in Azure Functions' in the 'Further documentation' link but the body text focuses entirely on App Service. This is a distraction and potentially confusing as the draft title and content are about App Service deployment slots, not Functions. The source S2 is not directly relevant to the App Service slot rollback mechanics described.",
+      "fix": "Remove the reference to Azure Functions deployment technologies from the 'Further documentation' section unless the draft is expanded to cover Functions. The current content is exclusively about App Service. Keep the link to S1 only."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'If you cancel the swap after Phase 1, App Service reapplies the original configuration to the source slot.' This is correct for 'Swap with Preview'. However, it does not mention that this cancellation is only possible during the preview phase. Once the swap is completed, the only way to revert is another swap. The draft's 'Limitations' section mentions Auto Swap but not the irreversibility of a completed standard swap without a pre-prepared staging slot.",
+      "fix": "Clarify that 'Swap with Preview' cancellation is a one-time opportunity during the preview phase. For standard swaps, emphasize that the 'rollback' is simply another swap operation, requiring the previous production slot to still exist and contain the previous code (which it does, as it was swapped to staging)."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Private Endpoints: Private endpoints are not cloned across slots.' This is a limitation of cloning, not swapping. The draft does not explain that if a private endpoint was configured in production, it remains in production after a swap. If the staging slot needs access to the same resources, it might need its own private endpoint configuration if it wasn't cloned. This is a minor nuance but could cause confusion.",
+      "fix": "Clarify that private endpoints are slot-specific resources. If a private endpoint was configured in the production slot, it stays with the production slot after a swap. The staging slot (which becomes the new production) will not have that private endpoint unless it was configured there previously or cloned. This is rarely an issue for the app itself but might affect management tools."
+    }
+  ]
+}

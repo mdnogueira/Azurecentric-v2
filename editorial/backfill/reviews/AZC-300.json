@@ -1,0 +1,135 @@
+{
+  "id": "AZC-300",
+  "title": "Separate compute image versions from application releases",
+  "slug": "separate-compute-image-versions-from-application-releases",
+  "historical_date": "2026-04-19",
+  "input_sha256": "7dd04c7d9d2d5a634cf2b4a2daa9b3452b75e366069983d98fc5c65baffbced8",
+  "created_at": "2026-10-23T19:14:36.581213+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decouple application updates from VM image maintenance using Azure Compute Gallery VM Applications.",
+  "tags": [
+    "azure-compute-gallery",
+    "vm-applications",
+    "infrastructure-as-code",
+    "virtual-machines",
+    "application-deployment"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/azure-compute-gallery.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of Azure Compute Gallery",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/azure-compute-gallery.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/image-version.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create an image definition and image version",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/image-version",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/image-version.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/image-builder-gallery-update-image-version.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a new VM image version from an existing image version by using Azure VM Image Builder in Linux",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/image-builder-gallery-update-image-version",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/linux/image-builder-gallery-update-image-version.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/azure-compute-gallery.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/image-version.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/linux/image-builder-gallery-update-image-version.md"
+  ],
+  "open_questions": [
+    "The provided sources do not contain the specific Azure CLI commands or parameters for creating VM Application definitions or versions (e.g., `az sig vm-app-definition create`). The draft includes these commands as illustrative examples, but their accuracy against the April 2026 API is not verified by the source text.",
+    "The sources describe VM Applications conceptually but do not specify the exact mechanism by which the application is installed on the VM (e.g., whether it is automatic via a gallery extension or manual via Custom Script Extension). The draft assumes a specific trigger mechanism.",
+    "The draft claims the VM Application definition itself is not encrypted. The sources mention encryption for image versions in the context of Direct Shared Gallery limitations but do not explicitly state the encryption status of VM Application metadata.",
+    "The draft references a `latest` alias for VM Applications. The sources discuss `excludeFromLatest` for image versions but do not mention a `latest` alias mechanism for VM Applications."
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-compute-image-versions-from-application-releases.md",
+  "draft": true,
+  "word_count": 1221,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Compute Gallery helps build structure around resources like images and applications.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Separating application installation from VM images means there’s no need to publish a new image for every line of code change.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "VM Applications are a resource type within Azure Compute Gallery for storing applications.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Image versions are used to create VMs and can be replicated to multiple regions.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "VM Image Builder can create a new VM image version from an existing image version.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft invents CLI commands (`az sig vm-app-definition create`, `az sig vm-app-version create`) and parameters (`--artifact-url`, `--target-regions` for apps) that do not exist in the provided sources. The sources describe VM Applications conceptually but provide no CLI syntax or specific parameter structures for creation.",
+      "fix": "Remove the specific CLI code blocks for VM Applications. Replace with a conceptual explanation that VM Applications are managed via the Azure Compute Gallery resource model, referencing the general image creation workflow in S2 for structural context, or omit code until official documentation is available."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims VM Applications 'point to application artifacts' and that the deployment process 'triggers the application installation'. The sources state VM Applications package 'application installers or scripts' but do not specify that the Gallery service itself triggers installation or that it points to URLs directly in the way described. This misrepresents the mechanism.",
+      "fix": "Clarify that VM Applications store metadata and references to artifacts. Installation is typically handled by VM extensions (like Custom Script Extension) or Image Builder, not automatically by the Gallery service. Cite S1's description of VM Apps as a resource type for packaging."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The VM Application definition itself is not encrypted'. The sources do not support this claim. S1 mentions 'encrypted image versions' in the context of Direct Shared Gallery limitations, but does not discuss encryption status of VM Applications.",
+      "fix": "Remove the claim about encryption. State that artifacts should be secured (e.g., private storage) as a best practice, without asserting the Gallery's encryption capabilities for the application metadata itself."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `latest` alias for VM Applications ('If you use the `latest` alias...'). The sources discuss `excludeFromLatest` for image versions (S1) but do not mention a `latest` alias or mechanism for VM Applications.",
+      "fix": "Remove the reference to a `latest` alias for VM Applications. Instead, describe updating the application version reference in deployment scripts or using specific version numbers, as VM Applications are versioned resources."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies VM Applications reduce 'egress costs' by replicating artifacts. S1 states network egress charges apply for replication of the *first* resource version from source to replicated regions, but subsequent replicas are handled within the region. The draft's cost benefit claim is partially supported but lacks the nuance of the initial egress charge.",
+      "fix": "Refine the cost section to acknowledge that while replication reduces egress for VMs, the initial replication of the artifact incurs egress charges, similar to image versions. Reference S1's billing section for accuracy."
+    }
+  ]
+}

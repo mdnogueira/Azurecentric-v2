@@ -1,0 +1,152 @@
+{
+  "id": "AZC-275",
+  "title": "Review the regulatory compliance dashboard in Defender for Cloud",
+  "slug": "review-the-regulatory-compliance-dashboard-in-defender-for-cloud",
+  "historical_date": "2026-02-07",
+  "input_sha256": "87402e992d9f9559b16838e4c4128439072982b2f7497503263534d9a35b7ad7",
+  "created_at": "2026-10-23T18:37:02.575974+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Navigate the Defender for Cloud regulatory compliance dashboard to assess standards, understand control states, and plan remediation.",
+  "tags": [
+    "defender-for-cloud",
+    "regulatory-compliance",
+    "security-benchmark",
+    "cloud-security",
+    "azure"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-275-learn-1.png",
+      "alt": "Screenshot of a sample regulatory compliance page in Defender for Cloud.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/concept-regulatory-compliance/compliance-dashboard.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "ff5134944e38c500ffcc7e54004a85e55568896cd6e6fb6a7a1a725c6f4e3413",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-275-learn-2.png",
+      "alt": "Screenshot showing the regulatory compliance dashboard.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/concepts-regulatory-compliance-standards/compliance-standards.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "3171d1398def4cae634e4b77c4d70b7d12b569dc2c7996de57061dacabfa38c5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/concept-regulatory-compliance.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "The Microsoft cloud security benchmark in Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/concept-regulatory-compliance.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/concept-regulatory-compliance-standards.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Regulatory compliance in Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance-standards",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/concept-regulatory-compliance-standards.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/secure-score-security-controls.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure score in Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/secure-score-security-controls.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/concept-regulatory-compliance.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/concept-regulatory-compliance-standards.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/secure-score-security-controls.md"
+  ],
+  "open_questions": [
+    "Does the greyed-out status apply to all non-Azure standards or only specific controls within them?",
+    "What is the exact refresh rate for the compliance status in the dashboard compared to the secure score?",
+    "Are there any specific permissions required to view the regulatory compliance dashboard beyond standard Reader access?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-the-regulatory-compliance-dashboard-in-defender-for-cloud.md",
+  "draft": true,
+  "word_count": 1057,
+  "claim_support_checks": [
+    {
+      "claim": "The Microsoft Cloud Security Benchmark (MCSB) is automatically applied when Azure subscriptions are onboarded to Defender for Cloud.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Greyed-out controls in the dashboard indicate that Defender for Cloud cannot automatically assess compliance for those controls.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Shared responsibilities features in the regulatory compliance dashboard are only compatible with Azure.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The regulatory compliance dashboard provides an interactive overview of compliance state, including summaries and drill-down capabilities.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the dashboard provides 'granular breakdown of controls' and 'remediation steps' for greyed-out controls. Source S2 explicitly states that for controls that cannot be automatically assessed (greyed out), Defender for Cloud 'isn't able to decide whether a resource complies' and implies no automated remediation path exists within the tool for these specific controls. The draft misleads users into expecting actionable remediation steps for greyed-out items.",
+      "fix": "Clarify that greyed-out controls indicate a lack of automated assessment capability. State that remediation steps are only available for controls that have been assessed (green/red). Advise users that greyed-out controls require manual verification or external evidence, not in-dashboard remediation actions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions creating a 'compliance over time workbook' as a feature of the dashboard. Source S2 lists this under 'Next steps' or related content, implying it is a separate resource creation task, not a native dashboard view or button. The phrasing suggests it is an immediate option within the dashboard interface, which is inaccurate.",
+      "fix": "Rephrase to indicate that users can 'create' or 'link to' a compliance workbook as a separate action to track trends, rather than implying it is a built-in dashboard view. Ensure the distinction between the dashboard view and external workbook creation is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Shared responsibilities are only compatible with Azure' and implies this is a feature of the dashboard. Source S1 notes this compatibility but does not explicitly state it is a 'feature' of the dashboard in the same way as controls. More importantly, the draft does not explain what 'shared responsibilities' means in this context (e.g., who is responsible for what), which is critical for understanding the dashboard's value.",
+      "fix": "Briefly explain that 'shared responsibilities' refers to the delineation of security duties between Microsoft and the customer, which is explicitly mapped in the Azure dashboard. For AWS/GCP, clarify that the dashboard focuses on the customer's configuration compliance based on connector data."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'Regulatory compliance dashboard' consistently. Source S1 and S2 refer to it as the 'Regulatory compliance' dashboard or page. While minor, the draft should ensure consistency with the exact UI label. Also, the draft does not mention that the MCSB is a 'security standard' represented in the dashboard, which is a key conceptual link in Source S1.",
+      "fix": "Ensure the term 'Regulatory compliance' matches the exact UI label. Add a sentence clarifying that standards like MCSB are represented as 'security standards' within this dashboard, linking the concept of 'standards' to the 'dashboard' view more explicitly."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'download audit reports' as a feature. Source S2 lists this as a capability. However, the draft does not specify the format or scope of these reports (e.g., per standard, per scope). This vagueness might lead users to expect a single comprehensive report when the tool may generate multiple or specific ones.",
+      "fix": "Specify that audit reports can be generated for specific standards or scopes. Mention that these reports are useful for external audits, aligning with the 'evidence' aspect mentioned elsewhere in the draft."
+    }
+  ]
+}

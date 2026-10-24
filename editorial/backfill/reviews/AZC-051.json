@@ -1,0 +1,124 @@
+{
+  "id": "AZC-051",
+  "title": "Use Microsoft Entra permissions to access blob data",
+  "slug": "use-microsoft-entra-permissions-to-access-blob-data",
+  "historical_date": "2024-05-21",
+  "input_sha256": "0a267a036f2ca5e54870d9707ada92ee33d15038947bc732ecfc8740a11d3dff",
+  "created_at": "2026-10-23T13:23:46.984244+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Assign Azure RBAC roles for blob data access, distinguishing data-plane permissions from control-plane management.",
+  "tags": [
+    "azure-rbac",
+    "blob-storage",
+    "microsoft-entra-id",
+    "data-access",
+    "storage-security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/assign-azure-role-data-access.md",
+      "revision": "831e0954e7c92eb79518aa4a59a89c1d5e14991a",
+      "revision_date": "2024-03-31T21:56:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Assign an Azure role for access to blob data",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/831e0954e7c92eb79518aa4a59a89c1d5e14991a/articles/storage/blobs/assign-azure-role-data-access.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/authorize-access-azure-active-directory.md",
+      "revision": "928127a2f24afb019f14d872d6e97cb06e280fe3",
+      "revision_date": "2024-05-10T12:53:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Authorize access to blobs using Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/928127a2f24afb019f14d872d6e97cb06e280fe3/articles/storage/blobs/authorize-access-azure-active-directory.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/authorize-data-access.md",
+      "revision": "928127a2f24afb019f14d872d6e97cb06e280fe3",
+      "revision_date": "2024-05-10T12:53:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Authorize operations for data access",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/928127a2f24afb019f14d872d6e97cb06e280fe3/articles/storage/common/authorize-data-access.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "S1 states role changes take up to 10 minutes, while S2 states up to 30 minutes. The article uses 30 minutes. Is there a specific scope or condition where the 10-minute limit applies, or is 30 minutes the safe upper bound for all assignments?",
+    "Does the `az storage blob list` command with `--auth-mode login` guarantee that Shared Key fallback is bypassed if the user has `listKeys` permissions, or are there other fallback mechanisms in the CLI SDK?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-microsoft-entra-permissions-to-access-blob-data.md",
+  "draft": true,
+  "word_count": 970,
+  "claim_support_checks": [
+    {
+      "claim": "Control-plane roles like Contributor do not grant data-plane access to blobs.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Portal access requires both data roles and Reader role.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Role assignments can take up to 30 minutes to propagate.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Arc-enabled servers can use managed identities for Azure services.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Claims Azure role assignments take up to 30 minutes to propagate. S1 states 'up to 10 minutes'. S2 states 'up to 30 minutes'. The draft uses the longer duration without context, potentially causing unnecessary delays in troubleshooting.",
+      "fix": "Align with S2's 'up to 30 minutes' warning but note S1's '10 minutes' for typical cases. Clarify that propagation time varies by scope and consistency model."
+    },
+    {
+      "severity": "medium",
+      "problem": "Suggests using `az storage blob list` to verify Entra auth. This command defaults to Shared Key if keys are available, potentially masking missing RBAC roles. S1/S2 emphasize that portal/CLI behavior depends on `listKeys` permission.",
+      "fix": "Explicitly state that verification commands must force Entra auth (e.g., `--auth-mode login`) to accurately test RBAC permissions, otherwise Shared Key fallback may succeed despite missing roles."
+    },
+    {
+      "severity": "medium",
+      "problem": "States Azure Arc-enabled servers can use managed identities to connect to Azure services. S1/S2 mention this for on-premises apps but do not explicitly confirm 'Azure Arc-enabled servers' as the specific mechanism for blob storage managed identity auth in this context.",
+      "fix": "Verify if 'Azure Arc-enabled servers' is the correct terminology for blob storage auth or if it refers to general Azure Arc identity. Ensure the link between Arc and Blob Storage RBAC is explicitly supported by sources."
+    },
+    {
+      "severity": "low",
+      "problem": "Omits mention of Azure Attribute-Based Access Control (ABAC) for blob resources, which is a modern capability for granular access control mentioned in S2.",
+      "fix": "Add a brief note about Azure ABAC as an advanced option for fine-grained access control using conditions on role assignments, as supported by S2."
+    },
+    {
+      "severity": "low",
+      "problem": "Does not explicitly warn about the 'AuthorizationPermissionMismatch' error occurring when only control-plane roles are assigned, though it mentions the error code. S1/S2 explain this is due to missing data-plane roles.",
+      "fix": "Clarify that 'AuthorizationPermissionMismatch' specifically indicates a mismatch between the requested data operation and the assigned data-plane role, distinct from general RBAC errors."
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "AZC-167",
+  "title": "Apply Azure Policy to Arc-enabled servers",
+  "slug": "apply-azure-policy-to-arc-enabled-servers",
+  "historical_date": "2025-04-12",
+  "input_sha256": "2a7b4f36efff0257702d87cd2a54c283661444dc9693fb85320d7ac98afb64c2",
+  "created_at": "2026-10-23T16:06:12.502873+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Assign Azure Policy to Arc servers to audit or install the Azure Monitor Agent, using a Data Collection Rule and guest configuration.",
+  "tags": [
+    "azure-arc",
+    "azure-policy",
+    "azure-monitor",
+    "ama",
+    "security",
+    "tier0"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-167-learn-1.png",
+      "alt": "Screenshot of All services window showing search for policy service.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/learn/media/tutorial-assign-policy-portal/all-services-page.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "0c65882f2d50618f2b3688a8dc5b69168021002635ddd75a83e9b6a83fc410b3",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-167-learn-2.png",
+      "alt": "Screenshot of the Overview window for a data collection rule highlighting the JSON view button.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/media/deploy-ama-policy/dcr-overview.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "311c3342ce7239064bc57dda7850ac5bbb580c1b7e497ca9564d9c17d166c0f5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/learn/tutorial-assign-policy-portal.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Tutorial - New policy assignment with Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/learn/tutorial-assign-policy-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/learn/tutorial-assign-policy-portal.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/deploy-ama-policy.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to deploy and configure Azure Monitor Agent using Azure Policy",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/deploy-ama-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/deploy-ama-policy.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/security-overview.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Security overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/security-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/security-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/learn/tutorial-assign-policy-portal.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/deploy-ama-policy.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/security-overview.md"
+  ],
+  "open_questions": [
+    "How does the policy evaluation frequency impact the time to remediation for new Arc-enabled servers?",
+    "What are the specific RBAC permissions required for the remediation task to install extensions on Arc-enabled servers?",
+    "Can a single DCR be associated with multiple policy assignments for different scopes?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/apply-azure-policy-to-arc-enabled-servers.md",
+  "draft": true,
+  "word_count": 1197,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Policy can audit or automatically install the Azure Monitor Agent on Arc-enabled servers.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "A Data Collection Rule (DCR) resource ID is required for the policy to associate with the agent.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Built-in policy initiatives exist for configuring Windows and Linux machines to run the Azure Monitor Agent.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Local agent security controls can restrict extensions and services on Tier 0 assets.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The Azure Connected Machine agent runs as Local System on Windows and root on Linux.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies built-in initiatives are directly assignable via ID. Source S2 describes them as templates to 'create' a policy definition, not assign directly. The IDs provided are initiative IDs, which cannot be assigned directly in the portal without first creating a definition from the initiative. This misleads users on the exact UI workflow.",
+      "fix": "Clarify that the provided IDs are for policy initiatives (set definitions) that must be used to create a custom policy definition before assignment, or reference the specific built-in policy definitions if available. Correct the 'Assign' step to reflect the creation of a definition from the initiative template."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the policy 'automatically install' the agent. Source S2 states the remediation task installs it. The draft omits that the remediation task requires specific permissions (Microsoft.Authorization/roleAssignments/write) and that the task runs asynchronously, not instantly. This creates unrealistic expectations for immediate compliance.",
+      "fix": "Specify that enabling 'Create remediation task' triggers an asynchronous background process. Mention that the principal needs permission to create role assignments for the managed identity to install extensions. Clarify that compliance status updates after the task completes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `azcmagent config set` to disable features. Source S3 confirms this works for the Connected Machine agent. However, the draft does not distinguish between disabling the *agent's* capability vs. uninstalling the agent. It also fails to mention that these settings are local and persist across agent updates, which is a critical operational detail for Tier 0 assets.",
+      "fix": "Explicitly state that these `azcmagent` commands disable local agent features and persist across updates. Clarify that this does not uninstall the agent or remove the Azure resource, but restricts its local capabilities. Ensure the distinction between agent configuration and resource deletion is clear."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'guest configuration' in the description but the main body focuses on AMA via DCR. Source S1 mentions guest configuration for auditing, while S2 focuses on AMA. The draft conflates these slightly by implying guest configuration is the primary method for AMA installation, which is incorrect; AMA uses the extension manager, not guest configuration.",
+      "fix": "Remove references to 'guest configuration' in the context of AMA installation. Clarify that AMA installation is handled by the extension manager via the remediation task, while guest configuration is a separate feature for compliance auditing/enforcement of OS settings."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'You cannot skip the first part' regarding the DCR. While true for AMA, it is not true for all Azure Policy assignments (e.g., tag policies). The absolute phrasing is misleading in a general 'Apply Azure Policy' context, even if the specific AMA scenario requires it.",
+      "fix": "Rephrase to 'For the Azure Monitor Agent scenario, a Data Collection Rule is required.' Avoid universal claims about all policy assignments. Keep the focus on the specific AMA use case described."
+    }
+  ]
+}

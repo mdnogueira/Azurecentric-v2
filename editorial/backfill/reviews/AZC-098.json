@@ -1,0 +1,135 @@
+{
+  "id": "AZC-098",
+  "title": "Connect GitHub Actions to Azure using OpenID Connect",
+  "slug": "connect-github-actions-to-azure-using-openid-connect",
+  "historical_date": "2024-09-30",
+  "input_sha256": "06c825ba15abb74e213a31021b2adfa9e13e0bccbc883511bb6a74f8e4c1b974",
+  "created_at": "2026-10-23T14:26:17.697307+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Secure GitHub Actions to Azure using OIDC federation and Microsoft Entra Conditional Access for workload identities.",
+  "tags": [
+    "github-actions",
+    "azure",
+    "openid-connect",
+    "conditional-access",
+    "workload-identities",
+    "security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/workload-identity.md",
+      "revision": "6628783875e3b9d5a7e9e7cf09c4c265107ee2bf",
+      "revision_date": "2024-08-05T20:47:34Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Microsoft Entra Conditional Access for workload identities",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/6628783875e3b9d5a7e9e7cf09c4c265107ee2bf/docs/identity/conditional-access/workload-identity.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md",
+      "revision": "b2fda23073e294ba636c20d3c158f086641dd071",
+      "revision_date": "2024-05-22T12:51:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Add an OpenID Connect-based single sign-on application",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-oidc-sso",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/b2fda23073e294ba636c20d3c158f086641dd071/docs/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/plan-an-application-integration.md",
+      "revision": "4b6d1ff3d2707764308c03d3cee820233081bdbe",
+      "revision_date": "2024-04-12T16:02:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Get started integrating Microsoft Entra ID with apps",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-an-application-integration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/4b6d1ff3d2707764308c03d3cee820233081bdbe/docs/identity/enterprise-apps/plan-an-application-integration.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: includes/portal-update.md"
+  ],
+  "open_questions": [
+    "Does the source specify the exact IP ranges for GitHub Actions runners, or is this an external reference?",
+    "Are there any specific Azure RBAC roles required for the service principal to perform deployments, beyond the Conditional Access policy?",
+    "How does the risk-based Conditional Access policy interact with the location-based policy if both are enabled?",
+    "Is there a limit to the number of Conditional Access policies that can be applied to a single service principal?",
+    "What is the exact error message returned by Azure when a token request is blocked by Conditional Access?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/connect-github-actions-to-azure-using-openid-connect.md",
+  "draft": true,
+  "word_count": 1127,
+  "claim_support_checks": [
+    {
+      "claim": "Conditional Access policies for workload identities require Workload Identities Premium licenses.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Conditional Access policies for service principals can only block access, not grant it.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You must use the service principal Object ID, not the application registration Object ID, for Conditional Access policies.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Conditional Access policies for workload identities apply when a service principal requests a token.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Report-only mode allows administrators to estimate the effects of Conditional Access policies before enforcement.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Block access' is the only available option for workload identity Conditional Access policies. Source S1 confirms this, but the draft omits that this feature requires 'Workload Identities Premium' licenses. The draft mentions this license requirement but fails to warn that without it, policies cannot be created or modified, potentially leading to wasted effort.",
+      "fix": "Explicitly state that Workload Identities Premium licenses are mandatory for creating or modifying these policies. Clarify that existing policies function but cannot be updated without the license. Ensure the reader understands this is a licensing prerequisite, not just a feature note."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a YAML code example using `azure/login@v1`. This version is deprecated and may not support the latest OIDC features or best practices. The source documents do not specify GitHub Actions versions, but using outdated actions is a technical defect. The draft does not mark the code as illustrative or unrun.",
+      "fix": "Update the code example to use the current stable version of `azure/login` (e.g., `v3` or `v4`) or explicitly mark the code as illustrative and unrun. Verify that the `use-oidc` parameter is correctly configured for the chosen action version according to current GitHub Actions documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that Conditional Access policies for workload identities apply when a service principal requests a token. It implies this covers all Azure API calls. However, the source S1 notes that the policy applies when requesting a token for 'All cloud apps'. The draft does not clarify that this is token-request time, not resource access time, which affects when the block occurs.",
+      "fix": "Clarify that Conditional Access is evaluated at token request time. Specify that the policy blocks the acquisition of the access token, preventing subsequent API calls. This distinction is crucial for debugging and understanding the security boundary."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic statements: 'By combining OIDC federation... you achieve a secure... model' and 'This approach is more robust...'. These are unsupported superlatives and generic conclusions that do not add technical value. The guidance ends without a concrete verification step or next action.",
+      "fix": "Remove the generic concluding paragraphs. End with a concrete next action, such as 'Monitor the Sign-in logs for 24 hours to validate policy impact before enforcing in production.' Ensure the conclusion is operational rather than promotional."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'GitHub provides documentation on these IP ranges' but does not link to it. The source S1 does not provide GitHub IP ranges. The draft relies on external knowledge for this step, which is acceptable, but the lack of a direct link makes the instruction vague and harder to follow.",
+      "fix": "Add a direct link to the official GitHub documentation listing the IP ranges for GitHub Actions runners. This ensures the reader can immediately find the necessary information without searching, improving the usability of the how-to guide."
+    }
+  ]
+}

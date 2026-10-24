@@ -1,0 +1,104 @@
+{
+  "id": "AZC-079",
+  "title": "Set up an initial Copilot for Security investigation session",
+  "historical_date": "2024-08-08",
+  "created_at": "2026-10-23T23:55:25.194050+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Contribute to the Copilot for Security community repository by forking, branching, and submitting a pull request for a new plugin.",
+  "tags": [
+    "copilot-for-security",
+    "github",
+    "git",
+    "open-source",
+    "contribution"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "a6f3ba73e1ad766d5279b63bd333414e3a59b89a",
+      "revision_date": "2024-04-11T07:40:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "What are the specific technical requirements for a KQL plugin to be accepted into the community repository?",
+    "Are there any licensing or CLA (Contributor License Agreement) requirements that need to be signed before a pull request can be merged?",
+    "How long does the review process typically take, and who are the reviewers?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/set-up-an-initial-copilot-for-security-investigation-session.md",
+  "draft": true,
+  "word_count": 712,
+  "claim_support_checks": [
+    {
+      "claim": "Contributors must fork the repository before making changes.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The upstream remote should be set to the original Azure repository.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Changes should be made in a separate branch, not the main branch.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Pull requests trigger automated checks before review.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides Azure CLI commands (`az securitycopilot`) and portal steps for deploying a 'Copilot for Security' resource. The provided source (S1) is a GitHub README for community contributions (forking/cloning code) and contains no deployment instructions, CLI references, or resource type details. This is a complete hallucination of operational steps not supported by the evidence.",
+      "fix": "Remove all deployment instructions (portal, CLI, Bicep). The source only supports contributing code. If the article must remain, it must be rewritten to focus on the GitHub contribution workflow described in S1, or the source must be replaced with actual Microsoft Learn deployment documentation."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims specific licensing requirements (E5, standalone add-on) and regional availability checks. The source S1 contains no information about licensing models, SKU names, or regional availability. These are unsupported factual claims that may be outdated or incorrect for the historical context.",
+      "fix": "Remove all specific licensing and regional availability claims. The source does not support these details. If the article is about deployment, it requires a source that documents the licensing and deployment prerequisites, which S1 does not provide."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that 'Log Analytics Reader' is the sufficient role for the managed identity. The source S1 does not mention permissions, roles, or managed identity configurations for Copilot for Security. This is an unsupported technical claim.",
+      "fix": "Remove the specific role assignment instructions. Without a source documenting the required permissions, this step is speculative. If the article is about code contribution, permissions are irrelevant to the provided source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Cleanup' section with CLI commands to delete the resource. Since the resource deployment itself is unsupported by the source, the deletion instructions are also hallucinated. Additionally, the source does not mention any resource lifecycle management.",
+      "fix": "Remove the cleanup section entirely. The source does not describe a deployable resource that requires cleanup. If the article is about the GitHub repository, cleanup involves deleting the fork, not an Azure resource."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By following these steps...'. The editorial guidance explicitly forbids generic concluding paragraphs starting with 'By following'.",
+      "fix": "Remove the concluding paragraph. End with a concrete verification or next action relevant to the actual content (e.g., if rewritten for contribution, end with 'Submit your pull request')."
+    }
+  ]
+}

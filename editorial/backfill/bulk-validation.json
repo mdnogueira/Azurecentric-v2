@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-24T08:23:36.688025+00:00",
+  "planned": 366,
+  "draft_files": 366,
+  "new_articles_in_bulk_pr": 334,
+  "historical_dates": "2024-01-02 through 2026-10-22 per approved schedule",
+  "publication_approved": false,
+  "draft_flags": "All true",
+  "structural_errors": [],
+  "structural_warnings": [],
+  "duplicate_paragraph_findings": 0,
+  "powershell_blocks_parsed": 290,
+  "powershell_parse_failures": 0,
+  "production_build": "passed; Astro 335 pages; Pagefind completed",
+  "backfill_posts_in_production_output": 0,
+  "integration_tests": "not_run",
+  "detailed_manual_editorial_review_completed": 32,
+  "articles_33_to_366": "Bulk preparation and static checks completed; detailed factual, code semantic, visual and author review pending. Prior local-model findings retained in individual records.",
+  "source_provenance": "Individual reviews contain dated official references; original excerpts and model revisions retained outside repository."
+}

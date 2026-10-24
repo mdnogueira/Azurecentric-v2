@@ -1,0 +1,136 @@
+{
+  "id": "AZC-267",
+  "title": "Plan permissions for an operations automation identity",
+  "slug": "plan-permissions-for-an-operations-automation-identity",
+  "historical_date": "2026-01-17",
+  "input_sha256": "72c8be326a3d986b4d8f831341424e72295856882cb383f36efc1c0027a9d1f7",
+  "created_at": "2026-10-23T23:38:29.370266+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Separate Automation account operational roles from managed identity resource permissions to enforce least privilege.",
+  "tags": [
+    "azure-automation",
+    "managed-identities",
+    "rbac",
+    "least-privilege",
+    "security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/automation/automation-role-based-access-control.md",
+      "revision": "53b9dccf9af5c1815ef212b27e6ebc025e251625",
+      "revision_date": "2026-01-09T12:27:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Manage role permissions and security in Azure Automation",
+      "url": "https://learn.microsoft.com/en-us/azure/automation/automation-role-based-access-control",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/53b9dccf9af5c1815ef212b27e6ebc025e251625/articles/automation/automation-role-based-access-control.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/automation/enable-managed-identity-for-automation.md",
+      "revision": "53b9dccf9af5c1815ef212b27e6ebc025e251625",
+      "revision_date": "2026-01-09T12:27:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Using a system-assigned managed identity for an Azure Automation account",
+      "url": "https://learn.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/53b9dccf9af5c1815ef212b27e6ebc025e251625/articles/automation/enable-managed-identity-for-automation.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/update-manager/roles-permissions.md",
+      "revision": "287961da3a7aab72434bbc892e929259176daf71",
+      "revision_date": "2025-10-31T23:35:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Roles and Permissions in Azure Update Manager",
+      "url": "https://learn.microsoft.com/en-us/azure/update-manager/roles-permissions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/287961da3a7aab72434bbc892e929259176daf71/articles/update-manager/roles-permissions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the Automation Contributor role explicitly include permissions for managing credentials and variables, or are these handled by separate resource provider operations not listed in the built-in role definition?",
+    "Is there a specific built-in role for managing Automation account credentials, or is this typically handled by a custom role or the Owner role?",
+    "How does the Automation Account identity interact with Hybrid Runbook Workers that have their own system-assigned identities?",
+    "Are there any specific permissions required for the Automation account to read its own job streams and output, or is this covered by the Automation Operator role?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-permissions-for-an-operations-automation-identity.md",
+  "draft": true,
+  "word_count": 815,
+  "claim_support_checks": [
+    {
+      "claim": "Automation Contributor manages resources like runbooks and schedules but excludes modifying user access.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Automation Operator allows viewing runbook names and properties and managing jobs.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Automation Job Operator and Runbook Operator allow finer control over job and runbook visibility.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "System-assigned managed identities are enabled via Set-AzAutomationAccount.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Assigning roles to a managed identity requires Owner or User Access Administrator permissions on the target scope.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Update Manager requires specific permissions on VMs and Arc-enabled servers for patching.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Log Analytics Contributor role 'may have cost implications' because it can 'create and configure Automation accounts'. This is misleading; creating an Automation account is a resource creation action, not a configuration change that incurs ongoing costs beyond the account's own SKU. The source text lists this as a capability, not a cost warning. The draft invents a causal link between the permission and unexpected costs that is not supported by the source.",
+      "fix": "Remove the statement about cost implications. State that the Log Analytics Contributor role allows creating and configuring Automation accounts, which is a broad permission that should be assigned with caution to prevent unauthorized resource creation, but do not attribute specific cost risks to this action."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the Automation Operator role allows 'creating or managing jobs'. The source text specifies 'create and manage jobs' but also explicitly lists 'resume', 'stop', 'suspend', and 'streams/read' actions. The draft's summary is vague and omits the specific job lifecycle controls (pause/resume/stop) that distinguish this role from the more limited Automation Job Operator. This lacks precision for an operational guide.",
+      "fix": "Refine the description of the Automation Operator role to explicitly mention it can create, stop, resume, and suspend jobs, and read job streams/output. This provides the concrete operational context needed to distinguish it from the Automation Job Operator role."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a section 'Considerations for specific workloads' discussing Azure Update Manager and Log Analytics. However, the core topic is 'Plan permissions for an operations automation identity'. The Update Manager section is tangential and does not relate to the Automation account's operational identity or managed identity. It distracts from the main decision of separating Automation account RBAC from target resource RBAC.",
+      "fix": "Remove the Azure Update Manager section entirely. It is not relevant to planning permissions for an Azure Automation account's operational identity or managed identity. Keep the focus strictly on Automation account roles and the managed identity's target resource permissions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This approach ensures that your automation is both secure and maintainable.' This is a generic concluding statement that adds no technical value. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar assurances.",
+      "fix": "Delete the final sentence of the 'Verify the separation' section. End the article with the concrete verification steps (checking role assignments and testing execution) without adding a summary or assurance of security/maintainability."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'The Automation account permissions are strictly scoped to the Automation service.' While generally true, the Automation Contributor role includes permissions for `Microsoft.Resources/deployments/*` and `Microsoft.Support/*`. These are broader than just 'Automation service' resources. The statement is an overgeneralization that could mislead users into thinking the role has no impact on other Azure services.",
+      "fix": "Clarify that while the primary scope is the Automation account, roles like Automation Contributor include permissions for related services such as deployment operations and support tickets. This provides a more accurate picture of the role's impact."
+    }
+  ]
+}

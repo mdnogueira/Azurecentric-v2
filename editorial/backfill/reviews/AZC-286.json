@@ -1,0 +1,145 @@
+{
+  "id": "AZC-286",
+  "title": "Check a failed runbook using its job evidence",
+  "slug": "check-a-failed-runbook-using-its-job-evidence",
+  "historical_date": "2026-03-11",
+  "input_sha256": "dba27ed3db8d52ae7ea248af280230955078366b5aa2ed87609e30b5089f02d8",
+  "created_at": "2026-10-23T18:56:22.728450+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Diagnose failed Azure Automation runbooks by tracing job status, stream output, and permission scopes.",
+  "tags": [
+    "azure-automation",
+    "runbooks",
+    "troubleshooting",
+    "powershell",
+    "permissions"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-286-learn-1.png",
+      "alt": " Screenshot that shows the assigning of Azure Role assignments.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/53b9dccf9af5c1815ef212b27e6ebc025e251625/articles/automation/media/troubleshoot-runbooks/managed-identity-role-assignments.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-01-09T12:27:32Z",
+      "sha256": "b190643f97e1b25a9ca953a1895b2859e8d47ac3744693537989f7977a6f5804",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/automation/troubleshoot/runbooks.md",
+      "revision": "53b9dccf9af5c1815ef212b27e6ebc025e251625",
+      "revision_date": "2026-01-09T12:27:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot Azure Automation runbook issues",
+      "url": "https://learn.microsoft.com/en-us/azure/automation/troubleshoot/runbooks",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/53b9dccf9af5c1815ef212b27e6ebc025e251625/articles/automation/troubleshoot/runbooks.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/automation/automation-runbook-execution.md",
+      "revision": "53b9dccf9af5c1815ef212b27e6ebc025e251625",
+      "revision_date": "2026-01-09T12:27:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Runbook execution in Azure Automation",
+      "url": "https://learn.microsoft.com/en-us/azure/automation/automation-runbook-execution",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/53b9dccf9af5c1815ef212b27e6ebc025e251625/articles/automation/automation-runbook-execution.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/automation/start-runbooks.md",
+      "revision": "53b9dccf9af5c1815ef212b27e6ebc025e251625",
+      "revision_date": "2026-01-09T12:27:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Start a runbook in Azure Automation",
+      "url": "https://learn.microsoft.com/en-us/azure/automation/start-runbooks",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/53b9dccf9af5c1815ef212b27e6ebc025e251625/articles/automation/start-runbooks.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/gdpr-dsr-and-stp-note.md"
+  ],
+  "open_questions": [
+    "Does the 'Failed' status for PowerShell runbooks always include a detailed error message in the stream, or are there cases where it is silent?",
+    "Are there specific timeout settings for Azure sandbox jobs that could cause 'A task was canceled' errors unrelated to modules?",
+    "How does the job retry mechanism work for infrastructure failures, and is it visible to the user?",
+    "What is the exact behavior of 'Suspended' jobs if no checkpoint exists? Does it restart from the beginning immediately?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-a-failed-runbook-using-its-job-evidence.md",
+  "draft": true,
+  "word_count": 995,
+  "claim_support_checks": [
+    {
+      "claim": "Job status 'Failed' indicates compilation failure for graphical/Workflow runbooks or exception for PowerShell runbooks.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Suspended status applies only to graphical and PowerShell Workflow runbooks when an exception occurs.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "ErrorActionPreference Stop causes non-terminating errors to terminate the job.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Managed identities need explicit role assignments on target resources, not just the Automation account.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Outdated Azure modules can cause 'A task was canceled' errors.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot caption ('Screenshot that shows the assigning of Azure Role assignments.') which violates the editorial guidance to not add visible Microsoft Learn screenshot or permission captions. The source S1 contains image tags, but the draft text should not replicate the alt-text as a caption.",
+      "fix": "Remove the visible caption text derived from the image alt-text. If the image is necessary, place it inline with the step without adding a caption line. The guidance explicitly forbids visible permission captions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that 'A role at the control plane does not imply data-plane rights' and gives a specific example: 'having Contributor access to the Automation account does not grant access to the resources it manages'. This is a generalization that may not hold for all resource types or specific role definitions, and the source S1 only says 'Grant the Managed Identity... an appropriate role membership in the subscription' without defining control vs data plane distinctions.",
+      "fix": "Replace the specific control/data plane example with the source's general advice: 'Ensure the Managed Identity has been granted an appropriate role membership in the subscription or resource group where the target resources reside.' Avoid inventing architectural distinctions not present in the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By systematically checking... This approach avoids guesswork and ensures that you address the actual issue rather than symptoms.' This is a generic concluding paragraph beginning with 'By systematically', which is prohibited by the editorial guidance.",
+      "fix": "Remove the final paragraph entirely. End the article with the concrete verification step: 'If the issue persists, consider running the script locally to isolate environment-specific problems.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Outdated Azure modules can cause 'A task was canceled' errors' and suggests updating modules. Source S1 links this error to outdated modules, but S2 notes that 'A task was canceled' can also be caused by infrastructure retries or sandbox limits. The draft omits the context that module updates take ~15 minutes and that this is a specific resolution path, not the only one.",
+      "fix": "Clarify that updating modules is a resolution for 'A task was canceled' errors specifically attributed to outdated modules in S1. Add the context that the update process takes approximately 15 minutes, as stated in S1, to manage expectations."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft provides a PowerShell code snippet for retry logic that uses `Connect-AzAccount -Identity`. However, the source S1's retry example uses `Connect-AzAccount -Credential $Cred` or similar, and does not explicitly show `-Identity` in the retry block. More importantly, the draft's code snippet is marked as 'Illustrative example' but the guidance requires code to be 'supported by the sources'. The source S1's retry example does not use `-Identity`.",
+      "fix": "Replace the illustrative code with the exact retry logic provided in Source S1, which uses `Connect-AzAccount -Credential $Cred` or the generic `Connect-AzAccount` within a loop. If `-Identity` is intended, ensure the source explicitly supports this pattern in a retry context, or mark the code as unrun and explicitly state it is a modification of the source example."
+    }
+  ]
+}

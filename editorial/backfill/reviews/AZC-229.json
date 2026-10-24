@@ -1,0 +1,141 @@
+{
+  "id": "AZC-229",
+  "title": "Use resource health information during an incident",
+  "slug": "use-resource-health-information-during-an-incident",
+  "historical_date": "2025-10-02",
+  "input_sha256": "9860990bcdd706e97641a7a783b0484c124df6005e000769947187cb3a8e5c2b",
+  "created_at": "2026-10-23T17:33:12.951044+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure high-signal Resource Health alerts via portal or ARM template to detect platform incidents and verify resolution in the activity log.",
+  "tags": [
+    "resource-health",
+    "azure-monitor",
+    "activity-log",
+    "arm-templates",
+    "incident-response"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-229-learn-1.png",
+      "alt": "Screenshot that shows the activity log.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/media/activity-log/view-activity-log.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "4a3a2450e0f0ec6377b724190cfb23b9401508dc4e490c24dffb11d7a54106a5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/resource-manager-alerts-resource-health.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Resource Manager template samples for resource health alerts",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/resource-manager-alerts-resource-health",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/resource-manager-alerts-resource-health.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-health/resource-health-alert-monitor-guide.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create Resource Health Alerts using Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/service-health/resource-health-alert-monitor-guide",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/service-health/resource-health-alert-monitor-guide.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/activity-log-insights.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure activity log and activity log insights",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-insights",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/essentials/activity-log-insights.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/resource-manager-alerts-resource-health.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/service-health/resource-health-alert-monitor-guide.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/essentials/activity-log-insights.md"
+  ],
+  "open_questions": [
+    "How does the latency between a platform incident and the Resource Health alert firing impact incident response times?",
+    "What are the specific health checks available for less common or newer Azure services?",
+    "How can Resource Health alerts be correlated with other monitoring data sources like metrics or logs for a more comprehensive view?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-resource-health-information-during-an-incident.md",
+  "draft": true,
+  "word_count": 1047,
+  "claim_support_checks": [
+    {
+      "claim": "Resource Health notifications are stored in the Azure activity log.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Activity log events are retained for 90 days.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "ARM templates can be used to create Resource Health alerts.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The cause field in Resource Health events can be null.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a JSON diagram definition in the body text. This is not operational content, breaks the 'how-to' format, and adds no technical value.",
+      "fix": "Remove the '### Diagram' section and its JSON content entirely. Focus on the operational steps for configuring alerts and verifying events in the activity log."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims filtering for 'PlatformInitiated' is the 'most reliable way to avoid false positives from user actions.' This is an unsupported superlative. User-initiated changes can also trigger health events, and 'PlatformInitiated' is not the only cause.",
+      "fix": "Rephrase to state that filtering for 'PlatformInitiated' helps distinguish platform outages from user changes, but note that other causes exist and may require investigation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using the 'Change history' feature to see changes around the event time. While S3 mentions this, it is limited to specific events and up to 30 minutes. The draft implies broader applicability without this constraint.",
+      "fix": "Clarify that 'Change history' is available for some events and shows changes up to 30 minutes before and after the operation time, rather than implying it is a universal feature for all Resource Health events."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Resource Health alerts are 'subscription-level events' and 'do not provide real-time metrics.' This is vague and potentially misleading. Resource Health alerts can be scoped to specific resources, resource groups, or subscriptions.",
+      "fix": "Correct the scope description: Resource Health alerts can be configured at the subscription, resource group, or resource level. Clarify that they provide status notifications, not real-time telemetry."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes 'Review Questions' and 'Claims' sections at the end. These are meta-content elements not suitable for a technical how-to article and disrupt the reading flow.",
+      "fix": "Remove the '### Claims' and '### Review Questions' sections. End the article with the 'Limitations and considerations' section or a brief summary of next steps."
+    }
+  ]
+}

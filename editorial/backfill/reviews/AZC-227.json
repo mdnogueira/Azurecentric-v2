@@ -1,0 +1,142 @@
+{
+  "id": "AZC-227",
+  "title": "Trace a failed request through an API Management policy",
+  "slug": "trace-a-failed-request-through-an-api-management-policy",
+  "historical_date": "2025-09-27",
+  "input_sha256": "698ea3b1c47b8456f765feba9db62536822b49f8457d6d7162a615cfe5e4bfd1",
+  "created_at": "2026-10-23T23:33:51.756019+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use the VS Code extension to debug API Management policies and the trace policy to add custom diagnostics to request traces.",
+  "tags": [
+    "api-management",
+    "policy-debugging",
+    "visual-studio-code",
+    "trace-policy",
+    "troubleshooting"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-227-learn-1.png",
+      "alt": "Screenshot if initiating a policy debugging session in Visual Studio Code.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/99589af37cd7d6afb8260ee3d85acee92e6f204f/articles/api-management/media/api-management-debug-policies/initiate-debugging-session.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-26T21:31:04Z",
+      "sha256": "e1dad883d3f2a1717cd7e627a319188cf8af693222545aa81bff596dd601e9c5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-debug-policies.md",
+      "revision": "99589af37cd7d6afb8260ee3d85acee92e6f204f",
+      "revision_date": "2025-09-26T21:31:04Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create and debug Azure API Management policies in VS Code",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-debug-policies",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/99589af37cd7d6afb8260ee3d85acee92e6f204f/articles/api-management/api-management-debug-policies.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/troubleshoot-response-timeout-and-errors.md",
+      "revision": "616e1fd276140473eabea4b93970dd56a2f9a982",
+      "revision_date": "2025-04-15T23:34:13Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshooting client response time-outs and errors with API Management",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/troubleshoot-response-timeout-and-errors",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/616e1fd276140473eabea4b93970dd56a2f9a982/articles/api-management/troubleshoot-response-timeout-and-errors.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/trace-policy.md",
+      "revision": "c4873d85521724f20358bd2b5bc2e0fed6508284",
+      "revision_date": "2025-05-12T17:24:00Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure API Management policy reference - trace | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/trace-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c4873d85521724f20358bd2b5bc2e0fed6508284/articles/api-management/trace-policy.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the VS Code extension support debugging policies in workspaces, or only in classic API Management instances?",
+    "What is the exact format of the Ocp-Apim-Trace-Location header value, and how is it accessed in the REST Client response?",
+    "Are there any limitations on the number of breakpoints that can be set in a single debugging session?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/trace-a-failed-request-through-an-api-management-policy.md",
+  "draft": true,
+  "word_count": 925,
+  "claim_support_checks": [
+    {
+      "claim": "Policy debugging is supported only in the Developer tier.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The debugger uses the built-in all-access subscription.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The trace policy is not affected by Application Insights sampling.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The Ocp-Apim-Debug header is required for debugging.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "SNAT port exhaustion can cause 500 errors and time-outs.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes the `trace` policy example with `metadata` containing a policy expression (`@(context.Variables[\"orderId\"] ?? \"unknown\")`). Source S3 explicitly states for the `metadata` element: 'Policy expressions aren't allowed.' The `message` element allows expressions, but `metadata` value does not. This code will fail validation.",
+      "fix": "Remove the policy expression from the `metadata` value in the example. Use a static string or move the dynamic value inspection to the `message` element, which supports expressions. Correct the example to: `<metadata name=\"OrderId\" value=\"static-value\"/>`."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims the `trace` policy 'adds a property in the log entry when resource logs are enabled'. Source S3 states the policy 'adds a property in the log entry' but does not specify that it adds a *custom* property to the *resource logs* schema in the way implied. More critically, the draft omits the security warning from S3's include `api-management-tracing-alert.md` regarding exposing sensitive information, only mentioning it briefly at the end. The warning is critical for production contexts.",
+      "fix": "Move the security warning about sensitive information to the section introducing the `trace` policy, before the code example. Ensure the description of resource log behavior aligns strictly with S3: it adds a property when severity meets the diagnostic setting verbosity. Do not imply it modifies the core log schema beyond the property addition."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'Policy debugging is currently supported only in the Developer tier... If you are working in a Premium or Standard tier, you cannot use the VS Code debugger directly.' Source S1 says 'Policy debugging is currently supported only in the API Management Developer tier.' However, the draft implies a workaround (REST API tracing) without citing it or explaining it's a different mechanism. It also fails to mention that the VS Code extension itself might have other limitations or prerequisites not covered.",
+      "fix": "Clarify that the VS Code *debugging* feature is Developer-tier only. If mentioning alternative tracing for other tiers, cite the specific REST API method or diagnostic settings documentation. Avoid implying the VS Code extension is the only tool for all tiers without qualification. Keep the focus on the Developer tier debugging as per the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a diagram JSON field with nodes like 'VS Code Extension', 'API Management Gateway', etc. The guidance requires keeping diagrams in JSON fields but does not explicitly forbid them. However, the draft's body text does not reference or explain the diagram. The diagram is not a screenshot from the source. The guidance says 'Do not add an unrelated screenshot merely because it was supplied.' It does not explicitly ban diagrams, but the instruction 'Use a few well-placed source links rather than repeating the same citation' and 'End with a concrete verification' suggests keeping content tight. The diagram adds no value if not explained.",
+      "fix": "Remove the `diagram` JSON field if it is not explicitly referenced and explained in the text. If kept, ensure the text describes the flow shown in the diagram. Since the text already describes the steps, the diagram is redundant. Prioritize the concrete verification steps."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's opening paragraph mentions 'Intermittent 500 errors or time-outs... often point to backend connectivity issues'. Source S2 confirms this symptom pattern is often due to SNAT port exhaustion. However, the draft immediately pivots to policy debugging. While valid, it doesn't explicitly link the SNAT issue to the *policy* context. The `trace` policy doesn't debug SNAT exhaustion directly. The connection is weak.",
+      "fix": "Clarify that while SNAT exhaustion causes 500s/timeouts (Source S2), policy debugging (Source S1) is for diagnosing *policy logic* failures (e.g., conditions, variable errors) that might also cause 500s. Distinguish between infrastructure connectivity issues and policy execution issues to avoid confusion."
+    }
+  ]
+}

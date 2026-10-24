@@ -1,0 +1,152 @@
+{
+  "id": "AZC-306",
+  "title": "Connect a change record to a useful monitoring check",
+  "slug": "connect-a-change-record-to-a-useful-monitoring-check",
+  "historical_date": "2026-05-06",
+  "input_sha256": "5ce598fd328e100a1ffe2ea586f0a3ebbdb30336c8fd928f04e1ba4436855c2b",
+  "created_at": "2026-10-23T19:24:02.974316+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Link change records to monitoring by querying alert instances in a workbook, using Resource Graph and ARM templates.",
+  "tags": [
+    "azure-monitor",
+    "alerts",
+    "workbooks",
+    "change-management",
+    "resource-graph"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-306-learn-1.png",
+      "alt": "Screenshot that shows Alerts on the Azure Monitor menu. ",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/media/alerts-managing-alert-instances/alerts-monitor-menu.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "08697cb3be96b24a6520ef9af036f69b62b422c10f343244da7d4cc01e3f8b7d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-306-learn-2.png",
+      "alt": "Screenshot that shows the Gallery Template tab.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/visualize/media/workbooks-automate/gallery-template.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-09T14:42:37Z",
+      "sha256": "5375c4646c2b3efebc7d49dc93d3cf1967c4b9f2d6c522b7aa652b0cca239d5d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/alerts/alerts-manage-alert-instances.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage your alert instances",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/alerts/alerts-manage-alert-instances.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/visualize/workbooks-automate.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Monitor workbooks and Azure Resource Manager templates",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-automate",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/visualize/workbooks-automate.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/visualize/workbooks-create-workbook.md",
+      "revision": "2926e3953a77bddc2f7e78d52ea9c7450350255f",
+      "revision_date": "2024-09-09T14:42:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create or edit an Azure Workbook",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2926e3953a77bddc2f7e78d52ea9c7450350255f/articles/azure-monitor/visualize/workbooks-create-workbook.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/alerts/alerts-manage-alert-instances.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/visualize/workbooks-automate.md",
+    "Public document removed/moved on 2024-09-09T16:34:32Z; used previous public snapshot. Confirm continued applicability: articles/azure-monitor/visualize/workbooks-create-workbook.md"
+  ],
+  "open_questions": [
+    "Does the ARM template example correctly escape the JSON in the serializedData field?",
+    "Is the Azure Resource Graph query syntax correct for the AlertsManagementResources schema?",
+    "Are there any specific permissions required for the workbook to query the AlertsManagementResources schema?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/connect-a-change-record-to-a-useful-monitoring-check.md",
+  "draft": true,
+  "word_count": 1330,
+  "claim_support_checks": [
+    {
+      "claim": "Alert instances are stored for 30 days and then deleted.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Workbooks can be deployed programmatically using ARM templates.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Resource Graph can be used to query alert instances.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Workbooks can include text, queries, and links.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims 'Contributor' or 'Owner' roles are prerequisites for deploying workbooks. The source (S2) only states 'Resource owners' can manage workbooks programmatically. It does not specify RBAC roles, and 'Contributor' on a resource group does not automatically grant permission to create `Microsoft.Insights/workbooks` resources, which may require specific Azure Monitor permissions or a different scope.",
+      "fix": "Remove the specific RBAC role claims. State that the user must have permissions to create resources in the target scope, referencing the general 'Resource owners' language from the source without inventing specific role assignments."
+    },
+    {
+      "severity": "high",
+      "problem": "The ARM template example uses `apiVersion: 2018-06-17-preview` but the `serializedData` structure and `kind: shared` property are inconsistent with the source's detailed ARM template example (S2), which uses `2019-10-17-preview` for templates and `2018-06-17-preview` for instances but with different property structures. The draft's JSON is likely invalid or incomplete regarding the `serializedData` escaping and parameter definition linkage.",
+      "fix": "Replace the ARM template with the exact sample provided in S2, ensuring the `apiVersion` matches the instance type. Explicitly note that `serializedData` must be escaped JSON and that parameters defined in the workbook UI must be reflected in the `serializedData` structure, not just the ARM template parameters."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that linking a workbook to a resource group via `workbookSourceId` allows querying `AlertsManagementResources` for that group directly. However, the source (S1) states Resource Graph is for managing alerts across subscriptions, and S2 shows `workbookSourceId` links the workbook's *location* in the portal, not necessarily the data scope for the query. The query syntax `ResourceId in~ ({ResourceId})` assumes a parameter that isn't defined in the ARM template.",
+      "fix": "Clarify that `workbookSourceId` controls the workbook's placement in the portal. The query must use workbook parameters (defined in the workbook's internal JSON) to filter alerts. Provide a complete ARM template that includes the parameter definition in the `serializedData` to make the query functional."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Stateful alerts keep the condition stored until resolved... but the instance itself is deleted after 30 days.' This is a misinterpretation. S1 says 'For stateful alerts, while the alert itself is deleted after 30 days... the alert condition is stored until the alert is resolved.' It does not say the instance is deleted *because* it's stateful; all instances are deleted after 30 days. The condition storage is a separate mechanism to prevent re-firing.",
+      "fix": "Correct the explanation: All alert instances are deleted after 30 days. For stateful alerts, the *condition* is retained until resolution to prevent duplicate firing, but the instance record is still subject to the 30-day retention."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By linking the change record...') and a 'Clean up' section that suggests deleting the workbook via ARM template `delete` operation. The source (S2) does not mention deletion via ARM template, only deployment. This is a minor procedural addition not supported by the provided text.",
+      "fix": "Remove the generic concluding paragraph. Keep the cleanup step but phrase it as a general Azure resource deletion practice rather than a specific feature of the workbook ARM template, or remove it if not strictly necessary for the core task."
+    }
+  ]
+}

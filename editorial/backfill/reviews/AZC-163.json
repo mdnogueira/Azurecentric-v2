@@ -1,0 +1,142 @@
+{
+  "id": "AZC-163",
+  "title": "Deploy an Azure Functions application with clear configuration boundaries",
+  "slug": "deploy-an-azure-functions-application-with-clear-configuration-boundaries",
+  "historical_date": "2025-03-31",
+  "input_sha256": "5b4a502a417a3a53919fb856995eb6aaf035f68821dbb03264f8123e7a92140e",
+  "created_at": "2026-10-23T16:02:04.886539+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define clear boundaries between host configuration and app settings in Azure Functions to avoid deployment conflicts and runtime errors.",
+  "tags": [
+    "azure-functions",
+    "configuration",
+    "host-json",
+    "app-settings",
+    "best-practices"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-163-learn-1.png",
+      "alt": "Screen shot that how to select the App settings page in a function app.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/308712d3c23f3e113e2ccd9d77703cc1f9fd4343/articles/azure-functions/media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-11-21T04:41:24Z",
+      "sha256": "d3d17949d54e07059de8291c798c28dee287dbf63f7201f188bd564722f50a8d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-app-settings.md",
+      "revision": "2950a6a19664e58c88ae266f7204a6980b8ce6f0",
+      "revision_date": "2024-12-02T23:50:02Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "App settings reference for Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2950a6a19664e58c88ae266f7204a6980b8ce6f0/articles/azure-functions/functions-app-settings.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-how-to-use-azure-function-app-settings.md",
+      "revision": "308712d3c23f3e113e2ccd9d77703cc1f9fd4343",
+      "revision_date": "2024-11-21T04:41:24Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Configure function app settings in Azure Functions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/308712d3c23f3e113e2ccd9d77703cc1f9fd4343/articles/azure-functions/functions-how-to-use-azure-function-app-settings.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-host-json.md",
+      "revision": "6b14253a7c2da1d8bedf5caa94c7bfdaf9dc2b10",
+      "revision_date": "2025-02-04T01:19:56Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "host.json reference for Azure Functions 2.x",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6b14253a7c2da1d8bedf5caa94c7bfdaf9dc2b10/articles/azure-functions/functions-host-json.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific App Service read-only settings that are commonly modified by mistake in deployment scripts?",
+    "Does the `AzureFunctionsJobHost__` prefix work for all `host.json` properties, or are there exceptions?",
+    "What is the exact impact on scaling if `host.json` concurrency settings are changed via application settings?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/deploy-an-azure-functions-application-with-clear-configuration-boundaries.md",
+  "draft": true,
+  "word_count": 991,
+  "claim_support_checks": [
+    {
+      "claim": "Changes to function app settings require a restart.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Application settings can override host.json values.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "ARM API replacements require all existing settings.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Extension bundle version range determines installed version.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Read-only App Service settings can cause unresponsive state.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims that changes to `host.json` require a redeployment. Source S1 explicitly states that application settings can override `host.json` values without changing the file itself or republishing. While `host.json` is part of the deployment package, the runtime supports overriding these settings via app settings, making the 'redeployment required' claim misleading for configuration changes.",
+      "fix": "Clarify that while `host.json` is typically deployed via code, specific settings within it can be overridden by application settings without redeployment. Remove the absolute statement that `host.json` changes always require redeployment, as this ignores the override capability documented in S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft lists `AzureWebJobsDashboard` as a setting for connection strings, implying it is a current best practice. Source S1 marks this setting as deprecated and only supported in version 1.x. Including it in a 'Practical example' or general list without strong deprecation warnings is misleading for v4+ users.",
+      "fix": "Remove `AzureWebJobsDashboard` from the list of current connection strings or explicitly mark it as deprecated and unsupported in v4. Replace it with `AzureWebJobsStorage` as the primary storage connection string, which is the current standard."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that `host.json` settings are 'typically static' and 'not secrets'. While generally true, it fails to mention that `host.json` is part of the deployment package and thus included in source control, which is a security consideration. The distinction between 'static' and 'environment-specific' is blurred by the override mechanism.",
+      "fix": "Refine the distinction: `host.json` defines the structural configuration and defaults, while app settings provide the runtime overrides and secrets. Emphasize that `host.json` should not contain secrets, but its structure can be overridden, reducing the need for multiple `host.json` files."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using `AzureFunctionsJobHost__logging__logLevel__default=Debug` as an override. Source S1 confirms the `AzureFunctionsJobHost__` prefix is used for overrides, but the specific syntax for nested JSON properties in app settings can be complex and varies by language/runtime. The example assumes a specific flattening behavior that might not be universal.",
+      "fix": "Verify the exact syntax for overriding nested `host.json` properties via app settings in the specific runtime being used. Ensure the example reflects the correct double-underscore or colon delimiter usage as documented in S1 for the target runtime version."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions that changing application settings restarts the host, affecting all apps in a shared plan. While true, it does not specify which plan types are affected (e.g., Consumption vs. Dedicated). This could mislead users on Dedicated plans where restarts might be more controlled.",
+      "fix": "Specify that the restart impact applies particularly to shared plans (Consumption, Premium) where scaling and hosting are tightly coupled. For Dedicated (App Service) plans, clarify that restarts are per-app unless configured otherwise, reducing the 'blast radius' concern."
+    }
+  ]
+}

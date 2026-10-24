@@ -1,0 +1,126 @@
+{
+  "id": "AZC-156",
+  "title": "Understand Cluster Shared Volumes in a Hyper-V design",
+  "slug": "understand-cluster-shared-volumes-in-a-hyper-v-design",
+  "historical_date": "2025-03-12",
+  "input_sha256": "65ae9c3393b6cecb14151fad5596ed21f5e7ab33a25b11c4131823d23aad14aa",
+  "created_at": "2026-10-23T15:53:38.794736+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure CSV BitLocker for Windows Server 2025, distinguishing between AD DS and workgroup unlock methods.",
+  "tags": [
+    "csv",
+    "bitlocker",
+    "failover-clustering",
+    "hyper-v",
+    "windows-server-2025"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/failover-cluster-csvs.md",
+      "revision": "0cd33cc75ef265c58980871428fdd9b7bc1e8486",
+      "revision_date": "2024-12-04T10:15:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use Cluster Shared Volumes in a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-cluster-csvs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0cd33cc75ef265c58980871428fdd9b7bc1e8486/WindowsServerDocs/failover-clustering/failover-cluster-csvs.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/bitlocker-on-csv-in-ws-2022.md",
+      "revision": "0cd33cc75ef265c58980871428fdd9b7bc1e8486",
+      "revision_date": "2024-12-04T10:15:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use BitLocker with Cluster Shared Volumes",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/bitlocker-on-csv-in-ws-2022",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0cd33cc75ef265c58980871428fdd9b7bc1e8486/WindowsServerDocs/failover-clustering/bitlocker-on-csv-in-ws-2022.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2025-03-12: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/failover-clustering/failover-cluster-manage-cluster-shared-volumes.md"
+  ],
+  "open_questions": [
+    "Does the local cluster database protector method support ReFS volumes in the same way as NTFS?",
+    "What is the exact performance impact of I/O redirection on ReFS CSV volumes compared to NTFS?",
+    "Are there specific QoS policies recommended for SMB traffic carrying CSV data in Windows Server 2025?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-cluster-shared-volumes-in-a-hyper-v-design.md",
+  "draft": true,
+  "word_count": 1378,
+  "claim_support_checks": [
+    {
+      "claim": "CSV allows multiple nodes to have simultaneous read-write access to the same LUN.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "ReFS on SAN-attached disks in CSV operates in redirected mode.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "BitLocker on CSV volumes must be managed via PowerShell or Manage-BDE, not the Control Panel.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "AD DS clusters use the CNO account for BitLocker unlocking.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Workgroup clusters can use a local cluster database protector for BitLocker.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "System volumes on all nodes should be BitLocker-protected if using the local cluster database protector.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to manually set the 'BitLockerProtectorInfo' cluster parameter for workgroup clusters. Source S2 states that for AD-less setups, Failover Clustering 'generates and maintains its own BitLocker Key protector' saved in the local cluster database. The manual protector method described is for the legacy AD-based unlock or specific external key scenarios, not the new automatic local database protector. This step is likely obsolete or incorrect for the stated 'local database' use case.",
+      "fix": "Remove the manual 'Set-ClusterParameter' step for the local database protector scenario. Clarify that for AD-less clusters, the cluster service automatically manages the protector. If manual intervention is required for external keys, specify that context clearly, but do not conflate it with the automatic local database feature."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims 'System volumes on all nodes must be BitLocker-protected' for the local cluster database protector. Source S2 states the system volume 'should be BitLocker protected as well' and that the cluster 'doesn't enforce it,' flagging it only as a warning. 'Must' is a factual error regarding the technical requirement.",
+      "fix": "Change 'must be' to 'should be' or 'is recommended to be.' Explain that while not strictly enforced, lack of system drive encryption risks cluster validation warnings and potential unlock failures if the cluster database is not accessible via the system volume."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that 'NTFS is the recommended format for SAN-attached disks' for direct I/O. Source S1 states ReFS on SANs 'will NOT use Direct I/O' and advises formatting with NTFS to 'leverage the performance benefits.' It does not explicitly 'recommend' NTFS as a general best practice over ReFS for all workloads, only that NTFS enables Direct I/O on SANs. The draft overstates the recommendation.",
+      "fix": "Rephrase to: 'To leverage Direct I/O performance on SAN-attached disks, format drives with NTFS. ReFS on SANs operates in redirected mode by design, which impacts performance.' Remove the general 'recommended format' claim."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a step-by-step for 'AD DS Protector' using `Enable-BitLocker -ADAccountOrGroupProtector`. Source S2 describes the AD protector as a 'SID-based protector' bound to the CNO. It does not document the specific PowerShell syntax or parameter `-ADAccountOrGroupProtector` used in the draft. This code is unverified and may be incorrect or hallucinated.",
+      "fix": "Remove the specific PowerShell command for the AD protector. Describe the process conceptually: 'Enable BitLocker using an AD-based protector (e.g., CNO account). The cluster service handles the binding automatically.' Do not provide unverified code snippets."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'CSV cannot be renamed if there are any open handles.' Source S1 says 'CSV cannot be renamed if there are any open handles.' This is accurate. However, the draft implies this is a general restriction without noting that renaming is typically done before VM installation. The context is slightly vague but not factually wrong. The bigger issue is the 'Cleanup' section suggesting manual removal of the protector parameter, which contradicts the 'automatic' nature of the local database protector.",
+      "fix": "Clarify the cleanup section: 'For local database protectors, the cluster manages the key. For AD-based protectors, you may need to remove the protector via BitLocker tools.' Ensure the distinction between the two protector types is maintained in the cleanup advice."
+    }
+  ]
+}

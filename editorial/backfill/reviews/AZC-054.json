@@ -1,0 +1,130 @@
+{
+  "id": "AZC-054",
+  "title": "Plan a Windows Server patching and rollback window",
+  "slug": "plan-a-windows-server-patching-and-rollback-window",
+  "historical_date": "2024-05-29",
+  "input_sha256": "7256fbcd60af6ed75c5e6a1e5f9d878f9b63205783de79864459dfcc1946fc00",
+  "created_at": "2026-10-23T13:28:39.954420+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Align WSUS approvals with Group Policy settings to define a precise Windows Server 2022 patching and restart window.",
+  "tags": [
+    "wsus",
+    "group-policy",
+    "windows-server-2022",
+    "patching",
+    "system-administration"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-server-update-services/deploy/1-install-the-wsus-server-role.md",
+      "revision": "792d66759b9368a97f56d878f615274899cdb9f4",
+      "revision_date": "2023-09-28T00:01:30Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Step 1 - Install the WSUS Server Role",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/deploy/1-install-the-wsus-server-role",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/792d66759b9368a97f56d878f615274899cdb9f4/WindowsServerDocs/administration/windows-server-update-services/deploy/1-install-the-wsus-server-role.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-server-update-services/deploy/3-approve-and-deploy-updates-in-wsus.md",
+      "revision": "652fe7e7be665c3efd15d6ad9f909ef190454bff",
+      "revision_date": "2023-04-24T15:24:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Step 3 - Approve and Deploy Updates in WSUS",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/deploy/3-approve-and-deploy-updates-in-wsus",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/652fe7e7be665c3efd15d6ad9f909ef190454bff/WindowsServerDocs/administration/windows-server-update-services/deploy/3-approve-and-deploy-updates-in-wsus.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md",
+      "revision": "1c51d43f0a489df1aea18ae6be9d48e7bd19dd99",
+      "revision_date": "2024-03-26T15:01:21Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Step 4 - Configure Group Policy settings for automatic updates",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1c51d43f0a489df1aea18ae6be9d48e7bd19dd99/WindowsServerDocs/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 'Notify to Restart' option (Option 7) allow for a scheduled restart time, or is it strictly manual?",
+    "What is the exact GPO path for 'Specify intranet Microsoft update service location'?",
+    "How does the 'Delay restart' setting interact with the 'No auto-restart with logged on users' setting?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-a-windows-server-patching-and-rollback-window.md",
+  "draft": true,
+  "word_count": 1101,
+  "claim_support_checks": [
+    {
+      "claim": "WSUS approval is the prerequisite for clients to see updates.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Option 7 of Configure Automatic Updates is available in Windows Server 2016 and later.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Automatic Updates detection frequency defaults to 22 hours.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Auto-approving 'Upgrades' classification can cause unintended OS feature updates.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "WSUS Reports can verify update deployment status.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Option 7 ('Auto Download, Notify to install, Notify to Restart') allows for a 'scheduled restart'. Source S3 explicitly states this option allows local administrators to 'proceed with installations or reboots manually'. It does not provide a scheduled restart mechanism; that is the function of Option 4. This is a critical functional misrepresentation.",
+      "fix": "Remove the claim that Option 7 supports scheduled restarts. Clarify that Option 7 requires manual intervention for both installation and reboot, whereas Option 4 is required for automated scheduling. Correct the guidance to reflect that Option 7 is for manual control, not scheduled automation."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft advises using Option 7 for 'controlled patching windows' to avoid 'rigid daily schedules'. However, Option 7 provides no scheduling capability at all. It relies on human action. Recommending it for a 'window' implies a time-based automation that does not exist in this setting, leading to operational failure if administrators expect automatic execution.",
+      "fix": "Reframe Option 7 as a manual intervention tool, not a scheduling tool. If the goal is a 'window', Option 4 with specific scheduling is the correct technical path. Remove the implication that Option 7 offers time-based control or window management."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that for Option 4, 'if a user is logged on, they are notified and can delay the restart'. Source S3 mentions 'Delay restart for scheduled installations' and 'No auto-restart with logged on users', but does not explicitly state that logged-on users can 'delay' the restart in Option 4. It implies notification and potential delay via the 'Delay restart' policy, but the user's ability to actively delay is not clearly sourced as a default behavior of Option 4 itself.",
+      "fix": "Clarify that user notification is standard, but the ability to delay the restart depends on the 'Delay restart for scheduled installations' policy setting. Do not assert user delay capability as inherent to Option 4 without citing the specific policy dependency."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests checking the 'Windows Update' log in Event Viewer under 'Applications and Services Logs > Microsoft > Windows > WindowsUpdate > Operational'. While likely correct, this specific path is not explicitly provided in the supplied sources (S1-S3). The sources focus on WSUS server-side reporting and GPO configuration, not client-side log paths.",
+      "fix": "Remove the specific Event Viewer path if not supported by sources, or generalize to 'check client-side logs for update activity' without specifying the exact registry/log path, or add a source link if available in general Windows documentation not provided here."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'WSUS acts as the source of truth for which updates are available'. This is a conceptual statement. While technically true in a WSUS-managed environment, the sources describe WSUS as a deployment tool. The phrasing is slightly promotional but not factually incorrect based on the context of WSUS deployment.",
+      "fix": "Tone down the 'source of truth' language to 'WSUS manages the availability and approval of updates'. This is more precise and aligns with the operational steps described in the sources."
+    }
+  ]
+}

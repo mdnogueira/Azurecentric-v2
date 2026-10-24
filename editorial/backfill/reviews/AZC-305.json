@@ -1,0 +1,117 @@
+{
+  "id": "AZC-305",
+  "title": "Investigate a private endpoint that resolves to a public address",
+  "slug": "investigate-a-private-endpoint-that-resolves-to-a-public-address",
+  "historical_date": "2026-05-02",
+  "input_sha256": "13589f62ef51d293e833676ecb07745e7036e318cf544f675f5808642c346c8c",
+  "created_at": "2026-10-23T23:41:05.151772+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Diagnose why a private endpoint resolves to a public IP by checking DNS zone linkage, record accuracy, and client resolver settings.",
+  "tags": [
+    "private-link",
+    "dns",
+    "troubleshooting",
+    "private-endpoint",
+    "networking"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/troubleshoot-private-endpoint-connectivity.md",
+      "revision": "fd888ea7a72650e574f52dfea4b1b1fe21f7bd6e",
+      "revision_date": "2026-04-09T16:17:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot Azure Private Endpoint connectivity problems",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-endpoint-connectivity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fd888ea7a72650e574f52dfea4b1b1fe21f7bd6e/articles/private-link/troubleshoot-private-endpoint-connectivity.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/private-endpoint-dns.md",
+      "revision": "112d6da43853ca5ffba4ad0a2b06fd720cc5d09c",
+      "revision_date": "2026-04-17T21:46:25Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure Private Endpoint private DNS zone values",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/112d6da43853ca5ffba4ad0a2b06fd720cc5d09c/articles/private-link/private-endpoint-dns.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/private-link/troubleshoot-private-link-connectivity.md",
+      "revision": "fd888ea7a72650e574f52dfea4b1b1fe21f7bd6e",
+      "revision_date": "2026-04-09T16:17:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot Azure Private Link Service connectivity problems",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-link-connectivity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fd888ea7a72650e574f52dfea4b1b1fe21f7bd6e/articles/private-link/troubleshoot-private-link-connectivity.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-04-09T16:56:28Z; used previous public snapshot. Confirm continued applicability: articles/private-link/troubleshoot-private-endpoint-connectivity.md",
+    "Public document removed/moved on 2026-04-09T16:56:28Z; used previous public snapshot. Confirm continued applicability: articles/private-link/troubleshoot-private-link-connectivity.md"
+  ],
+  "open_questions": [
+    "Does the client VM have any local DNS cache that might be serving stale records?",
+    "Are there any custom DNS forwarders configured on the virtual network that might intercept queries?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-private-endpoint-that-resolves-to-a-public-address.md",
+  "draft": true,
+  "word_count": 799,
+  "claim_support_checks": [
+    {
+      "claim": "A private endpoint does not disable public access to the resource.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Private DNS zones must be linked to the virtual network containing the client.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The A record in the private DNS zone must match the private IP of the endpoint.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the issue 'does not necessarily break connectivity if the underlying service permits public access.' This is an unsupported generalization. Many Azure PaaS services (e.g., SQL DB, Storage) disable public network access by default or strictly enforce private link, making public resolution a hard failure. This misleading claim could lead to incorrect troubleshooting assumptions.",
+      "fix": "Remove the assertion about connectivity potentially working. State that resolving to a public IP typically indicates a configuration error or that the service allows public access, but connectivity is not guaranteed and may fail depending on the service's network access settings."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking NSG rules for outbound traffic to DNS server port 53. This is often irrelevant for Azure Private DNS, which uses the Azure-provided DNS (168.63.129.16) on the VNet backbone, not standard port 53 over the internet. This distracts from the actual issue of VNet DNS settings or Private Resolver configuration.",
+      "fix": "Remove the NSG check for port 53. Instead, verify that the client VM is using the correct DNS server (Azure-provided or custom) and that the VNet has the appropriate Private DNS zone linkage. Cite S1 for DNS configuration steps."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Summary of checks' section and a concluding paragraph ('By systematically checking...'). These are generic stock conclusions that add no technical value and violate the guidance to remove stock conclusion sections and end with a concrete verification.",
+      "fix": "Delete the 'Summary of checks' and the final concluding paragraph. End the article immediately after the 'Review Private Endpoint configuration' section or with a concrete next step, such as 'If DNS resolution is correct but connectivity fails, check application-layer configurations.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends using 'DNS lookup command' without specifying the command (e.g., `nslookup`, `Resolve-DnsName`). This is vague for users on different operating systems. It also fails to mention that Azure Private DNS uses the Azure-provided DNS IP, which is critical for troubleshooting.",
+      "fix": "Specify the command for Windows (`nslookup` or `Resolve-DnsName`) and Linux (`nslookup` or `dig`). Clarify that the client should query the Azure-provided DNS IP (168.63.129.16) to test resolution against the Private DNS zone."
+    }
+  ]
+}

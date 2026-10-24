@@ -1,0 +1,135 @@
+{
+  "id": "AZC-091",
+  "title": "Review a workload against the Well-Architected reliability pillar",
+  "historical_date": "2024-09-10",
+  "created_at": "2026-10-23T23:58:26.654142+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Review a workload against the Well-Architected reliability pillar by defining RTO/RPO and consulting service-specific guides.",
+  "tags": [
+    "well-architected-framework",
+    "reliability",
+    "disaster-recovery",
+    "availability-zones",
+    "rto-rpo"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "297ed3fede45b3785bda973110241a420f0e621b",
+      "revision_date": "2024-02-23T13:07:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/297ed3fede45b3785bda973110241a420f0e621b/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/overview-reliability-guidance.md",
+      "revision": "917ab49269056f24b3859f21af962276411037a5",
+      "revision_date": "2024-09-09T16:36:58Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview-reliability-guidance",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/917ab49269056f24b3859f21af962276411037a5/articles/reliability/overview-reliability-guidance.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/overview.md",
+      "revision": "d61099ec0d93d37563c65bfc248da3bb3e4ce6a7",
+      "revision_date": "2024-01-30T20:46:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure reliability documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d61099ec0d93d37563c65bfc248da3bb3e4ce6a7/articles/reliability/overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the workload have a documented RTO and RPO?",
+    "Are all service components covered by the reliability guides?",
+    "Has a failover test been scheduled to validate the RTO/RPO?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2024-02-23T16:05:23Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-guidance-overview.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/azure-sql/database/recovery-using-backups#geo-restore",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/failover-group-sql-mi?view=azuresql&preserve-view=true"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-a-workload-against-the-well-architected-reliability-pillar.md",
+  "draft": true,
+  "word_count": 806,
+  "claim_support_checks": [
+    {
+      "claim": "Reliability targets are driven by business requirements, not technical defaults.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "RTO and RPO are non-functional requirements dictated by business needs.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure reliability documentation includes service-specific guides for availability zones and disaster recovery.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Availability zones are physically separate locations within a region with low latency.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Building reliability is a shared responsibility between Microsoft and the customer.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft links to 'Azure App Service reliability guide' and 'cross-region disaster recovery' using URLs that do not match the provided citation_urls. The source S2 lists the DR section as a fragment of the main guide, not a separate page. This creates broken or misleading links.",
+      "fix": "Update the App Service links to point to the single reliability guide URL provided in S2: https://learn.microsoft.com/en-us/azure/reliability/reliability-app-service. Reference the specific section anchor for DR rather than inventing a separate URL."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure SQL Managed Instance has no availability zone guide in the overview tables. Source S2 explicitly lists a zone guide for Azure SQL Managed Instance. This is a factual error contradicting the provided evidence.",
+      "fix": "Correct the statement to reflect that Azure SQL Managed Instance has a specific availability zone guide listed in the reliability overview. Cite the S2 table entry for Azure SQL-Managed Instance under the 'Availability zone guide' column."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states availability zones 'optimize costs'. Source S3 lists 'optimize costs' as a general reliability planning step but does not explicitly claim that using availability zones themselves optimizes costs compared to other redundancy options. This is a vague inference.",
+      "fix": "Remove the specific claim that availability zones optimize costs. Instead, state that reliability planning should 'use availability zones and disaster recovery planning where applicable to improve reliability and optimize costs,' reflecting the source's checklist item accurately."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that asynchronous replication does not guarantee RPO of zero, which is correct, but fails to mention that synchronous replication is not always available or supported for all Azure services. This could mislead users into thinking synchronous is a universal alternative.",
+      "fix": "Clarify that synchronous replication options are service-specific and not universally available. Advise users to check the specific service's disaster recovery guide for supported replication modes rather than assuming synchronous is an option."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'physically separate availability zones... connected by a high-performance network featuring less than 2ms latency'. While sourced, this specific latency metric is a detail that might vary by region and is not a universal guarantee for all zone pairs.",
+      "fix": "Generalize the latency claim to 'low-latency network' or cite the specific source context if the 2ms figure is strictly regional. Avoid presenting it as a universal technical guarantee for all Azure availability zones."
+    }
+  ]
+}

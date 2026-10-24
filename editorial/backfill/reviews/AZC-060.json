@@ -1,0 +1,98 @@
+{
+  "id": "AZC-060",
+  "title": "Prepare permissions before onboarding Copilot for Security",
+  "slug": "prepare-permissions-before-onboarding-copilot-for-security",
+  "historical_date": "2024-06-16",
+  "input_sha256": "fe86a7ed89731b5318e756cb3ed54cbb494a64acc381a3e4436daf7213e4ad3e",
+  "created_at": "2026-10-23T13:35:03.435419+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Clarify that the community repo covers code contributions, not service onboarding permissions, and direct readers to official deployment docs.",
+  "tags": [
+    "copilot-for-security",
+    "azure-rbac",
+    "onboarding",
+    "documentation",
+    "github"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "a6f3ba73e1ad766d5279b63bd333414e3a59b89a",
+      "revision_date": "2024-04-11T07:40:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The official documentation for specific Azure RBAC roles required for Copilot for Security onboarding was not provided in the source material. The article directs readers to the official Microsoft Learn docs, but does not list the specific roles.",
+    "The article does not detail the specific licensing requirements for Copilot for Security, only that they must be verified via official documentation.",
+    "The distinction between data-plane and control-plane permissions for Copilot for Security connectors is not detailed in the provided sources."
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/prepare-permissions-before-onboarding-copilot-for-security.md",
+  "draft": true,
+  "word_count": 702,
+  "claim_support_checks": [
+    {
+      "claim": "The Microsoft Copilot for Security Community repository is for open-source contributions to plugins and connectors.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Contributing to the repository requires a Contributor License Agreement (CLA).",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The community repository does not document Azure RBAC permissions for service onboarding.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft infers specific Azure RBAC roles (Contributor/Owner, Reader) for Copilot for Security onboarding from a GitHub README about code contribution. The source contains zero information about Azure permissions, onboarding, or the service's operational requirements. This is a fabricated technical claim.",
+      "fix": "Remove all inferred RBAC role claims. Replace with a directive to consult the official 'Get started with Microsoft Copilot for Security' documentation for the specific built-in roles or custom permissions required for onboarding and connector configuration."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft repeatedly cites the community contribution README as the 'primary source' for onboarding steps and permission boundaries. This source is irrelevant to the operational task of onboarding the service, leading to misleading guidance that conflates code contribution with service deployment.",
+      "fix": "Cite the official Microsoft Learn documentation for Copilot for Security onboarding. Remove references to the GitHub README as a source for operational permissions or onboarding procedures, as it only covers open-source contribution workflows."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims onboarding will 'fail or leave the integration in a broken state' without specific permissions. This is an unsupported prediction of behavior not found in the source or general Azure documentation for this service. It creates unnecessary alarm without factual basis.",
+      "fix": "State that onboarding requires appropriate permissions to create resources and grant access, as is standard for Azure resource deployment. Remove speculative outcomes like 'broken state' and focus on the prerequisite of having permission to create the resource."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft provides vague, generic steps for onboarding (e.g., 'Click Enable', 'Configure Connectors') without linking them to the actual Azure Portal interface or specific documentation. It implies a universal flow that may not match the current UI or process.",
+      "fix": "Remove generic UI instructions. Instead, provide a link to the specific 'Enable Microsoft Copilot for Security' guide. If code is needed, provide a small, verified Bicep or ARM template snippet for resource creation, clearly marked as illustrative if not fully tested."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph ('By following these steps...') that adds no technical value and violates the editorial guidance to end with a concrete verification or next action.",
+      "fix": "Delete the concluding paragraph. End with a specific next action, such as 'Verify the Copilot for Security resource is in a 'Running' state in the Azure Portal' or 'Check connector health in the Security Copilot dashboard'."
+    }
+  ]
+}

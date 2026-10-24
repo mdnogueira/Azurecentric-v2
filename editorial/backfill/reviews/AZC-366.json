@@ -1,0 +1,137 @@
+{
+  "id": "AZC-366",
+  "title": "Create a practical workload readiness checklist",
+  "historical_date": "2026-10-21",
+  "created_at": "2026-10-23T23:48:13.007796+00:00",
+  "author": "Marcos Nogueira",
+  "description": "A practical checklist for verifying workload readiness before an incident, based on Azure's shared responsibility model and service health.",
+  "tags": [
+    "azure-reliability",
+    "business-continuity",
+    "disaster-recovery",
+    "azure-service-health",
+    "incident-response"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/business-continuity-management-program.md",
+      "revision": "aa65007c6058f5708b19b42a0e3ac6c931e59987",
+      "revision_date": "2024-12-16T02:23:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Business continuity management program in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aa65007c6058f5708b19b42a0e3ac6c931e59987/articles/reliability/business-continuity-management-program.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "297ed3fede45b3785bda973110241a420f0e621b",
+      "revision_date": "2024-02-23T13:07:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/297ed3fede45b3785bda973110241a420f0e621b/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/incident-response.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What to do during an Azure service disruption",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/incident-response",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/incident-response.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the current Azure Service Health API provide programmatic access to PIRs for automated post-incident analysis?",
+    "Are there specific Azure CLI or PowerShell commands recommended for verifying zone-redundancy status of a resource during an incident?",
+    "How does the 'logical vs physical' zone mapping documentation evolve, and is there a tool to automate this mapping for large estates?"
+  ],
+  "research_warnings": [
+    "Public document removed/moved on 2024-12-16T03:01:28Z; used previous public snapshot. Confirm continued applicability: articles/reliability/business-continuity-management-program.md",
+    "Public document removed/moved on 2024-02-23T16:05:23Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-guidance-overview.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/incident-response.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/service-health/alerts-activity-log-service-notifications-portal",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program#shared-responsibility-model",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/storage/common/storage-initiate-account-failover"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-practical-workload-readiness-checklist.md",
+  "draft": true,
+  "word_count": 896,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Service Health provides information on issues affecting specific subscriptions, unlike the public status page.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure does not automatically replicate customer-enabled services across regions; this is the customer's responsibility.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Logical availability zones may map to different physical datacenters, affecting impact assessment.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Service teams test recovery plans in canary environments simulating total region failures.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Free support tickets can be raised for up to 72 hours after an issue is mitigated.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites the Azure Service Health blade as the primary location for checking incidents, but the provided sources do not describe the portal UI or blade navigation. This creates a dependency on visual interface elements that may change, violating the guidance to avoid visible UI references and keep provenance in review records.",
+      "fix": "Remove the instruction to 'Navigate to the Azure Service Health blade'. Instead, instruct users to access Azure Service Health via the service URL or by searching for it in the portal search bar, focusing on the capability rather than the UI path."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Storage has specific guidance on 'choosing the right redundancy option' and links to it, but the source text for S2 lists 'Azure Storage - Blob Storage' with a link to 'Choose the right redundancy option' only in the Availability Zone column, while the Disaster Recovery column links to 'Azure storage disaster recovery planning'. The draft conflates these distinct topics.",
+      "fix": "Clarify that 'Choose the right redundancy option' applies to availability zone support for Blob Storage, while disaster recovery planning is covered in a separate guide. Ensure the distinction between intra-region redundancy and cross-region disaster recovery is explicit."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section on 'Test your incident response process' with steps to 'Simulate the Incident' and 'Verify Communication Channels'. While good practice, the sources only describe Microsoft's internal testing (canary regions, pull-the-plug) and do not provide specific guidance or checklists for customer-side simulation steps.",
+      "fix": "Remove the specific simulation steps. Instead, reference the general advice to 'consider what you can learn from the incident' and 'improve your own resiliency' as stated in the 'After an incident' section of S3, without inventing a testing methodology."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that 'Azure Service Health is the primary source for this information' regarding incident scope. While S3 supports this, it also notes that Azure Status shows widespread issues meeting criteria. The draft does not adequately warn that Azure Service Health might not show issues if they don't impact the user's specific subscriptions, potentially leading to false confidence.",
+      "fix": "Add a caution that Azure Service Health only reflects issues impacting the user's subscriptions. If no issues are found there but symptoms persist, users should check Azure Status or @AzureSupport, as per S3."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'configure automatic incident update alerts... to send these notifications to an action group'. S3 mentions this capability, but the draft does not specify that this requires prior configuration of Action Groups and Alert Rules, which is a non-trivial setup step not detailed in the source.",
+      "fix": "Briefly note that configuring these alerts requires setting up Azure Monitor Action Groups and Alert Rules in advance, as implied by the need for 'customer-configured Service Health alerts' mentioned in S3."
+    }
+  ]
+}

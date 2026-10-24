@@ -1,0 +1,157 @@
+{
+  "id": "AZC-199",
+  "title": "Plan Arc-enabled Windows Server 2025 Hotpatch with its baseline reboots",
+  "slug": "plan-arc-enabled-windows-server-2025-hotpatch-with-its-baseline-reboots",
+  "historical_date": "2025-07-10",
+  "input_sha256": "b1754d03a1418e4cbe60a93793d4988778cb505984ff880b8bc3f8db7ec6135d",
+  "created_at": "2026-10-23T16:49:49.835147+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan Windows Server 2025 Hotpatch for Arc-enabled servers: baseline reboots, VSM prerequisites, and subscription management.",
+  "tags": [
+    "windows-server-2025",
+    "hotpatch",
+    "azure-arc",
+    "virtual-secure-mode",
+    "patch-management"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-199-learn-1.png",
+      "alt": "Screenshot showing Windows Admin Center in the Azure portal for Arc-enabled server, displaying the Windows admin Center Overview page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/aafacc669c05d45aeec75f8fd5d39a8c6423fde9/WindowsServerDocs/manage/media/manage-vm/windows-admin-center-in-azure-arc-overview.png",
+      "source_id": "S4",
+      "source_revision_date": "2025-05-19T12:39:01Z",
+      "sha256": "99461119a45f58de5c0b34d6617d458b53ac7db8ed2950d064ebdc4fdc15285f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://www.microsoft.com/en-us/windows-server/blog/2025/04/24/tired-of-all-the-restarts-get-hotpatching-for-windows-server/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2025-04-24T15:00:00+00:00",
+      "published_at": "2025-04-24T15:00:00+00:00",
+      "checked_at": "2026-10-23T11:53:03.905177+00:00",
+      "title": "Plan Arc-enabled Windows Server 2025 Hotpatch with its baseline reboots",
+      "url": "https://www.microsoft.com/en-us/windows-server/blog/2025/04/24/tired-of-all-the-restarts-get-hotpatching-for-windows-server/",
+      "snapshot_url": "https://www.microsoft.com/en-us/windows-server/blog/2025/04/24/tired-of-all-the-restarts-get-hotpatching-for-windows-server/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2026-06-29T17:25:56+00:00"
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/enable-hotpatch-azure-arc-enabled-servers.md",
+      "revision": "e425211c6e4fee021df0609d5d9c1053cd5f3b3d",
+      "revision_date": "2025-06-27T14:24:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable Hotpatch for Azure Arc-enabled servers (preview)",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/enable-hotpatch-azure-arc-enabled-servers",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e425211c6e4fee021df0609d5d9c1053cd5f3b3d/WindowsServerDocs/get-started/enable-hotpatch-azure-arc-enabled-servers.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/hotpatch.md",
+      "revision": "e425211c6e4fee021df0609d5d9c1053cd5f3b3d",
+      "revision_date": "2025-06-27T14:24:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Hotpatch for Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/hotpatch",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e425211c6e4fee021df0609d5d9c1053cd5f3b3d/WindowsServerDocs/get-started/hotpatch.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md",
+      "revision": "aafacc669c05d45aeec75f8fd5d39a8c6423fde9",
+      "revision_date": "2025-05-19T12:39:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage Azure Arc-enabled Servers using Windows Admin Center in Azure",
+      "url": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-arc-hybrid-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/aafacc669c05d45aeec75f8fd5d39a8c6423fde9/WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2025-07-10"
+  ],
+  "open_questions": [
+    "Does the Azure Arc-enabled Hotpatch service require a specific Azure region for the Arc agent or Hotpatch service endpoints?",
+    "Are there any known conflicts between Hotpatch and specific third-party security agents or drivers?",
+    "What is the exact process for disenrolling from the Hotpatch preview if a customer wishes to switch to the paid subscription before July 2025?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-arc-enabled-windows-server-2025-hotpatch-with-its-baseline-reboots.md",
+  "draft": true,
+  "word_count": 911,
+  "claim_support_checks": [
+    {
+      "claim": "Hotpatching for Windows Server 2025 is generally available as a subscription service starting July 2025.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hotpatching reduces reboots from monthly to quarterly by requiring a baseline reboot in January, April, July, and October.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Virtual Secure Mode (VSM) must be running for Hotpatch to be enabled, and VSM status can be checked via PowerShell.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Hotpatch updates do not support automatic rollback and require a reboot to uninstall and reinstall a baseline.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The Hotpatch subscription costs $1.50 USD per CPU core per month, billed monthly regardless of update type.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Hotpatch is generally available as of July 2025, but the primary technical documentation (S2, S3) still labels the feature as 'preview' and links to preview terms. This contradicts the source hierarchy and may mislead users regarding legal terms of use.",
+      "fix": "Align the status with the technical documentation (S2, S3). State that the feature is in preview or note the specific GA date if explicitly confirmed in the 'how-to' docs, rather than relying solely on the blog announcement which may lag behind technical doc updates."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Hotpatch 'removes the need to restart servers for security updates' in the intro, which is an overgeneralization. S3 clarifies that Hotpatch only covers security updates and excludes drivers, firmware, and .NET updates, which still require reboots.",
+      "fix": "Clarify that Hotpatch applies only to security updates. Explicitly state that non-security updates (drivers, firmware, .NET) are excluded and will still require a reboot, even during Hotpatch months."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft instructs users to 'Select Hotpatch from the settings menu' without specifying the exact UI path or noting the 'preview' tag visible in the source (S2). This vagueness may cause users to miss the feature or encounter permission errors if they lack the correct role.",
+      "fix": "Specify the exact navigation path: 'Azure Arc > Machines > [Machine Name] > Hotpatch (preview)'. Mention that the 'preview' label may still appear in the UI despite GA status, and ensure users have Contributor/Owner roles."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram node 'Enable VSM if Status != 2' but does not explicitly warn that enabling VSM requires a reboot *before* enabling Hotpatch. S2 notes this reboot is mandatory for VSM configuration.",
+      "fix": "Add a clear warning that enabling VSM requires a server reboot. Ensure the workflow sequence reflects that VSM must be active and verified (output '2') before attempting to enable Hotpatch in the Azure Portal."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'disenroll if you wish to end your preview' but does not provide the mechanism. S1 mentions disenrollment but lacks steps. This leaves users without a concrete action plan for transitioning from preview to paid.",
+      "fix": "If the disenrollment process is not documented in the provided sources, remove the specific instruction to disenroll or link to the specific Azure Portal blade if known. Otherwise, advise checking the Azure Update Manager subscription settings for the transition."
+    }
+  ]
+}

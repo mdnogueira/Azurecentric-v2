@@ -1,0 +1,157 @@
+{
+  "id": "AZC-100",
+  "title": "Map entities so incidents contain useful context",
+  "slug": "map-entities-so-incidents-contain-useful-context",
+  "historical_date": "2024-10-06",
+  "input_sha256": "7af25650ff1cd05f4ef87136e56743083a13063a1fce321a277a6c07128fe761",
+  "created_at": "2026-10-23T14:29:28.176002+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Map data fields to entities in Microsoft Sentinel analytics rules to enrich incidents with context for investigation.",
+  "tags": [
+    "microsoft-sentinel",
+    "entity-mapping",
+    "security-operations",
+    "incident-response",
+    "kql"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-100-learn-1.png",
+      "alt": "Screenshot shows how to add a new entity.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f83249d609a91c3518ccaa271c1bc519dce0dfed/articles/sentinel/media/map-data-fields-to-entities/add-new-entity.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-26T12:18:15Z",
+      "sha256": "7047d317b06ced6dc6a128f7f8dbeffd373b3943467f3c1675893ed799e87f05",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/map-data-fields-to-entities.md",
+      "revision": "f83249d609a91c3518ccaa271c1bc519dce0dfed",
+      "revision_date": "2024-08-26T12:18:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Map data fields to Microsoft Sentinel entities | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/map-data-fields-to-entities",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f83249d609a91c3518ccaa271c1bc519dce0dfed/articles/sentinel/map-data-fields-to-entities.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/entities.md",
+      "revision": "f83249d609a91c3518ccaa271c1bc519dce0dfed",
+      "revision_date": "2024-08-26T12:18:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Entities in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/entities",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f83249d609a91c3518ccaa271c1bc519dce0dfed/articles/sentinel/entities.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/entities-reference.md",
+      "revision": "b24f11d3bcf5e6c2f884793791a18117f1b4803e",
+      "revision_date": "2024-10-01T12:12:28Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Microsoft Sentinel entity types reference | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/entities-reference",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b24f11d3bcf5e6c2f884793791a18117f1b4803e/articles/sentinel/entities-reference.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there specific best practices for handling entities that appear in multiple data sources with different identifier formats?",
+    "How does entity mapping interact with entity behavior analytics (EBA) if EBA is enabled?",
+    "What is the exact impact of entity truncation on incident correlation if the 64 KB limit is exceeded?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/map-entities-so-incidents-contain-useful-context.md",
+  "draft": true,
+  "word_count": 1117,
+  "claim_support_checks": [
+    {
+      "claim": "Entity mapping enriches alerts and incidents with essential information for investigation.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Entities are classifications for data elements that allow Sentinel to correlate data across alerts.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Strong identifiers uniquely identify an entity without ambiguity, while weak identifiers may not.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Up to 500 entities can be identified collectively in a single alert.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The size limit for the entities area of an alert is 64 KB.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Entity mapping is configured in the Alert enhancement section of the analytics rule wizard.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You can define up to ten entity mappings in a single analytics rule.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The new version of entity mapping is generally available and old mappings are automatically converted.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that Reader, Contributor, or Owner roles are typically required to view resources and manage Sentinel configurations. The provided source (S1) does not specify these RBAC roles or scopes; it only describes the UI navigation steps. This is an unsupported permission claim.",
+      "fix": "Remove the specific role and scope claims. State only that the user must have access to the Microsoft Sentinel workspace and permissions to edit analytics rules, as implied by the 'Edit' action in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims entity mapping 'links the alert to the entity pages'. Source S2 states entities provide a 'foundation and context' and allow tracking, but does not explicitly describe a technical 'link' mechanism or UI behavior in the alert view. This is an unsupported functional description.",
+      "fix": "Rephrase to state that entity mapping allows Sentinel to 'recognize, track, and correlate' data elements, providing context for investigation, without asserting a specific 'link' feature."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By carefully selecting... you ensure...') which violates the editorial guidance to remove generic concluding paragraphs beginning with 'By following' or similar structures.",
+      "fix": "Delete the final paragraph. End the article after the Verification section with the concrete action of checking the Entities tab."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats source citations after every single step in the numbered list. The editorial guidance requires using a few well-placed source links rather than repeating the same citation after every sentence or step to keep reading flow conversational.",
+      "fix": "Consolidate citations. Place relevant source links at the end of the section or only where specific new information is introduced, rather than after every step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If entities are missing or fragmented, review your identifier choices'. While true, it lacks the specific context from S2 that weak identifiers (like Name alone) cause fragmentation if domain context is missing. The draft mentions this earlier but the verification step is vague.",
+      "fix": "In the Verification section, explicitly advise checking for 'Name' vs 'Name+NTDomain' discrepancies if Account entities appear fragmented, referencing the strong/weak identifier distinction from S2."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "AZC-289",
+  "title": "PowerShell 7.6 LTS: prepare an automation compatibility check",
+  "slug": "powershell-7-6-lts-prepare-an-automation-compatibility-check",
+  "historical_date": "2026-03-19",
+  "input_sha256": "fc4ed87adbc59fa6ad1a80e2752db75e9bc8067726c2097720e9a26622b17481",
+  "created_at": "2026-10-23T19:00:39.350871+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Audit PowerShell 7.6 LTS compatibility: check ThreadJob rename, Join-Path changes, and .NET 10 dependencies before production deployment.",
+  "tags": [
+    "powershell-7.6",
+    "automation",
+    "compatibility",
+    "lts",
+    "breaking-changes"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://devblogs.microsoft.com/powershell/announcing-powershell-7-6/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2026-03-18T21:47:31+00:00",
+      "published_at": "2026-03-18T21:47:31+00:00",
+      "checked_at": "2026-10-23T11:53:05.532519+00:00",
+      "title": "PowerShell 7.6 LTS: prepare an automation compatibility check",
+      "url": "https://devblogs.microsoft.com/powershell/announcing-powershell-7-6/",
+      "snapshot_url": "https://devblogs.microsoft.com/powershell/announcing-powershell-7-6/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "unknown"
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-76.md",
+      "revision": "6586c8669d6b08fe035c2571da52d81a67adc3a0",
+      "revision_date": "2026-03-18T23:55:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What's New in PowerShell 7.6",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/What-s-New-in-PowerShell-76",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/6586c8669d6b08fe035c2571da52d81a67adc3a0/reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-76.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md",
+      "revision": "602c333edb6d6de78bae1cf5a65e9c464914251d",
+      "revision_date": "2025-04-16T13:28:51Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Migrating from Windows PowerShell 5.1 to PowerShell 7",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/602c333edb6d6de78bae1cf5a65e9c464914251d/reference/docs-conceptual/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/whats-new/module-compatibility.md",
+      "revision": "e313505624c571f3a2e95e9a74125a2e1183e377",
+      "revision_date": "2025-08-06T13:10:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell 7 module compatibility",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/module-compatibility",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/e313505624c571f3a2e95e9a74125a2e1183e377/reference/docs-conceptual/whats-new/module-compatibility.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2026-03-19"
+  ],
+  "open_questions": [
+    "Are there specific third-party modules in the user's environment that have not yet been verified for .NET 10 compatibility?",
+    "Does the user's automation environment rely on the previous experimental status of features like PSFeedbackProvider?",
+    "What is the current deployment strategy for PowerShell 7 on the user's hosts (MSI, ZIP, winget)?",
+    "Are there any scripts that use the -AdditionalChildPath parameter with Join-Path that could be simplified?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/powershell-7-6-lts-prepare-an-automation-compatibility-check.md",
+  "draft": true,
+  "word_count": 1012,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell 7.6 is an LTS release built on .NET 10 and is recommended for production automation.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The ThreadJob module has been renamed to Microsoft.PowerShell.ThreadJob, affecting module-qualified references.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Join-Path cmdlet's -ChildPath parameter is now a string[] array.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell 7 installs side-by-side with Windows PowerShell 5.1 using separate paths and executables.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Several experimental features have been converted to mainstream in PowerShell 7.6.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites a source dated 2026-03-18 but the current date is 2024. This is a future knowledge error. The draft treats a hypothetical future release as current fact, which is misleading and technically invalid for current documentation.",
+      "fix": "Remove all references to PowerShell 7.6 and the 2026 announcement. Rewrite the content to focus on the current latest LTS (e.g., 7.4) or general migration principles from 5.1 to 7.x, ensuring all dates and version numbers are historically accurate."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims PowerShell 7.6 is built on .NET 10. This is a fabricated fact based on the future-dated source. Current PowerShell 7.4 is built on .NET 8.0. This error propagates into compatibility advice regarding .NET dependencies.",
+      "fix": "Correct the .NET version to match the actual current release (e.g., .NET 8.0 for PS 7.4). If discussing future versions, clearly label them as 'upcoming' or 'preview' with appropriate disclaimers, but do not present them as GA facts."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'PowerShell 7.6 becomes the recommended version for production automation environments.' This is a categorical claim about workload suitability that may not be universally true (e.g., for legacy .NET Framework dependencies). It also relies on the future source.",
+      "fix": "Rephrase to reflect that LTS releases are generally recommended for stability, but note that suitability depends on specific module compatibility and runtime requirements. Avoid absolute recommendations for production without qualification."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises using `Select-String` to audit scripts for `ThreadJob\\`. While illustrative, it lacks context on how to handle the module path changes in `PSModulePath` or if the old module is still present. It assumes a simple text search is sufficient for a breaking change.",
+      "fix": "Clarify that the audit should check for explicit module-qualified calls. Add a note that if the old `ThreadJob` module is still installed, it might mask the issue, so verifying the module list (`Get-Module -ListAvailable`) is also necessary."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'diagram' node list which is not rendered in the text. The structure is verbose with repetitive citations. The conclusion uses generic phrasing 'The goal is not just to install...'.",
+      "fix": "Remove the diagram node list. Consolidate citations. Replace the generic conclusion with a concrete next action, such as 'Run `pwsh -Command \"Get-Module -ListAvailable\"` to verify installed modules before deployment.'"
+    }
+  ]
+}

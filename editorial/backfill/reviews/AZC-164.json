@@ -1,0 +1,110 @@
+{
+  "id": "AZC-164",
+  "title": "Understand the trade-offs of Azure Spot Virtual Machines",
+  "slug": "understand-the-trade-offs-of-azure-spot-virtual-machines",
+  "historical_date": "2025-04-02",
+  "input_sha256": "1df268f259d7662fc80e821b7e086858d2cc1ff015fe49945082798515ecf355",
+  "created_at": "2026-10-23T16:01:16.447747+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Understand the trade-offs of Azure Spot Virtual Machines, including eviction policies, pricing caps, and capacity constraints.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-164-learn-1.png",
+      "alt": "Screenshot of a selected checkbox next to the Run with Azure Spot discount option.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/media/spot-vm-size-recommendation/run-with-azure-spot-discount.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-08-20T00:18:50Z",
+      "sha256": "9c610cc61fcfbb71698d9f74871a1fab4c96a154765a85b22d717760c4708a37",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/spot-vms.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use Azure Spot Virtual Machines",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/spot-vms.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/error-codes-spot.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Error codes for Azure Spot Virtual Machines and scale sets instances",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/error-codes-spot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/error-codes-spot.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/spot-vm-size-recommendation.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Spot Virtual Machine Size Recommendation for Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/spot-vm-size-recommendation",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/spot-vm-size-recommendation.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/spot-vms.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/error-codes-spot.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/spot-vm-size-recommendation.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-the-trade-offs-of-azure-spot-virtual-machines.md",
+  "draft": true,
+  "word_count": 1098,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Spot VMs require 'Virtual Machine' orchestration mode and that 'Uniform' mode does not support Spot. Source S1 explicitly states Spot applies to 'Uniform scale sets'. This is a factual contradiction that would prevent valid deployments.",
+      "fix": "Remove the claim about orchestration mode restrictions. Cite Source S1 which confirms Spot VMs are supported in both Flexible and Uniform scale sets. Do not invent limitations not present in the documentation."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states Spot VMs 'cannot be placed in Availability Sets' as a hard limitation. While true, it implies Availability Sets are the only HA option for standard VMs, ignoring Availability Zones. More critically, it omits that Spot VMs have no SLA, which is the primary differentiator from standard VMs in any HA context.",
+      "fix": "Clarify that Spot VMs lack an SLA and cannot use Availability Sets. Mention Availability Zones as a potential (but not guaranteed) resilience option for standard VMs, but emphasize Spot's inherent lack of availability guarantees per Source S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises using 'Delete' eviction policy for stateless workloads to avoid storage costs. It fails to mention that if the VM is evicted due to price, the user might want to keep the VM (Deallocate) to retry later if capacity returns, whereas Delete loses the instance entirely. The trade-off is nuanced.",
+      "fix": "Refine the 'Delete' vs 'Deallocate' comparison. Explain that 'Delete' is permanent and suitable for purely ephemeral tasks, while 'Deallocate' allows retrying allocation (subject to capacity/quota) but incurs storage costs. Reference the eviction policy table in Source S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure Scheduled Events' for eviction notices but does not specify that these are delivered on a 'best effort' basis up to 30 seconds prior. This creates a false expectation of guaranteed notification.",
+      "fix": "Add the 'best effort' qualifier to the description of Azure Scheduled Events. Cite Source S1 to ensure readers understand the notification is not guaranteed and the 30-second window is an estimate, not a contract."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using the Spot VM size recommendation tool in the Azure portal for Scale Sets. It does not clarify that this tool is specifically for Scale Sets, not single VMs, and requires the 'Run with Azure Spot discount' checkbox to be selected first.",
+      "fix": "Clarify that the Size Recommendation tool is accessible during Scale Set creation (Source S3). Ensure the steps mention enabling the Spot discount checkbox first, as the tool is context-dependent on that selection."
+    }
+  ]
+}

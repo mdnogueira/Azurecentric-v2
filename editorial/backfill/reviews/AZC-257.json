@@ -1,0 +1,161 @@
+{
+  "id": "AZC-257",
+  "title": "Use Conditional Access authentication strengths carefully",
+  "slug": "use-conditional-access-authentication-strengths-carefully",
+  "historical_date": "2025-12-20",
+  "input_sha256": "4968c8c1ce54fde867acd1985cb0892cf50c65547bb343024a1c4dab5c67e69a",
+  "created_at": "2026-10-23T21:38:37.289557+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enforce specific authentication strengths for external users by configuring cross-tenant MFA trust and applying Conditional Access policies in report-only mode.",
+  "tags": [
+    "conditional-access",
+    "authentication-strengths",
+    "external-users",
+    "cross-tenant-access",
+    "entra-id"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-257-learn-1.png",
+      "alt": "Screenshot of a Conditional Access policy with an authentication strength configured in grant controls.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/ca7cdfb0581fc5b43adb09a3c2cd7e460bf58b3c/docs/identity/authentication/media/concept-authentication-strengths/conditional-access-policy-authentication-strength-grant-control.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-10-17T00:12:04Z",
+      "sha256": "7178c2ea7c38e2ffa10b9c1aba3cf91ee9e103aeac597a9c3c751be41b1b01da",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-257-learn-2.png",
+      "alt": "Screenshot of the Policies page for authentication methods.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/01847f3385823832291bebbe33d17e685370f056/docs/identity/authentication/media/concept-authentication-strengths/authentication-methods-policy.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-10-17T16:21:13Z",
+      "sha256": "067ea2dfa5a5d76c2a6fa1390fb84fcf85616676d202d1603911a93a0c1a4985",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/authentication/concept-authentication-strengths.md",
+      "revision": "ca7cdfb0581fc5b43adb09a3c2cd7e460bf58b3c",
+      "revision_date": "2025-10-17T00:12:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of Conditional Access Authentication Strengths",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/ca7cdfb0581fc5b43adb09a3c2cd7e460bf58b3c/docs/identity/authentication/concept-authentication-strengths.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/authentication/concept-authentication-strength-how-it-works.md",
+      "revision": "01847f3385823832291bebbe33d17e685370f056",
+      "revision_date": "2025-10-17T16:21:13Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How Authentication Strengths Work in a Conditional Access Policy",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strength-how-it-works",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/01847f3385823832291bebbe33d17e685370f056/docs/identity/authentication/concept-authentication-strength-how-it-works.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md",
+      "revision": "71b418aec591a7eb66197528e9be7e9d374cfa02",
+      "revision_date": "2024-09-27T20:28:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Conditional Access - Authentication strength for external users",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/71b418aec591a7eb66197528e9be7e9d374cfa02/docs/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-30T20:55:05Z; used previous public snapshot. Confirm continued applicability: docs/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md",
+    "Include unavailable: includes/entra-policy-exclude-user.md"
+  ],
+  "open_questions": [
+    "How does the authentication method availability differ when MFA is completed in the home tenant versus the resource tenant for external users?",
+    "What are the specific limitations of Interrupt mode for registering passwordless authentication methods in combined registration?",
+    "How does the evaluation of authentication strengths change when multiple Conditional Access policies apply to a single sign-in for external users?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-conditional-access-authentication-strengths-carefully.md",
+  "draft": true,
+  "word_count": 931,
+  "claim_support_checks": [
+    {
+      "claim": "Authentication strength policies work together with MFA trust settings in cross-tenant access settings to determine where external users must perform MFA.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "If MFA trust is enabled, Microsoft Entra ID checks the user's authentication session for a claim indicating that MFA was fulfilled in the user's home tenant.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Authentication strength policies currently only work for external users who authenticate with Microsoft Entra ID.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "For email one-time passcode, SAML/WS-Fed, and Google federation users, the MFA grant control must be used instead of authentication strength.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Built-in authentication strengths include Multifactor authentication strength, Passwordless MFA strength, and Phishing-resistant MFA strength.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Authentication strengths are evaluated after the initial authentication, and users can be prompted to provide a method that satisfies the strength.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a concluding paragraph ('By carefully configuring...') that violates the instruction to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Delete the entire '## Conclusion' section. Replace it with a specific next step, such as: 'Verify policy impact by reviewing sign-in logs in the Microsoft Entra admin center under 'Protection' > 'Conditional Access' > 'Insights' > 'Sign-in logs' filtered by the new policy name.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses a screenshot sourced from S1 but does not place it beside the specific how-to step it illustrates, violating the guidance to include screenshots beside the relevant step. It also lacks a visible permission caption, which is correct, but the placement is vague.",
+      "fix": "Move the image tag for `/images/posts/2025/azc-257-learn-1.png` to immediately follow Step 7 in the 'Create the Conditional Access policy' section, where the 'Require authentication strength' control is configured."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Authentication strengths are evaluated after the initial authentication' without explaining the operational impact: users may already be authenticated with a weaker method and must re-authenticate or restart the session if the strength isn't met.",
+      "fix": "Clarify that if the initial authentication method does not satisfy the strength, the user is prompted to re-authenticate with a compliant method. If they are not registered for such a method, they are redirected to combined registration."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft lists 'Microsoft Entra ID P1 license' as a prerequisite in S1 but omits this context in the main body, potentially misleading readers about licensing requirements for the feature.",
+      "fix": "Add a brief note in the 'Prerequisites' or introduction: 'Requires Microsoft Entra ID P1 license or equivalent entitlement.' Keep it concise to avoid cluttering the how-to flow."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions `federatedIdpMfaBehavior` in a section about external users, which is tangential to the core task of configuring cross-tenant MFA trust for external identities and may confuse the reader.",
+      "fix": "Remove the paragraph about `federatedIdpMfaBehavior` and federated domains. It is not relevant to the external user authentication strength flow described in S3 and distracts from the primary goal."
+    }
+  ]
+}

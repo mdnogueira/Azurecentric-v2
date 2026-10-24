@@ -1,0 +1,119 @@
+{
+  "id": "AZC-077",
+  "title": "Trace a blocked outbound connection in Azure Firewall logs",
+  "historical_date": "2024-08-03",
+  "created_at": "2026-10-23T23:55:51.208174+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Trace blocked Azure Firewall traffic using structured logs, legacy diagnostics, and DNS proxy checks.",
+  "tags": [
+    "azure-firewall",
+    "networking",
+    "troubleshooting",
+    "structured-logs",
+    "kql"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/logs-and-metrics.md",
+      "revision": "018ec00753c198b37a07ff4ae4531b85f0968355",
+      "revision_date": "2024-08-01T07:26:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Overview of Azure Firewall logs and metrics",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/logs-and-metrics",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/018ec00753c198b37a07ff4ae4531b85f0968355/articles/firewall/logs-and-metrics.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/firewall/firewall-diagnostics.md",
+      "revision": "018ec00753c198b37a07ff4ae4531b85f0968355",
+      "revision_date": "2024-08-01T07:26:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor Azure Firewall logs and metrics",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/firewall-diagnostics",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/018ec00753c198b37a07ff4ae4531b85f0968355/articles/firewall/firewall-diagnostics.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the legacy log query syntax provided for AzureDiagnostics accurately reflect the current schema for AzureFirewallNetworkRule?",
+    "Are there any specific permissions required to query the AzureDiagnostics table versus the Structured log tables?",
+    "Is the Azure Firewall Workbook still the recommended tool for visual analysis, or have there been updates to Azure Monitor Workbooks?"
+  ],
+  "research_warnings": [
+    "No revision before 2024-08-03: MicrosoftDocs/azure-docs/articles/firewall/monitor-firewall.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/azure-monitor-log-analytics-rebrand.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/trace-a-blocked-outbound-connection-in-azure-firewall-logs.md",
+  "draft": true,
+  "word_count": 866,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Firewall supports both legacy Azure Diagnostics logs and Structured Firewall Logs.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Three service-specific legacy logs are available for Azure Firewall: Application Rule, Network Rule, and Dns Proxy.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Diagnostic logging must be explicitly enabled; it is not on by default.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Structured logs should be prioritized over legacy logs for easier searching and filtering.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The legacy KQL query uses `log_s contains 'Deny'`, which is unreliable for structured fields like `Action_s`. The draft also claims `RuleName` is directly projectable from `AzureDiagnostics`, but legacy logs store rule names in nested JSON or specific fields (e.g., `ruleCollectionName_s`, `ruleName_s`), not a generic `RuleName` column. This will cause query failures or empty results.",
+      "fix": "Update the legacy KQL query to explicitly extract fields from the `AzureDiagnostics` schema, such as `| extend Action = Action_s, RuleName = ruleName_s`. Verify the exact column names in the source documentation for the legacy schema before publishing."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Structured Logs use dedicated tables like `AzureFirewallNetworkRule`. While true for Resource Specific Tables, the draft fails to mention that these tables are only available if the diagnostic setting is configured to send to 'Resource Specific Tables' rather than the default 'AzureDiagnostics' or 'AllMetrics'. The distinction between 'Structured Firewall Logs' (the feature) and the underlying table implementation is blurred.",
+      "fix": "Clarify that Structured Logs require configuring the diagnostic setting to send to 'Resource Specific Tables'. Explicitly state that the table names (e.g., `AzureFirewallNetworkRule`) are only valid if this specific destination is selected, distinguishing it from the legacy `AzureDiagnostics` table."
+    },
+    {
+      "severity": "medium",
+      "problem": "The DNS section claims that if the DNS proxy is not enabled, 'the firewall does not log DNS queries'. This is misleading. If the proxy is disabled, the firewall does not perform DNS resolution for the traffic, so there are no proxy logs. However, the draft implies a binary state where 'no proxy = no logs', ignoring that users might still need to check VNet DNS settings. The phrasing suggests the firewall *could* log DNS without the proxy, which it cannot.",
+      "fix": "Rephrase to: 'If the DNS proxy is not enabled, Azure Firewall does not perform DNS resolution for the traffic and therefore generates no DNS proxy logs. In this case, verify the VNet and subnet DNS settings point to a functional DNS server.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The conclusion contains generic filler: 'By following these steps, you can quickly identify...'. The guidance also suggests using the Azure Firewall Workbook without noting that it may need to be imported or customized for specific scenarios, and doesn't explicitly link to the workbook documentation.",
+      "fix": "Remove the generic concluding paragraph. Replace with a concrete next action: 'If the issue persists, review the Azure Firewall Workbook for visual analysis or check the activity logs for configuration changes.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses `log_s contains 'Deny'` in the legacy query. The source S2 mentions 'Legacy Azure Diagnostics' but does not provide the exact KQL schema. The draft invents the specific field access pattern (`log_s`) which may not be the most efficient or correct way to parse the unstructured JSON in `AzureDiagnostics`. It should ideally use `parse_json` or specific string extraction if the schema is known.",
+      "fix": "Since the exact legacy schema isn't fully detailed in the provided snippets, either omit the specific legacy KQL example or mark it as 'illustrative' and advise users to check the `AzureDiagnostics` schema in their workspace. Do not present `log_s contains 'Deny'` as a definitive solution."
+    }
+  ]
+}

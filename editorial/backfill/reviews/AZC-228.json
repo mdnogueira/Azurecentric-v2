@@ -1,0 +1,134 @@
+{
+  "id": "AZC-228",
+  "title": "Choose Load Balancer or Application Gateway for a workload",
+  "historical_date": "2025-09-29",
+  "created_at": "2026-10-23T23:35:01.163717+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Compare Azure Load Balancer and Application Gateway v2 for workload routing, focusing on OSI layer, protocol support, and traffic patterns.",
+  "tags": [
+    "azure-load-balancer",
+    "application-gateway",
+    "networking",
+    "layer-4",
+    "layer-7",
+    "comparison"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/application-gateway/overview-v2.md",
+      "revision": "aba035e9f802a276ec2b9a3ca1c533c4f6513bab",
+      "revision_date": "2025-09-16T14:57:46Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "What is Azure Application Gateway v2?",
+      "url": "https://learn.microsoft.com/en-us/azure/application-gateway/overview-v2",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aba035e9f802a276ec2b9a3ca1c533c4f6513bab/articles/application-gateway/overview-v2.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/load-balancer/load-balancer-overview.md",
+      "revision": "7178d07158da5c206699de6445b0cdf008d7bf92",
+      "revision_date": "2025-07-09T23:44:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "What is Azure Load Balancer?",
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7178d07158da5c206699de6445b0cdf008d7bf92/articles/load-balancer/load-balancer-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/application-gateway/how-application-gateway-works.md",
+      "revision": "8d7287909864c05494ce4a4127336283f95fc256",
+      "revision_date": "2025-05-30T20:36:26Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "How an application gateway works",
+      "url": "https://learn.microsoft.com/en-us/azure/application-gateway/how-application-gateway-works",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8d7287909864c05494ce4a4127336283f95fc256/articles/application-gateway/how-application-gateway-works.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the user need to know about specific pricing tiers for Standard Load Balancer vs Standard Application Gateway v2?",
+    "Should the article include a comparison of private endpoint support for both services?",
+    "Is there a need to detail the migration steps from Basic Load Balancer to Standard Load Balancer?",
+    "Should the article mention the Azure Kubernetes Service Ingress Controller support in Application Gateway v2?",
+    "Does the user need guidance on configuring health probes for both services?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove future year reference 2026"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-load-balancer-or-application-gateway-for-a-workload.md",
+  "draft": true,
+  "word_count": 1002,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Load Balancer operates at Layer 4 of the OSI model.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Application Gateway v2 supports autoscaling and zone redundancy.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Application Gateway v2 supports mutual TLS (mTLS).",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Basic Load Balancer will be retired on September 30, 2025.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Application Gateway v1 is deprecated and will be retired on April 28, 2026.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides Azure CLI commands to register the Application Gateway Basic SKU preview but uses PowerShell syntax (`az provider register` is valid, but the context implies a mix-up with the source's PowerShell example, and the source text explicitly shows PowerShell for registration while the draft uses CLI. More critically, the source shows `Set-AzContext` and `Register-AzProviderFeature` in the code block labeled `azurecli-interactive` which is a source error, but the draft's CLI command `az provider register` is syntactactically incorrect for feature registration; it requires `az feature register`. Additionally, the draft claims the code is untested but provides a broken command.",
+      "fix": "Replace the CLI command with the correct Azure CLI syntax: `az feature register --name AllowApplicationGatewayBasicSku --namespace Microsoft.Network`. Verify against the source's intent, noting the source's code block was mislabeled as CLI but contained PowerShell. Ensure the command matches the actual Azure CLI reference."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Application Gateway v2 pricing is based on 'Application Gateway Units (AGUs)'. The source text for S1 explicitly states: 'With the v2 SKU, consumption drives the pricing model and is no longer attached to instance counts or sizes.' It does not mention AGUs. AGUs are a v1 concept. This is a factual error regarding the v2 pricing model.",
+      "fix": "Remove the reference to 'Application Gateway Units (AGUs)'. State that v2 pricing is based on consumption (data processed and compute hours) rather than instance counts or sizes, as per the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Azure Load Balancer 'preserves the original connection state' and 'does not inspect the content'. While true for pass-through, the draft implies this is a universal feature without noting that SNAT/port forwarding scenarios modify source IPs. More importantly, it omits the critical context that Basic LB is being retired, which is a major decision factor for new deployments.",
+      "fix": "Clarify that source IP preservation applies to standard load-balancing rules, not SNAT/port forwarding. Emphasize that Basic LB is retired on Sept 30, 2025, making Standard LB the only viable choice for new deployments, as highlighted in S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description in the JSON `diagram` field but the instructions say 'Keep tags, diagram, claims and review_questions in their JSON fields.' However, the body text ends with a generic conclusion 'The decision between... is not about which service is better...'. The editorial guidance says 'Remove stock conclusion and summary sections... End with a concrete verification or decision.'",
+      "fix": "Delete the final paragraph starting with 'The decision between Azure Load Balancer and Application Gateway v2 is not about...'. End the article immediately after the verification steps or the migration notes, providing a concrete next action like 'Verify backend health probes are active.'"
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims Application Gateway v2 'terminates the client connection'. While true for HTTPS, it also supports TCP/TLS proxy (Preview) which can pass through. The source S1 lists 'TCP/TLS proxy (Preview)' as a key capability. The draft presents Layer 7 termination as the only mode, ignoring the Layer 4 proxy capability of v2, which blurs the distinction with Load Balancer.",
+      "fix": "Acknowledge that Application Gateway v2 supports TCP/TLS proxy (Preview), allowing it to operate at Layer 4 for non-HTTP traffic. Clarify that standard HTTP/HTTPS routing involves termination, while TCP proxy may not, depending on the configuration."
+    }
+  ]
+}

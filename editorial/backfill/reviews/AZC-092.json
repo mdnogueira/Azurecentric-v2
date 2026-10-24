@@ -1,0 +1,126 @@
+{
+  "id": "AZC-092",
+  "title": "Export an Azure inventory without losing object structure",
+  "slug": "export-an-azure-inventory-without-losing-object-structure",
+  "historical_date": "2024-09-13",
+  "input_sha256": "e81012db69e51990da2049ddbbcb1c115832b19a4a937c1126a4659711adf5c0",
+  "created_at": "2026-10-23T14:18:26.452910+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Export Azure VM inventory with nested network data using PowerShell and typed objects.",
+  "tags": [
+    "azure-powershell",
+    "inventory",
+    "select-object",
+    "get-member",
+    "data-structures"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/powershell-commands.md",
+      "revision": "e4fabb7ebbd9bbe7f589f5cdcac320f6c23b4f77",
+      "revision_date": "2024-03-07T14:55:08Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What is a PowerShell command?",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/powershell-commands",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/e4fabb7ebbd9bbe7f589f5cdcac320f6c23b4f77/reference/docs-conceptual/powershell-commands.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/samples/Selecting-Parts-of-Objects--Select-Object-.md",
+      "revision": "0c0a4bd1a3a1bdd98f419bd2ede245657db09c12",
+      "revision_date": "2022-12-09T16:16:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Selecting parts of objects",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/samples/Selecting-Parts-of-Objects--Select-Object-",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/0c0a4bd1a3a1bdd98f419bd2ede245657db09c12/reference/docs-conceptual/samples/Selecting-Parts-of-Objects--Select-Object-.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/samples/Viewing-Object-Structure--Get-Member-.md",
+      "revision": "0c0a4bd1a3a1bdd98f419bd2ede245657db09c12",
+      "revision_date": "2022-12-09T16:16:04Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Viewing object structure",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/samples/Viewing-Object-Structure--Get-Member-",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/0c0a4bd1a3a1bdd98f419bd2ede245657db09c12/reference/docs-conceptual/samples/Viewing-Object-Structure--Get-Member-.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the null-conditional operator syntax work consistently across all Azure PowerShell modules for nested properties?",
+    "Are there performance implications for using complex calculated properties on large resource sets?",
+    "How should multi-value properties like tags be handled in CSV export for better readability?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "targeted_bulk_revision": "Replaced invalid object navigation or incomplete retry fragments; live integration execution not performed.",
+  "file": "src/content/posts/en/export-an-azure-inventory-without-losing-object-structure.md",
+  "draft": true,
+  "word_count": 685,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell cmdlets return rich .NET objects that contain nested properties.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Get-Member is used to inspect the properties and methods of PowerShell objects.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Select-Object can create new objects with calculated properties to extract specific data.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Calculated properties allow you to define new columns by running an expression against the source object.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `Get-AzResource` returns rich .NET objects with nested properties like `NetworkProfile`. This is factually incorrect. `Get-AzResource` returns `PSResource` objects where complex nested structures are flattened into simple string properties (e.g., `Properties` is a JSON string). The code examples attempting to access `.Properties.networkProfile` will fail with null reference errors.",
+      "fix": "Replace `Get-AzResource` with specific cmdlets like `Get-AzVM` which return typed objects with proper nested structures. Update the code examples to use `Get-AzVM` and verify property paths against the actual `PSVirtualMachine` object schema."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts that `Export-Csv` calls `ToString()` on complex properties, implying this is the cause of data loss. While `Export-Csv` does serialize objects, the primary issue is that the source objects (if using `Get-AzResource`) do not contain the nested structure to begin with. The explanation misdiagnoses the root cause, leading to a solution that won't work with the suggested cmdlet.",
+      "fix": "Clarify that the loss of structure is due to the API returning flattened data or specific cmdlets returning typed objects. If using `Get-AzResource`, explain that `Properties` is a string, requiring `ConvertFrom-Json` to access nested data, rather than just selecting properties."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Get-AzResource` to get a general inventory. This cmdlet is inefficient for large-scale inventory as it does not support efficient filtering or batching compared to specific resource cmdlets or the Azure Resource Graph. It also lacks the rich object structure claimed.",
+      "fix": "Recommend `Search-AzGraph` or specific cmdlets like `Get-AzVM` for inventory. If using `Get-AzResource`, warn about performance implications and the need to parse JSON strings for nested data."
+    },
+    {
+      "severity": "medium",
+      "problem": "The code example for handling nulls uses `$nic.ipConfigurations?.[0]?.properties?.privateIPAddress`. If `$nic` is null, the expression fails or returns null, but the logic inside the `if ($nic)` block is correct. However, the outer `Get-AzResource` context makes this irrelevant as the object structure is wrong. The example is illustrative but technically flawed in the context of the primary cmdlet.",
+      "fix": "Provide a working example using `Get-AzVM`. Show how to safely access nested properties like `$vm.NetworkProfile.NetworkInterfaces[0].Id` with appropriate null checks, demonstrating the correct object structure."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims `Get-AzResource` returns objects with `Plan`, `Sku`, and `Identity` as nested objects. In reality, these are often simple strings or specific types that may not have the nested depth implied. The explanation of the object graph is misleading for the specific cmdlet used.",
+      "fix": "Verify the actual property types returned by `Get-AzResource`. If they are strings, explain the need for parsing. If using typed cmdlets, describe the actual nested structure accurately."
+    }
+  ]
+}

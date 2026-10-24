@@ -1,0 +1,144 @@
+{
+  "id": "AZC-283",
+  "title": "Plan ownership and deletion behaviour for an infrastructure stack",
+  "slug": "plan-ownership-and-deletion-behaviour-for-an-infrastructure-stack",
+  "historical_date": "2026-03-02",
+  "input_sha256": "2bb828ba9b1b0792484d3596fc4a8b1caeb80b7295d90eda3a995c84b9794587",
+  "created_at": "2026-10-23T18:51:23.211474+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan ownership, scope, and deletion behaviour for Azure deployment stacks using Bicep and RBAC.",
+  "tags": [
+    "azure-deployment-stacks",
+    "bicep",
+    "infrastructure-as-code",
+    "azure-rbac",
+    "resource-management"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-283-learn-1.png",
+      "alt": "Screenshot of listing deployment stacks at the resource group scope.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f76f19bbdce93e1374633be0cb514bf9d656ed8d/articles/azure-resource-manager/bicep/media/deployment-stacks/deployment-stack-portal-group-list-stacks.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-12-22T21:19:55Z",
+      "sha256": "e418a035e9f7905d6871a5df1a1634be92c81d78adb354f2a77a4ccbc3ba2b35",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deployment-stacks.md",
+      "revision": "f76f19bbdce93e1374633be0cb514bf9d656ed8d",
+      "revision_date": "2025-12-22T21:19:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create and deploy Azure deployment stacks in Bicep",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f76f19bbdce93e1374633be0cb514bf9d656ed8d/articles/azure-resource-manager/bicep/deployment-stacks.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "9a1c7f047f984c0fb378e0cea44917b47b6234d5",
+      "revision_date": "2025-12-10T18:36:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9a1c7f047f984c0fb378e0cea44917b47b6234d5/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/quickstart-create-deployment-stacks-template-specs.md",
+      "revision": "f76f19bbdce93e1374633be0cb514bf9d656ed8d",
+      "revision_date": "2025-12-22T21:19:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create and deploy a deployment stack with Bicep from template specs",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/quickstart-create-deployment-stacks-template-specs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f76f19bbdce93e1374633be0cb514bf9d656ed8d/articles/azure-resource-manager/bicep/quickstart-create-deployment-stacks-template-specs.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there any specific best practices for naming deployment stacks or their managed resources?",
+    "How does the deny-assignment mechanism interact with existing Azure Policy assignments?",
+    "What is the exact behavior of the `deleteResources` action on unmanaged resources?",
+    "Are there any known issues with the Azure CLI version 2.61.0 or later regarding deployment stacks?",
+    "How does the deployment stack handle dependencies between resources during deletion?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/plan-ownership-and-deletion-behaviour-for-an-infrastructure-stack.md",
+  "draft": true,
+  "word_count": 1383,
+  "claim_support_checks": [
+    {
+      "claim": "Deployment stacks can be created at resource group, subscription, or management group scope.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Deployment Stack Contributor role allows managing stacks but not deny-assignments.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "ActionOnUnmanage switch controls whether unmanaged resources are detached or deleted.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Deleting resource groups bypasses deny-assignments.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Deployment stacks can't delete Key vault secrets.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft omits the critical cost and destructive context for `deleteAll`. While it quotes the warning, it fails to explicitly state that `deleteAll` destroys the resource group and all contained resources, which is a high-risk operation requiring explicit user awareness beyond the quoted text.",
+      "fix": "Add a distinct warning block stating: 'Using `deleteAll` permanently deletes the managed resource groups and all resources within them. Verify this action before execution to prevent accidental data loss.'"
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims the Azure CLI `az stack group create` command is used for updates, which is misleading. While technically true (idempotent create), it obscures the fact that `az stack group create` is primarily for creation. The draft also fails to mention that `az stack group delete` is the command for deletion, mixing creation and deletion logic in the 'Updating' section.",
+      "fix": "Clarify that `az stack group create` is used for both initial creation and updates (idempotent), while `az stack group delete` is used for stack removal. Separate the 'Updating' and 'Deleting' sections clearly to avoid confusion between modifying a stack and removing it."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a JSON diagram definition which is not a standard Markdown element and will likely render as raw text or break the page layout. It adds no technical value and violates the 'concrete verification' guideline by providing a non-functional visual aid.",
+      "fix": "Remove the JSON diagram block. Replace it with a concise textual summary of the lifecycle steps or remove it entirely to maintain focus on the operational commands and permissions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft repeats the same source citation `[Create and deploy Azure deployment stacks in Bicep]` after almost every sentence. This violates the guidance to 'use a few well-placed source links rather than repeating the same citation after every sentence' and disrupts reading flow.",
+      "fix": "Consolidate citations. Place a single source link at the end of the first paragraph of each section where the information is derived from that source, rather than repeating it for every bullet point or sentence."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions `DeleteResourcesAndResourcesGroups` as a deprecated value but does not explain the consequence of using it (detachment instead of deletion). This is a subtle but important detail for users migrating from older versions or scripts.",
+      "fix": "Add a brief note explaining that `DeleteResourcesAndResourcesGroups` behaves like `detachAll`, not deletion, and should be replaced with `deleteAll` to ensure resources are actually removed."
+    }
+  ]
+}

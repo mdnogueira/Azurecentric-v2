@@ -1,0 +1,142 @@
+{
+  "id": "AZC-302",
+  "title": "Validate a migrated server before closing the change",
+  "slug": "validate-a-migrated-server-before-closing-the-change",
+  "historical_date": "2026-04-24",
+  "input_sha256": "1869586b974a7939faa099f2a296352b980f5895e7d22fc462eb7b61f37f8fcc",
+  "created_at": "2026-10-23T19:16:48.067882+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Validate migrated servers against IaC-generated baselines using Azure Migrate templates and pre-migration checks.",
+  "tags": [
+    "azure-migrate",
+    "infrastructure-as-code",
+    "server-migration",
+    "validation",
+    "post-migration"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-302-learn-1.png",
+      "alt": "The screenshot shows how to start the code generation process.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/399d9efe23bb8f63ee8991c014c9698c9d74d798/articles/migrate/media/server-redeploy/code-generation-process.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-12-15T08:13:08Z",
+      "sha256": "614bfe687a8e0a8aad61d1bd2f56f6575227329d46774e00aacae20709fd524c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/how-to-migrate.md",
+      "revision": "3930c1cf9113c5d099655b10d3e7aa5ca9d12d46",
+      "revision_date": "2025-09-24T08:21:43Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Add migration tools in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/how-to-migrate",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3930c1cf9113c5d099655b10d3e7aa5ca9d12d46/articles/migrate/how-to-migrate.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/server-redeploy.md",
+      "revision": "399d9efe23bb8f63ee8991c014c9698c9d74d798",
+      "revision_date": "2025-12-15T08:13:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Redeploy servers to Azure using Infrastructure as Code",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/server-redeploy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/399d9efe23bb8f63ee8991c014c9698c9d74d798/articles/migrate/server-redeploy.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/prepare-for-migration.md",
+      "revision": "a56efbd6d9b5ca1234fb4415832ab958e5afe29a",
+      "revision_date": "2026-04-14T08:41:15Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Prepare machines for migration with Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/prepare-for-migration",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a56efbd6d9b5ca1234fb4415832ab958e5afe29a/articles/migrate/prepare-for-migration.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the generated IaC template include all necessary network security groups and firewall rules?",
+    "How should the validation process be automated for large-scale migrations?",
+    "What are the specific steps to verify application-level functionality beyond infrastructure configuration?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/validate-a-migrated-server-before-closing-the-change.md",
+  "draft": true,
+  "word_count": 1119,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Migrate can generate IaC templates for assessed workloads.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The IaC generation feature currently supports only a basic three-tier design.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Migrate automatically sets the SAN policy to Online All for Windows Server 2008 R2 or later.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "A disk migration script is available to detach data disks and generate IaC configuration.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "You can generate IaC for only one application at a time.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft conflates IaC-based redeployment with standard migration validation. The disk migration script is for generating IaC from existing disks, not for validating a completed migration. Using it as a verification step is logically inverted and unsupported.",
+      "fix": "Remove the section on using the disk migration script for verification. Focus validation on comparing the running VM state against the `vm_config.json` baseline or using Azure Config/Policy for drift detection."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims the IaC feature supports a 'basic three-tier design' as a universal constraint. This is a specific limitation of the current preview/generation logic, not a general rule for all Azure Migrate IaC outputs or custom templates.",
+      "fix": "Rephrase to state that the *generated* templates currently default to a basic three-tier architecture. Clarify that users can modify the generated code or use custom IaC for complex topologies."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests verifying drive letters by checking the SAN policy on the *migrated* server, but the source text instructs setting it on the *on-premises* VM before migration. The draft implies a post-migration check is the primary validation method for drive letter preservation.",
+      "fix": "Clarify that SAN policy configuration is a pre-migration preparation step. Post-migration verification should confirm that drive letters match expectations, not just that the policy is set."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes generic 'Final verification steps' (checking logs, performance metrics) that are not supported by the provided sources. These are general IT operations tasks, not specific to Azure Migrate or IaC validation.",
+      "fix": "Remove generic operational checks. Restrict the verification section to infrastructure-level validations supported by the sources, such as VM configuration, disk attachment, and OS agent status."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft contains repetitive citation patterns and generic concluding paragraphs ('By following these steps...', 'This approach ensures...') that violate the editorial guidance against generic conclusions and repetitive sourcing.",
+      "fix": "Consolidate citations to single, relevant links per section. Remove the final concluding paragraphs and end with a concrete next action, such as 'Close the change ticket after confirming the baseline match.'"
+    }
+  ]
+}

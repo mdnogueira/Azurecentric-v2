@@ -1,0 +1,130 @@
+{
+  "id": "AZC-135",
+  "title": "Use Cluster-Aware Updating with a tested maintenance process",
+  "slug": "use-cluster-aware-updating-with-a-tested-maintenance-process",
+  "historical_date": "2025-01-11",
+  "input_sha256": "782cce55329b10aa3489f12e8d6be71338886a43ff5c2618234ebc3736a53146",
+  "created_at": "2026-10-23T15:22:52.980000+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Cluster-Aware Updating with a tested Updating Run Profile to automate safe, repeatable maintenance on Windows Server failover clusters.",
+  "tags": [
+    "cluster-aware-updating",
+    "failover-clustering",
+    "windows-server",
+    "maintenance",
+    "powershell"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/cluster-aware-updating.md",
+      "revision": "5bb57b11144ab08500aecfeadbbe5e71add0e6a8",
+      "revision_date": "2024-12-10T00:03:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Cluster-Aware Updating overview",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/cluster-aware-updating",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/5bb57b11144ab08500aecfeadbbe5e71add0e6a8/WindowsServerDocs/failover-clustering/cluster-aware-updating.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/cluster-aware-updating-requirements.md",
+      "revision": "5bb57b11144ab08500aecfeadbbe5e71add0e6a8",
+      "revision_date": "2024-12-10T00:03:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Cluster-Aware Updating requirements and best practices",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/cluster-aware-updating-requirements",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/5bb57b11144ab08500aecfeadbbe5e71add0e6a8/WindowsServerDocs/failover-clustering/cluster-aware-updating-requirements.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/cluster-aware-updating-options.md",
+      "revision": "4b823dbc8ad6ec6dc65bebbbe794754a164654d5",
+      "revision_date": "2024-10-25T13:36:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Cluster-Aware Updating advanced options and updating run profiles",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/cluster-aware-updating-options",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/4b823dbc8ad6ec6dc65bebbbe794754a164654d5/WindowsServerDocs/failover-clustering/cluster-aware-updating-options.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the BPA model cover all non-Microsoft plug-in scenarios, or is independent validation strictly required for those?",
+    "What is the exact impact on service availability for non-continuously available workloads during a CAU run?",
+    "Are there specific limitations on the number of concurrent Updating Runs that can be managed by a single coordinator?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-cluster-aware-updating-with-a-tested-maintenance-process.md",
+  "draft": true,
+  "word_count": 1301,
+  "claim_support_checks": [
+    {
+      "claim": "CAU automates the update process by putting nodes into maintenance mode, moving roles, installing updates, and restarting.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Quorum is a requirement for CAU to operate, ensuring the cluster has sufficient nodes online to make decisions.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Remote Shutdown firewall rule must be enabled to allow automatic restarts after updates are applied.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Updating Run Profiles store configuration settings and can be reused across clusters, but do not store credentials.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Combining CAU with other automatic update methods can cause unpredictable results.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that for remote-updating mode, 'nodes still need specific remote management configurations to allow the coordinator to interact with them.' This is misleading. S2 clarifies that Failover Clustering Tools (and thus the specific CAU remote management requirements like WMI/PS Remoting for CAU) are only required on nodes if running Save-CauDebugTrace or using pre/post scripts. Basic remote updating does not require these tools on nodes.",
+      "fix": "Clarify that Failover Clustering Tools are not required on cluster nodes for basic remote-updating mode. Specify that remote management configurations (WMI, PS Remoting) are only strictly required on nodes if using Save-CauDebugTrace, pre/post scripts, or running BPA from the UI on nodes."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims CAU can update 'with no impact to service availability' for continuously available workloads. S1 notes that 'automatic update process triggers a planned failover' which 'can cause a transient service interruption'. While CAU coordinates it, 'no impact' is an overstatement compared to 'minimal' or 'transient' interruption.",
+      "fix": "Change 'no impact to service availability' to 'minimal service interruption' or 'transient interruption'. Acknowledge that planned failovers occur even for continuously available workloads, which may cause brief client-side reconnects."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Invoke-CauRun` with `@MyRunProfile` to apply an Updating Run Profile. S3 shows this syntax for importing XML, but `Invoke-CauRun` does not accept an XML file path directly as a parameter in the way implied. The correct approach is to import the XML into a hashtable/object and splat it, or use the UI. The draft's code snippet is technically correct for splatting but lacks the context that `Invoke-CauRun` parameters must match the profile keys exactly.",
+      "fix": "Clarify that the Updating Run Profile XML must be imported into a PowerShell object (hashtable) and splatted to `Invoke-CauRun`. Ensure the example explicitly shows the import step and splatting syntax, noting that parameter names must match the profile keys."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Updating Run Profiles are static; they do not automatically update when you modify the self-updating configuration.' This is slightly inaccurate. S3 says 'the self-updating configuration doesn't change automatically' if the profile is modified. It implies the reverse: if you change the self-updating config (e.g., schedule), it doesn't update the profile file. The draft's phrasing is ambiguous.",
+      "fix": "Rephrase to: 'Modifying an Updating Run Profile file does not automatically update existing self-updating configurations. You must reconfigure the CAU cluster role or remote coordinator to apply new profile settings.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'The CAU UI does not support file paths with spaces.' S3 confirms this limitation for the Run Profile Editor. However, the draft presents this as a general UI limitation, whereas it specifically affects the profile editor's handling of script paths. This is a minor nuance but worth precise wording.",
+      "fix": "Specify that the 'Updating Run Profile Editor' in the CAU UI does not support file paths with spaces. Recommend using PowerShell for managing profiles with such paths, as noted in S3."
+    }
+  ]
+}

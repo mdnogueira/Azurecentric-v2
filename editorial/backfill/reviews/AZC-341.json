@@ -1,0 +1,121 @@
+{
+  "id": "AZC-341",
+  "title": "Investigate an assessment with incomplete server data",
+  "slug": "investigate-an-assessment-with-incomplete-server-data",
+  "historical_date": "2026-08-11",
+  "input_sha256": "3e354f14fa560f0b22263fdc71d1521451596e9ea38411c7abe26f994bc8f71b",
+  "created_at": "2026-10-23T20:11:41.017363+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot missing performance data in Azure Migrate by verifying appliance connectivity, vCenter statistics, and Hyper-V configuration.",
+  "tags": [
+    "azure-migrate",
+    "troubleshooting",
+    "assessment",
+    "performance-data",
+    "vmware",
+    "hyper-v"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/troubleshoot-assessment-faq.md",
+      "revision": "2d80e8489f2870fabe32ddee4cd45d087b12a1f1",
+      "revision_date": "2026-02-26T07:44:06Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot assessments FAQ in Azure Migrate",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/troubleshoot-assessment-faq",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2d80e8489f2870fabe32ddee4cd45d087b12a1f1/articles/migrate/troubleshoot-assessment-faq.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/troubleshoot-assessment.md",
+      "revision": "2fbf14b7be55cdd9896a2242dd2223a4beeb138e",
+      "revision_date": "2026-02-26T19:58:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Common issues in Azure Migrate assessments",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/troubleshoot-assessment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2fbf14b7be55cdd9896a2242dd2223a4beeb138e/articles/migrate/troubleshoot-assessment.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/migrate/assessment-report.md",
+      "revision": "fd8227c47509194f4df694c22e6772760231124e",
+      "revision_date": "2026-06-11T05:33:04Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview of Azure Migrate Assessment Report",
+      "url": "https://learn.microsoft.com/en-us/azure/migrate/assessment-report",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fd8227c47509194f4df694c22e6772760231124e/articles/migrate/assessment-report.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the appliance machine ID location remain in the footer of the appliance configuration manager in all supported versions?",
+    "Are there specific firewall rules required for the appliance to communicate with vCenter Server beyond port 443?",
+    "What is the exact impact on cost estimation if performance-based sizing falls back to as-is on-premises sizing?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-an-assessment-with-incomplete-server-data.md",
+  "draft": true,
+  "word_count": 904,
+  "claim_support_checks": [
+    {
+      "claim": "Missing performance data in Azure Migrate assessments often results from the appliance being unable to collect counters due to network, credential, or configuration issues.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "For VMware environments, the vCenter Server statistics level must be set to 3 to make performance data available.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Hyper-V VMs with dynamic memory enabled can have memory utilization collected by the Azure Migrate appliance.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "If performance coverage is below 80%, it is recommended to wait and recalculate, or switch to as-is on-premises sizing.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that Hyper-V VMs with dynamic memory enabled cannot have memory utilization collected. Source S1 explicitly states the opposite: 'enable dynamic memory on the servers... The appliance can collect memory utilization values for servers in a Hyper-V environment only when the server has dynamic memory enabled.' This is a direct factual contradiction.",
+      "fix": "Correct the instruction to enable dynamic memory on Hyper-V VMs to allow the appliance to collect memory utilization data, as per the FAQ."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims the appliance 'may deploy an agent' for physical servers. Source S2 and S1 describe the appliance connecting via WinRM/SSH using provided credentials, not deploying an agent. The draft invents an agent deployment step that contradicts the appliance-based discovery model described in the sources.",
+      "fix": "Remove references to agent deployment. Clarify that the appliance connects directly to physical servers via WinRM (port 5985) or SSH (port 22) using configured credentials."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests switching to 'As on-premises' sizing if coverage is low. Source S3 notes this is a fallback, but the draft omits that this results in recommendations based on allocated resources rather than performance, potentially leading to over-provisioning. The draft mentions this risk briefly but the 'fix' section implies it's a standard resolution without emphasizing the sizing impact.",
+      "fix": "Explicitly state that switching to 'As on-premises' sizing uses allocated cores/memory, which may result in less accurate recommendations compared to performance-based sizing."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft cites 'Error Code: 9014' for ESXi port 443 issues. Source S2 links Error 9014 to 'Unable to retrieve the file... because of an error encountered on the ESXi host' and suggests port 443 is open. However, the draft conflates this with general performance counter collection. Error 9014 is specific to metadata file retrieval, not general performance data.",
+      "fix": "Clarify that Error 9014 specifically relates to metadata retrieval failures on the ESXi host, distinct from general performance counter collection errors like 758 or 760."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "AZC-059",
+  "title": "Use Privileged Identity Management for Azure administration",
+  "slug": "use-privileged-identity-management-for-azure-administration",
+  "historical_date": "2024-06-13",
+  "input_sha256": "0d1583c79abb8bc56aee85bc81a7718c07e691d51ffe280d236a8c57f6993ebb",
+  "created_at": "2026-10-23T13:35:55.011168+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Microsoft Entra Privileged Identity Management to manage Azure administration with just-in-time access and audit trails.",
+  "tags": [
+    "privileged-identity-management",
+    "azure-administration",
+    "microsoft-entra-id",
+    "role-based-access-control",
+    "security-best-practices"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-059-learn-1.png",
+      "alt": "Screenshot of the Microsoft Entra roles and administrators page that shows the Privileged and Assignments columns.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/ce8a842c2fa5ca2c8b9b9de76d350b6f664beef1/docs/identity/role-based-access-control/media/privileged-roles-permissions/privileged-roles-portal.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-06-06T07:51:07Z",
+      "sha256": "79dc7bba85d0c549cf994a1e8debc11c4f77d85b49f954bf1d6ea1f9a94f2c7d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-059-learn-2.png",
+      "alt": "Screenshot of Roles and administrators page in Microsoft Entra ID.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/b7bd1f5c35e4b1c69fbc1f27a70f7619077899ad/docs/identity/role-based-access-control/media/common/roles-and-administrators.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-03-12T07:31:51Z",
+      "sha256": "27f1c0fbfb8c55e8cd8f9f16a144c4efaad1b786f9f59e8a8c76de9d5439c993",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/privileged-roles-permissions.md",
+      "revision": "ce8a842c2fa5ca2c8b9b9de76d350b6f664beef1",
+      "revision_date": "2024-06-06T07:51:07Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/ce8a842c2fa5ca2c8b9b9de76d350b6f664beef1/docs/identity/role-based-access-control/privileged-roles-permissions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/security-planning.md",
+      "revision": "94d82deaa15f8ee84861e3e9f4a0d0e3d24d579b",
+      "revision_date": "2024-05-10T19:46:39Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure access practices for administrators in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/94d82deaa15f8ee84861e3e9f4a0d0e3d24d579b/docs/identity/role-based-access-control/security-planning.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/manage-roles-portal.md",
+      "revision": "b7bd1f5c35e4b1c69fbc1f27a70f7619077899ad",
+      "revision_date": "2024-03-12T07:31:51Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Assign Microsoft Entra roles to users",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/b7bd1f5c35e4b1c69fbc1f27a70f7619077899ad/docs/identity/role-based-access-control/manage-roles-portal.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-03-13T20:20:33Z; used previous public snapshot. Confirm continued applicability: docs/identity/role-based-access-control/manage-roles-portal.md",
+    "Include unavailable: includes/portal-update.md"
+  ],
+  "open_questions": [
+    "Does the source specify the exact duration limits for role activation in PIM?",
+    "Are there specific Conditional Access policy requirements for PIM activation?",
+    "How does PIM handle guest user assignments in Azure administration?",
+    "What is the impact of PIM on existing automated scripts that use Global Administrator credentials?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-privileged-identity-management-for-azure-administration.md",
+  "draft": true,
+  "word_count": 1256,
+  "claim_support_checks": [
+    {
+      "claim": "PIM is included in Microsoft Entra ID P2 licenses.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Global Administrator has the same permissions across all cloud services.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Eligible assignments require user action to activate.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Emergency access accounts should be cloud-only and not assigned to specific individuals.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The Privileged Role Administrator role is required to manage role assignments.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Privileged Role Administrator role is required to manage role assignments. S3 explicitly states that Global Administrators can also manage these assignments, and S2 recommends assigning both roles to the initial PIM user. This is an unsupported categorical restriction.",
+      "fix": "Correct the claim to state that either a Privileged Role Administrator or a Global Administrator can manage role assignments. Reference S3 prerequisites and S2 guidance for initial setup."
+    },
+    {
+      "severity": "medium",
+      "problem": "The PowerShell example uses `New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest` to create an assignment, but the code sets `Action` to `AdminAssign`. S3 shows `AdminAssign` is for creating eligible schedules, but the command name implies eligibility. The code is technically correct for creating an eligible schedule, but the comment 'Create an eligible role assignment' is slightly misleading if the user expects immediate activation. More importantly, the draft implies this creates an *active* assignment in the narrative flow before explaining activation.",
+      "fix": "Clarify that this command creates an *eligible* schedule request, not an active assignment. Ensure the narrative clearly distinguishes between creating the eligibility (admin action) and the user activating it (self-activate). Use the exact code from S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states PIM is 'included in Microsoft Entra ID P2'. S2 notes PIM is included in P2 or EMS E5. While true, the draft omits that P2 is part of EMS E5/M365 E5, which might confuse users with only EMS E5 licenses. Also, S1 marks the 'Privileged' label as preview, which the draft ignores.",
+      "fix": "Clarify that PIM is included in Entra ID P2, which is part of EMS E5 and M365 E5. Note that the 'Privileged' label in the UI is currently in preview (S1) to manage expectations about UI consistency."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using the 'Privileged' column to identify roles. S1 states this label is in preview. The draft presents this as a standard, stable feature without caveats, which could lead to confusion if the UI changes or is not visible in all tenants.",
+      "fix": "Add a note that the 'Privileged' column and label are currently in preview (S1) and may not be available in all tenants or may change. Advise using the `IsPrivileged` property in PowerShell/Graph API for reliable identification."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'audit logs' for visibility. S2 refers to 'Microsoft Entra ID reporting, auditing, and alerts' via PIM. S3 mentions checking audit logs. However, the draft does not specify that PIM notifications are email-based (S2) or that detailed audit logs require Azure Monitor/Log Analytics for advanced querying, which is a common point of confusion.",
+      "fix": "Clarify that PIM provides email notifications for role changes (S2) and that detailed audit trails are available in the PIM assignments page and Azure AD audit logs. Avoid implying that 'audit logs' alone provide real-time alerting without PIM notifications."
+    }
+  ]
+}

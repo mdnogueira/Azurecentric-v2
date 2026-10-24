@@ -1,0 +1,129 @@
+{
+  "id": "AZC-347",
+  "title": "Use recovery evidence to refine an availability target",
+  "slug": "use-recovery-evidence-to-refine-an-availability-target",
+  "historical_date": "2026-08-29",
+  "input_sha256": "c5a84a970baae84745d4f266c1afe3ef11ed202482c42353e26eb1355a7b43ba",
+  "created_at": "2026-10-23T20:19:49.903898+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use recovery evidence to refine availability targets, distinguishing high availability from disaster recovery based on risk classification.",
+  "tags": [
+    "availability",
+    "disaster-recovery",
+    "high-availability",
+    "business-continuity",
+    "reliability"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What are business continuity, high availability, and disaster recovery?",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/reliability-guidance-overview.md",
+      "revision": "297ed3fede45b3785bda973110241a420f0e621b",
+      "revision_date": "2024-02-23T13:07:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Reliability guidance overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-guidance-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/297ed3fede45b3785bda973110241a420f0e621b/articles/reliability/reliability-guidance-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/overview.md",
+      "revision": "fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e",
+      "revision_date": "2026-01-20T19:38:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Azure reliability documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa024aba8e732feaa7d1cbbef77af1f6e73c2c7e/articles/reliability/overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+    "Public document removed/moved on 2024-02-23T16:05:23Z; used previous public snapshot. Confirm continued applicability: articles/reliability/reliability-guidance-overview.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/reliability/overview.md"
+  ],
+  "open_questions": [
+    "Does the current guidance provide specific RTO/RPO benchmarks for common Azure services to aid in target setting?",
+    "How does the Well-Architected Framework's criticality tier classification map to specific availability targets?",
+    "Are there specific tools or metrics in Azure Monitor that can automatically calculate recovery evidence from historical incidents?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-recovery-evidence-to-refine-an-availability-target.md",
+  "draft": true,
+  "word_count": 1074,
+  "claim_support_checks": [
+    {
+      "claim": "High availability addresses day-to-day issues, while disaster recovery addresses uncommon catastrophic outages.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A region outage is a DR risk for single-region workloads but an HA risk for multi-region active-active workloads.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "99.9% uptime allows approximately 43 minutes of downtime per month.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Availability zones provide physical isolation within a region to support high availability.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites a post_date of 2026-08-29, but the provided sources are dated 2024-2025. This implies future knowledge or a timeline inconsistency that cannot be verified against the supplied historical context.",
+      "fix": "Update the post_date to match the latest source revision (e.g., 2026-01-20) or remove the specific future date to avoid implying knowledge not present in the provided documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 99.99% uptime allows only 'a few minutes' of downtime, but the source explicitly states 99.99% allows ~4.3 minutes per month. While close, the phrasing 'few minutes' is vague and could be misinterpreted as a daily or weekly allowance rather than a monthly aggregate.",
+      "fix": "Replace 'a few minutes' with 'approximately 4.3 minutes' to align precisely with the source's calculation for monthly downtime allowance, ensuring numerical accuracy."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using 'historical data from your own workloads, or from similar services' to estimate RTO/RPO. The sources do not support using 'similar services' as a proxy for recovery evidence; they emphasize testing your specific workload's design.",
+      "fix": "Remove the reference to 'similar services' as a source of recovery evidence. Focus the guidance on testing your specific workload's failover mechanisms as recommended in the Well-Architected Framework."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeatedly cites the same source URL for every claim, creating a repetitive reading flow. The editorial guidance requires using a few well-placed source links rather than repeating citations after every sentence or numbered step.",
+      "fix": "Consolidate citations. Use a single link at the end of the section or when introducing the concept, rather than repeating the full URL for every definition or example within the text."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic advice: 'Start by documenting your current availability target...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar imperative summaries.",
+      "fix": "Remove the final paragraph. End the article with the concrete verification step: 'If your tests show that your recovery time exceeds your target, you need to revisit your design.'"
+    }
+  ]
+}

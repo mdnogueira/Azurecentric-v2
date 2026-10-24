@@ -1,0 +1,142 @@
+{
+  "id": "AZC-070",
+  "title": "Create a narrowly scoped shared access signature",
+  "slug": "create-a-narrowly-scoped-shared-access-signature",
+  "historical_date": "2024-07-14",
+  "input_sha256": "0b37a642164360db2ee738203ae2a2ea56ac9352070c6b0edc82fbb425c57b50",
+  "created_at": "2026-10-23T13:50:59.024440+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Delegate Azure Storage access securely using stored access policies and account-level expiration policies.",
+  "tags": [
+    "azure-storage",
+    "sas",
+    "security",
+    "access-control",
+    "best-practices"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-070-learn-1.png",
+      "alt": "Screenshot showing the option to configure a SAS expiration policy is grayed out in the Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c7a168d8ce7f08f142785e3afdc0fb91caf7a19a/articles/storage/common/media/sas-expiration-policy/configure-sas-expiration-policy-portal-grayed-out.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-06-11T18:42:46Z",
+      "sha256": "121b64d3e3cf23c34d4393a308bb3fb520d2b33898d8953e425c915d98588c77",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-sas-overview.md",
+      "revision": "15da5ef47b4c5216f017da7de377c3965d01b694",
+      "revision_date": "2023-10-19T07:07:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Grant limited access to data with shared access signatures (SAS)",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/15da5ef47b4c5216f017da7de377c3965d01b694/articles/storage/common/storage-sas-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/sas-expiration-policy.md",
+      "revision": "c7a168d8ce7f08f142785e3afdc0fb91caf7a19a",
+      "revision_date": "2024-06-11T18:42:46Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure an expiration policy for shared access signatures (SAS)",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/sas-expiration-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c7a168d8ce7f08f142785e3afdc0fb91caf7a19a/articles/storage/common/sas-expiration-policy.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/common/storage-stored-access-policy-define-dotnet.md",
+      "revision": "9790bc8a02ef72c373dbe4b7026cdfb50421b495",
+      "revision_date": "2023-10-11T03:28:31Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a stored access policy with .NET",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-stored-access-policy-define-dotnet",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9790bc8a02ef72c373dbe4b7026cdfb50421b495/articles/storage/common/storage-stored-access-policy-define-dotnet.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The source text mentions that Azure AD does not support the Set Container ACL operation for creating stored access policies, but does not specify the exact error code or alternative method if Shared Key is unavailable.",
+    "The source text does not provide a direct CLI or PowerShell command for creating a stored access policy, only for configuring the expiration policy. The .NET example is provided, but not for other languages.",
+    "The source text mentions that a SAS expiration policy doesn't prevent a user from creating a SAS with an expiration that exceeds the limit, but does not specify if there is a way to enforce the limit strictly rather than just logging a warning."
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-narrowly-scoped-shared-access-signature.md",
+  "draft": true,
+  "word_count": 1380,
+  "claim_support_checks": [
+    {
+      "claim": "User delegation SAS tokens are secured with Microsoft Entra credentials and are recommended for Blob storage.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Stored access policies are supported for service SAS only, not for account SAS or user delegation SAS.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "A SAS expiration policy specifies a recommended upper limit for the signed expiry field on a service SAS or an account SAS.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "If the keyCreationTime property of the storage account has a null value for either of the account access keys, you need to rotate them.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Stored access policies give you the option to revoke permissions for a service SAS without having to regenerate the storage account keys.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the SAS expiration policy is a 'guardrail' that warns against long-lived tokens but does not enforce them. It fails to mention that strict enforcement requires Azure Policy, which is a separate governance tool. This misleads readers into thinking the storage account setting itself prevents the creation of non-compliant SAS tokens.",
+      "fix": "Clarify that the storage account setting only logs warnings for violations. Explicitly state that Azure Policy is required to enforce compliance and prevent the creation of SAS tokens that exceed the recommended expiration interval."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a .NET code example for creating a stored access policy that immediately deletes the container in the `finally` block. This makes the code destructive and unsuitable for production use or as a practical example of maintaining a policy. It also omits the necessary `using` statements and namespace imports.",
+      "fix": "Remove the `DeleteAsync` call from the `finally` block to prevent accidental resource destruction. Add a comment marking the code as illustrative and unrun, and include necessary namespace imports for clarity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that configuring the SAS expiration policy 'may need' key rotation if `keyCreationTime` is null, but does not explain how to check this property via CLI or PowerShell, only mentioning the portal. This creates a gap in the 'how-to' steps for non-portal users.",
+      "fix": "Add a brief CLI or PowerShell command to check the `keyCreationTime` property (e.g., `az storage account show --query 'keys.keyCreationTime'`) to provide complete operational guidance for all users."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a JSON object describing a 'SAS Revocation Flow' diagram at the end. This is not a standard Markdown diagram syntax (like Mermaid) and will not render in most documentation platforms. It adds no value and breaks the reading flow.",
+      "fix": "Remove the JSON diagram object. If a visual is needed, describe the flow textually or use a supported diagram syntax like Mermaid, ensuring it accurately reflects the source documentation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests setting the start time to 'at least 15 minutes in the past' to handle clock skew. While supported by the source, this is a specific edge-case recommendation that can confuse users. It should be framed as a troubleshooting tip rather than a standard requirement.",
+      "fix": "Rephrase the clock skew advice to indicate it is a workaround for intermittent failures, not a standard best practice for all SAS creation. Recommend omitting the start time for immediate validity unless specific timing is required."
+    }
+  ]
+}

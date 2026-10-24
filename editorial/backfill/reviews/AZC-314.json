@@ -1,0 +1,144 @@
+{
+  "id": "AZC-314",
+  "title": "Understand checkpoints for a Linux application",
+  "slug": "understand-checkpoints-for-a-linux-application",
+  "historical_date": "2026-05-27",
+  "input_sha256": "eaf14f921a48447397a01b3bc8c5bc515290fbeca7bfd4aa7f0a71ff3196361d",
+  "created_at": "2026-10-23T19:33:23.978179+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Linux Hyper-V VMs for production checkpoints to ensure data consistency during application changes.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "checkpoints",
+    "virtualization",
+    "data-consistency"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-314-learn-1.png",
+      "alt": "Screenshot of the options for Checkpoints in the Management section of the Hyper V Manager.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/media/checkpoints/checkpoint-settings.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-22T10:09:02Z",
+      "sha256": "7146f4af07d9dc6f6e61a248535241b00b0310e12b359124802ca00a824d51c1",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/checkpoints.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Using checkpoints",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/checkpoints",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/checkpoints.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "revision": "6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb",
+      "revision_date": "2025-08-11T22:13:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choose between standard or production checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/choose-between-standard-or-production-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/6a4c88cacae7ac2a6bfbba8c392368640ee5d1eb/WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "0bf43567aa8837d4780a5dc03c2abf8328224140",
+      "revision_date": "2025-12-02T09:41:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0bf43567aa8837d4780a5dc03c2abf8328224140/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-08-14T14:58:55Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md"
+  ],
+  "open_questions": [
+    "Are there specific Linux kernel versions or distributions that do not support production checkpoints via file system freeze?",
+    "What is the exact performance impact of the file system freeze during checkpoint creation on high-I/O Linux workloads?",
+    "Does the 'ProductionOnly' setting have any known issues with specific Linux distributions or Hyper-V integration service versions?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-checkpoints-for-a-linux-application.md",
+  "draft": true,
+  "word_count": 1354,
+  "claim_support_checks": [
+    {
+      "claim": "Production checkpoints are the default for new virtual machines on Windows Server 2016 and later.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Standard checkpoints can cause data consistency issues with systems that replicate data.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Production checkpoints use File System Freeze on Linux.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Production checkpoints do not capture memory state.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "ProductionOnly setting prevents fallback to standard checkpoints.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Misleading 'ProductionOnly' description. The draft claims this setting guarantees a checkpoint is never taken in an inconsistent state. However, if the guest integration services fail or the OS does not support the freeze mechanism, the checkpoint operation fails entirely, leaving the VM in its current (potentially inconsistent) state without a revert point. It does not prevent inconsistency; it prevents the creation of a checkpoint.",
+      "fix": "Clarify that `ProductionOnly` causes the checkpoint command to fail if the guest cannot perform a production checkpoint, rather than ensuring consistency. Emphasize that this is a safety check, not a consistency guarantee."
+    },
+    {
+      "severity": "high",
+      "problem": "Inaccurate Linux checkpoint mechanism description. The draft states production checkpoints use 'VSS equivalent or File System Freeze mechanisms provided by the Hyper-V integration services.' This is technically imprecise. On Linux, production checkpoints rely on the guest kernel's `fsfreeze` utility or application-specific quiescing (e.g., via `qemu-guest-agent` or `walinuxagent`), not a 'VSS equivalent' provided by Hyper-V integration services. VSS is a Windows-specific API.",
+      "fix": "Replace 'VSS equivalent' with 'guest OS fsfreeze or application-specific quiescing'. Cite S1's mention of 'Volume Shadow Copy Service or File System Freeze' as the Windows/Linux distinction, clarifying that Linux uses FS Freeze."
+    },
+    {
+      "severity": "medium",
+      "problem": "Unsupported performance impact claim. The draft asks about the 'exact performance impact of the file system freeze' in review questions but implies it is a known variable. The sources do not provide specific performance metrics or I/O latency data for Linux fsfreeze operations. This invites speculation or unsupported generalizations about performance degradation.",
+      "fix": "Remove the specific question about exact performance impact. Instead, advise monitoring I/O latency during checkpoint creation as a best practice, noting that the freeze duration depends on guest workload and file system size, as per general virtualization principles."
+    },
+    {
+      "severity": "medium",
+      "problem": "Vague verification steps. The draft suggests verifying production checkpoints by checking if 'open editors' are not restored. This is a weak verification method. It does not confirm that the checkpoint was *produced* via the guest freeze mechanism, only that memory wasn't saved. A standard checkpoint also doesn't restore memory state in the same way if the VM is powered off, but the draft conflates 'off state' with 'production checkpoint behavior'.",
+      "fix": "Clarify that the primary verification is ensuring the checkpoint type is set to Production in VM settings. The 'off state' after apply is a result of the revert process, not a unique identifier of the checkpoint type. Suggest checking the checkpoint creation logs or event viewer for success/failure of the production checkpoint action."
+    },
+    {
+      "severity": "low",
+      "problem": "Missing context on 'Production Only' failure. The draft mentions `ProductionOnly` prevents fallback but doesn't explicitly state that the VM state remains unchanged if the checkpoint fails. This could lead administrators to believe the operation succeeded silently if they don't check return codes or logs.",
+      "fix": "Add a note that when `ProductionOnly` is used, administrators must verify the command output or event logs to ensure the checkpoint was actually created, as a failure means no checkpoint exists."
+    }
+  ]
+}

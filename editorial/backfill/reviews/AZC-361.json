@@ -1,0 +1,132 @@
+{
+  "id": "AZC-361",
+  "title": "Resolve a Terraform state lock without losing deployment history",
+  "slug": "resolve-a-terraform-state-lock-without-losing-deployment-history",
+  "historical_date": "2026-10-06",
+  "input_sha256": "e7e2180198b324f9b95f4f9d1a9ea398baa89b7e0a5dd42fa0359f3ca5f71062",
+  "created_at": "2026-10-23T20:37:36.170280+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Resolve Azure Resource Manager deployment name collisions by using unique identifiers and the What-If operation to verify changes.",
+  "tags": [
+    "bicep",
+    "azure-resource-manager",
+    "deployment",
+    "what-if",
+    "terraform"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "7cf7806162a04e305503e0823c035430f04fd7be",
+      "revision_date": "2026-07-14T20:43:17Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7cf7806162a04e305503e0823c035430f04fd7be/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-cli.md",
+      "revision": "5ef95cafafb003590e440466cedc8f6256551e47",
+      "revision_date": "2026-05-28T13:37:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy Bicep files with the Azure CLI",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5ef95cafafb003590e440466cedc8f6256551e47/articles/azure-resource-manager/bicep/deploy-cli.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-what-if.md",
+      "revision": "0b44911e7c0b79840ca74a2a54c0a0bc6715daed",
+      "revision_date": "2026-08-13T23:02:30Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Bicep What-If: Preview Changes Before Deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0b44911e7c0b79840ca74a2a54c0a0bc6715daed/articles/azure-resource-manager/bicep/deploy-what-if.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the What-If operation fully support all nested template scenarios, or are there specific limitations with template specs?",
+    "How does the deployment name conflict resolution differ when using Azure PowerShell versus Azure CLI?",
+    "Are there any specific permissions required for the What-If operation that differ from standard deployment permissions?",
+    "How can one programmatically inspect What-If results to automate conflict detection?",
+    "What is the impact of using the --confirm-with-what-if switch in automated pipelines?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/resolve-a-terraform-state-lock-without-losing-deployment-history.md",
+  "draft": true,
+  "word_count": 958,
+  "claim_support_checks": [
+    {
+      "claim": "Using the same deployment name for concurrent deployments results in only the last one completing, with others being replaced.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The What-If operation previews changes without modifying resources and requires the same permissions as the actual deployment.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Azure CLI version 2.76.0 or later introduces a validation level switch for What-If operations.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Deployment history entries are replaced if a deployment with the same name is run again.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "What-If operations can short-circuit if resource IDs or API versions cannot be calculated outside the deployment context.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The title and introduction incorrectly frame the issue as a 'Terraform state lock'. The provided sources (S1-S3) exclusively discuss Azure Resource Manager (ARM) deployment names and Bicep. There is no mention of Terraform, state files, or backend locking mechanisms. This conflates two distinct technologies and misleads readers seeking Terraform-specific resolution.",
+      "fix": "Remove all references to Terraform, state files, and backend locking. Rewrite the title to 'Resolve Azure Resource Manager Deployment Conflicts' and the introduction to explain that ARM uses deployment names for concurrency control, not a state lock mechanism."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims ARM 'blocks' new attempts if a deployment with the same name is 'already active or has recently completed'. Source S2 states that concurrent deployments with the same name result in only the last one completing, and earlier entries are 'replaced'. It does not describe a blocking error for 'recently completed' deployments, but rather a replacement of history and potential data loss for the overwritten deployment.",
+      "fix": "Correct the explanation of concurrency: ARM does not block based on recent completion; it overwrites the deployment history entry and may result in only the last concurrent deployment succeeding. Emphasize the risk of lost history rather than a temporary lockout."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that if you run concurrent deployments with the same name, 'the others are effectively cancelled or overwritten'. Source S2 clarifies that 'Any deployments with the same name that haven't finished are replaced by the last deployment.' It does not mention 'cancellation' as a state, but rather that the history entry is replaced. This distinction matters for understanding what actually happened to the resources.",
+      "fix": "Clarify that concurrent deployments with the same name result in the history entry being overwritten by the last completed deployment. Avoid the term 'cancelled' as it implies a specific termination state not described in the sources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a section 'Resolving the conflict' with steps like 'Identify the conflicting deployment' and 'Run What-If'. While technically valid for ARM, the framing as 'resolving a conflict' caused by a 'lock' is misleading. The 'conflict' is actually a naming collision that leads to history replacement. The steps should focus on preventing history loss by using unique names, not resolving a lock.",
+      "fix": "Reframe the resolution steps as 'Preventing Deployment History Loss'. Focus on generating unique names using timestamps or random suffixes to ensure distinct history entries, rather than 'identifying' and 'resolving' a lock."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'This approach ensures that your deployment history remains intact...'. This is a generic concluding paragraph that adds no technical value and violates the editorial guidance to remove generic concluding paragraphs beginning with 'By following' or similar assurances.",
+      "fix": "Remove the final paragraph starting with 'This approach ensures...'. End the article after the 'Verification' section with the concrete command `az deployment group list`."
+    }
+  ]
+}

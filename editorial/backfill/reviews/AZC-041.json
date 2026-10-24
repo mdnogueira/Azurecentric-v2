@@ -1,0 +1,103 @@
+{
+  "id": "AZC-041",
+  "title": "What Copilot for Security can help a security team investigate",
+  "slug": "what-copilot-for-security-can-help-a-security-team-investigate",
+  "historical_date": "2024-04-23",
+  "input_sha256": "8f11b395d5725a1770dca8be1930d5e13610349a3f2068e961cdf0b05fde4b44",
+  "created_at": "2026-10-23T13:06:45.681946+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How Copilot for Security uses plugins to assist investigation, focusing on the distinction between generating queries and executing them.",
+  "tags": [
+    "copilot-for-security",
+    "microsoft-sentinel",
+    "kql",
+    "security-operations",
+    "ai"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "README.md",
+      "revision": "a6f3ba73e1ad766d5279b63bd333414e3a59b89a",
+      "revision_date": "2024-04-11T07:40:17Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "README",
+      "url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What are the specific permissions required for the Copilot service principal to query Microsoft Sentinel?",
+    "Are there any latency considerations when using Copilot for Security with large Sentinel workspaces?",
+    "How does Copilot for Security handle data privacy and compliance when querying connected data sources?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/what-copilot-for-security-can-help-a-security-team-investigate.md",
+  "draft": true,
+  "word_count": 811,
+  "claim_support_checks": [
+    {
+      "claim": "Copilot for Security uses plugins to interact with data sources like Microsoft Sentinel.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Connectors are required to link Copilot for Security to data sources.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Plugins define how Copilot for Security interacts with data sources.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Community plugins for Sentinel are available in the GitHub repository.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Copilot for Security 'executes' KQL queries and presents results in a 'summarised format, often including a table or a chart'. The source (S1) is a community contribution guide for creating plugins, not documentation of the runtime behavior. It does not confirm that the Sentinel plugin executes queries directly or renders charts. This is an unsupported functional claim.",
+      "fix": "Replace 'executes' with 'generates'. State that Copilot can generate KQL queries based on natural language, which the user or the connected service (Sentinel) then runs. Remove claims about automatic chart rendering unless explicitly documented in the product guide, not the community repo."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Copilot for Security does not read your data directly' and relies on connectors/plugins. While generally true, the specific claim that it 'generates and executes the appropriate KQL query' implies a level of automation not supported by the provided source. The source only shows how to *create* a plugin, not how the plugin triggers execution automatically without user intervention.",
+      "fix": "Clarify that the plugin provides the query structure or logic. Specify that execution typically occurs within the context of the connected application (e.g., Sentinel) or requires user confirmation, rather than implying autonomous execution by the Copilot service itself."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section 'Customising the investigation' with steps like 'defining the plugin's schema, writing the logic... testing it'. The source (S1) provides high-level git workflow steps (fork, clone, branch) but does not detail the technical schema or logic writing process for plugins. This is vague how-to content.",
+      "fix": "Remove the specific technical steps for plugin development. Refer readers to the official plugin documentation for schema details. Keep the focus on the existence of community samples rather than a tutorial on creation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Connectors... typically involves ensuring the workspace is connected and that the necessary permissions are in place for the Copilot service principal'. The source (S1) does not mention service principals or specific permission requirements for connectors. This is an unsupported technical detail.",
+      "fix": "Remove specific claims about service principals. State that connectors require appropriate access configuration, referring to the official 'Connectors overview' for specific permission requirements, rather than asserting the mechanism in the draft."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'magic button' and 'reduce the friction'. While conversational, the guidance advises against unsupported superlatives and categorical claims. The draft also implies a direct 'Sentinel Plugin' exists for all Sentinel workspaces without noting potential licensing or feature availability constraints.",
+      "fix": "Tone down promotional language. Add a disclaimer that plugin availability and functionality depend on the specific Copilot for Security license and the connected data source's configuration."
+    }
+  ]
+}

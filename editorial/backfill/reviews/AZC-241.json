@@ -1,0 +1,142 @@
+{
+  "id": "AZC-241",
+  "title": "Configure a custom domain and HTTPS for a web application",
+  "slug": "configure-a-custom-domain-and-https-for-a-web-application",
+  "historical_date": "2025-11-04",
+  "input_sha256": "161ea8451a7aed9309def921facc93e45f2c2d0099d8f67b549e5884d48c2016",
+  "created_at": "2026-10-23T17:49:29.254575+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Map a custom domain and enable HTTPS in Azure App Service using managed certificates, covering DNS, bindings, and validation constraints.",
+  "tags": [
+    "azure-app-service",
+    "custom-domain",
+    "ssl-certificate",
+    "managed-certificate",
+    "https"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-241-learn-1.png",
+      "alt": "Screenshot that shows the app pane with Certificates, Managed certificates, and Add certificate selected.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/3d930dd883bbbac274dba94b0b39857428f4e912/articles/app-service/media/configure-ssl-certificate/create-free-cert.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-10-21T16:09:39Z",
+      "sha256": "bce2d0138cf22351d6a554a878cd3dcb84e0b12fb97a7bd0ea7265431536242c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-custom-domains.md",
+      "revision": "227fc88f102a48088efa2025fee11aa5025f76a5",
+      "revision_date": "2025-07-18T21:47:07Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview of using custom domain names",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-custom-domains",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/227fc88f102a48088efa2025fee11aa5025f76a5/articles/app-service/overview-custom-domains.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/configure-ssl-certificate.md",
+      "revision": "3d930dd883bbbac274dba94b0b39857428f4e912",
+      "revision_date": "2025-10-21T16:09:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Install a TLS/SSL Certificate for Your App",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d930dd883bbbac274dba94b0b39857428f4e912/articles/app-service/configure-ssl-certificate.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/container-apps/custom-domains-certificates.md",
+      "revision": "2c241621f8c9622694ecb7ba3366c8348cfe4d29",
+      "revision_date": "2025-08-04T17:27:19Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Custom domain names and certificates in Azure Container Apps",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-certificates",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2c241621f8c9622694ecb7ba3366c8348cfe4d29/articles/container-apps/custom-domains-certificates.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the CAA record requirement apply to all domains or only specific TLDs?",
+    "What is the exact IP range of DigiCert that needs to be allowed in IP restrictions?",
+    "How long does certificate renewal typically take for managed certificates?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-a-custom-domain-and-https-for-a-web-application.md",
+  "draft": true,
+  "word_count": 895,
+  "claim_support_checks": [
+    {
+      "claim": "App Service Managed Certificates are free and automatically renewed.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Managed certificates require the app to be publicly accessible for root domain validation.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Subdomains must have a CNAME record mapped directly to the Azure default domain.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Managed certificates are issued by DigiCert.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "App Service plans must be at least Basic tier to support custom domains and managed certificates.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a visible image with a caption-like URL and alt text, violating the guidance to not add visible Microsoft Learn screenshot or permission captions. The alt text describes the UI state which acts as a caption.",
+      "fix": "Remove the visible image and its caption/alt text entirely. The guidance explicitly forbids visible screenshots or captions. Source provenance should remain in review records only."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Microsoft recommends using the App Service Managed DNS zone if you want to avoid manual IP updates'. S1 mentions buying domains through Azure for simplified DNS, but does not state a recommendation to use Managed DNS for existing domains to avoid IP changes. This is an unsupported inference.",
+      "fix": "Remove the recommendation to use App Service Managed DNS for existing domains. Stick to the factual requirement of creating A or CNAME records as described in S1 and S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'App Service will now serve HTTPS traffic... using the managed certificate' after binding. It omits the critical context that managed certificates do not support wildcard domains or private DNS, which limits applicability. This is a missing destructive/cost context regarding scope.",
+      "fix": "Explicitly state that managed certificates do not support wildcard domains or private DNS, as per S2 limitations. This clarifies when this approach is not viable."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'diagram' object in the JSON structure. The guidance does not require or support diagram generation, and the draft body does not reference or utilize this diagram, making it dead weight and potentially confusing.",
+      "fix": "Remove the 'diagram' object from the JSON structure as it is not referenced in the text and adds no value. Focus on the concrete steps and verification."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft asks 'What is the exact IP range of DigiCert...' in review questions. The sources do not provide specific IP ranges for DigiCert, only that the app must be publicly reachable. This implies a level of specificity not present in the sources.",
+      "fix": "Remove the specific question about DigiCert IP ranges. The source only requires public accessibility, not specific IP whitelisting, so the question is unsupported and misleading."
+    }
+  ]
+}

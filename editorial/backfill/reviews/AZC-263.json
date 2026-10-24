@@ -1,0 +1,157 @@
+{
+  "id": "AZC-263",
+  "title": "Prepare a hybrid server patching workflow",
+  "slug": "prepare-a-hybrid-server-patching-workflow",
+  "historical_date": "2026-01-05",
+  "input_sha256": "4292f0e022baac7489dfafe603aaa647b566c5a266dfe03d89375a7c8270a8a9",
+  "created_at": "2026-10-23T18:20:53.002386+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Establish a hybrid patching workflow for Arc-enabled servers by deploying Azure Monitor Agent via Policy and enabling automatic extension upgrades.",
+  "tags": [
+    "azure-arc",
+    "azure-monitor-agent",
+    "azure-policy",
+    "automatic-extension-upgrade",
+    "hybrid-servers"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-263-learn-1.png",
+      "alt": "Screenshot of the Overview window for a data collection rule highlighting the JSON view button.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/media/deploy-ama-policy/dcr-overview.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "311c3342ce7239064bc57dda7850ac5bbb580c1b7e497ca9564d9c17d166c0f5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-263-learn-2.png",
+      "alt": "Screenshot of an Azure Arc-enabled server in the Azure portal showing where to navigate to extensions.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/media/manage-automatic-vm-extension-upgrade/portal-navigation-extensions.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "92511f65684b76fa492c3aae4536a4badc60ddf777e8e45099cb11f8b90e9cdd",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/deploy-ama-policy.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to deploy and configure Azure Monitor Agent using Azure Policy",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/deploy-ama-policy",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/deploy-ama-policy.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/manage-automatic-vm-extension-upgrade.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Automatic extension upgrade for Azure Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/manage-automatic-vm-extension-upgrade",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/manage-automatic-vm-extension-upgrade.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/concept-log-analytics-extension-deployment.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Azure Monitor agent on Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/concept-log-analytics-extension-deployment",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/concept-log-analytics-extension-deployment.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/deploy-ama-policy.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/manage-automatic-vm-extension-upgrade.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/concept-log-analytics-extension-deployment.md"
+  ],
+  "open_questions": [
+    "How does the workflow handle servers that are temporarily disconnected from the Azure Arc service during an automatic extension upgrade?",
+    "What are the specific prerequisites for using Azure Policy to deploy the Azure Monitor Agent, such as required roles or permissions?",
+    "How can administrators configure custom maintenance windows for automatic extension upgrades to avoid impacting production workloads?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/prepare-a-hybrid-server-patching-workflow.md",
+  "draft": true,
+  "word_count": 897,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Policy can automatically install the Azure Monitor Agent on newly registered Arc-enabled servers.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Automatic extension upgrade is enabled by default for supported extensions on Arc-enabled servers.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The Azure Policy evaluation cycle for compliance runs once every 24 hours.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Automatic extension upgrades may take 5-8 weeks to reach every server for a new extension version.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Extensions fixing critical security vulnerabilities are rolled out faster, typically within 1-3 weeks.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Azure Update Manager 'lacks the telemetry required' without AMA/Dependency Agent. This is an unsupported causal claim; Update Manager operates via the Connected Machine agent and extension framework, not solely on AMA telemetry. This misrepresents the technical dependency.",
+      "fix": "Remove the assertion that Update Manager 'lacks telemetry' without AMA. State that AMA provides visibility into patch compliance and OS health, which supports the workflow, but do not claim Update Manager is non-functional without it."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies automatic extension upgrades are necessary to keep agents 'in support' and prevent the 'patching pipeline [from being] blind.' This is a vague, unsupported superlative. Extensions do not automatically become 'unsupported' upon version drift, and 'blind' is not a technical term.",
+      "fix": "Replace with factual statements: Automatic upgrades reduce operational overhead and ensure agents receive security fixes. Note that older versions may lack new features but do not necessarily break the patching workflow."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the Dependency Agent is required for Azure Update Manager. Source S2 lists Dependency Agent as a supported extension for automatic upgrade, but does not state it is a prerequisite for Update Manager. Update Manager primarily relies on the Connected Machine agent.",
+      "fix": "Remove the claim that the Dependency Agent is required for Update Manager. Clarify that the Dependency Agent is optional and used for dependency mapping, not core patching operations."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes screenshots in the source data but the editorial guidance prohibits adding visible Microsoft Learn screenshots or permission captions. The draft body does not currently include them, but the structure implies a how-to that might invite them. Ensure no screenshots are added.",
+      "fix": "Verify no screenshots are inserted into the final output. The current draft text is clean, but ensure the editor does not add the provided images based on the 'screenshot' metadata in the source."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This approach ensures that every Arc-enabled server has the necessary agents installed.' This is a categorical claim about outcome that ignores policy non-compliance or failure scenarios.",
+      "fix": "Change to 'This approach aims to ensure...' or 'This configuration provides the mechanism to install...'. Acknowledge that compliance depends on policy evaluation cycles and remediation success."
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "AZC-050",
+  "title": "Choose a Log Analytics workspace boundary",
+  "slug": "choose-a-log-analytics-workspace-boundary",
+  "historical_date": "2024-05-19",
+  "input_sha256": "18e772198bfad0e16d761445b5e7647719b2d573fba77a653075237ad3573685",
+  "created_at": "2026-10-23T13:24:25.242117+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide on Log Analytics workspace boundaries using retention, access, and billing criteria to balance cost and operational simplicity.",
+  "tags": [
+    "log-analytics",
+    "azure-monitor",
+    "workspace-design",
+    "data-retention",
+    "access-control"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-050-learn-1.png",
+      "alt": "Screenshot of Azure Monitor workspaces menu and page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f0c83624634f8600f5d1b8bbebc318e6781c6fbc/articles/azure-monitor/essentials/media/azure-monitor-workspace-overview/view-azure-monitor-workspaces.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-02-03T07:29:39Z",
+      "sha256": "75afc353cd966176ecd0284b2f679aa9208850fbe100f05d6cf4dedbdc98f03c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/logs/log-analytics-workspace-overview.md",
+      "revision": "b6a3612c409a3b8cb98b52ad097efaa1b2d5a621",
+      "revision_date": "2024-03-23T01:08:50Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Log Analytics workspace overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b6a3612c409a3b8cb98b52ad097efaa1b2d5a621/articles/azure-monitor/logs/log-analytics-workspace-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/essentials/azure-monitor-workspace-manage.md",
+      "revision": "f0c83624634f8600f5d1b8bbebc318e6781c6fbc",
+      "revision_date": "2024-02-03T07:29:39Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Manage an Azure Monitor workspace",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/azure-monitor-workspace-manage",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f0c83624634f8600f5d1b8bbebc318e6781c6fbc/articles/azure-monitor/essentials/azure-monitor-workspace-manage.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-monitor/logs/workspace-design.md",
+      "revision": "378855d2986bd6200ec97dc3c137685a34a50cad",
+      "revision_date": "2024-01-26T16:22:09Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Design a Log Analytics workspace architecture",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/workspace-design",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/378855d2986bd6200ec97dc3c137685a34a50cad/articles/azure-monitor/logs/workspace-design.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Are there any specific scenarios where combining operational and security data in the same workspace is explicitly discouraged beyond security team preferences?",
+    "What are the exact steps to migrate from a single workspace to multiple workspaces without data loss?",
+    "How does the introduction of Azure Monitor workspaces (the newer resource type) impact the decision to use Log Analytics workspaces?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-log-analytics-workspace-boundary.md",
+  "draft": true,
+  "word_count": 1207,
+  "claim_support_checks": [
+    {
+      "claim": "A Log Analytics workspace is a unique environment for log data from Azure Monitor and other Azure services.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You can create multiple workspaces based on requirements such as geographic location, access rights, and configuration settings.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "There are no performance limitations from the amount of data in your workspace.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "If you require different retention settings for different resources that send data to the same tables, you need a separate workspace.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "The Log Analytics agent for Linux can only connect to a single workspace.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Commitment tiers provide a discount to your workspace ingestion costs when you commit to a specific amount of daily data.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides an Azure CLI command (`az monitor log-analytics workspace create`) that is syntactically incorrect for the current Azure CLI version. The correct command is `az monitor log-analytics-workspace create`. Additionally, the draft conflates 'Log Analytics workspaces' with 'Azure Monitor workspaces' (the newer `microsoft.monitor/accounts` resource type), creating confusion about which resource is being created.",
+      "fix": "Replace the CLI example with the correct command: `az monitor log-analytics-workspace create --name <workspace-name> --resource-group <resource-group-name> --location <location>`. Clarify that this article focuses on Log Analytics workspaces, distinct from the newer Azure Monitor workspaces introduced for Prometheus metrics."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims 'There are no performance limitations from the amount of data in your workspace.' This is an unsupported superlative. While workspaces scale, performance can degrade with very high query loads or massive table sizes, and dedicated clusters are recommended for high-volume scenarios. This categorical claim misleads users about scalability limits.",
+      "fix": "Rephrase to reflect that workspaces are designed to scale, but performance depends on query complexity and volume. Reference the recommendation for dedicated clusters for high-volume ingestion (100+ GB/day) to ensure performance and cost efficiency, as noted in S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft omits the destructive nature of deleting an Azure Monitor workspace compared to a Log Analytics workspace. It fails to distinguish that Azure Monitor workspaces have no soft delete (immediate data loss), whereas Log Analytics workspaces do. This is a critical operational risk for users potentially confusing the two resource types.",
+      "fix": "Add a warning distinguishing the deletion behavior: Azure Monitor workspaces are immediately deleted with no recovery, while Log Analytics workspaces support soft delete. This distinction is crucial for operational safety and is explicitly documented in S2."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using table-level archiving as a complexity alternative to splitting workspaces for retention conflicts. However, it does not explain that archiving requires specific table configurations and retrieval steps (Search jobs/Restore), which may not be suitable for all use cases. This vague 'how-to' implication lacks necessary context on the operational overhead.",
+      "fix": "Clarify that table-level archiving is a feature of Log Analytics workspaces that involves retrieving archived data via specific methods (Search jobs, Restore). Emphasize that if immediate access to all data is required without retrieval steps, separate workspaces with different retention periods are the only option."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic advice ('By following these steps...') which violates the editorial guidance to remove generic concluding paragraphs. It also repeats the 'Start with one workspace' mantra without adding a concrete next action or verification step beyond the list.",
+      "fix": "Remove the generic concluding paragraph. End with a concrete next action, such as directing the user to the 'Design a Log Analytics workspace architecture' article for detailed criteria evaluation or the 'Create a Log Analytics workspace' guide for implementation."
+    }
+  ]
+}

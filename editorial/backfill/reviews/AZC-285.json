@@ -1,0 +1,142 @@
+{
+  "id": "AZC-285",
+  "title": "Use DNS Private Resolver for hybrid name resolution",
+  "slug": "use-dns-private-resolver-for-hybrid-name-resolution",
+  "historical_date": "2026-03-07",
+  "input_sha256": "fd03d0fd2a576ac6a9867627900cc2e5d1e89534c5c8d10c9fc1798f8b640ea2",
+  "created_at": "2026-10-23T18:52:51.306919+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Azure DNS Private Resolver for hybrid name resolution between Azure VNets and on-premises DNS servers.",
+  "tags": [
+    "azure-dns",
+    "private-resolver",
+    "hybrid-networking",
+    "dns-resolution",
+    "virtual-network"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-285-learn-1.png",
+      "alt": "Screenshot of Azure DNS Private Resolver architecture showing DNS resolution flow between Azure virtual networks and on-premises networks through inbound and outbound endpoints.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/243645aecadf015f28670c952ada94184ca1ed15/articles/dns/media/dns-resolver-overview/resolver-architecture.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-12-16T22:45:35Z",
+      "sha256": "ba8ece0779f886838c47dec6cee2e31ea23dedce04ec84fa2bebb2b463cf6352",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/dns/dns-private-resolver-overview.md",
+      "revision": "243645aecadf015f28670c952ada94184ca1ed15",
+      "revision_date": "2025-12-16T22:45:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure DNS Private Resolver Overview",
+      "url": "https://learn.microsoft.com/en-us/azure/dns/dns-private-resolver-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/243645aecadf015f28670c952ada94184ca1ed15/articles/dns/dns-private-resolver-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/dns/private-resolver-architecture.md",
+      "revision": "bb4c009527d8abe7053f6be426e4f02be4255971",
+      "revision_date": "2025-09-09T09:09:10Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Private resolver architecture",
+      "url": "https://learn.microsoft.com/en-us/azure/dns/private-resolver-architecture",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/bb4c009527d8abe7053f6be426e4f02be4255971/articles/dns/private-resolver-architecture.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/dns/private-resolver-hybrid-dns.md",
+      "revision": "b7ed1fa051d68f02140c082432c141009de78dca",
+      "revision_date": "2026-01-20T21:44:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Resolve Azure and on-premises domains.",
+      "url": "https://learn.microsoft.com/en-us/azure/dns/private-resolver-hybrid-dns",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b7ed1fa051d68f02140c082432c141009de78dca/articles/dns/private-resolver-hybrid-dns.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the current documentation specify the exact port numbers used for inbound and outbound endpoints beyond the standard DNS port 53?",
+    "Are there specific latency considerations for cross-region resolver deployments that should be noted?",
+    "How does the resolver handle DNSSEC validation for forwarded queries?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-dns-private-resolver-for-hybrid-name-resolution.md",
+  "draft": true,
+  "word_count": 935,
+  "claim_support_checks": [
+    {
+      "claim": "Azure DNS Private Resolver is a fully managed service that eliminates the need to deploy and manage custom DNS virtual machines or hardware appliances.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Subnets used for DNS resolver endpoints must be delegated to Microsoft.Network/dnsResolvers and cannot be used for other services.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Linking a forwarding ruleset with an inbound endpoint forwarding rule to the same VNet where the inbound endpoint is provisioned can cause DNS resolution loops.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "A single DNS resolver can reference only one virtual network, and it must be in the same region.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Hybrid DNS resolution requires a network connection such as ExpressRoute or VPN.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states a single resolver can reference only one virtual network. Source S1 clarifies this restriction applies to the *parent* DNS resolver referencing a VNet for endpoint provisioning, but S2 and S3 demonstrate linking rulesets to multiple VNets (hub and spokes). The phrasing implies the resolver itself is isolated to one VNet, ignoring the multi-VNet resolution capability via ruleset links.",
+      "fix": "Clarify that while a DNS resolver instance is provisioned in one VNet, its forwarding rulesets can be linked to multiple virtual networks to enable resolution across the topology."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the service 'eliminates the need for custom DNS servers.' Source S1 and S3 state it eliminates the need to deploy/manage custom DNS *VMs* or *infrastructure*, but on-premises conditional forwarders (custom DNS configuration) are still required. This is an unsupported superlative that misrepresents the hybrid requirement.",
+      "fix": "Change to 'eliminates the need to deploy and manage custom DNS virtual machines or hardware appliances' to accurately reflect the managed service scope."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises checking NSGs for UDP/TCP port 53. Source S1 and S3 do not specify NSG requirements for the resolver endpoints themselves; they focus on network connectivity (ExpressRoute/VPN) and subnet delegation. NSG configuration for Azure DNS Private Resolver endpoints is not detailed in the provided sources, making this a potential hallucination of specific firewall rules.",
+      "fix": "Remove the specific NSG port 53 instruction. Instead, advise verifying that network connectivity (ExpressRoute/VPN) allows traffic between the endpoint subnets and the on-premises DNS servers as per general networking best practices."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram node list in the JSON metadata but does not integrate the provided screenshot into the body text as instructed. The guidance requires including the screenshot beside the relevant step or architecture explanation, not just listing nodes.",
+      "fix": "Insert the provided screenshot (S1) immediately after the 'Understand the resolution flow' section to visually support the architecture description."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Azure DNS resolves the query using public or private zone data' if no rule matches. Source S1 states 'Azure DNS is used to resolve the query' but does not explicitly define the fallback to public zones in the context of a private resolver configuration, potentially confusing private vs. public resolution scope.",
+      "fix": "Refine to: 'If no rule matches, the query is resolved using Azure DNS, which may include public zone lookups if the domain is not private.'"
+    }
+  ]
+}

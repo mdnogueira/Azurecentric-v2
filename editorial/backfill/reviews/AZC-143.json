@@ -1,0 +1,137 @@
+{
+  "id": "AZC-143",
+  "title": "Use Azure Bastion to administer a private VM",
+  "slug": "use-azure-bastion-to-administer-a-private-vm",
+  "historical_date": "2025-02-03",
+  "input_sha256": "0e6a651a92fd92120aeb0adfdd4ff1f4d68f1eafed7494c504913a48f3c3e9ff",
+  "created_at": "2026-10-23T21:16:10.889863+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Connect to a private Linux VM using Azure Bastion SSH, addressing SKU constraints, permissions, and authentication methods.",
+  "tags": [
+    "azure-bastion",
+    "ssh",
+    "linux",
+    "virtual-machines",
+    "networking"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-143-learn-1.png",
+      "alt": "Screenshot shows the Overview page for a virtual machine.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/1666e5b442ddef4016366297bd1cd38d0d9a58d0/articles/bastion/media/bastion-connect-vm-ssh-linux/bastion.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-10-29T00:02:40Z",
+      "sha256": "edfc15246ea1012fbac96c4341a2e1afcb8de6f963bee48df8bcaa0e07dd4377",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/bastion/bastion-overview.md",
+      "revision": "b1b92a79dcd1fd691eaf4bcaa069399e56a98779",
+      "revision_date": "2024-12-10T17:46:15Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "About Azure Bastion",
+      "url": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b1b92a79dcd1fd691eaf4bcaa069399e56a98779/articles/bastion/bastion-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/bastion/bastion-connect-vm-linux-rdp.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connect to a Linux VM using RDP",
+      "url": "https://learn.microsoft.com/en-us/azure/bastion/bastion-connect-vm-linux-rdp",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/bastion/bastion-connect-vm-linux-rdp.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/bastion/bastion-connect-vm-ssh-linux.md",
+      "revision": "1666e5b442ddef4016366297bd1cd38d0d9a58d0",
+      "revision_date": "2024-10-29T00:02:40Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Connect to a Linux VM using SSH",
+      "url": "https://learn.microsoft.com/en-us/azure/bastion/bastion-connect-vm-ssh-linux",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1666e5b442ddef4016366297bd1cd38d0d9a58d0/articles/bastion/bastion-connect-vm-ssh-linux.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the native client require specific firewall rules on the local machine beyond standard outbound HTTPS?",
+    "Are there any latency considerations for connecting to VMs in peered virtual networks compared to the same VNet?",
+    "How does session recording (Premium SKU) impact the connection flow for standard SSH users?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-azure-bastion-to-administer-a-private-vm.md",
+  "draft": true,
+  "word_count": 1102,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Bastion provides secure RDP/SSH connectivity without requiring a public IP on the VM.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Basic SKU does not support custom inbound ports or native client connections.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Reader roles on the VM, NIC, and Bastion host are required to connect.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Bastion uses port 443 for traffic, which helps traverse firewalls.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Basic SKU supports connecting to VMs in peered virtual networks. Source S1's SKU table explicitly states 'No' for the Basic SKU under 'Connect to target VMs in peered virtual networks'. This is a factual error that could lead to deployment failures.",
+      "fix": "Correct the table and text to reflect that the Basic SKU only supports VMs in the same virtual network. Peering requires Standard or higher SKUs."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states the Basic SKU 'does not allow you to configure custom ports... or use the native SSH client'. While true for native client, Source S3 notes Basic SKU users *cannot* configure connection settings (including ports) at all, whereas Standard allows it. The phrasing implies Basic might allow some configuration or is merely restrictive, rather than completely fixed. More critically, the draft implies Basic is 'sufficient' for many, but lacks the flexibility mentioned.",
+      "fix": "Clarify that Basic SKU fixes SSH on port 22 via the portal web client only. It does not support custom ports or native clients. Standard SKU is required for custom ports and native client access."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions 'Azure Bastion native client' as a standalone download or CLI extension. Source S1 and S3 refer to 'native SSH or RDP client' but do not explicitly describe a 'standalone download' mechanism in the provided text, only mentioning 'via the native SSH or RDP client already installed on your local computer' or 'Connect to VMs using Azure CLI'. The 'standalone download' claim is unsupported by the provided snippets.",
+      "fix": "Remove the 'standalone download' claim. State that the native client is accessed via the Azure Portal or Azure CLI, as per the source documentation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot from Source S3 (SSH Linux) in the 'Connect via the Azure Portal' section for SSH. However, the text describes entering 'Username and Password' or 'SSH Private Key'. Source S3's screenshot shows the 'Connect' button on the Overview page, which is generic. The draft's step 2 screenshot is appropriate, but the subsequent steps describing the Bastion page settings are not visually supported by the provided screenshot which only shows the initial 'Connect' action.",
+      "fix": "Ensure the screenshot is placed next to the step it illustrates (Step 2). Do not imply the screenshot shows the Bastion connection settings page if it only shows the Overview page 'Connect' button."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By selecting the appropriate SKU... you can establish reliable SSH connections'. This is a generic concluding paragraph that adds no technical value and violates the guidance to remove generic concluding paragraphs.",
+      "fix": "Remove the final paragraph. End with the verification steps or a direct link to further documentation."
+    }
+  ]
+}

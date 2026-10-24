@@ -1,0 +1,131 @@
+{
+  "id": "AZC-333",
+  "title": "Create a repeatable Ubuntu guest configuration",
+  "slug": "create-a-repeatable-ubuntu-guest-configuration",
+  "historical_date": "2026-07-20",
+  "input_sha256": "1a52bdc0d299723d51361df6013b7ec58a5c225b721beb127ea9ce72076a1f92",
+  "created_at": "2026-10-23T20:00:41.272402+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create a repeatable Ubuntu guest configuration on Hyper-V using export, import, and generation 2 best practices.",
+  "tags": [
+    "hyper-v",
+    "ubuntu",
+    "virtual-machines",
+    "linux",
+    "export-import",
+    "generation-2"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/deploy/Export-and-import-virtual-machines.md",
+      "revision": "598d15ef5977a678617630e4aad1b776eb751c46",
+      "revision_date": "2025-09-22T10:09:02Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Export and import virtual machines",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/598d15ef5977a678617630e4aad1b776eb751c46/WindowsServerDocs/virtualization/hyper-v/deploy/Export-and-import-virtual-machines.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "revision": "f65ace5f3386664af71e14bf43b396e059350076",
+      "revision_date": "2025-11-27T17:36:44Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a virtual machine in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/f65ace5f3386664af71e14bf43b396e059350076/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "0bf43567aa8837d4780a5dc03c2abf8328224140",
+      "revision_date": "2025-12-02T09:41:41Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0bf43567aa8837d4780a5dc03c2abf8328224140/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 1 MB block size recommendation for dynamic VHDX apply to all Linux file systems or only ext4?",
+    "Are there specific kernel version requirements for the 'none' I/O scheduler recommendation in modern Ubuntu versions?",
+    "How does the static MAC address recommendation for failover clustering apply to single-instance VMs?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-repeatable-ubuntu-guest-configuration.md",
+  "draft": true,
+  "word_count": 1111,
+  "claim_support_checks": [
+    {
+      "claim": "Exporting a virtual machine gathers all required files into one unit, including virtual hard disk and configuration files.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Generation 2 virtual machines are recommended for modern operating systems as they remove legacy hardware emulation.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Using Hyper-V-specific network adapters prevents random network interface names in Linux.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The Copy import type generates a new unique ID, allowing multiple imports to the same host.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "GRUB menu timeout should be increased in Generation 2 VMs due to the absence of legacy hardware timers.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The PowerShell example uses -BootDevice VHD with a .vhdx disk and Generation 2. Generation 2 VMs require VHDX boot support; using 'VHD' as the boot device parameter is technically incorrect for modern Gen 2 setups and may cause boot failure or confusion.",
+      "fix": "Change -BootDevice to VHD in the example to match the .vhdx extension, or clarify that -BootDevice VHD refers to the device type 'Virtual Hard Disk' which supports VHDX in Gen 2. Ensure the parameter aligns with the file extension used."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the Copy import 'moves' files to the default Hyper-V location. The source states it 'selects a location' and is 'similar to restore'. It does not automatically move files to the default location unless the user specifies the default path or omits the path parameter in a way that defaults to it, which is not guaranteed behavior described in the source.",
+      "fix": "Clarify that the Copy import allows you to specify the destination path. If no path is specified, it may use defaults, but explicitly stating it 'moves' files is misleading. Adjust to: 'You can specify the destination path; if omitted, it may use default locations depending on host configuration.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends setting GRUB_TIMEOUT=100000 in /etc/default/grub. The source mentions modifying grub.conf or /etc/default/grub but cites a legacy workaround for RHEL 6.x PXE issues. Modern Ubuntu uses systemd-boot or GRUB2 with different timeout handling, and 100000 is an arbitrary large number not explained as standard.",
+      "fix": "Verify if this specific timeout value is still relevant for modern Ubuntu. If so, cite the source's specific context (legacy timer issue). If not, remove or generalize to 'adjust GRUB timeout as needed for manual intervention' without prescribing an unverified value."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that using a 1 MB block size is a universal best practice for all Linux file systems on dynamic VHDX. The source specifically recommends ext4 and mentions ext3 is less efficient. It does not claim this applies to all file systems (e.g., XFS, Btrfs).",
+      "fix": "Specify that the 1 MB block size recommendation is particularly beneficial for ext4 file systems, as noted in the source. Avoid generalizing to 'all Linux file systems' without source support."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using VMConnect.exe via PowerShell to connect. While functional, this is a client-side tool launch, not a Hyper-V management cmdlet. It may not be available or behave consistently in all server-core or remote management scenarios.",
+      "fix": "Clarify that VMConnect.exe is a local client tool. For remote management, suggest using Hyper-V Manager or PowerShell cmdlets like Get-VM and Start-VM, noting that direct console access may require additional configuration or tools."
+    }
+  ]
+}

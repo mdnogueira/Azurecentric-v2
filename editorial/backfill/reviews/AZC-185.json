@@ -1,0 +1,83 @@
+{
+  "id": "AZC-185",
+  "title": "Record GPU driver and library versions in a workload image",
+  "slug": "record-gpu-driver-and-library-versions-in-a-workload-image",
+  "historical_date": "2025-05-31",
+  "input_sha256": "84dd5510296830570292d1935019de4e54daf5972161b696e158971535085a48",
+  "created_at": "2026-10-23T22:23:28.935126+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Record GPU driver and library versions in a Batch custom image using Azure Compute Gallery and snapshot-based provisioning.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-custom-images.md",
+      "revision": "62b18afbb3f80b8e513cef0bfc709af3b0a09272",
+      "revision_date": "2025-05-01T23:19:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use a managed image to create a custom image pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-custom-images",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/62b18afbb3f80b8e513cef0bfc709af3b0a09272/articles/batch/batch-custom-images.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-sig-images.md",
+      "revision": "62b18afbb3f80b8e513cef0bfc709af3b0a09272",
+      "revision_date": "2025-05-01T23:19:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use the Azure Compute Gallery to create a custom image pool",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-sig-images",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/62b18afbb3f80b8e513cef0bfc709af3b0a09272/articles/batch/batch-sig-images.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/record-gpu-driver-and-library-versions-in-a-workload-image.md",
+  "draft": true,
+  "word_count": 1068,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims third-party images can be used with Azure Compute Gallery (ACG). Source S1 explicitly states: 'You can't use a third-party image that has additional license and purchase terms as your base image' for managed images, and S2 notes that if using ACG, the gallery image must have identical purchase plan info, but S1 restricts base images to 'first party' for managed image pools. More critically, S1 says 'To use third-party image, you can use the Azure Compute Gallery' but S2 says 'Batch only supports generalized Shared Images' and implies strict base image support. The draft's claim is misleading because S1 restricts base images to first-party for the *managed image* path, and while ACG allows more flexibility, the draft conflates the two paths and ignores the 'first party' constraint for the primary managed image method discussed in S1.",
+      "fix": "Clarify that for the managed image path (being retired), only first-party images are supported. For ACG, third-party images are possible only if the purchase plan is correctly preserved, but emphasize that S1 restricts the base image for managed images to first-party. Remove the blanket statement that ACG allows third-party images without qualifying the purchase plan requirement."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft instructs to use `--node-agent-sku-id batch.node.ubuntu-20.04`. Source S2 shows a placeholder `{node-agent-sku-id}` and states it must align with the publisher/offer/SKU. It does not provide a specific SKU for Ubuntu 20.04. Source S1 mentions `batch.node.windows amd64` as an example. The draft invents a specific SKU value that is not verified by the sources. This is a factual error risk.",
+      "fix": "Replace the specific SKU `batch.node.ubuntu-20.04` with a placeholder or a reference to the `az batch pool supported-images` command to retrieve valid SKUs. Do not invent SKU values."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Unlike direct managed image pools, the source managed image can be removed after creating the image version'. Source S1 says for managed image pools, the resource 'should exist for the lifetime of the pool'. Source S2 does not explicitly state that the managed image can be removed after creating an ACG image version, though this is standard ACG behavior. However, the draft presents this as a definitive difference without source support for the ACG behavior in this specific context. It's a plausible inference but not explicitly in the sources.",
+      "fix": "Remove the claim about removing the source managed image unless explicitly supported by a source. If keeping, cite the ACG documentation for image versioning, not the Batch sources which focus on the pool resource dependency."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a PowerShell command `az batch pool supported-images` which is an Azure CLI command, not PowerShell. The draft also mentions PowerShell for supported images in S2 (`Get-AzBatchSupportedImage`) but mixes CLI and PowerShell syntax in the draft's instructions. The draft's code block uses Bash/CLI syntax but the text mentions PowerShell.",
+      "fix": "Ensure code blocks match the command-line tool described. If using CLI, use `az batch pool supported-images`. If using PowerShell, use `Get-AzBatchSupportedImage`. Do not mix them or mislabel CLI commands as PowerShell."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Azure Batch only supports first-party images as a base for custom images when using direct managed image pools.' Source S1 says 'Only first party images can be used as a base image.' This is accurate. However, the draft then says 'when using Azure Compute Gallery, you can use third-party images'. Source S2 says 'If the base image has purchase plan information, ensure that the gallery image has identical purchase plan information'. It does not explicitly say third-party images are supported, only that if they are used, the plan must match. The draft's phrasing is slightly overconfident.",
+      "fix": "Refine the statement to say that ACG allows images with purchase plans if the plan information is preserved, rather than broadly stating third-party images are supported."
+    }
+  ]
+}

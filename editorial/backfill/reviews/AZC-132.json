@@ -1,0 +1,144 @@
+{
+  "id": "AZC-132",
+  "title": "Document an application dependency map for a recovery exercise",
+  "slug": "document-an-application-dependency-map-for-a-recovery-exercise",
+  "historical_date": "2025-01-03",
+  "input_sha256": "c9c92aae2d9b5c75465b5e612b4536367d5a0828a0f5609270b200f53c2e7626",
+  "created_at": "2026-10-23T15:18:26.996747+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Document application dependencies to define recovery scope and validate RTO/RPO targets for Azure workloads.",
+  "tags": [
+    "business-continuity",
+    "disaster-recovery",
+    "high-availability",
+    "azure-reliability",
+    "recovery-planning"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-132-learn-1.png",
+      "alt": "Screenshot of RTO and RPO durations in hours.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f00659324656a04bb65d13c3e15263c96e1d1954/articles/reliability/media/disaster-recovery-rpo-rto.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-12-17T22:06:29Z",
+      "sha256": "63e6f881e19d2bf5c91213b077b61c7bafa4f61f41f235e0a0fcdd52b296204c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/business-continuity-management-program.md",
+      "revision": "aa65007c6058f5708b19b42a0e3ac6c931e59987",
+      "revision_date": "2024-12-16T02:23:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Business continuity management program in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/aa65007c6058f5708b19b42a0e3ac6c931e59987/articles/reliability/business-continuity-management-program.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-shared-responsibility.md",
+      "revision": "0f26f001ea614447ad632b09dcb7e0634a8b5c4b",
+      "revision_date": "2024-12-14T01:49:21Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Shared responsibility for resiliency",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-shared-responsibility",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0f26f001ea614447ad632b09dcb7e0634a8b5c4b/articles/reliability/concept-shared-responsibility.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "revision": "f00659324656a04bb65d13c3e15263c96e1d1954",
+      "revision_date": "2024-12-17T22:06:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "What are business continuity, high availability, and disaster recovery?",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f00659324656a04bb65d13c3e15263c96e1d1954/articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-12-16T03:01:28Z; used previous public snapshot. Confirm continued applicability: articles/reliability/business-continuity-management-program.md"
+  ],
+  "open_questions": [
+    "How should the dependency map handle dependencies on external third-party services that are not part of the Azure estate?",
+    "What is the specific process for updating the dependency map when the application architecture changes?",
+    "How are RTO/RPO targets negotiated and approved by business stakeholders before being encoded into the recovery plan?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/document-an-application-dependency-map-for-a-recovery-exercise.md",
+  "draft": true,
+  "word_count": 1221,
+  "claim_support_checks": [
+    {
+      "claim": "Azure services are statically identified through tooling and serve as the unit of measure for business continuity management.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Business continuity planning involves identifying, classifying, and managing risks to design high availability or disaster recovery strategies.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft does not publish RTO or RPOs for services; customer promises are SLA-based.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You are responsible for selecting and using resilience-enhancing capabilities to align with your specific requirements.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Testing is done in canary environments that match production to simulate total region failure.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft presents a table with specific RTO/RPO values (e.g., '15 mins', '5 mins') as an 'illustrative example' without clarifying these are hypothetical business requirements, not platform capabilities. This risks misleading readers into believing these are standard or achievable defaults for the listed services.",
+      "fix": "Explicitly label the table as a 'hypothetical business requirement example' and add a disclaimer that actual targets depend on business impact analysis, not service defaults. Remove specific numbers if they imply a universal standard."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states 'Azure requires every service to have a detailed recovery plan' and implies this applies to customer applications. Source S1 refers to Azure *internal* services ('Each service is required to complete...'). This conflates Microsoft's internal compliance with customer obligations, creating a false expectation of mandatory internal planning for user workloads.",
+      "fix": "Clarify that the 'recovery plan' requirement in S1 applies to Azure's internal services. For customers, reference the Well-Architected Framework's recommendation to document recovery plans, rather than stating it as a platform requirement."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Testing is considered integrated because all services are affected simultaneously' in the context of customer exercises. Source S1 describes this as Azure's internal 'full-region down drills'. This misattributes an internal Microsoft testing methodology to customer-led recovery exercises.",
+      "fix": "Remove the claim that customer testing is 'integrated' in this manner. Instead, state that customers should test their recovery plans in isolation or integrated environments as appropriate, without implying Microsoft's internal drill structure applies to them."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using 'canary environments' for customer testing. Source S1 defines canary regions as internal Azure infrastructure ('enabled regions... can be disabled without affecting your services'). Customers do not have access to these internal canary regions, making this advice technically infeasible.",
+      "fix": "Replace 'canary environments' with 'isolated test environments' or 'non-production replicas'. Clarify that customers must set up their own test environments, as they do not have access to Azure's internal canary regions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats citations excessively (e.g., multiple links to S1 in the 'Validate' section). This disrupts reading flow and violates the guidance to 'use a few well-placed source links'.",
+      "fix": "Consolidate citations. Use one primary link per section or paragraph where the concept is introduced, rather than repeating the same link after every sentence or bullet point."
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "AZC-247",
+  "title": "Configure health probes that reflect application readiness",
+  "slug": "configure-health-probes-that-reflect-application-readiness",
+  "historical_date": "2025-11-22",
+  "input_sha256": "cd677af04960084bb04f0d7a0c4ea80eb976811537a6958f495ae2cfb94510c7",
+  "created_at": "2026-10-23T17:57:55.707312+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure health probes that reflect application readiness using Azure Load Balancer and Application Gateway, avoiding common pitfalls.",
+  "tags": [
+    "azure-load-balancer",
+    "application-gateway",
+    "health-probes",
+    "networking",
+    "high-availability"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/application-gateway/application-gateway-probe-overview.md",
+      "revision": "1549c20cb00eccde24509b7a6fb7400cb946f5d5",
+      "revision_date": "2025-09-08T07:21:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Health monitoring overview for Azure Application Gateway",
+      "url": "https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-probe-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/1549c20cb00eccde24509b7a6fb7400cb946f5d5/articles/application-gateway/application-gateway-probe-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/load-balancer/load-balancer-custom-probe-overview.md",
+      "revision": "c05d4426317586fb04a088b6180bb92c5de00af4",
+      "revision_date": "2025-08-19T18:58:33Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Load Balancer health probes",
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c05d4426317586fb04a088b6180bb92c5de00af4/articles/load-balancer/load-balancer-custom-probe-overview.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/load-balancer/manage-probes-how-to.md",
+      "revision": "78cada0b8c1238fe25cdcd680eebb5d6cf836cb5",
+      "revision_date": "2025-10-08T17:53:36Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Manage health probes for Azure Load Balancer - Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/manage-probes-how-to",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/78cada0b8c1238fe25cdcd680eebb5d6cf836cb5/articles/load-balancer/manage-probes-how-to.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the Basic SKU Load Balancer support HTTPS probes?",
+    "What is the exact behavior of Application Gateway probes when the backend is a private endpoint?",
+    "Are there any specific NSG rules required for Application Gateway v2 SKU probes?",
+    "How does Application Gateway handle probe failures for backend pools with mixed protocols?",
+    "Is there a way to test probe configuration without deploying to production?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-health-probes-that-reflect-application-readiness.md",
+  "draft": true,
+  "word_count": 957,
+  "claim_support_checks": [
+    {
+      "claim": "TCP probes only verify port availability, not application health.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "HTTP/S probes in Load Balancer have a 30-second timeout.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Application Gateway probes can match response body strings.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Load Balancer probes originate from 168.63.129.16.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Standard Load Balancer allows established TCP flows to continue when all probes are down.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Application Gateway considers a probe healthy if the response status code is between 200 and 399. Source S1 explicitly states the default healthy range is 200-399, but the draft's phrasing implies this is the *only* condition or that it's a configurable default behavior rather than the hardcoded default. More critically, the draft suggests configuring probes to accept 403 as healthy, which is a valid custom configuration, but the text conflates the default behavior with custom capabilities without clear distinction.",
+      "fix": "Clarify that 200-399 is the *default* healthy range. Explicitly state that custom match criteria (like accepting 403) must be configured via `New-AzApplicationGatewayProbeHealthResponseMatch` or equivalent, as they are not default behaviors. Ensure the distinction between default and custom is sharp."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'Do not assume that a healthy probe means the application is ready for production traffic.' This is vague and potentially misleading. A healthy probe *does* mean the application is ready to receive traffic *from the load balancer*. The issue is whether the probe reflects *business* readiness, not technical readiness. The draft fails to define what 'ready for production traffic' means in this context, creating confusion.",
+      "fix": "Rephrase to: 'A healthy probe confirms the application can respond to the probe path, but does not guarantee business logic correctness or full system readiness. Always verify the probe path reflects the specific application state you care about.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims: 'Validation only occurs in the Azure portal.' This is an unsupported absolute claim. Source S3 notes 'Probe validation tests are only done when using the Azure portal,' but this likely refers to *real-time* validation during configuration entry, not deployment validation. ARM/Bicep/CLI deployments *do* validate schema and required fields. The draft implies these tools skip all validation, which is false.",
+      "fix": "Correct to: 'The Azure portal performs real-time validation of probe settings as you type. Infrastructure-as-Code tools (ARM, Bicep, Terraform) validate schema and required fields during deployment but do not perform the same interactive, real-time checks as the portal. Ensure configurations are correct before deployment.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states: 'Application Gateway supports HTTP and HTTPS probes. Neither service supports mutual authentication (client certificates) for HTTPS probes.' Source S2 confirms Load Balancer HTTPS probes don't support client certs. Source S1 does *not* explicitly state that Application Gateway HTTPS probes *cannot* use client certificates. It mentions SNI and host headers, but not mutual auth. This is an unsupported inference.",
+      "fix": "Remove the claim about Application Gateway not supporting mutual authentication unless sourced. If true, it should be cited from a specific Application Gateway TLS/Probe documentation. Otherwise, restrict the claim to Load Balancer only, or mark it as unverified."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Common pitfalls' section with 'Do not use a TCP probe for an HTTP application.' This is a best practice, not a technical impossibility. The draft presents it as a hard rule. While good advice, it lacks nuance. Some HTTP applications might only expose a TCP port for health checks (e.g., if HTTP is blocked externally). The draft should acknowledge this exception.",
+      "fix": "Add nuance: 'While HTTP/HTTPS probes are preferred for HTTP applications to verify application logic, TCP probes may be necessary if the application does not expose an HTTP interface or if HTTP traffic is blocked to the probe source.'"
+    }
+  ]
+}

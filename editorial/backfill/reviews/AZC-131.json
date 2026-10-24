@@ -1,0 +1,97 @@
+{
+  "id": "AZC-131",
+  "title": "Choose a lifecycle policy around data access patterns",
+  "slug": "choose-a-lifecycle-policy-around-data-access-patterns",
+  "historical_date": "2024-12-31",
+  "input_sha256": "a29fe3b5f01a61d783d499d7acd61992649f38289b7941eeaa9b9af856f4c2c7",
+  "created_at": "2026-10-23T15:14:49.675860+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Align Azure Blob Storage lifecycle policies with actual access patterns to avoid rehydration costs and unnecessary transaction fees.",
+  "tags": [],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-131-learn-1.png",
+      "alt": "Screenshot showing how to enable last access tracking in Azure portal.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/d0c1dfe1e7c1648e4063b338def127273e0e13a5/articles/storage/blobs/media/lifecycle-management-policy-configure/last-access-tracking-enable.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-07-02T05:22:29Z",
+      "sha256": "87ca0e9f8676da555b688cf45607a3ca7b04830a774a208729f5c13b4f9951bc",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/lifecycle-management-overview.md",
+      "revision": "0305810523485e916510004cbb429356596bf9b9",
+      "revision_date": "2024-12-25T11:02:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Optimize costs by automatically managing the data lifecycle",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0305810523485e916510004cbb429356596bf9b9/articles/storage/blobs/lifecycle-management-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/storage/blobs/lifecycle-management-policy-configure.md",
+      "revision": "d0c1dfe1e7c1648e4063b338def127273e0e13a5",
+      "revision_date": "2024-07-02T05:22:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure a lifecycle management policy",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d0c1dfe1e7c1648e4063b338def127273e0e13a5/articles/storage/blobs/lifecycle-management-policy-configure.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-12-31: MicrosoftDocs/azure-docs/articles/storage/blobs/lifecycle-management-policy-access-tiers.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-lifecycle-policy-around-data-access-patterns.md",
+  "draft": true,
+  "word_count": 1280,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot with a visible caption ('Screenshot showing how to enable last access tracking in Azure portal.') which violates the editorial guidance to not add visible permission/caption text. The image is also placed without a direct operational step reference in the flow.",
+      "fix": "Remove the visible caption text from the image. Place the image immediately after the step describing how to check the 'Enable access tracking' checkbox in the Azure portal, ensuring it directly illustrates that specific UI element."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Tiering is not supported in premium block blob storage accounts' as a universal fact. While S1 notes this for the specific action, it implies general tiering support is absent. The draft fails to clarify that while tiering actions might be limited or unsupported in Premium, the account type itself is supported for lifecycle management rules (specifically delete).",
+      "fix": "Clarify that while lifecycle management policies are supported for premium block blob accounts, the `tierToCool`/`tierToArchive` actions are not supported for them. Specify that tiering actions apply only to block blobs in general-purpose v2 and Blob Storage accounts."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If a data set needs to be read often, do not set a policy to move it to the cool or cold tiers, as this might result in higher transaction costs.' This is vague and potentially misleading. It lacks the specific context that cool/cold tiers have retrieval fees and minimum retention periods, making frequent access expensive compared to hot.",
+      "fix": "Replace the vague cost warning with specific context: 'Moving frequently accessed data to cool or cold tiers incurs retrieval fees and minimum retention penalties, often outweighing storage savings. Use hot tier for frequent access.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft repeats the citation '[Optimize costs by automatically managing the data lifecycle]' excessively after almost every paragraph and sentence, disrupting the reading flow. This violates the guidance to use a few well-placed source links rather than repeating citations.",
+      "fix": "Consolidate citations. Place a single relevant source link at the end of the section or paragraph where the information is introduced, rather than appending it to every factual statement. Ensure the flow remains conversational."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft ends with a generic concluding paragraph starting with 'The key is to align...' and 'Once the policy is in place...', which violates the instruction to remove generic concluding paragraphs beginning with phrases like 'By following' or 'This approach ensures'.",
+      "fix": "Remove the final two paragraphs. End the article immediately after the verification step or the example explanation, providing a concrete next action like 'Monitor the LifecyclePolicyCompleted event to confirm rule execution.'"
+    }
+  ]
+}

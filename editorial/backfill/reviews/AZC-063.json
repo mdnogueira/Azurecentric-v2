@@ -1,0 +1,160 @@
+{
+  "id": "AZC-063",
+  "title": "Use Trusted Launch when creating a supported virtual machine",
+  "slug": "use-trusted-launch-when-creating-a-supported-virtual-machine",
+  "historical_date": "2024-06-24",
+  "input_sha256": "572346935396f20eb2812f53244ea67faf40547435cf090332e1f570df751e24",
+  "created_at": "2026-10-23T13:41:21.371750+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable Trusted Launch on existing Generation 2 VMs: prerequisites, deallocation, and verification steps.",
+  "tags": [
+    "trusted-launch",
+    "virtual-machines",
+    "security",
+    "generation-2",
+    "defender-for-cloud"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-063-learn-1.png",
+      "alt": "Screenshot that shows the options for trusted launch.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/153c53e9594db206f087d6ab233dea8d47ae1a4f/articles/virtual-machines/media/trusted-launch/tvm-popup.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-06-19T22:03:14Z",
+      "sha256": "4523304ff2fb9ffa838912e92ae146f839b662b163b700dde9a1093406dfb7d3",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-063-learn-2.png",
+      "alt": "Screenshot that shows the Gen2 VM to be deallocated.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/2faf6fb2af6a6520461f67296fa7c968269add1e/articles/virtual-machines/media/trusted-launch/02-generation-2-to-trusted-launch-stop-vm.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-06-20T17:39:07Z",
+      "sha256": "abadc186b5affd93c3270c892518cdfb256db566a1a282ce9fff86d3165d7e9b",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/trusted-launch.md",
+      "revision": "620bffeee6f3abdf153ca73e68e363f26e806d93",
+      "revision_date": "2024-06-20T16:43:11Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Trusted launch for Azure VMs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/620bffeee6f3abdf153ca73e68e363f26e806d93/articles/virtual-machines/trusted-launch.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/trusted-launch-portal.md",
+      "revision": "153c53e9594db206f087d6ab233dea8d47ae1a4f",
+      "revision_date": "2024-06-19T22:03:14Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy a trusted launch VM",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/153c53e9594db206f087d6ab233dea8d47ae1a4f/articles/virtual-machines/trusted-launch-portal.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/trusted-launch-existing-vm.md",
+      "revision": "2faf6fb2af6a6520461f67296fa7c968269add1e",
+      "revision_date": "2024-06-20T17:39:07Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable trusted launch on existing VMs",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2faf6fb2af6a6520461f67296fa7c968269add1e/articles/virtual-machines/trusted-launch-existing-vm.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the private preview for enabling Trusted Launch on Generation 1 VMs have specific limitations or risks that should be documented?",
+    "Are there any known issues with specific Linux distributions or kernel versions when enabling Secure Boot with Trusted Launch?",
+    "What is the exact impact on application performance or boot time after enabling Trusted Launch?",
+    "How does the Guest Attestation extension interact with third-party security agents installed on the VM?",
+    "Is there a cost implication for using the Guest Attestation extension or the boot integrity monitoring feature in Defender for Cloud?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-trusted-launch-when-creating-a-supported-virtual-machine.md",
+  "draft": true,
+  "word_count": 1319,
+  "claim_support_checks": [
+    {
+      "claim": "Trusted Launch can be enabled on existing Generation 2 VMs.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "The VM must be deallocated before enabling Trusted Launch.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Secure Boot is not enabled by default when upgrading to Trusted Launch.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "You cannot roll back to the Standard security type after enabling Trusted Launch.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Backup must use the Enhanced policy for Trusted Launch upgrades.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Managed Images cannot be used to capture a Trusted Launch VM.",
+      "source_id": "S1",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Managed Images cannot be used to capture a Trusted Launch VM. Source S1 states Managed Image is unsupported for *creating* Trusted Launch VMs from existing ones, but Source S2 explicitly describes creating 'Trusted launch VM supported (TrustedLaunchSupported)' images from Gen2 Managed Images to share via Azure Compute Gallery. The draft conflates capture limitations with gallery image creation capabilities.",
+      "fix": "Clarify that while you cannot capture a Trusted Launch VM as a standard Managed Image for direct reuse, you can create a 'TrustedLaunchSupported' image definition in Azure Compute Gallery using a Gen2 Managed Image as the source. Update the unsupported features section to reflect this distinction."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states 'Secure Boot is not enabled by default when upgrading to Trusted Launch.' Source S2 (Portal section) shows Secure Boot and vTPM checkboxes appearing when 'Trusted launch virtual machines' is selected, and Source S3 notes 'vTPM is enabled by default' but 'Secure Boot... is not enabled by default.' However, Source S2's CLI/PowerShell examples explicitly set both to true, and the Portal screenshot implies user selection. The draft's absolute statement ignores that the Portal UI may pre-check or that the default behavior depends on the deployment method (new vs. existing). More critically, Source S1 says Trusted Launch is the *default state for newly created VMs*, implying Secure Boot is likely on by default for new VMs, creating ambiguity for the 'upgrade' context.",
+      "fix": "Refine the statement to specify that for *existing* VMs being upgraded, Secure Boot is not enabled by default and must be explicitly selected, whereas for *new* VMs, Trusted Launch (and thus Secure Boot) is the default. Ensure the distinction between new deployment defaults and upgrade actions is clear."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a diagram node 'Enable Secure Boot & vTPM (Optional but Recommended)'. Source S3 explicitly states 'vTPM is enabled by default' when enabling Trusted Launch. Therefore, vTPM is not optional during the upgrade process; it is automatic. Only Secure Boot is optional (though recommended). Labeling both as optional is factually incorrect based on the source.",
+      "fix": "Update the diagram and text to reflect that vTPM is enabled by default during the Trusted Launch upgrade, while Secure Boot is optional and must be explicitly enabled. Change the node to 'Enable Secure Boot (Optional, vTPM is Automatic)'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Azure Site Recovery is currently in preview for this feature' as an unsupported feature. Source S1 lists Azure Site Recovery as 'currently in preview' under 'Unsupported features'. This is accurate. However, the draft does not mention that this limitation applies to *Trusted Launch VMs* specifically, and Source S1 links to a concept page. The draft should clarify that ASR protection for Trusted Launch VMs is in preview, not that ASR itself is unsupported globally. The current phrasing might imply ASR is entirely incompatible with Azure VMs.",
+      "fix": "Rephrase to specify that 'Azure Site Recovery protection for Trusted Launch VMs is currently in preview,' rather than listing it broadly as an unsupported feature without context. This prevents misunderstanding that ASR cannot protect any VMs."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'When you deallocate the VM, you stop paying for compute resources, but you still pay for the associated storage'. While true, Source S1 does not mention pricing details for deallocation, only that 'Trusted launch doesn't increase existing VM pricing costs.' The draft introduces general Azure billing knowledge not explicitly in the provided sources for the Trusted Launch context. While not false, it's outside the strict scope of the provided documentation snippets which focus on feature compatibility.",
+      "fix": "Remove the specific billing details about compute vs. storage costs during deallocation, as this is general Azure knowledge not derived from the provided Trusted Launch sources. Focus on the operational requirement of deallocation for the security profile change."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "AZC-140",
+  "title": "Use promptbooks for repeatable security investigations",
+  "slug": "use-promptbooks-for-repeatable-security-investigations",
+  "historical_date": "2025-01-26",
+  "input_sha256": "6d72816694403904d3a4abe192f11808e8573c83dac2a6a82b13d7bfe0bfc4ed",
+  "created_at": "2026-10-23T15:28:39.394569+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use unofficial PowerShell scripts to export and import Microsoft Security Copilot promptbooks as JSON, noting the lack of support and API volatility.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "Azure/Security-Copilot",
+      "path": "Promptbook samples/Powershell to Manage Promptbooks/readme.md",
+      "revision": "3081c3b2a4d14d2f8c5383a3f31c7bd503862477",
+      "revision_date": "2024-11-06T08:35:06Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "readme",
+      "url": "https://github.com/Azure/Security-Copilot/blob/3081c3b2a4d14d2f8c5383a3f31c7bd503862477/Promptbook samples/Powershell to Manage Promptbooks/readme.md",
+      "snapshot_url": "https://github.com/Azure/Security-Copilot/blob/3081c3b2a4d14d2f8c5383a3f31c7bd503862477/Promptbook samples/Powershell to Manage Promptbooks/readme.md",
+      "rank_score": 100
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-promptbooks-for-repeatable-security-investigations.md",
+  "draft": true,
+  "word_count": 1490,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft presents unpublished, unsupported PowerShell scripts as a viable operational method without sufficient warning about their ephemeral nature. The source explicitly states these are not officially supported, subject to change without notice, and support tickets cannot be raised. The draft minimizes this risk by framing it as 'practical' and 'community resources'.",
+      "fix": "Explicitly state in the introduction that these scripts are unofficial, use unpublished APIs, and carry no support guarantee. Advise users that this method may break at any time and is not a recommended long-term strategy. Remove language suggesting it is a 'practical' standard solution."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to copy an access token from browser DevTools headers. This is a security risk as tokens are sensitive credentials. The source warns to logout after use, but the draft does not emphasize the risk of token leakage or storage. Additionally, the draft claims Azure CLI cannot fetch the token, which might be outdated or specific to certain scopes, but more importantly, relying on browser tokens is fragile.",
+      "fix": "Add a strong security warning about handling the bearer token. Emphasize that the token grants access and must be treated as a secret. Clarify that this method is a workaround due to lack of official CLI support, not a best practice. Ensure the 'logout' step is highlighted as critical for token invalidation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the scripts are 'provided in the Azure Security Copilot GitHub repository'. The source is a README in a specific sample folder within a GitHub repo, not an official Microsoft distribution of scripts. This implies a level of official endorsement or availability that may not exist. Users might look for these scripts in official documentation or supported channels.",
+      "fix": "Clarify that these scripts are community-contributed samples found in a specific GitHub repository folder, not official Microsoft tools. Provide the direct link to the sample folder and warn that they are not part of the official product distribution or support lifecycle."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that the `Plugins` field is removed during download. This is a specific technical detail from the source, but it lacks context on the impact. If promptbooks rely on plugins, this removal breaks functionality upon re-upload or use. The draft mentions this but does not explain the consequence clearly.",
+      "fix": "Explain that removing the `Plugins` field means any promptbook relying on specific plugins will lose that integration upon download and re-upload. Users must manually re-assign plugins after uploading if they were present in the original promptbook. This is a critical functional loss."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a diagram description in YAML format which is not rendered in the text. The source does not provide a diagram, only screenshots. The draft's diagram is an invention based on the process described. While illustrative, it adds complexity without source verification for the specific flow nodes.",
+      "fix": "Remove the YAML diagram section. The textual description of the flow is sufficient. If a visual is needed, use the provided screenshots from the source (Browser Tools, Copy Access Token, PowerShell Commandline) with appropriate captions, but do not invent a new diagram structure."
+    }
+  ]
+}

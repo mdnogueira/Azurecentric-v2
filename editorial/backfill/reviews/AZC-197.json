@@ -1,0 +1,124 @@
+{
+  "id": "AZC-197",
+  "title": "Use SSH for routine Linux guest administration",
+  "historical_date": "2025-07-05",
+  "created_at": "2026-10-23T23:27:27.404318+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure SSH for routine Linux guest administration on Hyper-V, avoiding VMConnect limitations.",
+  "tags": [
+    "hyper-v",
+    "linux",
+    "ssh",
+    "virtualization",
+    "windows-server-2025"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Use local resources on Hyper-V with VMConnect",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/use-local-resources-on-hyper-v-virtual-machine-with-vmconnect",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Best Practices for running Linux on Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the Linux guest need a specific kernel version to support SSH key-based authentication?",
+    "Are there any known compatibility issues between Windows Server 2025 Hyper-V and specific Linux distributions when using SSH?",
+    "How can SSH be configured to allow access to local resources like printers or USB devices from the Linux guest?",
+    "What are the best practices for managing SSH keys in a multi-VM environment on Hyper-V?",
+    "Is it possible to use SSH with a graphical desktop environment on the Linux guest?"
+  ],
+  "research_warnings": [
+    "No revision before 2025-07-05: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/failover-cluster-network-recommendations.md"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-ssh-for-routine-linux-guest-administration.md",
+  "draft": true,
+  "word_count": 1221,
+  "claim_support_checks": [
+    {
+      "claim": "Enhanced session mode is not available for Linux virtual machines in Hyper-V.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Local drive redirection to a Linux guest VM is supported via VMConnect.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Linux virtual machines should use static MAC addresses for failover clustering.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The ext4 file system is preferred over ext3 for dynamic VHDX files in Linux.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The noop or none I/O scheduler is recommended for Linux on Hyper-V.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Linux guests do not receive drive redirection capabilities and contradicts the source text which explicitly states the path `/home/shared-drives` exists for Linux guests. The source confirms VMConnect supports local drive selection for Linux, even if enhanced session features like clipboard are Windows-only. This is a direct factual error contradicting S1.",
+      "fix": "Remove the claim that drive redirection is unavailable for Linux. Acknowledge that while enhanced session features (clipboard, audio) are Windows-only, VMConnect does support local drive redirection for Linux guests via the `/home/shared-drives` path as documented in S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes irrelevant Hyper-V best practices (ext4, I/O schedulers, MAC addresses) in the claims section. These do not support the SSH administration topic and clutter the review. The draft also lacks source linkage for the SSH installation steps, which are general Linux knowledge not covered by the provided Hyper-V sources.",
+      "fix": "Remove the claims about ext4, I/O schedulers, and MAC addresses as they are unrelated to SSH configuration. Add a note that SSH installation commands are standard Linux procedures and not covered by the provided Hyper-V documentation, ensuring the article does not imply these steps are Hyper-V-specific."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses generic concluding paragraphs ('By following these steps...', 'This approach ensures...') which are explicitly forbidden by the editorial guidance. It also repeats the same citation URL multiple times instead of using concise inline citations.",
+      "fix": "Remove the 'Summary of steps' and 'Additional considerations' sections. End the article with the verification step (`ssh user@linux_vm_ip`). Replace repetitive citations with a single source link where the claim is made, or omit if general knowledge."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests disabling password authentication (`PasswordAuthentication no`) without mentioning the risk of locking out the administrator if key-based authentication fails or is misconfigured. This is a destructive action without adequate warning or fallback context.",
+      "fix": "Add a warning that disabling password authentication should only be done after verifying that key-based authentication works. Suggest testing the connection with the new key before modifying `sshd_config` to prevent accidental lockout."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions `ssh-copy-id` which is not available on Windows by default. The guide instructs Windows users to use it, which will fail unless WSL or Git Bash is installed, creating confusion for a pure Windows Server 2025 host.",
+      "fix": "Clarify that `ssh-copy-id` requires a Linux-like environment (WSL, Git Bash, or Linux host). For native Windows OpenSSH, instruct users to manually append the public key content to `~/.ssh/authorized_keys` on the Linux guest via the VMConnect console or SSH session."
+    }
+  ]
+}

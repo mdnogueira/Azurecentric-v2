@@ -1,0 +1,153 @@
+{
+  "id": "AZC-150",
+  "title": "Use Azure Policy to report on missing configuration",
+  "slug": "use-azure-policy-to-report-on-missing-configuration",
+  "historical_date": "2025-02-23",
+  "input_sha256": "1040d677e501580e8c11cb919878c2fc638859428a8f6a0303c2181db7082387",
+  "created_at": "2026-10-23T15:44:00.641244+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use Azure Policy with an auditing effect to identify non-compliant resources without blocking deployments, then verify the compliance state.",
+  "tags": [
+    "azure-policy",
+    "governance",
+    "compliance",
+    "audit",
+    "azure-arc"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-150-learn-1.png",
+      "alt": "Screenshot of the Azure portal to search for policy.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/265e02640828342b6891a50860026faf407fe0a5/articles/governance/policy/media/assign-policy-portal/search-policy.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-11-27T00:05:20Z",
+      "sha256": "208fbec5e98447ddfd7e88c4eeeb76fab19ac4f26fa44ae776cb29707c4a5aca",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-150-learn-2.png",
+      "alt": "Screenshot of a policy assignment creating a system-assigned managed identity in East US with Log Analytics Contributor permissions.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/9e1fb03f5e80033909946676a9eb08fc2ee12a55/articles/governance/policy/media/remediate-resources/remediation-tab.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-02-10T19:42:29Z",
+      "sha256": "0c72075ebc65b28383f2ea1a9132f882319b513511246595e8bc38f92e6d28e7",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/governance/policy/overview.md",
+      "revision": "79192e1191a79fbfff2b8cd02613b27a1d3a9de7",
+      "revision_date": "2024-11-27T00:55:17Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Overview of Azure Policy",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/79192e1191a79fbfff2b8cd02613b27a1d3a9de7/articles/governance/policy/overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/governance/policy/assign-policy-portal.md",
+      "revision": "265e02640828342b6891a50860026faf407fe0a5",
+      "revision_date": "2024-11-27T00:05:20Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Quickstart: Create policy assignment using Azure portal",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/265e02640828342b6891a50860026faf407fe0a5/articles/governance/policy/assign-policy-portal.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/governance/policy/how-to/remediate-resources.md",
+      "revision": "9e1fb03f5e80033909946676a9eb08fc2ee12a55",
+      "revision_date": "2025-02-10T19:42:29Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Remediate non-compliant resources",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9e1fb03f5e80033909946676a9eb08fc2ee12a55/articles/governance/policy/how-to/remediate-resources.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the current Azure Policy documentation explicitly state that Arc-enabled resources are evaluated at the management group level, or do they have their own specific scope definitions separate from standard Azure resources?",
+    "Are there any specific limits on the number of non-compliant resources that can be displayed in the Compliance dashboard before performance degrades?",
+    "Is it possible to export the compliance data directly from the Azure portal, or is this only available via API or Azure CLI?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-azure-policy-to-report-on-missing-configuration.md",
+  "draft": true,
+  "word_count": 1220,
+  "claim_support_checks": [
+    {
+      "claim": "Azure Policy evaluates resources at specific times, including during creation, updates, and regular 24-hour cycles.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Only resources at the subscription or resource group level are evaluated for standard Azure resources.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Policy with Azure Arc extends policy-based governance to non-Azure resources.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Built-in policy definitions default to the latest version and inherit minor version changes.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Remediation tasks are only required for policies with deployIfNotExists or modify effects.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft incorrectly states that the Contributor role can trigger remediation tasks. Source S1 explicitly states: 'Contributor may trigger resource remediation, but can't create or update definitions and assignments.' However, Source S3 clarifies that for `deployIfNotExists` or `modify` effects, the User Access Administrator role is necessary to grant the managed identity permissions. The draft conflates general read access with the specific permissions required for remediation execution.",
+      "fix": "Clarify that while Contributor has read access, creating a remediation task for `deployIfNotExists` or `modify` effects requires the User Access Administrator role to assign permissions to the managed identity, or the Resource Policy Contributor role if using the portal's automatic permission granting. Remove the blanket statement that Contributor can trigger remediation without context of identity permissions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes two screenshots (azc-150-learn-1.png and azc-150-learn-2.png) but fails to place them beside the specific steps they illustrate. The guidance prohibits adding unrelated screenshots. The second screenshot specifically illustrates the Remediation tab with a managed identity, which is relevant to the 'Remediation' step, not the initial search.",
+      "fix": "Move the second screenshot (remediation-tab.png) to appear immediately after Step 6 in the 'Create the policy assignment' section, where the draft discusses the Remediation tab and Managed Identity selection. Ensure the first screenshot is placed next to Step 2 as currently done. Remove any screenshots not directly illustrating the immediate step."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Only resources at the subscription or resource group level are evaluated, even if the assignment is at a higher scope.' This is an unsupported categorical claim. Source S1 states 'only resources at the subscription or resource group level are evaluated' in the context of standard Azure resources, but Azure Policy with Azure Arc (mentioned in S1) extends this to non-Azure resources. The draft omits this critical context, misleading readers about Arc-enabled resources.",
+      "fix": "Refine the scope statement to specify that for standard Azure resources, evaluation occurs at the subscription or resource group level. Add a note that Azure Policy with Azure Arc extends this evaluation to non-Azure resources (servers, Kubernetes) managed by Arc, which have their own scope definitions."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By starting with an auditing effect, you gain visibility... This allows you to build trust...'. This is a generic concluding paragraph that violates the editorial guidance to 'End when the technical question is answered, with a concrete verification or next action. Remove generic concluding paragraphs beginning... This approach ensures'.",
+      "fix": "Delete the final paragraph starting with 'By starting with an auditing effect...'. Replace it with a concrete next action, such as: 'To verify the assignment, navigate to the Compliance blade and check the 'Compliance state' column. If no results appear, wait for the 24-hour evaluation cycle or update a resource to trigger immediate evaluation.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'Built-in definitions default to the latest version and inherit minor updates unless specified otherwise.' While generally true, Source S2 shows a 'Version (preview)' field with options to enroll in minor version updates. The draft implies this is automatic without mentioning the explicit version selection UI, which might confuse users looking for the setting.",
+      "fix": "Clarify that while built-in definitions default to the latest major version, users can explicitly select a version in the 'Version (preview)' field during assignment to control minor version updates. Mention that leaving it at the default `1.*.*` allows automatic minor updates, but specific versions can be pinned."
+    }
+  ]
+}

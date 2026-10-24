@@ -1,0 +1,127 @@
+{
+  "id": "AZC-139",
+  "title": "Separate Azure control-plane roles from data-plane permissions",
+  "historical_date": "2025-01-23",
+  "created_at": "2026-10-23T23:21:42.794477+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Clarify that Microsoft Entra ID roles and Azure RBAC are separate systems. Assign permissions in each plane independently.",
+  "tags": [
+    "azure-rbac",
+    "entra-id",
+    "privileged-access",
+    "security",
+    "rbac-separation"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/concept-understand-roles.md",
+      "revision": "55959c3c99f9db14b2f302ab0e2fb9b26aeaea08",
+      "revision_date": "2025-01-03T20:30:16Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Understand Microsoft Entra role concepts",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/55959c3c99f9db14b2f302ab0e2fb9b26aeaea08/docs/identity/role-based-access-control/concept-understand-roles.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/privileged-roles-permissions.md",
+      "revision": "55959c3c99f9db14b2f302ab0e2fb9b26aeaea08",
+      "revision_date": "2025-01-03T20:30:16Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/55959c3c99f9db14b2f302ab0e2fb9b26aeaea08/docs/identity/role-based-access-control/privileged-roles-permissions.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/role-based-access-control/security-planning.md",
+      "revision": "afb7913d46acdc0787a314180408077a36b7f793",
+      "revision_date": "2025-01-17T22:08:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Secure access practices for administrators in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/afb7913d46acdc0787a314180408077a36b7f793/docs/identity/role-based-access-control/security-planning.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the source explicitly state that Global Administrator cannot manage Azure resources, or is this inferred from the separation of systems?",
+    "Are there any specific Azure RBAC roles that are mentioned as being equivalent to Microsoft Entra roles?",
+    "Is there any guidance on how to audit cross-plane permissions?",
+    "Does the source mention any exceptions where a Microsoft Entra role might grant Azure permissions?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning#use-microsoft-entra-privileged-identity-management"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-azure-control-plane-roles-from-data-plane-permissions.md",
+  "draft": true,
+  "word_count": 769,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft Entra ID and Azure have separate RBAC systems with different data stores and policy decision points.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Global Administrator role in Microsoft Entra ID does not grant permissions to manage Azure resources.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft Entra ID identifies certain roles as privileged, which can be seen in the admin center or via Graph API.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Microsoft recommends using PIM to manage privileged roles and requiring MFA for users in these roles.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft implies Global Administrator is a 'cross-service role' that grants access to 'all Microsoft 365 services'. Source S1 lists Global Administrator under 'Cross-service roles' but clarifies this category includes roles spanning specific security/compliance services, not necessarily every M365 service. More critically, Source S1 states Azure has its own RBAC system 'not the same as Microsoft Entra roles', but does not explicitly state Global Administrator lacks Azure RBAC permissions; it infers separation. The draft's claim is technically true but the sourcing is loose.",
+      "fix": "Refine the claim to state that Microsoft Entra roles and Azure RBAC are distinct systems. Cite S1 for the separation of data stores and policy decision points. Avoid claiming Global Administrator grants access to 'all' M365 services if S1 only lists specific examples or categories. Use S1's explicit statement that Azure RBAC is a separate system for Azure resources."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot from S2 with a visible caption description in the alt text or surrounding text context if not handled carefully. The guidance says 'Do not add visible Microsoft Learn screenshot or permission captions.' The draft uses the image but the alt text is descriptive. The main issue is the PowerShell example uses `Get-MgBeta...`. Source S2 uses `Get-MgBetaRoleManagementDirectoryRoleDefinition`. The draft's code is correct. However, the draft does not mention that the `IsPrivileged` label is in 'PREVIEW' as noted in S2's header. This is a missing context issue regarding feature maturity.",
+      "fix": "Add a note that the 'PRIVILEGED' label and `IsPrivileged` property identification are currently in PREVIEW, as stated in Source S2. Ensure the screenshot usage complies with the 'no visible permission caption' rule by keeping the alt text purely descriptive and not adding explanatory text next to the image that mimics a caption."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends defining 'at least two emergency access accounts' and requiring MFA for them. Source S3 (and its included definition) recommends two cloud-only emergency access accounts permanently assigned Global Administrator. The draft says 'requiring multifactor authentication for all users in these roles'. Source S3 specifically says 'Turn on multifactor authentication... for all individual users who are permanently assigned to one or more of the Microsoft Entra administrator roles'. It does not explicitly exempt emergency accounts from MFA in the text provided, but standard practice (and the 'break glass' nature) often implies MFA might be a barrier. However, the source text *does* say 'Require... MFA... for all individual users...'. The draft is consistent. The issue is the 'Verification' section. It suggests assigning User Administrator and trying to create a VM. This is a valid test of separation.",
+      "fix": "The verification steps are valid. However, ensure the emergency account guidance explicitly mentions they should be cloud-only and not assigned to specific individuals, as per the included definition in S3. The draft mentions 'cloud-only' in Stage 1 but not in the specific recommendation sentence. Add 'cloud-only' to the emergency account recommendation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the term 'data-plane' for Azure Resource Manager. Source S1 distinguishes 'Microsoft Entra ID' (identity) from 'Azure' (resources). It does not use the terms 'control-plane' and 'data-plane' in the provided text. Using these terms might be considered industry jargon not supported by the specific source text, although it is a common conceptual mapping. The guidance says 'Do not infer a universal restriction...'. It doesn't ban jargon, but 'control-plane' vs 'data-plane' is a specific architectural distinction. S1 says 'separate role-based access control system'.",
+      "fix": "Replace 'control-plane' and 'data-plane' with 'identity management' and 'resource management' or 'directory' and 'Azure resources' to align strictly with the terminology in Source S1. This avoids introducing external architectural concepts not explicitly defined in the provided sources."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft's PowerShell example uses `Get-MgBeta...`. Source S2 uses `Get-MgBetaRoleManagementDirectoryRoleDefinition`. The draft's code is correct. However, the draft does not mention that the `IsPrivileged` property is part of the `roleManagement` namespace. The code is complete. The issue is minor: the draft says 'This output includes roles such as Application Administrator and Helpdesk Administrator'. Source S2 output shows these. It is accurate. No fix needed for code. The issue is the 'diagram' field in JSON. The draft includes a diagram description. The guidance says 'Keep tags, diagram, claims and review_questions in their JSON fields.' The draft body does not contain the diagram, which is good. The JSON structure is correct.",
+      "fix": "No changes required for the PowerShell code or diagram placement. Ensure the final output does not include the diagram markdown in the body, only in the JSON. The current draft body is clean."
+    }
+  ]
+}

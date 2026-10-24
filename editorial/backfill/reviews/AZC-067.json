@@ -1,0 +1,126 @@
+{
+  "id": "AZC-067",
+  "title": "Choose a Service Bus queue or topic for an integration",
+  "slug": "choose-a-service-bus-queue-or-topic-for-an-integration",
+  "historical_date": "2024-07-06",
+  "input_sha256": "27fca79d3153e2eb47b7dc9f86ad2a752e8daa7c26bd9913209247e7cc0ee1ca",
+  "created_at": "2026-10-23T13:46:12.553941+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between Service Bus queues and topics by matching your integration pattern to competing consumers or publish-subscribe needs.",
+  "tags": [
+    "azure-service-bus",
+    "queues",
+    "topics",
+    "messaging",
+    "integration",
+    "publish-subscribe"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-queues-topics-subscriptions.md",
+      "revision": "8acdaadeb354a2c61ce104c40f702514f643933f",
+      "revision_date": "2024-06-19T23:50:58Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Service Bus messaging - queues, topics, and subscriptions",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8acdaadeb354a2c61ce104c40f702514f643933f/articles/service-bus-messaging/service-bus-queues-topics-subscriptions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/compare-messaging-services.md",
+      "revision": "dab2a7ca41330965ede1db77030c3dad877ae722",
+      "revision_date": "2024-03-21T17:02:28Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Compare Azure messaging services",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/compare-messaging-services",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/dab2a7ca41330965ede1db77030c3dad877ae722/articles/service-bus-messaging/compare-messaging-services.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-messaging-overview.md",
+      "revision": "b07cf029c90152f2be38f45577fd3cc3d59a5164",
+      "revision_date": "2024-06-13T18:54:26Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Introduction to Azure Service Bus, an enterprise message broker",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b07cf029c90152f2be38f45577fd3cc3d59a5164/articles/service-bus-messaging/service-bus-messaging-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source explicitly state whether FIFO ordering is guaranteed without sessions for standard queues?",
+    "Are there any specific cost differences between queues and topics that should be mentioned?",
+    "How does the choice between queue and topic impact the implementation of transactions?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-a-service-bus-queue-or-topic-for-an-integration.md",
+  "draft": true,
+  "word_count": 1225,
+  "claim_support_checks": [
+    {
+      "claim": "Queues support a competing consumer pattern where each message is processed by only one receiver.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Topics implement a publish-subscribe pattern where each subscription receives a copy of the message.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Queues provide temporal decoupling, allowing producers and consumers to operate at different times.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Subscriptions on topics can use filters to restrict which messages they receive.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Service Bus is an enterprise message broker intended for high-value messaging requiring reliability.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that without sessions, messages are delivered in order but offers no strict guarantee across competing consumers. This is misleading; standard queues do not guarantee FIFO order across multiple consumers, only per-consumer session locking ensures ordering. The source (S1) explicitly links FIFO guarantees to sessions.",
+      "fix": "Clarify that FIFO ordering is only guaranteed when using message sessions. Without sessions, message order is not preserved across competing consumers, which is a critical distinction for financial or state-machine workloads."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims queues are ideal for ensuring a task is performed 'exactly once'. Service Bus provides 'at-least-once' delivery by default. 'Exactly once' requires duplicate detection and application logic, as noted in S1. The draft also omits the cost context that queues and topics share the same pricing tier.",
+      "fix": "Replace 'exactly once' with 'at-least-once' and mention that duplicate detection is required for exactly-once semantics. Add a note that queues and topics have identical pricing, so cost is not a differentiator."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that chaining systems with queues creates a 'single point of failure' and 'tight coupling'. This is an unsupported categorical claim. Chaining is a valid architectural pattern (e.g., via auto-forwarding) and does not inherently create a single point of failure if the namespace is highly available.",
+      "fix": "Rephrase to state that topics offer 'looser coupling' by allowing independent scaling of consumers, whereas chaining queues requires sequential processing. Avoid absolute claims about failure modes without qualifying them against namespace availability."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Verification and next steps' section with generic advice ('map your integration requirements') and a concluding paragraph starting with 'By aligning your choice...'. The editorial guidance forbids generic concluding paragraphs and requires ending with a concrete verification or next action.",
+      "fix": "Remove the generic concluding paragraph. Replace the verification steps with a concrete action, such as 'Create the namespace and entity using the Azure CLI or ARM template, then test the receive mode with a sample client.'"
+    }
+  ]
+}

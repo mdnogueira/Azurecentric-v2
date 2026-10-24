@@ -1,0 +1,152 @@
+{
+  "id": "AZC-206",
+  "title": "Connect a Linux server to Azure Arc",
+  "slug": "connect-a-linux-server-to-azure-arc",
+  "historical_date": "2025-07-30",
+  "input_sha256": "f930f0f6efdcb25f31e9b1b0a7a729e20a15a916386b87e48e9a1aa1fd509aab",
+  "created_at": "2026-10-23T16:59:18.602025+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Connect a Linux server to Azure Arc using the azcmagent CLI, covering prerequisites, installation, authentication, and verification.",
+  "tags": [
+    "azure-arc",
+    "linux",
+    "connected-machine",
+    "azcmagent",
+    "onboarding"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-206-learn-1.png",
+      "alt": "Screenshot showing Azure Arc system tray icon and window to launch Azure Arc setup process.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/media/onboard-windows-server/system-tray-icon.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "4ec1239c785d6cb34370e22feb0e2768b9c0a8fc16600c5aa6810d74debf95d6",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-206-learn-2.png",
+      "alt": "Screen capture of the Local Group Policy Editor showing which users have permissions to log on as a service.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/media/prerequisites/arc-server-user-rights-assignment.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-09-17T17:51:55Z",
+      "sha256": "4fb8184ea65957c3da2e1fdf599d3b79ec0a004355f9cc66d545de24528b506c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/onboard-windows-server.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Connect Windows Server machines to Azure through Azure Arc Setup",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/onboard-windows-server.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/prerequisites.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Connected Machine agent prerequisites",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/prerequisites",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/prerequisites.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-arc/servers/azcmagent-connect.md",
+      "revision": "35d041da01bcd2bf1210adb0046f411ec20abeb3",
+      "revision_date": "2024-09-17T17:51:55Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "azcmagent connect CLI reference",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-arc/servers/azcmagent-connect",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/35d041da01bcd2bf1210adb0046f411ec20abeb3/articles/azure-arc/servers/azcmagent-connect.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/onboard-windows-server.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/prerequisites.md",
+    "Public document removed/moved on 2024-09-17T19:42:24Z; used previous public snapshot. Confirm continued applicability: articles/azure-arc/servers/azcmagent-connect.md"
+  ],
+  "open_questions": [
+    "Does the onboarding script automatically configure proxy settings if environment variables are set, or must this be done manually via azcmagent config?",
+    "What is the exact error message returned if the resource provider registration is incomplete during the azcmagent connect command?",
+    "Are there specific firewall ports required beyond standard HTTPS (443) for the agent to communicate with Azure Arc endpoints?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/connect-a-linux-server-to-azure-arc.md",
+  "draft": true,
+  "word_count": 1073,
+  "claim_support_checks": [
+    {
+      "claim": "The Azure Connected Machine agent supports x86-64 architectures only.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Onboarding requires the Azure Connected Machine Onboarding or Contributor role.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Device code login is the default authentication method for Linux.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Microsoft.HybridCompute, Microsoft.GuestConfiguration, and Microsoft.HybridConnectivity must be registered.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the onboarding script handles installation but then pivots to `azcmagent connect` without explaining that the agent must be installed first. It omits the standard prerequisite step of installing the agent package, which is required before running the connect command on Linux.",
+      "fix": "Add a step to install the `azcmagent` package (via the official script or package manager) before the `azcmagent connect` command. Clarify that `azcmagent connect` assumes the agent binary is already present on the system."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft cites the Windows Server documentation (S1) for SQL Server auto-connection behavior on Linux. While the functionality exists, the source provided is explicitly titled for Windows Server and does not document Linux-specific tag behavior or prerequisites.",
+      "fix": "Replace the S1 citation with a reference to the SQL Server on Linux Azure Arc documentation or the general Azure Arc Data prerequisites. Ensure the tag name `ArcSQLServerExtensionDeployment` is verified against Linux-specific docs if applicable."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states the agent 'handles communication with the Azure control plane' and 'runs as a service' without mentioning the specific systemd service name (`azcmagent`) or the log path (`/var/log/azure/azure-arc/`) is specific to the agent, not the prerequisites doc.",
+      "fix": "Verify the log path `/var/log/azure/azure-arc/` against the agent maintenance documentation. Clarify that `azcmagent status` checks the local agent state, not the Azure portal visibility, which may have a delay."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies `--ignore-network-check` is a standard troubleshooting flag for 'failed network checks' without emphasizing the risk of silent failure. It also lists `gnupg` as a requirement for Debian-based systems but doesn't mention `curl` which is often used in the install script.",
+      "fix": "Add a warning that `--ignore-network-check` may result in a non-functional agent if connectivity is actually blocked. Verify if `curl` is a hard prerequisite for the install script, as `wget` is listed but `curl` is commonly used in Azure scripts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with generic advice about configuring management capabilities. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar, and demands a concrete next action.",
+      "fix": "Remove the generic conclusion. End with a concrete verification step, such as running `azcmagent status` to confirm the 'Connected' state, or navigating to the Azure Portal to verify the resource exists."
+    }
+  ]
+}

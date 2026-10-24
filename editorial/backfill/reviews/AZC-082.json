@@ -1,0 +1,125 @@
+{
+  "id": "AZC-082",
+  "title": "Check Azure quota before a compute deployment fails",
+  "slug": "check-azure-quota-before-a-compute-deployment-fails",
+  "historical_date": "2024-08-16",
+  "input_sha256": "fe7fafd1822c3a7ca62a46e43cde9123ba08fcbae2258067b31e220b0191a2ae",
+  "created_at": "2026-10-23T14:04:41.840329+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Check regional vCPU quotas before deploying VMs or scale sets to prevent deployment failures.",
+  "tags": [
+    "azure-virtual-machines",
+    "quotas",
+    "troubleshooting",
+    "autoscale",
+    "reserved-instances"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/quotas.md",
+      "revision": "0ede6a66f11b8be5fe6a70c642398c32dfd3fd47",
+      "revision_date": "2024-07-30T21:13:24Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "vCPU quotas",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/quotas",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/0ede6a66f11b8be5fe6a70c642398c32dfd3fd47/articles/virtual-machines/quotas.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md",
+      "revision": "745364d3bf769a7cc2b9c8736313f77d088c2d18",
+      "revision_date": "2024-08-08T15:09:37Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot autoscale with Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/745364d3bf769a7cc2b9c8736313f77d088c2d18/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/linux/image-builder-troubleshoot.md",
+      "revision": "612cca8f6fb96f51ee83373f53f21be544f1cce7",
+      "revision_date": "2024-07-31T15:47:55Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot Azure VM Image Builder",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/image-builder-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/612cca8f6fb96f51ee83373f53f21be544f1cce7/articles/virtual-machines/linux/image-builder-troubleshoot.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 'Total Regional vCPUs' limit apply to all VM sizes, or are there exceptions for specific families like H-series or NV-series?",
+    "How does the quota system handle concurrent deployments from multiple users or services in the same subscription?",
+    "Is there a difference in quota enforcement between Azure Resource Manager (ARM) templates and the Azure Portal UI?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/check-azure-quota-before-a-compute-deployment-fails.md",
+  "draft": true,
+  "word_count": 769,
+  "claim_support_checks": [
+    {
+      "claim": "vCPU quotas are arranged in two tiers: Total Regional vCPUs and VM size family cores.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "New VM deployments are rejected if the required vCPUs exceed the available regional or size-family quota.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Quota is calculated based on the total number of cores in use, including both allocated and deallocated instances.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Reserved VM Instances reserve vCPU capacity within the subscription's regional quota.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a section on 'Troubleshooting autoscale failures' with steps to check audit logs and manually scale. This content is derived from S2 (VMSS Troubleshooting) but is irrelevant to the article's title and primary purpose of checking vCPU quotas before deployment. It introduces unnecessary complexity and distracts from the core quota-checking guidance.",
+      "fix": "Remove the entire 'Troubleshooting autoscale failures' section. The article should focus exclusively on checking and managing vCPU quotas as per S1. Autoscale configuration is a separate topic."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Reserved VM Instances (RIs)... affect your quotas' and that they 'act as a placeholder... to ensure that reserved capacity is always available.' While S1 mentions RIs, the phrasing 'act as a placeholder' is vague and potentially misleading. It implies RIs reserve capacity in a way that blocks other deployments if the regional limit is tight, which is a specific interaction not fully explained as a 'blocker' but rather a reservation guarantee.",
+      "fix": "Clarify that RIs reserve vCPU capacity within the subscription's regional quota. State that if the regional quota is insufficient to cover both existing usage and the RI commitment, a quota increase is needed before purchasing the RI, rather than implying RIs arbitrarily block other deployments."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Verification' section that suggests verifying quota increases by running `az vm list-usage`. While correct, it also suggests checking 'permissions, network configuration, or resource provider limits' as next steps if deployment fails. This broadens the scope beyond the article's title and introduces unsupported troubleshooting paths not detailed in the provided sources.",
+      "fix": "Remove the generic troubleshooting advice. Limit the verification step to confirming the updated quota limit via CLI or Portal. If deployment still fails, direct the user to general deployment troubleshooting resources without listing specific unrelated causes like network configuration."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'A deployment will be rejected if it exceeds either limit.' This is a categorical claim. While generally true for new VMs, it doesn't account for scenarios where existing VMs might be resized or where specific API behaviors might differ. More importantly, it doesn't mention that quota limits can be soft or hard, or that some limits are per-instance vs. total.",
+      "fix": "Refine the claim to: 'New VM deployments are rejected if the required vCPUs exceed the available regional or size-family quota.' This is more precise and aligns with S1's statement that 'Anytime a new VM is deployed the vCPUs for the VM must not exceed the vCPU quota.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a link to 'Troubleshoot Azure VM Image Builder' (S3) in the 'Further documentation' section. S3 is entirely unrelated to vCPU quotas or general VM deployment failures. This is a source misuse, likely due to the historical context including S3.",
+      "fix": "Remove the link to 'Troubleshoot Azure VM Image Builder' from the further documentation section. Only include links relevant to vCPU quotas and autoscale troubleshooting if necessary, but preferably just the quota documentation."
+    }
+  ]
+}

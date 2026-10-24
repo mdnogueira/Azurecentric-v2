@@ -1,0 +1,126 @@
+{
+  "id": "AZC-207",
+  "title": "Import an existing Azure resource into a Terraform workflow",
+  "historical_date": "2025-08-02",
+  "created_at": "2026-10-23T23:28:16.577524+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Reference existing Azure resources in Bicep without taking ownership, distinguishing compile-time imports from deployment-time references.",
+  "tags": [
+    "bicep",
+    "azure-resource-manager",
+    "existing-resources",
+    "infrastructure-as-code",
+    "azure"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/bicep-import.md",
+      "revision": "6f222407557b7ee229409fc2bc6be275f28865a8",
+      "revision_date": "2025-06-03T14:09:49Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Imports in Bicep",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-import",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/6f222407557b7ee229409fc2bc6be275f28865a8/articles/azure-resource-manager/bicep/bicep-import.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/best-practices.md",
+      "revision": "ed91d665a30b65daf1d5fdc8f4a58e2a9a3af7bd",
+      "revision_date": "2025-06-26T11:13:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Learn best practices when developing Bicep files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ed91d665a30b65daf1d5fdc8f4a58e2a9a3af7bd/articles/azure-resource-manager/bicep/best-practices.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/existing-resource.md",
+      "revision": "2cd56622135a63562aa23f269f544bdc85cfa8ee",
+      "revision_date": "2025-03-26T04:01:59Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Reference existing resource in Bicep",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/existing-resource",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/2cd56622135a63562aa23f269f544bdc85cfa8ee/articles/azure-resource-manager/bicep/existing-resource.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Does the API version in the 'existing' declaration need to match the exact version of the resource, or is any compatible version sufficient?",
+    "Are there any performance implications when referencing large numbers of existing resources in a single deployment?",
+    "How does Bicep handle circular dependencies when using 'existing' references across multiple files?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove stock prose and unsupported guarantees; end with the useful next action"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/import-an-existing-azure-resource-into-a-terraform-workflow.md",
+  "draft": true,
+  "word_count": 909,
+  "claim_support_checks": [
+    {
+      "claim": "The 'existing' keyword allows referencing resources not deployed in the current Bicep file without redeploying them.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "To reference a resource in a different scope, the `scope` property must be set.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Bicep imports are for compile-time functionality like types and functions, not for referencing existing Azure resources.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A NotFound error occurs if the referenced resource does not exist.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims `listKeys` requires specific data plane roles like 'Storage Account Key Operator Service Role'. This is inaccurate; `listKeys` is a data plane operation, but the permission requirement is typically Contributor or Owner on the resource for the management plane to trigger it, or specific data plane roles if using RBAC data actions. The 'Service Role' mentioned is a legacy built-in role often not required for simple key listing via ARM API. This misleads users on permission configuration.",
+      "fix": "Clarify that `listKeys` is a data plane operation. State that the deployment identity needs permissions to perform data actions on the resource (e.g., `Microsoft.Storage/storageAccounts/listKeys/action`). Refer to the specific service documentation for exact RBAC roles, avoiding the specific legacy role name unless explicitly documented as the primary requirement for this action in the current version."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states `existing` 'operates at the Azure Resource Manager (ARM) deployment level'. This is imprecise. Bicep compiles to ARM JSON templates. The `existing` keyword is a Bicep language feature that generates an ARM template reference to a resource ID. It does not operate at a distinct 'ARM deployment level' separate from the template compilation. This phrasing confuses the language feature with the deployment engine.",
+      "fix": "Rephrase to: 'The `existing` keyword is a Bicep language feature that generates a reference to an existing resource ID in the compiled ARM template. It allows the deployment to read properties without declaring the resource for creation or update.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'The API version in your `existing` declaration determines which properties are exposed... If the declared API version is too old... causing a deployment error.' This is misleading. Using an older API version might simply result in missing properties (null or error if accessed), but it doesn't necessarily cause a deployment *failure* unless the property is required for a dependent resource or output. The error is usually 'Property does not exist', not a deployment failure per se.",
+      "fix": "Clarify that using an older API version may result in missing properties or errors when accessing those specific properties, rather than a general deployment failure. Advise using a recent API version to ensure property availability, but note that the deployment itself may succeed if the missing properties are not accessed."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Conclusion' section starting with 'The `existing` keyword is the correct way...'. This is a generic concluding paragraph that adds no new technical value and violates the guidance to remove stock conclusion sections.",
+      "fix": "Remove the 'Conclusion' section entirely. End the article with the 'Troubleshooting' section or a concrete verification step, such as 'Verify the deployment by running `az deployment group create` with the template.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Bicep's compile-time `import` feature' in the introduction. While technically correct, the draft does not provide a clear, complete example of `import` vs `existing` in the same context to illustrate the distinction effectively. The example code for `existing` is good, but the contrast with `import` is purely textual.",
+      "fix": "Add a brief, illustrative note or small code snippet showing how `import` brings in types/functions from another Bicep file, contrasting it with `existing` which references an Azure resource ID. This strengthens the distinction made in the introduction."
+    }
+  ]
+}

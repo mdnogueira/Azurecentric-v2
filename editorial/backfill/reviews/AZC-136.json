@@ -1,0 +1,80 @@
+{
+  "id": "AZC-136",
+  "title": "Investigate a VM that cannot boot from installation media",
+  "slug": "investigate-a-vm-that-cannot-boot-from-installation-media",
+  "historical_date": "2025-01-15",
+  "input_sha256": "495086e0fcf6ebd9108a768ad6def1e33cf3f42c2fb33de925968d6b77fc4377",
+  "created_at": "2026-10-23T21:12:06.193234+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot a Hyper-V VM failing to boot from installation media by verifying generation, boot order, and ISO attachment.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "revision": "e28a2171cdb0461e6808c79f9e78cae1970b0051",
+      "revision_date": "2025-01-06T16:31:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a virtual machine in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e28a2171cdb0461e6808c79f9e78cae1970b0051/WindowsServerDocs/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/learn-more/Generation-1-virtual-machine-security-settings-for-Hyper-V.md",
+      "revision": "e28a2171cdb0461e6808c79f9e78cae1970b0051",
+      "revision_date": "2025-01-06T16:31:22Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Generation 1 virtual machine security settings for Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e28a2171cdb0461e6808c79f9e78cae1970b0051/WindowsServerDocs/virtualization/hyper-v/learn-more/Generation-1-virtual-machine-security-settings-for-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2025-01-15: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/virtualization/hyper-v/generation-2-virtual-machine-security-features.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-vm-that-cannot-boot-from-installation-media.md",
+  "draft": true,
+  "word_count": 968,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Incorrect controller mapping for Gen 2 boot media. The draft claims Gen 2 UEFI boot requires the ISO on an IDE controller and warns against SCSI. In reality, Gen 2 VMs use SCSI for hard disks and DVD drives; UEFI boot works from the SCSI DVD drive. IDE is only for Gen 1.",
+      "fix": "Correct the text to state that Generation 2 VMs use SCSI controllers for both hard disks and DVD drives. UEFI boot requires the ISO to be attached to the SCSI DVD drive, not IDE. Remove the warning about SCSI for Gen 2."
+    },
+    {
+      "severity": "high",
+      "problem": "Misleading BIOS boot order explanation. The draft states Hyper-V does not expose BIOS boot order and relies on 'Installation Options'. This is false; Hyper-V Manager has a 'Firmware' (Gen 2) or 'BIOS' (Gen 1) settings page where users can explicitly reorder boot devices.",
+      "fix": "Clarify that Hyper-V Manager provides a 'Firmware' or 'BIOS' settings page where boot order can be manually adjusted for both generations. Remove the claim that the wizard alone dictates boot priority without manual intervention in settings."
+    },
+    {
+      "severity": "medium",
+      "problem": "Unsupported PowerShell example. The draft includes a `New-VM` command with `-BootDevice VHD` but attaches a VHDX. While valid, it does not illustrate booting from ISO. It also uses `VMConnect.exe` which is not a standard PowerShell cmdlet and may not be available on all server cores.",
+      "fix": "Replace the `New-VM` example with one demonstrating ISO attachment via `Set-VMDvdDrive` or `New-VM` with `-BootDevice NetworkAdapter` if PXE is intended. Remove `VMConnect.exe` usage; recommend using Hyper-V Manager or `Enter-PSSession` for remote management."
+    },
+    {
+      "severity": "low",
+      "problem": "Vague troubleshooting step. The draft suggests checking if the ISO is 'UEFI-bootable' but doesn't explain how to verify this or what happens if it isn't (e.g., Secure Boot errors). It also mentions 'black screen' which is often a display adapter issue, not just boot media.",
+      "fix": "Specify that non-UEFI ISOs on Gen 2 VMs may result in 'Secure Boot Violation' or 'No Boot Device' depending on firmware settings. Add a note to check the virtual machine's 'Security' settings for Secure Boot if Gen 2 is used."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "AZC-107",
+  "title": "Investigate messages in a Service Bus dead-letter queue",
+  "slug": "investigate-messages-in-a-service-bus-dead-letter-queue",
+  "historical_date": "2024-10-26",
+  "input_sha256": "373168b3f9763f853885c1efe137e0b85bc0342a179fc05c4909bcf4dad64810",
+  "created_at": "2026-10-23T14:39:01.011568+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to inspect Service Bus dead-letter queues, identify failure reasons, and verify the fix.",
+  "tags": [
+    "service-bus",
+    "dead-letter-queue",
+    "troubleshooting",
+    "azure-cli",
+    "dotnet"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/service-bus-dead-letter-queues.md",
+      "revision": "7b342c188399b60f335f674b0894cbc037c52017",
+      "revision_date": "2024-09-30T21:45:53Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Service Bus dead-letter queues | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dead-letter-queues",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7b342c188399b60f335f674b0894cbc037c52017/articles/service-bus-messaging/service-bus-dead-letter-queues.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/enable-dead-letter.md",
+      "revision": "63fdd8b1be8f10c43061bb0e261ca7bb17ff5b8d",
+      "revision_date": "2024-06-13T20:58:17Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Enable dead lettering for Azure Service Bus queues and subscriptions",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/enable-dead-letter",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/63fdd8b1be8f10c43061bb0e261ca7bb17ff5b8d/articles/service-bus-messaging/enable-dead-letter.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/service-bus-messaging/message-browsing.md",
+      "revision": "e20713bedea0fe3b157b14f25f8d176aeb8de3aa",
+      "revision_date": "2024-07-25T22:03:56Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Azure Service Bus - Browse or peek messages",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-browsing",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/e20713bedea0fe3b157b14f25f8d176aeb8de3aa/articles/service-bus-messaging/message-browsing.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: includes/service-bus-track-0-and-1-sdk-support-retirement.md"
+  ],
+  "open_questions": [
+    "Does the Premium tier offer a higher single-message size limit than the Standard tier's 256 KB, or is the limit consistent across tiers with Premium offering higher throughput?",
+    "Are there any specific permissions required to peek messages from a DLQ beyond the standard Contributor/Reader roles on the namespace?",
+    "What is the exact behavior of the `az servicebus queue show` command regarding DLQ message count? Does it return the count directly or require parsing?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-messages-in-a-service-bus-dead-letter-queue.md",
+  "draft": true,
+  "word_count": 1135,
+  "claim_support_checks": [
+    {
+      "claim": "The DLQ is a secondary subqueue that exists automatically for every queue and topic subscription and cannot be deleted independently.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Messages are moved to the DLQ when they exceed the maximum delivery count, which defaults to 10.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The path to the DLQ for a queue is <queue path>/$deadletterqueue.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "In .NET, QueueClient.FormatDeadLetterPath is used to format the DLQ path for a queue.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure CLI can be used to check the count of messages in the DLQ for both queues and subscriptions.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Deferred messages are not purged and moved to the DLQ after they expire.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The 256 KB quota limit for message size applies to the Standard Tier of Azure Service Bus.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft uses `ServiceBusClient.FormatDeadLetterPath`, which is incorrect. The source (S1) specifies `QueueClient.FormatDeadLetterPath` and `SubscriptionClient.FormatDeadLetterPath`. `ServiceBusClient` does not have this static method. This will cause compilation errors.",
+      "fix": "Change the code example to use `QueueClient.FormatDeadLetterPath(queueName)` for queues or `SubscriptionClient.FormatDeadLetterPath(topicPath, subscriptionName)` for subscriptions, as documented in S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims the 256 KB quota limit applies to the Standard Tier. S1 states this limit is for the Standard Tier, but implies Premium has higher limits. The draft suggests upgrading to Premium solely for header size, which is misleading as Premium is primarily for throughput/latency. Also, S1 mentions the 256 KB limit specifically for Standard Tier message size, not just headers.",
+      "fix": "Clarify that the 256 KB message size limit is a Standard Tier constraint. Note that upgrading to Premium increases throughput and latency guarantees, not necessarily the single message size limit (which is generally 256KB for Standard and 1MB for Premium, but verify current docs). Avoid implying Premium is the only solution for large headers if other tiers (like Basic) have different limits, but stick to S1's explicit mention of Standard vs Premium quotas."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph starting with 'The key to managing...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar structures.",
+      "fix": "Remove the final paragraph starting with 'The key to managing dead-letter queues...'. End the article with the verification step or the tool recommendation, as per the guidance to 'End when the technical question is answered'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'You can also check the count of messages in the DLQ using the Azure CLI... az servicebus topic subscription show'. S1 confirms this command shows the count. However, the draft does not mention that for queues, the count is available via `az servicebus queue show`. The omission is minor but incomplete for a 'how-to'.",
+      "fix": "Add the corresponding Azure CLI command for queues: `az servicebus queue show` to provide complete coverage for both queue and subscription DLQ inspection as implied by the 'how-to' nature."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft code example uses `message.SystemProperties.DeadLetterReason`. In the `Azure.Messaging.ServiceBus` SDK (S1 references `ServiceBusReceiver`), the dead-letter properties are accessed via `message.SystemProperties.DeadLetterReason` and `DeadLetterDescription`. However, the draft's code snippet uses `message.Body.ToString()` which may fail if the body is a byte array or complex type. S1's sample code uses `msg.Body.ToString()` which is illustrative but potentially unsafe. More critically, the draft code does not handle the `SequenceNumber` or lock token correctly if it were to receive, but it only peeks. The main issue is the potential for `ToString()` to be unhelpful for binary payloads.",
+      "fix": "Mark the code as illustrative (already done) but ensure the body access is safe. A better approach is to check `message.Body.ContentType` or use `message.Body.ToObject<T>()` if applicable. For a simple string body, `message.Body.ToString()` is acceptable in an illustrative context, but the primary error remains the `FormatDeadLetterPath` method call."
+    }
+  ]
+}

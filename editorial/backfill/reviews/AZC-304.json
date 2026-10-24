@@ -1,0 +1,150 @@
+{
+  "id": "AZC-304",
+  "title": "Investigate a workflow trigger that fires unexpectedly",
+  "slug": "investigate-a-workflow-trigger-that-fires-unexpectedly",
+  "historical_date": "2026-04-29",
+  "input_sha256": "cda3f6fd36939772e4657166105738373ef143501d841fd524ff773e40a509ed",
+  "created_at": "2026-10-23T19:20:15.752693+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate unexpected Logic Apps triggers by reviewing trigger history, run history, and error handling to identify root causes.",
+  "tags": [
+    "azure-logic-apps",
+    "troubleshooting",
+    "workflow-automation",
+    "trigger-history",
+    "error-handling"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-304-learn-1.png",
+      "alt": "Screenshot showing Azure portal with Consumption logic app workflow trigger history.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/86af021d02b5b29f2e9a69244e9d012690b8499e/articles/logic-apps/media/logic-apps-diagnosing-failures/logic-app-trigger-history-consumption.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-05T05:20:11Z",
+      "sha256": "80d5e5a05f4b1231656b1fc80abbe644cf8e9d771ccd935a6576855f81926392",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-304-learn-2.png",
+      "alt": "Screenshot shows list for Select actions with predecessor operations.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c17581476c38e7112ce6ff3438817e7eae601be0/articles/logic-apps/media/error-exception-handling/predecessor-operations.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-07-21T23:56:14Z",
+      "sha256": "9667baa8bbce8a658847ef76bb6875436a63aaa5af0e5efb772af763eab3693f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/logic-apps-diagnosing-failures.md",
+      "revision": "86af021d02b5b29f2e9a69244e9d012690b8499e",
+      "revision_date": "2025-09-05T05:20:11Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Troubleshoot and Diagnose Workflow Failures",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-diagnosing-failures",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/86af021d02b5b29f2e9a69244e9d012690b8499e/articles/logic-apps/logic-apps-diagnosing-failures.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/error-exception-handling.md",
+      "revision": "c17581476c38e7112ce6ff3438817e7eae601be0",
+      "revision_date": "2025-07-21T23:56:14Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Handle errors and exceptions in workflows",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/error-exception-handling",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c17581476c38e7112ce6ff3438817e7eae601be0/articles/logic-apps/error-exception-handling.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found"
+  ],
+  "open_questions": [
+    "Does the trigger history show any attempts that did not result in a run?",
+    "Are the trigger inputs consistent with the expected payload from the external system?",
+    "Is the error handling in the workflow sufficient to prevent unexpected failures?",
+    "Are there any network or connectivity issues that could affect the trigger or actions?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-workflow-trigger-that-fires-unexpectedly.md",
+  "draft": true,
+  "word_count": 1058,
+  "claim_support_checks": [
+    {
+      "claim": "Trigger history lists all trigger attempts, including those that did not result in a successful workflow execution.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Trigger inputs include the data that the trigger expects and requires to start the workflow.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Trigger outputs include the data that the trigger passes to the next step in your workflow.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "By default, an action runs only if the preceding action completes with Succeeded status.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "If an action throws an unhandled error, the action is marked Failed, and any successor action is marked Skipped.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "You can change the run after behavior to allow an action to run if the predecessor failed, skipped, or timed out.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to navigate to the 'Workflow' section and select 'Trigger history'. The source (S1) and standard Azure Portal UI for Logic Apps do not have a 'Workflow' section containing 'Trigger history'; trigger history is accessed via the 'Triggers' node in the designer or the 'Run history' blade. This is a hallucinated navigation path.",
+      "fix": "Correct the navigation instructions to match the source: Open the workflow designer, select the trigger, and view its history, or use the 'Run history' blade to inspect specific runs. Remove the non-existent 'Workflow' section reference."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states: 'A trigger attempt might not result in a run if the trigger fails before the workflow starts.' This is technically inaccurate. A trigger failure (e.g., bad request, timeout) still generates a 'run' record in the run history with a 'Failed' status. The source (S1) distinguishes between trigger attempts and workflow runs, but implies runs are created for trigger events.",
+      "fix": "Clarify that a failed trigger attempt still appears in the Run History as a failed run. The distinction is between the trigger's success/failure and the workflow's execution status, not the absence of a run record."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot of the 'Select actions' list for 'Run after' settings (S2) in the context of 'Handle errors and exceptions'. While the source supports this, the guidance is generic. The draft fails to mention that 'Run after' settings are only available for actions *after* the first action, a key constraint in S2.",
+      "fix": "Add a note that 'Run after' settings are not available for the first action in a workflow, as it always runs after the trigger. This prevents users from looking for settings that don't exist on the trigger node."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using Webhook Tester for runtime debugging. While supported by S1, it does not warn about security implications or the transient nature of the service. The draft presents it as a 'practical approach' without caveats about sensitive data exposure.",
+      "fix": "Add a warning that Webhook Tester is a public, transient service. Advise against sending sensitive data (PII, secrets) to it. Suggest using local debugging or secure logging for production workflows."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims: 'If the trigger fails, the run might be marked as failed immediately, or it might have proceeded if the error was handled.' This is misleading. If the trigger itself fails (e.g., HTTP 400), the workflow does not proceed to actions. Error handling (Run After) applies to *actions*, not the trigger's initial success/failure in starting the run.",
+      "fix": "Correct the logic: If the trigger fails to initiate the workflow (e.g., validation error), no run occurs. If the trigger succeeds but an action fails, Run After settings determine subsequent flow. Do not imply a failed trigger can be 'handled' by Run After settings."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "AZC-048",
+  "title": "Use managed identity for a supported workflow connection",
+  "slug": "use-managed-identity-for-a-supported-workflow-connection",
+  "historical_date": "2024-05-13",
+  "input_sha256": "fbdf0f255b39987dccedf0f4855f0a3b77d0e67ab18b2357e8ff58080259b49c",
+  "created_at": "2026-10-23T13:19:52.650026+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable managed identities for Logic Apps and API Management to authenticate connections without storing credentials.",
+  "tags": [
+    "managed-identity",
+    "logic-apps",
+    "api-management",
+    "azure-rbac",
+    "security"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-048-learn-1.png",
+      "alt": "Screenshot shows Azure portal, Consumption logic app, Identity page, and System assigned tab with selected options, On and Save.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/5aa34954f0de9302a3d02b8214816bed68db49ed/articles/logic-apps/media/authenticate-with-managed-identity/enable-system-assigned-identity-consumption.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-05-10T20:50:44Z",
+      "sha256": "122ff541d5c290c08a7ba121f1023be6ead6b4cc3ddd9a854b7980a5ad0d4981",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-048-learn-2.png",
+      "alt": "Screenshot shows Azure portal, workflow designer, and trigger or action with opened settings.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/24a5603f50707da817cc47a37ca4dc2dd7f64864/articles/logic-apps/media/logic-apps-securing-a-logic-app/open-action-trigger-settings-standard.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-04-18T18:22:00Z",
+      "sha256": "27b1f3e1288631a6cadb8440a26b8ad171d44e897306c799a787b6168d78468d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/authenticate-with-managed-identity.md",
+      "revision": "5aa34954f0de9302a3d02b8214816bed68db49ed",
+      "revision_date": "2024-05-10T20:50:44Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Authenticate access and connections with managed identities",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/authenticate-with-managed-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5aa34954f0de9302a3d02b8214816bed68db49ed/articles/logic-apps/authenticate-with-managed-identity.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/api-management/api-management-howto-use-managed-service-identity.md",
+      "revision": "622c141f38ed3a9a005bc5a3368b56451a320098",
+      "revision_date": "2024-03-21T17:39:08Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Use managed identities in Azure API Management | Microsoft Docs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/622c141f38ed3a9a005bc5a3368b56451a320098/articles/api-management/api-management-howto-use-managed-service-identity.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/logic-apps/logic-apps-securing-a-logic-app.md",
+      "revision": "24a5603f50707da817cc47a37ca4dc2dd7f64864",
+      "revision_date": "2024-04-18T18:22:00Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Secure access and data in workflows",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/24a5603f50707da817cc47a37ca4dc2dd7f64864/articles/logic-apps/logic-apps-securing-a-logic-app.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the user need to know the specific list of connectors that support managed identities for their specific Logic App type (Consumption vs Standard)?",
+    "Are there any specific network configuration requirements (e.g., VNet integration) for the managed identity to reach the target resource if it is behind a firewall?",
+    "How does the token refresh mechanism work for long-running workflows or API Management policies?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-managed-identity-for-a-supported-workflow-connection.md",
+  "draft": true,
+  "word_count": 1024,
+  "claim_support_checks": [
+    {
+      "claim": "A Logic App resource can enable and use only one unique system-assigned identity.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "A Consumption Logic App can use either system-assigned or user-assigned identity, but not both.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "An API Management instance can have up to 10 user-assigned managed identities.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "The target Azure resource and the managed identity must use the same Azure subscription.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "System-assigned identity for Standard Logic Apps is enabled by default.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the target resource and managed identity must be in the same Azure subscription. Source S1 states this for Logic Apps, but S2 (API Management) and general Azure MI documentation do not enforce this cross-subscription restriction. This is a false universal constraint.",
+      "fix": "Remove the absolute claim about same-subscription requirement. Clarify that while Logic Apps documentation highlights same-subscription scenarios, cross-subscription access is possible with proper RBAC configuration and trust."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states Standard Logic Apps can use both identity types simultaneously but 'only one identity is active for authentication at any given time.' Source S1 does not support this 'single active identity' limitation for Standard apps; it only limits the number of identities used per connection operation, not globally.",
+      "fix": "Remove the claim that only one identity is active globally for Standard Logic Apps. Clarify that different connections within the workflow can use different assigned identities."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies API Management uses the system-assigned identity to bypass Key Vault firewalls. Source S2 notes this is a 'trusted service' feature, but requires specific configuration (bypass option) and is not automatic. The draft omits this critical network context.",
+      "fix": "Add context that bypassing firewalls requires enabling 'Allow Trusted Microsoft Services' in Key Vault and using the system-assigned identity. Mention VNet/service endpoint requirements if applicable."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with 'By following these steps, you can secure your Azure integrations...'. This is a generic concluding paragraph that violates the editorial guidance to end with concrete verification or next actions.",
+      "fix": "Remove the generic concluding paragraph. End with the verification step: 'Run your workflow or send a test request to verify the connection succeeds without credential errors.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a screenshot caption 'Used with permission from Microsoft' in the visual review metadata, but the guidance prohibits visible permission captions. While the JSON metadata is internal, the draft body should not imply external permission is needed for the text itself.",
+      "fix": "Ensure the final output does not display permission captions. The JSON metadata is acceptable for review records, but the visible content must be clean."
+    }
+  ]
+}

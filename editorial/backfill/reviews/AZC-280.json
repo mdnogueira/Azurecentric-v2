@@ -1,0 +1,126 @@
+{
+  "id": "AZC-280",
+  "title": "Choose availability zones during the initial VM design",
+  "slug": "choose-availability-zones-during-the-initial-vm-design",
+  "historical_date": "2026-02-22",
+  "input_sha256": "4819b2dd1ef586965a954dbf441b07a9e47301c6745f2bb824a823137a5379fe",
+  "created_at": "2026-10-23T18:45:24.953319+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Why availability zones must be chosen during initial VMSS design and how to configure them correctly.",
+  "tags": [
+    "azure-virtual-machines",
+    "availability-zones",
+    "virtual-machine-scale-sets",
+    "high-availability",
+    "azure-cli",
+    "arm-templates"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create an Azure scale set that uses Availability Zones",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machines/availability-set-overview.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Availability sets overview",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machines/availability-set-overview.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machines/availability-set-overview.md",
+    "Public document removed/moved on 2026-01-20T21:43:59Z; used previous public snapshot. Confirm continued applicability: articles/bastion/includes/availability-zone-regions-include.md"
+  ],
+  "open_questions": [
+    "Is the preview status of zonal expansion still valid in February 2026, or has it reached GA?",
+    "Are there any new limitations or requirements for zonal expansion that were introduced after the source date?",
+    "Is the 99.99% SLA for zone-redundant scale sets still accurate, or has it changed?",
+    "Are there any new VM sizes or disk types that have specific zone availability constraints?",
+    "Is the Azure CLI command for listing instances still the most efficient way to verify zone distribution?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-availability-zones-during-the-initial-vm-design.md",
+  "draft": true,
+  "word_count": 1297,
+  "claim_support_checks": [
+    {
+      "claim": "Availability zones are fault-isolated locations within an Azure region that provide redundant power, cooling, and networking.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Zone redundant scale sets spread instances across all selected zones and meet the 99.99% SLA.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Updating a scale set to add availability zones is currently in preview and only supports stateless workloads.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Availability sets place VMs in different fault domains and meet the 99.95% Azure SLA.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Availability zones offer the highest reliability since each VM is deployed in multiple datacenters.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft asserts that updating a VMSS to add availability zones is 'currently in preview' and implies this restriction is permanent or the primary reason for initial design. The source is dated August 2024. The brief requires guidance as of February 2026. This is likely outdated information, as such features often reach GA. Claiming it is still in preview without verifying 2026 status is a factual error.",
+      "fix": "Verify the GA status of zonal expansion for VMSS in February 2026. If GA, remove 'preview' references and update the 'Why initial design matters' section to reflect that while expansion is possible, it requires manual instance management and has specific workload limitations (stateless only, no Service Fabric/AKS)."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Availability zones offer the highest reliability since each VM is deployed in multiple datacenters.' This is technically inaccurate. A VM instance is pinned to a single availability zone (which may contain multiple datacenters), not 'multiple datacenters' in the sense of multi-region or multi-zone redundancy for that specific instance. The source says zones protect against 'loss of... an individual datacenter', not that the VM spans them.",
+      "fix": "Correct the claim to state that availability zones provide redundancy by spreading instances across separate zones, each containing independent datacenters. Clarify that a single VM instance resides in one zone, but the application achieves high availability by having instances in multiple zones."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If you start with a regional scale set, you are stuck with regional instances until you manually scale out new zonal instances and scale in the old ones.' This ignores the 'Update scale set to add availability zones' feature described in S1. While the draft mentions this feature, it dismisses it as 'complex and risky' without detailing the specific constraints (e.g., cannot remove zones, stateless only). The tone is overly negative and potentially misleading if the feature is GA in 2026.",
+      "fix": "Reframe the section to objectively describe the zonal expansion process: it adds new zonal instances while keeping existing regional ones, requiring manual or scripted scale-in of regional instances. Highlight the specific constraints (stateless, no Service Fabric/AKS) rather than just calling it 'risky'."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a verification step using `az vmss list-instances` but does not mention that the `--query` output might need filtering or that the `zone` property might be null for regional instances if the scale set was created without zones. The source S1 does not explicitly detail the CLI verification command, but it is a standard pattern. However, the draft presents it as the definitive way to verify distribution without noting potential null values for regional instances.",
+      "fix": "Add a note that instances in a regional scale set will have a null or empty zone value. Ensure the verification step accounts for this to distinguish between regional and zonal instances clearly."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Availability sets offer improved VM to VM latencies compared to availability zones.' While S2 states 'Availability sets offer improved VM to VM latencies compared to availability zones', this is a generalization. Latency depends on the specific zones and the physical distance between them. In some cases, zonal instances in adjacent zones may have lower latency than instances in different fault domains within the same zone if the fault domains are physically distant.",
+      "fix": "Qualify the latency claim. State that availability sets generally offer lower latency because VMs are placed in closer proximity within the same datacenter/zone, whereas availability zones span separate datacenters. Avoid absolute statements about latency superiority without context."
+    }
+  ]
+}

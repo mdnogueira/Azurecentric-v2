@@ -1,0 +1,150 @@
+{
+  "id": "AZC-083",
+  "title": "Prepare Azure administrators for mandatory multifactor authentication",
+  "historical_date": "2024-08-19",
+  "created_at": "2026-10-23T23:57:11.519454+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Prepare Azure administrators for mandatory multifactor authentication (MFA) enforcement starting October 2024.",
+  "tags": [
+    "conditional-access",
+    "mfa",
+    "entra-id",
+    "security",
+    "azure-portal"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://azure.microsoft.com/en-us/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2024-08-15T15:00:00+00:00",
+      "published_at": "2024-08-15T15:00:00+00:00",
+      "checked_at": "2026-10-23T11:52:40.611131+00:00",
+      "title": "Prepare Azure administrators for mandatory multifactor authentication",
+      "url": "https://azure.microsoft.com/en-us/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/",
+      "snapshot_url": "https://azure.microsoft.com/en-us/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2025-09-05T15:12:55+00:00"
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/authentication/concept-mandatory-multifactor-authentication.md",
+      "revision": "96f61ec5c9cb18dc0914e9fab6f88f4d12495ad5",
+      "revision_date": "2024-08-15T19:20:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Mandatory Microsoft Entra multifactor authentication (MFA)",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/96f61ec5c9cb18dc0914e9fab6f88f4d12495ad5/docs/identity/authentication/concept-mandatory-multifactor-authentication.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "revision": "1ca3fa0f96ad8e1347fcc0cf9640523518954305",
+      "revision_date": "2024-08-08T21:31:16Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Require multifactor authentication for Microsoft admin portals",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/how-to-policy-mfa-admin-portals",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/1ca3fa0f96ad8e1347fcc0cf9640523518954305/docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
+      "revision": "0104c708b57bf60e8cab28960088f014946e5fd5",
+      "revision_date": "2024-07-19T20:43:24Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Require phishing-resistant multifactor authentication for Microsoft Entra administrator roles",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/0104c708b57bf60e8cab28960088f014946e5fd5/docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "How should administrators handle MFA registration for users who are not currently registered and cannot be reached before the enforcement date?",
+    "What is the exact process for migrating user-based service accounts to workload identities to avoid the early 2025 MFA requirement for CLI/PowerShell?",
+    "Are there specific limitations or known issues with external authentication methods in preview that could affect the mandatory MFA compliance?"
+  ],
+  "research_warnings": [
+    "Include unavailable: includes/entra-policy-exclude-user.md",
+    "Include unavailable: includes/entra-policy-deploy-template.md",
+    "Include unavailable: includes/entra-policy-exclude-user.md",
+    "Include unavailable: includes/entra-policy-deploy-template.md",
+    "Announcement may have later updates; exclude information introduced after 2024-08-19"
+  ],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove future year reference 2025"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/prepare-azure-administrators-for-mandatory-multifactor-authentication.md",
+  "draft": true,
+  "word_count": 1137,
+  "claim_support_checks": [
+    {
+      "claim": "MFA is mandatory for sign-ins to the Azure portal, Microsoft Entra admin center, and Intune admin center starting in the second half of 2024.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Workload identities like managed identities are not impacted by the MFA enforcement, but user identities used for automation will need MFA.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Conditional Access policies for MFA should be created in report-only mode first to verify impact without blocking access.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Global Administrators can postpone the enforcement start date to 15 March 2025 if they have complex environments or technical barriers.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Break-glass accounts are required to sign in with MFA once enforcement begins. Microsoft recommends updating these accounts to use passkey (FIDO2) or certificate-based authentication for MFA.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs administrators to exclude break-glass accounts from the MFA policy. This contradicts the editorial guidance which mandates using authorized, non-disruptive exercises with working administrative routes, rather than bypassing MFA for emergency accounts. Break-glass accounts must also comply with MFA.",
+      "fix": "Remove the instruction to exclude break-glass accounts from the Conditional Access policy. Instead, instruct administrators to configure break-glass accounts with phishing-resistant MFA (FIDO2 or Certificate-based) as recommended by the source, ensuring they remain compliant."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims SMS/voice is the 'least secure version of MFA' and implies it is not phishing-resistant. While true, the source explicitly lists it as a supported method to meet the requirement. The draft's tone is overly prescriptive and potentially misleading regarding compliance eligibility.",
+      "fix": "Rephrase to state that SMS/voice is supported but less secure than phishing-resistant methods. Clarify that while it meets the mandatory MFA requirement, phishing-resistant methods (FIDO2, Cert, Authenticator) are recommended for higher security."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a 'Further documentation' paragraph at the end. The editorial guidance strictly forbids generic concluding paragraphs and requires ending with a concrete verification or next action.",
+      "fix": "Remove the 'Further documentation' section. End the article with the concrete action: 'Verify that no administrators are left without a valid MFA method, then enable enforcement to ensure readiness for the October rollout.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that 'legacy Conditional Access custom controls will not satisfy the mandatory MFA enforcement.' This is a categorical claim that needs precise sourcing. The source says they won't satisfy the requirement, but the draft's phrasing is absolute without context on migration paths.",
+      "fix": "Clarify that legacy custom controls are deprecated for this purpose and administrators must migrate to external authentication methods or standard MFA requirements to satisfy the enforcement, as per the source guidance."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Microsoft Admin Portals' app object. While correct, it does not explicitly link this to the specific App IDs provided in the source for query purposes, which might confuse readers trying to use the workbook.",
+      "fix": "Add a brief note that the 'Microsoft Admin Portals' app object corresponds to the App ID `c44b4083-3bb0-49c1-b47d-974e53cbdf3c` used in the MFA Gaps workbook, ensuring consistency between policy configuration and monitoring."
+    }
+  ]
+}

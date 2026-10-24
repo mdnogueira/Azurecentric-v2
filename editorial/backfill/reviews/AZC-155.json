@@ -1,0 +1,147 @@
+{
+  "id": "AZC-155",
+  "title": "GitHub Code Security and Secret Protection: plan for the new product choices",
+  "slug": "github-code-security-and-secret-protection-plan-for-the-new-product-choices",
+  "historical_date": "2025-03-08",
+  "input_sha256": "ed14d90bd2a6a432e2ff779ba9eaa10c22ef6df22cf18c1dbde6dea63c1c83d2",
+  "created_at": "2026-10-23T15:50:00.730442+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan for GitHub's new security products starting April 2025, separating secret protection from code security.",
+  "tags": [
+    "github",
+    "security",
+    "advanced-security",
+    "secret-protection",
+    "code-security"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "unknown",
+      "published_at": "unknown",
+      "checked_at": "2026-10-23T11:53:00.901342+00:00",
+      "title": "GitHub Code Security and Secret Protection: plan for the new product choices",
+      "url": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+      "snapshot_url": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2025-04-30T12:31:54+00:00"
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/adopting-github-advanced-security-at-scale/introduction-to-adopting-github-advanced-security-at-scale.md",
+      "revision": "3c98b66164bfa6c5a6ba52159dd73e8d10f490e4",
+      "revision_date": "2025-03-05T11:35:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Introduction to adopting GitHub Advanced Security at scale",
+      "url": "https://docs.github.com/en/code-security/adopting-github-advanced-security-at-scale/introduction-to-adopting-github-advanced-security-at-scale",
+      "snapshot_url": "https://github.com/github/docs/blob/3c98b66164bfa6c5a6ba52159dd73e8d10f490e4/content/code-security/adopting-github-advanced-security-at-scale/introduction-to-adopting-github-advanced-security-at-scale.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/index.md",
+      "revision": "0619ee4b5888774b17c9f083b9ae04593ad2d9c7",
+      "revision_date": "2025-01-13T09:50:18Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Code security documentation",
+      "url": "https://docs.github.com/en/code-security/index",
+      "snapshot_url": "https://github.com/github/docs/blob/0619ee4b5888774b17c9f083b9ae04593ad2d9c7/content/code-security/index.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/security-overview/index.md",
+      "revision": "3c98b66164bfa6c5a6ba52159dd73e8d10f490e4",
+      "revision_date": "2025-03-05T11:35:19Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Viewing security information for your organization or enterprise",
+      "url": "https://docs.github.com/en/code-security/security-overview/index",
+      "snapshot_url": "https://github.com/github/docs/blob/3c98b66164bfa6c5a6ba52159dd73e8d10f490e4/content/code-security/security-overview/index.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2025-03-08"
+  ],
+  "open_questions": [
+    "What are the specific transition instructions for existing self-serve customers?",
+    "How does the 'active committer' metric change with the new billing model?",
+    "Are there any compatibility issues with existing GitHub Actions workflows when enabling push protection?",
+    "What is the exact process for transitioning from the old GHAS plan to the new standalone products for Enterprise customers?",
+    "How does the security overview data differ between the two new products?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/github-code-security-and-secret-protection-plan-for-the-new-product-choices.md",
+  "draft": true,
+  "word_count": 996,
+  "claim_support_checks": [
+    {
+      "claim": "GitHub Advanced Security splits into two standalone products starting 1 April 2025.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "GitHub Secret Protection costs $19 per month per active committer.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "GitHub Code Security costs $30 per month per active committer.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "GitHub Team plan customers can purchase these products starting 1 April 2025.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "GitHub recommends a six-phase approach for adopting GHAS at scale.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states that GitHub Secret Protection includes 'AI-detected passwords' as a feature. Source S1 mentions 'AI detection with a low rate of false positives' but does not specify 'passwords' as the specific AI-detected content type. This is an unsupported specific fact not found in the provided text.",
+      "fix": "Remove the specific reference to 'passwords' and retain the general capability description: 'AI detection with a low rate of false positives' as stated in Source S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Copilot Autofix for vulnerabilities in existing code and pull requests' is a feature of GitHub Code Security. Source S1 lists 'Copilot Autofix for vulnerabilities in existing code and pull requests' under Code Security. However, the draft implies this is a universal capability without noting potential limitations or prerequisites (e.g., Copilot license requirements) which are often context-dependent in GitHub docs.",
+      "fix": "Remove the subjective claim that push protection is the 'critical differentiator.' State it as a feature that prevents secret leaks, as described in Source S1, without assigning it a unique status not explicitly supported by the text."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that the 'Security Overview' feature is identical or functionally equivalent between the two products. Source S1 states both include 'Security overview, which provides insight into the distribution of risk across your organization.' Source S4 details Security Overview. The draft does not distinguish if the metrics or data sources differ between Secret Protection and Code Security within the Overview. This is a vague how-to/feature description that might mislead users expecting a unified view.",
+      "fix": "Clarify that while both products include Security Overview, the specific metrics and risk insights provided may vary by product focus (secrets vs. code vulnerabilities), as implied by the distinct feature sets in Source S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'If you need both, the cost is $49 per month per active committer.' Source S1 lists the individual prices ($19 and $30). It does not explicitly state that they can be purchased together for a combined price or if there is any bundle discount. While mathematically $19+$30=$49, the source does not confirm the ability to purchase both simultaneously for a single committer in a bundled manner, or if they are separate line items. This is a minor inference.",
+      "fix": "State that the combined cost is $49 per month per active committer if both products are purchased, based on the individual prices listed in Source S1, without implying a specific bundled discount or package structure not explicitly detailed."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Next steps' section with generic advice ('Check your current GitHub plan... Start by aligning...'). The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar, and advises ending with a concrete verification or next action. The current 'Next steps' is somewhat generic.",
+      "fix": "Remove the generic 'Next steps' paragraph. End with the concrete action of checking organization settings for Team plan users or contacting the account team for Enterprise users, as specified in Source S1."
+    }
+  ]
+}

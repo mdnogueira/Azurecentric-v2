@@ -1,0 +1,157 @@
+{
+  "id": "AZC-254",
+  "title": "Configure Hyper-V Replica for a defined recovery scenario",
+  "slug": "configure-hyper-v-replica-for-a-defined-recovery-scenario",
+  "historical_date": "2025-12-10",
+  "input_sha256": "dffa7acfcbc82aaf7f2d1fdbad2586ba634138d2008463c437c93bef6a73109f",
+  "created_at": "2026-10-23T18:11:27.398589+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Hyper-V Replica for Windows Server 2025: host setup, VM replication, and failover verification.",
+  "tags": [
+    "hyper-v",
+    "hyper-v-replica",
+    "disaster-recovery",
+    "windows-server-2025",
+    "virtualization"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-254-learn-1.png",
+      "alt": "A screenshot of the Replication Configuration settings in Hyper-V Manager showing options to enable the server as a Replica and configure authentication and authorization.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/03f2ce39dce630b1637d6270e9ebd42150af8151/WindowsServerDocs/virtualization/hyper-v/media/configure-replication-single-host/replication-settings-hyper-v-manager.png",
+      "source_id": "S2",
+      "source_revision_date": "2025-11-17T09:57:21Z",
+      "sha256": "bcb923059200eb94d5dc86cc3bed474d83c4853a627bf7cf892d7bd0b850d076",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-254-learn-2.png",
+      "alt": "A screenshot of the Enable Replication wizard showing the Specify Replica Server page with the Replica Server name field.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/windowsserverdocs/03f2ce39dce630b1637d6270e9ebd42150af8151/WindowsServerDocs/virtualization/hyper-v/media/replication-failover-virtual-machines/enable-replication-vm-specify-replica-server.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-11-17T09:57:21Z",
+      "sha256": "55ffa4c1ecb2e78bef8f0bb7f3b30c7ee4e35691908a017fa9c88d22df64cb03",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Set-up-Hyper-V-Replica.md",
+      "revision": "df14ca997c54299e8e3a3b5ce7941e1e4a403031",
+      "revision_date": "2025-11-07T09:55:29Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Set up Hyper-V Replica",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/df14ca997c54299e8e3a3b5ce7941e1e4a403031/WindowsServerDocs/virtualization/hyper-v/manage/Set-up-Hyper-V-Replica.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/configure-replication-single-host.md",
+      "revision": "03f2ce39dce630b1637d6270e9ebd42150af8151",
+      "revision_date": "2025-11-17T09:57:21Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable Hyper-V Replica on a single host",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/configure-replication-single-host",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/03f2ce39dce630b1637d6270e9ebd42150af8151/WindowsServerDocs/virtualization/hyper-v/configure-replication-single-host.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/replication-virtual-machines.md",
+      "revision": "03f2ce39dce630b1637d6270e9ebd42150af8151",
+      "revision_date": "2025-11-17T09:57:21Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Replicate a virtual machine with Hyper-V Replica",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/replication-virtual-machines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/03f2ce39dce630b1637d6270e9ebd42150af8151/WindowsServerDocs/virtualization/hyper-v/replication-virtual-machines.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-11-13T17:10:24Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/virtualization/hyper-v/manage/Set-up-Hyper-V-Replica.md"
+  ],
+  "open_questions": [
+    "The source documents do not specify the exact PowerShell cmdlets for enabling replication on a VM (Enable-VMReplication) beyond mentioning it is part of the Hyper-V module. Should we include the full command syntax if it is not explicitly provided in the source text?",
+    "The source documents mention that Windows Admin Center - Virtualization mode is in PREVIEW and has limitations. Should we include this as a note or exclude it to keep the article focused on the stable methods?",
+    "The source documents do not provide specific details on how to configure multiple CSVs for VM replication. Should we link to the relevant documentation or omit this detail?",
+    "The source documents do not specify the exact steps for importing the initial copy when using external media. Should we provide a high-level overview or link to the relevant documentation?",
+    "The source documents do not specify the exact steps for configuring extended (chained) replication. Should we provide a high-level overview or link to the relevant documentation?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/configure-hyper-v-replica-for-a-defined-recovery-scenario.md",
+  "draft": true,
+  "word_count": 1730,
+  "claim_support_checks": [
+    {
+      "claim": "Hyper-V Replica is an integral part of the Hyper-V role and creates a copy of a live VM to a replica offline VM.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hyper-V Replica maintains consistency in the state of the VM operating system after a failover, but not the state of applications running on the VM.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "You configure the receiving host, not the primary cluster or host, to enable Hyper-V Replica.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "When you install the Hyper-V role, exceptions for HTTP (80) and HTTPS (443) are created but not enabled by default.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "You can use the PowerShell cmdlet Test-VMReplicationConnection to test the connection to a replica cluster.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims planned failover ensures 'zero data loss'. Source S1 states this only applies if the primary server is configured to receive replication from the secondary (reverse replication) to sync the last tracked changes. Without this configuration, data loss is possible.",
+      "fix": "Clarify that zero data loss requires reverse replication to be configured on the primary host/cluster. Add a note that if reverse replication is not set up, planned failover may result in data loss for changes made after the last replication interval."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft omits the requirement for the 'Hyper-V Administrators' security group membership or local admin privileges on both hosts, which is a specific prerequisite in Source S3. This is a concrete permission gap.",
+      "fix": "Add a prerequisite step stating that the user account must be a member of the Hyper-V Administrators group or a local administrator on both the primary and replica hosts."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `Test-VMReplicationConnection` to test the connection but does not mention that this cmdlet tests connectivity, not the actual replication signal, scope, or condition. It also omits the need to import the Hyper-V module explicitly in the example.",
+      "fix": "Add `Import-Module Hyper-V` before the test commands. Clarify that this cmdlet verifies network connectivity and authentication, not the replication health or data integrity."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes two screenshots with 'Used with permission from Microsoft' credits. The editorial guidance explicitly forbids visible permission captions or Microsoft Learn screenshot captions.",
+      "fix": "Remove the 'Used with permission from Microsoft' credit lines from the image alt text or captions. Ensure no visible permission text appears in the final output."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft does not mention that Windows Admin Center - Virtualization mode is in PREVIEW and has limitations (e.g., no extended replication support), which is a significant context for users choosing their management tool.",
+      "fix": "Add a brief note that Windows Admin Center configuration is in PREVIEW and currently supports only single-host scenarios without extended replication, directing users to the official preview documentation for details."
+    }
+  ]
+}

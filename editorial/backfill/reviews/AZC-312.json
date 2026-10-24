@@ -1,0 +1,140 @@
+{
+  "id": "AZC-312",
+  "title": "Review the revised cost assumptions for Arc-enabled Windows Server Hotpatch",
+  "slug": "review-the-revised-cost-assumptions-for-arc-enabled-windows-server-hotpatch",
+  "historical_date": "2026-05-22",
+  "input_sha256": "a45cbf086a19cab25dacbd413d635d74c456783171cf994878980c365eec39bf",
+  "created_at": "2026-10-23T19:32:35.333742+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Enable Hotpatch on Arc-enabled Windows Server 2025: verify VBS, enroll via Azure Update Manager, and check status.",
+  "tags": [
+    "azure-arc",
+    "windows-server-2025",
+    "hotpatch",
+    "azure-update-manager",
+    "vbs"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "official-announcement",
+      "path": "https://learn.microsoft.com/en-us/azure/update-manager/manage-hot-patching-arc-machines",
+      "revision": "web-checked-2026-10-23",
+      "revision_date": "2025-08-21T00:00:00Z",
+      "published_at": "2025-08-21T00:00:00Z",
+      "checked_at": "2026-10-23T11:53:05.818849+00:00",
+      "title": "Review the revised cost assumptions for Arc-enabled Windows Server Hotpatch",
+      "url": "https://learn.microsoft.com/en-us/azure/update-manager/manage-hot-patching-arc-machines",
+      "snapshot_url": "https://learn.microsoft.com/en-us/azure/update-manager/manage-hot-patching-arc-machines",
+      "historical_verification": "Original dated announcement; fetched page may contain later updates. Verify each historical claim.",
+      "page_modified": "2026-09-24T11:41:00Z"
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/enable-hotpatch-azure-arc-enabled-servers.md",
+      "revision": "3a801c89aaa2d86d5ef85a5264858ec118acec0c",
+      "revision_date": "2026-05-20T19:20:20Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable Hotpatch for Azure Arc-enabled servers",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/enable-hotpatch-azure-arc-enabled-servers",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/3a801c89aaa2d86d5ef85a5264858ec118acec0c/WindowsServerDocs/get-started/enable-hotpatch-azure-arc-enabled-servers.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/enable-hotpatch-azure-edition.md",
+      "revision": "0cd33cc75ef265c58980871428fdd9b7bc1e8486",
+      "revision_date": "2024-12-04T10:15:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable Hotpatch for Azure Edition virtual machines",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/enable-hotpatch-azure-edition",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/0cd33cc75ef265c58980871428fdd9b7bc1e8486/WindowsServerDocs/get-started/enable-hotpatch-azure-edition.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/get-started/windows-server-pay-as-you-go.md",
+      "revision": "825a9b7a89b5e872e1542287bec3a6904fb08c83",
+      "revision_date": "2025-09-12T09:12:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure Windows Server Pay-as-you-go with Azure Arc",
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-pay-as-you-go",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/825a9b7a89b5e872e1542287bec3a6904fb08c83/WindowsServerDocs/get-started/windows-server-pay-as-you-go.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Announcement may have later updates; exclude information introduced after 2026-05-22"
+  ],
+  "open_questions": [
+    "Does the 'no additional cost' apply to Linux Arc-enabled machines as well, or only Windows?",
+    "Are there any specific Azure subscription roles required to enable Hotpatch via Azure Update Manager?",
+    "How does the billing change affect existing contracts or reservations made before May 2026?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-the-revised-cost-assumptions-for-arc-enabled-windows-server-hotpatch.md",
+  "draft": true,
+  "word_count": 1331,
+  "claim_support_checks": [
+    {
+      "claim": "Hotpatch on Arc-enabled Windows Server 2025 is free as of May 2026.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "VBS is a prerequisite for Hotpatch.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Hotpatch is not available for Windows Server 2022.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Azure Edition VMs have Hotpatch enabled by default.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "Future date hallucination: The draft and sources reference a May 2026 billing change. Current date is 2024. This is speculative content presented as fact.",
+      "fix": "Remove all references to the May 2026 billing change and associated 'no cost' claims. Focus on current prerequisites and enablement steps for Windows Server 2025 Hotpatch on Arc-enabled machines."
+    },
+    {
+      "severity": "high",
+      "problem": "Unsupported OS claim: The draft states Hotpatch is only supported on Windows Server 2025. Source S3 confirms it is also supported on Windows Server 2022 Datacenter: Azure Edition.",
+      "fix": "Correct the OS eligibility section to include Windows Server 2022 Datacenter: Azure Edition as a supported platform for Hotpatch, referencing S3."
+    },
+    {
+      "severity": "medium",
+      "problem": "Vague/Incomplete How-to: The draft lists VBS registry keys but omits the 'HotPatchTableSize' registry configuration required for ISO-deployed Azure Edition machines (S3), creating inconsistent instructions for different deployment types.",
+      "fix": "Clarify that registry configurations like 'HotPatchTableSize' are specific to ISO-deployed Azure Edition machines (S3), while Arc-enabled machines primarily rely on the agent and portal settings (S1, S2)."
+    },
+    {
+      "severity": "low",
+      "problem": "Prose defect: Excessive, repetitive citation formatting disrupts flow. Multiple sentences end with identical source links, violating the 'keep reading flow conversational' guidance.",
+      "fix": "Consolidate citations. Place source links at the end of sections or paragraphs where claims are made, rather than after every sentence or step."
+    },
+    {
+      "severity": "medium",
+      "problem": "Missing context on 'No Cost': The draft implies 'no additional cost' is a universal feature change, but S1 frames it as a specific billing revision effective in the future. It lacks context on what the previous cost structure was or if it applies to all SKUs.",
+      "fix": "If retaining the future date, explicitly state this is a projected billing revision. If removing the date, clarify current billing status based on available sources, noting that Azure Edition may have different licensing models."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "AZC-102",
+  "title": "Decide when a virtual machine scale set is appropriate",
+  "slug": "decide-when-a-virtual-machine-scale-set-is-appropriate",
+  "historical_date": "2024-10-11",
+  "input_sha256": "09bb1cdcd8aefe801c9c740a0aa0f5e1a3c3ed5588355bf193a051c46949b5a5",
+  "created_at": "2026-10-23T14:31:01.064756+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Decide between Azure VMs and Scale Sets by comparing orchestration modes, scaling needs, and specific feature constraints.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Design Considerations for Azure Virtual Machine Scale Sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Orchestration modes for Virtual Machine Scale Sets in Azure",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-vs-create.md",
+      "revision": "3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1",
+      "revision_date": "2024-08-20T00:18:50Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Virtual Machine Scale Set using Visual Studio",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-vs-create",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/3d15bc883fc7a0b9b1d8c431efb8855d5fb54ae1/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-vs-create.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md",
+    "Public document removed/moved on 2024-08-20T04:51:21Z; used previous public snapshot. Confirm continued applicability: articles/virtual-machine-scale-sets/virtual-machine-scale-sets-vs-create.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/decide-when-a-virtual-machine-scale-set-is-appropriate.md",
+  "draft": true,
+  "word_count": 1088,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Flexible orchestration supports 'all VM sizes' but contradicts itself by noting constraints for non-memory-preserving SKUs. It omits that these constrained SKUs are limited to 200 instances, not 1,000. This misleads capacity planning for specialized workloads.",
+      "fix": "Clarify that while Flexible mode supports all SKUs, VMs without memory-preserving updates (e.g., G, H, L, M, N-series) are limited to 200 instances unless `platformFaultDomainCount=1` is used to enable max spreading."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states Uniform mode lacks Azure Backup and Site Recovery for individual instances, implying Flexible mode has them. However, the source table shows Flexible mode supports Backup/Site Recovery, but Uniform does not. The draft's phrasing 'Even in Flexible... the scale set still manages the group lifecycle' is vague and potentially misleading regarding granular control.",
+      "fix": "Explicitly state that Flexible orchestration instances support Azure Backup and Site Recovery via standard VM APIs, whereas Uniform instances do not. Remove the vague caveat about group lifecycle management which doesn't negate the feature availability."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft mentions overprovisioning is 'another feature available in Uniform orchestration mode' but fails to mention it is explicitly unsupported in Flexible mode. This is a critical distinction for deployment templates, as omitting it in Flexible might cause validation errors or unexpected behavior.",
+      "fix": "Add a note that overprovisioning is supported only in Uniform orchestration mode and is not supported in Flexible orchestration mode, ensuring template authors do not attempt to configure it for Flexible sets."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Flexible orchestration supports 'mixing VM types' but does not specify the constraint regarding General Purpose vs. Specialty SKUs. The source indicates mixing is only supported with `platformFaultDomainCount=1`. This omission could lead to deployment failures for users trying to mix SKUs with fixed spreading.",
+      "fix": "Specify that mixing General Purpose and Specialty SKU types in Flexible orchestration is only supported when `platformFaultDomainCount=1` (max spreading). For fixed spreading, mixing is not supported."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Verification' section that is generic and adds no technical value. It repeats the advice to check documentation, which is redundant given the citations already provided. This violates the guidance to remove generic concluding paragraphs.",
+      "fix": "Remove the 'Verification' section entirely. The decision criteria and source links already provide sufficient guidance for the reader to validate their choice without a redundant summary step."
+    }
+  ]
+}

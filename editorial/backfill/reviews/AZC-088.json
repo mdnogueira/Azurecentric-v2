@@ -1,0 +1,114 @@
+{
+  "id": "AZC-088",
+  "title": "Diagnose a route that sends traffic to the wrong next hop",
+  "slug": "diagnose-a-route-that-sends-traffic-to-the-wrong-next-hop",
+  "historical_date": "2024-09-02",
+  "input_sha256": "cb3b713353d6bb606740258b5603b5348a228f9fe3f99c33d5f6a2cb888c1941",
+  "created_at": "2026-10-23T14:13:38.889513+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Diagnose why VM traffic takes the wrong path using effective routes and Network Watcher next hop.",
+  "tags": [
+    "azure-network-watcher",
+    "virtual-network",
+    "routing",
+    "troubleshooting",
+    "azure-cli"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/network-watcher/diagnose-vm-network-routing-problem-cli.md",
+      "revision": "fe9b4e8bdfdaac8c266f18ea0d5a6a9502d925b2",
+      "revision_date": "2024-08-02T21:19:12Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Diagnose a VM network routing problem - Azure CLI",
+      "url": "https://learn.microsoft.com/en-us/azure/network-watcher/diagnose-vm-network-routing-problem-cli",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fe9b4e8bdfdaac8c266f18ea0d5a6a9502d925b2/articles/network-watcher/diagnose-vm-network-routing-problem-cli.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/virtual-network/diagnose-network-routing-problem.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Diagnose an Azure virtual machine routing problem",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/virtual-network/diagnose-network-routing-problem.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "HTTP Error 404: Not Found",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/quickstarts-free-trial-note.md",
+    "Include unavailable: reusable-content/azure-cli/azure-cli-prepare-your-environment.md",
+    "Include unavailable: reusable-content/ce-skilling/azure/includes/updated-for-az.md"
+  ],
+  "open_questions": [
+    "Does the provided source text specify the exact permissions required for the `az network nic show-effective-route-table` command, or just general permissions for the network interface?",
+    "Is there any information in the sources about the latency or delay in route propagation after a route table association change?",
+    "Do the sources provide specific CLI commands for changing or deleting a route in a route table, or just references to other documentation?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/diagnose-a-route-that-sends-traffic-to-the-wrong-next-hop.md",
+  "draft": true,
+  "word_count": 1135,
+  "claim_support_checks": [
+    {
+      "claim": "Effective route tables combine system, custom, and BGP routes for a network interface.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Network Watcher next hop capability tests the routing decision for a specific source and destination IP.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Only the primary network interface of a VM is assigned a default route within the guest OS.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "IP forwarding must be enabled on a network virtual appliance for it to forward traffic.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims that if `nextHopType` is `None`, it 'indicates a configuration error in the route table'. Source S1 clarifies that Azure creates a default route to 172.16.0.0/12 with `nextHopType` of `None` until a reason exists (e.g., VNet address space addition). This is a valid system state, not necessarily an error.",
+      "fix": "Clarify that `nextHopType: None` can be a valid system route state for prefixes not yet active in the VNet address space. Distinguish between this valid system behavior and actual misconfigurations where a custom route lacks a valid next hop."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft instructs to enable Network Watcher using `--resource-group NetworkWatcherRG`. This hardcodes a specific resource group name. Source S1 uses this example, but it is not a universal requirement; the resource group can be named differently. This misleads users who do not use the default naming convention.",
+      "fix": "Replace the hardcoded `NetworkWatcherRG` with a placeholder like `<NetworkWatcherResourceGroup>` and note that this is the default name if not specified during creation, or advise checking the existing group."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that if a route table is associated with the wrong subnet, you should 'disassociate it from the current subnet and associate it with the correct one'. It fails to mention that route table associations are exclusive per subnet (one RT per subnet). This omission could lead users to attempt invalid configurations or misunderstand the scope.",
+      "fix": "Explicitly state that a subnet can have only one route table associated with it. Advise checking if another route table is already associated with the target subnet before reassigning."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph: 'By systematically checking... you can identify and resolve... This approach avoids guessing...'. This violates the editorial guidance to end with a concrete verification or next action and remove generic concluding paragraphs.",
+      "fix": "Remove the final two paragraphs. End the article immediately after the 'Verification' section or the final troubleshooting step, ensuring the reader has a concrete next action (e.g., 'Re-run the command to confirm changes')."
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "AZC-122",
+  "title": "Choose retention settings around investigation needs",
+  "slug": "choose-retention-settings-around-investigation-needs",
+  "historical_date": "2024-12-06",
+  "input_sha256": "d93b656e56ad9dc4affc1c873393cb6aa585b2df996796437bfd859627e9bb51",
+  "created_at": "2026-10-23T14:59:54.603562+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Log Analytics retention to balance investigation depth and cost using interactive and long-term periods.",
+  "tags": [
+    "microsoft-sentinel",
+    "log-analytics",
+    "data-retention",
+    "cost-management",
+    "azure-monitor"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-122-learn-1.png",
+      "alt": "Screenshot of the manage table option on the context menu for a table in the tables view.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/b27b44cfe4f232ccddc3690e5190bc0f0c27cf31/articles/sentinel/media/configure-data-retention/data-retention-tables.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-11-12T12:56:57Z",
+      "sha256": "ae522afa22c56f3f502bfc52efaf6d2db03e77979d209210c5e00377b00d1ddf",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-122-learn-2.png",
+      "alt": "Screenshot of a cost management + billing cost analysis screen.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/d192c87946662b9ae8690dac37f4cd8be34cd757/articles/sentinel/media/billing-monitor-costs/cost-management.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-10-13T12:39:09Z",
+      "sha256": "719cec76dbc7660a6293c3752a743ba946c56d2a528a1d07a8b63a3030972d76",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/configure-data-retention.md",
+      "revision": "b27b44cfe4f232ccddc3690e5190bc0f0c27cf31",
+      "revision_date": "2024-11-12T12:56:57Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure data retention for logs in Microsoft Sentinel or Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/configure-data-retention",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b27b44cfe4f232ccddc3690e5190bc0f0c27cf31/articles/sentinel/configure-data-retention.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/configure-data-retention-archive.md",
+      "revision": "7b729c6d349c2cf24fa9244c85512cbc835d9653",
+      "revision_date": "2024-10-13T09:55:49Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure interactive and long-term data retention in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/configure-data-retention-archive",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/7b729c6d349c2cf24fa9244c85512cbc835d9653/articles/sentinel/configure-data-retention-archive.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/billing-monitor-costs.md",
+      "revision": "d192c87946662b9ae8690dac37f4cd8be34cd757",
+      "revision_date": "2024-10-13T12:39:09Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Manage and monitor costs for Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/billing-monitor-costs",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d192c87946662b9ae8690dac37f4cd8be34cd757/articles/sentinel/billing-monitor-costs.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-11-12T13:37:04Z; used previous public snapshot. Confirm continued applicability: articles/sentinel/configure-data-retention.md"
+  ],
+  "open_questions": [
+    "Are there specific performance implications for querying long-term retention data that should be documented?",
+    "Is the 'Archive-Log-Tool' mentioned in S2 still the recommended method for bulk configuration, or are there newer alternatives?",
+    "Does the daily volume cap apply to long-term retention data or only interactive data?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/choose-retention-settings-around-investigation-needs.md",
+  "draft": true,
+  "word_count": 923,
+  "claim_support_checks": [
+    {
+      "claim": "Retention policies define when data transitions to long-term retention.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Total retention is the sum of interactive and long-term retention periods.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Log Analytics Contributor role is required to set retention policies.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Long-term retention allows keeping older data at a reduced cost.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Cost Management can be used to monitor Microsoft Sentinel and Log Analytics costs.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims long-term retention data has 'different performance characteristics and access methods' and is not 'instantly queryable.' The sources do not support this distinction; they only state it is 'minimal-access' and 'low-cost.' This implies a technical limitation (e.g., requiring specific query syntax or causing timeouts) that is not documented, potentially misleading users about query capabilities.",
+      "fix": "Remove the claim about different access methods or performance characteristics. State only that long-term retention is a 'low-cost, minimal-access' state for older data, as per S1. Do not speculate on query speed or syntax changes."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states that exceeding the daily volume cap 'may result in data loss.' The source (S3) references the daily cap feature but does not explicitly state that data is dropped/lost upon exceeding the cap. While this is the known behavior of the feature, the provided source text is silent on the consequence, making this an unsupported factual claim in the context of the provided evidence.",
+      "fix": "Remove the specific claim about data loss unless the source explicitly states it. Alternatively, rephrase to 'limits ingestion' without specifying the failure mode, or cite a specific source that details the 'data loss' behavior. Given the strict source constraint, omit the consequence."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a screenshot of the Cost Management screen (S3) in the 'Monitor costs' section. The editorial guidance explicitly forbids adding visible Microsoft Learn screenshots or permission captions. The draft also includes a screenshot of the 'Manage table' option (S1), which is permitted as it illustrates a how-to step. However, the cost screenshot is decorative and violates the 'no visible screenshot' rule for non-step illustrations.",
+      "fix": "Remove the Cost Management screenshot. The guidance prohibits visible screenshots unless they directly illustrate a how-to step. The cost monitoring step does not require a screenshot to be understood, and the source screenshot is not a step-by-step UI guide for the specific action described."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises reviewing 'initial recommendations in Microsoft Defender for Cloud' to check if retention settings align with requirements. The sources (S1-S3) do not mention Defender for Cloud recommendations regarding Log Analytics retention policies. This is an external reference not supported by the provided documentation, introducing potential hallucination or irrelevant advice.",
+      "fix": "Remove the reference to Microsoft Defender for Cloud recommendations. Stick to the sources: use Cost Management and Kusto queries (S3) to monitor and verify retention impact. Do not introduce external tools or recommendations not cited in the provided texts."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft concludes with a generic paragraph: 'By carefully balancing... Start with a clear scope...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar phrases. This adds no technical value and violates the style guide.",
+      "fix": "Delete the final concluding paragraph. End the article after the 'Verify your configuration' section or the final source link, as per the instruction to 'End when the technical question is answered'."
+    }
+  ]
+}

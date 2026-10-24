@@ -1,0 +1,158 @@
+{
+  "id": "AZC-353",
+  "title": "Find gaps between enabled Defender plans and protected resources",
+  "slug": "find-gaps-between-enabled-defender-plans-and-protected-resources",
+  "historical_date": "2026-09-14",
+  "input_sha256": "9411675dcc3c38fdd5f3943ce4b97e238730ee47e30d65ef0b8e7c6425e6b602",
+  "created_at": "2026-10-23T20:28:02.496811+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Troubleshoot gaps between enabled Defender plans and protected resources by checking subscription, workspace, and resource-level scopes.",
+  "tags": [
+    "defender-for-cloud",
+    "troubleshooting",
+    "security-posture",
+    "workspaces",
+    "permissions"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-353-learn-1.png",
+      "alt": "Screenshot of Defender for Cloud's overview page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/overview-page/overview.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "6557228ebbe1f648e804bcd18b3b2621aa879fec5978c55b2eb3e33d1494f83c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-353-learn-2.png",
+      "alt": "Screenshot of the Defender plans page that shows where to select the settings option.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/tutorial-enable-cspm-plan/cspm-settings.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "566e0784d8b87e18cd6e4c376c89b66f1537098e341141ca80a2ea667dd25bd5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/defender-for-cloud-planning-and-operations-guide.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Defender for Cloud Planning and Operations Guide",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-planning-and-operations-guide",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/defender-for-cloud-planning-and-operations-guide.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Protect your resources with Defender CSPM",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-cspm-plan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/tutorial-enable-servers-plan.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Defender for Servers",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/tutorial-enable-servers-plan.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/defender-for-cloud-planning-and-operations-guide.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/tutorial-enable-servers-plan.md"
+  ],
+  "open_questions": [
+    "Does the source explicitly state the time delay for agentless scanning components to populate after enabling by a Subscription Owner?",
+    "Are there specific error messages or logs that indicate a workspace-level plan mismatch versus a resource-level assignment failure?",
+    "Does the source provide guidance on how to verify the 'health' of the agent beyond its presence in the inventory?",
+    "Is there a documented difference in data retention or storage location when enabling plans at the workspace level versus the subscription level?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/find-gaps-between-enabled-defender-plans-and-protected-resources.md",
+  "draft": true,
+  "word_count": 1123,
+  "claim_support_checks": [
+    {
+      "claim": "Enabling Defender for Servers on a subscription does not automatically extend coverage to attached Log Analytics workspaces.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Enabling Defender for Servers on a workspace automatically enables Plan 2 for all connected machines.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Agentless scanning in Defender CSPM requires Subscription Owner permissions to be enabled by default.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Defender for Servers can be enabled at the resource level for specific resource types.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Defender for Cloud uses agents to collect security data from virtual machines.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims enabling Defender for Servers on a workspace 'automatically enables Plan 2 for all connected machines, regardless of their connected subscription's settings.' This is misleading; it enables the plan for machines reporting to that workspace, but does not override subscription-level exclusions or resource-level 'Free' assignments which take precedence. It also ignores that workspace-level enablement is only for Plan 2, not Plan 1.",
+      "fix": "Clarify that workspace-level enablement sets Plan 2 for machines reporting to that workspace, but resource-level assignments (e.g., 'Free') override subscription/workspace settings. Cite S3: 'When you enable Defender for Servers on a workspace, all connected machines will automatically have Plan 2 enabled regardless of their connected subscription's settings.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'Agentless scanning requires the Subscription Owner role to be enabled by default.' This confuses the user role required to enable the feature with the feature's default state. The source (S2) says a Subscription Owner must *enable* the plan for agentless scanning to be active by default; lower-privilege users can enable the plan but agentless scanning won't activate.",
+      "fix": "Reword to: 'Agentless scanning is enabled by default only if the Defender CSPM plan is enabled by a user with the Subscription Owner role. Users with lower privileges can enable the plan, but agentless scanning will not activate until a Subscription Owner enables it.'"
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests checking the 'Security posture' blade to see if a VM is listed. This is vague. The source (S1) refers to the 'Overview' page and 'Inventory' (implied by 'discover these resources'). The draft also mentions 'Recommendations' blade for verification, which is correct but needs to be tied to the specific 'Inventory' or 'Overview' view where protected resources are listed.",
+      "fix": "Specify checking the 'Inventory' or 'Overview' page in Defender for Cloud to confirm the resource is listed and protected. Cite S1: 'Defender for Cloud automatically discovers these resources and begins to monitor their security.'"
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a section 'Verify the result' with generic advice like 'allow a few minutes' and 'refresh'. This is filler. The source (S2) notes that Permissions management (CIEM) setup may take up to 24 hours, but general plan enablement is faster. The draft conflates these timelines.",
+      "fix": "Remove the generic 'allow a few minutes' advice. Specify that CIEM data collection may take up to 24 hours (S2), while other plan changes are near-instant. Focus on concrete verification steps: checking the Inventory and Recommendations."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'A resource-level assignment overrides subscription-level settings.' While true, it doesn't specify that resource-level assignments are only for Defender for Servers (S3) and not for CSPM (S2). This could lead users to try resource-level CSPM assignments which don't exist in the same way.",
+      "fix": "Clarify that resource-level assignments apply specifically to Defender for Servers (S3). For CSPM, scope is managed at the subscription/workspace level, not individual resource pricing tiers."
+    }
+  ]
+}

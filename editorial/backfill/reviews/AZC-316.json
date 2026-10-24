@@ -1,0 +1,145 @@
+{
+  "id": "AZC-316",
+  "title": "Investigate an unexpected Conditional Access result",
+  "slug": "investigate-an-unexpected-conditional-access-result",
+  "historical_date": "2026-06-03",
+  "input_sha256": "87d860142ad1b1892cb079427ccb16fbce5ff63d34f4c1940128a291a9bdeb9a",
+  "created_at": "2026-10-23T19:37:05.196080+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Resolve unexpected Conditional Access outcomes by correlating sign-in logs with the What If tool to identify policy application and conditions.",
+  "tags": [
+    "conditional-access",
+    "entra-id",
+    "troubleshooting",
+    "sign-in-logs",
+    "what-if-tool"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-316-learn-1.png",
+      "alt": "Screenshot of the Conditional Access What If tool at its default state.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/5c58554c28548f7112b26bc324155fda0734225b/docs/identity/conditional-access/media/troubleshoot-conditional-access-what-if/conditional-access-what-if-tool.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-09-12T20:11:54Z",
+      "sha256": "956e3d94fc43cbe59d5e61a0cf9f557e4a00b895d1a57928338c58cb3589c125",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-316-learn-2.png",
+      "alt": "Screenshot showing Conditional Access Policy details to see why policy applied or not.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/995c533f6db471c2e50324e9b5ea91ce59db5969/docs/identity/conditional-access/media/troubleshoot-conditional-access/activity-details-sign-ins.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-04-30T22:51:42Z",
+      "sha256": "7f8a691b85f618db870cfea4e482ee42324861beffd348fbc3140c3188be42dd",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/troubleshoot-conditional-access-what-if.md",
+      "revision": "5c58554c28548f7112b26bc324155fda0734225b",
+      "revision_date": "2025-09-12T20:11:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshoot Conditional Access using the What If tool",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/troubleshoot-conditional-access-what-if",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/5c58554c28548f7112b26bc324155fda0734225b/docs/identity/conditional-access/troubleshoot-conditional-access-what-if.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/troubleshoot-conditional-access.md",
+      "revision": "995c533f6db471c2e50324e9b5ea91ce59db5969",
+      "revision_date": "2026-04-30T22:51:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Troubleshooting sign-in problems with Conditional Access",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/troubleshoot-conditional-access",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/995c533f6db471c2e50324e9b5ea91ce59db5969/docs/identity/conditional-access/troubleshoot-conditional-access.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/howto-continuous-access-evaluation-troubleshoot.md",
+      "revision": "687e4f0b1d106edd9f9306aaa7f716fb262311c9",
+      "revision_date": "2026-04-15T18:34:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-continuous-access-evaluation-troubleshoot",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/687e4f0b1d106edd9f9306aaa7f716fb262311c9/docs/identity/conditional-access/howto-continuous-access-evaluation-troubleshoot.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-09-12T20:15:48Z; used previous public snapshot. Confirm continued applicability: docs/identity/conditional-access/troubleshoot-conditional-access-what-if.md"
+  ],
+  "open_questions": [
+    "Does the sign-in log always show the exact reason for a policy not applying, or are there cases where the reason is ambiguous?",
+    "How does the What If tool handle overlapping policies with conflicting controls?",
+    "What is the impact of named location IP mismatches on CAE token duration beyond the one-hour period?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-an-unexpected-conditional-access-result.md",
+  "draft": true,
+  "word_count": 1250,
+  "claim_support_checks": [
+    {
+      "claim": "The What If tool requires a User or Workload identity to start and can optionally include context like IP address or device platform.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Sign-in logs show which Conditional Access policies applied and why, including those in report-only mode.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Administrators need at least Reports Reader role to view sign-in logs.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Continuous access evaluation (CAE) tokens are marked true for only one of the interactive or non-interactive sign-in requests.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Error code AADSTS53003 indicates access blocked by Conditional Access.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft recommends 'Always test changes in report-only mode before enforcing them'. This is a vague, unqualified generalization. Report-only mode is not available for all Conditional Access policies (e.g., some session controls or legacy policies may not support it), and it does not guarantee safety as it still evaluates conditions. The source text does not support this universal advice.",
+      "fix": "Remove the universal recommendation. Instead, state that if report-only mode is supported for the specific policy type, it can be used to validate impact without blocking access. Reference the 'What is Conditional Access report-only mode?' documentation for availability details."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that the 'Audience' field in sign-in logs is always visible or easily accessible for all policy types. The source (S2) states admins find 'Audience' after selecting a policy on the Conditional Access tab, but does not claim it is a primary filter or always present for every sign-in event type, especially non-interactive ones without CAE.",
+      "fix": "Clarify that audience reporting is available for enabled or report-only policies and is visible when drilling into the Conditional Access tab of a sign-in event. Avoid implying it is a standalone filter or universally applicable to all sign-in types without context."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'CAE is only marked true for one of these requests'. While technically accurate per S3, it could be misinterpreted as CAE only applying to one request per session. The source clarifies it's about which request carries the CAE token flag, not that CAE logic only runs once.",
+      "fix": "Rephrase to: 'CAE is indicated by the 'Is CAE Token' flag, which is set to true for only one of the interactive or non-interactive sign-in requests associated with the authentication. Admins must check both tabs to confirm CAE status.'"
+    }
+  ]
+}

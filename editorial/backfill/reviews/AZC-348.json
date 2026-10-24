@@ -1,0 +1,125 @@
+{
+  "id": "AZC-348",
+  "title": "Separate configuration, execution and reporting in PowerShell",
+  "slug": "separate-configuration-execution-and-reporting-in-powershell",
+  "historical_date": "2026-08-31",
+  "input_sha256": "28e15c5e1281ef43750b530f4566b5a356e2e32b1d9d2a3a9e633a28c73e446a",
+  "created_at": "2026-10-23T20:19:35.298594+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Structure PowerShell scripts to separate configuration, execution, and reporting for better performance and maintainability.",
+  "tags": [
+    "powershell",
+    "performance",
+    "scripting",
+    "best-practices",
+    "architecture"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/dev-cross-plat/performance/script-authoring-considerations.md",
+      "revision": "fb4fea7bf2b39620b270f3d632465e275caf7d8b",
+      "revision_date": "2026-01-22T01:07:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "PowerShell scripting performance considerations",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/dev-cross-plat/performance/script-authoring-considerations",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/fb4fea7bf2b39620b270f3d632465e275caf7d8b/reference/docs-conceptual/dev-cross-plat/performance/script-authoring-considerations.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/module/how-to-write-a-powershell-script-module.md",
+      "revision": "5e1c81199ca2e2ead3fdc724796d978802c03f2a",
+      "revision_date": "2025-05-20T21:09:35Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "How to Write a PowerShell Script Module",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/5e1c81199ca2e2ead3fdc724796d978802c03f2a/reference/docs-conceptual/developer/module/how-to-write-a-powershell-script-module.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/shell/creating-profiles.md",
+      "revision": "775dab7febcb227b26c26df71a0fe111aefcd0c5",
+      "revision_date": "2025-11-21T22:15:15Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Customizing your shell environment",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/creating-profiles",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/775dab7febcb227b26c26df71a0fe111aefcd0c5/reference/docs-conceptual/learn/shell/creating-profiles.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the specific JIT compilation threshold of 300 instructions apply to all loop types or only specific bytecode patterns?",
+    "Are there any known edge cases where `[System.IO.File]::ReadLines()` might perform worse than `Get-Content` for very small files?",
+    "How does the performance of `[void]` casting compare to assignment to `$null` in PowerShell 7.6 specifically?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/separate-configuration-execution-and-reporting-in-powershell.md",
+  "draft": true,
+  "word_count": 932,
+  "claim_support_checks": [
+    {
+      "claim": "Array addition is inefficient for large collections because it creates a new array each time.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Write-Host is slower than [Console]::WriteLine() for specific hosts and does not support piping.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "PowerShell's JIT compiler can optimise loops with fewer than 300 instructions.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Using .NET APIs directly can be an order of magnitude faster than idiomatic PowerShell for file processing.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims Write-Host is 'significantly slower than writing to the pipeline'. The source states Write-Host is slower than [Console]::WriteLine(), but writing to the pipeline is the standard mechanism for passing data, not a direct performance comparison target. This comparison is misleading and technically inaccurate.",
+      "fix": "Remove the comparison between Write-Host and pipeline output. Instead, state that Write-Host is slower than [Console]::WriteLine() for specific hosts and does not support piping, making it unsuitable for data processing workflows."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using profiles to 'customize the interactive experience' as an analogy for separating script logic. This conflates user environment customization with script architecture. Profiles are for user settings, not script structure, and the analogy adds no technical value.",
+      "fix": "Remove the reference to shell profiles and the analogy. Focus on the architectural benefit: separating concerns allows the same script to be used in interactive, scheduled, or CI/CD contexts without modification, as supported by the module/manifest documentation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft implies that defining configuration as a hash table is a performance optimization. The source discusses performance in terms of array/string handling and JIT compilation, not configuration data structures. This is an unsupported claim.",
+      "fix": "Reframe the configuration section as a maintainability and testability improvement, not a performance one. Cite the module documentation regarding scoping and interface cleanliness rather than performance metrics for data structures."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states that array addition creates a new array 'each time'. While true for pre-7.5, the source notes optimization in 7.5. The draft mentions 7.6 behavior but doesn't clarify if the 'new array' claim applies to 7.6, potentially misleading users on newer versions.",
+      "fix": "Clarify that array addition optimization applies in PowerShell 7.5+. For 7.6, while optimized, List<T> is still recommended for large collections to avoid potential overhead, or explicitly state the optimization reduces the penalty but List<T> remains superior for very large datasets."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises moving loops inside functions to avoid 'repeated function calls'. The source explains this is to avoid the overhead of function invocation in tight loops, but the draft's explanation is vague and doesn't mention the JIT compilation context (loops < 300 instructions).",
+      "fix": "Refine the explanation to mention that function call overhead can be significant in tight loops, and moving logic inside can allow better JIT compilation opportunities, as noted in the performance source. Keep the code example but clarify the rationale."
+    }
+  ]
+}

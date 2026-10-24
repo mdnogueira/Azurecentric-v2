@@ -1,0 +1,132 @@
+{
+  "id": "AZC-084",
+  "title": "Understand where an RDMA network helps an MPI workload",
+  "historical_date": "2024-08-21",
+  "created_at": "2026-10-23T23:58:57.947210+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Determine when Azure Batch MPI workloads benefit from RDMA-capable VM sizes versus standard networking.",
+  "tags": [
+    "azure-batch",
+    "mpi",
+    "rdma",
+    "hpc",
+    "virtual-machines"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-mpi.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Use multi-instance tasks to run MPI applications",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-mpi",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/batch/batch-mpi.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-virtual-network.md",
+      "revision": "8cb73b47831514c74d65db92d716ef59521e2f40",
+      "revision_date": "2024-06-27T21:57:04Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Provision a pool in a virtual network",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-virtual-network",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/8cb73b47831514c74d65db92d716ef59521e2f40/articles/batch/batch-virtual-network.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/batch/batch-technical-overview.md",
+      "revision": "a9e4f80bea3a7bfd79747d06cbf38fc31914c16c",
+      "revision_date": "2024-08-20T04:54:25Z",
+      "checked_at": "2026-10-23T11:58:10.429139+00:00",
+      "title": "Azure Batch runs large parallel jobs in the cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/a9e4f80bea3a7bfd79747d06cbf38fc31914c16c/articles/batch/batch-technical-overview.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "open_questions": [
+    "Are there specific performance benchmarks comparing standard vs RDMA-capable VMs for common MPI workloads in Azure?",
+    "Does the cost difference between standard and RDMA-capable VMs vary significantly by region?",
+    "Are there any known compatibility issues between specific MPI versions and Azure Batch multi-instance tasks?"
+  ],
+  "research_warnings": [],
+  "recovered_from_saved_revision": true,
+  "prior_validation_findings": [
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-hpc?toc=/azure/virtual-machines/windows/toc.json",
+    "Remove or replace an unsupplied link: https://learn.microsoft.com/en-us/azure/virtual-machines/sizes"
+  ],
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/understand-where-an-rdma-network-helps-an-mpi-workload.md",
+  "draft": true,
+  "word_count": 1016,
+  "claim_support_checks": [
+    {
+      "claim": "Multi-instance tasks require inter-node communication to be enabled and concurrent task execution to be disabled.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "RDMA-capable VM sizes allow MPI applications to use Azure's high-performance, low-latency RDMA network.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Linux nodes require Intel MPI to use RDMA.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Batch pools can be provisioned in a Virtual Network to allow communication with external VMs.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Tightly coupled workloads using MPI can be run on Azure Batch.",
+      "source_id": "S3",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims RDMA is 'not a requirement' and implies MPI works on standard VMs without qualification. Source S1 states multi-instance tasks require 'inter-node communication enabled'. Source S2 clarifies that while nodes can communicate without a VNet, MPI runtimes often require specific network configurations (e.g., SSH for Intel MPI on Linux) that may be blocked by default NSGs or require specific subnet rules. The draft omits this dependency, misleading readers about 'standard' networking sufficiency.",
+      "fix": "Clarify that while RDMA is optional for MPI execution, 'inter-node communication' is mandatory. Specify that standard networking may require additional NSG configuration (e.g., allowing SSH for Intel MPI on Linux) or specific runtime settings, as default rules might block MPI traffic depending on the implementation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft uses 'standard_a9' in the code example. Source S1 lists 'A9' as an RDMA-capable size. 'Standard_A9' is not a valid current VM series name (A-series are legacy/deprecated or specific to older generations). Using an invalid VM size in code examples is a technical error. Additionally, the draft implies A9 is the only or primary example, whereas S1 refers to 'RDMA-capable sizes' generally.",
+      "fix": "Replace 'standard_a9' with a valid, current RDMA-capable size such as 'Standard_HB120rs_v3' or 'Standard_ND96asr_v4' (depending on region/availability in Aug 2024 context) or use a placeholder like '<rdma-capable-size>'. Ensure the code example uses a valid VM size string."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'RDMA adds value primarily when network throughput and latency are bottlenecks' and suggests evaluating cost. It does not mention that RDMA-capable VMs (like A9/H-series) often have specific quota limits or availability constraints. Source S1 notes Batch limits pool sizes for pools with inter-node communication enabled. The draft misses the operational constraint that RDMA pools might have stricter scaling limits or resource quota impacts.",
+      "fix": "Add a note that pools with inter-node communication enabled (required for MPI/RDMA) have specific size limits and may require quota increases. Mention that RDMA-capable VMs often have higher costs and specific availability zones/regions, influencing the 'cost' decision beyond just hourly rate."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Verification and next steps' section with generic advice ('run a baseline test'). The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following' or similar, and demands ending with a concrete verification or decision. The draft's conclusion is vague and does not provide a specific technical verification step.",
+      "fix": "Replace the generic conclusion with a concrete action: 'Verify RDMA connectivity by checking the `ibv_devinfo` output on Linux or `smpd.exe` status on Windows, and confirm the VM size supports RDMA via the Azure VM sizes API or documentation.' Remove the 'Start by reviewing...' paragraph."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'For MS-MPI, this is often automatic, but for Intel MPI, you may need to specify the network interface explicitly.' Source S1 does not support this specific claim about Intel MPI interface specification. It only states Intel MPI is required for RDMA on Linux. The draft invents a configuration detail not present in the sources.",
+      "fix": "Remove the specific claim about Intel MPI requiring explicit network interface specification. Instead, state that Intel MPI must be used on Linux for RDMA, and refer users to the Intel MPI documentation for network interface configuration, as the source does not provide these details."
+    }
+  ]
+}

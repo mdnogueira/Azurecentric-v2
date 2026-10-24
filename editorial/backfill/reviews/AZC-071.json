@@ -1,0 +1,118 @@
+{
+  "id": "AZC-071",
+  "title": "Set RPO and RTO before selecting a recovery design",
+  "slug": "set-rpo-and-rto-before-selecting-a-recovery-design",
+  "historical_date": "2024-07-16",
+  "input_sha256": "b52206b6994774bbea291298a81abee55f087757a5680ea422fed8436b7931a0",
+  "created_at": "2026-10-23T13:50:33.512731+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Define RPO and RTO before selecting Azure DR tools. Understand how backup and replication serve different recovery goals.",
+  "tags": [
+    "disaster-recovery",
+    "rpo",
+    "rto",
+    "azure-backup",
+    "replication"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-071-learn-1.png",
+      "alt": "Screenshot of RTO and RPO durations in hours.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/5b2b486028717235339aed980ec2279bbe15c622/articles/reliability/media/disaster-recovery-rpo-rto.png",
+      "source_id": "S1",
+      "source_revision_date": "2023-09-14T15:25:48Z",
+      "sha256": "63e6f881e19d2bf5c91213b077b61c7bafa4f61f41f235e0a0fcdd52b296204c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/reliability/disaster-recovery-overview.md",
+      "revision": "5b2b486028717235339aed980ec2279bbe15c622",
+      "revision_date": "2023-09-14T15:25:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Disaster recovery overview for Microsoft Azure products and services",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/disaster-recovery-overview",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/5b2b486028717235339aed980ec2279bbe15c622/articles/reliability/disaster-recovery-overview.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-07-16: MicrosoftDocs/azure-docs/articles/reliability/concept-business-continuity-high-availability-disaster-recovery.md",
+    "No revision before 2024-07-16: MicrosoftDocs/azure-docs/articles/reliability/concept-failover-failback.md"
+  ],
+  "open_questions": [
+    "How do specific Azure services (e.g., Azure SQL, App Service) map to the defined RPO/RTO values?",
+    "What are the cost implications of active-active vs active-passive replication for the specific workload?",
+    "How frequently should the DR plan be tested to ensure RPO/RTO compliance?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/set-rpo-and-rto-before-selecting-a-recovery-design.md",
+  "draft": true,
+  "word_count": 978,
+  "claim_support_checks": [
+    {
+      "claim": "RPO is measured in time, not volume.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Backup restores to a specific point in time.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Replication aims for minimal data loss.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "DR must be designed, built, and tested.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "medium",
+      "problem": "The draft includes a generic concluding paragraph ('The next step is to review...') and a 'By following' style implication in the verification section, violating the instruction to end with a concrete action and remove generic conclusions.",
+      "fix": "Remove the final two paragraphs. End the article immediately after the verification logic or the specific next action of reviewing service-specific guidance, without summarizing the approach."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims replication 'typically offers a much lower RPO... often approaching zero,' which is a generalization not strictly supported by the source text's definition of passive replication increasing RPO. This risks misleading users about asynchronous replication capabilities.",
+      "fix": "Clarify that RPO depends on the replication type (active vs. passive) and configuration, rather than implying replication inherently achieves near-zero RPO."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This approach ensures that your DR strategy is aligned...', which is a prohibited generic concluding statement.",
+      "fix": "Delete the sentence starting with 'This approach ensures...' and the preceding sentence if it forms a generic wrap-up. Keep the focus on the technical verification steps."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that Azure SQL Server 'geo-replication' is a single feature for fast recovery, but the source distinguishes between backup/restore and geo-replication. It omits the nuance that geo-replication is for availability/DR but requires specific configuration.",
+      "fix": "Specify that Azure SQL supports geo-replication for DR, but note that it is one of several strategies, not a universal 'fast recovery' button for all scenarios."
+    },
+    {
+      "severity": "low",
+      "problem": "The diagram description is included in the JSON metadata but not rendered as a visual or structured list in the body, making it inaccessible to the reader.",
+      "fix": "Convert the 'diagram' JSON block into a simple numbered list or text-based flowchart within the body to maintain readability without relying on external image generation."
+    }
+  ]
+}

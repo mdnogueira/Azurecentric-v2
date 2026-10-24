@@ -1,0 +1,121 @@
+{
+  "id": "AZC-055",
+  "title": "Create a small failover cluster with a clear network design",
+  "slug": "create-a-small-failover-cluster-with-a-clear-network-design",
+  "historical_date": "2024-06-01",
+  "input_sha256": "6966f1cc660b3119a457ce2755d85055175bfa4a65c0a42b76ad79aa80eae14e",
+  "created_at": "2026-10-23T13:29:47.310172+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create a Windows Server 2022 failover cluster with explicit network and identity controls, validating prerequisites before deployment.",
+  "tags": [
+    "failover-clustering",
+    "windows-server-2022",
+    "network-design",
+    "active-directory",
+    "validation"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/create-failover-cluster.md",
+      "revision": "76f78df39b88e746075424d2ceeae097e638a9ee",
+      "revision_date": "2023-03-15T23:16:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/create-failover-cluster",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/76f78df39b88e746075424d2ceeae097e638a9ee/WindowsServerDocs/failover-clustering/create-failover-cluster.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/clustering-requirements.md",
+      "revision": "a0f000c524782a1cd7c38f5a39b23546faab2967",
+      "revision_date": "2023-10-10T16:46:49Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover clustering hardware requirements and storage options",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/a0f000c524782a1cd7c38f5a39b23546faab2967/WindowsServerDocs/failover-clustering/clustering-requirements.md",
+      "rank_score": 99
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "No revision before 2024-06-01: MicrosoftDocs/windowsserverdocs/WindowsServerDocs/failover-clustering/storage-architectures.md"
+  ],
+  "open_questions": [
+    "Does the specific hardware configuration (e.g., specific HBA models or switch firmware) require vendor-specific MPIO DSM versions beyond the OS defaults?",
+    "What is the recommended quorum configuration for a two-node cluster without a disk witness in this specific network design?",
+    "Are there specific Group Policy restrictions in the target OU that might interfere with cluster service startup or network binding?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/create-a-small-failover-cluster-with-a-clear-network-design.md",
+  "draft": true,
+  "word_count": 1058,
+  "claim_support_checks": [
+    {
+      "claim": "Microsoft supports a cluster only if it passes all validation tests and uses certified hardware.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The account creating the cluster must have Create Computer objects permission or the CNO must be prestaged.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Network adapters for iSCSI should be dedicated and identical across all servers.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The cluster name object (CNO) can be placed in a specific OU by entering its distinguished name during creation.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "A server restart is not required after installing the Failover Clustering feature.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states 'A failure indicates the configuration is not supported' as an absolute rule. Source S1 clarifies that Microsoft supports a cluster if it passes tests, but warnings indicate best practice deviations, while failures imply unsupported configurations. However, the text implies a binary pass/fail without nuance on 'warnings' vs 'failures' in the context of specific hardware certifications mentioned in S2.",
+      "fix": "Clarify that while Microsoft support requires passing validation, specific warnings may be acceptable depending on vendor guidelines, whereas failures generally block support. Reference S1's note on warnings indicating potential best practice issues rather than hard incompatibility."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft advises placing the CNO in a specific OU as a 'best practice for security and Group Policy isolation' but does not mention the prerequisite permission requirement for the creating account if the target OU is restricted. This could lead to creation failures if the user lacks 'Create Computer objects' permission in the target OU.",
+      "fix": "Explicitly state that specifying a Distinguished Name for the CNO requires the creating account to have 'Create Computer objects' permission in that specific OU, or the CNO must be prestaged. This aligns with S1's account requirements section."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Do not mix cluster heartbeat and storage traffic on the same adapter unless explicitly supported and validated'. While S2 recommends dedicated adapters for iSCSI, it does not explicitly forbid mixing heartbeat and management traffic on the same adapter if validated, nor does it define 'explicitly supported'. This is vague and potentially misleading regarding network design flexibility.",
+      "fix": "Refine to: 'S2 recommends dedicating network adapters to iSCSI traffic. For cluster management and heartbeat, ensure the network passes validation tests for redundancy. Avoid single points of failure.' This keeps the guidance aligned with the validation-centric approach of S1 and S2."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'diagram' section in the JSON output which is not part of the prose body. The editorial guidance states 'Do not add visible Microsoft Learn screenshot or permission captions' and 'Keep source provenance in the separate review records.' While a diagram description isn't a screenshot, the JSON structure includes metadata not required in the final text output.",
+      "fix": "Remove the 'diagram' field from the JSON output if it is not rendered in the final article. If retained, ensure it is described as a textual flow rather than a visual element, adhering to the 'no visible screenshot' rule."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'For a small cluster, you typically assign a single static IP address'. S1 notes that Windows Server 2019+ supports Distributed Network Name (DNN) in Azure, but the draft does not mention DNN for on-premises or general Windows Server 2022 deployments where DNN might also be available or relevant, limiting the scope unnecessarily.",
+      "fix": "Add a note that Windows Server 2019 and later support Distributed Network Name (DNN) for cluster administration, which may eliminate the need for a dedicated static IP address in supported environments, referencing S1's note on DNN."
+    }
+  ]
+}

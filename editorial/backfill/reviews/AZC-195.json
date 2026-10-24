@@ -1,0 +1,96 @@
+{
+  "id": "AZC-195",
+  "title": "Investigate a cluster validation report before dismissing warnings",
+  "slug": "investigate-a-cluster-validation-report-before-dismissing-warnings",
+  "historical_date": "2025-06-28",
+  "input_sha256": "c214b7082501b3c90511698990e9fcc52e9dda2a80bb1c52cba8f10f6b498a63",
+  "created_at": "2026-10-23T16:44:21.875751+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate cluster validation warnings by cross-referencing Health Service metrics with system log events to identify root causes.",
+  "tags": [],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "revision": "e0f1c43b3ccfc49fee91c28412fa75a965525eff",
+      "revision_date": "2025-05-19T10:10:44Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Health Service reports",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/health-service-reports",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/e0f1c43b3ccfc49fee91c28412fa75a965525eff/WindowsServerDocs/failover-clustering/health-service-reports.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/system-events.md",
+      "revision": "1a6356889596aa65355769ce9095e426198437b0",
+      "revision_date": "2023-11-11T00:47:42Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering system log events",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/1a6356889596aa65355769ce9095e426198437b0/WindowsServerDocs/failover-clustering/system-events.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/clustering-requirements.md",
+      "revision": "aafacc669c05d45aeec75f8fd5d39a8c6423fde9",
+      "revision_date": "2025-05-19T12:39:01Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover clustering hardware requirements and storage options",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/aafacc669c05d45aeec75f8fd5d39a8c6423fde9/WindowsServerDocs/failover-clustering/clustering-requirements.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2023-11-13T05:29:48Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/system-events.md"
+  ],
+  "open_questions": [],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-cluster-validation-report-before-dismissing-warnings.md",
+  "draft": true,
+  "word_count": 1076,
+  "claim_support_checks": [],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the Health Service is available for 'Storage Spaces Direct clusters' and implies it is the standard for 'Windows Server failover cluster' validation. Source S1 explicitly states 'Applies to: Windows Server 2016' and describes the Health Service as specific to Storage Spaces Direct. Windows Server 2025 (the specified host) and general Failover Clustering do not use this specific Health Service cmdlet for validation reports; they use the Validate-Cluster cmdlet and Event Viewer. This misleads readers into using an S2D-specific tool for general cluster validation.",
+      "fix": "Clarify that `Get-StorageHealthReport` is specific to Storage Spaces Direct clusters. For general Failover Clusters, direct users to `Test-Cluster` (Validate-Cluster) and Event Viewer logs. Remove the implication that Health Service metrics are the primary method for investigating generic cluster validation warnings."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft suggests using `Get-StorageHealthReport` to investigate 'latency issues' flagged by a validation report. Source S1 shows this cmdlet returns real-time point-in-time samples, not historical data. It cannot retrospectively analyze the state 'during the period when the warning appeared' as suggested in the text. This is technically impossible with the described tool.",
+      "fix": "Remove the suggestion that Health Service metrics can retrospectively analyze historical warning periods. Explain that Health Service provides current state. For historical analysis, recommend Performance Monitor (PerfMon) or Windows Event Logs with appropriate logging levels enabled beforehand."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'All values are real-time and point-in-time only' (S1) but then advises comparing these values against application requirements to determine if a warning is a 'false positive'. This ignores the dynamic nature of workloads. A single point-in-time value might be high due to transient load, not a configuration error. The draft lacks context on how to interpret single-point metrics versus trends.",
+      "fix": "Add context that point-in-time metrics require correlation with concurrent workload activity. Advise that a single high latency reading does not confirm a hardware issue without observing trends or correlating with IOPS/throughput spikes during the same interval."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends running `Validate a Configuration` (Test-Cluster) to check network configuration after seeing Event 1135. Source S2 links Event 1135 to node removal due to connectivity loss. While `Test-Cluster` is relevant for pre-deployment or post-fix validation, it is not a real-time troubleshooting tool for an active cluster node that has already dropped. Running it on a degraded cluster may fail or skew results.",
+      "fix": "Clarify that `Test-Cluster` is for validating configuration integrity, not real-time troubleshooting of active connectivity loss. For active node drops, prioritize checking network adapters, switches, and Event 1135/1177 context immediately, rather than running a validation suite that may require cluster stability."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph: 'By using the Health Service and system log events together... This approach allows you to make informed decisions...'. This violates the editorial guidance to remove generic concluding paragraphs beginning with 'By following', 'By starting', or similar structures.",
+      "fix": "Remove the final paragraph entirely. End the article with the concrete verification step: 'Run `Test-Cluster` again to confirm the configuration is valid and monitor Event Viewer for recurrence.'"
+    }
+  ]
+}

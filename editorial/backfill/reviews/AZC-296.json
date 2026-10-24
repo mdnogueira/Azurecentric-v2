@@ -1,0 +1,148 @@
+{
+  "id": "AZC-296",
+  "title": "Review application consent and service principal permissions",
+  "slug": "review-application-consent-and-service-principal-permissions",
+  "historical_date": "2026-04-08",
+  "input_sha256": "a0450ccae6cb3f510dc1f77742c7c5e1b0aafaf17a113b1d5ebb4e8cbcf8f980",
+  "created_at": "2026-10-23T19:07:34.165842+00:00",
+  "author": "Marcos Nogueira",
+  "description": "How to review and revoke permissions for enterprise applications in Microsoft Entra ID, including admin and user consent.",
+  "tags": [
+    "entra-id",
+    "security",
+    "permissions",
+    "consent",
+    "powershell"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2026/azc-296-learn-1.png",
+      "alt": "Screenshot shows how to revoke admin consent.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/fe5d18454cbfc71fb368a411dab8c905fdfad285/docs/identity/enterprise-apps/media/manage-application-permissions/revoke-permissions.png",
+      "source_id": "S1",
+      "source_revision_date": "2026-02-19T02:08:45Z",
+      "sha256": "6b85a03f55ee7c8a33e6ddc3c81cc4b42608014f8104e11de5845129ea512172",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2026/azc-296-learn-2.png",
+      "alt": "Screenshot shows how to grant tenant-wide admin consent.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/d8116d93e758925b6ffc39f56cb71013606476de/docs/identity/enterprise-apps/media/grant-tenant-wide-admin-consent/grant-tenant-wide-admin-consent.png",
+      "source_id": "S2",
+      "source_revision_date": "2026-03-25T17:29:40Z",
+      "sha256": "7eea781eb9827999ed31c7b259e0069c8ff8a1ee22a2db28887cd678372b030c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/manage-application-permissions.md",
+      "revision": "fe5d18454cbfc71fb368a411dab8c905fdfad285",
+      "revision_date": "2026-02-19T02:08:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Review permissions granted to enterprise applications",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/manage-application-permissions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/fe5d18454cbfc71fb368a411dab8c905fdfad285/docs/identity/enterprise-apps/manage-application-permissions.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/grant-admin-consent.md",
+      "revision": "d8116d93e758925b6ffc39f56cb71013606476de",
+      "revision_date": "2026-03-25T17:29:40Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Grant tenant-wide admin consent to an application",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/d8116d93e758925b6ffc39f56cb71013606476de/docs/identity/enterprise-apps/grant-admin-consent.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/enterprise-apps/review-admin-consent-requests.md",
+      "revision": "db886ffe08c672fc4ce6dcb7cb897250f9520b5f",
+      "revision_date": "2026-03-19T14:27:33Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Review and take action on admin consent requests",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/review-admin-consent-requests",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/db886ffe08c672fc4ce6dcb7cb897250f9520b5f/docs/identity/enterprise-apps/review-admin-consent-requests.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the 'Block' action in the admin consent workflow apply to applications that were not requested via the workflow?",
+    "Are there any specific permissions that cannot be revoked using the Microsoft Graph API?",
+    "What is the impact of revoking permissions on active sessions or tokens?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-application-consent-and-service-principal-permissions.md",
+  "draft": true,
+  "word_count": 795,
+  "claim_support_checks": [
+    {
+      "claim": "Revoking admin consent removes the permission for all users but does not affect permissions granted by users.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "You must use PowerShell or Microsoft Graph API to revoke user consent permissions.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Blocking a request in the admin consent workflow creates a disabled service principal object.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "A Service principal owner can invalidate refresh tokens but cannot revoke permissions.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims a 'Service principal owner' can revoke permissions. Source S1 restricts this role's capability to invalidating refresh tokens only. Revoking permissions requires Cloud Application Administrator or Application Administrator.",
+      "fix": "Remove 'Service principal owner' from the list of roles authorized to revoke permissions. Retain it only for the specific context of invalidating refresh tokens if mentioned separately."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states blocking a request 'creates a disabled service principal object'. Source S3 describes this as a feature of the Admin Consent Workflow, but the draft presents it as a universal outcome of blocking, potentially misleading users who block via other means or lack the workflow.",
+      "fix": "Clarify that blocking a request and creating a disabled service principal is specific to the Admin Consent Workflow context described in S3, not a general property of all blocking actions."
+    },
+    {
+      "severity": "medium",
+      "problem": "The PowerShell example for revoking permissions uses `Get-MgServicePrincipal -ServicePrincipalID` which is syntactically incorrect in current Microsoft Graph PowerShell (should be `-ServicePrincipalId`). It also omits the necessary step to revoke application permissions, leaving the app partially active.",
+      "fix": "Correct the parameter name to `-ServicePrincipalId`. Add the code block to remove application permissions (`Remove-MgServicePrincipalAppRoleAssignedTo`) to ensure complete revocation as shown in S1."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that verifying changes by 'attempting to sign in' is a reliable verification method. This is vague and may not reflect backend permission state accurately, especially for application permissions which don't require user sign-in.",
+      "fix": "Replace the sign-in verification step with a recommendation to review the permissions tab in the portal or use Graph API queries to confirm the absence of permissions, as per S1."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a generic concluding paragraph ('By following these steps...') which violates the editorial guidance to remove such paragraphs and end with a concrete next action.",
+      "fix": "Remove the final paragraph starting with 'By following these steps'. End the article after the verification section with a direct link to related configuration documentation."
+    }
+  ]
+}

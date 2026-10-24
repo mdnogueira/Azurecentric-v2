@@ -1,0 +1,127 @@
+{
+  "id": "AZC-311",
+  "title": "Review split-brain risk in a stretched infrastructure design",
+  "slug": "review-split-brain-risk-in-a-stretched-infrastructure-design",
+  "historical_date": "2026-05-19",
+  "input_sha256": "fee78773e3641bb9083c76c2b223e2f3fe8ad5fd32a04b164a4afe4420c35192",
+  "created_at": "2026-10-23T19:28:24.161848+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure fault domains and quorum witnesses to manage split-brain risk in stretched Windows Server clusters.",
+  "tags": [
+    "failover-clustering",
+    "stretch-cluster",
+    "quorum",
+    "fault-domains",
+    "windows-server"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/fault-domains.md",
+      "revision": "16dafaddc757fb0b4ad7e5f8da33fbfc888fbcd4",
+      "revision_date": "2025-09-12T09:49:23Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Fault domain awareness",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/fault-domains",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/16dafaddc757fb0b4ad7e5f8da33fbfc888fbcd4/WindowsServerDocs/failover-clustering/fault-domains.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "revision": "122e7dc009e0e19625a7cdb603aa7cf495da635a",
+      "revision_date": "2025-03-25T15:36:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure and manage the quorum in a failover cluster",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/122e7dc009e0e19625a7cdb603aa7cf495da635a/WindowsServerDocs/failover-clustering/manage-cluster-quorum.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/failover-clustering/storage-architectures.md",
+      "revision": "f192864691ccbc0ad5df0a5669326c2cac46f85f",
+      "revision_date": "2025-11-17T20:16:39Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Failover Clustering Storage Architectures in Windows Server",
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/storage-architectures",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/f192864691ccbc0ad5df0a5669326c2cac46f85f/WindowsServerDocs/failover-clustering/storage-architectures.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2025-03-27T17:36:59Z; used previous public snapshot. Confirm continued applicability: WindowsServerDocs/failover-clustering/manage-cluster-quorum.md"
+  ],
+  "open_questions": [
+    "What is the maximum supported latency for a stretched S2D cluster?",
+    "Are there specific network configuration requirements for SMB Direct in stretched clusters?",
+    "How does dynamic quorum management interact with fault domains in a partition scenario?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/review-split-brain-risk-in-a-stretched-infrastructure-design.md",
+  "draft": true,
+  "word_count": 943,
+  "claim_support_checks": [
+    {
+      "claim": "Fault domains must be explicitly defined to match physical topology, as Windows Server does not verify them automatically.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "A quorum witness is required for multisite clusters to prevent split-brain and ensure the minority site can maintain quorum.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Storage Spaces Direct does not support disk witnesses, requiring file share or cloud witnesses instead.",
+      "source_id": "S2",
+      "span_found": true
+    },
+    {
+      "claim": "Fault domains enable storage affinity in stretch clustering, ensuring applications run near their storage.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims a quorum witness is required to prevent split-brain and ensure the minority site can maintain quorum. S2 claims a witness enables the cluster to continue if half the nodes go down, but does not state it prevents split-brain (which is a quorum loss, not a dual-write). S2 explicitly states a witness allows the cluster to survive if half the nodes go down, but does not support the claim that it ensures the minority site can 'maintain quorum' in a partition where the majority site is still up. The witness breaks the tie; it doesn't grant quorum to the minority against the majority.",
+      "fix": "Clarify that the witness breaks ties to prevent total quorum loss, not to grant quorum to the minority site against a functioning majority. Remove the implication that the witness allows the minority site to continue running if the majority site is still active and connected."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states that without fault domains, a network partition can cause the cluster to lose quorum entirely or allow both sides to continue writing. S1 and S2 do not support the claim that fault domains prevent 'both sides to continue writing' (split-brain data corruption). Fault domains help with storage affinity and alerting, but quorum logic is determined by node votes and witnesses, not fault domain definitions. Fault domains do not influence quorum calculation directly.",
+      "fix": "Remove the claim that fault domains prevent split-brain data corruption. State that fault domains provide metadata for storage affinity and health alerts, while quorum configuration (witnesses) prevents split-brain."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that S2D clusters support up to 16 nodes in a stretched design without qualification. S3 states S2D supports up to 16 nodes, but stretched S2D has specific latency requirements. The draft mentions latency but does not clarify that the 16-node limit might be constrained by the stretch topology's ability to maintain low latency for all nodes. S3 notes S2D requires low-latency east-west networking.",
+      "fix": "Clarify that the 16-node S2D limit applies to the entire cluster, and stretched deployments must ensure all nodes meet the low-latency requirements for S2D replication, which may limit practical node counts or site distances."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests using `Test-Cluster` to validate quorum configuration. S2 recommends using `Validate a Configuration Wizard` or `Test-Cluster` for hardware validation, but specifically mentions `Validate Cluster Quorum` test within the context of quorum configuration. The draft conflates general cluster validation with specific quorum validation.",
+      "fix": "Specify that the `Validate Cluster Quorum` test (accessible via Failover Cluster Manager or PowerShell) is the specific test for quorum configuration, distinct from general hardware validation."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states that S2D clusters support between 1 and 16 nodes. S3 confirms this. However, the draft does not mention that S2D clusters with more than 2 nodes can only sustain two node failures. S2 mentions this limitation. The draft omits this critical availability context for stretched S2D designs.",
+      "fix": "Add the constraint that S2D clusters can only sustain two node failures, which is a critical consideration for stretched designs where network partitions might simulate multiple node failures."
+    }
+  ]
+}

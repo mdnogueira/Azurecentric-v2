@@ -1,0 +1,120 @@
+{
+  "id": "AZC-114",
+  "title": "Investigate a Windows service that fails after a restart",
+  "slug": "investigate-a-windows-service-that-fails-after-a-restart",
+  "historical_date": "2024-11-13",
+  "input_sha256": "17466c4f51cc12c6938b1d6b34dd31864ed711d64013295c816164bc26787ef3",
+  "created_at": "2026-10-23T14:51:24.569960+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Investigate a Windows service failure after restart using Server Manager alerts and Event Viewer, avoiding unsupported command claims.",
+  "tags": [
+    "windows-server",
+    "troubleshooting",
+    "services",
+    "server-manager",
+    "logman"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/server-manager/view-and-configure-performance-event-and-service-data.md",
+      "revision": "4b823dbc8ad6ec6dc65bebbbe794754a164654d5",
+      "revision_date": "2024-10-25T13:36:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "View and Configure Performance Event and Service Data",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/server-manager/view-and-configure-performance-event-and-service-data",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/4b823dbc8ad6ec6dc65bebbbe794754a164654d5/WindowsServerDocs/administration/server-manager/view-and-configure-performance-event-and-service-data.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md",
+      "revision": "5c6c01c1e7d40816207425bbc0ebc871b4aa666e",
+      "revision_date": "2024-10-24T12:34:47Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Security guidelines for system services in Windows Server 2016",
+      "url": "https://learn.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/5c6c01c1e7d40816207425bbc0ebc871b4aa666e/WindowsServerDocs/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/administration/windows-commands/logman-update.md",
+      "revision": "82d40d9bc8b9f265ebc898f13e71a069e65d3d18",
+      "revision_date": "2024-10-17T08:27:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "logman update",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/logman-update",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/82d40d9bc8b9f265ebc898f13e71a069e65d3d18/WindowsServerDocs/administration/windows-commands/logman-update.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The source text for logman does not provide a complete example of creating a data collector set with specific service counters, only the update command syntax. Should the article include a more detailed logman example based on general knowledge, or stick to the provided syntax?",
+    "The source text mentions event IDs 7000, 7009, and 7023, but does not explicitly state that these are the most common IDs for service failures. Is this a safe assumption to make in the context of Windows Server 2025?",
+    "The source text for Server Manager mentions that performance counters are turned off by default. Should the article include steps to enable performance counters before using logman?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/investigate-a-windows-service-that-fails-after-a-restart.md",
+  "draft": true,
+  "word_count": 1348,
+  "claim_support_checks": [
+    {
+      "claim": "Server Manager can be configured to alert when a service enters a stopped or paused state.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The logman command can be used to create and update data collector sets for performance and service monitoring.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Disabling certain system services can impact essential system functions or prevent specific roles from working.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft provides a `logman` command using a non-existent `-cf` parameter for `create counter`. The source (S3) only documents `logman update` and generic syntax, not `create`. This command will fail, misleading the user. Additionally, the draft claims `logman` collects 'service status' via counters, but Service Control Manager status is not a standard performance counter.",
+      "fix": "Remove the specific `logman create counter` example. Replace it with a reference to the Performance Monitor GUI for creating data collector sets or use `logman query` to verify existing collectors. Do not claim `logman` collects service start/stop status via counters."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft asserts Event IDs 7000, 7009, and 7023 are the 'most common' for service failures. The provided sources do not contain this information. While these are standard Windows SCM IDs, the source absence means this specific claim is unsupported by the provided context. The draft also implies these are the only relevant IDs.",
+      "fix": "Remove the claim that these are the 'most common' IDs. State that Event Viewer should be filtered for Service Control Manager events, noting that 7000 and 7023 are typical indicators of failure, without ranking them or implying exclusivity."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft recommends checking the 'Log On' tab for permissions and verifying the 'Log on as a service' right. While technically correct, the source (S2) focuses on security guidelines for disabling services, not permission troubleshooting. The draft invents a troubleshooting step not supported by the provided sources.",
+      "fix": "Remove the specific instruction to verify 'Log on as a service' rights via `secpol.msc` unless supported by a source. Keep the general advice to review the 'Log On' tab but attribute the permission verification to general Windows administration knowledge rather than the provided sources."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'By following these steps' in the conclusion, which is explicitly forbidden by the editorial guidance. It also includes a generic concluding paragraph that adds no technical value.",
+      "fix": "Remove the concluding paragraph entirely. End the article with the final technical step (reviewing service configuration) or a concrete verification action, such as 'Restart the service and monitor the Server Manager dashboard for the alert.'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies that Server Manager alerts provide the 'why' of a failure, then immediately corrects itself. However, the section on Event Logs is presented as a separate step rather than the direct source of the 'why'. The flow suggests Server Manager is the primary diagnostic tool, whereas it is merely an alerting mechanism.",
+      "fix": "Reframe the Server Manager section to explicitly state it is for *alerting* and *monitoring*, not diagnosis. Position Event Viewer as the primary diagnostic tool for determining the cause, with Server Manager serving as a notification layer."
+    }
+  ]
+}

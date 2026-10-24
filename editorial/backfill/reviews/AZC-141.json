@@ -1,0 +1,153 @@
+{
+  "id": "AZC-141",
+  "title": "Use a watchlist to enrich a detection query",
+  "slug": "use-a-watchlist-to-enrich-a-detection-query",
+  "historical_date": "2025-01-28",
+  "input_sha256": "51b51713492141d3afcdad665eb6fa80ffafc7cb18bf8000a65271c48c28f657",
+  "created_at": "2026-10-23T15:30:11.455806+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Create and use Microsoft Sentinel watchlists to enrich KQL detection queries with reference data.",
+  "tags": [
+    "microsoft-sentinel",
+    "watchlists",
+    "kql",
+    "security-operations",
+    "threat-detection"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-141-learn-1.png",
+      "alt": "Screenshot of add watchlist option on watchlist page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/ed8d2a84a9fc6b77815d68c88a6433dcd6f85c28/articles/sentinel/media/watchlists-create/sentinel-watchlist-new.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-11-12T23:28:56Z",
+      "sha256": "337253247dbc8c08a699c019bef788d994b152525b55338213012cd4b7d1b0ce",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2025/azc-141-learn-2.png",
+      "alt": "Screenshot that shows how to use watchlists in queries.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/032c73d628b1db85065a56d68da6126699c8f92d/articles/sentinel/media/watchlists-queries/sentinel-watchlist-queries-list.png",
+      "source_id": "S3",
+      "source_revision_date": "2024-12-31T08:25:12Z",
+      "sha256": "fb1ff439afb13cb33330daff0a0df7eb2561a03f7a456f68467029274653161d",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/watchlists.md",
+      "revision": "39a63351360166da7f9a268d1d8968f82cf4f290",
+      "revision_date": "2025-01-01T10:53:05Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Watchlists in Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/watchlists",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/39a63351360166da7f9a268d1d8968f82cf4f290/articles/sentinel/watchlists.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/watchlists-create.md",
+      "revision": "ed8d2a84a9fc6b77815d68c88a6433dcd6f85c28",
+      "revision_date": "2024-11-12T23:28:56Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Create new watchlists",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/watchlists-create",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ed8d2a84a9fc6b77815d68c88a6433dcd6f85c28/articles/sentinel/watchlists-create.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/sentinel/watchlists-queries.md",
+      "revision": "032c73d628b1db85065a56d68da6126699c8f92d",
+      "revision_date": "2024-12-31T08:25:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Build queries or rules with watchlists - Microsoft Sentinel",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/watchlists-queries",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/032c73d628b1db85065a56d68da6126699c8f92d/articles/sentinel/watchlists-queries.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Is the 12-day refresh cycle sufficient for the specific use case, or are more frequent updates required?",
+    "Are there any specific compliance requirements for storing reference data in the Watchlist table versus custom logs?",
+    "How should the watchlist be managed if it needs to be shared across multiple workspaces, given that Lighthouse management is not supported?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-a-watchlist-to-enrich-a-detection-query.md",
+  "draft": true,
+  "word_count": 908,
+  "claim_support_checks": [
+    {
+      "claim": "Watchlists are stored in the Watchlist table as name-value pairs and are cached for performance.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The total number of active watchlist items across all watchlists in a single workspace is limited to 10 million.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Local file uploads are limited to 3.8 MB, while Azure Storage uploads (preview) support up to 500 MB.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "The SearchKey is the column used for joins or frequent searches and should be used for optimal query performance.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Watchlists are refreshed every 12 days, updating the TimeGenerated field.",
+      "source_id": "S1",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft states Azure Storage watchlist creation is in preview. Source S2 (Nov 2024) and S1 (Jan 2025) confirm this feature is still in preview. However, the draft implies this is a general limitation rather than a specific feature status, and fails to mention the Preview Supplemental Terms required for preview features.",
+      "fix": "Explicitly state that Azure Storage watchlist creation is a preview feature subject to the Azure Preview Supplemental Terms. Ensure the distinction between general availability (local upload) and preview (storage upload) is clear to manage user expectations regarding stability and support."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims watchlists are 'refreshed... every 12 days'. Source S1 states: 'Watchlists are refreshed in your workspace every 12 days, updating the TimeGenerated field.' This is a specific, potentially misleading technical detail. It does not mean the data updates every 12 days; it refers to a system-level timestamp update mechanism, not a data sync interval. Users might incorrectly assume data is stale for 12 days.",
+      "fix": "Clarify that the '12 days' refers to the `TimeGenerated` field update mechanism, not the data refresh frequency. Emphasize that data availability in queries may take several minutes after creation (as noted in S2), and recommend recreating the watchlist if more frequent data updates are needed, rather than relying on the 12-day cycle."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a concluding paragraph: 'Start with a small, representative dataset... This approach minimises the risk...'. The editorial guidance explicitly forbids generic concluding paragraphs beginning with 'By following', 'By starting', or similar. This adds no technical value and violates the style guide.",
+      "fix": "Remove the final paragraph entirely. End the article with the concrete verification step or next action, such as running the `_GetWatchlistAlias` query or testing the detection rule logic, as per the guidance to 'End when the technical question is answered'."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'managed, workspace-scoped reference table'. While technically accurate, it is slightly vague. Source S1 explicitly states watchlists are stored in the `Watchlist` table. The draft should explicitly link the concept to the underlying storage mechanism for clarity.",
+      "fix": "Replace 'managed, workspace-scoped reference table' with 'workspace-scoped data stored in the `Watchlist` table'. This aligns directly with Source S1's description and provides a concrete technical anchor for the reader."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'local file uploads are limited to 3.8 MB'. Source S2 confirms this limit. However, the draft does not mention that files over 3.8 MB *must* use the Azure Storage preview feature. It implies a choice but doesn't enforce the constraint for larger files.",
+      "fix": "Clarify that for files larger than 3.8 MB, local upload is not an option and the Azure Storage preview method is required. This removes ambiguity about file size handling and ensures users with larger datasets follow the correct procedure."
+    }
+  ]
+}

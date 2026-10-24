@@ -1,0 +1,134 @@
+{
+  "id": "AZC-146",
+  "title": "Deploy infrastructure through a federated pipeline identity",
+  "slug": "deploy-infrastructure-through-a-federated-pipeline-identity",
+  "historical_date": "2025-02-12",
+  "input_sha256": "4e85db86b928c35ee45d252d3ede1a622b2bc2ff3e16fb4bdb6d58762e6106dc",
+  "created_at": "2026-10-23T15:36:10.522534+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Deploy Bicep via Azure Pipelines using federated identity and bicepparam files.",
+  "tags": [
+    "azure-pipelines",
+    "bicep",
+    "federated-identity",
+    "ci-cd",
+    "azure-cli"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-146-learn-1.png",
+      "alt": "Screenshot of creating new pipeline.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/98072e7a1646f27f6928e33c4effade14789a717/articles/azure-resource-manager/bicep/media/add-template-to-azure-pipelines/new-pipeline.png",
+      "source_id": "S1",
+      "source_revision_date": "2025-01-22T16:42:35Z",
+      "sha256": "0ab4ba0e53eca1fb06ddc32717faf164b99f4719e1b80ac4ff513fc78e1bb1f1",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/add-template-to-azure-pipelines.md",
+      "revision": "98072e7a1646f27f6928e33c4effade14789a717",
+      "revision_date": "2025-01-22T16:42:35Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "CI/CD with Azure Pipelines, Bicep, and bicepparam files",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/add-template-to-azure-pipelines",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/98072e7a1646f27f6928e33c4effade14789a717/articles/azure-resource-manager/bicep/add-template-to-azure-pipelines.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/deploy-github-actions.md",
+      "revision": "d834036cd0c8df56dc86cd4c5040b3a21f3c1158",
+      "revision_date": "2025-02-11T20:37:07Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Deploy Bicep files by using GitHub Actions",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/d834036cd0c8df56dc86cd4c5040b3a21f3c1158/articles/azure-resource-manager/bicep/deploy-github-actions.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-resource-manager/bicep/scenarios-rbac.md",
+      "revision": "f593392a7be2fa0da0eb7651c19bd22aa4855196",
+      "revision_date": "2024-07-12T14:00:57Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create Azure RBAC resources by using Bicep",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-rbac",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f593392a7be2fa0da0eb7651c19bd22aa4855196/articles/azure-resource-manager/bicep/scenarios-rbac.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Include unavailable: reusable-content/github-actions/generate-deployment-credentials.md",
+    "Include unavailable: reusable-content/github-actions/create-secrets-with-openid.md"
+  ],
+  "open_questions": [
+    "How does the pipeline handle parameter overrides if needed?",
+    "What are the specific RBAC roles required for different resource types?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/deploy-infrastructure-through-a-federated-pipeline-identity.md",
+  "draft": true,
+  "word_count": 798,
+  "claim_support_checks": [
+    {
+      "claim": "Federated identity allows pipelines to authenticate without secrets.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "AzureCLI task supports bicepparam files for deployment.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Role assignments in Bicep require deterministic GUID names.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the AzureCLI task 'automatically obtains a token' using the federated credential configured in the service connection. S1 states the AzureCLI task executes under the identity of the service principal associated with the service connection. It does not automatically handle OIDC federation; the service connection itself must be configured for federated identity (OIDC) in Azure DevOps, or the task uses a service principal secret. The draft conflates the task's authentication mechanism with the service connection's configuration.",
+      "fix": "Clarify that the Azure DevOps service connection must be configured to use federated identity (OIDC) for the pipeline to authenticate without secrets. The AzureCLI@2 task uses the service connection's credentials. Update the text to explain that the service connection configuration, not the task itself, handles the OIDC token exchange."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a diagram node 'Microsoft Entra ID Token Issuance' implying a direct token flow. While technically OIDC involves token issuance, the draft's description of the flow is vague. More critically, the draft claims 'You do not need to store a client secret in Azure DevOps variable groups' but doesn't explain that the service connection must be set up with the federated credential type, which requires specific Azure DevOps configuration steps not detailed in the draft.",
+      "fix": "Remove the generic diagram node if it adds no value. Add a step or reference explaining that the Azure DevOps service connection must be created/updated to use 'Federated Identity' (OIDC) rather than 'Service Principal' (Secret) to enable the secretless flow described."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft states 'The bicepparam file must include a using statement to point to the Bicep file.' S1 notes that for AzureCLI, the bicepparam file must reference the local Bicep file in the using statement. However, S1 also notes that for the AzureResourceManagerTemplateDeployment task, the bicepparam file must reference the local Bicep file. The draft is accurate but could be more precise about the 'using' statement syntax being required for local file references.",
+      "fix": "No change needed if the current text is clear. Ensure the example `using './main.bicep'` is explicitly shown as the required syntax for local references, which it is. This is a minor clarity point."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'This approach removes the need for static credentials'. While true for the pipeline execution, it ignores the prerequisite of creating a service principal and federated credential in Azure AD, which is a form of credential management (though less risky). The draft oversimplifies the setup process by not mentioning the need to create the service principal and federated credential in Entra ID, which is a non-trivial step.",
+      "fix": "Add a brief mention or reference to the prerequisite of creating the service principal and federated credential in Azure AD. This provides a more complete picture of the 'secretless' setup, acknowledging that while secrets aren't stored in DevOps, an identity still needs to be provisioned."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft's YAML example uses `az deployment group create` with `--parameters $(bicepParamFile)`. S1 confirms this is supported. However, S1 also notes that when using bicepparam with az deployment group create, you cannot override parameters. The draft mentions this limitation but doesn't explain how to handle parameter overrides if needed (e.g., via variables in the bicepparam file or using a different task). The review question 'How does the pipeline handle parameter overrides if needed?' suggests this is a gap.",
+      "fix": "Clarify that parameter overrides are not possible with `az deployment group create` and bicepparam. If overrides are needed, suggest using the `AzureResourceManagerTemplateDeployment@3` task with bicepparam support (as per S1) or defining parameters within the bicepparam file using variables. Update the draft to reflect this constraint and alternative."
+    }
+  ]
+}

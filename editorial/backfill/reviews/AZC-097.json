@@ -1,0 +1,146 @@
+{
+  "id": "AZC-097",
+  "title": "Connect GitHub repositories to Defender for Cloud",
+  "slug": "connect-github-repositories-to-defender-for-cloud",
+  "historical_date": "2024-09-28",
+  "input_sha256": "1c7e6b50094aa37fc6b89551e14c70260ce95e4954e1f5604dab23ce051b7c4e",
+  "created_at": "2026-10-23T14:24:26.438201+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Connect GitHub to Defender for Cloud posture management and configure the Microsoft Security DevOps action for code scanning.",
+  "tags": [
+    "defender-for-cloud",
+    "github",
+    "devops-security",
+    "github-actions",
+    "msdo"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-097-learn-1.png",
+      "alt": "Screenshot that shows selections for adding GitHub as a connector.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/quickstart-onboard-github/select-github.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "17bcd0a82c1ea57f49ebb3dbedebde7321cea0ebeebbddafd54b126d465916da",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-097-learn-2.png",
+      "alt": "Screenshot that shows you where the Actions button is located.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/media/msdo-github-action/actions.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-08-05T15:58:45Z",
+      "sha256": "a57b29c10cdf25a1d1fed1e3902b06c4701d94443624c293210f870bc814105f",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/quickstart-onboard-github.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Connect your GitHub organizations",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/quickstart-onboard-github",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/quickstart-onboard-github.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/github-action.md",
+      "revision": "22e0ade52c247e5d306a78dc9e392d901eb9c198",
+      "revision_date": "2024-08-05T15:58:45Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Configure the Microsoft Security DevOps GitHub action",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/github-action",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/22e0ade52c247e5d306a78dc9e392d901eb9c198/articles/defender-for-cloud/github-action.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "github/docs",
+      "path": "content/code-security/adopting-github-advanced-security-at-scale/introduction-to-adopting-github-advanced-security-at-scale.md",
+      "revision": "cba431c6c8ef7b661128b8fd15e9c4a0e9bb6758",
+      "revision_date": "2024-05-01T11:02:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Introduction to adopting GitHub Advanced Security at scale",
+      "url": "https://docs.github.com/en/code-security/adopting-github-advanced-security-at-scale/introduction-to-adopting-github-advanced-security-at-scale",
+      "snapshot_url": "https://github.com/github/docs/blob/cba431c6c8ef7b661128b8fd15e9c4a0e9bb6758/content/code-security/adopting-github-advanced-security-at-scale/introduction-to-adopting-github-advanced-security-at-scale.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/quickstart-onboard-github.md",
+    "Public document removed/moved on 2024-08-05T18:55:32Z; used previous public snapshot. Confirm continued applicability: articles/defender-for-cloud/github-action.md"
+  ],
+  "open_questions": [
+    "Does the MSDO action support all GitHub-hosted runner OS versions equally, or are there specific limitations for Linux vs Windows agents mentioned in the source?",
+    "What is the exact retention period for security findings in Defender for Cloud DevOps Security?",
+    "Are there any specific cost implications for using the MSDO action within GitHub Actions beyond standard GitHub Actions usage?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/connect-github-repositories-to-defender-for-cloud.md",
+  "draft": true,
+  "word_count": 806,
+  "claim_support_checks": [
+    {
+      "claim": "Connecting GitHub requires an Azure subscription with Defender for Cloud onboarded and specific permissions in both Azure and GitHub.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "The Defender for Cloud GitHub application must be installed to grant access to organizations for onboarding.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "It may take up to 8 hours for resources to appear in the Defender for Cloud inventory after onboarding.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The Microsoft Security DevOps GitHub action requires id-token: write permissions for federation with Defender for Cloud.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Scan results from the MSDO action appear in Defender for Cloud DevOps Security within minutes.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims the `security-events: write` permission is required for the MSDO action to authenticate with Defender for Cloud. Source S2 explicitly states this permission is only required for results to appear in the GitHub CodeQL security alerts tab (requiring GHAS), not for Defender for Cloud federation.",
+      "fix": "Clarify that `security-events: write` is optional and specific to GitHub Advanced Security integration. State that `id-token: write` is the critical permission for Defender for Cloud federation."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft asserts that Defender for Cloud can only assess repository configuration, not code content, without the MSDO action. This is an unsupported categorical claim. Defender for Cloud may ingest findings from other sources (e.g., GitHub Code Scanning via GHAS) without the specific MSDO action.",
+      "fix": "Rephrase to state that the MSDO action specifically enables Defender for Cloud to ingest static analysis results from Microsoft Security DevOps tools, rather than implying it is the sole method for code content assessment."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft recommends using `microsoft/security-devops-action@latest`. Using `@latest` is risky for production as it may introduce breaking changes. Source S2 links to a sample workflow but does not explicitly mandate `@latest` over a specific version.",
+      "fix": "Recommend pinning to a specific version (e.g., `@v1`) for stability, or explicitly mark the `@latest` usage as illustrative and unrun, noting that version pinning is best practice."
+    }
+  ]
+}

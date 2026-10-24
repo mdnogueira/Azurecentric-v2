@@ -1,0 +1,151 @@
+{
+  "id": "AZC-039",
+  "title": "Compare Defender plan coverage across subscriptions",
+  "slug": "compare-defender-plan-coverage-across-subscriptions",
+  "historical_date": "2024-04-18",
+  "input_sha256": "b86188880eca1635ca8d35d872d24c4731ce7b428aed13bfb21c15b95fa244bb",
+  "created_at": "2026-10-23T13:07:01.450263+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Audit Defender plan coverage across subscriptions by verifying scope, permissions, and workspace linkage.",
+  "tags": [
+    "defender-for-cloud",
+    "cspm",
+    "defender-for-servers",
+    "azure-subscriptions",
+    "log-analytics",
+    "security-posture"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-039-learn-1.png",
+      "alt": "Screenshot of Defender for Cloud's overview page.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/b109d9abdc47607a15b2fa1fac31da344671ce97/articles/defender-for-cloud/media/overview-page/overview.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-03-25T20:50:59Z",
+      "sha256": "6557228ebbe1f648e804bcd18b3b2621aa879fec5978c55b2eb3e33d1494f83c",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-039-learn-2.png",
+      "alt": "Screenshot of the Defender plans page that shows where to select the settings option.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/4b09ec1fe8df3f6ffd8dcc3fb7b5cc475d665c59/articles/defender-for-cloud/media/tutorial-enable-cspm-plan/cspm-settings.png",
+      "source_id": "S2",
+      "source_revision_date": "2024-03-12T13:29:37Z",
+      "sha256": "566e0784d8b87e18cd6e4c376c89b66f1537098e341141ca80a2ea667dd25bd5",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/defender-for-cloud-planning-and-operations-guide.md",
+      "revision": "b109d9abdc47607a15b2fa1fac31da344671ce97",
+      "revision_date": "2024-03-25T20:50:59Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Defender for Cloud Planning and Operations Guide",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-planning-and-operations-guide",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/b109d9abdc47607a15b2fa1fac31da344671ce97/articles/defender-for-cloud/defender-for-cloud-planning-and-operations-guide.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+      "revision": "4b09ec1fe8df3f6ffd8dcc3fb7b5cc475d665c59",
+      "revision_date": "2024-03-12T13:29:37Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Protect your resources with Defender CSPM",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-cspm-plan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/4b09ec1fe8df3f6ffd8dcc3fb7b5cc475d665c59/articles/defender-for-cloud/tutorial-enable-cspm-plan.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/defender-for-cloud/tutorial-enable-servers-plan.md",
+      "revision": "fa73cc15ff16b05931e3100af9853a06f797c8e8",
+      "revision_date": "2024-02-06T08:20:11Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Deploy Defender for Servers",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/fa73cc15ff16b05931e3100af9853a06f797c8e8/articles/defender-for-cloud/tutorial-enable-servers-plan.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Does the source specify if Defender CSPM features are available for non-Azure resources (AWS/GCP) in the same way as Azure?",
+    "Are there any specific prerequisites for enabling Defender CSPM on AWS or GCP projects beyond having the plan enabled?",
+    "Is there a cost implication difference between enabling Defender CSPM on a subscription versus a workspace?",
+    "Does the source provide guidance on how to verify if the agentless scanner is actually running, beyond checking the plan status?",
+    "Are there any known limitations or exclusions for the agentless scanning feature that should be noted in the comparison?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/compare-defender-plan-coverage-across-subscriptions.md",
+  "draft": true,
+  "word_count": 1161,
+  "claim_support_checks": [
+    {
+      "claim": "Defender CSPM features like agentless scanning require the plan to be enabled by a Subscription Owner.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Enabling Defender for Servers at the subscription level does not extend coverage to attached workspaces.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Defender for Servers on workspaces only supports Plan 2.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Foundational CSPM capabilities are automatically enabled when Defender for Cloud is enabled.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft includes a screenshot of the 'Defender plans page' (azc-039-learn-2.png) next to the step 'Review the Defender plans page'. However, the source S2 explicitly states this screenshot shows 'where to select the settings option', not the plan toggle page. The draft mislabels the visual evidence, violating the instruction to not add unrelated screenshots or misrepresent source visuals.",
+      "fix": "Remove the screenshot from the 'Check the plan status' section. The source S2 screenshot illustrates the 'Settings' button within the CSPM plan configuration, not the main Defender plans toggle page. If a screenshot is needed for the plan status check, use a generic description or omit it, as no source provides a screenshot of the main Defender plans toggle page itself."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims 'Plan 1 provides basic threat protection, while Plan 2 includes integrated Microsoft Defender for Endpoint'. Source S3 states Plan 2 includes 'integrated Microsoft Defender for Endpoint', but does not define Plan 1 as 'basic threat protection'. It only says Plan 1 and Plan 2 offer 'different levels of protection'. The term 'basic' is an unsupported superlative/interpretation not found in the source.",
+      "fix": "Replace 'Plan 1 provides basic threat protection' with 'Plan 1 offers a lower tier of protection compared to Plan 2'. Cite S3 for the existence of two plans with different features, but avoid defining Plan 1's feature set beyond what is explicitly contrasted with Plan 2 in the source."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'If Defender CSPM is toggled On... the subscription has access to features like agentless scanning...'. It later says if enabled by a non-Owner, 'agentless scanner will not be enabled by default'. This creates a contradiction: the plan is 'On', but the feature is 'Off'. The draft fails to clarify that the plan toggle enables the *license*, but the *feature* depends on permissions.",
+      "fix": "Clarify that enabling the Defender CSPM plan grants the license, but specific features like agentless scanning require the plan to be enabled by a Subscription Owner. If enabled by a lower-privileged user, the plan is active, but agentless scanning remains disabled, affecting attack path analysis and security explorer data."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a concluding paragraph: 'If you find a subscription where Defender CSPM is enabled but agentless scanning is not working... These are the concrete steps to align your security posture...'. This is a generic concluding paragraph that adds no technical value and violates the instruction to end when the technical question is answered.",
+      "fix": "Remove the final paragraph starting with 'If you find a subscription...' and ending with '...intended coverage.' The article ends effectively after the 'Decision criteria for coverage comparison' checklist."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft claims 'Defender for Servers on workspaces only supports Plan 2'. Source S3 confirms this. However, the draft implies this is a universal rule for all workspaces. It does not mention that this applies specifically to the 'Defender for Servers' plan at the workspace level, and that other plans (like CSPM) might have different behaviors or requirements at the workspace level, which could confuse readers comparing all plans.",
+      "fix": "Specify that 'Defender for Servers on workspaces only supports Plan 2' is specific to the Servers plan. Avoid generalizing this limitation to other Defender plans or assuming it applies to all workspace-level configurations without explicit source support for those other plans."
+    }
+  ]
+}

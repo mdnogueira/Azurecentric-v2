@@ -1,0 +1,127 @@
+{
+  "id": "AZC-133",
+  "title": "Add structured logging to an infrastructure script",
+  "slug": "add-structured-logging-to-an-infrastructure-script",
+  "historical_date": "2025-01-06",
+  "input_sha256": "8278eb5052b5333b9e92bfd35b3d2d8988ee1ff0d2c448cf820e0944964bacbf",
+  "created_at": "2026-10-23T15:18:06.423114+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Replace unreliable PowerShell transcripts with structured logging to ensure consistent, parseable infrastructure logs.",
+  "tags": [
+    "powershell",
+    "structured-logging",
+    "infrastructure-as-code",
+    "error-handling",
+    "transcripts"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/output-missing-from-transcript.md",
+      "revision": "eb2177e5fcb97fd8078417832768960c1b09e015",
+      "revision_date": "2022-11-16T23:26:54Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Limitations of PowerShell transcripts",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/output-missing-from-transcript",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/eb2177e5fcb97fd8078417832768960c1b09e015/reference/docs-conceptual/learn/deep-dives/output-missing-from-transcript.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/developer/help/placing-comment-based-help-in-scripts.md",
+      "revision": "90480e1766559adc01f8eff8b66311adbdfb268a",
+      "revision_date": "2023-07-10T20:08:48Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Placing Comment-Based Help in Scripts",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/developer/help/placing-comment-based-help-in-scripts",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/90480e1766559adc01f8eff8b66311adbdfb268a/reference/docs-conceptual/developer/help/placing-comment-based-help-in-scripts.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/PowerShell-Docs",
+      "path": "reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "revision": "b0246898da471e08ffabc70991b8ec5266f81528",
+      "revision_date": "2024-06-20T21:22:52Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Everything you wanted to know about exceptions",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions",
+      "snapshot_url": "https://github.com/MicrosoftDocs/PowerShell-Docs/blob/b0246898da471e08ffabc70991b8ec5266f81528/reference/docs-conceptual/learn/deep-dives/everything-about-exceptions.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "The provided code example uses a non-existent type `[richtext]` for creating the log entry hashtable. Should this be corrected to a standard hashtable `@{}` or a different type?",
+    "The example assumes a fixed log file path `C:\\Logs\\infrastructure.log`. Should the script include logic to create the directory if it does not exist?",
+    "The structured logging function does not handle concurrent writes from multiple threads. Is thread-safety a requirement for this use case?",
+    "The example uses `ConvertTo-Json` which may not preserve all object properties if they are complex. Should a more robust serialization method be used?",
+    "The source documents do not provide guidance on log rotation or retention policies. Should these be addressed in the structured logging function?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/add-structured-logging-to-an-infrastructure-script.md",
+  "draft": true,
+  "word_count": 786,
+  "claim_support_checks": [
+    {
+      "claim": "PowerShell transcripts can drop output or reorder entries due to how they interact with the output stream and formatting system.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Write-Host writes directly to the host process, bypassing the output stream that transcripts capture.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Exceptions in PowerShell can be caught and handled using try/catch blocks, allowing for structured error logging.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Comment-based help can be placed at the beginning or end of a script, but must be separated from function declarations if placed at the end.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The code example uses `[richtext]` as a type literal, which is not a valid PowerShell type. This causes a runtime error. The intent was clearly to create a hashtable.",
+      "fix": "Replace `[richtext]` with `[hashtable]` or remove the type cast entirely, as PowerShell infers the hashtable type from the `@{}` syntax. Ensure the code is syntactically correct."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft claims transcripts fail on 'all three counts' (completeness, structure, parseability) and are 'unsuitable for any scenario' where order/completeness matters. This is an unsupported categorical claim. Transcripts are suitable for simple session recording, and the 'missing output' issue is specific to complex object formatting timing, not all output.",
+      "fix": "Qualify the claim. State that transcripts are unreliable for *structured, machine-parseable* logs due to formatting timing issues with objects, but acknowledge their utility for simple human-readable session recording. Avoid absolute statements about 'any scenario'."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft suggests using `ConvertTo-Json` for structured logging without mentioning its limitations with complex objects (e.g., circular references, specific type serialization) or the lack of log rotation. This could lead to large, unmanageable log files or parsing errors in production infrastructure scripts.",
+      "fix": "Add a note about log rotation strategies (e.g., using `Get-ChildItem` to manage file size) and mention that `ConvertTo-Json` may need `-Depth` for nested objects. Clarify that this is a minimal example and production scripts may need more robust handling."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a claim about comment-based help placement (S2) that is irrelevant to the topic of structured logging. This distracts from the core technical guidance.",
+      "fix": "Remove the claim and evidence related to comment-based help (S2) as it does not support the main argument about structured logging vs. transcripts."
+    },
+    {
+      "severity": "low",
+      "problem": "The verification step suggests using `Get-Content | ConvertFrom-Json` which loads the entire file into memory. For large log files, this is inefficient and may fail.",
+      "fix": "Recommend using `Get-Content -Tail` or a streaming approach for verification, or explicitly state that this verification method is only for small test logs. Alternatively, suggest using `Select-Object -First 1` to inspect a single entry."
+    }
+  ]
+}

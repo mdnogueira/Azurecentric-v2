@@ -1,0 +1,126 @@
+{
+  "id": "AZC-177",
+  "title": "Use production checkpoints with a clear recovery purpose",
+  "slug": "use-production-checkpoints-with-a-clear-recovery-purpose",
+  "historical_date": "2025-05-10",
+  "input_sha256": "6507c293590eef30851428f6257632ee214d1cd1e5d348910e3fa5e5b5d219bb",
+  "created_at": "2026-10-23T16:21:46.194306+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Configure Hyper-V production checkpoints for AD workloads, manage storage impact, and apply or delete checkpoints safely.",
+  "tags": [
+    "hyper-v",
+    "production-checkpoints",
+    "virtual-machines",
+    "windows-server",
+    "backup-and-recovery"
+  ],
+  "assets": [],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Choose between standard or production checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/choose-between-standard-or-production-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Avoid-using-checkpoints-on-a-virtual-machine-server-workload-production.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Avoid using checkpoints on a virtual machine that runs a server workload in a production environment",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-analyzer/avoid-using-checkpoints-on-a-virtual-machine-server-workload-production",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/best-practices-analyzer/Avoid-using-checkpoints-on-a-virtual-machine-server-workload-production.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/windowsserverdocs",
+      "path": "WindowsServerDocs/virtualization/hyper-v/manage/Enable-or-disable-checkpoints-in-Hyper-V.md",
+      "revision": "cb23653ea3648917a4285809e126d12e8a1ce744",
+      "revision_date": "2025-04-07T07:03:14Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Enable or disable checkpoints in Hyper-V",
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/enable-or-disable-checkpoints-in-hyper-v",
+      "snapshot_url": "https://github.com/MicrosoftDocs/windowsserverdocs/blob/cb23653ea3648917a4285809e126d12e8a1ce744/WindowsServerDocs/virtualization/hyper-v/manage/Enable-or-disable-checkpoints-in-Hyper-V.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "What is the specific impact on application consistency when using production checkpoints versus standard checkpoints for non-AD workloads?",
+    "Are there any known issues with production checkpoints on Windows Server 2025 that are not mentioned in the 2016 documentation?",
+    "How does the checkpoint file location setting affect performance and recovery time in a high-I/O environment?",
+    "What are the exact steps to verify that a production checkpoint was successfully taken using guest-integrated backup technology?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-production-checkpoints-with-a-clear-recovery-purpose.md",
+  "draft": true,
+  "word_count": 773,
+  "claim_support_checks": [
+    {
+      "claim": "Production checkpoints are the default for new virtual machines on Windows Server 2016 and later.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Only production checkpoints are supported on guests running Active Directory Domain Services.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "Standard checkpoints are intended for development and test scenarios.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "If physical disk space runs out, virtual machines with checkpoints may pause automatically.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "To delete checkpoints, you must shut down the virtual machine.",
+      "source_id": "S2",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft claims deleting checkpoints requires shutting down the VM. S2 specifies this only for standard checkpoints in production; production checkpoints are deleted via guest backup integration without VM shutdown. This is a critical operational error.",
+      "fix": "Clarify that production checkpoints are deleted via the guest backup application, not by shutting down the VM. Reserve the shutdown requirement for standard checkpoints or when production checkpoints fail."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft states production checkpoints are supported for 'all production workloads that can participate in the backup process.' S1 explicitly restricts support to AD DS and AD LDS roles. This overgeneralization risks unsupported configurations for other server workloads.",
+      "fix": "Restrict the claim to AD DS and AD LDS roles as per S1. Remove the broad 'all production workloads' statement and clarify that other workloads should use standard checkpoints for dev/test or external backups for production."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft implies production checkpoints are a 'backup' strategy. S1 defines them as 'point in time' images using guest backup tech, distinct from full backups. The conclusion paragraph uses generic filler language violating editorial guidance.",
+      "fix": "Remove the concluding paragraph starting with 'By carefully selecting...'. Explicitly distinguish production checkpoints from comprehensive backup strategies, noting they are for specific state recovery, not data protection."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft suggests falling back to standard checkpoints for production workloads if production checkpoints fail. S1 and S2 warn against standard checkpoints in production due to storage and consistency risks.",
+      "fix": "Advise against using standard checkpoints for production workloads. If production checkpoints fail, troubleshoot the guest backup integration or use external backup solutions rather than switching to standard checkpoints."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "AZC-043",
+  "title": "Use managed identity to read an application secret from Key Vault",
+  "slug": "use-managed-identity-to-read-an-application-secret-from-key-vault",
+  "historical_date": "2024-04-29",
+  "input_sha256": "8f30c94b7054ebfcd557f75bb8094497c187ee4724642023be3d5883a55e0bb1",
+  "created_at": "2026-10-23T13:11:02.498820+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Use App Service managed identities and Key Vault references to read secrets without storing connection strings in app settings.",
+  "tags": [
+    "app-service",
+    "key-vault",
+    "managed-identity",
+    "secrets-management",
+    "azure-cli"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2024/azc-043-learn-1.png",
+      "alt": "Screenshot that shows where to switch Status to On and then select Save.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f2a3c755380f31e83abdc02be17b9afa75bdb813/articles/app-service/media/app-service-managed-service-identity/system-assigned-managed-identity-in-azure-portal.png",
+      "source_id": "S1",
+      "source_revision_date": "2024-04-02T18:51:32Z",
+      "sha256": "b73a318329569f28bd36ba161c59dc2c865970353db4f2cde01ab86c6b022719",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    },
+    {
+      "path": "/images/posts/2024/azc-043-learn-2.png",
+      "alt": "Screenshot of where to find the deploy button at the top of the template screen.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/339a7efedd0eeb152fb18b88d182f30f6e109fc3/articles/azure-functions/media/functions-identity-connections-tutorial/function-app-portal-template-deploy-button.png",
+      "source_id": "S3",
+      "source_revision_date": "2023-10-10T21:56:47Z",
+      "sha256": "4ccdfed0b61a6ce3bb56afa217fb2aae0e40c410271e285debfad0105a9b77bb",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/overview-managed-identity.md",
+      "revision": "f2a3c755380f31e83abdc02be17b9afa75bdb813",
+      "revision_date": "2024-04-02T18:51:32Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Managed identities",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-managed-identity",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f2a3c755380f31e83abdc02be17b9afa75bdb813/articles/app-service/overview-managed-identity.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/app-service/tutorial-connect-msi-key-vault.md",
+      "revision": "ca571d7d9a62521db5b32429ce51619929f5b979",
+      "revision_date": "2024-01-17T06:05:43Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Tutorial: .NET connect to Azure services securely with Key Vault",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-connect-msi-key-vault",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/ca571d7d9a62521db5b32429ce51619929f5b979/articles/app-service/tutorial-connect-msi-key-vault.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/azure-docs",
+      "path": "articles/azure-functions/functions-identity-based-connections-tutorial.md",
+      "revision": "339a7efedd0eeb152fb18b88d182f30f6e109fc3",
+      "revision_date": "2023-10-10T21:56:47Z",
+      "checked_at": "2026-10-23T11:49:39.246521+00:00",
+      "title": "Create a function app without default storage secrets in its definition",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-identity-based-connections-tutorial",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/339a7efedd0eeb152fb18b88d182f30f6e109fc3/articles/azure-functions/functions-identity-based-connections-tutorial.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [],
+  "open_questions": [
+    "Is there a way to force a token refresh for managed identities if the access policy is updated?",
+    "What happens if the Key Vault is behind a firewall and the App Service app is not integrated with a VNet?",
+    "Are there any limitations on the number of Key Vault references that can be used in an App Service app?"
+  ],
+  "code_validation": {
+    "status": "not_run",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/use-managed-identity-to-read-an-application-secret-from-key-vault.md",
+  "draft": true,
+  "word_count": 1149,
+  "claim_support_checks": [
+    {
+      "claim": "Key Vault references allow App Service to retrieve secrets without storing them in app settings.",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "Managed identities do not support cross-directory scenarios.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "The back-end services for managed identities maintain a cache per resource URI for around 24 hours.",
+      "source_id": "S1",
+      "span_found": true
+    },
+    {
+      "claim": "Azure Key Vault supports Azure role-based access control (RBAC).",
+      "source_id": "S2",
+      "span_found": false
+    },
+    {
+      "claim": "App Service can use managed identities to connect to back-end services without a connection string.",
+      "source_id": "S2",
+      "span_found": false
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft instructs users to enable a managed identity before granting permissions. S1 explicitly warns that backend services maintain a token cache for ~24 hours. If the identity is enabled first, the app might attempt to access Key Vault (or other resources) with no permissions or stale cached tokens before the role assignment takes effect, leading to confusing authentication failures.",
+      "fix": "Reorder steps: Create the identity, grant the 'Key Vault Secrets User' role immediately, then enable the identity on the app. This ensures the identity exists and has permissions before the app runtime attempts to acquire a token. Cite S1's cache warning to explain why this order prevents transient auth errors."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Key Vault references allow the app to 'retrieve the secret value from Key Vault and inject it... at startup.' This is inaccurate. App Service resolves the reference and stores the *value* in the app setting environment variable. The application code reads the plain string from the environment, not a reference. The draft misrepresents the runtime mechanism.",
+      "fix": "Clarify that App Service resolves the `@Microsoft.KeyVault(...)` reference into the actual secret value and populates the app setting environment variable. The application reads the plain string from the environment, not the reference. Remove the implication that the app code interacts with the reference format."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft states 'The value of the app setting will still show the reference string, not the actual secret value.' This is misleading for verification. In the Azure Portal, the 'App settings' blade shows the reference string, but the 'Configuration' > 'Environment variables' view (or runtime logs) shows the resolved value. Users checking the wrong place will think it failed.",
+      "fix": "Specify that the reference string is visible in the App Settings configuration blade, but the resolved secret value is available in the application's environment variables at runtime. Direct users to check runtime logs or environment variables for verification, not just the config blade."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft includes a 'Cleanup' section deleting the resource group. S2 and S3 also include cleanup, but the draft lacks specific warnings about data loss or dependencies. It assumes a simple test scenario without mentioning that deleting the resource group removes the Key Vault, potentially destroying secrets if not backed up.",
+      "fix": "Add a warning that deleting the resource group permanently removes the Key Vault and all secrets. Advise users to export or backup secrets if needed before deletion. Keep the cleanup command but add the cautionary note."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft mentions 'Key Vault network configuration' in the troubleshooting section but does not provide specific steps to resolve VNet integration issues. S1 and S2 imply networking is a factor but don't detail the 'Private Endpoint' or 'VNet Integration' setup required if the vault is locked down.",
+      "fix": "Briefly mention that if the Key Vault is behind a firewall or VNet, the App Service must have VNet integration or a Private Endpoint configured. Provide a link to the VNet integration documentation for further steps, rather than just listing it as a potential issue."
+    }
+  ]
+}

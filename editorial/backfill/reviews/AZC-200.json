@@ -1,0 +1,149 @@
+{
+  "id": "AZC-200",
+  "title": "Require stronger authentication for privileged operations",
+  "slug": "require-stronger-authentication-for-privileged-operations",
+  "historical_date": "2025-07-13",
+  "input_sha256": "2331f6e858fe9ab87f5a3d308253d45836554de2b4ad4937ab8e8dca017252c6",
+  "created_at": "2026-10-23T16:53:09.886081+00:00",
+  "author": "Marcos Nogueira",
+  "description": "Plan for mandatory Azure MFA enforcement and configure phishing-resistant authentication for privileged roles.",
+  "tags": [
+    "conditional-access",
+    "mfa",
+    "entra-id",
+    "security",
+    "automation"
+  ],
+  "assets": [
+    {
+      "path": "/images/posts/2025/azc-200-learn-1.png",
+      "alt": "Screenshot of a banner in Microsoft Entra multifactor authentication that shows mandatory MFA is enforced.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/1c0aa48339ce1d3a6f1b7867c1fc3df28ef9c680/docs/identity/authentication/media/concept-mandatory-multifactor-authentication/enforcement-banner.png",
+      "source_id": "S3",
+      "source_revision_date": "2025-07-11T00:11:12Z",
+      "sha256": "0994ce9eb4e6d84e4ce399b29cdcffa610631d7ba75b6c99af0fbd9aa2b9cdfe",
+      "transformations": "none; complete source image",
+      "credit": "Used with permission from Microsoft.",
+      "visual_review": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
+      "revision": "71b418aec591a7eb66197528e9be7e9d374cfa02",
+      "revision_date": "2024-09-27T20:28:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Require phishing-resistant multifactor authentication for Microsoft Entra administrator roles",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/71b418aec591a7eb66197528e9be7e9d374cfa02/docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
+      "rank_score": 100
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "revision": "71b418aec591a7eb66197528e9be7e9d374cfa02",
+      "revision_date": "2024-09-27T20:28:00Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Require multifactor authentication for Microsoft admin portals",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/how-to-policy-mfa-admin-portals",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/71b418aec591a7eb66197528e9be7e9d374cfa02/docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "rank_score": 99
+    },
+    {
+      "repository": "MicrosoftDocs/entra-docs",
+      "path": "docs/identity/authentication/concept-mandatory-multifactor-authentication.md",
+      "revision": "1c0aa48339ce1d3a6f1b7867c1fc3df28ef9c680",
+      "revision_date": "2025-07-11T00:11:12Z",
+      "checked_at": "2026-10-23T11:54:05.448070+00:00",
+      "title": "Plan for mandatory Microsoft Entra multifactor authentication (MFA)",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication",
+      "snapshot_url": "https://github.com/MicrosoftDocs/entra-docs/blob/1c0aa48339ce1d3a6f1b7867c1fc3df28ef9c680/docs/identity/authentication/concept-mandatory-multifactor-authentication.md",
+      "rank_score": 98
+    }
+  ],
+  "model": "local",
+  "model_revision_attempted": true,
+  "research_warnings": [
+    "Public document removed/moved on 2024-09-30T20:55:05Z; used previous public snapshot. Confirm continued applicability: docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
+    "Include unavailable: includes/entra-policy-exclude-user.md",
+    "Include unavailable: includes/entra-policy-deploy-template.md",
+    "Public document removed/moved on 2024-09-30T20:55:05Z; used previous public snapshot. Confirm continued applicability: docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+    "Include unavailable: includes/entra-policy-exclude-user.md",
+    "Include unavailable: includes/entra-policy-deploy-template.md"
+  ],
+  "open_questions": [
+    "Are there specific legacy applications or custom scripts that rely on ROPC that need to be identified before Phase 2?",
+    "How will the organization handle the migration of user-based service accounts to workload identities across all automation pipelines?",
+    "What is the process for registering phishing-resistant MFA for all privileged administrators before the Conditional Access policy is enabled?"
+  ],
+  "code_validation": {
+    "status": "not_applicable",
+    "integration_validation": "not_run"
+  },
+  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "publication_approved": false,
+  "bulk_preparation": {
+    "at": "2026-10-24T08:20:02.978071+00:00",
+    "author_review": "pending",
+    "manual_editorial_review": "pending",
+    "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
+  },
+  "file": "src/content/posts/en/require-stronger-authentication-for-privileged-operations.md",
+  "draft": true,
+  "word_count": 1102,
+  "claim_support_checks": [
+    {
+      "claim": "Mandatory MFA is enforced for Azure portal, Entra admin center, and Intune admin center starting late 2024.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "Phase 2 MFA enforcement for Azure CLI, PowerShell, and REST APIs begins September 1, 2025.",
+      "source_id": "S3",
+      "span_found": true
+    },
+    {
+      "claim": "User-based service accounts must be migrated to workload identities as they are not exempt from MFA.",
+      "source_id": "S3",
+      "span_found": false
+    },
+    {
+      "claim": "Phishing-resistant MFA can be enforced for privileged roles via Conditional Access using authentication strengths.",
+      "source_id": "S1",
+      "span_found": false
+    },
+    {
+      "claim": "ROPC-based APIs are incompatible with MFA and will throw exceptions after enforcement.",
+      "source_id": "S3",
+      "span_found": true
+    }
+  ],
+  "model_editor_issues": [
+    {
+      "severity": "high",
+      "problem": "The draft cites a screenshot path without including the image. The editorial guidance requires including the supplied screenshot beside the relevant step if it illustrates a how-to step.",
+      "fix": "Insert the screenshot from S3 (enforcement-banner.png) near the 'Verify and monitor' section or where the banner notification is described, as it directly illustrates the post-enforcement state mentioned in the text."
+    },
+    {
+      "severity": "high",
+      "problem": "The draft repeats the full source URL in every citation, violating the guidance to use a few well-placed source links rather than repeating the same citation after every sentence.",
+      "fix": "Replace inline URL repetitions with concise reference links (e.g., [1], [2]) or single contextual links. Ensure the reading flow is not broken by excessive hyperlinking."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft includes a generic 'Next steps' section beginning with 'Next steps', which often leads to the prohibited generic concluding paragraphs. The guidance says to end when the technical question is answered with a concrete verification.",
+      "fix": "Remove the 'Next steps' header and generic list. Conclude with the concrete action: verifying sign-in logs for 'Mandatory MFA' source or testing the Conditional Access policy in report-only mode."
+    },
+    {
+      "severity": "medium",
+      "problem": "The draft claims Phase 1 requires MFA for 'any Create, Read, Update, or Delete (CRUD) operation' in the Azure portal. While S3 says this, the draft later implies read operations are exempt in Phase 2 but doesn't clarify if Phase 1 portal reads are exempt. This creates ambiguity about 'stronger authentication' scope.",
+      "fix": "Clarify that Phase 1 portal MFA applies to all interactive sign-ins (including reads) for the listed admin centers, while Phase 2 CLI/API MFA specifically exempts Read operations. This distinction is critical for automation planning."
+    },
+    {
+      "severity": "low",
+      "problem": "The draft uses the phrase 'This is not an optional security baseline; it is an enforced requirement'. This is slightly hyperbolic and not strictly supported by the source text which frames it as a 'commitment' and 'enforcement'.",
+      "fix": "Rephrase to 'This is a mandatory enforcement requirement, not an optional baseline.' to align with the source's tone and avoid unsupported superlatives."
+    }
+  ]
+}
