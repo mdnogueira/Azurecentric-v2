@@ -5,7 +5,7 @@ pubDate: 2025-05-03
 category: windows-server
 tags: ["windows-server-2025", "branchcache", "radius", "firewall", "nps"]
 translationKey: apply-a-baseline-windows-firewall-configuration
-draft: true
+draft: false
 ---
 
 Windows Server 2025 includes Windows Defender Firewall with Advanced Security. If you are deploying BranchCache in distributed cache mode or running Network Policy Server (NPS), the default rules may not cover the specific traffic patterns these services require. You need to verify the local firewall configuration and, in some cases, apply specific exceptions.

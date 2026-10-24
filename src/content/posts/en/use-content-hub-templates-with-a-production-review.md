@@ -5,7 +5,7 @@ pubDate: 2025-07-18
 category: governance
 tags: ["microsoft-sentinel", "content-hub", "security-operations", "deployment", "configuration"]
 translationKey: use-content-hub-templates-with-a-production-review
-draft: true
+draft: false
 ---
 
 You have selected a solution from the Microsoft Sentinel Content hub. It looks comprehensive, but deploying it blindly is where production environments usually break. The Content hub provides packaged content—data connectors, analytics rules, workbooks, and playbooks—but installation is only the first step. The real work begins when you review what has been deployed and configure the dependencies.

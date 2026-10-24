@@ -5,7 +5,7 @@ pubDate: 2024-07-19
 category: automation
 tags: ["powershell", "error-handling", "try-catch", "scripting", "best-practices"]
 translationKey: handle-script-failures-using-try-catch-and-erroraction
-draft: true
+draft: false
 ---
 
 A script that continues after a failure is often harder to debug than one that stops. When a command fails, you need to know whether the script should proceed, retry, or abort. The difference usually comes down to how you handle terminating and non-terminating errors. If you want to catch a failure and decide what happens next, you must ensure the error is terminating and use a `try/catch` block.

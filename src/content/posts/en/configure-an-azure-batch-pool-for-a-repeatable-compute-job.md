@@ -5,7 +5,7 @@ pubDate: 2024-12-14
 category: compute
 tags: ["azure-batch", "compute-automation", "start-tasks", "scaling", "jobs-and-tasks"]
 translationKey: configure-an-azure-batch-pool-for-a-repeatable-compute-job
-draft: true
+draft: false
 ---
 
 You have a compute job that needs to run repeatedly. The first decision is how to handle the infrastructure. Creating a new pool for every job ensures isolation and a clean state, but it introduces allocation latency. Keeping a pool alive allows tasks to start immediately, but you must manage the lifecycle of the nodes and the applications running on them. For a repeatable job where the environment must be consistent and the workload is predictable, a dedicated pool with a start task and automatic scaling is usually the most reliable approach.

@@ -5,7 +5,7 @@ pubDate: 2024-04-03
 category: governance
 tags: ["microsoft-security-copilot", "security-operations", "ai-in-security", "incident-response", "licensing"]
 translationKey: copilot-for-security-is-available-plan-a-controlled-first-investigation
-draft: true
+draft: false
 ---
 
 Microsoft Security Copilot became generally available on 1 April 2024. It offers a generative AI assistant for security and IT operations, informed by large-scale threat intelligence. The first step is not to enable every feature, but to establish a controlled environment where you can verify the tool’s output, understand its data sources, and define how your team will use it.

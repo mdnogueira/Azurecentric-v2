@@ -5,7 +5,7 @@ pubDate: 2024-02-19
 category: hyper-v
 tags: [hyper-v, ubuntu, linux, windows-server-2022, virtual-machines]
 translationKey: create-an-ubuntu-22-04-lts-virtual-machine-on-hyper-v
-draft: true
+draft: false
 ---
 
 An Ubuntu VM needs more than a name and a virtual disk. Its generation, firmware, installation media and network connection need to agree before the installer can start. Choosing them explicitly also gives us a clearer place to investigate a failed first boot.

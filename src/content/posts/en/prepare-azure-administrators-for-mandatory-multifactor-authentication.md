@@ -5,7 +5,7 @@ pubDate: 2024-08-19
 category: governance
 tags: ["conditional-access", "mfa", "entra-id", "security", "azure-portal"]
 translationKey: prepare-azure-administrators-for-mandatory-multifactor-authentication
-draft: true
+draft: false
 ---
 
 The Azure portal, Microsoft Entra admin center, and Intune admin center will require multifactor authentication (MFA) for all administrative sign-ins starting in the second half of 2024. Microsoft is rolling this out gradually to all tenants worldwide. If your administrators do not have MFA configured, they will be challenged during sign-in. If they cannot complete that challenge, access will be blocked.

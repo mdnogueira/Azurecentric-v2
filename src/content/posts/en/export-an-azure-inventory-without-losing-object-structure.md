@@ -5,7 +5,7 @@ pubDate: 2024-09-13
 category: automation
 tags: ["azure-powershell", "inventory", "select-object", "get-member", "data-structures"]
 translationKey: export-an-azure-inventory-without-losing-object-structure
-draft: true
+draft: false
 ---
 
 An Azure inventory should remain a collection of objects until you deliberately choose an export format. Formatting a list for the console and then exporting that formatted output can lose the properties you wanted to report.

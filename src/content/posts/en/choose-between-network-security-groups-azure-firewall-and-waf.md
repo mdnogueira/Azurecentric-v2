@@ -5,7 +5,7 @@ pubDate: 2025-10-25
 category: governance
 tags: ["azure-firewall", "network-security-groups", "waf", "networking", "security"]
 translationKey: choose-between-network-security-groups-azure-firewall-and-waf
-draft: true
+draft: false
 ---
 
 You are designing a network perimeter or a hub-and-spoke topology and need to decide where to place your security controls. The choice is rarely between "firewall" or "no firewall"; it is about selecting the right tool for the specific traffic pattern and threat model. Azure offers Network Security Groups (NSGs), Azure Firewall, and Azure Web Application Firewall (WAF) as part of its Network Security category. Each service operates at a different layer and serves a distinct purpose.

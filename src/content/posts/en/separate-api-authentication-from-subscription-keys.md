@@ -5,7 +5,7 @@ pubDate: 2025-08-04
 category: apps
 tags: ["api-management", "authentication", "authorization", "security", "jwt"]
 translationKey: separate-api-authentication-from-subscription-keys
-draft: true
+draft: false
 ---
 
 Subscription keys in Azure API Management are often treated as the primary security gate for APIs. They are useful for tracking usage and controlling access to specific products, but they are not a strong form of authentication. Relying on a subscription key alone leaves your API vulnerable to token leakage and replay attacks, as the key identifies the subscriber but does not verify the user or the intent of the request. To secure access effectively, you should separate subscription management from actual API authentication. The recommended approach is to use OAuth 2.0 for authorization and validate tokens at the gateway level, keeping subscription keys as a supplementary layer. This allows you to leverage time-limited tokens, scopes, and audience validation while maintaining the operational benefits of subscription tracking.

@@ -5,7 +5,7 @@ pubDate: 2025-02-03
 category: compute
 tags: ["azure-bastion", "ssh", "linux", "virtual-machines", "networking"]
 translationKey: use-azure-bastion-to-administer-a-private-vm
-draft: true
+draft: false
 ---
 
 You have a Linux virtual machine in a private subnet with no public IP address, and you need to administer it securely. The most direct way to do this without maintaining a jump box or exposing ports to the internet is to use Azure Bastion. This guide walks you through connecting to that VM using SSH, ensuring you have the correct permissions, SKU tier, and authentication method configured.

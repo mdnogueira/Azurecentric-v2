@@ -5,7 +5,7 @@ pubDate: 2024-12-21
 category: automation
 tags: ["bicep", "troubleshooting", "azure-cli", "deployment", "what-if"]
 translationKey: investigate-a-deployment-that-failed-after-creating-some-resources
-draft: true
+draft: false
 ---
 
 A deployment fails after creating some resources. The error message points to a specific resource, but the cause is not immediately obvious. Is it a permission issue? A naming conflict? Or a dependency that hasn't resolved yet?

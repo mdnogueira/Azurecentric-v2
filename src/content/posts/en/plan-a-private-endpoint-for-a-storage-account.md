@@ -5,7 +5,7 @@ pubDate: 2025-04-25
 category: storage
 tags: ["azure-storage", "private-endpoints", "private-link", "dns-configuration", "networking"]
 translationKey: plan-a-private-endpoint-for-a-storage-account
-draft: true
+draft: false
 ---
 
 You are planning a private endpoint for an Azure Storage account. The immediate technical task is creating the network interface, but the actual work is mapping your application’s protocol requirements to the correct storage sub-resources and ensuring DNS resolves to the private IP. If you skip the service mapping, your application may fail at runtime. If you skip the DNS check, it may fail silently or route over the public internet.

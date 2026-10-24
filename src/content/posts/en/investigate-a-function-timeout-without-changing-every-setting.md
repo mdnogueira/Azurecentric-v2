@@ -5,7 +5,7 @@ pubDate: 2025-05-26
 category: apps
 tags: ["azure-functions", "troubleshooting", "diagnostics", "logging", "timeout"]
 translationKey: investigate-a-function-timeout-without-changing-every-setting
-draft: true
+draft: false
 ---
 
 A function times out. The instinct is often to increase the timeout setting, change the plan, or restart the app. Before touching configuration, you need to know whether the function is failing to start, hanging during execution, or being terminated by the platform because it exceeded its quota.

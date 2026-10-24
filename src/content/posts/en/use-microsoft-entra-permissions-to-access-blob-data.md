@@ -5,7 +5,7 @@ pubDate: 2024-05-21
 category: storage
 tags: ["azure-rbac", "blob-storage", "microsoft-entra-id", "data-access", "storage-security"]
 translationKey: use-microsoft-entra-permissions-to-access-blob-data
-draft: true
+draft: false
 ---
 
 You need a user or application to read or write blobs using Microsoft Entra ID. The first thing to check is whether the security principal already has the correct data-plane role. It is a common mistake to assume that a role like **Contributor** or **Storage Account Contributor** grants access to the blob data itself. These are control-plane roles; they allow you to manage the storage account, but they do not permit reading or writing the blobs inside it.

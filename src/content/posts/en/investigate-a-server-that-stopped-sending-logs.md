@@ -5,7 +5,7 @@ pubDate: 2024-09-05
 category: governance
 tags: ["azure-monitor", "azure-monitor-agent", "data-collection-rules", "log-analytics", "troubleshooting"]
 translationKey: investigate-a-server-that-stopped-sending-logs
-draft: true
+draft: false
 ---
 
 A Linux server has stopped sending logs. The first thing to check is whether the server is still sending heartbeats. The heartbeat is the simplest signal of connectivity between the agent and Azure Monitor. If the heartbeat stops, the problem is local to the agent or the machine. If the heartbeat continues but no other logs appear, the problem is likely in the Data Collection Rule (DCR) configuration or workspace limits.

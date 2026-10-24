@@ -5,7 +5,7 @@ pubDate: 2025-09-17
 category: compute
 tags: ["azure-batch", "hpc", "data-movement", "azure-files", "blobfuse", "storage"]
 translationKey: plan-data-movement-before-moving-an-hpc-workload-to-azure
-draft: true
+draft: false
 ---
 
 You are moving a high-performance computing workload to Azure Batch, and the bottleneck is not the compute nodes—it is the data. The first decision you must make is how the rendering or simulation tasks access their input assets and where they write their outputs. This choice dictates your pool configuration, your networking requirements, and your cost structure.

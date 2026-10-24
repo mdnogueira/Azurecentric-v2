@@ -5,7 +5,7 @@ pubDate: 2024-06-29
 category: cloud
 tags: ["azure-migrate", "server-assessment", "vm-sizing", "migration-planning"]
 translationKey: assess-a-server-estate-with-azure-migrate
-draft: true
+draft: false
 ---
 
 You have an on-premises server estate to move to Azure, but you are unsure which VM sizes will fit. The first step is not to guess, but to let Azure Migrate measure the actual workload. This requires adding the correct assessment tool to your project and ensuring the appliance can collect the necessary performance data.

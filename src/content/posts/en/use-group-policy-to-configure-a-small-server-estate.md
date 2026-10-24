@@ -5,7 +5,7 @@ pubDate: 2025-08-20
 category: windows-server
 tags: ["group-policy", "windows-server-2025", "active-directory", "gpmc", "server-management"]
 translationKey: use-group-policy-to-configure-a-small-server-estate
-draft: true
+draft: false
 ---
 
 You have a small estate of Windows Server 2025 machines and need to enforce configuration settings centrally. The most reliable way to do this is to use Group Policy Objects (GPOs) linked to Organizational Units (OUs) in Active Directory Domain Services (AD DS). This approach gives you a single source of truth for settings, allows you to scope changes to specific server roles, and provides a clear audit trail of what was changed and when.

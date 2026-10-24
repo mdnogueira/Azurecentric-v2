@@ -5,7 +5,7 @@ pubDate: 2024-11-11
 category: automation
 tags: ["powershell", "modules", "troubleshooting", "profiles", "psmodulepath"]
 translationKey: investigate-a-module-that-loads-in-one-shell-but-not-another
-draft: true
+draft: false
 ---
 
 You open two PowerShell windows. In one, `Import-Module MyModule` works. In the other, it fails with "The specified module 'MyModule' was not loaded". The module files are identical on disk. The difference is not the module itself, but the shell environment.

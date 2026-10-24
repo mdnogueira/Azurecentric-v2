@@ -5,7 +5,7 @@ pubDate: 2025-05-15
 category: governance
 tags: ["defender-for-cloud", "attack-paths", "security-prioritisation", "cloud-security-graph", "risk-management"]
 translationKey: use-attack-paths-to-prioritise-exposed-azure-resources
-draft: true
+draft: false
 ---
 
 You have a backlog of security alerts and recommendations. The secure score is rising, but the underlying risk remains unclear. Which issues actually matter? Which ones can an attacker chain together to reach a critical asset? Treating every alert as equally urgent leads to fatigue and missed exposure. The answer is to use attack path analysis to see the full chain of exploitation, then prioritise the steps that break those chains.

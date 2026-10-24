@@ -5,7 +5,7 @@ pubDate: 2024-10-26
 category: apps
 tags: ["service-bus", "dead-letter-queue", "troubleshooting", "azure-cli", "dotnet"]
 translationKey: investigate-messages-in-a-service-bus-dead-letter-queue
-draft: true
+draft: false
 ---
 
 You have messages stuck in a Service Bus dead-letter queue (DLQ). The immediate question is not how to clear them, but why they ended up there. Service Bus moves messages to the DLQ when they cannot be delivered or processed. Without inspecting the specific reason codes attached to those messages, any attempt to reprocess them will likely fail again.

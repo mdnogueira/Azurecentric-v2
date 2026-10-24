@@ -5,7 +5,7 @@ pubDate: 2024-01-28
 category: networking
 tags: [vnet, subnets, ip-addressing, network-security-groups]
 translationKey: build-a-virtual-network-with-a-deliberate-subnet-plan
-draft: true
+draft: false
 ---
 
 A virtual network address range is easy to enter and awkward to revisit after other networks depend on it. Before creating the VNet, compare the proposed range with the networks it may eventually need to reach.

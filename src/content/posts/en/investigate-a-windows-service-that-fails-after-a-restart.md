@@ -5,7 +5,7 @@ pubDate: 2024-11-13
 category: windows-server
 tags: ["windows-server", "troubleshooting", "services", "server-manager", "logman"]
 translationKey: investigate-a-windows-service-that-fails-after-a-restart
-draft: true
+draft: false
 ---
 
 A service that fails immediately after a restart usually indicates a startup sequence issue or a dependency that is not yet ready. The first step is to confirm the failure and identify the specific error code. Server Manager can provide an alert when a service enters a failed state, but the detailed reason for the failure is recorded in the System Event Log. You need to look at both to understand the full picture. Server Manager tells you *that* a service has stopped; the Event Log tells you *why*. This distinction is important because Server Manager is a monitoring and alerting tool, not a diagnostic engine for service control manager errors. If you are managing the server via Server Manager, you can configure it to alert you when a service enters a stopped state, which gives you a structured starting point for the investigation. However, the actual troubleshooting begins in Event Viewer.

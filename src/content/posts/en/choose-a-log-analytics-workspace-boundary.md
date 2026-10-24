@@ -5,7 +5,7 @@ pubDate: 2024-05-19
 category: governance
 tags: ["log-analytics", "azure-monitor", "workspace-design", "data-retention", "access-control"]
 translationKey: choose-a-log-analytics-workspace-boundary
-draft: true
+draft: false
 ---
 
 How many Log Analytics workspaces do you actually need? The practical answer is to start with a single workspace and only introduce additional ones when a specific constraint makes consolidation impossible or significantly more expensive. Complexity in querying, managing data collection rules, and tracking costs rises quickly with each extra workspace, so the default should be consolidation unless a clear requirement forces a split.

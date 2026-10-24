@@ -5,7 +5,7 @@ pubDate: 2025-09-04
 category: governance
 tags: []
 translationKey: troubleshoot-a-managed-identity-that-cannot-reach-a-resource
-draft: true
+draft: false
 ---
 
 A managed identity cannot reach a resource when the identity is not attached to the resource, the target resource rejects the identity, or the identity lacks the necessary permissions. The first thing to check is whether the identity is actually assigned to the resource and whether the target resource accepts that identity. If those are correct, the problem often lies in how the token is requested or how long it takes for permission changes to propagate.

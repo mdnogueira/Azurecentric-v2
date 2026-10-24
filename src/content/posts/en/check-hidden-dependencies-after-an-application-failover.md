@@ -5,7 +5,7 @@ pubDate: 2026-05-11
 category: governance
 tags: ["failover", "disaster-recovery", "azure-reliability", "troubleshooting", "business-continuity"]
 translationKey: check-hidden-dependencies-after-an-application-failover
-draft: true
+draft: false
 ---
 
 You have just triggered a failover. The primary region is unreachable, traffic is routing to the secondary, and the database replica is active. The application is responding. It is tempting to declare victory and stop investigating. That is usually when the next failure happens.

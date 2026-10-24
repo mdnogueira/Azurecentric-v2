@@ -5,7 +5,7 @@ pubDate: 2025-09-24
 category: automation
 tags: ["bicep", "azure-resource-manager", "infrastructure-as-code", "deployment", "what-if", "azure-cli"]
 translationKey: review-drift-before-applying-another-infrastructure-deployment
-draft: true
+draft: false
 ---
 
 You are about to run a Bicep deployment that modifies an existing virtual network. The template looks correct, but you need to know exactly which resources will change, which will be deleted, and whether the operation will break a dependency before you hit enter.

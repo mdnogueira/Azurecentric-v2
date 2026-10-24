@@ -5,7 +5,7 @@ pubDate: 2024-12-11
 category: compute
 tags: ["azure-virtual-machine-scale-sets", "autoscaling", "application-health", "instance-repairs", "vmss-orchestration"]
 translationKey: configure-a-scale-set-health-probe-before-autoscaling
-draft: true
+draft: false
 ---
 
 Autoscaling a Virtual Machine Scale Set (VMSS) based on CPU or memory metrics is often the first step in managing capacity, but it does not account for application health. If the application is hung or the service is down, the VM may still report low CPU usage, and the autoscale engine will not trigger a repair. You need a health probe that understands the application state to drive instance repairs and safe upgrades.

@@ -5,7 +5,7 @@ pubDate: 2025-07-13
 category: governance
 tags: ["conditional-access", "mfa", "entra-id", "security", "automation"]
 translationKey: require-stronger-authentication-for-privileged-operations
-draft: true
+draft: false
 ---
 
 The Azure management plane is moving to mandatory multifactor authentication (MFA) for all sign-in attempts. This is not an optional security baseline; it is an enforced requirement that rolls out in phases. If you rely on user-based service accounts for automation or have privileged roles protected only by standard MFA, you need to act now to avoid service disruption.

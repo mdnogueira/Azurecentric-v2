@@ -5,7 +5,7 @@ pubDate: 2024-04-15
 category: hyper-v
 tags: ["hyper-v", "secure-boot", "linux", "generation-2", "virtual-machines"]
 translationKey: configure-secure-boot-for-a-supported-linux-guest
-draft: true
+draft: false
 ---
 
 You have a Generation 2 virtual machine running Linux, and you want to ensure Secure Boot is active. It is enabled by default, but confirming the correct template is applied is the practical step that matters. If the template is wrong, the guest may not boot. If it is right, you have a baseline protection against unauthorized firmware and bootloaders.

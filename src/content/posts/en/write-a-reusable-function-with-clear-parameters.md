@@ -5,7 +5,7 @@ pubDate: 2024-04-01
 category: automation
 tags: ["powershell", "functions", "parameters", "validation", "help"]
 translationKey: write-a-reusable-function-with-clear-parameters
-draft: true
+draft: false
 ---
 
 You have a script that works for one server, but now you need it for ten. The temptation is to copy the script ten times and change the server name in each. That is not reuse; that is repetition. The correct step is to turn the logic into a function that accepts the server name as a parameter.

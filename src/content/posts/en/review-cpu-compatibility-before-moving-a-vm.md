@@ -5,7 +5,7 @@ pubDate: 2026-02-02
 category: hyper-v
 tags: ["hyper-v", "processor-compatibility", "live-migration", "windows-server-2025", "virtualization"]
 translationKey: review-cpu-compatibility-before-moving-a-vm
-draft: true
+draft: false
 ---
 
 You are planning to live migrate a virtual machine between Hyper-V hosts or clusters, but you need to ensure the processor compatibility settings allow it. The first thing to check is not just the migration capability, but the specific processor feature sets available on the source and destination hardware. If the guest operating system or applications are using instructions that the target host does not support, the migration will fail or the application will crash. Processor compatibility mode exists to prevent this by limiting the features presented to the VM. There are two distinct modes available in Windows Server 2025 and later, each with different implications for performance and migration scope.

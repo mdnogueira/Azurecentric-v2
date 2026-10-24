@@ -5,7 +5,7 @@ pubDate: 2025-04-14
 category: automation
 tags: ["bicep", "infrastructure-as-code", "azure-container-registry", "template-specs", "devops"]
 translationKey: choose-where-reusable-infrastructure-modules-should-live
-draft: true
+draft: false
 ---
 
 Where should reusable infrastructure modules live? The answer depends on whether your team uses Bicep exclusively, whether you need to package non-template artifacts, and how you want to control access. Microsoft provides two primary mechanisms for sharing modules: the Bicep private module registry and template specs. Choosing between them is not about which is technically superior, but which fits your tooling and governance requirements.

@@ -5,7 +5,7 @@ pubDate: 2025-05-10
 category: hyper-v
 tags: ["hyper-v", "production-checkpoints", "virtual-machines", "windows-server", "backup-and-recovery"]
 translationKey: use-production-checkpoints-with-a-clear-recovery-purpose
-draft: true
+draft: false
 ---
 
 A checkpoint is not a backup. It is a point-in-time capture of a virtual machine's state. When you use production checkpoints, you are choosing a method that relies on guest-integrated backup technology rather than saving the running state. This distinction matters for recovery, storage management, and supported workloads.

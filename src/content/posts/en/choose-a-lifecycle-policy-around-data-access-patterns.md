@@ -5,7 +5,7 @@ pubDate: 2024-12-31
 category: storage
 tags: []
 translationKey: choose-a-lifecycle-policy-around-data-access-patterns
-draft: true
+draft: false
 ---
 
 The first decision when configuring Azure Blob Storage lifecycle management is not the tool, but the access pattern of the data you are managing. A policy that moves data too aggressively can incur rehydration costs or latency; one that is too conservative leaves money on the table. The rule set must reflect how often the data is read, how long it must be retained, and whether previous versions or snapshots exist.

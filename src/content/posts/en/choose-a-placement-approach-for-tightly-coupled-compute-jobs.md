@@ -5,7 +5,7 @@ pubDate: 2026-01-02
 category: compute
 tags: ["azure-batch", "availability-zones", "fault-tolerance", "compute", "infrastructure"]
 translationKey: choose-a-placement-approach-for-tightly-coupled-compute-jobs
-draft: true
+draft: false
 ---
 
 You are designing a Batch pool that must survive a datacentre failure. The first decision is whether your workload can tolerate nodes being distributed across availability zones and whether the application logic can handle the resulting network topology. Azure Batch allows you to create pools with a zonal policy, ensuring that if one zone experiences an infrastructure failure, your compute nodes in the other zones remain available for task scheduling. However, this capability comes with specific constraints regarding VM SKUs, inter-node communication, and region support.

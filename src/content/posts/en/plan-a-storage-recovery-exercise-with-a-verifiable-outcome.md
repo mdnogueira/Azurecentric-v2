@@ -5,7 +5,7 @@ pubDate: 2026-10-17
 category: storage
 tags: ["azure-storage", "disaster-recovery", "failover", "azure-files", "geo-redundancy"]
 translationKey: plan-a-storage-recovery-exercise-with-a-verifiable-outcome
-draft: true
+draft: false
 ---
 
 A storage recovery exercise is only useful if you can verify that the data you expect to be available is actually available, and that your applications can reconnect without leaving file handles open. The first decision is whether to run a planned failover (testing with zero expected data loss) or an unplanned failover (simulating an outage where data loss is possible). You cannot run a meaningful exercise without understanding the implications of each on your redundancy configuration and your data.

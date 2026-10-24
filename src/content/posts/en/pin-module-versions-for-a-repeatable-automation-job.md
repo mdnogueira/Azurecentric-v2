@@ -5,7 +5,7 @@ pubDate: 2026-03-22
 category: automation
 tags: ["powershell", "automation", "module-management", "devops", "reliability"]
 translationKey: pin-module-versions-for-a-repeatable-automation-job
-draft: true
+draft: false
 ---
 
 Automation breaks when a module updates silently. You run a script that worked yesterday, and today it fails because a cmdlet changed, a parameter was removed, or the output format shifted. The fix is not to stop updating modules; it is to pin the version your automation relies on.

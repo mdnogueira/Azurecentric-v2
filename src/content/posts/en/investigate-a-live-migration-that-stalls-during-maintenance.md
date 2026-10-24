@@ -5,7 +5,7 @@ pubDate: 2026-03-27
 category: backup-dr
 tags: ["windows-server", "hyper-v", "live-migration", "smb", "failover-clustering"]
 translationKey: investigate-a-live-migration-that-stalls-during-maintenance
-draft: true
+draft: false
 ---
 
 A live migration that stalls usually means the cluster is waiting for something that isn't arriving. In Windows Server 2025, that is most often a bandwidth limit or a network selection issue when using SMB for migration traffic. The first thing to check is whether the cluster has applied a bandwidth cap that is too low for the current workload, or whether the migration traffic is trying to use a network that is blocked or congested.

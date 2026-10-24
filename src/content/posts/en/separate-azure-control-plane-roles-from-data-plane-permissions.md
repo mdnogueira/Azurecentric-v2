@@ -5,7 +5,7 @@ pubDate: 2025-01-23
 category: governance
 tags: ["azure-rbac", "entra-id", "privileged-access", "security", "rbac-separation"]
 translationKey: separate-azure-control-plane-roles-from-data-plane-permissions
-draft: true
+draft: false
 ---
 
 You assign a user the Global Administrator role in Microsoft Entra ID, and they cannot manage a virtual machine in Azure. This is not a bug; it is the intended separation between the identity control plane and the Azure resource management plane.

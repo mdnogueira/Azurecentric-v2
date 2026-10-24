@@ -5,7 +5,7 @@ pubDate: 2024-10-19
 category: compute
 tags: ["azure-virtual-machines", "arm-architecture", "cobalt-100", "migration", "compatibility"]
 translationKey: azure-cobalt-100-vms-check-arm-compatibility-before-moving-a-workload
-draft: true
+draft: false
 ---
 
 You are planning to move a workload to Azure Cobalt 100-based Virtual Machines to take advantage of the improved price performance, but you need to confirm whether your current infrastructure can actually run on the new silicon. The first thing to check is not the pricing or the region availability, but whether your operating system and application binaries are compatible with the 64-bit Arm architecture.

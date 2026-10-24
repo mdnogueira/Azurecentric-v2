@@ -5,7 +5,7 @@ pubDate: 2025-04-17
 category: apps
 tags: ["event-grid", "filtering", "subscriptions", "azure-cli", "cloud-events"]
 translationKey: filter-an-event-grid-subscription-around-a-consumer-need
-draft: true
+draft: false
 ---
 
 You have an Event Grid topic receiving a high volume of events, but your consumer only cares about a specific subset. Sending every event to your endpoint wastes bandwidth, increases processing costs, and makes debugging harder. The solution is to apply filters at the subscription level so Event Grid discards irrelevant events before they reach your handler.

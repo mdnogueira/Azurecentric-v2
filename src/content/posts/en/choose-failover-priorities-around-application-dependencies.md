@@ -5,7 +5,7 @@ pubDate: 2025-12-08
 category: backup-dr
 tags: ["failover-clustering", "quorum", "windows-server", "disaster-recovery", "multisite"]
 translationKey: choose-failover-priorities-around-application-dependencies
-draft: true
+draft: false
 ---
 
 You are planning a failover cluster that spans multiple sites. The immediate question is not just which application moves where, but whether the cluster survives a network partition at all. If the cluster loses quorum, the entire workload stops, regardless of your failover priorities. This is where the distinction between quorum and failover priorities becomes critical.

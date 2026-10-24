@@ -5,7 +5,7 @@ pubDate: 2024-02-14
 category: backup-dr
 tags: [failover-clustering, windows-server, quorum, high-availability]
 translationKey: choose-a-quorum-witness-for-a-failover-cluster
-draft: true
+draft: false
 ---
 
 A quorum witness should be chosen around the failures a cluster must handle. The important question is which nodes can still communicate, reach their storage and participate in cluster membership after a node, network path or site fails.

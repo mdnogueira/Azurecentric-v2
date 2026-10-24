@@ -5,7 +5,7 @@ pubDate: 2025-04-30
 category: automation
 tags: ["powershell", "remoting", "windows", "invoke-command", "pssession", "wsman"]
 translationKey: use-remoting-to-inspect-several-windows-servers
-draft: true
+draft: false
 ---
 
 You need to check the status of a service across several Windows servers. Doing this one by one is slow. PowerShell remoting lets you run commands on multiple systems at once, returning results to your local session.

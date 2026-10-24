@@ -5,7 +5,7 @@ pubDate: 2026-10-09
 category: apps
 tags: ["azure-service-bus", "dead-letter-queue", "message-deferral", "replay-messages", "azure-messaging-servicebus"]
 translationKey: document-and-test-manual-replay-of-failed-messages
-draft: true
+draft: false
 ---
 
 Messages end up in the dead-letter queue (DLQ) or become deferred for different reasons, and the recovery path changes depending on where they are. If you need to replay a failed message, the first step is identifying whether it is dead-lettered or deferred, then retrieving it and resubmitting it to the main queue. You can do this programmatically with the Azure.Messaging.ServiceBus SDK or manually via Service Bus Explorer.

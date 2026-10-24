@@ -5,7 +5,7 @@ pubDate: 2025-11-10
 category: compute
 tags: ["azure-batch", "cost-management", "budgets", "cloud-computing", "azure-cost-optimization"]
 translationKey: set-a-budget-boundary-around-a-compute-experiment
-draft: true
+draft: false
 ---
 
 You are running a compute experiment with Azure Batch and need to ensure the bill stays within a fixed limit. The most direct way to do this is to create a budget in Azure Cost Management and apply a filter that isolates the resources belonging to that specific experiment.

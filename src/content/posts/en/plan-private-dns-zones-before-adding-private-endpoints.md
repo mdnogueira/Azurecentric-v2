@@ -5,7 +5,7 @@ pubDate: 2024-12-26
 category: networking
 tags: ["azure-private-link", "private-dns", "private-endpoints", "dns-configuration", "networking"]
 translationKey: plan-private-dns-zones-before-adding-private-endpoints
-draft: true
+draft: false
 ---
 
 You create a private endpoint, the connection is approved, and the network interface has a private IP. Yet the application cannot connect. The most likely cause is not the network path, but the DNS resolution. A private endpoint alone does not disable public access or fix DNS. Without a correctly configured private DNS zone, the fully qualified domain name (FQDN) still resolves to the public IP address, or fails entirely if public access is restricted.

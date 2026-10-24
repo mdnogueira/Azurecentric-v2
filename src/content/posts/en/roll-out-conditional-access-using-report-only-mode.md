@@ -5,7 +5,7 @@ pubDate: 2024-01-05
 category: governance
 tags: [entra-id, conditional-access, mfa, identity]
 translationKey: roll-out-conditional-access-using-report-only-mode
-draft: true
+draft: false
 ---
 
 A Conditional Access policy can look perfectly reasonable in the editor and still cause problems when people sign in. The assignments may be too broad, an application may behave differently from the others, or another policy may already impose a conflicting requirement.

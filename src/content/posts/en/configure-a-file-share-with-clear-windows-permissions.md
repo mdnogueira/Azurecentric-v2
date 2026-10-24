@@ -5,7 +5,7 @@ pubDate: 2024-09-16
 category: windows-server
 tags: ["dfs-namespaces", "smb-encryption", "windows-server-2022", "file-sharing", "security"]
 translationKey: configure-a-file-share-with-clear-windows-permissions
-draft: true
+draft: false
 ---
 
 A domain-based DFS namespace often feels too open because every folder is visible to every domain user. This usually happens because the namespace relies on inherited permissions from the local file system of the namespace server. Even with Access-Based Enumeration (ABE) enabled, users can see all folders because the underlying namespace permissions grant them Read access.

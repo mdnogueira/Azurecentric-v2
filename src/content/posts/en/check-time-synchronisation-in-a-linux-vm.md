@@ -5,7 +5,7 @@ pubDate: 2024-11-25
 category: hyper-v
 tags: ["hyper-v", "linux", "time-synchronization", "integration-services", "troubleshooting"]
 translationKey: check-time-synchronisation-in-a-linux-vm
-draft: true
+draft: false
 ---
 
 If a Linux virtual machine on Hyper-V drifts from the host time, the first thing to check is not the guest's NTP configuration, but the host-side integration service that drives the synchronisation. Hyper-V provides a dedicated Time Synchronization integration service that keeps the guest clock aligned with the host. If that service is disabled, or if the guest kernel module is missing, the Linux time will eventually diverge regardless of how well `chrony` or `systemd-timesyncd` is configured.

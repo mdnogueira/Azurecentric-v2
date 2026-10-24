@@ -5,7 +5,7 @@ pubDate: 2024-04-21
 category: governance
 tags: ["managed-identities", "azure-security", "entra-id", "best-practices", "authentication"]
 translationKey: choose-system-assigned-or-user-assigned-managed-identities
-draft: true
+draft: false
 ---
 
 You are building an application that needs to access Azure resources securely, and you have reached the point where you must choose between a system-assigned or a user-assigned managed identity. The decision is not about which is technically superior, but which aligns with your resource lifecycle and permission management strategy. Both options eliminate the need to store credentials in your code, but they behave differently when resources are created, deleted, or shared.

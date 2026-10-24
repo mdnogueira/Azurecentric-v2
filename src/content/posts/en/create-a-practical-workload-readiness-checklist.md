@@ -5,7 +5,7 @@ pubDate: 2026-10-21
 category: governance
 tags: ["azure-reliability", "business-continuity", "disaster-recovery", "azure-service-health", "incident-response"]
 translationKey: create-a-practical-workload-readiness-checklist
-draft: true
+draft: false
 ---
 
 When an Azure service disruption occurs, the first question is rarely "how do I fix the platform?" It is "is my workload affected, and what do I do next?" The answer depends on how you have configured your resources and whether you have a plan that matches the scope of the incident. A practical workload readiness checklist starts with understanding the shared responsibility model and verifying your visibility into Azure Service Health.

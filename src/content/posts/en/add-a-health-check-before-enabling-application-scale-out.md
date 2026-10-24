@@ -5,7 +5,7 @@ pubDate: 2025-01-31
 category: apps
 tags: ["azure-app-service", "health-check", "automatic-scaling", "availability", "troubleshooting"]
 translationKey: add-a-health-check-before-enabling-application-scale-out
-draft: true
+draft: false
 ---
 
 You have configured automatic scaling on an App Service plan to handle traffic bursts, but users are still experiencing timeouts or errors during scale-out events. The platform is adding instances, but it is sending live traffic to them before they are ready to serve requests. The solution is not to tweak the scaling thresholds, but to enable the Health check feature and define a path that confirms the application is fully warmed up.

@@ -5,7 +5,7 @@ pubDate: 2026-04-27
 category: automation
 tags: ["bicep", "infrastructure-as-code", "azure-container-registry", "template-specs", "versioning"]
 translationKey: pin-provider-and-module-versions-in-an-azure-deployment
-draft: true
+draft: false
 ---
 
 You are deploying a Bicep file that references a module from a registry. The deployment succeeds, but a colleague updates the module to fix a minor bug. You redeploy the same Bicep file, and suddenly your storage account is recreated with a different SKU, or your logic app fails because a parameter name changed. The root cause is simple: you did not pin the module version.

@@ -5,7 +5,7 @@ pubDate: 2025-06-25
 category: windows-server
 tags: ["windows-server-2025", "event-logging", "server-manager", "windows-admin-center", "security-auditing"]
 translationKey: review-event-logs-around-a-windows-infrastructure-change
-draft: true
+draft: false
 ---
 
 You are reviewing a Windows Server 2025 infrastructure change. The goal is to establish what happened, who did it, and whether the system state aligns with expectations. Relying on a single view is risky. Server Manager provides a high-level alerting layer, the Security event log captures specific identity and policy changes, and Windows Admin Center logs the management actions themselves. Combining these sources gives you a clearer picture than any single tool.

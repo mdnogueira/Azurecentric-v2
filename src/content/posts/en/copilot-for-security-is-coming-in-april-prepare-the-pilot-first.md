@@ -5,7 +5,7 @@ pubDate: 2024-03-16
 category: governance
 tags: [copilot-for-security, security-operations, ai-governance, pilot-planning]
 translationKey: copilot-for-security-is-coming-in-april-prepare-the-pilot-first
-draft: true
+draft: false
 ---
 
 Microsoft has announced that **Microsoft Copilot for Security** will become generally available on **1 April 2024**, with purchase available from that date under a provisioned pay-as-you-go model. The [13 March announcement](https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/) gives teams a useful preparation window.

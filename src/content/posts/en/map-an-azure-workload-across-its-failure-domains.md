@@ -5,7 +5,7 @@ pubDate: 2024-05-24
 category: governance
 tags: []
 translationKey: map-an-azure-workload-across-its-failure-domains
-draft: true
+draft: false
 ---
 
 You are designing a workload that must survive a datacentre failure, but you are unsure whether your resources are actually protected or just placed in the same physical building. The first step is not to deploy, but to map your architecture against the two distinct ways Azure handles availability zones: zonal and zone-redundant.

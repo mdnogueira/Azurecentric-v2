@@ -5,7 +5,7 @@ pubDate: 2025-06-04
 category: cloud
 tags: ["azure-migrate", "migration", "test-migration", "vmware", "hyper-v", "cloud-adoption"]
 translationKey: plan-rollback-before-a-server-migration
-draft: true
+draft: false
 ---
 
 You have discovered your estate, assessed the workloads, and built a migration plan. The next step is not to lift the first production server, but to run a test migration. A test migration allows you to estimate the time involved, tweak your migration plan, and discover potential issues before the full migration [Build a migration plan with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning). It is a controlled exercise that validates your technical assumptions without risking business continuity.

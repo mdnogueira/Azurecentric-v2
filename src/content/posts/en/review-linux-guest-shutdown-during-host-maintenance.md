@@ -5,7 +5,7 @@ pubDate: 2026-04-01
 category: hyper-v
 tags: ["hyper-v", "linux", "virtual-machines", "integration-services", "host-maintenance"]
 translationKey: review-linux-guest-shutdown-during-host-maintenance
-draft: true
+draft: false
 ---
 
 You are planning host maintenance on a Windows Server 2025 Hyper-V host. Your Linux virtual machines are running workloads that cannot tolerate a hard power loss. The immediate question is how to ensure these guests shut down gracefully when the host initiates a shutdown or migration, rather than simply losing power.

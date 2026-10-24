@@ -5,7 +5,7 @@ pubDate: 2024-07-11
 category: governance
 tags: ["azure-monitor", "data-collection-rules", "azure-monitor-agent", "log-analytics", "virtual-machines"]
 translationKey: use-data-collection-rules-to-control-server-telemetry
-draft: true
+draft: false
 ---
 
 You have a virtual machine, but the telemetry arriving in your Log Analytics workspace is either too noisy or missing the specific performance counters you need. The legacy approach of configuring collection at the workspace level is rigid and often collects more data than necessary. The modern solution is to use Data Collection Rules (DCRs) to define exactly what the Azure Monitor Agent (AMA) collects and where it sends it.

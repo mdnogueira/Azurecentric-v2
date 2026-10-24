@@ -5,7 +5,7 @@ pubDate: 2024-06-08
 category: hyper-v
 tags: []
 translationKey: understand-linux-integration-services-on-hyper-v
-draft: true
+draft: false
 ---
 
 You have a Linux virtual machine running on a Windows Server 2022 Hyper-V host. The guest is performing adequately, but you need to confirm that the integration services are actually active and functioning. Unlike Windows guests, where these services appear as standard Windows services, Linux integration services are embedded in the kernel and managed through specific daemons and kernel modules. If these components are not running, features like time synchronization, heartbeat monitoring, and dynamic memory will fail or behave unpredictably.

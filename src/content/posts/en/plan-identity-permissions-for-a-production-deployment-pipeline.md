@@ -5,7 +5,7 @@ pubDate: 2026-02-11
 category: governance
 tags: ["entra-id", "conditional-access", "rbac", "workload-identity", "deployment-pipeline"]
 translationKey: plan-identity-permissions-for-a-production-deployment-pipeline
-draft: true
+draft: false
 ---
 
 A production deployment pipeline needs identity permissions that are precise, auditable, and resilient. The first decision is not which tool to use, but how to scope the authority the pipeline requires. Microsoft Entra ID provides two distinct mechanisms for this: role-based access control (RBAC) for managing the identities themselves, and Conditional Access for controlling when those identities can act. Confusing the two leads to pipelines that are either over-privileged or fragile.

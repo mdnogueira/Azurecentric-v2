@@ -5,7 +5,7 @@ pubDate: 2026-09-11
 category: hyper-v
 tags: ["hyper-v", "linux", "integration-services", "kernel", "troubleshooting"]
 translationKey: check-kernel-changes-after-a-linux-guest-update
-draft: true
+draft: false
 ---
 
 Linux kernel updates are routine, but they change the environment inside the virtual machine. The integration services that keep the guest responsive to the host are not separate packages you install manually; they are built into the kernel. When the kernel updates, the drivers and daemons update with it. You still need to verify the state after the update to ensure the new kernel includes the expected drivers and that the user-space daemons are running.

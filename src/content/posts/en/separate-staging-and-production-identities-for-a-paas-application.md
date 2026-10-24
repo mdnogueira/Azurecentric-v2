@@ -5,7 +5,7 @@ pubDate: 2026-09-26
 category: apps
 tags: ["managed-identities", "app-service", "container-apps", "security", "separation-of-concerns"]
 translationKey: separate-staging-and-production-identities-for-a-paas-application
-draft: true
+draft: false
 ---
 
 You are deploying a PaaS application across staging and production environments, and you need to ensure that the staging instance cannot access production data. The most direct way to enforce this boundary is to assign separate managed identities to each environment. Using a single system-assigned identity for both slots or deployments creates a shared credential that makes it difficult to restrict access at the resource level. By using user-assigned identities, you can grant the production identity access to sensitive resources while leaving the staging identity with no access or limited access to test data.

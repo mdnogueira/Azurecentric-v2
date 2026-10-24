@@ -5,7 +5,7 @@ pubDate: 2024-02-02
 category: storage
 tags: [azure-storage, private-endpoints, private-dns, blob-storage]
 translationKey: create-a-storage-account-with-private-access-in-mind
-draft: true
+draft: false
 ---
 
 A private endpoint gives a storage service a private network path. It does not, by itself, disable that service's public endpoint or give an application permission to read its data. Plan all three parts: the endpoint, name resolution and access control.

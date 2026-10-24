@@ -5,7 +5,7 @@ pubDate: 2024-01-08
 category: governance
 tags: [microsoft-sentinel, log-analytics, siem, security-operations]
 translationKey: plan-a-sentinel-workspace-before-connecting-data
-draft: true
+draft: false
 ---
 
 The first Microsoft Sentinel connector is usually easier to configure than the workspace design is to change. Before sending logs anywhere, decide who should query them, where they can be stored and which team will operate the resulting detections.

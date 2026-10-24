@@ -5,7 +5,7 @@ pubDate: 2026-08-14
 category: automation
 tags: []
 translationKey: test-a-module-using-a-disposable-development-environment
-draft: true
+draft: false
 ---
 
 You are writing a Bicep module and need to verify it works before sharing it with the team. The safest way to test is to deploy it into a disposable resource group that you create specifically for that test and delete immediately after. This approach isolates the test from your production or shared development environments and prevents lingering resources from incurring cost or causing naming conflicts.

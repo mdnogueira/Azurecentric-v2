@@ -5,7 +5,7 @@ pubDate: 2025-07-21
 category: apps
 tags: ["azure-app-service", "azure-container-apps", "cloud-computing", "microservices", "serverless"]
 translationKey: compare-app-service-and-container-apps-for-a-small-service
-draft: true
+draft: false
 ---
 
 You are planning a small service and need to decide between Azure App Service and Azure Container Apps. The choice often comes down to whether you want to optimise for web application hosting or container-based microservices. Both options are fully managed, but they serve different architectural patterns.

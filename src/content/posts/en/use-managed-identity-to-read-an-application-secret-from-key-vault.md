@@ -5,7 +5,7 @@ pubDate: 2024-04-29
 category: apps
 tags: ["app-service", "key-vault", "managed-identity", "secrets-management", "azure-cli"]
 translationKey: use-managed-identity-to-read-an-application-secret-from-key-vault
-draft: true
+draft: false
 ---
 
 You have an application running on Azure App Service that needs to read a secret from Azure Key Vault. The most common mistake is to store the secret value directly in an app setting or to embed it in the application code. Both approaches require you to manage the secret's lifecycle, rotation, and access control outside of Azure's native identity system.

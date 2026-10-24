@@ -5,7 +5,7 @@ pubDate: 2025-02-17
 category: apps
 tags: ["azure-api-management", "logic-apps", "event-grid", "retry-policies", "idempotency", "integration"]
 translationKey: design-retry-behaviour-without-creating-duplicate-work
-draft: true
+draft: false
 ---
 
 A retry repeats an attempt. It does not establish whether the earlier attempt already changed the business system. That distinction matters when an integration creates orders, sends messages or changes a balance.

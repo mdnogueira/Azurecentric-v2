@@ -5,7 +5,7 @@ pubDate: 2024-04-13
 category: hyper-v
 tags: []
 translationKey: choose-generation-1-or-generation-2-for-a-hyper-v-vm
-draft: true
+draft: false
 ---
 
 You are about to create a new virtual machine on a Windows Server 2022 host. The first configuration choice you make is whether to create a generation 1 or generation 2 virtual machine. This decision is not reversible once the VM is created, so it requires checking your guest operating system, boot method, and feature requirements before you proceed.

@@ -5,7 +5,7 @@ pubDate: 2025-11-27
 category: storage
 tags: ["azure-storage", "immutable-storage", "compliance", "blob-storage", "worm"]
 translationKey: plan-an-immutable-storage-policy-before-retaining-regulated-data
-draft: true
+draft: false
 ---
 
 You need to retain regulated blob data without the risk of modification or deletion. Azure Blob Storage offers immutable storage to enforce a Write Once, Read Many (WORM) state. The first decision is not which tool to use, but which scope fits your regulatory and operational constraints: container-level or version-level immutability.

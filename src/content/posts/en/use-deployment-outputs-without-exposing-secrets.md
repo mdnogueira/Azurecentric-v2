@@ -5,7 +5,7 @@ pubDate: 2026-01-07
 category: automation
 tags: ["bicep", "azure-key-vault", "deployment", "security", "outputs"]
 translationKey: use-deployment-outputs-without-exposing-secrets
-draft: true
+draft: false
 ---
 
 You have a Bicep file that deploys a resource requiring a secret, such as a database password or an API key. The natural instinct is to return that value as an output so a downstream pipeline or another team can consume it. The problem is that Azure Resource Manager logs all deployment outputs. Anyone with access to the deployment history can view them, and they remain in the log for the retention period. This turns a temporary credential into a persistent exposure risk.

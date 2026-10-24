@@ -5,7 +5,7 @@ pubDate: 2026-10-12
 category: networking
 tags: ["azure-virtual-network", "peering", "networking", "security", "architecture"]
 translationKey: review-network-boundaries-before-connecting-another-environment
-draft: true
+draft: false
 ---
 
 You are about to peer a virtual network in one subscription with another in a different subscription, or perhaps across tenants. The first thing to check is not the peering configuration itself, but the address spaces. If the CIDR blocks overlap, the peering will fail immediately. If they do not overlap, you still need to verify that the routing and security controls are deliberate, because peering creates a direct, non-transitive connection that bypasses most of the isolation you might expect.

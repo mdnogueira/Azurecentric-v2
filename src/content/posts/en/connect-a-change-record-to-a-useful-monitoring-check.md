@@ -5,7 +5,7 @@ pubDate: 2026-05-06
 category: governance
 tags: ["azure-monitor", "alerts", "workbooks", "change-management", "resource-graph"]
 translationKey: connect-a-change-record-to-a-useful-monitoring-check
-draft: true
+draft: false
 ---
 
 You have just approved a change. The ticket is open, the window is active, and you need to know if the system is behaving. The first thing to check is not the ticket status, but the alert instances firing on the affected resources. If you can connect the change record to a specific monitoring view, you stop guessing and start verifying.

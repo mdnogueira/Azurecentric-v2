@@ -5,7 +5,7 @@ pubDate: 2024-06-24
 category: compute
 tags: ["trusted-launch", "virtual-machines", "security", "generation-2", "defender-for-cloud"]
 translationKey: use-trusted-launch-when-creating-a-supported-virtual-machine
-draft: true
+draft: false
 ---
 
 You have a Generation 2 virtual machine running in Azure, and you want to enable Trusted Launch to improve its security posture. The good news is that Azure allows you to enable this security type on existing VMs without needing to recreate them. However, the process is not a simple toggle; it requires the VM to be stopped and deallocated, and it imposes a one-way constraint: once enabled, you cannot roll back to the Standard security type.

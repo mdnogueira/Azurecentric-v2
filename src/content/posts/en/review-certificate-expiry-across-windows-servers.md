@@ -5,7 +5,7 @@ pubDate: 2026-03-24
 category: windows-server
 tags: ["windows-server-2025", "certificates", "powershell", "pki", "automation"]
 translationKey: review-certificate-expiry-across-windows-servers
-draft: true
+draft: false
 ---
 
 You have a batch of Windows Server 2025 machines to audit, and you need to know which certificates are approaching expiry. The most direct way to do this is to query the local certificate stores using PowerShell. This approach works on Windows Server 2025 without requiring external agents or complex remote management frameworks.

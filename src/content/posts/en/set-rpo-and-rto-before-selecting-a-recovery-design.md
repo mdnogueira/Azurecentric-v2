@@ -5,7 +5,7 @@ pubDate: 2024-07-16
 category: governance
 tags: ["disaster-recovery", "rpo", "rto", "azure-backup", "replication"]
 translationKey: set-rpo-and-rto-before-selecting-a-recovery-design
-draft: true
+draft: false
 ---
 
 You cannot select a disaster recovery (DR) strategy until you have defined what the business can actually tolerate. The first technical decision is not which Azure service to use, but what the acceptable limits are for data loss and downtime. These limits are expressed as Recovery Point Objective (RPO) and Recovery Time Objective (RTO). Without these values, any DR design is a guess rather than an engineered solution.

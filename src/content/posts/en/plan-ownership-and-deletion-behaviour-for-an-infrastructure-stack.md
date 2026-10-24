@@ -5,7 +5,7 @@ pubDate: 2026-03-02
 category: automation
 tags: ["azure-deployment-stacks", "bicep", "infrastructure-as-code", "azure-rbac", "resource-management"]
 translationKey: plan-ownership-and-deletion-behaviour-for-an-infrastructure-stack
-draft: true
+draft: false
 ---
 
 An Azure deployment stack is a resource that manages a group of Azure resources as a single unit. It lets you define what resources the stack manages, and what happens to them when they are removed from the template or when the stack itself is deleted. The key decision is whether unmanaged resources should be detached or deleted, and who has permission to make that choice.

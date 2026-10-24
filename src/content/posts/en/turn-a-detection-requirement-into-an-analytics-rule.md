@@ -5,7 +5,7 @@ pubDate: 2024-06-18
 category: governance
 tags: ["microsoft-sentinel", "analytics-rules", "threat-detection", "kql", "threat-intelligence"]
 translationKey: turn-a-detection-requirement-into-an-analytics-rule
-draft: true
+draft: false
 ---
 
 You have a detection requirement. The first step is not writing a Kusto Query Language (KQL) query, but confirming that the data required to detect the threat is actually flowing into your Microsoft Sentinel workspace. Without the correct data connectors, even the most precise analytics rule will return no results.

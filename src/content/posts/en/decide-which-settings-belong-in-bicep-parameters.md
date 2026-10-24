@@ -5,7 +5,7 @@ pubDate: 2024-03-13
 category: automation
 tags: [bicep, infrastructure-as-code, parameters, azure-resource-manager]
 translationKey: decide-which-settings-belong-in-bicep-parameters
-draft: true
+draft: false
 ---
 
 A deployment parameter is a decision you are asking the caller to make. Exposing every resource property creates a large input form, but it does not necessarily create a reusable template. It can make valid combinations harder to identify and leave important policy decisions to each deployment.

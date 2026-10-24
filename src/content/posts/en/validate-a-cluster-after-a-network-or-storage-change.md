@@ -5,7 +5,7 @@ pubDate: 2026-07-14
 category: backup-dr
 tags: ["failover-clustering", "storage-spaces-direct", "windows-server-2025", "health-service", "troubleshooting"]
 translationKey: validate-a-cluster-after-a-network-or-storage-change
-draft: true
+draft: false
 ---
 
 You have changed a network adapter, replaced a storage controller, or updated firmware on a Windows Server 2025 Storage Spaces Direct cluster. The cluster is online, but you need to confirm that the change did not introduce latency spikes, connectivity drops, or database inconsistencies. Relying on the cluster being "green" in the dashboard is not enough; you need quantitative metrics and a check of the system log for specific failure events.

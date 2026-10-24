@@ -5,7 +5,7 @@ pubDate: 2026-05-19
 category: backup-dr
 tags: ["failover-clustering", "stretch-cluster", "quorum", "fault-domains", "windows-server"]
 translationKey: review-split-brain-risk-in-a-stretched-infrastructure-design
-draft: true
+draft: false
 ---
 
 A stretched infrastructure design distributes cluster nodes across separate physical sites. This introduces a specific risk: split-brain. This occurs when network connectivity between sites is lost, and the cluster cannot determine which side holds the authoritative state. The result is usually a loss of quorum, forcing services offline, rather than a dual-write scenario where data corruption occurs. Preventing this requires explicit configuration of fault domains and a quorum witness that remains accessible to the minority site.

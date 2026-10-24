@@ -5,7 +5,7 @@ pubDate: 2026-02-27
 category: cloud
 tags: ["azure-migrate", "dns", "active-directory", "hybrid-connectivity", "migration-planning"]
 translationKey: review-identity-and-dns-dependencies-before-a-migration
-draft: true
+draft: false
 ---
 
 You have replicated your on-premises workloads to Azure and the migration looks complete. Yet, when you try to connect to the new Azure VMs, the connection fails. The issue is rarely the migration tool itself; it is usually a dependency that was assumed to exist in the cloud but was never configured. Before you migrate, you must verify identity and DNS dependencies, because Azure does not inherit your on-premises Active Directory or DNS infrastructure automatically.

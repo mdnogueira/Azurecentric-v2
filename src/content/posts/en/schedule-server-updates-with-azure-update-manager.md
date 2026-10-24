@@ -5,7 +5,7 @@ pubDate: 2025-04-22
 category: governance
 tags: ["azure-update-manager", "scheduled-patching", "maintenance-configurations", "azure-policy", "vm-updates"]
 translationKey: schedule-server-updates-with-azure-update-manager
-draft: true
+draft: false
 ---
 
 If you are managing updates for Windows and Linux servers, Azure Update Manager is the current service to use. Microsoft retired the legacy Automation Update Management solution and its Log Analytics agent on 31 August 2024 [Azure Update Manager overview](https://learn.microsoft.com/en-us/azure/update-manager/overview). Azure Update Manager is now the unified service for managing updates across Azure VMs, on-premises servers, and Arc-connected machines.

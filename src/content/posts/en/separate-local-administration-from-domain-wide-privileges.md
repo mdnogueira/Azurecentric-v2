@@ -5,7 +5,7 @@ pubDate: 2026-07-12
 category: windows-server
 tags: ["windows-server", "active-directory", "group-policy", "security", "local-administrator"]
 translationKey: separate-local-administration-from-domain-wide-privileges
-draft: true
+draft: false
 ---
 
 You have a Windows Server 2025 member server joined to an Active Directory domain. The local Administrator account is disabled by default on modern Windows versions, which reduces the risk of credential theft. However, if you manage legacy systems, or if the account has been manually enabled for specific tasks, it remains a high-value target for lateral movement.

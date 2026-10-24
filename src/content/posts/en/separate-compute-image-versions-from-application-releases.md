@@ -5,7 +5,7 @@ pubDate: 2026-04-19
 category: compute
 tags: ["azure-compute-gallery", "vm-applications", "infrastructure-as-code", "virtual-machines", "application-deployment"]
 translationKey: separate-compute-image-versions-from-application-releases
-draft: true
+draft: false
 ---
 
 You are managing a fleet of virtual machines and find yourself rebuilding images every time a minor application patch is released. This approach ties your infrastructure baseline to your application release cycle, creating unnecessary operational overhead and increasing the risk of configuration drift. The solution is to separate the compute image from the application layer using Azure Compute Gallery VM Applications.

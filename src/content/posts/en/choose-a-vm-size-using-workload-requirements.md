@@ -5,7 +5,7 @@ pubDate: 2024-03-04
 category: compute
 tags: [azure-virtual-machines, vm-sizing, performance, capacity-planning]
 translationKey: choose-a-vm-size-using-workload-requirements
-draft: true
+draft: false
 ---
 
 A VM size is a collection of resource limits, not just a vCPU count. Two candidates with similar CPU capacity can differ in memory, disk throughput and networking. A useful selection starts with the resource the application is waiting for and the service outcome it must achieve.

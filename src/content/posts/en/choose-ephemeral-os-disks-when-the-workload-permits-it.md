@@ -5,7 +5,7 @@ pubDate: 2025-09-15
 category: compute
 tags: []
 translationKey: choose-ephemeral-os-disks-when-the-workload-permits-it
-draft: true
+draft: false
 ---
 
 You are planning a new virtual machine deployment and have noticed the option to use an ephemeral OS disk. It sounds like a small configuration choice, but it fundamentally changes how the operating system is stored and how the VM behaves when it is reimaged. The decision to enable this feature depends on whether your workload can tolerate the loss of local data and whether your chosen VM size supports the required cache or temp disk space.

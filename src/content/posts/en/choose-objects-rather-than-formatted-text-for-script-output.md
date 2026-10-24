@@ -5,7 +5,7 @@ pubDate: 2024-05-27
 category: automation
 tags: ["powershell", "objects", "pipeline", "get-member", "scripting"]
 translationKey: choose-objects-rather-than-formatted-text-for-script-output
-draft: true
+draft: false
 ---
 
 You are writing a script to check service statuses. You see `Get-Service` returns a table, so you think you need to parse that text. That is a trap. PowerShell does not send text to the pipeline. It sends objects. Treating them as text breaks automation the moment the display format changes.

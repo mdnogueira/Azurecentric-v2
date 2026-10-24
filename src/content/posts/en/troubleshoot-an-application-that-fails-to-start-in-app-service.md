@@ -5,7 +5,7 @@ pubDate: 2024-08-13
 category: apps
 tags: ["azure-app-service", "troubleshooting", "diagnostics", "logging", "node-js", "windows"]
 translationKey: troubleshoot-an-application-that-fails-to-start-in-app-service
-draft: true
+draft: false
 ---
 
 An application that fails to start in Azure App Service usually returns a 500, 502, or 503 error. The first step is not to restart the app, but to enable the diagnostics that explain why the process is not responding. Without logs, you are guessing at the root cause. With them, you can distinguish between a configuration error, a missing dependency, or a resource constraint.

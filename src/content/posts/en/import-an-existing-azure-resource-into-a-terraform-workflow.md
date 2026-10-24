@@ -5,7 +5,7 @@ pubDate: 2025-08-02
 category: automation
 tags: ["bicep", "azure-resource-manager", "existing-resources", "infrastructure-as-code", "azure"]
 translationKey: import-an-existing-azure-resource-into-a-terraform-workflow
-draft: true
+draft: false
 ---
 
 You have an Azure resource that was created outside of your current Bicep file, perhaps by Terraform or a previous deployment, but your new template needs to read its properties. You do not need to import the entire resource definition into your state. You can reference it directly using the `existing` keyword.

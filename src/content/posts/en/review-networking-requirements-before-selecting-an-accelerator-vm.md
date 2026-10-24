@@ -5,7 +5,7 @@ pubDate: 2026-10-01
 category: compute
 tags: ["azure-batch", "virtual-network", "gpu-vm", "networking", "subnet-planning"]
 translationKey: review-networking-requirements-before-selecting-an-accelerator-vm
-draft: true
+draft: false
 ---
 
 You are planning to run GPU-accelerated workloads on Azure Batch. The immediate question is not which GPU size to pick, but whether your virtual network can support the nodes you intend to create. Accelerator VMs have specific networking and storage constraints, and Azure Batch imposes its own networking overhead. If these requirements are not checked before provisioning, you risk partial allocation failures or blocked communication paths.

@@ -5,7 +5,7 @@ pubDate: 2024-05-01
 category: compute
 tags: []
 translationKey: build-an-azure-compute-gallery-image-workflow
-draft: true
+draft: false
 ---
 
 You need a reliable way to produce custom Linux images and distribute them across regions without manual capture steps. Azure VM Image Builder automates the build process, and Azure Compute Gallery manages the resulting versions and their replication. The workflow requires specific permissions, a user-assigned identity, and careful handling of the gallery resource hierarchy during cleanup.

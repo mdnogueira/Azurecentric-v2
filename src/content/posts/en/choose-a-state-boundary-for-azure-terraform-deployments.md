@@ -5,7 +5,7 @@ pubDate: 2024-08-28
 category: automation
 tags: []
 translationKey: choose-a-state-boundary-for-azure-terraform-deployments
-draft: true
+draft: false
 ---
 
 You are writing a Bicep file to deploy a storage account, but the resource group already exists in a different subscription, or perhaps in a separate management group. The default behaviour of a Bicep file is to deploy everything at the scope defined by `targetScope`. If you try to deploy a resource to a scope that differs from the file's target scope without explicit configuration, the deployment fails. The solution is to use the `scope` property on the module or resource definition.

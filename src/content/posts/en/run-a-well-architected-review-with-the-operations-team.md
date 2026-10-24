@@ -5,7 +5,7 @@ pubDate: 2026-07-06
 category: governance
 tags: []
 translationKey: run-a-well-architected-review-with-the-operations-team
-draft: true
+draft: false
 ---
 
 A reliability review is not a checklist exercise; it is a conversation between the architecture you designed and the operations team that must keep it running. The first thing to establish is which service-specific reliability guides apply to your workload, because those documents define the boundary between what Microsoft manages and what you must configure.

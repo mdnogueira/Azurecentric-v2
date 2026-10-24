@@ -5,7 +5,7 @@ pubDate: 2024-10-06
 category: governance
 tags: ["microsoft-sentinel", "entity-mapping", "security-operations", "incident-response", "kql"]
 translationKey: map-entities-so-incidents-contain-useful-context
-draft: true
+draft: false
 ---
 
 An alert without context is just a line in a log. To turn that alert into an investigable incident, you need Microsoft Sentinel to recognise the data elements as specific entities. Entity mapping is the mechanism that tells Sentinel which fields in your query results correspond to accounts, hosts, IP addresses, or other entities it can track and correlate.

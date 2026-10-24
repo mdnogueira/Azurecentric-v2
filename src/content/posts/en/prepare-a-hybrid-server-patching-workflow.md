@@ -5,7 +5,7 @@ pubDate: 2026-01-05
 category: cloud
 tags: ["azure-arc", "azure-monitor-agent", "azure-policy", "automatic-extension-upgrade", "hybrid-servers"]
 translationKey: prepare-a-hybrid-server-patching-workflow
-draft: true
+draft: false
 ---
 
 You cannot patch a hybrid server if you cannot see its state. The first step in preparing a hybrid server patching workflow is ensuring the machine is monitored and its management extensions are kept current. Azure Update Manager relies on the Azure Connected Machine agent to assess patch compliance and detect missing updates. While the Connected Machine agent handles the core patching logic, the Azure Monitor Agent (AMA) provides the telemetry required to understand OS health and patch compliance status. Without AMA, you lose visibility into the machine's state, making effective patching difficult.

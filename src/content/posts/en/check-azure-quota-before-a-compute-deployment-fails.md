@@ -5,7 +5,7 @@ pubDate: 2024-08-16
 category: compute
 tags: ["azure-virtual-machines", "quotas", "troubleshooting", "autoscale", "reserved-instances"]
 translationKey: check-azure-quota-before-a-compute-deployment-fails
-draft: true
+draft: false
 ---
 
 A deployment fails with a quota error, or a scale set refuses to add instances despite high load. The first thing to check is not the application code or the autoscale rules, but the subscription's regional vCPU limits. Azure enforces these quotas at the subscription and region level, and they apply to both virtual machines and virtual machine scale sets.

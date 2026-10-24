@@ -5,7 +5,7 @@ pubDate: 2026-03-14
 category: storage
 tags: ["azure-storage", "blob-storage", "soft-delete", "versioning", "data-protection"]
 translationKey: protect-an-application-against-accidental-blob-deletion
-draft: true
+draft: false
 ---
 
 You are managing a storage account and need to ensure that blobs are not lost if a user or application accidentally deletes or overwrites them. The immediate answer is to enable two features on the storage account: blob soft delete and blob versioning. Soft delete preserves the deleted blob for a set period, allowing restoration. Versioning preserves previous states of the blob when it is overwritten, allowing you to roll back to an earlier version.

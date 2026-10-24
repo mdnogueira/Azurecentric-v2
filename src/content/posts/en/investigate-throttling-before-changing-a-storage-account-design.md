@@ -5,7 +5,7 @@ pubDate: 2026-05-09
 category: storage
 tags: ["azure-storage", "throttling", "performance", "blob-storage", "troubleshooting"]
 translationKey: investigate-throttling-before-changing-a-storage-account-design
-draft: true
+draft: false
 ---
 
 Latency spikes or request failures in Azure Storage often trigger an instinct to redesign the storage account, switch tiers, or change partitioning strategies. Before making those changes, you need to confirm whether you are actually hitting a throttling limit or if the issue lies elsewhere. Azure Storage uses specific performance targets, and exceeding them triggers throttling that manifests as increased latency or specific error codes.

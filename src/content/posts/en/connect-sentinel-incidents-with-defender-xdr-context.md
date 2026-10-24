@@ -5,7 +5,7 @@ pubDate: 2025-11-02
 category: governance
 tags: ["microsoft-sentinel", "defender-xdr", "incident-management", "security-operations", "azure-portal", "kql"]
 translationKey: connect-sentinel-incidents-with-defender-xdr-context
-draft: true
+draft: false
 ---
 
 You have alerts in Microsoft Defender XDR and incidents in Microsoft Sentinel. The question is how to bring them together so that a single incident in Sentinel carries the full context from Defender XDR, without creating duplicates or losing the ability to investigate.

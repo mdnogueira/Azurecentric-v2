@@ -5,7 +5,7 @@ pubDate: 2026-02-22
 category: compute
 tags: ["azure-virtual-machines", "availability-zones", "virtual-machine-scale-sets", "high-availability", "azure-cli", "arm-templates"]
 translationKey: choose-availability-zones-during-the-initial-vm-design
-draft: true
+draft: false
 ---
 
 You are designing a Virtual Machine Scale Set (VMSS) and need to decide between availability zones and availability sets. The decision is not just about redundancy; it is about whether you can change your mind later. If you choose a regional (non-zonal) deployment first, you cannot simply add zones later to fix the architecture. You must plan for zones from the start. This article explains the differences, the constraints of changing scope, and how to configure a zone-redundant scale set.

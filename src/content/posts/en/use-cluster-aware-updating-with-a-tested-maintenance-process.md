@@ -5,7 +5,7 @@ pubDate: 2025-01-11
 category: backup-dr
 tags: ["cluster-aware-updating", "failover-clustering", "windows-server", "maintenance", "powershell"]
 translationKey: use-cluster-aware-updating-with-a-tested-maintenance-process
-draft: true
+draft: false
 ---
 
 Cluster maintenance often feels like a balancing act between keeping services available and ensuring nodes receive critical updates. Cluster-Aware Updating (CAU) removes the manual coordination from this process, but only if you configure it with a clear, tested plan. The feature automates the sequence of putting nodes into maintenance mode, moving workloads, applying updates, and restarting, but it relies on your configuration to define what "safe" actually means for your specific environment.

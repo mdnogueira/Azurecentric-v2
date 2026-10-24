@@ -5,7 +5,7 @@ pubDate: 2025-09-12
 category: apps
 tags: ["azure-functions", "app-settings", "container-security", "managed-identity", "configuration-management"]
 translationKey: store-application-settings-outside-a-container-image
-draft: true
+draft: false
 ---
 
 Your container image should contain code, not configuration. When settings are baked into the image, every environment change requires a rebuild and redeployment. Azure Functions provides a cleaner separation: you store configuration in app settings, which the platform injects as environment variables at runtime. This keeps your image portable and your secrets out of version control.

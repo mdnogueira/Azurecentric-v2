@@ -5,7 +5,7 @@ pubDate: 2025-12-22
 category: governance
 tags: ["entra-id", "security-copilot", "incident-response", "threat-intelligence", "identity-security"]
 translationKey: ask-focused-questions-about-an-identity-related-incident
-draft: true
+draft: false
 ---
 
 When Microsoft Entra flags a user as risky, the immediate task is to determine whether the account is compromised or if the signal is a false positive. The quality of your investigation depends on the precision of the questions you ask and the evidence you gather. A scattered approach often misses the link between a suspicious login and a broader threat actor campaign.

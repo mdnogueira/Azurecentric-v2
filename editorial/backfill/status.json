@@ -375,8 +375,10 @@
   "missing": [],
   "historical_start": "2024-01-01",
   "historical_end": "2026-10-22",
-  "publication_approved": false,
+  "publication_approved": true,
   "screenshot_caption_policy": "No visible Microsoft Learn permission captions, per user instruction. Provenance retained in asset/review records.",
   "code_validation": "Examples are unrun unless an individual review record states a specific static check.",
-  "review_status": "All posts remain draft:true for author review. No deployment or publication occurred."
+  "review_status": "User approved publication of all 366 articles. Existing detailed-review limitations remain in individual records.",
+  "publication_authorised_at": "2026-10-24T19:52:45.171419+00:00",
+  "publication_status": "Publication enabled; delivery tracked by the main-branch deployment workflow"
 }

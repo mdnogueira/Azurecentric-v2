@@ -5,7 +5,7 @@ pubDate: 2025-03-05
 category: windows-server
 tags: ["dns", "troubleshooting", "active-directory", "windows-server", "name-resolution"]
 translationKey: check-dns-configuration-before-investigating-a-domain-problem
-draft: true
+draft: false
 ---
 
 A domain name resolution failure often looks like an application or Active Directory problem, but the root cause is usually in the DNS infrastructure. Before you examine application logs, firewall rules, or replication health, you need to confirm that the DNS servers are functioning as expected. Active Directory Domain Services (AD DS) relies on DNS name resolution for clients to locate domain controllers and for those controllers to communicate with each other [DNS and AD DS](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/DNS-and-AD-DS). If the name resolution path is broken, the application will fail regardless of its own configuration.

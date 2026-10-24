@@ -5,7 +5,7 @@ pubDate: 2026-04-29
 category: apps
 tags: ["azure-logic-apps", "troubleshooting", "workflow-automation", "trigger-history", "error-handling"]
 translationKey: investigate-a-workflow-trigger-that-fires-unexpectedly
-draft: true
+draft: false
 ---
 
 You notice a workflow running when you didn't expect it to. The first thing to check is not the downstream actions, but the trigger itself. Azure Logic Apps records every attempt the trigger makes to start the workflow, whether it succeeds, fails, or produces empty data. Understanding this history is the only way to confirm whether the trigger fired as designed or if an external event caused an unexpected run.

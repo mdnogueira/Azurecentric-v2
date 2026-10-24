@@ -5,7 +5,7 @@ pubDate: 2026-07-20
 category: hyper-v
 tags: ["hyper-v", "ubuntu", "virtual-machines", "linux", "export-import", "generation-2"]
 translationKey: create-a-repeatable-ubuntu-guest-configuration
-draft: true
+draft: false
 ---
 
 You have a Windows Server 2025 host running Hyper-V and you need to deploy Ubuntu virtual machines that behave identically every time. The most reliable way to achieve this is not to build each machine from scratch, but to create one reference configuration, export it, and import it as needed.

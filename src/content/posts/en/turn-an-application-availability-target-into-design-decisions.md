@@ -5,7 +5,7 @@ pubDate: 2024-02-05
 category: governance
 tags: [reliability, availability, disaster-recovery, rto-rpo]
 translationKey: turn-an-application-availability-target-into-design-decisions
-draft: true
+draft: false
 ---
 
 An availability percentage is not an architecture. It becomes useful when the team can explain which user operation must work, how failure will be measured and what recovery must achieve.

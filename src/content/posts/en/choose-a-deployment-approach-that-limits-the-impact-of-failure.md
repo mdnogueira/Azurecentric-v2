@@ -5,7 +5,7 @@ pubDate: 2025-11-30
 category: governance
 tags: []
 translationKey: choose-a-deployment-approach-that-limits-the-impact-of-failure
-draft: true
+draft: false
 ---
 
 When a single availability zone fails, the impact on your application depends entirely on how you deployed it. If you pinned resources to one zone, you face downtime. If you spread them across zones, you likely see minimal disruption. The decision between a zone-redundant and a zonal deployment is not just a technical preference; it is a risk management choice that defines who handles the recovery: Microsoft or you.

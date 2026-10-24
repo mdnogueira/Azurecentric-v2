@@ -5,7 +5,7 @@ pubDate: 2025-06-17
 category: storage
 tags: ["azure-files", "blob-storage", "storage-comparison", "protocol-selection", "application-design"]
 translationKey: compare-azure-files-and-blob-storage-for-an-application
-draft: true
+draft: false
 ---
 
 You are building an application that needs to store data. The first technical decision is often whether to use Azure Files or Azure Blob storage. This is not just a choice between two storage accounts; it is a choice between two fundamentally different access models. Azure Files provides a network file share accessible via SMB or NFS. Azure Blob storage provides object storage accessible via HTTP/HTTPS.

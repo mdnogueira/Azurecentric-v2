@@ -5,7 +5,7 @@ pubDate: 2026-07-17
 category: hyper-v
 tags: ["hyper-v", "integration-services", "windows-server-2025", "powershell", "virtualization"]
 translationKey: review-integration-service-health-across-a-hyper-v-host
-draft: true
+draft: false
 ---
 
 A virtual machine reports as "Running" in Hyper-V Manager, but the guest operating system is not communicating correctly with the host. The first thing to check is the health of the integration services. These services bridge the guest and the host, and their status determines whether you can rely on basic diagnostics, backups, and time synchronisation.

@@ -5,7 +5,7 @@ pubDate: 2026-04-13
 category: governance
 tags: ["microsoft-sentinel", "workbooks", "incident-triage", "kql", "gallery-templates"]
 translationKey: build-an-incident-triage-workbook-for-the-operations-team
-draft: true
+draft: false
 ---
 
 How do you give your operations team a consistent way to triage incidents without guessing which data sources matter or how to record decisions? Microsoft Sentinel workbooks provide that structure by combining queries, visualisations, and interactive controls into a single view. The key is to build a workbook that reflects the actual triage workflow: identify the incident, check the entities, and record the outcome.

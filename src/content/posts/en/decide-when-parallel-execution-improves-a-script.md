@@ -5,7 +5,7 @@ pubDate: 2025-10-10
 category: automation
 tags: []
 translationKey: decide-when-parallel-execution-improves-a-script
-draft: true
+draft: false
 ---
 
 Parallel execution is not a universal speed-up. It introduces overhead and complexity that can make a script slower, or harder to debug, if the workload does not match the execution model. The decision to parallelise depends on the type of work, the available CPU resources, and the constraints of the PowerShell version you are running.

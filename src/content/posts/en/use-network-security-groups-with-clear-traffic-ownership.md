@@ -5,7 +5,7 @@ pubDate: 2024-07-08
 category: networking
 tags: ["network-security-groups", "azure-virtual-network", "networking", "security", "azure"]
 translationKey: use-network-security-groups-with-clear-traffic-ownership
-draft: true
+draft: false
 ---
 
 Inbound traffic evaluation order determines whether a network security group (NSG) protects a workload or blocks it unexpectedly. If you do not account for where the NSG is associated, you might assume a rule is blocking traffic when it is actually being allowed by a higher-priority rule elsewhere, or vice versa.

@@ -5,7 +5,7 @@ pubDate: 2025-04-28
 category: governance
 tags: []
 translationKey: build-a-recovery-runbook-with-an-explicit-validation-step
-draft: true
+draft: false
 ---
 
 A runbook that simply says "fail over to the secondary region" is not a plan. It is a wish. When an incident occurs, cognitive load spikes, and vague instructions lead to rushed decisions that often make things worse. The first thing to check is not the code, but the clarity of the steps you have written.

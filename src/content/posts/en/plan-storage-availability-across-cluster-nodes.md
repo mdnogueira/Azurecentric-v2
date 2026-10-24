@@ -5,7 +5,7 @@ pubDate: 2025-08-23
 category: backup-dr
 tags: ["windows-server", "failover-clustering", "storage-spaces-direct", "quorum", "fault-domains", "azure-local"]
 translationKey: plan-storage-availability-across-cluster-nodes
-draft: true
+draft: false
 ---
 
 You are running a Windows Server failover cluster on Azure Local and need to ensure that storage remains available even if hardware fails. The cluster must survive not just a single node outage, but potentially the loss of a rack or an entire site. This requires two distinct but complementary configurations: fault domain awareness to distribute data copies, and a quorum witness to maintain cluster membership.

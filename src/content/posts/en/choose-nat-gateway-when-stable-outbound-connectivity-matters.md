@@ -5,7 +5,7 @@ pubDate: 2026-06-27
 category: networking
 tags: ["nat-gateway", "azure-virtual-network", "outbound-connectivity", "private-subnets", "snat"]
 translationKey: choose-nat-gateway-when-stable-outbound-connectivity-matters
-draft: true
+draft: false
 ---
 
 You need your virtual machines to reach the internet with a predictable source IP. Azure NAT Gateway is the right tool for this. It replaces the implicit, platform-managed default outbound access with an explicit configuration that offers deterministic SNAT port allocation and a stable public IP address. This stability matters for firewalls, allow-lists, and compliance checks that rely on a fixed egress identity.

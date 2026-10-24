@@ -5,7 +5,7 @@ pubDate: 2024-06-21
 category: apps
 tags: ["application-insights", "azure-monitor", "app-service", "azure-functions", "monitoring"]
 translationKey: configure-application-insights-for-an-application-deployment
-draft: true
+draft: false
 ---
 
 You have deployed an application on Azure App Service or Azure Functions. The next step is to gain visibility into its performance, availability, and usage. The standard approach is to enable Application Insights. This service provides deep insights into application operations, monitoring availability, performance, and usage so you can identify and diagnose errors without waiting for a user to report them.

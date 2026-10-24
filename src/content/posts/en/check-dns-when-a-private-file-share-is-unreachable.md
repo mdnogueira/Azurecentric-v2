@@ -5,7 +5,7 @@ pubDate: 2025-08-12
 category: storage
 tags: ["azure-files", "private-endpoints", "dns-forwarding", "troubleshooting", "networking"]
 translationKey: check-dns-when-a-private-file-share-is-unreachable
-draft: true
+draft: false
 ---
 
 You have configured a private endpoint for an Azure Files storage account and established a site-to-site VPN or ExpressRoute connection. When you attempt to mount the file share from an on-premises server, the connection fails. The storage account firewall is not blocking the traffic, and the tunnel is up. The next thing to check is DNS resolution.

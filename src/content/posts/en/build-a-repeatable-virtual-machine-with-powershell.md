@@ -5,7 +5,7 @@ pubDate: 2024-07-27
 category: hyper-v
 tags: ["hyper-v", "powershell-direct", "windows-server-2022", "virtualization", "automation"]
 translationKey: build-a-repeatable-virtual-machine-with-powershell
-draft: true
+draft: false
 ---
 
 You need a Windows Server 2022 virtual machine that you can build consistently, without relying on network connectivity or remote management protocols during the initial setup. The challenge is that standard remote management (WinRM, SSH) requires the VM to be booted, networked, and configured—creating a circular dependency for the first configuration step.

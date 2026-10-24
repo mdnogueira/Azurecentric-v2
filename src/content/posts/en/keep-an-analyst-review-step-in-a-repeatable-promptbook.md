@@ -5,7 +5,7 @@ pubDate: 2026-04-11
 category: governance
 tags: ["security-copilot", "promptbooks", "automation", "powershell", "incident-response"]
 translationKey: keep-an-analyst-review-step-in-a-repeatable-promptbook
-draft: true
+draft: false
 ---
 
 You are building a repeatable incident response workflow in Microsoft Security Copilot. The goal is to ensure that automated prompts do not execute blindly but include a mandatory analyst review step before proceeding to sensitive actions. This keeps the process auditable and prevents automation from making irreversible decisions without human oversight.

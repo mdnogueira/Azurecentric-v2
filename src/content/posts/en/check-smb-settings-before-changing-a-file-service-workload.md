@@ -5,7 +5,7 @@ pubDate: 2026-01-27
 category: windows-server
 tags: []
 translationKey: check-smb-settings-before-changing-a-file-service-workload
-draft: true
+draft: false
 ---
 
 You are planning to change a file-service workload, perhaps to improve throughput or reduce latency. The first thing to check is not the registry key you intend to modify, but the SMB dialect currently in use and the baseline configuration of the server. Tuning parameters without this context often leads to regressions or misdiagnosed symptoms.

@@ -5,7 +5,7 @@ pubDate: 2025-10-22
 category: hyper-v
 tags: ["hyper-v", "linux", "integration-services", "troubleshooting", "drivers"]
 translationKey: check-storage-and-network-drivers-in-a-linux-guest
-draft: true
+draft: false
 ---
 
 You have a Linux virtual machine on a Windows Server 2025 host. It is not behaving as expected, or you are preparing it for production and want to confirm the integration components are active. The first thing to check is whether the synthetic drivers are loaded and the management daemons are running.

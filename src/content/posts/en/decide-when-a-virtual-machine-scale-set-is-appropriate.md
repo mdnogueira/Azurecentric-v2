@@ -5,7 +5,7 @@ pubDate: 2024-10-11
 category: compute
 tags: []
 translationKey: decide-when-a-virtual-machine-scale-set-is-appropriate
-draft: true
+draft: false
 ---
 
 You are planning a multi-instance deployment. The immediate question is whether to use individual Azure Virtual Machines or a Virtual Machine Scale Set. The answer depends on whether you need platform-managed orchestration for scaling, updates, and instance replacement, or if you require full individual control over each machine's lifecycle and management features.

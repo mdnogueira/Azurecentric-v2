@@ -5,7 +5,7 @@ pubDate: 2025-10-13
 category: windows-server
 tags: ["windows-server", "time-synchronization", "w32time", "troubleshooting", "active-directory"]
 translationKey: investigate-a-time-synchronisation-problem-on-windows-server
-draft: true
+draft: false
 ---
 
 Time drift on a Windows Server can break Kerberos authentication, cause replication failures, or corrupt time-stamped logs. Before adjusting configuration, you need to know exactly what the server is doing with its clock. The Windows Time service (W32Time) handles this, but its default behaviour assumes a healthy Active Directory Domain Services (AD DS) hierarchy. When that assumption fails, symptoms appear as subtle drift or sudden jumps.

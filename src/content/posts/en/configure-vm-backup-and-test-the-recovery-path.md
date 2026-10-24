@@ -5,7 +5,7 @@ pubDate: 2025-07-23
 category: compute
 tags: ["azure-virtual-machines", "backup-and-recovery", "restore-points", "azure-cli", "disaster-recovery"]
 translationKey: configure-vm-backup-and-test-the-recovery-path
-draft: true
+draft: false
 ---
 
 You have a virtual machine running in Azure and need to protect it against regional outages. The first step is not to configure a complex disaster recovery solution, but to ensure you can create a consistent snapshot of the VM and copy it to another region. VM restore points provide granular backup and retention policies, distinct from sitewide disaster recovery solutions that manage automated failovers across multiple regions [Use virtual machine restore points](https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points).

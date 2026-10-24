@@ -5,7 +5,7 @@ pubDate: 2026-08-06
 category: compute
 tags: ["azure-virtual-machines", "disk-latency", "azure-monitor", "troubleshooting", "vm-insights"]
 translationKey: investigate-disk-latency-before-resizing-a-virtual-machine
-draft: true
+draft: false
 ---
 
 A virtual machine is slow. The instinct is often to resize it to a larger SKU with higher IOPS limits. Before you make that change, you need to determine whether the bottleneck is the host infrastructure, the guest operating system, or the application itself. Resizing a VM when the issue is guest-side latency or application misconfiguration will not help, and it will increase costs unnecessarily.

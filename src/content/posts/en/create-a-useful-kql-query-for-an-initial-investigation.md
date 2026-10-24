@@ -5,7 +5,7 @@ pubDate: 2024-04-26
 category: governance
 tags: ["kql", "advanced-hunting", "threat-investigation", "microsoft-defender-xdr", "sentinel"]
 translationKey: create-a-useful-kql-query-for-an-initial-investigation
-draft: true
+draft: false
 ---
 
 When you begin investigating a potential incident, the immediate challenge is often not finding the data, but narrowing it down to what matters. A broad search across all tables and time ranges will likely time out or return so much noise that the signal is lost. The practical answer is to start with a focused query that unions relevant tables, applies a strict time filter, and projects only the columns you need to make a decision.

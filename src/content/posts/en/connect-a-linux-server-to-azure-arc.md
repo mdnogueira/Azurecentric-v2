@@ -5,7 +5,7 @@ pubDate: 2025-07-30
 category: cloud
 tags: ["azure-arc", "linux", "connected-machine", "azcmagent", "onboarding"]
 translationKey: connect-a-linux-server-to-azure-arc
-draft: true
+draft: false
 ---
 
 You have a Linux server outside Azure that needs to appear in the Azure portal. The first step is not running a command, but ensuring the environment meets the baseline requirements for the Azure Connected Machine agent. If the prerequisites are missing, the onboarding process will fail.

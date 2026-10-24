@@ -5,7 +5,7 @@ pubDate: 2024-07-31
 category: hyper-v
 tags: ["hyper-v", "ubuntu", "virtual-switch", "networking", "windows-server-2022"]
 translationKey: configure-networking-inside-an-ubuntu-hyper-v-guest
-draft: true
+draft: false
 ---
 
 You need an Ubuntu guest on Windows Server 2022 to reach the network. The first step is creating a virtual switch on the host, then ensuring the guest uses the correct adapter type and a stable MAC address. This avoids the common issue where Linux loses its network configuration after a restart or failover.

@@ -5,7 +5,7 @@ pubDate: 2024-03-18
 category: apps
 tags: [logic-apps, error-handling, scopes, workflows, retries]
 translationKey: create-a-logic-apps-workflow-with-a-clear-failure-path
-draft: true
+draft: false
 ---
 
 A failure handler running successfully does not mean that the business operation succeeded. Keep those outcomes separate when designing a Logic Apps workflow. The handler can capture useful context or notify an operator while the overall run still needs to show that processing failed.

@@ -5,7 +5,7 @@ pubDate: 2026-08-01
 category: governance
 tags: ["microsoft-sentinel", "data-connectors", "health-monitoring", "kql", "workbooks"]
 translationKey: review-connector-health-and-ingestion-changes-together
-draft: true
+draft: false
 ---
 
 You notice a gap in your security telemetry and the first question is not whether the connector is broken, but whether the ingestion has drifted from its expected baseline. Microsoft Sentinel provides two complementary ways to answer that question: the *SentinelHealth* data table for automated detection and the **Data collection health monitoring** workbook for visual context.

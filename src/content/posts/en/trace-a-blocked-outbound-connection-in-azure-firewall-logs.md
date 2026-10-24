@@ -5,7 +5,7 @@ pubDate: 2024-08-03
 category: governance
 tags: ["azure-firewall", "networking", "troubleshooting", "structured-logs", "kql"]
 translationKey: trace-a-blocked-outbound-connection-in-azure-firewall-logs
-draft: true
+draft: false
 ---
 
 An application cannot reach an external endpoint. The first thing to establish is whether Azure Firewall is blocking the traffic and, if so, which rule is responsible. Azure Firewall logs provide the evidence needed to distinguish between a policy decision, a DNS failure, or a routing issue.

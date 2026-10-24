@@ -5,7 +5,7 @@ pubDate: 2025-12-13
 category: hyper-v
 tags: ["hyper-v", "linux-vm", "disk-performance", "vhdx", "i-o-scheduler"]
 translationKey: investigate-slow-disk-access-in-a-linux-vm
-draft: true
+draft: false
 ---
 
 The guest operating system reports high latency or low throughput on its virtual disks, but the host storage subsystem shows no obvious saturation. Before looking at application-level bottlenecks, check how the Linux kernel and the Hyper-V hypervisor are negotiating disk I/O. The interaction between the Linux I/O scheduler, the VHDX file configuration, and the underlying physical storage architecture often dictates performance more than raw disk speed.

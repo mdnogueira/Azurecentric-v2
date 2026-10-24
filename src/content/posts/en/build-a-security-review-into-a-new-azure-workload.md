@@ -5,7 +5,7 @@ pubDate: 2026-07-22
 category: governance
 tags: ["defender-for-cloud", "cspm", "security-posture", "workload-protection", "azure-security"]
 translationKey: build-a-security-review-into-a-new-azure-workload
-draft: true
+draft: false
 ---
 
 You are deploying a new workload. The immediate question is not whether to enable security, but how to structure the review so the findings are actionable rather than just a list of alerts. A useful security review separates the configuration of the resource from the protection of the workload, and it distinguishes between the free posture checks and the paid protections that require specific permissions.

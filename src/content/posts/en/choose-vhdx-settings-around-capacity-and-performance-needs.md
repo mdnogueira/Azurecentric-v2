@@ -5,7 +5,7 @@ pubDate: 2025-03-15
 category: hyper-v
 tags: ["hyper-v", "vhdx", "windows-server", "storage", "best-practices"]
 translationKey: choose-vhdx-settings-around-capacity-and-performance-needs
-draft: true
+draft: false
 ---
 
 You are planning a new virtual machine or refreshing an existing one. The first technical decision is rarely the operating system or the CPU count. It is how the virtual hard disk will be stored and formatted. The choice between VHD and VHDX, fixed and dynamic size, and the underlying storage protocol determines whether the workload performs predictably and survives a power failure.

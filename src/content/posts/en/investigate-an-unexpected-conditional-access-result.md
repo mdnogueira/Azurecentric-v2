@@ -5,7 +5,7 @@ pubDate: 2026-06-03
 category: governance
 tags: ["conditional-access", "entra-id", "troubleshooting", "sign-in-logs", "what-if-tool"]
 translationKey: investigate-an-unexpected-conditional-access-result
-draft: true
+draft: false
 ---
 
 A user reports a sign-in failure, or perhaps they are not being challenged for multi-factor authentication when you expected them to be. The first thing to check is not the policy configuration itself, but the evidence of what actually happened during the authentication attempt. Conditional Access is a rule engine that evaluates conditions against a user’s sign-in context. When the outcome is not what you intended, it usually means one of two things: the policy did not apply because the conditions were not met, or it applied but was overridden by an exclusion or a conflicting rule. To distinguish between these, you need to look at the sign-in logs and then validate your assumptions with the What If tool.

@@ -5,7 +5,7 @@ pubDate: 2025-12-28
 category: apps
 tags: ["azure-app-service", "tls-ssl", "certificate-renewal", "azure-container-apps", "production-readiness"]
 translationKey: plan-certificate-renewal-before-the-production-release
-draft: true
+draft: false
 ---
 
 You have a production release scheduled for next week, and your custom domain certificate expires in ten days. The immediate problem is not the release itself, but the fact that the certificate binding will break before the new code lands. If you are relying on a certificate that requires manual intervention, the release timeline is now a race against an expiration date.

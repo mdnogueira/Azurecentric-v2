@@ -5,7 +5,7 @@ pubDate: 2025-06-28
 category: backup-dr
 tags: []
 translationKey: investigate-a-cluster-validation-report-before-dismissing-warnings
-draft: true
+draft: false
 ---
 
 You have just run a validation or health check on a Windows Server failover cluster and the report contains warnings. The instinct is often to dismiss them as noise or to force a resolution without understanding the underlying symptom. That approach risks masking a genuine hardware or configuration issue until it causes a node to drop out of the cluster. A more reliable method is to treat the validation report as a starting point and cross-reference it with the Health Service metrics and the Failover Clustering system log events.

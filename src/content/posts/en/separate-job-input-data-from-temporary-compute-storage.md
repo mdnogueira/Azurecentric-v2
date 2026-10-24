@@ -5,7 +5,7 @@ pubDate: 2026-08-09
 category: compute
 tags: ["azure-batch", "azure-files", "data-persistence", "cloud-computing", "best-practices"]
 translationKey: separate-job-input-data-from-temporary-compute-storage
-draft: true
+draft: false
 ---
 
 Azure Batch nodes are ephemeral. When a node is removed from a pool, or when the Batch service reimaging it for maintenance, everything stored on the local file system disappears. If your workflow treats the node's local disk as a permanent repository for job inputs or critical outputs, you will lose data. The solution is to keep persistent data in Azure Files and use the node's local storage only for temporary working files.

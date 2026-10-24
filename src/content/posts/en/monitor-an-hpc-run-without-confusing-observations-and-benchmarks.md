@@ -5,7 +5,7 @@ pubDate: 2026-02-24
 category: compute
 tags: ["azure-batch", "application-insights", "hpc", "monitoring", "telemetry"]
 translationKey: monitor-an-hpc-run-without-confusing-observations-and-benchmarks
-draft: true
+draft: false
 ---
 
 You have an HPC job running on Azure Batch and the portal shows the tasks are completing, but you need to know why one node is slower than the others. The first thing to check is whether you are looking at the right data. Azure Batch provides two distinct layers of monitoring: operational metrics for the service itself, and application telemetry for the workloads running inside the compute nodes. Confusing the two leads to false conclusions about performance. The operational metrics tell you if the Batch service is healthy; the application telemetry tells you if your code is efficient.

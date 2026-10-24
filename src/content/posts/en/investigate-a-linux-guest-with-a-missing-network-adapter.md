@@ -5,7 +5,7 @@ pubDate: 2024-09-25
 category: hyper-v
 tags: ["hyper-v", "linux", "networking", "integration-services", "troubleshooting"]
 translationKey: investigate-a-linux-guest-with-a-missing-network-adapter
-draft: true
+draft: false
 ---
 
 You open a Linux virtual machine on a Windows Server 2022 host and find the network interface is missing. There is no `eth0`, no `ens192`, just a shell prompt and a silent network stack. The first thing to check is not the IP configuration, but the virtual hardware and the drivers that drive it.

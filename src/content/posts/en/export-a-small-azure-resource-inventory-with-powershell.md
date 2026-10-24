@@ -5,7 +5,7 @@ pubDate: 2026-08-22
 category: governance
 tags: ["azure-policy", "powershell", "governance", "policy-as-code", "export"]
 translationKey: export-a-small-azure-resource-inventory-with-powershell
-draft: true
+draft: false
 ---
 
 You need a copy of your Azure Policy definitions, initiatives, and assignments. Perhaps you are backing up your governance structure, migrating to a new tenant, or treating policy as code. The Azure portal no longer supports exporting policy resources directly to GitHub, so the command line is the reliable path.

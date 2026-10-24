@@ -5,7 +5,7 @@ pubDate: 2025-11-07
 category: compute
 tags: ["azure-virtual-machines", "patch-management", "automatic-patching", "availability-first", "linux", "windows"]
 translationKey: apply-a-consistent-patching-approach-to-azure-servers
-draft: true
+draft: false
 ---
 
 You need to patch Azure Virtual Machines, but you are unsure whether to let the Azure platform manage the updates or leave it to the guest operating system. The choice determines who controls the reboot timing and how the platform limits the impact of a faulty patch across your fleet.

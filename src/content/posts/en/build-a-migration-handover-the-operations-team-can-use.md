@@ -5,7 +5,7 @@ pubDate: 2026-10-04
 category: cloud
 tags: ["azure-migrate", "migration-handover", "operations-readiness", "dependency-mapping", "assessment"]
 translationKey: build-a-migration-handover-the-operations-team-can-use
-draft: true
+draft: false
 ---
 
 A migration is not complete when the virtual machine boots in Azure. It is complete when the operations team can manage it. If the handover relies on tribal knowledge or scattered spreadsheets, the first patch Tuesday or network change will expose the gap. The most reliable handover documents are built from the data Azure Migrate already collects during discovery and assessment.

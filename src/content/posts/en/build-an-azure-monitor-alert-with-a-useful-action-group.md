@@ -5,7 +5,7 @@ pubDate: 2024-01-30
 category: governance
 tags: [azure-monitor, action-groups, metric-alerts, monitoring]
 translationKey: build-an-azure-monitor-alert-with-a-useful-action-group
-draft: true
+draft: false
 ---
 
 An alert needs an owner, a condition that means something and a working route to the person who should respond. Creating a rule without those decisions can produce a notification that reaches a mailbox but leaves everyone unsure what to do.

@@ -5,7 +5,7 @@ pubDate: 2024-10-14
 category: compute
 tags: ["azure-batch", "azure-files", "virtual-file-mount", "powershell", "hpc"]
 translationKey: plan-shared-storage-access-for-an-azure-hpc-cluster
-draft: true
+draft: false
 ---
 
 You need shared storage for an Azure Batch pool, but you want tasks to access it as a local drive rather than fetching files individually. Azure Files provides a fully managed SMB share that can be mounted on both Windows and Linux compute nodes. This approach simplifies data access for parallel tasks, provided you account for the performance characteristics of the underlying service.

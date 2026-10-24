@@ -5,7 +5,7 @@ pubDate: 2025-01-15
 category: hyper-v
 tags: []
 translationKey: investigate-a-vm-that-cannot-boot-from-installation-media
-draft: true
+draft: false
 ---
 
 You have created a virtual machine in Hyper-V, attached an installation ISO, and started the machine, but it does not boot from the media. The screen is black, or it falls through to a "No bootable device" message. This is usually a configuration issue rather than a failure of the installation media itself.

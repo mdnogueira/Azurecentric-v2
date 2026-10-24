@@ -5,7 +5,7 @@ pubDate: 2024-09-30
 category: governance
 tags: ["github-actions", "azure", "openid-connect", "conditional-access", "workload-identities", "security"]
 translationKey: connect-github-actions-to-azure-using-openid-connect
-draft: true
+draft: false
 ---
 
 You are configuring a GitHub Actions workflow to deploy to Azure. The traditional method involves storing a service principal client secret in GitHub Secrets. That secret is a long-lived credential. If it is leaked, it grants access until you rotate it, and it does not distinguish between a legitimate deployment and a compromised one.

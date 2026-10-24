@@ -5,7 +5,7 @@ pubDate: 2024-04-10
 category: backup-dr
 tags: ["failover-clustering", "windows-server", "validation", "quorum", "networking", "storage"]
 translationKey: validate-windows-server-nodes-before-creating-a-cluster
-draft: true
+draft: false
 ---
 
 You have the hardware, the operating system, and the storage. Before you run the wizard to create the cluster, you need to confirm that the nodes can actually talk to each other and agree on the configuration database. Skipping validation is the fastest way to end up with a quarantined node or a cluster that loses quorum at the first network hiccup.

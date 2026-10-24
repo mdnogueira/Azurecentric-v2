@@ -5,7 +5,7 @@ pubDate: 2024-03-01
 category: apps
 tags: [app-service, deployment-slots, deployment, application-operations]
 translationKey: deploy-an-app-service-application-with-a-staging-slot
-draft: true
+draft: false
 ---
 
 A staging slot lets us deploy and inspect an application before directing production traffic to it. The useful boundary is the candidate version and its configuration. The slot does not automatically provide an independent database or make every release reversible.

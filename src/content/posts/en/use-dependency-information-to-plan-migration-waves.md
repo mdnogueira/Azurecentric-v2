@@ -5,7 +5,7 @@ pubDate: 2024-08-24
 category: cloud
 tags: ["azure-migrate", "migration-planning", "dependency-analysis", "cloud-adoption"]
 translationKey: use-dependency-information-to-plan-migration-waves
-draft: true
+draft: false
 ---
 
 You have a list of on-premises servers and a deadline. The first question is not which cloud SKU to choose, but which servers must move together. If you migrate a database server before its application server, or leave a dependency behind, you get an outage. Azure Migrate: Discovery and assessment provides dependency analysis specifically to answer that question.

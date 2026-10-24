@@ -5,7 +5,7 @@ pubDate: 2026-01-14
 category: networking
 tags: []
 translationKey: plan-expressroute-resilience-beyond-the-primary-connection
-draft: true
+draft: false
 ---
 
 You have an ExpressRoute circuit that works well until the peering location goes down. A single circuit provides built-in redundancy within the Microsoft network, but it does not protect against regional outages or metro-level failures. To plan for those scenarios, you need to design for disaster recovery using geo-redundant ExpressRoute circuits.

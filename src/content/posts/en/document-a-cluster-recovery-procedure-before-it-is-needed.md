@@ -5,7 +5,7 @@ pubDate: 2026-01-30
 category: backup-dr
 tags: ["failover-clustering", "quorum", "disaster-recovery", "windows-server", "powershell"]
 translationKey: document-a-cluster-recovery-procedure-before-it-is-needed
-draft: true
+draft: false
 ---
 
 A failover cluster stops when it loses quorum. The cluster service halts to prevent split-brain scenarios where different parts of the cluster might try to operate independently, potentially causing data corruption. The first thing to check is why the quorum was lost. Was it a network partition, a failed node, or a lost witness? Investigating the root cause is essential before attempting recovery.

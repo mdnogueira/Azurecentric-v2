@@ -5,7 +5,7 @@ pubDate: 2025-01-08
 category: windows-server
 tags: ["active-directory", "site-topology", "subnet-design", "replication", "windows-server"]
 translationKey: choose-an-active-directory-site-and-subnet-design
-draft: true
+draft: false
 ---
 
 Active Directory site topology is not a cosmetic layer; it is the mechanism that controls replication traffic and directs clients to the closest domain controllers. If you place subnets incorrectly, users experience slow logons, and your WAN links become congested with unnecessary replication data. The first step is to decide which physical locations require a site object and which IP subnets belong to them.

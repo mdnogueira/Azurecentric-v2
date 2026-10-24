@@ -5,7 +5,7 @@ pubDate: 2024-04-18
 category: governance
 tags: ["defender-for-cloud", "cspm", "defender-for-servers", "azure-subscriptions", "log-analytics", "security-posture"]
 translationKey: compare-defender-plan-coverage-across-subscriptions
-draft: true
+draft: false
 ---
 
 You have two subscriptions with Microsoft Defender for Cloud enabled. One shows a secure score populated with vulnerability findings; the other lists only basic recommendations. The difference is rarely the service itself, but a combination of which Defender plans are enabled, who enabled them, and how those plans interact with Log Analytics workspaces.

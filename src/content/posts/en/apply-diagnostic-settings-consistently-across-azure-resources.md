@@ -5,7 +5,7 @@ pubDate: 2025-11-24
 category: governance
 tags: ["azure-monitor", "diagnostic-settings", "log-analytics", "azure-storage", "arm-templates"]
 translationKey: apply-diagnostic-settings-consistently-across-azure-resources
-draft: true
+draft: false
 ---
 
 You have a resource that needs to send logs to a central workspace, but the configuration feels like a manual chore every time you provision a new service. Diagnostic settings in Azure Monitor are the mechanism for this, but they are resource-specific, not subscription-wide. This means you must configure them individually for each resource type, or use automation to apply them at scale.

@@ -5,7 +5,7 @@ pubDate: 2025-09-20
 category: cloud
 tags: ["azure-arc", "troubleshooting", "vm-extensions", "azcmagent", "logs"]
 translationKey: review-agent-logs-when-an-arc-extension-fails
-draft: true
+draft: false
 ---
 
 An Azure Arc-enabled server extension fails to install or report status. The portal shows a generic error or a timeout. The first thing to check is not the Azure portal, but the machine itself. The Azure Connected Machine agent and the extensions it manages write detailed logs locally. Extracting and reading those logs is the fastest way to determine whether the failure is due to network connectivity, missing dependencies, or a configuration error.

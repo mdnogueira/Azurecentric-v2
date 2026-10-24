@@ -5,7 +5,7 @@ pubDate: 2025-08-07
 category: networking
 tags: ["azure-firewall", "asymmetric-routing", "expressroute", "network-troubleshooting", "stateful-firewall"]
 translationKey: investigate-asymmetric-routing-through-an-azure-firewall
-draft: true
+draft: false
 ---
 
 Your firewall is dropping packets that look legitimate. The source IP is correct, the destination is right, and the port is open. Yet the connection fails. This is a classic symptom of asymmetric routing colliding with a stateful inspection engine.

@@ -5,7 +5,7 @@ pubDate: 2025-11-12
 category: cloud
 tags: ["azure-local", "azure-arc", "connected-machine-agent", "azure-monitor-agent", "hybrid-cloud"]
 translationKey: understand-the-operating-model-of-azure-local
-draft: true
+draft: false
 ---
 
 Azure Local brings Azure services to the edge, but the management layer can be confusing. A common point of confusion is the role of the Azure Connected Machine agent in that environment. It is easy to assume that because Azure Local machines are managed via Azure Arc, the Connected Machine agent is the primary tool for monitoring or security. It is not. Understanding the operating model requires separating the infrastructure management layer from the workload management layer.

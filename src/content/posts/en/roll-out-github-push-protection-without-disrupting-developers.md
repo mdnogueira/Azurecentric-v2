@@ -5,7 +5,7 @@ pubDate: 2025-01-20
 category: governance
 tags: ["github-advanced-security", "secret-scanning", "push-protection", "delegated-bypass", "security-workflow"]
 translationKey: roll-out-github-push-protection-without-disrupting-developers
-draft: true
+draft: false
 ---
 
 You have enabled secret scanning, but now you face a practical problem: developers are blocked from pushing legitimate code that happens to contain test keys, or worse, they are bypassing the block with a generic "false positive" reason because they have no other option. Push protection stops secrets from leaving the repository, but without a structured review process, it becomes a friction point rather than a security control.

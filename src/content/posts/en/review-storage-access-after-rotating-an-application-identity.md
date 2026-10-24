@@ -5,7 +5,7 @@ pubDate: 2026-08-26
 category: storage
 tags: ["azure-storage", "managed-identities", "rbac", "shared-key-authorization", "azure-files"]
 translationKey: review-storage-access-after-rotating-an-application-identity
-draft: true
+draft: false
 ---
 
 You have rotated the identity used by an application to access Azure Storage. The new identity is in place, but the application is failing to connect, or you are unsure if the old credentials have been fully revoked. The immediate risk is not just that the new identity fails, but that the old access method—typically a storage account key or a long-lived Shared Access Signature (SAS)—remains valid and accessible to anyone who found it.

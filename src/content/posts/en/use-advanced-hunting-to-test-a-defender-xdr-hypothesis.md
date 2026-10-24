@@ -5,7 +5,7 @@ pubDate: 2025-12-25
 category: governance
 tags: ["advanced-hunting", "defender-xdr", "microsoft-sentinel", "threat-hunting", "kql"]
 translationKey: use-advanced-hunting-to-test-a-defender-xdr-hypothesis
-draft: true
+draft: false
 ---
 
 You suspect a specific process signature is being used for lateral movement, but your automated alerts haven't fired. The first step is to verify whether the activity exists in your data before writing a detection rule. Advanced Hunting in Microsoft Defender XDR provides the raw event data needed to test this hypothesis, allowing you to inspect events across your network to locate threat indicators and entities.

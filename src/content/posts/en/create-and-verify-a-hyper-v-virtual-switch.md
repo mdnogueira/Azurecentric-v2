@@ -5,7 +5,7 @@ pubDate: 2024-06-05
 category: hyper-v
 tags: ["hyper-v", "virtual-switch", "windows-server-2022", "networking", "powershell"]
 translationKey: create-and-verify-a-hyper-v-virtual-switch
-draft: true
+draft: false
 ---
 
 You need a virtual switch to give your Hyper-V virtual machines network access. The first decision is which type of switch matches your connectivity requirements. An external switch binds to a physical network adapter and provides connectivity to the outside network. An internal switch allows communication between the host and the virtual machines but not to an external network. A private switch restricts communication to the virtual machines only, excluding the host.

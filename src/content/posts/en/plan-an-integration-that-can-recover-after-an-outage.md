@@ -5,7 +5,7 @@ pubDate: 2026-08-17
 category: apps
 tags: ["azure-service-bus", "api-management", "logic-apps", "disaster-recovery", "resilience"]
 translationKey: plan-an-integration-that-can-recover-after-an-outage
-draft: true
+draft: false
 ---
 
 When a dependent service goes down, your integration logic needs a clear path to recovery. Relying on a single namespace or instance creates a single point of failure. To plan for outages, you need to combine message replication, configuration backup, and workflow error handling. Each component requires a different strategy.

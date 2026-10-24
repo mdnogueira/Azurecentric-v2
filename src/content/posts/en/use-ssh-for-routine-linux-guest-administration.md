@@ -5,7 +5,7 @@ pubDate: 2025-07-05
 category: hyper-v
 tags: ["hyper-v", "linux", "ssh", "virtualization", "windows-server-2025"]
 translationKey: use-ssh-for-routine-linux-guest-administration
-draft: true
+draft: false
 ---
 
 You are running a Linux virtual machine on a Windows Server 2025 Hyper-V host and need to perform routine administration. The temptation is to use Virtual Machine Connection (VMConnect). However, for Linux guests, VMConnect provides only a basic console session. It does not support the enhanced session mode features like clipboard sharing, drive redirection, or smart card authentication, which are restricted to recent Windows operating systems [Use local resources on Hyper-V with VMConnect](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/use-local-resources-on-hyper-v-virtual-machine-with-vmconnect). Relying on VMConnect for day-to-day tasks introduces friction and limits automation. The correct approach is to configure SSH. This provides a standard, secure, and scriptable interface that aligns with Linux best practices.

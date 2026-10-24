@@ -5,7 +5,7 @@ pubDate: 2026-01-17
 category: governance
 tags: ["azure-automation", "managed-identities", "rbac", "least-privilege", "security"]
 translationKey: plan-permissions-for-an-operations-automation-identity
-draft: true
+draft: false
 ---
 
 An automation identity requires two distinct sets of permissions: access to the Automation account itself, and access to the resources it manages. Confusing these scopes is a common source of over-permissioning. The Automation account permissions control who can author, schedule, and run the code. The target resource permissions control what the code can actually do when it executes.

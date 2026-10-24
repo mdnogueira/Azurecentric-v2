@@ -5,7 +5,7 @@ pubDate: 2025-09-29
 category: networking
 tags: ["azure-load-balancer", "application-gateway", "networking", "layer-4", "layer-7", "comparison"]
 translationKey: choose-load-balancer-or-application-gateway-for-a-workload
-draft: true
+draft: false
 ---
 
 You have a workload that needs to accept network traffic and you need to decide between Azure Load Balancer and Application Gateway. The choice depends on whether your application speaks TCP/UDP at the network layer or HTTP/HTTPS at the application layer.

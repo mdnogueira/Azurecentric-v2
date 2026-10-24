@@ -5,7 +5,7 @@ pubDate: 2025-05-18
 category: governance
 tags: ["entra-id", "rbac", "role-scoping", "least-privilege", "application-administration", "administrative-units"]
 translationKey: decide-where-azure-rbac-assignments-should-live
-draft: true
+draft: false
 ---
 
 You have a developer who needs to update the credentials for a specific application registration. The instinct might be to assign the Application Administrator role at the tenant level, as that is the default scope for most built-in roles. However, granting tenant-wide permissions for a single-app task is excessive. The correct approach depends on whether the scope of the role aligns with the resource you are managing.

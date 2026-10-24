@@ -5,7 +5,7 @@ pubDate: 2025-01-06
 category: automation
 tags: ["powershell", "structured-logging", "infrastructure-as-code", "error-handling", "transcripts"]
 translationKey: add-structured-logging-to-an-infrastructure-script
-draft: true
+draft: false
 ---
 
 Infrastructure scripts often rely on PowerShell transcripts to capture what happened. It is a convenient default, but it is not reliable for structured logging. Transcripts mix host output with pipeline output in ways that can drop data, reorder events, or make the log file difficult to parse programmatically. If you need a log that is consistent, searchable, and machine-readable, you should build a structured logging function instead.

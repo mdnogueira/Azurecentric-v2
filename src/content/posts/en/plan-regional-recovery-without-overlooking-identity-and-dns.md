@@ -5,7 +5,7 @@ pubDate: 2026-03-16
 category: governance
 tags: ["disaster-recovery", "dns", "identity", "azure-site-recovery", "rto-rpo"]
 translationKey: plan-regional-recovery-without-overlooking-identity-and-dns
-draft: true
+draft: false
 ---
 
 When a region goes down, the first thing you notice is not the missing virtual machines, but the broken login pages and the DNS records that still point to the primary site. Disaster recovery is not an automatic feature of Azure; it is a design choice that requires you to account for data, traffic routing, and identity. If you focus only on replicating compute, you will likely fail your Recovery Time Objective (RTO) because users cannot authenticate or resolve your domain name.

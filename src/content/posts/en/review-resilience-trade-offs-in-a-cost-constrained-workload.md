@@ -5,7 +5,7 @@ pubDate: 2025-08-15
 category: governance
 tags: ["reliability", "high-availability", "disaster-recovery", "cost-optimization", "business-continuity"]
 translationKey: review-resilience-trade-offs-in-a-cost-constrained-workload
-draft: true
+draft: false
 ---
 
 You have a budget cap, but the business expects the workload to survive a hardware failure. The tension between these two requirements is where most reliability designs stall. You cannot simply enable every redundancy feature; that blows the budget. You cannot enable none; that risks business continuity. The solution is to start with risk classification, then select the minimum redundancy that addresses the specific risks identified.

@@ -5,7 +5,7 @@ pubDate: 2026-04-08
 category: governance
 tags: ["entra-id", "security", "permissions", "consent", "powershell"]
 translationKey: review-application-consent-and-service-principal-permissions
-draft: true
+draft: false
 ---
 
 You have an enterprise application in your tenant that is requesting more permissions than it needs, or you have detected a suspicious app that has been granted tenant-wide access. The first step is to understand the scope of the permissions and then revoke them carefully. Revoking permissions does not stop users from re-consenting, so you must also address the consent workflow to prevent recurrence.

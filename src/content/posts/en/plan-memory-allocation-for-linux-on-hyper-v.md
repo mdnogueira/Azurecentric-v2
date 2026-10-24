@@ -5,7 +5,7 @@ pubDate: 2025-01-18
 category: hyper-v
 tags: ["hyper-v", "linux", "memory", "virtual-machines", "windows-server"]
 translationKey: plan-memory-allocation-for-linux-on-hyper-v
-draft: true
+draft: false
 ---
 
 How much memory should you allocate to a Linux virtual machine on Hyper-V? The answer depends on whether the workload benefits from dynamic memory management and whether the specific Linux distribution supports it. For many modern Linux distributions, static memory allocation is the simplest and most predictable approach. If you need the flexibility of dynamic memory, you must ensure the guest kernel supports ballooning and hot-add, and you must configure the limits correctly to avoid allocation failures.

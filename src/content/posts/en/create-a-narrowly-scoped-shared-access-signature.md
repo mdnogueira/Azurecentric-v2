@@ -5,7 +5,7 @@ pubDate: 2024-07-14
 category: storage
 tags: ["azure-storage", "sas", "security", "access-control", "best-practices"]
 translationKey: create-a-narrowly-scoped-shared-access-signature
-draft: true
+draft: false
 ---
 
 You need to delegate access to Azure Storage resources without handing over the storage account key. The most effective way to do this is to create a narrowly scoped shared access signature (SAS) that is bound to a stored access policy and constrained by an account-level expiration policy. This approach gives you the ability to revoke access without rotating keys and limits the validity window if a token is leaked.
