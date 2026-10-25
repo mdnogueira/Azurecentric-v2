@@ -2,8 +2,8 @@
 title: "Use resource health information during an incident"
 description: "Configure high-signal Resource Health alerts via portal or ARM template to detect platform incidents and verify resolution in the activity log."
 pubDate: 2025-10-02
-category: governance
-tags: ["resource-health", "azure-monitor", "activity-log", "arm-templates", "incident-response"]
+category: operations
+tags: ["azure-monitor", "resource-health", "alerts", "arm-templates", "activity-log"]
 translationKey: use-resource-health-information-during-an-incident
 draft: false
 ---

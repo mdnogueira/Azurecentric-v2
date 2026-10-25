@@ -3,7 +3,7 @@ title: "Create and verify a Hyper-V virtual switch"
 description: "Create and verify a Hyper-V virtual switch on Windows Server 2022 using PowerShell, covering switch types and basic configuration."
 pubDate: 2024-06-05
 category: hyper-v
-tags: ["hyper-v", "virtual-switch", "windows-server-2022", "networking", "powershell"]
+tags: ["hyper-v", "powershell", "virtual-switch", "windows-server", "windows-server-2022"]
 translationKey: create-and-verify-a-hyper-v-virtual-switch
 draft: false
 ---

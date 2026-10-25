@@ -3,7 +3,7 @@ title: "Choose ephemeral OS disks when the workload permits it"
 description: "Decide when ephemeral OS disks fit your workload by checking VM size, placement, and lifecycle constraints."
 pubDate: 2025-09-15
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "vm-sizing", "azure-cli"]
 translationKey: choose-ephemeral-os-disks-when-the-workload-permits-it
 draft: false
 ---

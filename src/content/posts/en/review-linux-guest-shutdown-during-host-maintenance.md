@@ -3,7 +3,7 @@ title: "Review Linux guest shutdown during host maintenance"
 description: "Ensure Linux guests shut down cleanly during Hyper-V host maintenance by verifying Integration Services, not checkpoint types."
 pubDate: 2026-04-01
 category: hyper-v
-tags: ["hyper-v", "linux", "virtual-machines", "integration-services", "host-maintenance"]
+tags: ["hyper-v", "linux", "host-maintenance", "integration-services", "checkpoints", "troubleshooting"]
 translationKey: review-linux-guest-shutdown-during-host-maintenance
 draft: false
 ---

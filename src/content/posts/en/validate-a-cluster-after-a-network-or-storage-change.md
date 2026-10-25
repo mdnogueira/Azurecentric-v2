@@ -2,8 +2,8 @@
 title: "Validate a cluster after a network or storage change"
 description: "Validate a Storage Spaces Direct cluster after network or storage changes using Health Service reports and system event logs."
 pubDate: 2026-07-14
-category: backup-dr
-tags: ["failover-clustering", "storage-spaces-direct", "windows-server-2025", "health-service", "troubleshooting"]
+category: high-availability
+tags: ["failover-clustering", "health-service", "storage-spaces-direct", "troubleshooting"]
 translationKey: validate-a-cluster-after-a-network-or-storage-change
 draft: false
 ---

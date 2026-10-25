@@ -3,7 +3,7 @@ title: "Choose storage redundancy around recovery requirements"
 description: "Compare LRS, ZRS, GRS and GZRS against failure scope, secondary access and recovery requirements before changing an Azure Storage account."
 pubDate: 2024-03-26
 category: storage
-tags: ["azure-storage", "storage-redundancy", "disaster-recovery", "geo-replication", "data-protection"]
+tags: ["azure-storage", "storage-redundancy", "geo-replication"]
 translationKey: choose-storage-redundancy-around-recovery-requirements
 draft: false
 ---

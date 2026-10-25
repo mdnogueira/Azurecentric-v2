@@ -2,8 +2,8 @@
 title: "Decide where Azure RBAC assignments should live"
 description: "Decide whether to assign Microsoft Entra roles at tenant, application, or administrative unit scope to match the boundary of the user's responsibility."
 pubDate: 2025-05-18
-category: governance
-tags: ["entra-id", "rbac", "role-scoping", "least-privilege", "application-administration", "administrative-units"]
+category: identity-access
+tags: ["microsoft-entra-id", "rbac", "administrative-units"]
 translationKey: decide-where-azure-rbac-assignments-should-live
 draft: false
 ---

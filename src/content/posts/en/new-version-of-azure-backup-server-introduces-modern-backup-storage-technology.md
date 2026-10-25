@@ -3,7 +3,7 @@ title: "New version of Azure Backup Server introduces Modern Backup Storage tech
 description: "WOW! What a day for me! Microsoft Azure just announces new and improved features on the new version Azure Backup Server. Let’s start!"
 pubDate: 2017-06-01
 category: backup-dr
-tags: [azure-backup, hybrid, hyper-v, vmware, failover-cluster]
+tags: ["backup", "azure-backup", "vmware"]
 translationKey: new-version-of-azure-backup-server-introduces-modern-backup-storage-technology
 legacy: true
 legacyUrl: /2017/06/new-version-of-azure-backup-server-introduces-modern-backup-storage-technology.html

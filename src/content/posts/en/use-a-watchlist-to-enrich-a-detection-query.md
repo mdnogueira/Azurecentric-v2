@@ -2,8 +2,8 @@
 title: "Use a watchlist to enrich a detection query"
 description: "Create and use Microsoft Sentinel watchlists to enrich KQL detection queries with reference data."
 pubDate: 2025-01-28
-category: governance
-tags: ["microsoft-sentinel", "watchlists", "kql", "security-operations", "threat-detection"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "kql", "watchlists"]
 translationKey: use-a-watchlist-to-enrich-a-detection-query
 draft: false
 ---

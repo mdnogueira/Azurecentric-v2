@@ -2,8 +2,8 @@
 title: "Use dependency information to plan migration waves"
 description: "Use Azure Migrate dependency analysis to group servers into migration waves, avoiding outages and identifying decommission candidates."
 pubDate: 2024-08-24
-category: cloud
-tags: ["azure-migrate", "migration-planning", "dependency-analysis", "cloud-adoption"]
+category: hybrid-migration
+tags: ["migration", "hybrid-cloud", "azure-migrate", "dependency-analysis"]
 translationKey: use-dependency-information-to-plan-migration-waves
 draft: false
 ---

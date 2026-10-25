@@ -2,8 +2,8 @@
 title: "Plan identity permissions for a production deployment pipeline"
 description: "Scope Entra ID roles to app registrations and apply Conditional Access to pipeline service principals."
 pubDate: 2026-02-11
-category: governance
-tags: ["entra-id", "conditional-access", "rbac", "workload-identity", "deployment-pipeline"]
+category: identity-access
+tags: ["microsoft-entra-id", "deployment-pipeline", "conditional-access", "workload-identities", "rbac"]
 translationKey: plan-identity-permissions-for-a-production-deployment-pipeline
 draft: false
 ---

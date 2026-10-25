@@ -2,8 +2,8 @@
 title: "Document the evidence behind a generated incident timeline"
 description: "How to verify and document the evidence behind a Security Copilot incident timeline using connector and plugin validation."
 pubDate: 2026-09-19
-category: governance
-tags: ["security-copilot", "incident-response", "evidence-documentation", "ai-traceability", "connectors", "plugins"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "plugins", "connectors", "incident-response"]
 translationKey: document-the-evidence-behind-a-generated-incident-timeline
 draft: false
 ---

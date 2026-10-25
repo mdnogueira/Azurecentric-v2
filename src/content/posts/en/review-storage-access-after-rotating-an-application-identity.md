@@ -3,7 +3,7 @@ title: "Review storage access after rotating an application identity"
 description: "Verify storage access after rotating an application identity by checking RBAC propagation, revoking legacy SAS tokens, and disabling Shared Key auth."
 pubDate: 2026-08-26
 category: storage
-tags: ["azure-storage", "managed-identities", "rbac", "shared-key-authorization", "azure-files"]
+tags: ["azure-storage", "rbac", "shared-key-authorization", "managed-identities", "azure-files"]
 translationKey: review-storage-access-after-rotating-an-application-identity
 draft: false
 ---

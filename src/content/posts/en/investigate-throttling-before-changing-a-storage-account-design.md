@@ -3,7 +3,7 @@ title: "Investigate throttling before changing a Storage account design"
 description: "Troubleshoot Azure Storage throttling by verifying error codes and targets before redesigning the account."
 pubDate: 2026-05-09
 category: storage
-tags: ["azure-storage", "throttling", "performance", "blob-storage", "troubleshooting"]
+tags: ["troubleshooting", "azure-storage", "throttling", "performance", "blob-storage"]
 translationKey: investigate-throttling-before-changing-a-storage-account-design
 draft: false
 ---

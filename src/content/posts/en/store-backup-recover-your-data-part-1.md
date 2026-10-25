@@ -3,7 +3,7 @@ title: "Store, Backup, Recover your data - Part 1"
 description: "Let’s first understand why Cloud makes for a great storage option?"
 pubDate: 2017-02-13
 category: backup-dr
-tags: [azure-backup, storage, hybrid, storsimple]
+tags: ["backup"]
 translationKey: store-backup-recover-your-data-part-1
 cover: ../../../assets/old/posts/2017/02/Backup1.png
 coverAlt: "Store, Backup, Recover your data - Part 1"

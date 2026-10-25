@@ -3,7 +3,7 @@ title: "Plan memory allocation for Linux on Hyper-V"
 description: "Plan Linux VM memory on Hyper-V: verify distribution support, configure limits correctly, and avoid hot-add failures."
 pubDate: 2025-01-18
 category: hyper-v
-tags: ["hyper-v", "linux", "memory", "virtual-machines", "windows-server"]
+tags: ["hyper-v", "linux", "memory", "windows-server"]
 translationKey: plan-memory-allocation-for-linux-on-hyper-v
 draft: false
 ---

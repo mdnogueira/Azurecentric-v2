@@ -2,8 +2,8 @@
 title: "Use remoting to inspect several Windows servers"
 description: "Inspect multiple Windows servers using PowerShell remoting, distinguishing WSMan configuration from simple cmdlet parameters."
 pubDate: 2025-04-30
-category: automation
-tags: ["powershell", "remoting", "windows", "invoke-command", "pssession", "wsman"]
+category: powershell
+tags: ["powershell", "windows-server", "remoting", "windows", "invoke-command", "pssession"]
 translationKey: use-remoting-to-inspect-several-windows-servers
 draft: false
 ---

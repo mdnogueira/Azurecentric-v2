@@ -2,8 +2,8 @@
 title: "Investigate a function timeout without changing every setting"
 description: "Troubleshoot Azure Functions timeouts by using built-in diagnostics and streaming logs to isolate the cause before changing configuration."
 pubDate: 2025-05-26
-category: apps
-tags: ["azure-functions", "troubleshooting", "diagnostics", "logging", "timeout"]
+category: app-paas
+tags: ["azure-functions", "troubleshooting", "timeout", "diagnostics"]
 translationKey: investigate-a-function-timeout-without-changing-every-setting
 draft: false
 ---

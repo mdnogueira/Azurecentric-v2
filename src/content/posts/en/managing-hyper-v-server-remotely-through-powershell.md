@@ -3,7 +3,7 @@ title: "Managing Hyper-V Server remotely through PowerShell"
 description: "Working with PowerShell can be very common for daily tasks and Hyper-V Server management. However, as there is more than one server to be managed, sometimes it can be difficult…"
 pubDate: 2013-10-15
 category: hyper-v
-tags: [powershell]
+tags: ["hyper-v", "powershell"]
 translationKey: managing-hyper-v-server-remotely-through-powershell
 legacy: true
 legacyUrl: /2013/10/managing-hyper-v-server-remotely-through-powershell.html

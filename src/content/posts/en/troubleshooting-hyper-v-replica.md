@@ -3,7 +3,7 @@ title: "Troubleshooting Hyper-V Replica"
 description: "This section explains how to troubleshoot Hyper-V Replica. Use this guide when: You have problems with connectivity between Primary and Replica servers You have problems…"
 pubDate: 2013-04-01
 category: hyper-v
-tags: [hyper-v-replica, troubleshooting]
+tags: ["hyper-v-replica", "troubleshooting", "hyper-v"]
 translationKey: troubleshooting-hyper-v-replica
 legacy: true
 legacyUrl: /2013/04/troubleshooting-hyper-v-replica.html

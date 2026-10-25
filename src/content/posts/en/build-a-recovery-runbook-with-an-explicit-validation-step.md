@@ -2,8 +2,8 @@
 title: "Build a recovery runbook with an explicit validation step"
 description: "Construct a recovery runbook that defines scope, justifies action, and validates outcomes using service-specific reliability guides."
 pubDate: 2025-04-28
-category: governance
-tags: []
+category: well-architected
+tags: ["azure-automation", "well-architected-framework"]
 translationKey: build-a-recovery-runbook-with-an-explicit-validation-step
 draft: false
 ---

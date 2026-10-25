@@ -3,7 +3,7 @@ title: "Separate local administration from domain-wide privileges"
 description: "Restrict local Administrator accounts on Windows Server 2025 using Group Policy to prevent lateral movement."
 pubDate: 2026-07-12
 category: windows-server
-tags: ["windows-server", "active-directory", "group-policy", "security", "local-administrator"]
+tags: ["windows-server", "active-directory", "group-policy", "local-administrator"]
 translationKey: separate-local-administration-from-domain-wide-privileges
 draft: false
 ---

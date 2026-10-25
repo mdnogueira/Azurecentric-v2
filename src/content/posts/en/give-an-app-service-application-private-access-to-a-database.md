@@ -2,8 +2,8 @@
 title: "Give an App Service application private access to a database"
 description: "Secure App Service database access using private endpoints for network isolation and managed identities for authentication."
 pubDate: 2024-10-08
-category: apps
-tags: ["app-service", "private-endpoint", "managed-identity", "azure-sql", "vnet-integration", "service-connector"]
+category: app-paas
+tags: ["azure-app-service", "managed-identities", "private-endpoints", "azure-sql", "service-connector", "vnet-integration"]
 translationKey: give-an-app-service-application-private-access-to-a-database
 draft: false
 ---

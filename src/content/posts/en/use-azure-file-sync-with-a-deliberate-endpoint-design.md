@@ -3,7 +3,7 @@ title: "Use Azure File Sync with a deliberate endpoint design"
 description: "Design Azure File Sync sync groups and private endpoints deliberately to ensure data isolation and network security."
 pubDate: 2025-10-05
 category: storage
-tags: ["azure-file-sync", "private-endpoints", "dns-configuration", "file-storage", "networking"]
+tags: ["azure-storage", "azure-file-sync", "azure-files", "private-endpoints", "file-storage", "dns"]
 translationKey: use-azure-file-sync-with-a-deliberate-endpoint-design
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Create an Ubuntu 22.04 LTS virtual machine on Hyper-V"
 description: "Create an Ubuntu 22.04 LTS guest on Hyper-V, select the Linux Secure Boot template, attach installation media and check the installed guest."
 pubDate: 2024-02-19
 category: hyper-v
-tags: [hyper-v, ubuntu, linux, windows-server-2022, virtual-machines]
+tags: ["linux", "hyper-v", "ubuntu", "secure-boot"]
 translationKey: create-an-ubuntu-22-04-lts-virtual-machine-on-hyper-v
 draft: false
 ---

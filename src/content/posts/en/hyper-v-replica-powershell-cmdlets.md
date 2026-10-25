@@ -3,7 +3,7 @@ title: "Hyper-V Replica PowerShell CMDLETS"
 description: "The following Hyper-V PowerShell cmdlets apply to Hyper-V Replica."
 pubDate: 2013-02-16
 category: hyper-v
-tags: [hyper-v-replica, powershell]
+tags: ["hyper-v-replica", "hyper-v", "powershell"]
 translationKey: hyper-v-replica-powershell-cmdlets
 cover: ../../../assets/old/posts/2013/02/cmd1.png
 coverAlt: "Hyper-V Replica PowerShell CMDLETS"

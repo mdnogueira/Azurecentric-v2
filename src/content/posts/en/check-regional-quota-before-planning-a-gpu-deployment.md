@@ -2,8 +2,8 @@
 title: "Check regional quota before planning a GPU deployment"
 description: "Check regional GPU core quotas before deploying Azure Batch pools to avoid deployment failures."
 pubDate: 2024-05-04
-category: compute
-tags: ["azure-batch", "gpu-vm", "quotas", "deployment", "hpc"]
+category: hpc-ai
+tags: ["hpc", "gpu", "deployment", "azure-batch", "quotas"]
 translationKey: check-regional-quota-before-planning-a-gpu-deployment
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Investigate a time synchronisation problem on Windows Server"
 description: "Troubleshoot Windows Server time drift by querying W32Time state, verifying the AD DS hierarchy, and forcing a resync."
 pubDate: 2025-10-13
 category: windows-server
-tags: ["windows-server", "time-synchronization", "w32time", "troubleshooting", "active-directory"]
+tags: ["windows-server", "troubleshooting", "time-synchronisation", "w32time", "active-directory"]
 translationKey: investigate-a-time-synchronisation-problem-on-windows-server
 draft: false
 ---

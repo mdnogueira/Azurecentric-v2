@@ -3,7 +3,7 @@ title: "Pin provider and module versions in an Azure deployment"
 description: "Pin Bicep module versions to ensure reproducible deployments and prevent drift from upstream changes."
 pubDate: 2026-04-27
 category: automation
-tags: ["bicep", "infrastructure-as-code", "azure-container-registry", "template-specs", "versioning"]
+tags: ["bicep", "azure-container-registry", "template-specs", "infrastructure-as-code"]
 translationKey: pin-provider-and-module-versions-in-an-azure-deployment
 draft: false
 ---

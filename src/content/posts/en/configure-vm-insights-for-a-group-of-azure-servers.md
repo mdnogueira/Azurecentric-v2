@@ -2,8 +2,8 @@
 title: "Configure VM insights for a group of Azure servers"
 description: "Enable VM insights with Azure Monitor Agent, choose a shared collection rule, and verify guest performance and optional dependency data for each server."
 pubDate: 2024-03-24
-category: governance
-tags: ["azure-monitor", "vm-insights", "azure-monitor-agent", "data-collection-rules", "log-analytics"]
+category: operations
+tags: ["azure-monitor", "vm-insights", "azure-monitor-agent", "log-analytics", "data-collection-rules"]
 translationKey: configure-vm-insights-for-a-group-of-azure-servers
 draft: false
 ---

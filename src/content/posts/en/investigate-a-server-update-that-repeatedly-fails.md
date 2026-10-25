@@ -3,7 +3,7 @@ title: "Investigate a server update that repeatedly fails"
 description: "Troubleshoot a Windows Server 2025 update failing repeatedly by verifying WSUS approval scope, synchronisation health, and client reporting."
 pubDate: 2026-05-17
 category: windows-server
-tags: ["wsus", "windows-server-2025", "troubleshooting", "windows-update", "system-administration"]
+tags: ["troubleshooting", "windows-server", "patch-management", "windows-server-2025", "windows-update", "wsus"]
 translationKey: investigate-a-server-update-that-repeatedly-fails
 draft: false
 ---

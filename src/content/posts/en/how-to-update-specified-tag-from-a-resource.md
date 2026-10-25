@@ -3,7 +3,7 @@ title: "How to update specified tag from a resource"
 description: "The usage of Tags on Azure resources is a very common and very useful for several reasons that I will not cover on this post. Although in some occasions, if you need to update…"
 pubDate: 2018-07-06
 category: governance
-tags: [azure-automation, powershell, tags]
+tags: ["resource-tags"]
 translationKey: how-to-update-specified-tag-from-a-resource
 legacy: true
 legacyUrl: /2018/07/how-to-update-specified-tag-from-a-resource.html

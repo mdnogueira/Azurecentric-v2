@@ -2,8 +2,8 @@
 title: "Use Azure Policy to report on missing configuration"
 description: "Use Azure Policy with an auditing effect to identify non-compliant resources without blocking deployments, then verify the compliance state."
 pubDate: 2025-02-23
-category: governance
-tags: ["azure-policy", "governance", "compliance", "audit", "azure-arc"]
+category: operations
+tags: ["azure-monitor", "azure-policy", "audit", "compliance", "azure-arc"]
 translationKey: use-azure-policy-to-report-on-missing-configuration
 draft: false
 ---

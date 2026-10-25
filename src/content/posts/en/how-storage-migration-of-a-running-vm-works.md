@@ -3,7 +3,7 @@ title: "How does a storage migration of a running virtual machine in Windows Ser
 description: "The process followed by Hyper-V internally to perform a storage migration is actually quite simple to explain and is as follows:"
 pubDate: 2012-07-02
 category: hyper-v
-tags: [vhd]
+tags: ["hyper-v", "migration", "powershell", "windows-server", "vhd"]
 translationKey: how-storage-migration-of-a-running-vm-works
 legacy: true
 legacyUrl: /2012/07/how-does-a-storage-migration-of-a-running-virtual-machine-in-windows-server-2012-both-through-hyper-v-manager-and-through-powershell-actually-work.html

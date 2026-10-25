@@ -2,8 +2,8 @@
 title: "Apply Azure Policy to Arc-enabled servers"
 description: "Assign Azure Policy to Arc servers to audit or install the Azure Monitor Agent, using a Data Collection Rule and guest configuration."
 pubDate: 2025-04-12
-category: cloud
-tags: ["azure-arc", "azure-policy", "azure-monitor", "ama", "security", "tier0"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "azure-policy", "azure-arc", "data-collection-rules", "azure-monitor", "azure-monitor-agent"]
 translationKey: apply-azure-policy-to-arc-enabled-servers
 draft: false
 ---

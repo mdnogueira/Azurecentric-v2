@@ -2,8 +2,8 @@
 title: "Set RPO and RTO before selecting a recovery design"
 description: "Define RPO and RTO before selecting Azure DR tools. Understand how backup and replication serve different recovery goals."
 pubDate: 2024-07-16
-category: governance
-tags: ["disaster-recovery", "rpo", "rto", "azure-backup", "replication"]
+category: well-architected
+tags: ["rpo-rto", "well-architected-framework", "replication", "backup", "disaster-recovery", "azure-backup"]
 translationKey: set-rpo-and-rto-before-selecting-a-recovery-design
 draft: false
 ---

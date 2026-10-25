@@ -3,7 +3,7 @@ title: "Cluster Shared Volumes (CSV) errors on Hyper-V Cluster"
 description: "In a failover cluster, virtual machines can use Cluster Shared Volumes that are on the same LUN (disk), while still being able to fail over (or move from node to node)…"
 pubDate: 2013-11-06
 category: hyper-v
-tags: [cluster-shared-volumes, failover-cluster, server-core, high-availability]
+tags: ["cluster-shared-volumes", "hyper-v", "failover-clustering", "troubleshooting", "powershell"]
 translationKey: cluster-shared-volumes-csv-errors-on-hyper-v-cluster
 legacy: true
 legacyUrl: /2013/11/cluster-shared-volumes-csv-errors-on-hyper-v-cluster.html

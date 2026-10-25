@@ -2,8 +2,8 @@
 title: "Erro ao criar um Azure CDN Profile com o Resource Provider"
 description: "Ao criar um Azure CDN Profile para distribuir conteúdo estático por várias regiões do Azure, a validação falhou: o Resource Provider Microsoft.CDN não estava registado na subscrição."
 pubDate: 2020-11-21
-category: storage
-tags: [powershell, cdn, portal]
+category: networking
+tags: ["azure-cdn", "troubleshooting", "powershell"]
 translationKey: error-on-creating-an-azure-cdn-profile-with-resource-provider
 cover: ../../../assets/old/posts/2020/11/cnd1.png
 coverAlt: "Erro ao criar um Azure CDN Profile com o Resource Provider"

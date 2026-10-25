@@ -3,7 +3,7 @@ title: "Capacity Planner for Hyper-V Replica"
 description: "Hyper-V in Windows Server 2012 includes a new capability called Hyper-V Replica. Hyper-V Replica allows administrators to replicate their virtual machines from a primary…"
 pubDate: 2013-05-23
 category: hyper-v
-tags: [capacity-planner, hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "capacity-planner", "windows-server"]
 translationKey: capacity-planner-for-hyper-v-replica
 cover: ../../../assets/old/posts/2013/05/image.png
 coverAlt: "Capacity Planner for Hyper-V Replica"

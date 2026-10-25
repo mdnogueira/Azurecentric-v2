@@ -3,7 +3,7 @@ title: "Keep environment configuration separate from deployment logic"
 description: "Apply the configuration set pattern in Bicep to decouple environment-specific settings from resource definitions."
 pubDate: 2024-07-03
 category: automation
-tags: ["bicep", "configuration-set-pattern", "infrastructure-as-code", "azure-resource-manager", "best-practices"]
+tags: ["bicep", "configuration-set-pattern"]
 translationKey: keep-environment-configuration-separate-from-deployment-logic
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Plan an integration that can recover after an outage"
 description: "Plan integration recovery using Service Bus replication, API Management backup/restore, and Logic Apps error handling."
 pubDate: 2026-08-17
-category: apps
-tags: ["azure-service-bus", "api-management", "logic-apps", "disaster-recovery", "resilience"]
+category: integration
+tags: ["azure-service-bus", "azure-api-management", "azure-logic-apps", "backup", "replication", "troubleshooting"]
 translationKey: plan-an-integration-that-can-recover-after-an-outage
 draft: false
 ---

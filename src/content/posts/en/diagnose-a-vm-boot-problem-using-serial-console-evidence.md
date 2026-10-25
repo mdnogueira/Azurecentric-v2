@@ -3,7 +3,7 @@ title: "Diagnose a VM boot problem using serial console evidence"
 description: "Use Boot Diagnostics serial logs to diagnose VM boot failures when the guest OS is unreachable."
 pubDate: 2025-12-30
 category: compute
-tags: ["azure-virtual-machines", "boot-diagnostics", "serial-console", "troubleshooting", "azure-monitor"]
+tags: ["azure-virtual-machines", "serial-console", "azure-monitor", "boot-diagnostics", "troubleshooting"]
 translationKey: diagnose-a-vm-boot-problem-using-serial-console-evidence
 draft: false
 ---

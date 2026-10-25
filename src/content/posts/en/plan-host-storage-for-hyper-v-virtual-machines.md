@@ -3,7 +3,7 @@ title: "Plan host storage for Hyper-V virtual machines"
 description: "Choose a Hyper-V storage architecture for Windows Server 2025 by weighing high availability requirements against scaling flexibility."
 pubDate: 2025-10-18
 category: hyper-v
-tags: ["hyper-v", "windows-server", "storage-architecture", "storage-spaces-direct", "san", "nas"]
+tags: ["hyper-v", "windows-server", "high-availability", "nas", "san", "storage-architecture"]
 translationKey: plan-host-storage-for-hyper-v-virtual-machines
 draft: false
 ---

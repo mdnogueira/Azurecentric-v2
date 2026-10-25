@@ -2,8 +2,8 @@
 title: "Using PowerShell on Azure Cloud Shell"
 description: "On the past May 10th, during the keynote of the Microsoft Build 2017 Conference in Seattle (WA), Microsoft announce the Azure Cloud Shell (see post here). Although on the May…"
 pubDate: 2017-05-24
-category: automation
-tags: [powershell]
+category: powershell
+tags: ["powershell", "azure-cloud-shell"]
 translationKey: using-powershell-on-azure-cloud-shell
 cover: ../../../assets/old/posts/2017/05/ACS.png
 coverAlt: "Using PowerShell on Azure Cloud Shell"

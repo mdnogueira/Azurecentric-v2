@@ -2,8 +2,8 @@
 title: "Protect a workflow secret with Key Vault"
 description: "Protect workflow secrets in Azure Logic Apps by using managed identities for Key Vault access and enabling input/output obscuring in run history."
 pubDate: 2025-11-19
-category: apps
-tags: ["logic-apps", "key-vault", "security", "managed-identity", "run-history"]
+category: integration
+tags: ["azure-key-vault", "azure-logic-apps", "managed-identities", "run-history"]
 translationKey: protect-a-workflow-secret-with-key-vault
 draft: false
 ---

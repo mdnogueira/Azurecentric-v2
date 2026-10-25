@@ -3,7 +3,7 @@ title: "Configure Hyper-V Replica for a defined recovery scenario"
 description: "Configure Hyper-V Replica for Windows Server 2025: host setup, VM replication, and failover verification."
 pubDate: 2025-12-10
 category: hyper-v
-tags: ["hyper-v", "hyper-v-replica", "disaster-recovery", "windows-server-2025", "virtualization"]
+tags: ["hyper-v-replica", "hyper-v", "replication", "windows-server-2025", "windows-server", "windows-firewall"]
 translationKey: configure-hyper-v-replica-for-a-defined-recovery-scenario
 draft: false
 ---

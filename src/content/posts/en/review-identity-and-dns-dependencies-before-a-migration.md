@@ -2,8 +2,8 @@
 title: "Review identity and DNS dependencies before a migration"
 description: "Verify identity and DNS dependencies before migrating workloads to Azure to avoid connectivity failures."
 pubDate: 2026-02-27
-category: cloud
-tags: ["azure-migrate", "dns", "active-directory", "hybrid-connectivity", "migration-planning"]
+category: hybrid-migration
+tags: ["dns", "hybrid-cloud", "migration", "hybrid-connectivity", "azure-migrate", "active-directory"]
 translationKey: review-identity-and-dns-dependencies-before-a-migration
 draft: false
 ---

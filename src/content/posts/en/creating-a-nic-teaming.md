@@ -3,7 +3,7 @@ title: "Creating a NIC teaming"
 description: "Both of these will cause the New Team dialog box to pop-up."
 pubDate: 2013-04-30
 category: windows-server
-tags: [hyper-v, nic-teaming]
+tags: ["windows-server", "nic-teaming", "hyper-v"]
 translationKey: creating-a-nic-teaming
 cover: ../../../assets/old/posts/2013/04/clip_image0025.png
 coverAlt: "Creating a NIC teaming"

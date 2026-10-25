@@ -3,7 +3,7 @@ title: "Installation Process of Hyper-V Replica"
 description: "Hyper-V Replica is installed as part of the Hyper-V Role."
 pubDate: 2013-02-26
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v"]
 translationKey: installation-process-of-hyper-v-replica
 cover: ../../../assets/old/posts/2013/02/instal1.png
 coverAlt: "Installation Process of Hyper-V Replica"

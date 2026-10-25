@@ -2,8 +2,8 @@
 title: "Separate API authentication from subscription keys"
 description: "Separate API authentication from subscription keys in Azure API Management using OAuth 2.0 and JWT validation."
 pubDate: 2025-08-04
-category: apps
-tags: ["api-management", "authentication", "authorization", "security", "jwt"]
+category: integration
+tags: ["azure-api-management", "authentication", "authorization", "jwt"]
 translationKey: separate-api-authentication-from-subscription-keys
 draft: false
 ---

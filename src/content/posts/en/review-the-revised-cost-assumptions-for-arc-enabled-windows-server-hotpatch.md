@@ -3,7 +3,7 @@ title: "Review the revised cost assumptions for Arc-enabled Windows Server Hotpa
 description: "Enable Hotpatch on Arc-enabled Windows Server 2025: verify VBS, enroll via Azure Update Manager, and check status."
 pubDate: 2026-05-22
 category: windows-server
-tags: ["azure-arc", "windows-server-2025", "hotpatch", "azure-update-manager", "vbs"]
+tags: ["azure-arc", "windows-server", "hotpatch", "azure-update-manager", "vbs", "windows-server-2025"]
 translationKey: review-the-revised-cost-assumptions-for-arc-enabled-windows-server-hotpatch
 draft: false
 ---

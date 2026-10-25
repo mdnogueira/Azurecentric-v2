@@ -3,7 +3,7 @@ title: "Enabling the Firewall rules in the Hyper-V Replica Server"
 description: "On a standalone Replica server, if Kerberos based authentication is used, follow these steps to make the required exception in the Windows Firewall: 1. Open Windows Firewall…"
 pubDate: 2012-12-27
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "windows-firewall"]
 translationKey: enabling-the-firewall-rules-in-the-hyper-v-replica-server
 legacy: true
 legacyUrl: /2012/12/enabling-the-firewall-rules-in-the-hyper-v-replica-server.html

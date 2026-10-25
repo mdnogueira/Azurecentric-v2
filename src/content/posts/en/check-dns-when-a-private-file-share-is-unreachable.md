@@ -3,7 +3,7 @@ title: "Check DNS when a private file share is unreachable"
 description: "Troubleshoot Azure Files mount failures over private endpoints by verifying DNS forwarding and resolving cross-tenant conflicts."
 pubDate: 2025-08-12
 category: storage
-tags: ["azure-files", "private-endpoints", "dns-forwarding", "troubleshooting", "networking"]
+tags: ["dns", "azure-storage", "private-endpoints", "azure-files", "troubleshooting", "azure-dns-private-resolver"]
 translationKey: check-dns-when-a-private-file-share-is-unreachable
 draft: false
 ---

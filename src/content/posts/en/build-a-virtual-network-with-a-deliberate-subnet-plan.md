@@ -3,7 +3,7 @@ title: "Build a virtual network with a deliberate subnet plan"
 description: "Plan a non-overlapping Azure virtual network address space, create subnets with clear purposes, and distinguish address boundaries from enforced traffic controls."
 pubDate: 2024-01-28
 category: networking
-tags: [vnet, subnets, ip-addressing, network-security-groups]
+tags: ["azure-virtual-network", "subnets", "network-security-groups"]
 translationKey: build-a-virtual-network-with-a-deliberate-subnet-plan
 draft: false
 ---

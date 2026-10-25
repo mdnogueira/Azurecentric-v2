@@ -3,7 +3,7 @@ title: "Azure on Enterprise world"
 description: "What you as enterprise customers uniquely expect from a public cloud platform. These are “must haves” that I always get when I asked: Integration – So you can integrate with…"
 pubDate: 2015-12-18
 category: cloud
-tags: []
+tags: ["cloud-computing"]
 translationKey: azure-on-enterprise-world
 cover: ../../../assets/old/posts/2015/12/Azure.png
 coverAlt: "Azure on Enterprise world"

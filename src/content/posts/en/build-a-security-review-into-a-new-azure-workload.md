@@ -2,8 +2,8 @@
 title: "Build a security review into a new Azure workload"
 description: "Structure a security review for a new Azure workload by separating posture management from workload protection and verifying permissions."
 pubDate: 2026-07-22
-category: governance
-tags: ["defender-for-cloud", "cspm", "security-posture", "workload-protection", "azure-security"]
+category: cloud-security
+tags: ["defender-for-cloud", "cloud-security", "cspm", "security-posture", "workload-protection"]
 translationKey: build-a-security-review-into-a-new-azure-workload
 draft: false
 ---

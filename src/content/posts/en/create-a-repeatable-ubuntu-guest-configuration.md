@@ -3,7 +3,7 @@ title: "Create a repeatable Ubuntu guest configuration"
 description: "Create a repeatable Ubuntu guest configuration on Hyper-V using export, import, and generation 2 best practices."
 pubDate: 2026-07-20
 category: hyper-v
-tags: ["hyper-v", "ubuntu", "virtual-machines", "linux", "export-import", "generation-2"]
+tags: ["linux", "hyper-v", "ubuntu", "export-import", "generation-2"]
 translationKey: create-a-repeatable-ubuntu-guest-configuration
 draft: false
 ---

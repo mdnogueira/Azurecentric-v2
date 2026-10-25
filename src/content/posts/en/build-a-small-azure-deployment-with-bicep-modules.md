@@ -3,7 +3,7 @@ title: "Build a small Azure deployment with Bicep modules"
 description: "Separate a Bicep entry point from a reusable storage module, pass parameters explicitly, and review a resource-group deployment before running it."
 pubDate: 2024-01-22
 category: automation
-tags: [bicep, infrastructure-as-code, modules, azure-resource-manager]
+tags: ["bicep", "modules"]
 translationKey: build-a-small-azure-deployment-with-bicep-modules
 draft: false
 ---

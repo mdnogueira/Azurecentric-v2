@@ -3,7 +3,7 @@ title: "Investigate slow disk access in a Linux VM"
 description: "Troubleshoot slow Linux VM disk I/O on Windows Server 2025 Hyper-V by checking schedulers, VHDX config, and storage architecture."
 pubDate: 2025-12-13
 category: hyper-v
-tags: ["hyper-v", "linux-vm", "disk-performance", "vhdx", "i-o-scheduler"]
+tags: ["hyper-v", "linux", "troubleshooting", "vhdx", "disk-performance", "i-o-scheduler"]
 translationKey: investigate-slow-disk-access-in-a-linux-vm
 draft: false
 ---

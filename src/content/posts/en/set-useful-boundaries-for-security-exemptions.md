@@ -2,8 +2,8 @@
 title: "Set useful boundaries for security exemptions"
 description: "Distinguish governance rules for remediation SLAs from suppression rules for alert noise in Defender for Cloud."
 pubDate: 2026-04-04
-category: governance
-tags: ["defender-for-cloud", "governance-rules", "suppression-rules", "security-posture", "alert-management"]
+category: cloud-security
+tags: ["defender-for-cloud", "alerts", "alert-management", "governance-rules", "security-posture", "suppression-rules"]
 translationKey: set-useful-boundaries-for-security-exemptions
 draft: false
 ---

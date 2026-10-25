@@ -3,7 +3,7 @@ title: "How to build a Disaster Recovery solution with Azure Site Recovery"
 description: "Frequently I heard how to build a disaster recovery solution. When I heard that I always think about ASR. On my last post I talked about Azure Site Recover as an overview of…"
 pubDate: 2017-04-04
 category: backup-dr
-tags: [architecture, azure-site-recovery]
+tags: ["azure-site-recovery", "disaster-recovery", "capacity-planning", "azure-virtual-machines"]
 translationKey: how-to-build-a-disaster-recovery-solution-with-azure-site-recovery
 legacy: true
 legacyUrl: /2017/04/how-to-build-a-disaster-recovery-solution-with-azure-site-recovery.html

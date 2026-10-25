@@ -3,7 +3,7 @@ title: "Apply a consistent patching approach to Azure servers"
 description: "Configure Azure VM patching modes to balance platform orchestration control with guest OS autonomy."
 pubDate: 2025-11-07
 category: compute
-tags: ["azure-virtual-machines", "patch-management", "automatic-patching", "availability-first", "linux", "windows"]
+tags: ["azure-virtual-machines", "patch-management", "linux", "automatic-patching", "availability-first", "windows"]
 translationKey: apply-a-consistent-patching-approach-to-azure-servers
 draft: false
 ---

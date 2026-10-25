@@ -3,7 +3,7 @@ title: "Create a recovery checklist for a Windows infrastructure server"
 description: "Prepare a recovery checklist for a Windows infrastructure server using Windows Server Backup and wbadmin."
 pubDate: 2026-09-03
 category: windows-server
-tags: ["windows-server", "active-directory", "backup-and-recovery", "wbadmin", "forest-recovery"]
+tags: ["windows-server", "backup", "forest-recovery", "wbadmin", "active-directory"]
 translationKey: create-a-recovery-checklist-for-a-windows-infrastructure-server
 draft: false
 ---

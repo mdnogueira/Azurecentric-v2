@@ -2,8 +2,8 @@
 title: "Understand the boundary between a generated answer and evidence"
 description: "Distinguish Security Copilot's generative answers from source evidence to maintain operational integrity."
 pubDate: 2025-03-25
-category: governance
-tags: ["security-copilot", "ai-assurance", "security-operations", "evidence-verification", "generative-ai"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "evidence-verification", "generative-ai", "security-operations", "plugins"]
 translationKey: understand-the-boundary-between-a-generated-answer-and-evidence
 draft: false
 ---

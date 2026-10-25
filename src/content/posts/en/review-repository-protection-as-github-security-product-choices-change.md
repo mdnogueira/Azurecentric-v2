@@ -2,8 +2,8 @@
 title: "Review repository protection as GitHub security product choices change"
 description: "How to apply GitHub security configurations after the April 2025 GHAS split into Secret Protection and Code Security."
 pubDate: 2025-04-05
-category: governance
-tags: ["github", "security", "ghas", "secret-protection", "code-security", "configuration"]
+category: cloud-security
+tags: ["github-advanced-security", "github", "github-secret-protection", "configuration", "github-code-security"]
 translationKey: review-repository-protection-as-github-security-product-choices-change
 draft: false
 ---

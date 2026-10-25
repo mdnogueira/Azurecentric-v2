@@ -3,7 +3,7 @@ title: "Instant Recovery Point and Large Disk Azure Backup support"
 description: "With everything that happens on Azure, and following what has been announced of the increase of the size of the disk in Azure, from 1TB to 4TB, the only missing part of this…"
 pubDate: 2017-11-29
 category: backup-dr
-tags: [azure-backup, storage, powershell]
+tags: ["azure-backup", "backup", "powershell"]
 translationKey: instant-recovery-point-and-large-disk-azure-backup-support
 cover: ../../../assets/old/posts/2017/11/AzureBackupFeatures.jpg
 coverAlt: "Instant Recovery Point and Large Disk Azure Backup support"

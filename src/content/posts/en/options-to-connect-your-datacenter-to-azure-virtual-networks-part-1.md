@@ -3,7 +3,7 @@ title: "Options to connect your datacenter to Azure Virtual Networks – Part 1"
 description: "In our days, we are starting to see a lot of change how organizations approach the cloud and how they adapt the cloud to their environment. So, why the way you connect to your…"
 pubDate: 2017-05-19
 category: networking
-tags: [hybrid]
+tags: ["azure-virtual-network", "expressroute"]
 translationKey: options-to-connect-your-datacenter-to-azure-virtual-networks-part-1
 legacy: true
 legacyUrl: /2017/05/options-to-connect-your-datacenter-to-azure-virtual-networks-part-1.html

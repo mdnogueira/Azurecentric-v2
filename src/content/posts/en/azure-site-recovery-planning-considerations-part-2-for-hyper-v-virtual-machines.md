@@ -3,7 +3,7 @@ title: "Azure Site Recovery Planning Considerations – Part 2 – For Hyper-V V
 description: "On these post series, I want to cover some of the planning considerations that I usually use, when I’m designing/planning with my costumers, an ASR deployment/infrastructure. I…"
 pubDate: 2017-06-16
 category: backup-dr
-tags: [azure-site-recovery, architecture, hybrid, hyper-v]
+tags: ["azure-site-recovery", "hyper-v"]
 translationKey: azure-site-recovery-planning-considerations-part-2-for-hyper-v-virtual-machines
 legacy: true
 legacyUrl: /2017/06/azure-site-recovery-planning-considerations-part-2-for-hyper-v-virtual-machines.html

@@ -2,8 +2,8 @@
 title: "Use Conditional Access authentication strengths carefully"
 description: "Enforce specific authentication strengths for external users by configuring cross-tenant MFA trust and applying Conditional Access policies in report-only mode."
 pubDate: 2025-12-20
-category: governance
-tags: ["conditional-access", "authentication-strengths", "external-users", "cross-tenant-access", "entra-id"]
+category: identity-access
+tags: ["conditional-access", "microsoft-entra-id", "authentication-strengths", "multifactor-authentication", "cross-tenant-access", "external-users"]
 translationKey: use-conditional-access-authentication-strengths-carefully
 draft: false
 ---

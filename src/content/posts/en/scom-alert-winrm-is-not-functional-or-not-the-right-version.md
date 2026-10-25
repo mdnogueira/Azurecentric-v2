@@ -3,7 +3,7 @@ title: "SCOM Alert: WinRM is not functional or not the right version"
 description: "On System Center 2012 R2 Operations Manager (SCOM) (with UR2) starting to appear Critical Alerts coming from System Center Advisor (SCA) saying that my System Center 2012 R2…"
 pubDate: 2014-05-27
 category: windows-server
-tags: [hyper-v, scom, scvmm, winrm]
+tags: ["scom", "windows-server", "alerts", "winrm", "system-center", "hyper-v"]
 translationKey: scom-alert-winrm-is-not-functional-or-not-the-right-version
 legacy: true
 legacyUrl: /2014/05/scom-alert-winrm-is-not-functional-or-not-the-right-version.html

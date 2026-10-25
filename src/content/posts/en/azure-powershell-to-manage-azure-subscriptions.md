@@ -2,8 +2,8 @@
 title: "Azure PowerShell to manage Azure Subscriptions"
 description: "After you install the Azure PowerShell modules, you can connect the Azure PowerShell session to the Azure subscriptions that you want to manage. To establish this connection,…"
 pubDate: 2016-08-05
-category: governance
-tags: [powershell, subscriptions]
+category: powershell
+tags: ["powershell", "azure-powershell", "azure-subscriptions"]
 translationKey: azure-powershell-to-manage-azure-subscriptions
 legacy: true
 legacyUrl: /2016/08/azure-powershell-to-manage-azure-subscriptions.html

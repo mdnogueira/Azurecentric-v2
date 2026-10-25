@@ -2,8 +2,8 @@
 title: "Choose failover priorities around application dependencies"
 description: "Distinguish cluster quorum from application failover priorities. Configure votes to control survival, not role placement."
 pubDate: 2025-12-08
-category: backup-dr
-tags: ["failover-clustering", "quorum", "windows-server", "disaster-recovery", "multisite"]
+category: high-availability
+tags: ["failover-clustering", "quorum", "multisite", "disaster-recovery"]
 translationKey: choose-failover-priorities-around-application-dependencies
 draft: false
 ---

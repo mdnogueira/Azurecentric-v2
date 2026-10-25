@@ -3,7 +3,7 @@ title: "Transform the Datacenter – Part 2 - Software-defined Datacenter"
 description: "This post is a continuation of series of posts about Transform your datacenter. You can see the previous post here."
 pubDate: 2016-06-07
 category: cloud
-tags: [hybrid, system-center]
+tags: ["cloud-computing", "system-center"]
 translationKey: transform-the-datacenter-part-2-software-defined-datacenter
 cover: ../../../assets/old/posts/2016/06/Cloud-Infrastructure2.png
 coverAlt: "Transform the Datacenter – Part 2 - Software-defined Datacenter"

@@ -3,7 +3,7 @@ title: "Managed disk on Azure"
 description: "You probably already saw this when you are creating a Virtual Machine on Azure. After you insert the basic information like Name of the VM, choose the size, then comes the time…"
 pubDate: 2017-07-07
 category: storage
-tags: [azure-backup, backup, high-availability, rbac, vhd]
+tags: ["azure-storage", "managed-disks", "backup", "azure-backup", "vhd", "rbac"]
 translationKey: managed-disk-on-azure
 cover: ../../../assets/old/posts/2017/07/ManagedDisks1.png
 coverAlt: "Managed disk on Azure"

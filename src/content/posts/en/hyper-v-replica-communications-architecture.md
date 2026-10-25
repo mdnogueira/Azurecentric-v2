@@ -3,7 +3,7 @@ title: "Hyper-V Replica Communications Architecture"
 description: "The Hyper-V Replica communications architecture is implemented at the Hyper-V Replica Network transport layer. This layer provides a bi-directional transport channel based on…"
 pubDate: 2013-01-15
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "replication"]
 translationKey: hyper-v-replica-communications-architecture
 cover: ../../../assets/old/posts/2013/01/hyprep1.png
 coverAlt: "Hyper-V Replica Communications Architecture"

@@ -3,7 +3,7 @@ title: "Add validation before deploying a Bicep change"
 description: "Use the Bicep linter to catch best practice violations before deployment, configuring rules via bicepconfig.json."
 pubDate: 2025-06-07
 category: automation
-tags: ["bicep", "linter", "infrastructure-as-code", "azure-resource-manager", "ci-cd", "best-practices"]
+tags: ["bicep", "linter", "azure-resource-manager"]
 translationKey: add-validation-before-deploying-a-bicep-change
 draft: false
 ---

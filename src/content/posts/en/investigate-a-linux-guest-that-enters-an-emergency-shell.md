@@ -3,7 +3,7 @@ title: "Investigate a Linux guest that enters an emergency shell"
 description: "Troubleshoot a Linux VM in emergency shell by verifying mount points, fstab, and synthetic storage visibility."
 pubDate: 2025-05-12
 category: hyper-v
-tags: ["hyper-v", "linux", "troubleshooting", "emergency-shell", "synthetic-drivers"]
+tags: ["hyper-v", "linux", "troubleshooting", "emergency-shell", "integration-services"]
 translationKey: investigate-a-linux-guest-that-enters-an-emergency-shell
 draft: false
 ---

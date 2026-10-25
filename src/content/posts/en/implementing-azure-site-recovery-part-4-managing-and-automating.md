@@ -3,7 +3,7 @@ title: "Implementing Azure Site Recovery – Part 4 – Managing and Automating"
 description: "After I post the series of Azure Site Recovery (ASR) Planning considerations, I received an enormous quantity of feedback how It should be implemented, following those…"
 pubDate: 2017-06-30
 category: backup-dr
-tags: [azure-site-recovery, hybrid]
+tags: ["azure-site-recovery"]
 translationKey: implementing-azure-site-recovery-part-4-managing-and-automating
 legacy: true
 legacyUrl: /2017/06/implementing-azure-site-recovery-part-4-managing-and-automating.html

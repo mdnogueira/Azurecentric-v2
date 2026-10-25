@@ -3,7 +3,7 @@ title: "File level restore on an encrypted Azure virtual machine"
 description: "At the costumer site, I was delivering an Azure Workshop, on the topic of Azure Backup, comes the following questions: On a VM that have encrypted disks, how can we restore it?…"
 pubDate: 2019-07-08
 category: backup-dr
-tags: [azure-backup]
+tags: ["azure-backup", "azure-virtual-machines", "backup"]
 translationKey: file-level-restore-on-an-encrypted-azure-virtual-machine
 legacy: true
 legacyUrl: /2019/07/file-level-restore-on-an-encrypted-azure-virtual-machine.html

@@ -3,7 +3,7 @@ title: "What’s new in System Center 2012 R2 – Virtual Machine Manager?"
 description: "During the last TechEd North America, Microsoft wraps off what will be the new System Center 2012 R2. The upgrade follows the impressive number of new features on Windows…"
 pubDate: 2013-06-24
 category: windows-server
-tags: [scvmm]
+tags: ["windows-server", "system-center", "scvmm"]
 translationKey: whats-new-in-system-center-2012-r2-virtual-machine-manager
 legacy: true
 legacyUrl: /2013/06/whats-new-in-system-center-2012-r2-virtual-machine-manager.html

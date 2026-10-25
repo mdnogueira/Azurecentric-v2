@@ -3,7 +3,7 @@ title: "Unresponsive Azure VM"
 description: "Another day I was at one of my costumers, and a system engineer come to me asking me if I could help him troubleshoot an issue with an unresponsive Azure VM. I love this…"
 pubDate: 2018-04-07
 category: compute
-tags: [cloud-shell, portal, powershell]
+tags: ["azure-virtual-machines", "troubleshooting", "powershell", "azure-cloud-shell"]
 translationKey: unresponsive-azure-vm
 cover: ../../../assets/old/posts/2018/04/redeploy1.png
 coverAlt: "Unresponsive Azure VM"

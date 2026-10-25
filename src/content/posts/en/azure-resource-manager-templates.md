@@ -3,7 +3,7 @@ title: "Azure Resource Manager templates"
 description: "When you need to create a consist method where you want to give to the end-user, that is consuming resources on your cloud, the power of creating resource like virtual…"
 pubDate: 2016-10-02
 category: automation
-tags: [arm-templates, powershell]
+tags: ["arm-templates", "azure-resource-manager"]
 translationKey: azure-resource-manager-templates
 legacy: true
 legacyUrl: /2016/10/azure-resource-manager-templates.html

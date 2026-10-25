@@ -2,8 +2,8 @@
 title: "Separate Azure control-plane roles from data-plane permissions"
 description: "Clarify that Microsoft Entra ID roles and Azure RBAC are separate systems. Assign permissions in each plane independently."
 pubDate: 2025-01-23
-category: governance
-tags: ["azure-rbac", "entra-id", "privileged-access", "security", "rbac-separation"]
+category: identity-access
+tags: ["microsoft-entra-id", "rbac", "privileged-access", "rbac-separation"]
 translationKey: separate-azure-control-plane-roles-from-data-plane-permissions
 draft: false
 ---

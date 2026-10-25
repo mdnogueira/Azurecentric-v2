@@ -3,7 +3,7 @@ title: "Check storage and network drivers in a Linux guest"
 description: "Verify Linux Hyper-V integration drivers and daemons using host PowerShell and guest commands."
 pubDate: 2025-10-22
 category: hyper-v
-tags: ["hyper-v", "linux", "integration-services", "troubleshooting", "drivers"]
+tags: ["hyper-v", "linux", "drivers", "troubleshooting", "powershell", "integration-services"]
 translationKey: check-storage-and-network-drivers-in-a-linux-guest
 draft: false
 ---

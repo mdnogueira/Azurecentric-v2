@@ -3,7 +3,7 @@ title: "Software-Defined Networking with Windows Server and System Center Jump S
 description: "Free online event with live QA with the WAP team: http://aka.ms/WAPIaaS"
 pubDate: 2014-07-02
 category: windows-server
-tags: [windows-azure-pack]
+tags: ["windows-server", "system-center"]
 translationKey: software-defined-networking-with-windows-server-and-system-center-jump-start
 legacy: true
 legacyUrl: /2014/07/software-defined-networking-with-windows-server-and-system-center-jump-start.html

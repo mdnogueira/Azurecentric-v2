@@ -3,7 +3,7 @@ title: "Cloud Platform roadmap"
 description: "What to know more about Microsoft Cloud Platform and what is coming up? Just visit this site! Microsoft enable you to know what is new at the Microsoft Cloud Platform…"
 pubDate: 2015-02-06
 category: cloud
-tags: []
+tags: ["cloud-computing"]
 translationKey: cloud-platform-roadmap
 legacy: true
 legacyUrl: /2015/02/cloud-platform-roadmap.html

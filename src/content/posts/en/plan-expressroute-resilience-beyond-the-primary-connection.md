@@ -3,7 +3,7 @@ title: "Plan ExpressRoute resilience beyond the primary connection"
 description: "Plan ExpressRoute disaster recovery using geo-redundant circuits and BGP path selection."
 pubDate: 2026-01-14
 category: networking
-tags: []
+tags: ["expressroute", "disaster-recovery", "azure-virtual-network"]
 translationKey: plan-expressroute-resilience-beyond-the-primary-connection
 draft: false
 ---

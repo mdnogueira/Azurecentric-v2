@@ -2,8 +2,8 @@
 title: "Configure a custom domain and HTTPS for a web application"
 description: "Map a custom domain and enable HTTPS in Azure App Service using managed certificates, covering DNS, bindings, and validation constraints."
 pubDate: 2025-11-04
-category: apps
-tags: ["azure-app-service", "custom-domain", "ssl-certificate", "managed-certificate", "https"]
+category: app-paas
+tags: ["azure-app-service", "certificates", "custom-domain", "https", "dns", "managed-certificate"]
 translationKey: configure-a-custom-domain-and-https-for-a-web-application
 draft: false
 ---

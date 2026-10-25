@@ -2,8 +2,8 @@
 title: "What Copilot for Security can help a security team investigate"
 description: "How Copilot for Security uses plugins to assist investigation, focusing on the distinction between generating queries and executing them."
 pubDate: 2024-04-23
-category: governance
-tags: ["copilot-for-security", "microsoft-sentinel", "kql", "security-operations", "ai"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "troubleshooting", "plugins", "microsoft-sentinel", "alerts", "kql"]
 translationKey: what-copilot-for-security-can-help-a-security-team-investigate
 draft: false
 ---

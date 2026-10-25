@@ -2,8 +2,8 @@
 title: "Review a workload against the Well-Architected reliability pillar"
 description: "Review a workload against the Well-Architected reliability pillar by defining RTO/RPO and consulting service-specific guides."
 pubDate: 2024-09-10
-category: governance
-tags: ["well-architected-framework", "reliability", "disaster-recovery", "availability-zones", "rto-rpo"]
+category: well-architected
+tags: ["well-architected-framework", "reliability", "rpo-rto", "availability-zones", "disaster-recovery"]
 translationKey: review-a-workload-against-the-well-architected-reliability-pillar
 draft: false
 ---

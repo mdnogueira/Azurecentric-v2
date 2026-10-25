@@ -2,8 +2,8 @@
 title: "Configure VM backup and test the recovery path"
 description: "Configure VM restore points, copy them cross-region, and verify the recovery path using Azure CLI."
 pubDate: 2025-07-23
-category: compute
-tags: ["azure-virtual-machines", "backup-and-recovery", "restore-points", "azure-cli", "disaster-recovery"]
+category: backup-dr
+tags: ["backup", "azure-cli", "restore-points", "disaster-recovery"]
 translationKey: configure-vm-backup-and-test-the-recovery-path
 draft: false
 ---

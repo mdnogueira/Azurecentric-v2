@@ -3,7 +3,7 @@ title: "Investigate asymmetric routing through an Azure firewall"
 description: "Diagnose asymmetric routing drops at Azure Firewall by confirming path asymmetry and applying SNAT or routing fixes."
 pubDate: 2025-08-07
 category: networking
-tags: ["azure-firewall", "asymmetric-routing", "expressroute", "network-troubleshooting", "stateful-firewall"]
+tags: ["azure-firewall", "troubleshooting", "asymmetric-routing", "stateful-firewall", "expressroute"]
 translationKey: investigate-asymmetric-routing-through-an-azure-firewall
 draft: false
 ---

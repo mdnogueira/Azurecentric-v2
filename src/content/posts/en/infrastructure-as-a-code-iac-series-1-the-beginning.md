@@ -3,7 +3,7 @@ title: "Infrastructure as a Code (IaC) Series #1 – The beginning!"
 description: "From the past months, I’ve been upgrading all my scripts that I have been using along the years to a platform that allows me to be more productive, reusing all the IP that I…"
 pubDate: 2019-02-05
 category: automation
-tags: [azure-backup, networking, azure-site-recovery, storage, iac]
+tags: ["infrastructure-as-code", "terraform", "azure-backup", "azure-site-recovery"]
 translationKey: infrastructure-as-a-code-iac-series-1-the-beginning
 legacy: true
 legacyUrl: /2019/02/infrastructure-as-a-code-iac-series-the-beginning.html

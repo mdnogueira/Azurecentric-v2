@@ -3,7 +3,7 @@ title: "Configuring and Managing Hyper-V Replica"
 description: "Hyper-V servers are managed locally using the Hyper-V Manager interface or remotely using the Hyper-V Remote Server Administration Tools (RSAT) or System Center Virtual Machine…"
 pubDate: 2013-03-01
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "failover-clustering", "system-center"]
 translationKey: configuring-and-managing-hyper-v-replica
 cover: ../../../assets/old/posts/2013/03/conf1.png
 coverAlt: "Configuring and Managing Hyper-V Replica"

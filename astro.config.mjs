@@ -3,10 +3,12 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { site } from './site.config.mjs';
 import remarkFirstArticleImage from './scripts/remark-first-article-image.mjs';
+import tagRedirects from './src/data/tag-redirects.json';
 
 export default defineConfig({
   site: site.url,
   output: 'static',
+  redirects: tagRedirects,
   markdown: { remarkPlugins: [remarkFirstArticleImage] },
   trailingSlash: 'never',
   build: { format: 'directory' },

@@ -3,7 +3,7 @@ title: "How to implement Azure Site Recovery"
 description: "On the previous posts, I did an overview of the Azure Site Recovery service (see here) and talk about the way that I design a disaster recovery solution with ASR (see here).…"
 pubDate: 2017-04-07
 category: backup-dr
-tags: [azure-site-recovery]
+tags: ["azure-site-recovery", "disaster-recovery"]
 translationKey: how-to-implement-azure-site-recovery
 legacy: true
 legacyUrl: /2017/04/how-to-implement-azure-site-recovery.html

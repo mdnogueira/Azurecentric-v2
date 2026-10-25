@@ -2,8 +2,8 @@
 title: "Use Cluster-Aware Updating with a tested maintenance process"
 description: "Configure Cluster-Aware Updating with a tested Updating Run Profile to automate safe, repeatable maintenance on Windows Server failover clusters."
 pubDate: 2025-01-11
-category: backup-dr
-tags: ["cluster-aware-updating", "failover-clustering", "windows-server", "maintenance", "powershell"]
+category: high-availability
+tags: ["failover-clustering", "cluster-aware-updating", "maintenance", "windows-server", "powershell"]
 translationKey: use-cluster-aware-updating-with-a-tested-maintenance-process
 draft: false
 ---

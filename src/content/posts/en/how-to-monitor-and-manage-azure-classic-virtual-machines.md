@@ -2,8 +2,8 @@
 title: "How to monitor and manage Azure Classic Virtual Machines"
 description: "On the last post, I talked about why you should use the classic virtual machines. Could be a lot of reasons or could be the way that you already started a few years and all of…"
 pubDate: 2017-03-18
-category: compute
-tags: []
+category: operations
+tags: ["azure-monitor", "azure-resource-manager"]
 translationKey: how-to-monitor-and-manage-azure-classic-virtual-machines
 legacy: true
 legacyUrl: /2017/03/how-to-monitor-and-manage-azure-classic-virtual-machines.html

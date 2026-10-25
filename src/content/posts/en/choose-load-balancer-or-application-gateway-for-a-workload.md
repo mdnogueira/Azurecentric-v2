@@ -3,7 +3,7 @@ title: "Choose Load Balancer or Application Gateway for a workload"
 description: "Compare Azure Load Balancer and Application Gateway v2 for workload routing, focusing on OSI layer, protocol support, and traffic patterns."
 pubDate: 2025-09-29
 category: networking
-tags: ["azure-load-balancer", "application-gateway", "networking", "layer-4", "layer-7", "comparison"]
+tags: ["azure-load-balancer", "azure-application-gateway", "layer-4", "layer-7"]
 translationKey: choose-load-balancer-or-application-gateway-for-a-workload
 draft: false
 ---

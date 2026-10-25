@@ -2,8 +2,8 @@
 title: "Review the plugins available to a Copilot for Security session"
 description: "Use the Security Copilot sample prompt library to identify supported security domains, distinguishing content scope from active tenant configuration."
 pubDate: 2025-05-20
-category: governance
-tags: ["security-copilot", "plugins", "data-sources", "azure-security", "how-to"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "plugins"]
 translationKey: review-the-plugins-available-to-a-copilot-for-security-session
 draft: false
 ---

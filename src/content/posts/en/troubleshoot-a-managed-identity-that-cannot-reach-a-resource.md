@@ -2,8 +2,8 @@
 title: "Troubleshoot a managed identity that cannot reach a resource"
 description: "Troubleshoot managed identity access failures by verifying assignment, checking control-plane state, and confirming RBAC scope."
 pubDate: 2025-09-04
-category: governance
-tags: []
+category: identity-access
+tags: ["microsoft-entra-id", "managed-identities", "troubleshooting", "rbac"]
 translationKey: troubleshoot-a-managed-identity-that-cannot-reach-a-resource
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Deploy an App Service application with a staging slot"
 description: "Create an App Service staging slot, review slot-specific settings, deploy and validate the candidate, then swap with a deliberate verification and recovery plan."
 pubDate: 2024-03-01
-category: apps
-tags: [app-service, deployment-slots, deployment, application-operations]
+category: app-paas
+tags: ["azure-app-service", "deployment-slots", "deployment"]
 translationKey: deploy-an-app-service-application-with-a-staging-slot
 draft: false
 ---

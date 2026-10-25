@@ -2,8 +2,8 @@
 title: "How to secure your Azure Virtual Machine"
 description: "We know that Microsoft Azure offers several technologies that help to keep your data secure in use, in transit, and at rest. But what additional security measures can we…"
 pubDate: 2017-03-06
-category: compute
-tags: [linux]
+category: cloud-security
+tags: ["azure-key-vault", "azure-virtual-machines", "linux"]
 translationKey: how-to-secure-your-azure-virtual-machine
 legacy: true
 legacyUrl: /2017/03/how-to-secure-your-azure-virtual-machine.html

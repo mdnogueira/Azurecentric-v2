@@ -3,7 +3,7 @@ title: "Azure Backup – Part 2 – Azure Backup Agent"
 description: "On the first post (see here), I explain how the Azure backup works. On this post, I’m explain how the files and folders are backup with the Azure Backup agent."
 pubDate: 2017-03-22
 category: backup-dr
-tags: [azure-backup, azure-site-recovery, storage]
+tags: ["azure-backup", "backup"]
 translationKey: azure-backup-part-2-azure-backup-agent
 legacy: true
 legacyUrl: /2017/03/azure-backup-part-2-azure-backup-agent.html

@@ -3,7 +3,7 @@ title: "What Is Hyper-V Replica?"
 description: "Hyper-V Replica is new functionality added to the Hyper-V Role in Windows Server 2012. Hyper-V Replica enables organizations to implement an affordable Business Continuity and…"
 pubDate: 2012-08-05
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "windows-server"]
 translationKey: what-is-hyper-v-replica
 legacy: true
 legacyUrl: /2012/08/what-is-hyper-v-replica.html

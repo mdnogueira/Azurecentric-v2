@@ -3,7 +3,7 @@ title: "Azure Availability Zones and Zone-Redundant Storage hits GA"
 description: "Very exciting news come this week! Microsoft announces the General Availability for Azure Availability Zones and Zone Redundant Storage. This is really good, because now you…"
 pubDate: 2018-04-04
 category: cloud
-tags: [storage, high-availability]
+tags: ["cloud-computing", "storage-redundancy", "availability-zones"]
 translationKey: azure-availability-zones-and-zone-redundant-storage-hits-ga
 legacy: true
 legacyUrl: /2018/04/azure-availability-zones-and-zone-redundant-storage-hits-ga.html

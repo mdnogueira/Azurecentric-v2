@@ -2,8 +2,8 @@
 title: "Understand the operating model of Azure Local"
 description: "Clarify the Azure Connected Machine agent's role in Azure Local by distinguishing it from the Azure Arc infrastructure and the Azure Monitor Agent."
 pubDate: 2025-11-12
-category: cloud
-tags: ["azure-local", "azure-arc", "connected-machine-agent", "azure-monitor-agent", "hybrid-cloud"]
+category: hybrid-migration
+tags: ["azure-local", "hybrid-cloud", "azure-monitor-agent", "azure-monitor", "azure-arc", "connected-machine-agent"]
 translationKey: understand-the-operating-model-of-azure-local
 draft: false
 ---

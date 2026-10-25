@@ -2,8 +2,8 @@
 title: "Connect Windows security events using Azure Monitor Agent"
 description: "Use the Windows Security Events via AMA connector to scope collection rules, select events and verify recent SecurityEvent records in Microsoft Sentinel."
 pubDate: 2024-02-27
-category: governance
-tags: [microsoft-sentinel, azure-monitor-agent, windows-security, data-collection-rules]
+category: siem-xdr
+tags: ["microsoft-sentinel", "azure-monitor-agent", "azure-monitor", "windows-security", "troubleshooting", "data-collection-rules"]
 translationKey: connect-windows-security-events-using-azure-monitor-agent
 draft: false
 ---

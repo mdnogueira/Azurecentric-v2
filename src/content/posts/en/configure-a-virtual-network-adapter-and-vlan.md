@@ -3,7 +3,7 @@ title: "Configure a virtual network adapter and VLAN"
 description: "Configure Hyper-V virtual network adapters and VLANs using GUI and PowerShell, clarifying tagging scope and prerequisites."
 pubDate: 2024-11-20
 category: hyper-v
-tags: ["hyper-v", "vlan", "windows-server", "networking", "powershell"]
+tags: ["hyper-v", "azure-virtual-network", "vlan", "powershell", "windows-server", "troubleshooting"]
 translationKey: configure-a-virtual-network-adapter-and-vlan
 draft: false
 ---

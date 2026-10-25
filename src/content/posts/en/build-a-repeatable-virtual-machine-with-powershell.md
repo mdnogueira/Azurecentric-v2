@@ -3,7 +3,7 @@ title: "Build a repeatable virtual machine with PowerShell"
 description: "Build a repeatable Windows Server 2022 VM in Hyper-V using PowerShell, then configure it via PowerShell Direct without network dependencies."
 pubDate: 2024-07-27
 category: hyper-v
-tags: ["hyper-v", "powershell-direct", "windows-server-2022", "virtualization", "automation"]
+tags: ["powershell", "hyper-v", "windows-server", "powershell-direct", "windows-server-2022"]
 translationKey: build-a-repeatable-virtual-machine-with-powershell
 draft: false
 ---

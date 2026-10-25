@@ -2,8 +2,8 @@
 title: "Design a dashboard with clear service ownership"
 description: "Use Azure Workbooks to clarify service ownership with dynamic parameters and scoped queries."
 pubDate: 2026-07-01
-category: governance
-tags: ["azure-workbooks", "azure-monitor", "kusto", "ownership", "dashboards"]
+category: operations
+tags: ["azure-monitor", "ownership", "azure-workbooks", "kql"]
 translationKey: design-a-dashboard-with-clear-service-ownership
 draft: false
 ---

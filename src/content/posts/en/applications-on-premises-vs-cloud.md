@@ -3,7 +3,7 @@ title: "Applications: On-Premises vs Cloud"
 description: "When we talk about cloud to any organization, these are always some of the Key Points that frequently we should address: Most on-premises applications vendors recognize that…"
 pubDate: 2016-03-15
 category: cloud
-tags: [hybrid, private-cloud]
+tags: ["cloud-computing"]
 translationKey: applications-on-premises-vs-cloud
 cover: ../../../assets/old/posts/2016/03/Cloud-Infrastructure5.png
 coverAlt: "Applications: On-Premises vs Cloud"

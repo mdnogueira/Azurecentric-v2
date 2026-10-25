@@ -3,7 +3,7 @@ title: "Investigate a Windows service that fails after a restart"
 description: "Investigate a Windows service failure after restart using Server Manager alerts and Event Viewer, avoiding unsupported command claims."
 pubDate: 2024-11-13
 category: windows-server
-tags: ["windows-server", "troubleshooting", "services", "server-manager", "logman"]
+tags: ["troubleshooting", "windows-server", "alerts", "logman", "server-manager", "services"]
 translationKey: investigate-a-windows-service-that-fails-after-a-restart
 draft: false
 ---

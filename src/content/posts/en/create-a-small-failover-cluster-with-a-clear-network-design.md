@@ -2,8 +2,8 @@
 title: "Create a small failover cluster with a clear network design"
 description: "Create a Windows Server 2022 failover cluster with explicit network and identity controls, validating prerequisites before deployment."
 pubDate: 2024-06-01
-category: backup-dr
-tags: ["failover-clustering", "windows-server-2022", "network-design", "active-directory", "validation"]
+category: high-availability
+tags: ["failover-clustering", "network-design", "windows-server", "validation", "windows-server-2022", "active-directory"]
 translationKey: create-a-small-failover-cluster-with-a-clear-network-design
 draft: false
 ---

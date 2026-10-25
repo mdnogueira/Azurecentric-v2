@@ -3,7 +3,7 @@ title: "Configure a Windows Server 2022 host using PowerShell"
 description: "Configure Windows Server 2022 using PowerShell: install roles, manage features, and remove payload files."
 pubDate: 2024-04-06
 category: windows-server
-tags: ["windows-server-2022", "powershell", "server-configuration", "roles-and-features", "features-on-demand"]
+tags: ["windows-server", "powershell", "windows-server-2022", "roles-and-features"]
 translationKey: configure-a-windows-server-2022-host-using-powershell
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Review application consent and service principal permissions"
 description: "How to review and revoke permissions for enterprise applications in Microsoft Entra ID, including admin and user consent."
 pubDate: 2026-04-08
-category: governance
-tags: ["entra-id", "security", "permissions", "consent", "powershell"]
+category: identity-access
+tags: ["microsoft-entra-id", "consent", "permissions", "powershell"]
 translationKey: review-application-consent-and-service-principal-permissions
 draft: false
 ---

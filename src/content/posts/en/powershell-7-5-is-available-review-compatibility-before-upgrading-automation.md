@@ -2,8 +2,8 @@
 title: "PowerShell 7.5 is available: review compatibility before upgrading automation"
 description: "Review PowerShell 7.5 compatibility before upgrading automation, focusing on .NET 9 changes and module support."
 pubDate: 2025-02-15
-category: automation
-tags: ["powershell", "azure-automation", "net-9", "compatibility", "upgrade"]
+category: powershell
+tags: ["powershell", "compatibility", "azure-automation", "net-9", "upgrade", "linux"]
 translationKey: powershell-7-5-is-available-review-compatibility-before-upgrading-automation
 draft: false
 ---

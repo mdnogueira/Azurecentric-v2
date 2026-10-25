@@ -2,8 +2,8 @@
 title: "Build an automation script that can resume after a failure"
 description: "Resume PowerShell automation using typed exception handling, efficient state tracking, and resource cleanup."
 pubDate: 2026-07-09
-category: automation
-tags: ["powershell", "error-handling", "automation", "resilience", "state-management"]
+category: powershell
+tags: ["powershell", "automation", "error-handling"]
 translationKey: build-an-automation-script-that-can-resume-after-a-failure
 draft: false
 ---

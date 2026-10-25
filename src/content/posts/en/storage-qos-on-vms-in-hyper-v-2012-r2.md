@@ -3,7 +3,7 @@ title: "Storage QoS on VMs in Hyper-V 2012 R2"
 description: "With Windows Server 2012 R2, Hyper-V includes the ability to set certain quality-of-service (QoS) parameters for storage on the virtual machines. Storage QoS provides storage…"
 pubDate: 2013-09-09
 category: hyper-v
-tags: [storage-qos, storage]
+tags: ["hyper-v", "storage-qos", "windows-server"]
 translationKey: storage-qos-on-vms-in-hyper-v-2012-r2
 legacy: true
 legacyUrl: /2013/09/storage-qos-on-vms-in-hyper-v-2012-r2.html

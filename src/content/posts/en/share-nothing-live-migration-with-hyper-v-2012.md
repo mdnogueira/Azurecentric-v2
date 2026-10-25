@@ -3,7 +3,7 @@ title: "“Share nothing” Live Migration with Hyper-V 2012"
 description: "When you perform a live migration of a virtual machine between two computers that do not share an infrastructure, Hyper‑V first performs a partial migration of the virtual…"
 pubDate: 2012-10-04
 category: hyper-v
-tags: [live-migration]
+tags: ["migration", "hyper-v", "live-migration"]
 translationKey: share-nothing-live-migration-with-hyper-v-2012
 cover: ../../../assets/old/posts/2012/10/sharenothing.png
 coverAlt: "“Share nothing” Live Migration with Hyper-V 2012"

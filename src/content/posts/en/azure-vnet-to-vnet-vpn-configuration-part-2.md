@@ -3,7 +3,7 @@ title: "Azure VNet-to-VNet VPN configuration – Part 2"
 description: "In this blog post series, I will cover what you need to configure to create a VNet-to-VNet VPN between to Azure regions on the same subscription. Although is about the same…"
 pubDate: 2017-12-09
 category: networking
-tags: [powershell]
+tags: ["azure-virtual-network", "vpn", "powershell"]
 translationKey: azure-vnet-to-vnet-vpn-configuration-part-2
 legacy: true
 legacyUrl: /2017/12/azure-vnet-vnet-vpn-configuration-part-2.html

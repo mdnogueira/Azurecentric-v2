@@ -3,7 +3,7 @@ title: "Transform the Datacenter – Part 3 – Automate and Secure"
 description: "I’ve talked about the infrastructure fabric, and how there are enhancements available in Windows Server 2012 R2 on the previous blog post (see here). But how do you think about…"
 pubDate: 2016-06-17
 category: cloud
-tags: [hybrid, system-center]
+tags: ["cloud-computing", "windows-server", "hybrid", "system-center"]
 translationKey: transform-the-datacenter-part-3-automate-and-secure
 cover: ../../../assets/old/posts/2016/06/Cloud-Infrastructure3.png
 coverAlt: "Transform the Datacenter – Part 3 – Automate and Secure"

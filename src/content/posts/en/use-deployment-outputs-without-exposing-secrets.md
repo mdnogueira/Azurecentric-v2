@@ -3,7 +3,7 @@ title: "Use deployment outputs without exposing secrets"
 description: "Prevent secrets from leaking into deployment history by using @secure() outputs or dynamic lookups."
 pubDate: 2026-01-07
 category: automation
-tags: ["bicep", "azure-key-vault", "deployment", "security", "outputs"]
+tags: ["bicep", "deployment", "outputs", "azure-key-vault"]
 translationKey: use-deployment-outputs-without-exposing-secrets
 draft: false
 ---

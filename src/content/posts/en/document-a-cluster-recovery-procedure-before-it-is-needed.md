@@ -2,7 +2,7 @@
 title: "Document a cluster recovery procedure before it is needed"
 description: "Document cluster recovery procedures for quorum loss, covering ForceQuorum and PreventQuorum modes."
 pubDate: 2026-01-30
-category: backup-dr
+category: high-availability
 tags: ["failover-clustering", "quorum", "disaster-recovery", "windows-server", "powershell"]
 translationKey: document-a-cluster-recovery-procedure-before-it-is-needed
 draft: false

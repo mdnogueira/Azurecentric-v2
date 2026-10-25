@@ -3,7 +3,7 @@ title: "Configure Secure Boot for a supported Linux guest"
 description: "Configure Secure Boot for a Linux guest on Hyper-V using the correct UEFI template and verify the setting."
 pubDate: 2024-04-15
 category: hyper-v
-tags: ["hyper-v", "secure-boot", "linux", "generation-2", "virtual-machines"]
+tags: ["hyper-v", "secure-boot", "linux", "generation-2", "troubleshooting"]
 translationKey: configure-secure-boot-for-a-supported-linux-guest
 draft: false
 ---

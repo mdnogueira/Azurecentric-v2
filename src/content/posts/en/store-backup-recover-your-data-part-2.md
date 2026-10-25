@@ -3,7 +3,7 @@ title: "Store, Backup, Recover your data – Part 2"
 description: "This is a continuation of the previous blog post http://azurecentric.com/2017/02/13/store-backup-recover-your-data-part-1/"
 pubDate: 2017-02-16
 category: backup-dr
-tags: [azure-backup, storage, hybrid, storsimple]
+tags: ["backup", "storsimple", "system-center", "azure-backup"]
 translationKey: store-backup-recover-your-data-part-2
 cover: ../../../assets/old/posts/2017/02/StorSimple-1.png
 coverAlt: "Store, Backup, Recover your data – Part 2"

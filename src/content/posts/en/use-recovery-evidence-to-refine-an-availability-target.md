@@ -2,8 +2,8 @@
 title: "Use recovery evidence to refine an availability target"
 description: "Use recovery evidence to refine availability targets, distinguishing high availability from disaster recovery based on risk classification."
 pubDate: 2026-08-29
-category: governance
-tags: ["availability", "disaster-recovery", "high-availability", "business-continuity", "reliability"]
+category: well-architected
+tags: ["well-architected-framework", "availability", "disaster-recovery", "high-availability", "business-continuity", "reliability"]
 translationKey: use-recovery-evidence-to-refine-an-availability-target
 draft: false
 ---

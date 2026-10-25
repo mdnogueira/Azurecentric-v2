@@ -3,7 +3,7 @@ title: "Azure Backup – Part 1"
 description: "One of the first workloads that usually the majority the organizations wants to start to use in Azure is to replace the tape to Cloud Backup. Following the best practices for…"
 pubDate: 2017-03-20
 category: backup-dr
-tags: [azure-backup, storage]
+tags: ["backup", "azure-backup"]
 translationKey: azure-backup-part-1
 legacy: true
 legacyUrl: /2017/03/azure-backup-part-1.html

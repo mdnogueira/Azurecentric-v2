@@ -3,7 +3,7 @@ title: "Virtual Machines: Hyper-V vs Azure IaaS"
 description: "A lot of times, during the Azure Foundation workshops session that I usually deliver, the difference between Azure virtual machines and Hyper-V virtual machines comes up. So I…"
 pubDate: 2017-04-15
 category: compute
-tags: [azure-site-recovery, hyper-v, generation-2]
+tags: ["azure-virtual-machines", "hyper-v", "generation-2", "azure-site-recovery"]
 translationKey: virtual-machines-hyper-v-vs-azure-iaas
 legacy: true
 legacyUrl: /2017/04/virtual-machines-hyper-v-vs-azure-iaas.html

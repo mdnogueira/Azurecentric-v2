@@ -3,7 +3,7 @@ title: "Azure Spot Virtual Machines"
 description: "A Microsoft anunciou a disponibilidade geral das Azure Spot VMs: capacidade de computação não utilizada com descontos que podem ultrapassar os 80% face ao pay-as-you-go. O que são e quando usar."
 pubDate: 2020-05-12
 category: compute
-tags: [spot-vms]
+tags: ["azure-virtual-machines", "azure-spot-virtual-machines"]
 translationKey: azure-spot-virtual-machines
 cover: ../../../assets/old/posts/2020/05/SpotVM1.png
 coverAlt: "Azure Spot Virtual Machines"

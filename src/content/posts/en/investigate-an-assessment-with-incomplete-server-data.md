@@ -2,8 +2,8 @@
 title: "Investigate an assessment with incomplete server data"
 description: "Troubleshoot missing performance data in Azure Migrate by verifying appliance connectivity, vCenter statistics, and Hyper-V configuration."
 pubDate: 2026-08-11
-category: cloud
-tags: ["azure-migrate", "troubleshooting", "assessment", "performance-data", "vmware", "hyper-v"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "troubleshooting", "assessment", "hyper-v", "azure-migrate", "migration"]
 translationKey: investigate-an-assessment-with-incomplete-server-data
 draft: false
 ---

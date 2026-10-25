@@ -3,7 +3,7 @@ title: "Hybrid Cloud storage"
 description: "Cloud storage is the ideal way to handle the exploding demand for storage across industries. By moving data that is less frequently accessed to the cloud, you free up space…"
 pubDate: 2017-02-09
 category: storage
-tags: [hybrid, storsimple]
+tags: ["azure-storage", "hybrid", "storsimple"]
 translationKey: hybrid-cloud-storage
 cover: ../../../assets/old/posts/2017/02/StorSimple.png
 coverAlt: "Hybrid Cloud storage"

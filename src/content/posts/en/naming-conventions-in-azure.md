@@ -3,7 +3,7 @@ title: "Naming Conventions in Azure"
 description: "Why having a good name convention in Azure have a huge importance?"
 pubDate: 2017-02-22
 category: governance
-tags: []
+tags: ["resource-tags"]
 translationKey: naming-conventions-in-azure
 legacy: true
 legacyUrl: /2017/02/naming-conventions-in-azure.html

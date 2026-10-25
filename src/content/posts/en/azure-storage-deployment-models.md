@@ -3,7 +3,7 @@ title: "Azure Storage Deployment Models"
 description: "First, we need to understand what is Azure Storage Service and how we can use it."
 pubDate: 2017-02-28
 category: storage
-tags: [architecture]
+tags: ["azure-storage"]
 translationKey: azure-storage-deployment-models
 legacy: true
 legacyUrl: /2017/02/azure-storage-deployment-models.html

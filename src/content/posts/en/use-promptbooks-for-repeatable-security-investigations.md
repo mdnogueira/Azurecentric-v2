@@ -2,8 +2,8 @@
 title: "Use promptbooks for repeatable security investigations"
 description: "Use unofficial PowerShell scripts to export and import Microsoft Security Copilot promptbooks as JSON, noting the lack of support and API volatility."
 pubDate: 2025-01-26
-category: governance
-tags: []
+category: security-copilot
+tags: ["promptbooks", "microsoft-security-copilot", "powershell", "troubleshooting"]
 translationKey: use-promptbooks-for-repeatable-security-investigations
 draft: false
 ---

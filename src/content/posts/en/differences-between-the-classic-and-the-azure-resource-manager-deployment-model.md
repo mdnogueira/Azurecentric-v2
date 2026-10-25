@@ -3,7 +3,7 @@ title: "Differences between the classic and the Azure Resource Manager deploymen
 description: "A lot of times I got these questions, where is should create my resources? On the classic portal or on the ARM portal? What is the difference? Is it only the URL? Why if I…"
 pubDate: 2017-04-24
 category: governance
-tags: [networking]
+tags: ["azure-resource-manager"]
 translationKey: differences-between-the-classic-and-the-azure-resource-manager-deployment-model
 legacy: true
 legacyUrl: /2017/04/differences-between-the-classic-and-the-azure-resource-manager-deployment-model.html

@@ -3,7 +3,7 @@ title: "Update Rollup 5 for System Center 2012 R2 Virtual Machine Manager"
 description: "Microsoft just release the Update Rollup 5 for System Center 2012 R2 Virtual Machine Manager. From all the bug that this rollup is fixing, it’s also introducing some new features."
 pubDate: 2015-02-11
 category: windows-server
-tags: [hybrid, scvmm]
+tags: ["windows-server", "scvmm", "system-center", "azure-site-recovery"]
 translationKey: update-rollup-5-for-system-center-2012-r2-virtual-machine-manager
 legacy: true
 legacyUrl: /2015/02/update-rollup-5-for-system-center-2012-r2-virtual-machine-manager.html

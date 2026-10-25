@@ -3,7 +3,7 @@ title: "Containers on Azure – Part 1"
 description: "In the last decade, hardware virtualization has drastically changed the IT landscape. One of many consequences of this trend is the emergence of cloud computing. However, a…"
 pubDate: 2017-05-13
 category: apps
-tags: [container-service, service-fabric, failover-cluster, linux, architecture, hyper-v]
+tags: ["containers", "service-fabric", "container-service", "linux"]
 translationKey: containers-on-azure-part-1
 legacy: true
 legacyUrl: /2017/05/containers-on-azure-part-1.html

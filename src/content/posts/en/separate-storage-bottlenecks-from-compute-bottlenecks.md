@@ -2,8 +2,8 @@
 title: "Separate storage bottlenecks from compute bottlenecks"
 description: "Distinguish storage latency from compute processing time in Azure Batch using Application Insights custom metrics."
 pubDate: 2025-07-26
-category: compute
-tags: ["azure-batch", "application-insights", "monitoring", "troubleshooting", "performance"]
+category: hpc-ai
+tags: ["hpc", "application-insights", "azure-batch"]
 translationKey: separate-storage-bottlenecks-from-compute-bottlenecks
 draft: false
 ---

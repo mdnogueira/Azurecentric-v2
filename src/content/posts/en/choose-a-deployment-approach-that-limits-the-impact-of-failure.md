@@ -2,8 +2,8 @@
 title: "Choose a deployment approach that limits the impact of failure"
 description: "Decide between zone-redundant and zonal deployments to limit failure impact, balancing latency needs against operational complexity."
 pubDate: 2025-11-30
-category: governance
-tags: []
+category: well-architected
+tags: ["well-architected-framework", "availability-zones", "replication"]
 translationKey: choose-a-deployment-approach-that-limits-the-impact-of-failure
 draft: false
 ---

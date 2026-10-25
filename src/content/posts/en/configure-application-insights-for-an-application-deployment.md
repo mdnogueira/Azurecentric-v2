@@ -2,8 +2,8 @@
 title: "Configure Application Insights for an application deployment"
 description: "Enable Application Insights for App Service or Functions, verify telemetry, and distinguish it from platform diagnostics."
 pubDate: 2024-06-21
-category: apps
-tags: ["application-insights", "azure-monitor", "app-service", "azure-functions", "monitoring"]
+category: app-paas
+tags: ["application-insights", "azure-app-service", "azure-functions", "monitoring", "azure-monitor"]
 translationKey: configure-application-insights-for-an-application-deployment
 draft: false
 ---

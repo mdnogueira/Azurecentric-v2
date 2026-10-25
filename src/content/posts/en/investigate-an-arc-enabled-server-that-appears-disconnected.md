@@ -2,8 +2,8 @@
 title: "Investigate an Arc-enabled server that appears disconnected"
 description: "Troubleshoot an Azure Arc-enabled server showing as disconnected by checking agent logs, network connectivity, and resource state."
 pubDate: 2024-12-18
-category: cloud
-tags: ["azure-arc", "troubleshooting", "hybrid-compute", "azcmagent", "connectivity"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "troubleshooting", "azure-arc", "azcmagent", "connectivity"]
 translationKey: investigate-an-arc-enabled-server-that-appears-disconnected
 draft: false
 ---

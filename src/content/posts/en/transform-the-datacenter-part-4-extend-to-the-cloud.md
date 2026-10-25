@@ -3,7 +3,7 @@ title: "Transform the Datacenter – Part 4 – Extend to the cloud"
 description: "This post is a continuation of series of posts about Transform your datacenter. You can see the previous post: Transform the Datacenter – Part 1 Transform the Datacenter – Part…"
 pubDate: 2016-06-25
 category: cloud
-tags: [hybrid, private-cloud, system-center]
+tags: ["cloud-computing", "hybrid", "system-center"]
 translationKey: transform-the-datacenter-part-4-extend-to-the-cloud
 cover: ../../../assets/old/posts/2016/06/Cloud-Infrastructure3.png
 coverAlt: "Transform the Datacenter – Part 4 – Extend to the cloud"

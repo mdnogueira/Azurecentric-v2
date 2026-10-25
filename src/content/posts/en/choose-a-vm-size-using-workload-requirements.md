@@ -3,7 +3,7 @@ title: "Choose a VM size using workload requirements"
 description: "Choose an Azure VM size by identifying the workload constraint, checking memory and I/O limits, reviewing regional quotas and validating a representative workload."
 pubDate: 2024-03-04
 category: compute
-tags: [azure-virtual-machines, vm-sizing, performance, capacity-planning]
+tags: ["azure-virtual-machines", "vm-sizing", "performance"]
 translationKey: choose-a-vm-size-using-workload-requirements
 draft: false
 ---

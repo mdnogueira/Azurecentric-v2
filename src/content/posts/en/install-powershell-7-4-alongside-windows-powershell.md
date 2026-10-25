@@ -2,8 +2,8 @@
 title: "Install PowerShell 7.4 alongside Windows PowerShell"
 description: "Install PowerShell 7.4 alongside Windows PowerShell 5.1 using MSI or ZIP, managing remoting endpoints and module paths."
 pubDate: 2024-02-07
-category: automation
-tags: ["powershell", "windows", "side-by-side", "remoting", "installation"]
+category: powershell
+tags: ["powershell", "side-by-side", "windows", "installation", "remoting"]
 translationKey: install-powershell-7-4-alongside-windows-powershell
 draft: false
 ---

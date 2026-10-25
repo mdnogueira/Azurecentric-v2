@@ -2,8 +2,8 @@
 title: "Send and receive an initial Service Bus message"
 description: "Send and receive an initial Service Bus message using Python, covering namespace setup, authentication, and verification."
 pubDate: 2024-08-31
-category: apps
-tags: []
+category: integration
+tags: ["azure-service-bus"]
 translationKey: send-and-receive-an-initial-service-bus-message
 draft: false
 ---

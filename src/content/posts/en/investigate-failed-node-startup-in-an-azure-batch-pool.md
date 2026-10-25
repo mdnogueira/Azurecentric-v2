@@ -2,8 +2,8 @@
 title: "Investigate failed node startup in an Azure Batch pool"
 description: "Troubleshoot Azure Batch node startup failures by distinguishing pool-level allocation errors from node-level start task and configuration issues."
 pubDate: 2026-04-21
-category: compute
-tags: ["azure-batch", "troubleshooting", "node-errors", "start-task", "pool-management"]
+category: hpc-ai
+tags: ["troubleshooting", "hpc", "azure-batch", "node-errors", "start-task", "dns"]
 translationKey: investigate-failed-node-startup-in-an-azure-batch-pool
 draft: false
 ---

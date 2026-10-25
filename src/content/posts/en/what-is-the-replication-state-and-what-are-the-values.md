@@ -3,7 +3,7 @@ title: "What is the ‘Replication State’ and what are the values?"
 description: "The table below captures the states as seen in WMI, UI and PowerShell."
 pubDate: 2012-06-20
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "replication", "powershell"]
 translationKey: what-is-the-replication-state-and-what-are-the-values
 legacy: true
 legacyUrl: /2012/06/what-is-the-replication-state-and-what-are-the-values.html

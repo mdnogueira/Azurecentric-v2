@@ -3,7 +3,7 @@ title: "File level restore numa Azure Virtual Machine encriptada"
 description: "Num workshop de Azure Backup surgiu a pergunta: como restaurar ficheiros ou pastas de uma VM com discos encriptados sem restaurar a VM inteira? A limitação documentada e a alternativa que existe."
 pubDate: 2019-07-08
 category: backup-dr
-tags: [azure-backup]
+tags: ["azure-backup", "azure-virtual-machines", "backup"]
 translationKey: file-level-restore-on-an-encrypted-azure-virtual-machine
 ---
 

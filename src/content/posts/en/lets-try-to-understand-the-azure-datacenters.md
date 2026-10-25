@@ -3,7 +3,7 @@ title: "Lets try to understand the Azure Datacenters"
 description: "You probably see on a Microsoft Azure presentation the slide that shows the footprint of Azure. It seems incredible. Look awesome on the slide, but when you are deploying the…"
 pubDate: 2016-07-09
 category: cloud
-tags: [architecture]
+tags: ["cloud-computing"]
 translationKey: lets-try-to-understand-the-azure-datacenters
 legacy: true
 legacyUrl: /2016/07/lets-try-to-understand-the-azure-datacenters.html

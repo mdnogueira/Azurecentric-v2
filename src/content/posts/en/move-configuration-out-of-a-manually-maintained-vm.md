@@ -3,7 +3,7 @@ title: "Move configuration out of a manually maintained VM"
 description: "Move Linux VM configuration from manual scripts to declarative cloud-init for reproducible first-boot provisioning."
 pubDate: 2026-06-14
 category: compute
-tags: ["azure-virtual-machines", "cloud-init", "linux", "infrastructure-as-code", "automation"]
+tags: ["azure-virtual-machines", "linux", "automation", "cloud-init"]
 translationKey: move-configuration-out-of-a-manually-maintained-vm
 draft: false
 ---

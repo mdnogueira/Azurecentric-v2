@@ -3,7 +3,7 @@ title: "Investigate a Linux guest with a missing network adapter"
 description: "Troubleshoot a missing Linux network adapter on Hyper-V by verifying synthetic hardware, removing legacy conflicts, and checking driver status."
 pubDate: 2024-09-25
 category: hyper-v
-tags: ["hyper-v", "linux", "networking", "integration-services", "troubleshooting"]
+tags: ["hyper-v", "linux", "troubleshooting", "integration-services"]
 translationKey: investigate-a-linux-guest-with-a-missing-network-adapter
 draft: false
 ---

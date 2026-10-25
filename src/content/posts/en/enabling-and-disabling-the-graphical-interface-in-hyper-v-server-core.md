@@ -3,7 +3,7 @@ title: "Enabling and disabling the graphical interface in Hyper-V Server Core"
 description: "Server Core has many installation benefits, but there are a few situations where the GUI is better and provides more options; for example, when we need to troubleshoot a…"
 pubDate: 2013-10-11
 category: hyper-v
-tags: [server-core]
+tags: ["hyper-v", "server-core", "troubleshooting"]
 translationKey: enabling-and-disabling-the-graphical-interface-in-hyper-v-server-core
 legacy: true
 legacyUrl: /2013/10/enabling-and-disabling-the-graphical-interface-in-hyper-v-server-core.html

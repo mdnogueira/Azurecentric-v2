@@ -3,7 +3,7 @@ title: "Creating a Site-to-Site VPN on Azure"
 description: "To understand deeper what are the options you have to connect your datacenter/organization with Azure, I recommend read this older post. On this post I want to share what do…"
 pubDate: 2017-06-07
 category: networking
-tags: [architecture, hybrid, powershell]
+tags: ["vpn", "azure-vpn-gateway", "powershell", "azure-virtual-network", "azure-powershell", "resource-groups"]
 translationKey: creating-a-site-to-site-vpn-on-azure
 legacy: true
 legacyUrl: /2017/06/creating-a-site-to-site-vpn-on-azure.html
@@ -102,7 +102,7 @@ Get-AzureRmPublicIpAddress -Name S2SGTWPIP -ResourceGroupName S2S-RG
 
 Create a VPN connection named **localtoazure** between the on-premises VPN gateway and the Azure VPN gateway. You need to provide the value of the shared key. This key is used to encrypt the VPN tunnel and must match the key that you specify during the on-premises VPN gateway configuration.
 ```powershell
-New-AzureRmVirtualNetworkGatewayConnection -Name localtoazure -ResourceGroupName S2S-RG -Location westus -VirtualNetworkGateway1 $gateway -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'AzureIsAwesome2017!'
+New-AzureRmVirtualNetworkGatewayConnection -Name localtoazure -ResourceGroupName S2S-RG -Location westus -VirtualNetworkGateway1 $gateway -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey '<your-vpn-shared-key>'
 ```
 
 ## **_Verify the VPN connection_**

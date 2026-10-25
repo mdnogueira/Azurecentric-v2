@@ -3,7 +3,7 @@ title: "How to connect to a Virtual Machine on Azure?"
 description: "Once you have created an Azure VM instance with the default settings, you will be able to connect to it."
 pubDate: 2016-12-24
 category: compute
-tags: [linux]
+tags: ["azure-virtual-machines", "linux"]
 translationKey: how-to-connect-to-a-virtual-machine-on-azure
 legacy: true
 legacyUrl: /2016/12/how-to-connect-to-a-virtual-machine-on-azure.html

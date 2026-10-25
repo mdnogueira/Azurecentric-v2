@@ -2,8 +2,8 @@
 title: "Review networking requirements before selecting an accelerator VM"
 description: "Plan Azure Batch networking for GPU pools by checking subnet IP capacity, storage tier limits, and communication modes before provisioning."
 pubDate: 2026-10-01
-category: compute
-tags: ["azure-batch", "virtual-network", "gpu-vm", "networking", "subnet-planning"]
+category: hpc-ai
+tags: ["gpu", "hpc", "azure-batch", "subnet-planning", "azure-virtual-network"]
 translationKey: review-networking-requirements-before-selecting-an-accelerator-vm
 draft: false
 ---

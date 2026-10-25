@@ -2,8 +2,8 @@
 title: "Investigate a policy remediation task that did not run"
 description: "Troubleshoot a stalled Azure Policy remediation task by verifying identity replication, role assignments, and definition prerequisites."
 pubDate: 2026-10-14
-category: governance
-tags: ["azure-policy", "remediation", "managed-identities", "troubleshooting", "rbac"]
+category: operations
+tags: ["azure-monitor", "troubleshooting", "remediation", "replication", "azure-policy", "managed-identities"]
 translationKey: investigate-a-policy-remediation-task-that-did-not-run
 draft: false
 ---

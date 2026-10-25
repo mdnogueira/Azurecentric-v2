@@ -3,7 +3,7 @@ title: "Azure Cloud Shell Everywhere"
 description: "WOW! Microsoft did it again! If you didn’t saw the announcements at the Microsoft Build 2017 Conference, you should!"
 pubDate: 2017-05-10
 category: automation
-tags: [powershell, azure-cli]
+tags: ["azure-cloud-shell", "powershell"]
 translationKey: azure-cloud-shell-everywhere
 cover: ../../../assets/old/posts/2017/05/AzureApp1.png
 coverAlt: "Azure Cloud Shell Everywhere"

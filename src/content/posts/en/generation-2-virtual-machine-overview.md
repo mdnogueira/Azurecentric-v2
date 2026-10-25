@@ -3,7 +3,7 @@ title: "Generation 2 Virtual Machine Overview"
 description: "Virtual machine generation determines the virtual hardware and functionality presented to the virtual machine. In Hyper-V on Windows Server 2012 R2 there are two supported…"
 pubDate: 2013-06-25
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server"]
 translationKey: generation-2-virtual-machine-overview
 legacy: true
 legacyUrl: /2013/06/generation-2-virtual-machine-overview.html

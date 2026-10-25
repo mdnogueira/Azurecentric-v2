@@ -3,7 +3,7 @@ title: "Choose a state boundary for Azure Terraform deployments"
 description: "How to scope Bicep modules to different management boundaries and resolve cross-scope dependencies."
 pubDate: 2024-08-28
 category: automation
-tags: []
+tags: ["bicep", "infrastructure-as-code", "resource-groups", "azure-resource-manager"]
 translationKey: choose-a-state-boundary-for-azure-terraform-deployments
 draft: false
 ---

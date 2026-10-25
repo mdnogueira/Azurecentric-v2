@@ -3,7 +3,7 @@ title: "Compare Azure Files and Blob Storage for an application"
 description: "Compare Azure Files and Blob Storage for applications, focusing on protocol, access patterns, and integration requirements."
 pubDate: 2025-06-17
 category: storage
-tags: ["azure-files", "blob-storage", "storage-comparison", "protocol-selection", "application-design"]
+tags: ["azure-storage", "azure-files", "blob-storage", "application-design"]
 translationKey: compare-azure-files-and-blob-storage-for-an-application
 draft: false
 ---

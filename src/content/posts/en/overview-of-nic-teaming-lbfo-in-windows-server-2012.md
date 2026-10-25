@@ -3,7 +3,7 @@ title: "Overview of NIC Teaming (LBFO) in Windows Server 2012"
 description: "NIC teaming, also known as Load Balancing/Failover (LBFO), allows multiple network adapters to be placed into a team for the purposes of bandwidth aggregation, and/or traffic…"
 pubDate: 2013-03-26
 category: windows-server
-tags: [nic-teaming, hyper-v]
+tags: ["nic-teaming", "windows-server", "hyper-v", "azure-load-balancer"]
 translationKey: overview-of-nic-teaming-lbfo-in-windows-server-2012
 cover: ../../../assets/old/posts/2013/03/image1.png
 coverAlt: "Overview of NIC Teaming (LBFO) in Windows Server 2012"

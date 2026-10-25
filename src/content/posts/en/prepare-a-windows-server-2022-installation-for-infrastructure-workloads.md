@@ -3,7 +3,7 @@ title: "Prepare a Windows Server 2022 installation for infrastructure workloads"
 description: "Prepare a Windows Server 2022 deployment by checking workload support, recording the existing configuration, and planning recovery and acceptance checks."
 pubDate: 2024-02-10
 category: windows-server
-tags: [windows-server-2022, infrastructure, installation, migration]
+tags: ["windows-server", "installation", "windows-server-2022", "migration"]
 translationKey: prepare-a-windows-server-2022-installation-for-infrastructure-workloads
 draft: false
 ---

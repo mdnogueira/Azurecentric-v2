@@ -3,7 +3,7 @@ title: "Plan ownership and deletion behaviour for an infrastructure stack"
 description: "Plan ownership, scope, and deletion behaviour for Azure deployment stacks using Bicep and RBAC."
 pubDate: 2026-03-02
 category: automation
-tags: ["azure-deployment-stacks", "bicep", "infrastructure-as-code", "azure-rbac", "resource-management"]
+tags: ["bicep", "rbac", "azure-deployment-stacks", "resource-management"]
 translationKey: plan-ownership-and-deletion-behaviour-for-an-infrastructure-stack
 draft: false
 ---

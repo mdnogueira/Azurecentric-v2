@@ -3,7 +3,7 @@ title: "Boas práticas para arquitetar Resource Groups no Azure"
 description: "A localização de um Resource Group determina que região do ARM processa as escritas. Se os RGs estão todos numa região e esta falha, perde a gestão dos recursos nas outras. O que fazer."
 pubDate: 2019-06-21
 category: governance
-tags: [arm-templates, portal, disaster-recovery]
+tags: ["resource-groups"]
 translationKey: best-practices-to-architect-resource-groups-in-azure
 ---
 

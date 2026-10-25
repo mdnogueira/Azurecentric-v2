@@ -2,8 +2,8 @@
 title: "Azure PowerShell - Overview"
 description: "On Windows Server 2008, Microsoft introduces us back to the world of the command line with PowerShell. At the beginning, I must admit, at that time I was a bit reluctant to…"
 pubDate: 2016-07-26
-category: automation
-tags: [powershell]
+category: powershell
+tags: ["powershell", "azure-powershell", "windows-server", "microsoft-entra-id"]
 translationKey: azure-powershell-overview
 legacy: true
 legacyUrl: /2016/07/azure-powershell-overview.html

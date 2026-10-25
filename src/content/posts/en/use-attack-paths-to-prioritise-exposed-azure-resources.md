@@ -2,8 +2,8 @@
 title: "Use attack paths to prioritise exposed Azure resources"
 description: "Use Defender for Cloud attack paths to prioritise remediation by identifying exploitable chains rather than treating alerts in isolation."
 pubDate: 2025-05-15
-category: governance
-tags: ["defender-for-cloud", "attack-paths", "security-prioritisation", "cloud-security-graph", "risk-management"]
+category: cloud-security
+tags: ["defender-for-cloud", "attack-paths", "alerts", "cloud-security-graph", "security-prioritisation"]
 translationKey: use-attack-paths-to-prioritise-exposed-azure-resources
 draft: false
 ---

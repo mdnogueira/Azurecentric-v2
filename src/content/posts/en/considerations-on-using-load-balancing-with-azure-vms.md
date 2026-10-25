@@ -3,7 +3,7 @@ title: "Considerations on using Load Balancing with Azure VMs"
 description: "During this week, I had to design a solution using Azure Load Balance to build, to host a significant amount of content that requires a lot of bandwidth. From what I could…"
 pubDate: 2019-02-01
 category: networking
-tags: [architecture, load-balancer]
+tags: ["azure-load-balancer", "azure-virtual-machines"]
 translationKey: considerations-on-using-load-balancing-with-azure-vms
 legacy: true
 legacyUrl: /2019/02/considerations-on-using-load-balancing-with-azure-vms.html

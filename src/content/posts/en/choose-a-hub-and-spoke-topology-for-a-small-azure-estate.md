@@ -3,7 +3,7 @@ title: "Choose a hub-and-spoke topology for a small Azure estate"
 description: "Decide when a hub-and-spoke design is useful, then define the peering, firewall routes and return paths it actually needs."
 pubDate: 2024-03-21
 category: networking
-tags: ["azure-virtual-network", "hub-and-spoke", "azure-firewall", "network-routing", "virtual-network-peering"]
+tags: ["hub-and-spoke", "azure-virtual-network", "dns", "azure-firewall", "virtual-network-peering"]
 translationKey: choose-a-hub-and-spoke-topology-for-a-small-azure-estate
 draft: false
 ---

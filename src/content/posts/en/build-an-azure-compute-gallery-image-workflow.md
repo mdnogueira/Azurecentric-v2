@@ -3,7 +3,7 @@ title: "Build an Azure Compute Gallery image workflow"
 description: "Build a repeatable Linux image workflow using Azure VM Image Builder and Azure Compute Gallery, covering permissions, replication, and cleanup."
 pubDate: 2024-05-01
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "azure-compute-gallery", "replication", "linux", "resource-groups"]
 translationKey: build-an-azure-compute-gallery-image-workflow
 draft: false
 ---

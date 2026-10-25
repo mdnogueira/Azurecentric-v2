@@ -3,7 +3,7 @@ title: "Why and when to use Azure CLI"
 description: "I have been a heavy Windows user for many years, but lately I have been using another OS to increase my vision and experience. But the issue is, PowerShell is a Windows OS…"
 pubDate: 2016-09-08
 category: automation
-tags: [azure-cli]
+tags: ["azure-cli", "powershell"]
 translationKey: why-and-when-to-use-azure-cli
 legacy: true
 legacyUrl: /2016/09/why-and-when-to-use-azure-cli.html

@@ -3,7 +3,7 @@ title: "Build a route table for a controlled outbound path"
 description: "Create a user-defined route table to force outbound traffic through a network virtual appliance in Azure."
 pubDate: 2025-06-12
 category: networking
-tags: ["azure-virtual-network", "user-defined-routes", "network-virtual-appliance", "networking", "azure-cli"]
+tags: ["networking", "network-virtual-appliance", "azure-virtual-network", "azure-cli"]
 translationKey: build-a-route-table-for-a-controlled-outbound-path
 draft: false
 ---

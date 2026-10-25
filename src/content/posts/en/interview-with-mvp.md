@@ -3,7 +3,7 @@ title: "Interview with MVP"
 description: "Kevin Kaminski is a Windows and Devices MVP, he had this brilliant idea of creatingThe Virtually There with Kevin Kaminski series various people. I had the honor to be the…"
 pubDate: 2017-10-10
 category: cloud
-tags: [hybrid, system-center]
+tags: ["mvp", "system-center"]
 translationKey: interview-with-mvp
 legacy: true
 legacyUrl: /2017/10/interview-with-mvp.html

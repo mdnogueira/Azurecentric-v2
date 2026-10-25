@@ -2,8 +2,8 @@
 title: "Map an Azure workload across its failure domains"
 description: "Map a workload across failure domains by distinguishing zonal from zone-redundant services and verifying subscription-specific physical mappings."
 pubDate: 2024-05-24
-category: governance
-tags: []
+category: well-architected
+tags: ["well-architected-framework", "availability-zones", "migration"]
 translationKey: map-an-azure-workload-across-its-failure-domains
 draft: false
 ---

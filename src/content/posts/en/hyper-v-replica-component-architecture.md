@@ -3,7 +3,7 @@ title: "Hyper-V Replica Component Architecture"
 description: "As already mentioned, Hyper-V Replica is new functionality that is included as part of the Hyper-V role in Windows Server 2012. The main components are: Hyper-V Replica…"
 pubDate: 2013-01-10
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "replication", "windows-server", "powershell"]
 translationKey: hyper-v-replica-component-architecture
 cover: ../../../assets/old/posts/2013/01/hypreparc1.png
 coverAlt: "Hyper-V Replica Component Architecture"

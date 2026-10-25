@@ -2,8 +2,8 @@
 title: "Roll out GitHub push protection without disrupting developers"
 description: "Configure GitHub push protection with delegated bypass to block secret commits while maintaining a controlled approval workflow for developers."
 pubDate: 2025-01-20
-category: governance
-tags: ["github-advanced-security", "secret-scanning", "push-protection", "delegated-bypass", "security-workflow"]
+category: cloud-security
+tags: ["github-advanced-security", "push-protection", "github", "delegated-bypass", "security-workflow", "secret-scanning"]
 translationKey: roll-out-github-push-protection-without-disrupting-developers
 draft: false
 ---

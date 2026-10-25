@@ -2,8 +2,8 @@
 title: "Keep Azure Firewall rules consistent with Firewall Policy"
 description: "Align Azure Firewall rule priorities with the policy hierarchy to ensure predictable traffic filtering and avoid performance degradation."
 pubDate: 2024-06-10
-category: governance
-tags: ["azure-firewall", "firewall-policy", "network-security", "rule-configuration", "performance"]
+category: cloud-security
+tags: ["azure-firewall", "firewall-policy", "performance", "rule-configuration"]
 translationKey: keep-azure-firewall-rules-consistent-with-firewall-policy
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Enabling a Virtual Machine for Replication"
 description: "Replication is configured on a per virtual machine basis. Virtual machines running on Primary site Hyper-V servers (or Hyper-V Failover Clusters) are configured to replicate to…"
 pubDate: 2013-03-07
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "replication", "failover-clustering"]
 translationKey: enabling-a-virtual-machine-for-replication
 cover: ../../../assets/old/posts/2013/03/enable1.png
 coverAlt: "Enabling a Virtual Machine for Replication"

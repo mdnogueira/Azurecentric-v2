@@ -3,7 +3,7 @@ title: "Plan an immutable storage policy before retaining regulated data"
 description: "Plan immutable storage policies by choosing between container-level and version-level WORM, then lock and verify retention."
 pubDate: 2025-11-27
 category: storage
-tags: ["azure-storage", "immutable-storage", "compliance", "blob-storage", "worm"]
+tags: ["azure-storage", "immutable-storage", "data-retention", "compliance", "worm", "blob-storage"]
 translationKey: plan-an-immutable-storage-policy-before-retaining-regulated-data
 draft: false
 ---

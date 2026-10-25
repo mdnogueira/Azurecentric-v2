@@ -2,8 +2,8 @@
 title: "Turn a detection requirement into an analytics rule"
 description: "Create a Microsoft Sentinel scheduled analytics rule from a template, verifying data sources and preview status."
 pubDate: 2024-06-18
-category: governance
-tags: ["microsoft-sentinel", "analytics-rules", "threat-detection", "kql", "threat-intelligence"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "analytics-rules", "threat-detection", "threat-intelligence", "kql"]
 translationKey: turn-a-detection-requirement-into-an-analytics-rule
 draft: false
 ---

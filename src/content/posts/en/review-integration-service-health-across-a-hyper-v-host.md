@@ -3,7 +3,7 @@ title: "Review integration-service health across a Hyper-V host"
 description: "Check Hyper-V integration service health on Windows Server 2025 using PowerShell and the Services snap-in."
 pubDate: 2026-07-17
 category: hyper-v
-tags: ["hyper-v", "integration-services", "windows-server-2025", "powershell", "virtualization"]
+tags: ["hyper-v", "integration-services", "powershell", "windows-server", "windows-server-2025"]
 translationKey: review-integration-service-health-across-a-hyper-v-host
 draft: false
 ---

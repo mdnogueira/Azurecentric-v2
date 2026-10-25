@@ -2,7 +2,7 @@
 title: "Connect GitHub repositories to Defender for Cloud"
 description: "Connect GitHub to Defender for Cloud posture management and configure the Microsoft Security DevOps action for code scanning."
 pubDate: 2024-09-28
-category: governance
+category: cloud-security
 tags: ["defender-for-cloud", "github", "devops-security", "github-actions", "msdo"]
 translationKey: connect-github-repositories-to-defender-for-cloud
 draft: false

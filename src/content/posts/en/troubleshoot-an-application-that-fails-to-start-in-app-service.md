@@ -2,8 +2,8 @@
 title: "Troubleshoot an application that fails to start in App Service"
 description: "Troubleshoot App Service startup failures by enabling diagnostics, checking logs, and verifying configuration."
 pubDate: 2024-08-13
-category: apps
-tags: ["azure-app-service", "troubleshooting", "diagnostics", "logging", "node-js", "windows"]
+category: app-paas
+tags: ["troubleshooting", "azure-app-service", "diagnostics", "logging", "node-js", "windows"]
 translationKey: troubleshoot-an-application-that-fails-to-start-in-app-service
 draft: false
 ---

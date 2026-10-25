@@ -2,8 +2,8 @@
 title: "Schedule server updates with Azure Update Manager"
 description: "How to schedule recurring OS updates for Azure and Arc VMs using Azure Update Manager maintenance configurations."
 pubDate: 2025-04-22
-category: governance
-tags: ["azure-update-manager", "scheduled-patching", "maintenance-configurations", "azure-policy", "vm-updates"]
+category: operations
+tags: ["azure-update-manager", "patch-management", "vm-updates", "azure-policy", "maintenance-configurations"]
 translationKey: schedule-server-updates-with-azure-update-manager
 draft: false
 ---

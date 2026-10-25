@@ -2,8 +2,8 @@
 title: "Investigate a server that stopped sending logs"
 description: "Troubleshoot a Linux server that stopped sending logs by tracing the signal from the agent to the workspace."
 pubDate: 2024-09-05
-category: governance
-tags: ["azure-monitor", "azure-monitor-agent", "data-collection-rules", "log-analytics", "troubleshooting"]
+category: operations
+tags: ["azure-monitor", "troubleshooting", "linux", "data-collection-rules", "azure-arc", "azure-monitor-agent"]
 translationKey: investigate-a-server-that-stopped-sending-logs
 draft: false
 ---

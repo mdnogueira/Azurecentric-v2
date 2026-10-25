@@ -3,7 +3,7 @@ title: "Changing the Azure Gateway subnet with Express Route"
 description: "One of the things that I like to do when I start a new Azure Architecture, is what I called an Azure Foundation workshop, where I can validate all the infrastructure…"
 pubDate: 2018-05-10
 category: networking
-tags: [expressroute, vnet]
+tags: ["expressroute", "azure-virtual-network"]
 translationKey: changing-the-azure-gateway-subnet-with-express-route
 legacy: true
 legacyUrl: /2018/05/changing-the-azure-gateway-subnet-with-express-route.html

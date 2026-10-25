@@ -3,7 +3,7 @@ title: "Plan a private endpoint for a Storage account"
 description: "Plan private endpoints for Azure Storage by mapping services, managing DNS, and configuring firewalls."
 pubDate: 2025-04-25
 category: storage
-tags: ["azure-storage", "private-endpoints", "private-link", "dns-configuration", "networking"]
+tags: ["azure-storage", "private-endpoints", "dns"]
 translationKey: plan-a-private-endpoint-for-a-storage-account
 draft: false
 ---

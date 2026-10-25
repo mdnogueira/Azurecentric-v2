@@ -3,7 +3,7 @@ title: "Infrastructure as a Code (IaC) Series #2 – The tools"
 description: "On the previous and first post about the IaC Series, I wrote about the beginning on the IaC and did describe the tools. On this post I will detail all the tools that I have…"
 pubDate: 2019-02-06
 category: automation
-tags: [iac]
+tags: ["infrastructure-as-code"]
 translationKey: infrastructure-as-a-code-iac-series-2-the-tools
 cover: ../../../assets/old/posts/2019/02/Git1.png
 coverAlt: "Infrastructure as a Code (IaC) Series #2 – The tools"

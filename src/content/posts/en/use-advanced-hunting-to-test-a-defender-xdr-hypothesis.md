@@ -2,8 +2,8 @@
 title: "Use Advanced Hunting to test a Defender XDR hypothesis"
 description: "Use Defender XDR Advanced Hunting to test a threat hypothesis with KQL, then validate findings before creating detection rules."
 pubDate: 2025-12-25
-category: governance
-tags: ["advanced-hunting", "defender-xdr", "microsoft-sentinel", "threat-hunting", "kql"]
+category: siem-xdr
+tags: ["microsoft-defender-xdr", "advanced-hunting", "kql", "microsoft-sentinel", "threat-hunting"]
 translationKey: use-advanced-hunting-to-test-a-defender-xdr-hypothesis
 draft: false
 ---

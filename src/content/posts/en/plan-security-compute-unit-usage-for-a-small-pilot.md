@@ -2,8 +2,8 @@
 title: "Plan Security Compute Unit usage for a small pilot"
 description: "Plan Microsoft Copilot for Security pilot usage by understanding SCU drivers and monitoring actual consumption against estimates."
 pubDate: 2024-10-03
-category: governance
-tags: ["microsoft-copilot-for-security", "security-compute-units", "cost-management", "pilot-planning", "sentinel"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "security-compute-units", "cost-management", "microsoft-sentinel"]
 translationKey: plan-security-compute-unit-usage-for-a-small-pilot
 draft: false
 ---

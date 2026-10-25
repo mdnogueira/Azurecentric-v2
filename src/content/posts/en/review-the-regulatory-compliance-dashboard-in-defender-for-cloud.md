@@ -2,8 +2,8 @@
 title: "Review the regulatory compliance dashboard in Defender for Cloud"
 description: "Navigate the Defender for Cloud regulatory compliance dashboard to assess standards, understand control states, and plan remediation."
 pubDate: 2026-02-07
-category: governance
-tags: ["defender-for-cloud", "regulatory-compliance", "security-benchmark", "cloud-security", "azure"]
+category: cloud-security
+tags: ["defender-for-cloud", "regulatory-compliance", "cloud-security", "security-benchmark"]
 translationKey: review-the-regulatory-compliance-dashboard-in-defender-for-cloud
 draft: false
 ---

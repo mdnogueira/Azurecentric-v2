@@ -3,7 +3,7 @@ title: "Investigate a virtual switch after a host network change"
 description: "Troubleshoot Hyper-V virtual switch connectivity after host network changes by verifying extensions, bindings, and management OS sharing."
 pubDate: 2026-05-25
 category: hyper-v
-tags: []
+tags: ["hyper-v", "troubleshooting"]
 translationKey: investigate-a-virtual-switch-after-a-host-network-change
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "VLANs with Hyper-V Network Virtualization"
 description: "Isolating different departments’ virtual machines can be a challenge on a shared network. When entire networks of virtual machines must be isolated, the challenge becomes even…"
 pubDate: 2013-03-19
 category: hyper-v
-tags: [network-virtualization]
+tags: ["hyper-v", "network-virtualization"]
 translationKey: vlans-with-hyper-v-network-virtualization
 cover: ../../../assets/old/posts/2013/03/image.png
 coverAlt: "VLANs with Hyper-V Network Virtualization"

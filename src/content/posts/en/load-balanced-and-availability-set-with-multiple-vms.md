@@ -3,7 +3,7 @@ title: "Load Balanced and Availability Set with multiple VMs"
 description: "When it comes to best practices to how to setup multiple virtual machines using a load balanced and availability set, the information out there is either outdated or hard to find."
 pubDate: 2017-08-31
 category: networking
-tags: [arm-templates, high-availability, architecture]
+tags: ["networking", "azure-virtual-network"]
 translationKey: load-balanced-and-availability-set-with-multiple-vms
 cover: ../../../assets/old/posts/2017/08/Arm1.png
 coverAlt: "Load Balanced and Availability Set with multiple VMs"

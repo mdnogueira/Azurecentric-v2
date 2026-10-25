@@ -3,7 +3,7 @@ title: "Use Trusted Launch when creating a supported virtual machine"
 description: "Enable Trusted Launch on existing Generation 2 VMs: prerequisites, deallocation, and verification steps."
 pubDate: 2024-06-24
 category: compute
-tags: ["trusted-launch", "virtual-machines", "security", "generation-2", "defender-for-cloud"]
+tags: ["azure-virtual-machines", "trusted-launch", "generation-2", "defender-for-cloud", "azure-cli"]
 translationKey: use-trusted-launch-when-creating-a-supported-virtual-machine
 draft: false
 ---

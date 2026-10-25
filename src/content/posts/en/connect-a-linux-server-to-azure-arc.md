@@ -2,8 +2,8 @@
 title: "Connect a Linux server to Azure Arc"
 description: "Connect a Linux server to Azure Arc using the azcmagent CLI, covering prerequisites, installation, authentication, and verification."
 pubDate: 2025-07-30
-category: cloud
-tags: ["azure-arc", "linux", "connected-machine", "azcmagent", "onboarding"]
+category: hybrid-migration
+tags: ["azure-arc", "hybrid-cloud", "linux", "azcmagent", "connected-machine", "onboarding"]
 translationKey: connect-a-linux-server-to-azure-arc
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Choose alert thresholds around an actionable response"
 description: "Align alert thresholds with response capabilities: static, dynamic, and log search strategies."
 pubDate: 2024-12-29
-category: governance
-tags: ["azure-monitor", "alerts", "thresholds", "dynamic-thresholds", "log-search", "action-groups"]
+category: operations
+tags: ["alerts", "azure-monitor", "thresholds", "dynamic-thresholds", "log-search", "action-groups"]
 translationKey: choose-alert-thresholds-around-an-actionable-response
 draft: false
 ---

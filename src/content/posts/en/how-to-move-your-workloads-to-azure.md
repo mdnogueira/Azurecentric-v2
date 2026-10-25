@@ -2,8 +2,8 @@
 title: "How to move your workloads to Azure"
 description: "When integrating your on-premises environment with Azure, you might want to use the lift-and-shift approach to migrate some of your existing workloads. There are several ways…"
 pubDate: 2017-04-10
-category: cloud
-tags: [azure-site-recovery, hybrid, hyper-v, generation-2]
+category: hybrid-migration
+tags: ["hybrid-cloud", "migration", "vm-sizing", "hyper-v", "azure-site-recovery"]
 translationKey: how-to-move-your-workloads-to-azure
 legacy: true
 legacyUrl: /2017/04/how-to-move-your-workloads-to-azure.html

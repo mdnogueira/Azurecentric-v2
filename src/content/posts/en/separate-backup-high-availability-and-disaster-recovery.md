@@ -2,8 +2,8 @@
 title: "Separate backup, high availability and disaster recovery"
 description: "Define what backup, high availability and disaster recovery each need to achieve, then test the complete application's recovery against RPO and RTO."
 pubDate: 2024-03-29
-category: governance
-tags: ["disaster-recovery", "high-availability", "azure-backup", "resiliency", "rpo-rto"]
+category: well-architected
+tags: ["well-architected-framework", "disaster-recovery", "high-availability", "backup", "rpo-rto", "azure-backup"]
 translationKey: separate-backup-high-availability-and-disaster-recovery
 draft: false
 ---

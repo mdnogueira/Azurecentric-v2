@@ -3,7 +3,7 @@ title: "Overview of Storage with Windows Server 2012 R2"
 description: "Storage solutions play a critical role in the modern datacenter. Windows Server 2012 R2 was designed with a strong focus on storage capabilities, from the foundation of the…"
 pubDate: 2013-06-20
 category: windows-server
-tags: [backup, hyper-v, storage]
+tags: ["windows-server", "backup", "hyper-v"]
 translationKey: overview-of-storage-with-windows-server-2012-r2
 legacy: true
 legacyUrl: /2013/06/overview-of-server-virtualization-with-windows-server-2012-r2.html

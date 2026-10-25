@@ -3,7 +3,7 @@ title: "Azure Backup – Part 4 – System Center and Azure Backup"
 description: "On the first post (see here), I explained how the Azure backup works. On this post, I’m explaining how to integrate Azure Backup with System Center Data Protection Manager."
 pubDate: 2017-03-28
 category: backup-dr
-tags: [azure-backup, azure-site-recovery, system-center]
+tags: ["azure-backup", "backup", "system-center"]
 translationKey: azure-backup-part-4-system-center-and-azure-backup
 legacy: true
 legacyUrl: /2017/03/azure-backup-part-4-system-center-and-azure-backup.html

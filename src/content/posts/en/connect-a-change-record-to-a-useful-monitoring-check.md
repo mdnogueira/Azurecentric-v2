@@ -2,8 +2,8 @@
 title: "Connect a change record to a useful monitoring check"
 description: "Link change records to monitoring by querying alert instances in a workbook, using Resource Graph and ARM templates."
 pubDate: 2026-05-06
-category: governance
-tags: ["azure-monitor", "alerts", "workbooks", "change-management", "resource-graph"]
+category: operations
+tags: ["azure-monitor", "alerts", "arm-templates", "change-management", "resource-graph", "azure-workbooks"]
 translationKey: connect-a-change-record-to-a-useful-monitoring-check
 draft: false
 ---

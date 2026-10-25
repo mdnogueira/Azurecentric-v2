@@ -2,8 +2,8 @@
 title: "Document and test manual replay of failed messages"
 description: "How to inspect, recover, and manually replay failed Service Bus messages using the .NET SDK and Service Bus Explorer."
 pubDate: 2026-10-09
-category: apps
-tags: ["azure-service-bus", "dead-letter-queue", "message-deferral", "replay-messages", "azure-messaging-servicebus"]
+category: integration
+tags: ["azure-service-bus", "troubleshooting", "replay-messages", "dead-letter-queue"]
 translationKey: document-and-test-manual-replay-of-failed-messages
 draft: false
 ---

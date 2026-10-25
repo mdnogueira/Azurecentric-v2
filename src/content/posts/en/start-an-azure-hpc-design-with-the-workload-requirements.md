@@ -2,8 +2,8 @@
 title: "Start an Azure HPC design with the workload requirements"
 description: "Identify the compute, memory, communication and data requirements of an HPC job before choosing Azure VM families or a scheduling platform."
 pubDate: 2024-01-17
-category: compute
-tags: [hpc, azure-batch, compute, workload-design]
+category: hpc-ai
+tags: ["hpc", "workload-design", "azure-virtual-machines", "azure-batch"]
 translationKey: start-an-azure-hpc-design-with-the-workload-requirements
 draft: false
 ---

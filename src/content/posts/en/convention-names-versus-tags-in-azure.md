@@ -3,7 +3,7 @@ title: "Convention Names versus Tags in Azure"
 description: "Sometimes when I am working on an Azure Foundation project, usually they ask me “What is the difference between Convention Names and Tags?” followed by “When we should use each…"
 pubDate: 2017-02-26
 category: governance
-tags: []
+tags: ["resource-tags"]
 translationKey: convention-names-versus-tags-in-azure
 legacy: true
 legacyUrl: /2017/02/convention-names-versus-tags-in-azure.html

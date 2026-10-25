@@ -3,7 +3,7 @@ title: "Plan a storage recovery exercise with a verifiable outcome"
 description: "Plan a storage recovery exercise using customer-managed failover, verifying Last Sync Time and handling Azure Files constraints."
 pubDate: 2026-10-17
 category: storage
-tags: ["azure-storage", "disaster-recovery", "failover", "azure-files", "geo-redundancy"]
+tags: ["azure-storage", "azure-files", "failover", "geo-redundancy", "disaster-recovery"]
 translationKey: plan-a-storage-recovery-exercise-with-a-verifiable-outcome
 draft: false
 ---

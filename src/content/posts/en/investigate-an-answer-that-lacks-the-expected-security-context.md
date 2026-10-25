@@ -2,8 +2,8 @@
 title: "Investigate an answer that lacks the expected security context"
 description: "Troubleshoot why Security Copilot lacks context by verifying data availability in source systems and connector configuration."
 pubDate: 2025-07-15
-category: governance
-tags: ["security-copilot", "connectors", "troubleshooting", "data-ingestion", "microsoft-sentinel", "m365-defender"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "troubleshooting", "connectors", "microsoft-sentinel", "microsoft-defender-xdr"]
 translationKey: investigate-an-answer-that-lacks-the-expected-security-context
 draft: false
 ---

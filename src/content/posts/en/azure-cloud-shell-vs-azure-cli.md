@@ -3,7 +3,7 @@ title: "Azure Cloud Shell vs Azure CLI"
 description: "At a local community event, after my presentation I was answering some questions and one of the attendee ask me if Azure Cloud Shell is the same tool as Azure CLI."
 pubDate: 2017-11-20
 category: automation
-tags: [azure-cli, cloud-shell, linux, powershell, containers]
+tags: ["azure-cloud-shell", "azure-cli", "linux", "powershell"]
 translationKey: azure-cloud-shell-vs-azure-cli
 legacy: true
 legacyUrl: /2017/11/azure-cloud-shell-vs-azure-cli.html

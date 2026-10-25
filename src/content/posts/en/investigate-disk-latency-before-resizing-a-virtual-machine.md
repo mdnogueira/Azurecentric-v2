@@ -3,7 +3,7 @@ title: "Investigate disk latency before resizing a virtual machine"
 description: "Distinguish host saturation from guest latency using LUN mapping before resizing a VM."
 pubDate: 2026-08-06
 category: compute
-tags: ["azure-virtual-machines", "disk-latency", "azure-monitor", "troubleshooting", "vm-insights"]
+tags: ["azure-virtual-machines", "troubleshooting", "disk-latency", "linux", "azure-monitor"]
 translationKey: investigate-disk-latency-before-resizing-a-virtual-machine
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "General Methodology for Troubleshooting Hyper-V Replica"
 description: "4. Inspect the System Event Log on the Primary and Replica servers to determine if there is any failure condition associated with network functionality 5. Run the Hyper-V Best…"
 pubDate: 2013-03-21
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "troubleshooting", "replication"]
 translationKey: general-methodology-for-troubleshooting-hyper-v-replica
 cover: ../../../assets/old/posts/2013/03/troblehooting_rep.png
 coverAlt: "General Methodology for Troubleshooting Hyper-V Replica"

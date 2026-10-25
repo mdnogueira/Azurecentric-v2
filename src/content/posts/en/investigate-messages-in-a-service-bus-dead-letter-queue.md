@@ -2,8 +2,8 @@
 title: "Investigate messages in a Service Bus dead-letter queue"
 description: "How to inspect Service Bus dead-letter queues, identify failure reasons, and verify the fix."
 pubDate: 2024-10-26
-category: apps
-tags: ["service-bus", "dead-letter-queue", "troubleshooting", "azure-cli", "dotnet"]
+category: integration
+tags: ["azure-service-bus", "troubleshooting", "dead-letter-queue", "azure-cli"]
 translationKey: investigate-messages-in-a-service-bus-dead-letter-queue
 draft: false
 ---

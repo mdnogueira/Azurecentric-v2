@@ -3,7 +3,7 @@ title: "Windows Server 2012 NIC Teaming tools for troubleshooting"
 description: "NIC Teaming and the powerful administration tools in Windows Server 2012 are very powerful tools that can be misused, misconfigured, and may cause loss of connectivity if the…"
 pubDate: 2013-04-19
 category: windows-server
-tags: [hyper-v, nic-teaming, troubleshooting]
+tags: ["windows-server", "nic-teaming", "troubleshooting", "hyper-v", "powershell"]
 translationKey: windows-server-2012-nic-teaming-tools-for-troubleshooting
 legacy: true
 legacyUrl: /2013/04/windows-server-2012-nic-teaming-tools-for-troubleshooting-3.html

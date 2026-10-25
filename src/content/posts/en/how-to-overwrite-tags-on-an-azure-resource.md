@@ -2,8 +2,8 @@
 title: "How to overwrite Tags on an Azure Resource"
 description: "With the limitation of 15 Tags per resource, you will reach a point that you need to intervene and either remove some of the tags or reuse them. On my previous post (How to…"
 pubDate: 2018-07-10
-category: governance
-tags: [powershell, azure-automation]
+category: powershell
+tags: ["powershell", "resource-tags"]
 translationKey: how-to-overwrite-tags-on-an-azure-resource
 legacy: true
 legacyUrl: /2018/07/how-to-overwrite-tags-on-an-azure-resource.html

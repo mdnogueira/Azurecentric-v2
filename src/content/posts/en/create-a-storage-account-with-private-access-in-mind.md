@@ -3,7 +3,7 @@ title: "Create a Storage account with private access in mind"
 description: "Create a Blob Storage account with a deliberate private endpoint, DNS and public-access policy, then verify networking and data permissions separately."
 pubDate: 2024-02-02
 category: storage
-tags: [azure-storage, private-endpoints, private-dns, blob-storage]
+tags: ["azure-storage", "dns", "private-endpoints", "blob-storage", "private-dns"]
 translationKey: create-a-storage-account-with-private-access-in-mind
 draft: false
 ---

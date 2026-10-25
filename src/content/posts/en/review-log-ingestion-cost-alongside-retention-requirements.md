@@ -2,8 +2,8 @@
 title: "Review log ingestion cost alongside retention requirements"
 description: "Control Azure Monitor Logs costs by aligning table plans, retention, and commitment tiers with actual ingestion and query patterns."
 pubDate: 2025-08-10
-category: governance
-tags: ["azure-monitor", "log-analytics", "cost-management", "data-retention", "table-plans"]
+category: operations
+tags: ["azure-monitor", "data-retention", "table-plans", "log-analytics", "cost-management"]
 translationKey: review-log-ingestion-cost-alongside-retention-requirements
 draft: false
 ---

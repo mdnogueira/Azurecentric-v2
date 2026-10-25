@@ -3,7 +3,7 @@ title: "Understand the trade-offs of Azure Spot Virtual Machines"
 description: "Understand the trade-offs of Azure Spot Virtual Machines, including eviction policies, pricing caps, and capacity constraints."
 pubDate: 2025-04-02
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "azure-spot-virtual-machines", "vm-sizing"]
 translationKey: understand-the-trade-offs-of-azure-spot-virtual-machines
 draft: false
 ---

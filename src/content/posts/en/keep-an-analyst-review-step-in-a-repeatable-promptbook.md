@@ -2,8 +2,8 @@
 title: "Keep an analyst review step in a repeatable promptbook"
 description: "Use PowerShell scripts to manage Security Copilot Promptbooks, including a mandatory analyst review step in the JSON structure."
 pubDate: 2026-04-11
-category: governance
-tags: ["security-copilot", "promptbooks", "automation", "powershell", "incident-response"]
+category: security-copilot
+tags: ["promptbooks", "microsoft-security-copilot", "powershell", "troubleshooting", "incident-response"]
 translationKey: keep-an-analyst-review-step-in-a-repeatable-promptbook
 draft: false
 ---

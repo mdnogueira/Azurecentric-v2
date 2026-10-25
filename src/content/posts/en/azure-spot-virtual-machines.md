@@ -3,7 +3,7 @@ title: "Azure Spot Virtual Machines"
 description: "Today Microsoft announced the general availability of Azure Spot VMs (see here the announcement). This is one of the features that I have been waiting to become general…"
 pubDate: 2020-05-12
 category: compute
-tags: [spot-vms]
+tags: ["azure-virtual-machines", "azure-spot-virtual-machines"]
 translationKey: azure-spot-virtual-machines
 cover: ../../../assets/old/posts/2020/05/SpotVM1.png
 coverAlt: "Azure Spot Virtual Machines"

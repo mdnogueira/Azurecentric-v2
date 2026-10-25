@@ -3,7 +3,7 @@ title: "Hyper-V Failover Cluster as a Primary or Replica Server"
 description: "Failover Clustering has proven its value in making virtualized workloads highly available. We saw this in Windows Server 2008 using Quick Migration and then in Windows Server…"
 pubDate: 2013-03-14
 category: hyper-v
-tags: [failover-cluster, hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "failover-clustering", "windows-server", "migration", "high-availability"]
 translationKey: hyper-v-failover-cluster-as-a-primary-or-replica-server
 cover: ../../../assets/old/posts/2013/03/clu1.png
 coverAlt: "Hyper-V Failover Cluster as a Primary or Replica Server"

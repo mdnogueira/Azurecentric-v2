@@ -2,8 +2,8 @@
 title: "Plan regional recovery without overlooking identity and DNS"
 description: "Plan regional recovery by defining RTO/RPO, configuring DNS failover, and managing identity dependencies."
 pubDate: 2026-03-16
-category: governance
-tags: ["disaster-recovery", "dns", "identity", "azure-site-recovery", "rto-rpo"]
+category: well-architected
+tags: ["well-architected-framework", "dns", "disaster-recovery", "identity", "rpo-rto", "azure-site-recovery"]
 translationKey: plan-regional-recovery-without-overlooking-identity-and-dns
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Backing up Hyper-V and virtual machines using Windows Server Backup"
 description: "Previous versions of Hyper-V (like 2008, 2008 R2 and 2008 R2 SP1) had complications and incompatibilities with the built-in backup tool, forcing the administrators to acquire…"
 pubDate: 2013-10-13
 category: hyper-v
-tags: []
+tags: ["backup", "hyper-v", "windows-server"]
 translationKey: backing-up-hyper-v-and-virtual-machines-using-windows-server-backup
 legacy: true
 legacyUrl: /2013/10/backing-up-hyper-v-and-virtual-machines-using-windows-server-backup.html

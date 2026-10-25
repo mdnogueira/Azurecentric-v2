@@ -2,8 +2,8 @@
 title: "Build a prompt that produces a useful incident summary"
 description: "Construct precise prompts for Microsoft Security Copilot to generate structured incident summaries with specific audience and data requirements."
 pubDate: 2024-12-03
-category: governance
-tags: ["security-copilot", "incident-response", "prompting", "microsoft-defender", "threat-intelligence"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "incident-response"]
 translationKey: build-a-prompt-that-produces-a-useful-incident-summary
 draft: false
 ---

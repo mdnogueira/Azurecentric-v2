@@ -3,7 +3,7 @@ title: "Choose a lifecycle policy around data access patterns"
 description: "Align Azure Blob Storage lifecycle policies with actual access patterns to avoid rehydration costs and unnecessary transaction fees."
 pubDate: 2024-12-31
 category: storage
-tags: []
+tags: ["azure-storage", "blob-storage"]
 translationKey: choose-a-lifecycle-policy-around-data-access-patterns
 draft: false
 ---

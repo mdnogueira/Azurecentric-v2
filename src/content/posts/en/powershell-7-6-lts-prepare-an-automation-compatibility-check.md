@@ -2,8 +2,8 @@
 title: "PowerShell 7.6 LTS: prepare an automation compatibility check"
 description: "Audit PowerShell 7.6 LTS compatibility: check ThreadJob rename, Join-Path changes, and .NET 10 dependencies before production deployment."
 pubDate: 2026-03-19
-category: automation
-tags: ["automation", "compatibility", "lts", "breaking-changes"]
+category: powershell
+tags: ["powershell", "automation", "compatibility", "lts", "breaking-changes"]
 translationKey: powershell-7-6-lts-prepare-an-automation-compatibility-check
 draft: false
 ---

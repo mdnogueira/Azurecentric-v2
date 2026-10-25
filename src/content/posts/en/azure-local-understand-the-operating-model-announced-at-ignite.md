@@ -2,8 +2,8 @@
 title: "Azure Local: understand the operating model announced at Ignite"
 description: "Clarify the Azure Local operating model: cloud-connected infrastructure enabled by Azure Arc, with customer-operated hardware and control."
 pubDate: 2024-11-23
-category: cloud
-tags: ["azure-local", "azure-stack-hci", "azure-arc", "hybrid-cloud", "ignite-2024"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "azure-local", "azure-arc", "migration", "azure-stack-hci"]
 translationKey: azure-local-understand-the-operating-model-announced-at-ignite
 draft: false
 ---

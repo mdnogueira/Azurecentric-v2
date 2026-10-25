@@ -3,7 +3,7 @@ title: "Options to connect your datacenter to Azure Virtual Networks – Part 4 
 description: "On the one of the previous post (see here) I briefly describe the options that you have to cross-premise connections to Azure. On this post, I want to explore more one of the…"
 pubDate: 2017-06-02
 category: networking
-tags: [architecture, expressroute, hybrid]
+tags: ["expressroute", "azure-virtual-network"]
 translationKey: options-to-connect-your-datacenter-to-azure-virtual-networks-part-4-expressroute
 legacy: true
 legacyUrl: /2017/06/options-to-connect-your-datacenter-to-azure-virtual-networks-part-4-expressroute.html

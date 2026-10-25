@@ -2,8 +2,8 @@
 title: "Compare standalone and embedded investigation workflows"
 description: "Compare standalone and embedded Security Copilot workflows, focusing on context anchoring and connector requirements."
 pubDate: 2026-07-29
-category: governance
-tags: ["microsoft-security-copilot", "security-operations", "investigation-workflows", "sentinel-integration", "generative-ai"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "investigation-workflows"]
 translationKey: compare-standalone-and-embedded-investigation-workflows
 draft: false
 ---

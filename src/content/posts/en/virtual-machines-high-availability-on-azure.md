@@ -3,7 +3,7 @@ title: "Virtual Machines High Availability on Azure"
 description: "In general, you want your Azure virtual machine environment to be resilient to hardware failures and maintenance events that might occur occasionally within the Azure…"
 pubDate: 2017-03-04
 category: compute
-tags: [architecture, hyper-v]
+tags: ["azure-virtual-machines", "high-availability", "hyper-v"]
 translationKey: virtual-machines-high-availability-on-azure
 legacy: true
 legacyUrl: /2017/03/virtual-machines-high-availability-on-azure.html

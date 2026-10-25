@@ -2,8 +2,8 @@
 title: "Compare scale-up and scale-out for a compute workload"
 description: "Compare scale-up and scale-out for Azure Batch workloads using autoscale formulas and node sizing."
 pubDate: 2025-04-09
-category: compute
-tags: ["azure-batch", "autoscaling", "vm-sizes", "compute-optimization", "cloud-architecture"]
+category: hpc-ai
+tags: ["autoscaling", "hpc", "vm-sizing", "azure-batch"]
 translationKey: compare-scale-up-and-scale-out-for-a-compute-workload
 draft: false
 ---

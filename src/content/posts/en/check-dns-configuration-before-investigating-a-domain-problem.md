@@ -3,7 +3,7 @@ title: "Check DNS configuration before investigating a domain problem"
 description: "Troubleshoot domain name resolution failures by checking DNS server configuration, recursion, and delegation before investigating application issues."
 pubDate: 2025-03-05
 category: windows-server
-tags: ["dns", "troubleshooting", "active-directory", "windows-server", "name-resolution"]
+tags: ["dns", "windows-server", "troubleshooting", "active-directory"]
 translationKey: check-dns-configuration-before-investigating-a-domain-problem
 draft: false
 ---

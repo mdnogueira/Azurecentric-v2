@@ -3,7 +3,7 @@ title: "Measure storage performance without confusing capacity and throughput"
 description: "Distinguish IOPS, throughput and latency for Azure Files and Blob Storage to avoid throttling and performance misdiagnosis."
 pubDate: 2026-01-19
 category: storage
-tags: ["azure-files", "blob-storage", "performance", "iops", "throughput", "latency"]
+tags: ["azure-storage", "performance", "throughput", "azure-files", "blob-storage", "iops"]
 translationKey: measure-storage-performance-without-confusing-capacity-and-throughput
 draft: false
 ---

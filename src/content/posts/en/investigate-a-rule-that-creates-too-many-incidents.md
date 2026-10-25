@@ -2,8 +2,8 @@
 title: "Investigate a rule that creates too many incidents"
 description: "Reduce Sentinel incident volume by checking rule insights, applying tuning exclusions, and verifying with simulation and reruns."
 pubDate: 2025-09-09
-category: governance
-tags: ["microsoft-sentinel", "analytics-rules", "incident-management", "troubleshooting", "tuning"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "troubleshooting", "analytics-rules", "tuning"]
 translationKey: investigate-a-rule-that-creates-too-many-incidents
 draft: false
 ---

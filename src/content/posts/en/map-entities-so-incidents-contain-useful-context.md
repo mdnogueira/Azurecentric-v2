@@ -2,8 +2,8 @@
 title: "Map entities so incidents contain useful context"
 description: "Map data fields to entities in Microsoft Sentinel analytics rules to enrich incidents with context for investigation."
 pubDate: 2024-10-06
-category: governance
-tags: ["microsoft-sentinel", "entity-mapping", "security-operations", "incident-response", "kql"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "entity-mapping", "kql"]
 translationKey: map-entities-so-incidents-contain-useful-context
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Write a reusable function with clear parameters"
 description: "Write reusable PowerShell functions with clear parameters, validation, and help."
 pubDate: 2024-04-01
-category: automation
-tags: ["powershell", "functions", "parameters", "validation", "help"]
+category: powershell
+tags: ["powershell", "parameters", "functions", "help", "validation"]
 translationKey: write-a-reusable-function-with-clear-parameters
 draft: false
 ---

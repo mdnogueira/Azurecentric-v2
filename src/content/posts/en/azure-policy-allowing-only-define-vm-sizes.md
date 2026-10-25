@@ -3,7 +3,7 @@ title: "Azure Policy – Allowing only define VM sizes"
 description: "Azure Policy is the big step to start to have some sort of governance on your Azure environment. It’s really easy to implement, efficient and powerful. With Azure Policies, you…"
 pubDate: 2018-06-01
 category: governance
-tags: [azure-policy, subscriptions]
+tags: ["azure-policy", "vm-sizing"]
 translationKey: azure-policy-allowing-only-define-vm-sizes
 legacy: true
 legacyUrl: /2018/06/azure-policy-allowing-only-define-vm-sizes.html

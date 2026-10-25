@@ -2,8 +2,8 @@
 title: "Plan data movement before moving an HPC workload to Azure"
 description: "Plan data movement for HPC workloads by choosing the right storage mount strategy for Azure Batch pools."
 pubDate: 2025-09-17
-category: compute
-tags: ["azure-batch", "hpc", "data-movement", "azure-files", "blobfuse", "storage"]
+category: hpc-ai
+tags: ["hpc", "data-movement", "azure-files", "linux", "azure-batch", "blob-storage"]
 translationKey: plan-data-movement-before-moving-an-hpc-workload-to-azure
 draft: false
 ---

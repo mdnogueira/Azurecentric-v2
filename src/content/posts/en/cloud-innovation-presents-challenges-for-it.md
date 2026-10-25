@@ -3,7 +3,7 @@ title: "Cloud innovation presents challenges for IT"
 description: "On my various engagements, often come to the conversations what are the challenges that I see IT facing and how the cloud innovation can help address lot of those challenges."
 pubDate: 2015-09-27
 category: cloud
-tags: []
+tags: ["cloud-computing"]
 translationKey: cloud-innovation-presents-challenges-for-it
 legacy: true
 legacyUrl: /2015/09/cloud-innovation-presents-challenges-for-it.html

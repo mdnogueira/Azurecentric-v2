@@ -2,8 +2,8 @@
 title: "Understand deployment slots before an App Service swap"
 description: "Understand App Service deployment slots: tier limits, sticky settings, and the swap process to prevent downtime."
 pubDate: 2024-12-09
-category: apps
-tags: ["azure-app-service", "deployment-slots", "zero-downtime", "configuration-management", "swap-operations"]
+category: app-paas
+tags: ["azure-app-service", "deployment-slots"]
 translationKey: understand-deployment-slots-before-an-app-service-swap
 draft: false
 ---

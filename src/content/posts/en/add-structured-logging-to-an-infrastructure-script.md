@@ -2,8 +2,8 @@
 title: "Add structured logging to an infrastructure script"
 description: "Replace unreliable PowerShell transcripts with structured logging to ensure consistent, parseable infrastructure logs."
 pubDate: 2025-01-06
-category: automation
-tags: ["powershell", "structured-logging", "infrastructure-as-code", "error-handling", "transcripts"]
+category: powershell
+tags: ["powershell", "structured-logging", "transcripts", "troubleshooting"]
 translationKey: add-structured-logging-to-an-infrastructure-script
 draft: false
 ---

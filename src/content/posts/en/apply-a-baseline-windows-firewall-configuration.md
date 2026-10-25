@@ -3,7 +3,7 @@ title: "Apply a baseline Windows Firewall configuration"
 description: "Configure Windows Firewall for BranchCache and NPS on Server 2025 using documented ports and service configurations."
 pubDate: 2025-05-03
 category: windows-server
-tags: ["windows-server-2025", "branchcache", "radius", "firewall", "nps"]
+tags: ["windows-server", "windows-firewall", "branchcache", "nps", "radius", "windows-server-2025"]
 translationKey: apply-a-baseline-windows-firewall-configuration
 draft: false
 ---

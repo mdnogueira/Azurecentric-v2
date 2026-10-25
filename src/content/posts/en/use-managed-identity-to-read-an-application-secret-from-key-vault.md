@@ -2,8 +2,8 @@
 title: "Use managed identity to read an application secret from Key Vault"
 description: "Use App Service managed identities and Key Vault references to read secrets without storing connection strings in app settings."
 pubDate: 2024-04-29
-category: apps
-tags: ["app-service", "key-vault", "managed-identity", "secrets-management", "azure-cli"]
+category: app-paas
+tags: ["azure-key-vault", "azure-app-service", "managed-identities", "azure-cli"]
 translationKey: use-managed-identity-to-read-an-application-secret-from-key-vault
 draft: false
 ---

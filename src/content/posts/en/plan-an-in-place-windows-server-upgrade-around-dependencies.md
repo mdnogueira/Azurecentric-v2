@@ -3,7 +3,7 @@ title: "Plan an in-place Windows Server upgrade around dependencies"
 description: "Plan an in-place Windows Server upgrade by verifying supported paths, isolating dependencies, and executing a controlled feature update."
 pubDate: 2025-12-05
 category: windows-server
-tags: ["windows-server", "in-place-upgrade", "server-management", "operating-system", "migration"]
+tags: ["windows-server", "in-place-upgrade", "operating-system", "migration"]
 translationKey: plan-an-in-place-windows-server-upgrade-around-dependencies
 draft: false
 ---

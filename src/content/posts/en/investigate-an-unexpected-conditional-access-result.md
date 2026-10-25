@@ -2,8 +2,8 @@
 title: "Investigate an unexpected Conditional Access result"
 description: "Resolve unexpected Conditional Access outcomes by correlating sign-in logs with the What If tool to identify policy application and conditions."
 pubDate: 2026-06-03
-category: governance
-tags: ["conditional-access", "entra-id", "troubleshooting", "sign-in-logs", "what-if-tool"]
+category: identity-access
+tags: ["microsoft-entra-id", "conditional-access", "troubleshooting", "sign-in-logs", "what-if-tool"]
 translationKey: investigate-an-unexpected-conditional-access-result
 draft: false
 ---

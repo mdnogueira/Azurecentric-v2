@@ -2,8 +2,8 @@
 title: "Store application settings outside a container image"
 description: "Store configuration outside Azure Functions images using app settings to avoid rebuilds and manage secrets securely."
 pubDate: 2025-09-12
-category: apps
-tags: ["azure-functions", "app-settings", "container-security", "managed-identity", "configuration-management"]
+category: app-paas
+tags: ["azure-functions", "containers", "app-settings", "managed-identities"]
 translationKey: store-application-settings-outside-a-container-image
 draft: false
 ---

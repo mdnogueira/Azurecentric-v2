@@ -3,7 +3,7 @@ title: "Review CPU compatibility before moving a VM"
 description: "Configure Hyper-V processor compatibility for live migration between mixed CPU generations."
 pubDate: 2026-02-02
 category: hyper-v
-tags: ["hyper-v", "processor-compatibility", "live-migration", "windows-server-2025", "virtualization"]
+tags: ["hyper-v", "migration", "live-migration", "processor-compatibility", "windows-server-2025", "powershell"]
 translationKey: review-cpu-compatibility-before-moving-a-vm
 draft: false
 ---

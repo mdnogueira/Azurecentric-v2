@@ -3,7 +3,7 @@ title: "Como remover um Host Pool do Windows Virtual Desktop no Azure"
 description: "Para fazer reset a um ambiente de Windows Virtual Desktop (WVD) não basta apagar o Resource Group: os Application Groups, Session Hosts e o Host Pool só saem por PowerShell. O processo e o script."
 pubDate: 2019-05-27
 category: compute
-tags: [powershell, virtual-desktop]
+tags: ["azure-virtual-desktop", "azure-virtual-machines", "powershell"]
 translationKey: how-to-remove-a-hostpool-from-the-windows-virtual-desktop-on-azure
 cover: ../../../assets/old/posts/2019/05/RDSRem1-2.png
 coverAlt: "Como remover um Host Pool do Windows Virtual Desktop no Azure"

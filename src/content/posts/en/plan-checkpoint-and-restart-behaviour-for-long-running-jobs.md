@@ -2,8 +2,8 @@
 title: "Plan checkpoint and restart behaviour for long-running jobs"
 description: "Plan long-running Azure Batch jobs using constraints, job manager tasks, and restart policies to handle failures and timeouts."
 pubDate: 2026-06-16
-category: compute
-tags: ["azure-batch", "job-manager-task", "task-retries", "job-constraints", "batch-scheduling"]
+category: hpc-ai
+tags: ["hpc", "checkpoints", "azure-batch", "job-constraints", "job-manager-task", "task-retries"]
 translationKey: plan-checkpoint-and-restart-behaviour-for-long-running-jobs
 draft: false
 ---

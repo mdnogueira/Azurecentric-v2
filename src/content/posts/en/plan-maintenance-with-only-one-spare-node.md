@@ -2,8 +2,8 @@
 title: "Plan maintenance with only one spare node"
 description: "Plan maintenance on a two-node cluster with one spare node using CAU, ensuring quorum is maintained by moving roles before maintenance."
 pubDate: 2026-09-06
-category: backup-dr
-tags: ["failover-clustering", "cluster-aware-updating", "quorum", "windows-server-2025", "maintenance"]
+category: high-availability
+tags: ["failover-clustering", "maintenance", "quorum", "windows-server-2025", "windows-server"]
 translationKey: plan-maintenance-with-only-one-spare-node
 draft: false
 ---

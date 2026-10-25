@@ -3,7 +3,7 @@ title: "Create AzureRM VM from existing VHD"
 description: "While I was helping a costumer creating a Azure RM virtual machine from an existing VHD, I adapt one of my existing scripts, with some search on internet, to improve my script,…"
 pubDate: 2017-07-12
 category: compute
-tags: [powershell]
+tags: ["azure-virtual-machines", "vhd", "azure-powershell"]
 translationKey: create-azurerm-vm-from-existing-vhd
 legacy: true
 legacyUrl: /2017/07/create-azurerm-vm-from-existing-vhd.html

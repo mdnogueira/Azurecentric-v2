@@ -2,8 +2,8 @@
 title: "Prepare a hybrid server patching workflow"
 description: "Establish a hybrid patching workflow for Arc-enabled servers by deploying Azure Monitor Agent via Policy and enabling automatic extension upgrades."
 pubDate: 2026-01-05
-category: cloud
-tags: ["azure-arc", "azure-monitor-agent", "azure-policy", "automatic-extension-upgrade", "hybrid-servers"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "patch-management", "azure-monitor-agent", "azure-monitor", "azure-arc", "azure-policy"]
 translationKey: prepare-a-hybrid-server-patching-workflow
 draft: false
 ---

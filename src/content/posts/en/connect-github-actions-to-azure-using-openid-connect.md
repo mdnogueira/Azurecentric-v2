@@ -2,8 +2,8 @@
 title: "Connect GitHub Actions to Azure using OpenID Connect"
 description: "Secure GitHub Actions to Azure using OIDC federation and Microsoft Entra Conditional Access for workload identities."
 pubDate: 2024-09-30
-category: governance
-tags: ["github-actions", "azure", "openid-connect", "conditional-access", "workload-identities", "security"]
+category: identity-access
+tags: ["microsoft-entra-id", "github", "workload-identity-federation", "github-actions", "openid-connect", "conditional-access"]
 translationKey: connect-github-actions-to-azure-using-openid-connect
 draft: false
 ---

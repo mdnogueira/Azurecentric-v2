@@ -2,8 +2,8 @@
 title: "Filter an Event Grid subscription around a consumer need"
 description: "Filter Event Grid subscriptions by type, subject, or data to target specific consumer needs and reduce noise."
 pubDate: 2025-04-17
-category: apps
-tags: ["event-grid", "filtering", "subscriptions", "azure-cli", "cloud-events"]
+category: integration
+tags: ["azure-event-grid", "filtering"]
 translationKey: filter-an-event-grid-subscription-around-a-consumer-need
 draft: false
 ---

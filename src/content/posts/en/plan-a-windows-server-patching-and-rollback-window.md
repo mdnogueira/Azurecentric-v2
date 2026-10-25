@@ -3,7 +3,7 @@ title: "Plan a Windows Server patching and rollback window"
 description: "Align WSUS approvals with Group Policy settings to define a precise Windows Server 2022 patching and restart window."
 pubDate: 2024-05-29
 category: windows-server
-tags: ["wsus", "group-policy", "windows-server-2022", "patching", "system-administration"]
+tags: ["windows-server", "patch-management", "group-policy", "windows-server-2022", "wsus"]
 translationKey: plan-a-windows-server-patching-and-rollback-window
 draft: false
 ---

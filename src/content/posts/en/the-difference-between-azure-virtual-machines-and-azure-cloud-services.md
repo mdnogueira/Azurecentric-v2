@@ -3,7 +3,7 @@ title: "The difference between Azure Virtual Machines and Azure Cloud Services?"
 description: "Azure offers several compute hosting options for integrating on-premises workloads in Azure. On a previous post (see here), I described the difference between the both…"
 pubDate: 2017-04-17
 category: apps
-tags: []
+tags: ["azure-cloud-services", "azure-virtual-machines"]
 translationKey: the-difference-between-azure-virtual-machines-and-azure-cloud-services
 legacy: true
 legacyUrl: /2017/04/the-difference-between-azure-virtual-machines-and-azure-cloud-services.html

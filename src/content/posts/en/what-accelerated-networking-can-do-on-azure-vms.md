@@ -3,7 +3,7 @@ title: "What Accelerated Networking can do on Azure VMs"
 description: "Microsoft have been making a lot of enhancements on Azure VMs, specially on the performance. One of those is Accelerated Network adapters that is available on some of the Azure…"
 pubDate: 2018-05-04
 category: networking
-tags: []
+tags: ["azure-virtual-machines", "accelerated-networking"]
 translationKey: what-accelerated-networking-can-do-on-azure-vms
 legacy: true
 legacyUrl: /2018/05/what-accelerated-networking-can-do-on-azure-vms.html

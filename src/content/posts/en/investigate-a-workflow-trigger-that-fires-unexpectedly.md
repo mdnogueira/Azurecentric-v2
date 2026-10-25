@@ -2,8 +2,8 @@
 title: "Investigate a workflow trigger that fires unexpectedly"
 description: "Investigate unexpected Logic Apps triggers by reviewing trigger history, run history, and error handling to identify root causes."
 pubDate: 2026-04-29
-category: apps
-tags: ["azure-logic-apps", "troubleshooting", "workflow-automation", "trigger-history", "error-handling"]
+category: integration
+tags: ["troubleshooting", "azure-logic-apps", "error-handling", "trigger-history"]
 translationKey: investigate-a-workflow-trigger-that-fires-unexpectedly
 draft: false
 ---

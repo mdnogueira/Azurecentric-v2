@@ -3,7 +3,7 @@ title: "Why Consider the cloud?"
 description: "In the last few years, we have seen an explosive growth in the use of the public cloud. While most of the initial adoption was seen by startups and smaller organizations, most…"
 pubDate: 2015-09-12
 category: cloud
-tags: []
+tags: ["cloud-computing"]
 translationKey: why-consider-the-cloud
 legacy: true
 legacyUrl: /2015/09/why-consider-the-cloud.html

@@ -3,7 +3,7 @@ title: "Configuring constrained delegation to authenticate live migrations"
 description: "Constrained delegation allows live migrations to be started using any remote management tool and might help in providing more flexibility to move your VMs."
 pubDate: 2013-10-04
 category: hyper-v
-tags: [live-migration]
+tags: ["hyper-v", "live-migration"]
 translationKey: configuring-constrained-delegation-to-authenticate-live-migrations
 cover: ../../../assets/old/posts/2013/10/clip_image002.jpg
 coverAlt: "Configuring constrained delegation to authenticate live migrations"

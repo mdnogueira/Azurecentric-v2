@@ -2,8 +2,8 @@
 title: "Review split-brain risk in a stretched infrastructure design"
 description: "Configure fault domains and quorum witnesses to manage split-brain risk in stretched Windows Server clusters."
 pubDate: 2026-05-19
-category: backup-dr
-tags: ["failover-clustering", "stretch-cluster", "quorum", "fault-domains", "windows-server"]
+category: high-availability
+tags: ["failover-clustering", "quorum", "windows-server", "fault-domains", "stretch-cluster"]
 translationKey: review-split-brain-risk-in-a-stretched-infrastructure-design
 draft: false
 ---

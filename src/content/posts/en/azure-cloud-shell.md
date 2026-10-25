@@ -3,7 +3,7 @@ title: "Azure Cloud Shell"
 description: "Microsoft Azure is an awesome evolving platform that I love to work. Today when I enter at my Azure subscription I saw something new. But this is not unusual on Azure.…"
 pubDate: 2017-05-04
 category: automation
-tags: [powershell]
+tags: ["azure-cloud-shell", "azure-subscriptions", "powershell"]
 translationKey: azure-cloud-shell
 cover: ../../../assets/old/posts/2017/05/AzureShell1.png
 coverAlt: "Azure Cloud Shell"

@@ -2,8 +2,8 @@
 title: "Choose a quorum witness for a failover cluster"
 description: "Choose a Windows Server cluster witness around storage, site connectivity and failure scenarios, then inspect the configuration before changing votes."
 pubDate: 2024-02-14
-category: backup-dr
-tags: [failover-clustering, windows-server, quorum, high-availability]
+category: high-availability
+tags: ["failover-clustering", "quorum", "windows-server"]
 translationKey: choose-a-quorum-witness-for-a-failover-cluster
 draft: false
 ---

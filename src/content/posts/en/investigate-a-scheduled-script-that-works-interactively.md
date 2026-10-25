@@ -2,8 +2,8 @@
 title: "Investigate a scheduled script that works interactively"
 description: "Troubleshoot a PowerShell 7.6 scheduled script that fails silently by checking profile isolation and error handling."
 pubDate: 2026-05-14
-category: automation
-tags: ["powershell", "scheduled-tasks", "troubleshooting", "error-handling", "profiles"]
+category: powershell
+tags: ["troubleshooting", "powershell", "error-handling"]
 translationKey: investigate-a-scheduled-script-that-works-interactively
 draft: false
 ---

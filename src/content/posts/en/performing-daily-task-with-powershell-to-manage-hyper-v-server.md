@@ -3,7 +3,7 @@ title: "Performing daily task with PowerShell to manage Hyper-V Server"
 description: "As a virtualization administrator, you will come across a lot of scenarios where you will need to create, modify, move, export, and other tasks to manage your virtual machines…"
 pubDate: 2013-10-16
 category: hyper-v
-tags: [powershell]
+tags: ["hyper-v", "powershell"]
 translationKey: performing-daily-task-with-powershell-to-manage-hyper-v-server
 legacy: true
 legacyUrl: /2013/10/performing-daily-task-with-powershell-to-manage-hyper-v-server.html

@@ -2,8 +2,8 @@
 title: "Choose what to manage through Azure Arc"
 description: "Decide whether Azure Arc-enabled servers fits your hybrid estate by defining scope, establishing governance foundations, and planning phased deployment."
 pubDate: 2025-02-08
-category: cloud
-tags: ["azure-arc", "hybrid-cloud", "server-management", "azure-policies", "rbac"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "azure-arc", "server-management", "azure-policy", "rbac"]
 translationKey: choose-what-to-manage-through-azure-arc
 draft: false
 ---

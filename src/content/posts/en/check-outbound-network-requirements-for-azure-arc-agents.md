@@ -2,8 +2,8 @@
 title: "Check outbound network requirements for Azure Arc agents"
 description: "Check Azure Arc agent connectivity from the server, distinguish public and private endpoint requirements, and record DNS, proxy and firewall evidence."
 pubDate: 2024-03-09
-category: cloud
-tags: [azure-arc, networking, connected-machine-agent, private-link]
+category: hybrid-migration
+tags: ["hybrid-cloud", "azure-arc", "dns", "azure-private-link", "private-endpoints", "connected-machine-agent"]
 translationKey: check-outbound-network-requirements-for-azure-arc-agents
 draft: false
 ---

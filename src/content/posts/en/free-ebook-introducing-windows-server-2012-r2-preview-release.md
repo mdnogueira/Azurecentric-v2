@@ -3,7 +3,7 @@ title: "Free ebook: Introducing Windows Server 2012 R2 Preview Release"
 description: "Microsoft just announce another free ebook offering from Microsoft Press. Introducing Windows Server 2012 R2 Preview Release (ISBN 9780735682931), by Mitch Tulloch with the…"
 pubDate: 2013-08-02
 category: cloud
-tags: []
+tags: ["cloud-computing", "windows-server"]
 translationKey: free-ebook-introducing-windows-server-2012-r2-preview-release
 cover: ../../../assets/old/posts/2013/08/6153-9780735682931x_5efbd7bf_thumb.jpg
 coverAlt: "Free ebook: Introducing Windows Server 2012 R2 Preview Release"

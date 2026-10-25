@@ -3,7 +3,7 @@ title: "Check Azure quota before a compute deployment fails"
 description: "Check regional vCPU quotas before deploying VMs or scale sets to prevent deployment failures."
 pubDate: 2024-08-16
 category: compute
-tags: ["azure-virtual-machines", "quotas", "troubleshooting", "autoscale", "reserved-instances"]
+tags: ["azure-virtual-machines", "troubleshooting", "virtual-machine-scale-sets", "quotas", "reserved-instances", "autoscaling"]
 translationKey: check-azure-quota-before-a-compute-deployment-fails
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Plan permissions for an operations automation identity"
 description: "Separate Automation account operational roles from managed identity resource permissions to enforce least privilege."
 pubDate: 2026-01-17
-category: governance
-tags: ["azure-automation", "managed-identities", "rbac", "least-privilege", "security"]
+category: operations
+tags: ["azure-automation", "managed-identities", "least-privilege"]
 translationKey: plan-permissions-for-an-operations-automation-identity
 draft: false
 ---

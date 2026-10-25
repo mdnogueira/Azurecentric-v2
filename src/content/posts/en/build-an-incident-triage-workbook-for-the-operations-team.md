@@ -2,8 +2,8 @@
 title: "Build an incident triage workbook for the operations team"
 description: "Build a Microsoft Sentinel incident triage workbook using the workbook editor and gallery template export."
 pubDate: 2026-04-13
-category: governance
-tags: ["microsoft-sentinel", "workbooks", "incident-triage", "kql", "gallery-templates"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "incident-triage", "kql"]
 translationKey: build-an-incident-triage-workbook-for-the-operations-team
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Set a budget boundary around a compute experiment"
 description: "Set a budget boundary for Azure Batch experiments using Cost Management filters for service or user subscription modes."
 pubDate: 2025-11-10
-category: compute
-tags: ["azure-batch", "cost-management", "budgets", "cloud-computing", "azure-cost-optimization"]
+category: hpc-ai
+tags: ["cost-management", "hpc", "azure-batch", "budgets", "alerts"]
 translationKey: set-a-budget-boundary-around-a-compute-experiment
 draft: false
 ---

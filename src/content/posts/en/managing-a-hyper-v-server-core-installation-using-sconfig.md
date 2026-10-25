@@ -3,7 +3,7 @@ title: "Managing a Hyper-V Server Core installation using sconfig"
 description: "With all the benefits that Server Core bring such as performance, security and so on. But without the GUI, it's not easy to do the daily management and maintenance of Hyper-V.…"
 pubDate: 2013-10-10
 category: hyper-v
-tags: [server-core]
+tags: ["hyper-v", "server-core"]
 translationKey: managing-a-hyper-v-server-core-installation-using-sconfig
 legacy: true
 legacyUrl: /2013/10/managing-a-hyper-v-server-core-installation-using-sconfig.html

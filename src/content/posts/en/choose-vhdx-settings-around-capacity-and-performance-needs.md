@@ -3,7 +3,7 @@ title: "Choose VHDX settings around capacity and performance needs"
 description: "Select VHDX settings by balancing capacity, resilience and storage protocol support against your workload requirements."
 pubDate: 2025-03-15
 category: hyper-v
-tags: ["hyper-v", "vhdx", "windows-server", "storage", "best-practices"]
+tags: ["hyper-v", "vhdx", "windows-server"]
 translationKey: choose-vhdx-settings-around-capacity-and-performance-needs
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "iSCSI connection issues with Hyper-V Server"
 description: "If you have a Hyper-V Cluster connected through iSCSI to a storage solution and sometimes you get errors that your CSV volumes went offline. In some cases, the Windows Failover…"
 pubDate: 2013-11-08
 category: hyper-v
-tags: [iscsi]
+tags: ["hyper-v", "iscsi", "troubleshooting"]
 translationKey: iscsi-connection-issues-with-hyper-v-server
 legacy: true
 legacyUrl: /2013/11/iscsi-connection-issues-with-hyper-v-server.html

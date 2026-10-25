@@ -2,8 +2,8 @@
 title: "Export an Azure inventory without losing object structure"
 description: "Export Azure VM inventory with nested network data using PowerShell and typed objects."
 pubDate: 2024-09-13
-category: automation
-tags: ["azure-powershell", "inventory", "select-object", "get-member", "data-structures"]
+category: powershell
+tags: ["powershell", "inventory", "select-object", "azure-virtual-machines"]
 translationKey: export-an-azure-inventory-without-losing-object-structure
 draft: false
 ---

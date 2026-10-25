@@ -2,8 +2,8 @@
 title: "Plan storage availability across cluster nodes"
 description: "Align Windows Server cluster fault domains with physical hardware and configure a quorum witness to maintain storage availability."
 pubDate: 2025-08-23
-category: backup-dr
-tags: ["windows-server", "failover-clustering", "storage-spaces-direct", "quorum", "fault-domains", "azure-local"]
+category: high-availability
+tags: ["failover-clustering", "quorum", "windows-server", "fault-domains", "azure-local"]
 translationKey: plan-storage-availability-across-cluster-nodes
 draft: false
 ---

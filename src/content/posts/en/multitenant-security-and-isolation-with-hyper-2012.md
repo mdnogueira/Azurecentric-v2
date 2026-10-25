@@ -3,7 +3,7 @@ title: "Multitenant security and isolation with Hyper 2012"
 description: "Virtualized data centers are becoming more popular and practical every day. IT organizations and hosting providers have begun offering infrastructure as a service (IaaS), which…"
 pubDate: 2013-02-04
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server"]
 translationKey: multitenant-security-and-isolation-with-hyper-2012
 cover: ../../../assets/old/posts/2013/02/multi1.png
 coverAlt: "Multitenant security and isolation with Hyper 2012"

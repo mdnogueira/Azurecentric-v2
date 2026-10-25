@@ -3,7 +3,7 @@ title: "Use network security groups with clear traffic ownership"
 description: "Define traffic ownership in Azure NSGs by understanding rule evaluation order, association scope, and effective rules."
 pubDate: 2024-07-08
 category: networking
-tags: ["network-security-groups", "azure-virtual-network", "networking", "security", "azure"]
+tags: ["network-security-groups", "azure-virtual-network"]
 translationKey: use-network-security-groups-with-clear-traffic-ownership
 draft: false
 ---

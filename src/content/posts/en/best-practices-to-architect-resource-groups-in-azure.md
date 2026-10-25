@@ -3,7 +3,7 @@ title: "Best practices to architect Resource Groups in Azure"
 description: "On a workshop at the client, we were talking about what are the best practices to design an architecture for Resource Groups (RG) in Azure. This time we have a good time…"
 pubDate: 2019-06-21
 category: governance
-tags: [arm-templates, portal, disaster-recovery]
+tags: ["resource-groups"]
 translationKey: best-practices-to-architect-resource-groups-in-azure
 legacy: true
 legacyUrl: /2019/06/best-practices-to-architect-resource-groups-in-azure.html

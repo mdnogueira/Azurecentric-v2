@@ -2,8 +2,8 @@
 title: "Set up an initial Copilot for Security investigation session"
 description: "Contribute to the Copilot for Security community repository by forking, branching, and submitting a pull request for a new plugin."
 pubDate: 2024-08-08
-category: governance
-tags: ["copilot-for-security", "github", "git", "open-source", "contribution"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "plugins", "contribution", "github", "git"]
 translationKey: set-up-an-initial-copilot-for-security-investigation-session
 draft: false
 ---

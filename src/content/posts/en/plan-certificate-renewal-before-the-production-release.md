@@ -2,8 +2,8 @@
 title: "Plan certificate renewal before the production release"
 description: "Plan certificate renewal by distinguishing managed, paid, and BYO options to avoid production outages."
 pubDate: 2025-12-28
-category: apps
-tags: ["azure-app-service", "tls-ssl", "certificate-renewal", "azure-container-apps", "production-readiness"]
+category: app-paas
+tags: ["certificates", "azure-app-service", "certificate-renewal", "azure-container-apps", "tls-ssl", "containers"]
 translationKey: plan-certificate-renewal-before-the-production-release
 draft: false
 ---

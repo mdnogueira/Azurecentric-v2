@@ -3,7 +3,7 @@ title: "Plan backup coverage for a Hyper-V workload"
 description: "Plan backup coverage for a Hyper-V workload by distinguishing between VSS-based backups and Hyper-V Replica, and verifying recovery points."
 pubDate: 2026-09-08
 category: hyper-v
-tags: ["hyper-v", "backup", "replication", "windows-server-2025", "disaster-recovery"]
+tags: ["hyper-v", "backup", "hyper-v-replica", "replication", "disaster-recovery"]
 translationKey: plan-backup-coverage-for-a-hyper-v-workload
 draft: false
 ---

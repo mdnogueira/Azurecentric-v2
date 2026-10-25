@@ -2,8 +2,8 @@
 title: "Connect a Windows server to Azure Arc"
 description: "Use the Windows Server 2022 Azure Arc Setup wizard, check its prerequisites, and verify that the server appears in the intended Azure resource group."
 pubDate: 2024-01-20
-category: cloud
-tags: [azure-arc, windows-server, hybrid-cloud, server-management]
+category: hybrid-migration
+tags: ["azure-arc", "hybrid-cloud", "windows-server", "resource-groups", "server-management"]
 translationKey: connect-a-windows-server-to-azure-arc
 draft: false
 ---

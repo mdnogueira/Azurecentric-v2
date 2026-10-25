@@ -3,7 +3,7 @@ title: "Bigger disks on Azure Storage"
 description: "If you follow the announcements during the Microsoft Build 2017 conference on the beginning of the month, one of the announcements was the increase of the size of the disks in…"
 pubDate: 2017-05-30
 category: storage
-tags: [vhd]
+tags: ["azure-storage"]
 translationKey: bigger-disks-on-azure-storage
 legacy: true
 legacyUrl: /2017/05/bigger-disks-on-azure-storage.html

@@ -2,8 +2,8 @@
 title: "Replace a service principal secret with workload identity federation"
 description: "Replace service principal secrets with workload identity federation by linking an external OIDC provider to an Azure managed identity."
 pubDate: 2024-08-05
-category: governance
-tags: ["workload-identity", "managed-identities", "azure-entra-id", "ci-cd", "security"]
+category: identity-access
+tags: ["microsoft-entra-id", "workload-identity-federation", "managed-identities", "troubleshooting"]
 translationKey: replace-a-service-principal-secret-with-workload-identity-federation
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Implementing Azure Site Recovery – Part 3 – For VMware Virtual Machi
 description: "After I post the series of Azure Site Recovery (ASR) Planning considerations, I received an enormous quantity of feedback how It should be implemented, following those…"
 pubDate: 2017-06-28
 category: backup-dr
-tags: [azure-site-recovery, hybrid, vmware]
+tags: ["azure-site-recovery", "vmware"]
 translationKey: implementing-azure-site-recovery-part-3-for-vmware-virtual-machines-and-physical-server
 legacy: true
 legacyUrl: /2017/06/implementing-azure-site-recovery-part-3-for-vmware-virtual-machines-and-physical-server.html

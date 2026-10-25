@@ -3,7 +3,7 @@ title: "Create a private endpoint and verify name resolution"
 description: "Create a private endpoint for an Azure App Service and verify name resolution using a private DNS zone."
 pubDate: 2024-10-28
 category: networking
-tags: ["azure-private-link", "private-endpoint", "dns-resolution", "app-service", "networking"]
+tags: ["dns", "private-endpoints", "private-dns", "azure-app-service", "azure-virtual-network", "azure-network-watcher"]
 translationKey: create-a-private-endpoint-and-verify-name-resolution
 draft: false
 ---

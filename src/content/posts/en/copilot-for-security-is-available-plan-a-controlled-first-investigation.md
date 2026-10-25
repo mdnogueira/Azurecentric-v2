@@ -2,8 +2,8 @@
 title: "Copilot for Security is available: plan a controlled first investigation"
 description: "Plan a controlled first investigation with Microsoft Security Copilot, covering licensing, scope, and initial promptbook creation."
 pubDate: 2024-04-03
-category: governance
-tags: ["microsoft-security-copilot", "security-operations", "ai-in-security", "incident-response", "licensing"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "ai-in-security", "promptbooks", "licensing"]
 translationKey: copilot-for-security-is-available-plan-a-controlled-first-investigation
 draft: false
 ---

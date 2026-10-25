@@ -2,8 +2,8 @@
 title: "Validate Windows Server nodes before creating a cluster"
 description: "Validate Windows Server nodes using hardware checks, network isolation, and the Validate a Configuration wizard to prevent quorum and connectivity failures."
 pubDate: 2024-04-10
-category: backup-dr
-tags: ["failover-clustering", "windows-server", "validation", "quorum", "networking", "storage"]
+category: high-availability
+tags: ["failover-clustering", "windows-server", "quorum", "validation"]
 translationKey: validate-windows-server-nodes-before-creating-a-cluster
 draft: false
 ---

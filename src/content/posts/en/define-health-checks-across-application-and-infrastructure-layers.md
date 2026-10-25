@@ -2,8 +2,8 @@
 title: "Define health checks across application and infrastructure layers"
 description: "Define health checks to distinguish transient faults from outages, supporting business continuity decisions during service disruptions."
 pubDate: 2025-10-07
-category: governance
-tags: ["health-checks", "business-continuity", "high-availability", "disaster-recovery", "azure-monitor", "incident-response"]
+category: well-architected
+tags: ["health-checks", "well-architected-framework", "business-continuity", "incident-response", "disaster-recovery", "high-availability"]
 translationKey: define-health-checks-across-application-and-infrastructure-layers
 draft: false
 ---
