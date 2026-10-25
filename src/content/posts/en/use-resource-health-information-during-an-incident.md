@@ -5,7 +5,7 @@ pubDate: 2025-10-02
 category: governance
 tags: ["resource-health", "azure-monitor", "activity-log", "arm-templates", "incident-response"]
 translationKey: use-resource-health-information-during-an-incident
-draft: true
+draft: false
 ---
 
 When a resource becomes unavailable, the first question is whether the issue lies in your configuration or in the Azure platform. Resource Health provides the platform-side context, but relying on manual checks during an incident is slow and error-prone. You need automated alerts that distinguish between a platform-initiated outage and a user-caused change, and that confirm when the issue is resolved.

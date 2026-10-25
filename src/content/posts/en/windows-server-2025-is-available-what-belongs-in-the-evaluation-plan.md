@@ -5,7 +5,7 @@ pubDate: 2024-11-05
 category: windows-server
 tags: ["windows-server-2025", "upgrade-planning", "security", "active-directory", "deprecation"]
 translationKey: windows-server-2025-is-available-what-belongs-in-the-evaluation-plan
-draft: true
+draft: false
 ---
 
 Windows Server 2025 is generally available as of 4 November 2024 [Windows Server 2025 is available: what belongs in the evaluation plan](https://www.microsoft.com/en-us/windows-server/blog/2024/11/04/windows-server-2025-now-generally-available-with-advanced-security-improved-performance-and-cloud-agility/). The release brings advanced security, hybrid cloud agility, and performance improvements, alongside the concurrent release of System Center 2025. However, a production-ready evaluation requires more than reviewing new capabilities; it demands a clear audit of what has been removed, what has changed, and how the upgrade path aligns with your current estate.

@@ -5,7 +5,7 @@ pubDate: 2025-10-15
 category: backup-dr
 tags: ["failover-clustering", "windows-server", "troubleshooting", "health-service", "event-logs"]
 translationKey: review-cluster-event-logs-during-a-node-failure
-draft: true
+draft: false
 ---
 
 A node drops out of a failover cluster. The immediate operational question is not why the node failed, but what the cluster recorded about the failure. Windows Server Failover Clustering (WSFC) provides a System log that records membership state changes. If the cluster is running Storage Spaces Direct, the Health Service adds a layer of fault reporting that identifies the specific hardware or software entity causing the disruption. Using these two sources together moves the investigation from "the node is down" to the specific component that needs attention.

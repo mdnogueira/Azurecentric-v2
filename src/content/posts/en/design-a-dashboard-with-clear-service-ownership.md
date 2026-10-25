@@ -5,7 +5,7 @@ pubDate: 2026-07-01
 category: governance
 tags: ["azure-workbooks", "azure-monitor", "kusto", "ownership", "dashboards"]
 translationKey: design-a-dashboard-with-clear-service-ownership
-draft: true
+draft: false
 ---
 
 A dashboard displaying metrics across dozens of subscriptions often fails the most basic operational test: it does not tell the reader who is responsible for the data they are seeing. When an alert fires or a performance anomaly appears, the first question is rarely "what is the metric value?" but "whose service is this?" If the answer is buried in a generic title or requires clicking through to resource properties, the dashboard has not reduced cognitive load.

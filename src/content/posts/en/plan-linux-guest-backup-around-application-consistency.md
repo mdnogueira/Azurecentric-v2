@@ -5,7 +5,7 @@ pubDate: 2026-02-04
 category: hyper-v
 tags: ["hyper-v", "linux", "backup", "vss", "sles", "virtualization"]
 translationKey: plan-linux-guest-backup-around-application-consistency
-draft: true
+draft: false
 ---
 
 You are running a Linux virtual machine on a Windows Server 2025 host and need to back it up without taking it offline. The immediate question is how to ensure the data on the virtual hard disk is consistent when the backup starts. Unlike Windows guests, Linux does not have a universal Volume Shadow Copy Service (VSS) framework built into the kernel. This means you cannot rely on a single host-side mechanism to guarantee application consistency for every workload.

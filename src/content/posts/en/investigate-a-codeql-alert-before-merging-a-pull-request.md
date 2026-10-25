@@ -5,7 +5,7 @@ pubDate: 2026-05-30
 category: governance
 tags: []
 translationKey: investigate-a-codeql-alert-before-merging-a-pull-request
-draft: true
+draft: false
 ---
 
 A pull request is blocked by a CodeQL check failure. The status box shows a red cross and indicates one or more new alerts with a severity of `error`, `critical`, or `high`. Before you can merge, you need to determine whether the alert flags a genuine vulnerability in your changes or a pattern that is safe in your specific context.

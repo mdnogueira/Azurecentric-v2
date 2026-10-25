@@ -5,7 +5,7 @@ pubDate: 2026-06-24
 category: apps
 tags: ["api-management", "policies", "versioning", "backend-migration", "rewrite-uri"]
 translationKey: use-api-management-policies-for-a-controlled-backend-change
-draft: true
+draft: false
 ---
 
 You need to migrate an API to a new backend service without breaking existing clients. The most reliable way to do this in Azure API Management is to use a policy that rewrites the request path before it reaches the backend, rather than changing the backend URL directly in the API settings. This keeps the public contract stable while you migrate the underlying service.

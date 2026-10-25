@@ -5,7 +5,7 @@ pubDate: 2024-01-20
 category: cloud
 tags: [azure-arc, windows-server, hybrid-cloud, server-management]
 translationKey: connect-a-windows-server-to-azure-arc
-draft: true
+draft: false
 ---
 
 A server can remain in your own datacentre and still have a resource representation in Azure. Azure Arc-enabled servers makes that possible through the Azure Connected Machine agent. It brings the machine into Azure's management scope; it does not move the operating system or its applications into an Azure virtual machine.

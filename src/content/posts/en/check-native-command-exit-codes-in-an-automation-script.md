@@ -5,7 +5,7 @@ pubDate: 2025-08-18
 category: automation
 tags: ["powershell", "error-handling", "native-commands", "exit-codes", "troubleshooting"]
 translationKey: check-native-command-exit-codes-in-an-automation-script
-draft: true
+draft: false
 ---
 
 You are writing an automation script in PowerShell. It calls a native command such as `git`, `curl`, or a custom executable. The command fails, but the script continues as if nothing happened. Or perhaps it stops with a generic error that hides the real cause. The root issue is usually a mismatch between how the native command reports failure and how PowerShell interprets that report.

@@ -5,7 +5,7 @@ pubDate: 2025-04-02
 category: compute
 tags: []
 translationKey: understand-the-trade-offs-of-azure-spot-virtual-machines
-draft: true
+draft: false
 ---
 
 You are looking at a cheaper price for virtual machines, but you need to understand what you are buying. Azure Spot Virtual Machines let you use unused Azure capacity at a significant discount, but that capacity can be reclaimed by Azure at any time. This is not a bug; it is the fundamental trade-off. You get a lower price in exchange for accepting that your workload might be interrupted. If your application cannot handle sudden shutdowns, Spot is not the right choice. If it can, you can save a considerable amount on compute costs.

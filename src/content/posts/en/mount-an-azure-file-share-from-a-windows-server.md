@@ -5,7 +5,7 @@ pubDate: 2025-02-25
 category: storage
 tags: ["azure-files", "smb", "windows-server", "identity-based-auth", "networking"]
 translationKey: mount-an-azure-file-share-from-a-windows-server
-draft: true
+draft: false
 ---
 
 You need to connect a Windows server to an Azure file share. The first decision is whether to use the storage account key or identity-based authentication. The key is straightforward but grants full administrative access to the storage account. Identity-based access is preferred for production workloads, provided the prerequisites are met.

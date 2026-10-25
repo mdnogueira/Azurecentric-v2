@@ -5,7 +5,7 @@ pubDate: 2024-07-22
 category: windows-server
 tags: ["windows-admin-center", "windows-server-2022", "management", "gateway", "authentication"]
 translationKey: use-windows-admin-center-for-a-defined-administration-task
-draft: true
+draft: false
 ---
 
 You need to manage a Windows Server 2022 machine, but you do not want to install a heavy management console on every workstation. Windows Admin Center provides a browser-based gateway that lets you manage that server from any Windows 10 or 11 client, or from the server itself. The question is not whether the tool works, but how to connect it securely and verify that the session is actually using the correct security context.

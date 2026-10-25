@@ -5,7 +5,7 @@ pubDate: 2025-08-27
 category: hyper-v
 tags: ["hyper-v", "virtualization", "windows-server", "troubleshooting", "vhd"]
 translationKey: investigate-a-checkpoint-chain-before-deleting-files
-draft: true
+draft: false
 ---
 
 You are looking at a Hyper-V host running low on disk space, or perhaps you are planning to delete a checkpoint to reclaim storage. The immediate instinct is to select the checkpoint in Hyper-V Manager and click **Delete**. Before you do, you need to understand the chain structure. Deleting a checkpoint is not a simple file removal; it is a merge operation that can fail if the chain is broken or if the underlying storage cannot accommodate the write operations required to consolidate the data.

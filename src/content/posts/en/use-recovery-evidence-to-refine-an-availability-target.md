@@ -5,7 +5,7 @@ pubDate: 2026-08-29
 category: governance
 tags: ["availability", "disaster-recovery", "high-availability", "business-continuity", "reliability"]
 translationKey: use-recovery-evidence-to-refine-an-availability-target
-draft: true
+draft: false
 ---
 
 You have a target uptime percentage in mind, perhaps derived from a service level agreement or an internal business requirement. The first thing to check is whether that target is being driven by the frequency of the risks you face, or by the severity of the consequences if those risks materialise. High availability and disaster recovery are often conflated, but they address different classes of failure. Using evidence from actual recovery events is the most reliable way to decide which one your workload actually needs.

@@ -5,7 +5,7 @@ pubDate: 2026-02-19
 category: apps
 tags: ["azure-container-apps", "scaling", "keda", "container-apps", "devops"]
 translationKey: set-application-scaling-rules-around-measurable-demand
-draft: true
+draft: false
 ---
 
 You have a containerised application that needs to handle variable HTTP traffic without manual intervention. The question is not whether to scale, but how to define the threshold that triggers scaling and the limits that bound it. Azure Container Apps uses KEDA (Kubernetes Event-driven Autoscaling) to manage this, but the configuration requires a clear understanding of concurrency, replica counts, and the immutable nature of revisions.

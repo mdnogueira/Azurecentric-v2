@@ -5,7 +5,7 @@ pubDate: 2026-08-19
 category: networking
 tags: []
 translationKey: document-the-network-path-before-an-infrastructure-change
-draft: true
+draft: false
 ---
 
 You are about to change a route table, modify a virtual network peering, or adjust an Azure Firewall policy. Before you click save, you need to know exactly where traffic flows today. If you skip the documentation step, you risk breaking connectivity that is not immediately obvious from the resource configuration alone.

@@ -5,7 +5,7 @@ pubDate: 2025-10-27
 category: governance
 tags: ["entra-id", "guest-access", "conditional-access", "access-reviews", "identity-governance", "security"]
 translationKey: review-guest-access-before-sharing-an-azure-application
-draft: true
+draft: false
 ---
 
 You are about to share an application with external partners. The immediate technical step is generating an invitation, but the architectural decision is how much visibility and access those guests will have once they arrive. If you treat guest onboarding as a simple "add user" action, you risk exposing directory structure, group memberships, and inactive accounts to external identities.

@@ -5,7 +5,7 @@ pubDate: 2024-01-17
 category: compute
 tags: [hpc, azure-batch, compute, workload-design]
 translationKey: start-an-azure-hpc-design-with-the-workload-requirements
-draft: true
+draft: false
 ---
 
 An HPC design needs more information than the number of processor cores requested. Two jobs using the same number of cores can behave very differently if one spends its time calculating independently and the other spends it exchanging data between nodes.

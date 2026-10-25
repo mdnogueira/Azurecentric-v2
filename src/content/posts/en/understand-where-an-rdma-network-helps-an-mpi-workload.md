@@ -5,7 +5,7 @@ pubDate: 2024-08-21
 category: compute
 tags: ["azure-batch", "mpi", "rdma", "hpc", "virtual-machines"]
 translationKey: understand-where-an-rdma-network-helps-an-mpi-workload
-draft: true
+draft: false
 ---
 
 You are configuring an Azure Batch pool for a tightly coupled Message Passing Interface (MPI) workload. The documentation lists specific virtual machine sizes as "RDMA capable". The immediate question is whether selecting one of these sizes is necessary for your job to run, or if it is strictly a performance optimisation for specific scenarios.

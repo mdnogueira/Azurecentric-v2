@@ -5,7 +5,7 @@ pubDate: 2025-08-30
 category: hyper-v
 tags: ["hyper-v", "linux", "virtual-machines", "integration-services", "secure-boot"]
 translationKey: choose-a-supported-linux-distribution-for-hyper-v
-draft: true
+draft: false
 ---
 
 You are planning a Linux virtual machine on a Windows Server 2025 Hyper-V host. The first technical decision is not the VM size or the network topology, but the specific Linux distribution and version you choose. This choice determines whether you rely on built-in kernel drivers or need separate integration services, and it dictates how you handle secure boot and memory management.

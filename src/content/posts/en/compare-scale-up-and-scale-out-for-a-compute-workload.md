@@ -5,7 +5,7 @@ pubDate: 2025-04-09
 category: compute
 tags: ["azure-batch", "autoscaling", "vm-sizes", "compute-optimization", "cloud-architecture"]
 translationKey: compare-scale-up-and-scale-out-for-a-compute-workload
-draft: true
+draft: false
 ---
 
 You need to decide whether a Batch workload scales best by adding more nodes or by using larger nodes. Azure Batch does not support changing the size of a node after it has been allocated to a pool. You cannot scale up an existing node. Therefore, "scale-up" in this context refers to provisioning larger VM sizes for new nodes, while "scale-out" refers to increasing the count of nodes. The optimal strategy often combines both, but understanding their distinct trade-offs is essential for cost and performance.

@@ -5,7 +5,7 @@ pubDate: 2025-04-20
 category: networking
 tags: ["azure-vpn-gateway", "networking", "high-availability", "bgp", "sku-selection"]
 translationKey: choose-a-vpn-gateway-around-connectivity-requirements
-draft: true
+draft: false
 ---
 
 ## Match the SKU to your throughput and tunnel requirements

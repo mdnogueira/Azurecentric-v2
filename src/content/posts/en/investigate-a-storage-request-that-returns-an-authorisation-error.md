@@ -5,7 +5,7 @@ pubDate: 2024-09-08
 category: storage
 tags: ["azure-storage", "authorization", "troubleshooting", "microsoft-entra-id", "sas", "shared-key"]
 translationKey: investigate-a-storage-request-that-returns-an-authorisation-error
-draft: true
+draft: false
 ---
 
 You receive an authorisation error when accessing Azure Storage. The first step is to identify which authentication method the client is attempting to use, because the storage account may have restricted or disabled that specific method. Azure Storage supports Microsoft Entra ID, Shared Key (storage account keys), and Shared Access Signatures (SAS), alongside anonymous access for blobs. Each method has distinct requirements, and a mismatch between the client's credentials and the account's allowed methods is the most common cause of failure.

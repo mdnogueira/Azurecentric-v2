@@ -5,7 +5,7 @@ pubDate: 2026-01-19
 category: storage
 tags: ["azure-files", "blob-storage", "performance", "iops", "throughput", "latency"]
 translationKey: measure-storage-performance-without-confusing-capacity-and-throughput
-draft: true
+draft: false
 ---
 
 You are seeing high latency in your storage operations, but the service metrics show low server-side delay. Or perhaps your throughput is flatlining despite having a high-end VM. The most common reason for this confusion is mixing up capacity, IOPS and throughput. These three metrics are often treated as interchangeable in casual conversation, but in Azure Storage, they are distinct constraints that require different optimisation strategies.

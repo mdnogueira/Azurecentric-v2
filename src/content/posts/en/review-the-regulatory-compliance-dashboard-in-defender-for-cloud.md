@@ -5,7 +5,7 @@ pubDate: 2026-02-07
 category: governance
 tags: ["defender-for-cloud", "regulatory-compliance", "security-benchmark", "cloud-security", "azure"]
 translationKey: review-the-regulatory-compliance-dashboard-in-defender-for-cloud
-draft: true
+draft: false
 ---
 
 The regulatory compliance dashboard in Microsoft Defender for Cloud is an interactive view of how your hybrid cloud environment aligns with specific security standards. It is not a static report that simply tells you whether you are compliant or not. Instead, it provides a granular breakdown of controls, their assessment status, and the resources that drive them. If you are looking for a single number to prove compliance, you will find it elusive. The dashboard requires you to interpret the states of those controls and distinguish between automated assessments and areas that require manual verification.

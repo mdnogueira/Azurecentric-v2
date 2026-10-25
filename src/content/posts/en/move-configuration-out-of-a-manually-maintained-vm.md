@@ -5,7 +5,7 @@ pubDate: 2026-06-14
 category: compute
 tags: ["azure-virtual-machines", "cloud-init", "linux", "infrastructure-as-code", "automation"]
 translationKey: move-configuration-out-of-a-manually-maintained-vm
-draft: true
+draft: false
 ---
 
 You have a Linux virtual machine where configuration is managed by running scripts manually or via ad-hoc automation. This approach works for a single machine but breaks down when you need consistency, auditability, or rapid scaling. The practical solution is to move that configuration into a declarative cloud-init file and bake it into the deployment process.

@@ -5,7 +5,7 @@ pubDate: 2024-01-13
 category: compute
 tags: [virtual-machines, managed-disks, windows-server, storage]
 translationKey: deploy-an-azure-vm-with-a-deliberate-disk-layout
-draft: true
+draft: false
 ---
 
 The disk configuration deserves a decision before the virtual machine is deployed. Accepting the defaults may produce a working server, but it does not tell us where the application should store its data, what performance it needs or how that data will be recovered.

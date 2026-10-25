@@ -5,7 +5,7 @@ pubDate: 2025-07-15
 category: governance
 tags: ["security-copilot", "connectors", "troubleshooting", "data-ingestion", "microsoft-sentinel", "m365-defender"]
 translationKey: investigate-an-answer-that-lacks-the-expected-security-context
-draft: true
+draft: false
 ---
 
 You ask Microsoft Security Copilot about a specific alert or resource, and the answer feels generic. It lacks the specific details you expect from your environment. This usually means the assistant cannot access the data it needs to ground its response. Security Copilot integrates with data sources like Microsoft Sentinel and Microsoft 365 Defender through connectors. If those connectors are not active, misconfigured, or if the relevant data does not exist in the source systems, the copilot will default to general knowledge rather than your specific tenant state.

@@ -5,7 +5,7 @@ pubDate: 2024-08-08
 category: governance
 tags: ["copilot-for-security", "github", "git", "open-source", "contribution"]
 translationKey: set-up-an-initial-copilot-for-security-investigation-session
-draft: true
+draft: false
 ---
 
 The Microsoft Copilot for Security community repository is a place where users can contribute plugins and other resources to help the wider security community. If you have developed a KQL plugin or a workflow that you believe would be useful to others, the process involves forking the repository, making your changes in a local branch, and submitting a pull request for review.

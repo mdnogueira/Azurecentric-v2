@@ -5,7 +5,7 @@ pubDate: 2025-01-28
 category: governance
 tags: ["microsoft-sentinel", "watchlists", "kql", "security-operations", "threat-detection"]
 translationKey: use-a-watchlist-to-enrich-a-detection-query
-draft: true
+draft: false
 ---
 
 You need to correlate security events with a list of known entities, such as high-value assets, terminated employees, or specific IP addresses. Hardcoding these values into detection rules makes them brittle and difficult to maintain. Microsoft Sentinel watchlists provide a managed way to store this reference data in your workspace, allowing you to join or filter events directly in KQL.

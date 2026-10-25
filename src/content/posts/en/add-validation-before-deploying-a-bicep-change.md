@@ -5,7 +5,7 @@ pubDate: 2025-06-07
 category: automation
 tags: ["bicep", "linter", "infrastructure-as-code", "azure-resource-manager", "ci-cd", "best-practices"]
 translationKey: add-validation-before-deploying-a-bicep-change
-draft: true
+draft: false
 ---
 
 You have a Bicep file that looks correct in your editor, but you are about to deploy it to a production subscription. The first thing to check is not the deployment command, but the file itself. The Bicep linter runs before the Azure Resource Manager engine ever sees your code, catching best practice violations that would otherwise create suboptimal resources or expose sensitive data.

@@ -5,7 +5,7 @@ pubDate: 2026-06-11
 category: apps
 tags: ["azure-app-service", "private-endpoints", "access-restrictions", "network-security", "deployment"]
 translationKey: restrict-access-to-an-application-deployment-endpoint
-draft: true
+draft: false
 ---
 
 You need to deploy code to an Azure App Service app from a virtual network, but you also want to ensure that the app's deployment endpoint (the Kudu/scm site) is not publicly accessible. A common mistake is to assume that enabling a private endpoint automatically blocks public access. It does not. Traffic through a private endpoint bypasses access restriction rules entirely, so you must configure both the network path and the access controls explicitly.

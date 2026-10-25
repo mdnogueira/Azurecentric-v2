@@ -5,7 +5,7 @@ pubDate: 2024-01-02
 category: governance
 tags: [defender-for-cloud, cloud-security, security-posture, subscriptions]
 translationKey: enable-defender-for-cloud-with-a-clear-subscription-scope
-draft: true
+draft: false
 ---
 
 Which subscription are we protecting? It sounds like a small question, but it is the first one to answer before enabling Microsoft Defender for Cloud. A useful security dashboard starts with a known scope, an owner and a plan for acting on its findings.

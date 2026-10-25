@@ -5,7 +5,7 @@ pubDate: 2026-09-23
 category: governance
 tags: ["microsoft-sentinel", "rbac", "log-analytics", "security-operations", "azure-monitor"]
 translationKey: plan-access-separation-between-security-operations-teams
-draft: true
+draft: false
 ---
 
 You have a Microsoft Sentinel workspace ingesting logs from across your estate. The security operations centre (SOC) needs the full experience to investigate incidents, but the applications teams only need to view logs for the servers they own. You do not want to give the applications teams access to the entire workspace, nor do you want to fragment your security data into separate workspaces unnecessarily.

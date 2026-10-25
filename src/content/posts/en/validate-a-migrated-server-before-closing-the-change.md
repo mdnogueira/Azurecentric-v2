@@ -5,7 +5,7 @@ pubDate: 2026-04-24
 category: cloud
 tags: ["azure-migrate", "infrastructure-as-code", "server-migration", "validation", "post-migration"]
 translationKey: validate-a-migrated-server-before-closing-the-change
-draft: true
+draft: false
 ---
 
 The migration is complete, the server is running, and the change ticket is open. Closing it without verification is a common risk. A migrated server is not the same as the source machine; it has a new identity, a different storage layout, and potentially altered network configuration. You need a concrete way to confirm that the Azure VM matches the intended state before you sign off.

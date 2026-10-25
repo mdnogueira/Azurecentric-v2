@@ -5,7 +5,7 @@ pubDate: 2026-09-16
 category: governance
 tags: ["entra-id", "privileged-access-management", "role-based-access-control", "pim", "security"]
 translationKey: build-a-repeatable-privileged-access-review
-draft: true
+draft: false
 ---
 
 Privileged access review is not a single button you press; it is a cycle of assigning, monitoring, and removing roles. If you are managing Microsoft Entra ID permissions manually, you are likely dealing with direct user assignments that are hard to audit and difficult to revoke. The practical way to make this repeatable is to move away from direct role assignments and use role-assignable groups, preferably managed through Privileged Identity Management (PIM).

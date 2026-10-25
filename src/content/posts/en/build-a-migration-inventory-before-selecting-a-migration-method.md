@@ -5,7 +5,7 @@ pubDate: 2024-05-08
 category: cloud
 tags: ["azure-migrate", "migration", "assessment", "inventory", "cloud-adoption"]
 translationKey: build-a-migration-inventory-before-selecting-a-migration-method
-draft: true
+draft: false
 ---
 
 You cannot select the right migration method until you know what you are moving. A common mistake is choosing Azure Site Recovery, Azure Migrate, or lift-and-shift App Service based on a general preference rather than the actual characteristics of the on-premises workloads. Azure Migrate provides the inventory and assessment data required to make that decision evidence-based.

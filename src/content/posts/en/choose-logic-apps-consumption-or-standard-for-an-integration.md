@@ -5,7 +5,7 @@ pubDate: 2024-01-25
 category: apps
 tags: [logic-apps, integration, workflow-design, paas]
 translationKey: choose-logic-apps-consumption-or-standard-for-an-integration
-draft: true
+draft: false
 ---
 
 A short workflow can still have demanding networking or deployment requirements. Before choosing a Logic Apps hosting model, describe where the workflow must connect, how the team will release it and what its normal workload looks like.

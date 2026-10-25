@@ -5,7 +5,7 @@ pubDate: 2024-02-10
 category: windows-server
 tags: [windows-server-2022, infrastructure, installation, migration]
 translationKey: prepare-a-windows-server-2022-installation-for-infrastructure-workloads
-draft: true
+draft: false
 ---
 
 A Windows Server installation is ready for an infrastructure workload when its dependencies, recovery plan and acceptance checks are understood. Getting to the desktop is only one checkpoint. We still need to know whether the application is supported, how clients will reach it and what happens if the change does not work.

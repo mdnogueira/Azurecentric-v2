@@ -5,7 +5,7 @@ pubDate: 2025-05-31
 category: compute
 tags: []
 translationKey: record-gpu-driver-and-library-versions-in-a-workload-image
-draft: true
+draft: false
 ---
 
 You are building an Azure Batch pool for GPU workloads. The first thing to verify is not the pool size, but the consistency of the software stack on each compute node. If the driver version drifts between nodes, your jobs will fail or behave unpredictably. The solution is to bake the exact driver and library versions into a custom image before the nodes are provisioned.

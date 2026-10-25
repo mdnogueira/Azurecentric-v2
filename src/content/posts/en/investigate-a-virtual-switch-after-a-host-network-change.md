@@ -5,7 +5,7 @@ pubDate: 2026-05-25
 category: hyper-v
 tags: []
 translationKey: investigate-a-virtual-switch-after-a-host-network-change
-draft: true
+draft: false
 ---
 
 You changed a physical network adapter on a Windows Server 2025 Hyper-V host, and now virtual machines are losing connectivity or the host itself has dropped off the network. The first thing to check is not the virtual machines, but the virtual switch configuration and the mandatory extensions that sit between the VMs and the physical hardware.

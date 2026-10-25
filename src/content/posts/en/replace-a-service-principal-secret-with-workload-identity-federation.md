@@ -5,7 +5,7 @@ pubDate: 2024-08-05
 category: governance
 tags: ["workload-identity", "managed-identities", "azure-entra-id", "ci-cd", "security"]
 translationKey: replace-a-service-principal-secret-with-workload-identity-federation
-draft: true
+draft: false
 ---
 
 You have a service principal with a client secret that you need to replace. The goal is to remove the secret from your application configuration and source control, replacing it with a federated identity that authenticates using an OpenID Connect (OIDC) token issued by your CI/CD pipeline. This removes the need to rotate secrets and reduces the risk of credential leakage.

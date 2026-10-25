@@ -5,7 +5,7 @@ pubDate: 2024-06-01
 category: backup-dr
 tags: ["failover-clustering", "windows-server-2022", "network-design", "active-directory", "validation"]
 translationKey: create-a-small-failover-cluster-with-a-clear-network-design
-draft: true
+draft: false
 ---
 
 You are planning a small failover cluster on Windows Server 2022. The immediate technical question is how to structure the network and identity so the cluster is supported and manageable from day one. The answer lies in strict adherence to validation, isolated network roles, and explicit control over the cluster name object (CNO) placement.

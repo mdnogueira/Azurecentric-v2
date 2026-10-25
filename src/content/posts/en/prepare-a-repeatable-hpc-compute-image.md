@@ -5,7 +5,7 @@ pubDate: 2024-06-26
 category: compute
 tags: ["azure-batch", "azure-compute-gallery", "hpc", "virtual-machines", "infrastructure-as-code"]
 translationKey: prepare-a-repeatable-hpc-compute-image
-draft: true
+draft: false
 ---
 
 You have a workload that needs consistent compute nodes: the same libraries, the same environment variables, the same data. Building that image once and reusing it is the difference between a pool that starts quickly and one that starts slowly while every node installs software from scratch. Azure Batch documentation notes that using a Shared Image can reduce the time to reach steady state by up to 25% compared to other methods [Use the Azure Compute Gallery to create a custom image pool](https://learn.microsoft.com/en-us/azure/batch/batch-sig-images).

@@ -1,0 +1,2586 @@
+{
+  "authorised_at": "2026-10-24T19:52:45.171419+00:00",
+  "repository": "mdnogueira/Azurecentric-v2",
+  "base_commit": "75ad413f30e6467719d5c45eb7e79924b51de3f7",
+  "article_count": 366,
+  "scope": "All approved backfill articles; historical dates and article bodies unchanged",
+  "publication_approved": true,
+  "deployment_status": "Delivery and verification are tracked by the existing GitHub Actions main-branch workflow.",
+  "source": "Explicit user confirmation to publish all 366 articles",
+  "checks": {
+    "draft_flags_false": 366,
+    "historical_dates_preserved": 366,
+    "article_bodies_unchanged": 366,
+    "production_build": "passed",
+    "astro_pages": 1333,
+    "search_index": "passed; 1184 indexed pages",
+    "backfill_rendered": 366,
+    "backfill_in_sitemap": 366,
+    "integration_execution": "not_run"
+  },
+  "articles": [
+    {
+      "id": "AZC-001",
+      "file": "src/content/posts/en/enable-defender-for-cloud-with-a-clear-subscription-scope.md",
+      "historical_date": "2024-01-02",
+      "published_markdown_sha256": "70874038f6a19d5ecd9d135eb1bb3fc8576cf75e4cdeb78034547e2da9fc9b8b",
+      "body_sha256": "17cbc9485b854fb3d8fa57387bb75277cad82b17d66cee5c3a9584cbb3ea56a8"
+    },
+    {
+      "id": "AZC-002",
+      "file": "src/content/posts/en/roll-out-conditional-access-using-report-only-mode.md",
+      "historical_date": "2024-01-05",
+      "published_markdown_sha256": "be137d71d1a47c75737384957ad243d52359a4be34112cbfc3bb40607d73cf60",
+      "body_sha256": "0806c79b4c7763d601e32a26ff7c434063f4167c5093e5329f67dfbd4f9ba787"
+    },
+    {
+      "id": "AZC-003",
+      "file": "src/content/posts/en/plan-a-sentinel-workspace-before-connecting-data.md",
+      "historical_date": "2024-01-08",
+      "published_markdown_sha256": "cebe2e19df4fd66c06f90fd9deb553a815cf3c9a4401d0a054ef22d0fd9e42a7",
+      "body_sha256": "adc5b9b0a1cb2f3e84a9bd66d6fd9f475b8e58ec6fb60c7c6b9a0bf4324eaf59"
+    },
+    {
+      "id": "AZC-004",
+      "file": "src/content/posts/en/choose-an-app-service-plan-around-the-workload.md",
+      "historical_date": "2024-01-10",
+      "published_markdown_sha256": "5a42b84b75a2837b63206c2dd8f84fbb1f116775c09ada3384d95657e0bd3c04",
+      "body_sha256": "e74b9587db029c87dbe4cc375969c5061f4e954427fe4412f288d068ac80c42b"
+    },
+    {
+      "id": "AZC-005",
+      "file": "src/content/posts/en/deploy-an-azure-vm-with-a-deliberate-disk-layout.md",
+      "historical_date": "2024-01-13",
+      "published_markdown_sha256": "c2edda0ead4f4cd63454b8fb2c8aac460071f67b06f33159a7f09da834bf7865",
+      "body_sha256": "d7b64a99d4afcbd63648f63fa464f615d3fac796b6f485fc0df843339c34eddd"
+    },
+    {
+      "id": "AZC-006",
+      "file": "src/content/posts/en/start-an-azure-hpc-design-with-the-workload-requirements.md",
+      "historical_date": "2024-01-17",
+      "published_markdown_sha256": "f77ad2ff3e690bc16ebb85b67df69115a704aa5026fabd481367a0ed58b8366b",
+      "body_sha256": "f2f71a9df618e6c8e57c32316d318ccbb2ec996a2ef56aa3f24b10d88ff01bf2"
+    },
+    {
+      "id": "AZC-007",
+      "file": "src/content/posts/en/connect-a-windows-server-to-azure-arc.md",
+      "historical_date": "2024-01-20",
+      "published_markdown_sha256": "5727bf2e6acb00db7096b226c12caaa72ac33ce3e05bdb6eea2e38eadb946017",
+      "body_sha256": "71212674edeaf9b511b674b1d3abca92fdcb19ac21fe43abf09137355c4ec2c1"
+    },
+    {
+      "id": "AZC-008",
+      "file": "src/content/posts/en/build-a-small-azure-deployment-with-bicep-modules.md",
+      "historical_date": "2024-01-22",
+      "published_markdown_sha256": "b431be1f12d1d2b8a4320a7ccbac1bc69f28747e04fa8f5618d1f747804817e8",
+      "body_sha256": "2568b7a79af20c7d8903bc22422e790bcf43d15c1cdac85669c671ed6fedb004"
+    },
+    {
+      "id": "AZC-009",
+      "file": "src/content/posts/en/choose-logic-apps-consumption-or-standard-for-an-integration.md",
+      "historical_date": "2024-01-25",
+      "published_markdown_sha256": "c89dff340cd5cb6dd93a04cb275f69708c9d73ea14b4bd543cca49f75c1faa7b",
+      "body_sha256": "e0740645be335c84dfa63286e6a6f29dd224fca4857beb83126dc5320549a5d5"
+    },
+    {
+      "id": "AZC-010",
+      "file": "src/content/posts/en/build-a-virtual-network-with-a-deliberate-subnet-plan.md",
+      "historical_date": "2024-01-28",
+      "published_markdown_sha256": "a93386eef1f49b996f779f3e2096556e90d937ddf101c209995ce313b8c7ff9d",
+      "body_sha256": "0926eeb928b5b720662b275418699cd230c9c41c2d603944b189ae4e1edaa35a"
+    },
+    {
+      "id": "AZC-011",
+      "file": "src/content/posts/en/build-an-azure-monitor-alert-with-a-useful-action-group.md",
+      "historical_date": "2024-01-30",
+      "published_markdown_sha256": "06cff15863eb6c6b2c1727a08ba2326a70059acf1de267ad80beaeac9b7af292",
+      "body_sha256": "0e3eaf7185bf109e665632bfc3723f3831b0df392a73e22ce653fd70740dd9ee"
+    },
+    {
+      "id": "AZC-012",
+      "file": "src/content/posts/en/create-a-storage-account-with-private-access-in-mind.md",
+      "historical_date": "2024-02-02",
+      "published_markdown_sha256": "8759b33fe7860cc5cf2e1fc91088b1570d8ed3b562e5d06a1dd628406c93d045",
+      "body_sha256": "1d7c89e72b18bc55ec4756541774bfaba111669880c3a82d49e915a3bb10d23f"
+    },
+    {
+      "id": "AZC-013",
+      "file": "src/content/posts/en/turn-an-application-availability-target-into-design-decisions.md",
+      "historical_date": "2024-02-05",
+      "published_markdown_sha256": "7020b10c84e64961a7c65676d072ffcb90b995f88b818fda951f00d72dd3e500",
+      "body_sha256": "25abb752763906bb20cfd2e80bf6ce8ed71da873875583cb026bbe3226134c63"
+    },
+    {
+      "id": "AZC-014",
+      "file": "src/content/posts/en/install-powershell-7-4-alongside-windows-powershell.md",
+      "historical_date": "2024-02-07",
+      "published_markdown_sha256": "e2853a5de04bee992fb3c8377b2fdaad8b357117dccface6cb79d8e3cfbdb455",
+      "body_sha256": "c546e37777586ac48cc0c75963fd8ffdfebe77734af885c0fd59cef7a664a919"
+    },
+    {
+      "id": "AZC-015",
+      "file": "src/content/posts/en/prepare-a-windows-server-2022-installation-for-infrastructure-workloads.md",
+      "historical_date": "2024-02-10",
+      "published_markdown_sha256": "6cc04bf6d28d9aa96582dd4a0eb4d3a6813a3ee06e44447f4a47a7b444b35ac1",
+      "body_sha256": "bff0469e5b253238c8be1c8c2b7dba454579b27c647bbf2b899706ae607b03a2"
+    },
+    {
+      "id": "AZC-016",
+      "file": "src/content/posts/en/choose-a-quorum-witness-for-a-failover-cluster.md",
+      "historical_date": "2024-02-14",
+      "published_markdown_sha256": "447d8f67f1f904d20e5a6a4ae53c78d6d9ed41ccd813be8c998086688658f5b2",
+      "body_sha256": "c000af8c1b0694aeb7221ec2e2cb0228b66957b12f7ac437c491c5aed1d67c03"
+    },
+    {
+      "id": "AZC-017",
+      "file": "src/content/posts/en/install-hyper-v-on-a-windows-server-2022-host.md",
+      "historical_date": "2024-02-17",
+      "published_markdown_sha256": "ae84375305569237b0710faccbb199fe1366acce5bbc1965b656e2f8976d9cae",
+      "body_sha256": "eb637671d1f55c9e3685d8181e1194305ff5996bc294485c72c37848e768e8d5"
+    },
+    {
+      "id": "AZC-018",
+      "file": "src/content/posts/en/create-an-ubuntu-22-04-lts-virtual-machine-on-hyper-v.md",
+      "historical_date": "2024-02-19",
+      "published_markdown_sha256": "f1eceb85542ebd0b9e47ae94c8380f386c3d396f636235798a5d9c8600775e5e",
+      "body_sha256": "58585dfb52054b57efce48cc9d09966fdd360c25aa842add9781b56f86fab45a"
+    },
+    {
+      "id": "AZC-019",
+      "file": "src/content/posts/en/turn-secure-score-findings-into-a-practical-remediation-queue.md",
+      "historical_date": "2024-02-22",
+      "published_markdown_sha256": "41a7f002055f528b6ca831e7d64a311543b88477e48a645a37929669d38eb1ac",
+      "body_sha256": "3c15d618d369516772c365a2173d296af766773af338aad94f8150c580625bb5"
+    },
+    {
+      "id": "AZC-020",
+      "file": "src/content/posts/en/create-and-test-emergency-access-accounts-in-microsoft-entra-id.md",
+      "historical_date": "2024-02-25",
+      "published_markdown_sha256": "9f3037fbb3c3f2d9d5c8b11faf2029c8a123d607ac914678ca848e9aec785842",
+      "body_sha256": "a9b8c237975493898443df833527cd02d59eec7ab3b0aad9aa1bf47e135fba65"
+    },
+    {
+      "id": "AZC-021",
+      "file": "src/content/posts/en/connect-windows-security-events-using-azure-monitor-agent.md",
+      "historical_date": "2024-02-27",
+      "published_markdown_sha256": "5ff46635b203997896e634e80246e8897bfb8ed5daf10277c107ab0561f48402",
+      "body_sha256": "f04cf7bfbf7883a63cd243e63b6df9ee998900bf6ecfeb2203f6ab172086d1bd"
+    },
+    {
+      "id": "AZC-022",
+      "file": "src/content/posts/en/deploy-an-app-service-application-with-a-staging-slot.md",
+      "historical_date": "2024-03-01",
+      "published_markdown_sha256": "a081d2e77bb57d0c4ce398efeecc939dc205bbc723bbe186faf7a7fa43b8d8fd",
+      "body_sha256": "228f547ff4c5175f74d2b7f0df52b734d77f333addb85a30b9f40da42da4a34c"
+    },
+    {
+      "id": "AZC-023",
+      "file": "src/content/posts/en/choose-a-vm-size-using-workload-requirements.md",
+      "historical_date": "2024-03-04",
+      "published_markdown_sha256": "4f3d2f9fa7a015bcfc01c08340e343d7b83e32711b1c4cf39bcc3d1155f65d7c",
+      "body_sha256": "e4b3381f2980fa2c653c0a0fe1083f5491a57d76b5f417746df9d52ae4ca0879"
+    },
+    {
+      "id": "AZC-024",
+      "file": "src/content/posts/en/choose-cpu-or-gpu-infrastructure-for-an-ai-workload.md",
+      "historical_date": "2024-03-06",
+      "published_markdown_sha256": "a7433b9525a200e7fa45fbae3d213ad21e50e2138f2f330cf5ede395440a84c0",
+      "body_sha256": "ab8483da38dc620bd27a48e49e38d28e696d9838c678fdb48618be33724dc618"
+    },
+    {
+      "id": "AZC-025",
+      "file": "src/content/posts/en/check-outbound-network-requirements-for-azure-arc-agents.md",
+      "historical_date": "2024-03-09",
+      "published_markdown_sha256": "e4d130e8443203e71dae9bce6a8cf0ea3b69f3b2b1358e59e76abf25b216bfe3",
+      "body_sha256": "584238e9409409d5749929d128ebc34267a03a6f6470fd5e8a08f1edf939ec34"
+    },
+    {
+      "id": "AZC-026",
+      "file": "src/content/posts/en/decide-which-settings-belong-in-bicep-parameters.md",
+      "historical_date": "2024-03-13",
+      "published_markdown_sha256": "a4fccdf9ddaa23d9d6941538d64b575508808f2cee448c0f06d3bfa6bf1256e5",
+      "body_sha256": "93b9573edb51cd0e67b09d4aea5a72b1c74213640deb4e5235da829d9ee31c03"
+    },
+    {
+      "id": "AZC-027",
+      "file": "src/content/posts/en/copilot-for-security-is-coming-in-april-prepare-the-pilot-first.md",
+      "historical_date": "2024-03-16",
+      "published_markdown_sha256": "464f135939556c519e3caa5b3787faa1d8fcbd5098533ccc1fe289f4bd484975",
+      "body_sha256": "f85c7775e2c86538066eb03e9d019283b26c5ed68e6b1ed2b38b6c7154346ded"
+    },
+    {
+      "id": "AZC-028",
+      "file": "src/content/posts/en/create-a-logic-apps-workflow-with-a-clear-failure-path.md",
+      "historical_date": "2024-03-18",
+      "published_markdown_sha256": "0092f5a83a4fc71a28c85d69b5b776587f3f8158d971c81d42c3aa8617faf277",
+      "body_sha256": "b52fa0e8cb7364e50ab711c4d27499b826b4a97d5afddde5d4de19dea3f6528e"
+    },
+    {
+      "id": "AZC-029",
+      "file": "src/content/posts/en/choose-a-hub-and-spoke-topology-for-a-small-azure-estate.md",
+      "historical_date": "2024-03-21",
+      "published_markdown_sha256": "a2b10f55f4d6f77cc245a6a034d3965e54663a5fa483015dba6bbc4abab53ad6",
+      "body_sha256": "981674b5d0de106433eac7ef5808aabb4c1b9ea1324a4377378b92c85b7ba3f8"
+    },
+    {
+      "id": "AZC-030",
+      "file": "src/content/posts/en/configure-vm-insights-for-a-group-of-azure-servers.md",
+      "historical_date": "2024-03-24",
+      "published_markdown_sha256": "8e894a03e07319b73a9bafd5ee041e234bd6153e8db2b825d184270b818ff7f6",
+      "body_sha256": "c49674c5c938808e01ae05e26b78d223bfb21bb7e811e4062d69e1b476ee175f"
+    },
+    {
+      "id": "AZC-031",
+      "file": "src/content/posts/en/choose-storage-redundancy-around-recovery-requirements.md",
+      "historical_date": "2024-03-26",
+      "published_markdown_sha256": "061721fc1b53d6b8120407e216cd84ca4090ee49143c2a53271fbf1b46747175",
+      "body_sha256": "8fcd2637e779abaaa92e2fab0554e52111e053196662e01a71f32aa2b4d95789"
+    },
+    {
+      "id": "AZC-032",
+      "file": "src/content/posts/en/separate-backup-high-availability-and-disaster-recovery.md",
+      "historical_date": "2024-03-29",
+      "published_markdown_sha256": "f6aa122765f1212eee9761479621b3e08aad5f829bd0830f00094eb264046c3b",
+      "body_sha256": "b77013076e0b0e391835b35603e19d3d54c2e6a9472835f136062fd800bea283"
+    },
+    {
+      "id": "AZC-033",
+      "file": "src/content/posts/en/write-a-reusable-function-with-clear-parameters.md",
+      "historical_date": "2024-04-01",
+      "published_markdown_sha256": "85a31721ec4267500dcfffb325f6573711377fedb619ce0c28cea850a01e1b8b",
+      "body_sha256": "60e684a4d2abdfdbdbfaf6d0aa88d46aa29c0fde863fd88aee5b76240418ace5"
+    },
+    {
+      "id": "AZC-034",
+      "file": "src/content/posts/en/copilot-for-security-is-available-plan-a-controlled-first-investigation.md",
+      "historical_date": "2024-04-03",
+      "published_markdown_sha256": "11e8d5a8ada044a4754830d85cf2e42a33d9aa91e09180bc9160260aba4ee7bf",
+      "body_sha256": "0a0aa17e1cbbb68e9ce668eaa95b86c5b1f52d5ab343375a755d52142ee873a8"
+    },
+    {
+      "id": "AZC-035",
+      "file": "src/content/posts/en/configure-a-windows-server-2022-host-using-powershell.md",
+      "historical_date": "2024-04-06",
+      "published_markdown_sha256": "b84d72156c46af4c3c56f770fae18e7965470d7cc83fc841f2b7431e1fe00fea",
+      "body_sha256": "56fa6191f5f38ba0ac0ffbcf3e39792c24b3d743eebfd2c0f2435dc05f085cbb"
+    },
+    {
+      "id": "AZC-036",
+      "file": "src/content/posts/en/validate-windows-server-nodes-before-creating-a-cluster.md",
+      "historical_date": "2024-04-10",
+      "published_markdown_sha256": "cd39bd7747eedd29503639917c5db2a716e8f8deccfc7f5a7103042540589296",
+      "body_sha256": "3a28ffe672d7c134de0e4ca054ba49f4cbb4059d2c967ec4bae207c431c89201"
+    },
+    {
+      "id": "AZC-037",
+      "file": "src/content/posts/en/choose-generation-1-or-generation-2-for-a-hyper-v-vm.md",
+      "historical_date": "2024-04-13",
+      "published_markdown_sha256": "f18833b868f498555fa178e0476535a69e97d5fc0f05df9591ae2c7697045882",
+      "body_sha256": "619421589f39b99eee85b034c79909e19901bb402f3b8a49e51ac806e73d7bf4"
+    },
+    {
+      "id": "AZC-038",
+      "file": "src/content/posts/en/configure-secure-boot-for-a-supported-linux-guest.md",
+      "historical_date": "2024-04-15",
+      "published_markdown_sha256": "9a75705c5d723f7cfdbb5954c7f32d9e3b7c2dc3ea87579680e90b345ad27598",
+      "body_sha256": "993e9a99eb31989582bb232515de9648ac4409cb02deb9a2eb7e089fc894e95a"
+    },
+    {
+      "id": "AZC-039",
+      "file": "src/content/posts/en/compare-defender-plan-coverage-across-subscriptions.md",
+      "historical_date": "2024-04-18",
+      "published_markdown_sha256": "dec0d8205c45fead036e6778441f96943dc4fb905ce21101f73deab9b10fa45d",
+      "body_sha256": "43d3056db1281fd32ee6be1e9bd43124de84eb96b2c712f3ed3235ee26133d0c"
+    },
+    {
+      "id": "AZC-040",
+      "file": "src/content/posts/en/choose-system-assigned-or-user-assigned-managed-identities.md",
+      "historical_date": "2024-04-21",
+      "published_markdown_sha256": "81603b384cd263cd6aa43a6c4ee29f282ca533422f85451c8c92b23532fcb82e",
+      "body_sha256": "30c96f7972755fcdbb1aaf04d295109112fb81386d4eec479aecfddf2de2d3b7"
+    },
+    {
+      "id": "AZC-041",
+      "file": "src/content/posts/en/what-copilot-for-security-can-help-a-security-team-investigate.md",
+      "historical_date": "2024-04-23",
+      "published_markdown_sha256": "7b8636f23bdd92ee438f1ab10de8b0c5553986a47f75c389463a00197a4f601b",
+      "body_sha256": "caf0e40a0a68667b82fe9443301a77a757b9201d890241ebea2ceff3ce197f25"
+    },
+    {
+      "id": "AZC-042",
+      "file": "src/content/posts/en/create-a-useful-kql-query-for-an-initial-investigation.md",
+      "historical_date": "2024-04-26",
+      "published_markdown_sha256": "fe5647f90d21050744fd99eef9be6b3a888335c4cead8cf444ee25489c503959",
+      "body_sha256": "c486ca01036cedcbbb76c1d2d5497068f6d40c57b69df0974e57fe24ae8934fd"
+    },
+    {
+      "id": "AZC-043",
+      "file": "src/content/posts/en/use-managed-identity-to-read-an-application-secret-from-key-vault.md",
+      "historical_date": "2024-04-29",
+      "published_markdown_sha256": "4933119a3a484bc83f22c2432eafc3f39f7b9afa9676cf9966373995b22c5767",
+      "body_sha256": "9ae548cb164c2259e456cd6a210183e948eec7be698037f3930ef361705249d0"
+    },
+    {
+      "id": "AZC-044",
+      "file": "src/content/posts/en/build-an-azure-compute-gallery-image-workflow.md",
+      "historical_date": "2024-05-01",
+      "published_markdown_sha256": "6864d3b42dd684f0bd3566047e3be7a6d3d1b05909609a9618b36dcfd9ff7c0b",
+      "body_sha256": "a64f34f50005e0f3def8701e675a48c981881caded93630c44ce2f13a39d9016"
+    },
+    {
+      "id": "AZC-045",
+      "file": "src/content/posts/en/check-regional-quota-before-planning-a-gpu-deployment.md",
+      "historical_date": "2024-05-04",
+      "published_markdown_sha256": "f7e8bdd011d0baa6d47ebbc5e93e6be751a1893fe3546ad8fe6ce01f847b1df1",
+      "body_sha256": "06f81dcb7bda92379aa594439a8df9590c0e581e809ab6791158e4e5159af165"
+    },
+    {
+      "id": "AZC-046",
+      "file": "src/content/posts/en/build-a-migration-inventory-before-selecting-a-migration-method.md",
+      "historical_date": "2024-05-08",
+      "published_markdown_sha256": "68d655572d14d6bfec98ff2a82c413028c09c129258c72213df1c34749d3f831",
+      "body_sha256": "575c1ea73fed550fb90433a7f7fff55432fc31d02bdbfa5b6854078324793f9e"
+    },
+    {
+      "id": "AZC-047",
+      "file": "src/content/posts/en/use-what-if-to-review-an-azure-deployment.md",
+      "historical_date": "2024-05-11",
+      "published_markdown_sha256": "a628a34efa1e2f6da64e2650c6252265d3ec1d7c203fb0866f3d59a4c875415f",
+      "body_sha256": "a393a2b5350f9e86a00ac1bf81c2edb962d5a34d52e49d8d6731ff875e127c47"
+    },
+    {
+      "id": "AZC-048",
+      "file": "src/content/posts/en/use-managed-identity-for-a-supported-workflow-connection.md",
+      "historical_date": "2024-05-13",
+      "published_markdown_sha256": "844084e3293e0f4e4e6dfd632cfefe100c98bf452916139e9d1582f2a4117db5",
+      "body_sha256": "1ca4386dbef54019a2427cef2279de382ee6c062573bf1bd1b56be37bebd12a2"
+    },
+    {
+      "id": "AZC-049",
+      "file": "src/content/posts/en/create-virtual-network-peering-and-verify-the-routing-path.md",
+      "historical_date": "2024-05-16",
+      "published_markdown_sha256": "a5538e6a43a6c5b1e9cc1a3ba7f59a78f40e78e464074709acbcdb850410d8e1",
+      "body_sha256": "f91fc4150fcb4685dc786e4fc47f71aaf43702bf64f8bd38d89fc370c1021f4c"
+    },
+    {
+      "id": "AZC-050",
+      "file": "src/content/posts/en/choose-a-log-analytics-workspace-boundary.md",
+      "historical_date": "2024-05-19",
+      "published_markdown_sha256": "4bfefbc48aa07e565b21fb0262477f3885c29bdc17caa0d7426c8f8d11921965",
+      "body_sha256": "3477655759d712c10ca7432a4205be060a838f1cbb1cfe631c8267239f3a091a"
+    },
+    {
+      "id": "AZC-051",
+      "file": "src/content/posts/en/use-microsoft-entra-permissions-to-access-blob-data.md",
+      "historical_date": "2024-05-21",
+      "published_markdown_sha256": "4ccebad0623e04776646df032c3fc0172f137921f6ce57dcb12bae194b96fab6",
+      "body_sha256": "f45a9b4fefebb53d227ace934bbf4b831dfac9be5d36ed88d85708a56ad53f80"
+    },
+    {
+      "id": "AZC-052",
+      "file": "src/content/posts/en/map-an-azure-workload-across-its-failure-domains.md",
+      "historical_date": "2024-05-24",
+      "published_markdown_sha256": "c58db4bc3b472d042075447315a7e081b3907176bab19374f0f59dcdce67994f",
+      "body_sha256": "0994e11176600e871cf988f0e1eb4d65267c5f4423accd79e7f55187e9414083"
+    },
+    {
+      "id": "AZC-053",
+      "file": "src/content/posts/en/choose-objects-rather-than-formatted-text-for-script-output.md",
+      "historical_date": "2024-05-27",
+      "published_markdown_sha256": "27d5aad5bca6f7c666a50531577703dbc822fc42f49cfccd2474ab57f8e47f48",
+      "body_sha256": "eb274f5f09d85c086e49d7d35e5a4321425a0420bf6aaae23742f49a9aab44b5"
+    },
+    {
+      "id": "AZC-054",
+      "file": "src/content/posts/en/plan-a-windows-server-patching-and-rollback-window.md",
+      "historical_date": "2024-05-29",
+      "published_markdown_sha256": "6274e831754ff320c5c2591f6dc032a4e6130f9624920e2eea2cfc4ffe8017f6",
+      "body_sha256": "baa853c773e10e5ad91d12312027893fa561f4bcade847e77876432bf9f21895"
+    },
+    {
+      "id": "AZC-055",
+      "file": "src/content/posts/en/create-a-small-failover-cluster-with-a-clear-network-design.md",
+      "historical_date": "2024-06-01",
+      "published_markdown_sha256": "3fd6a336eaccb39fd1ed1658a9b84e0ef73e9f345682a5f5f4fecbca57565660",
+      "body_sha256": "ba6bd9383d3efcdaa5cf30240779effd87a5c8628befd2e448821c3c8bf5901e"
+    },
+    {
+      "id": "AZC-056",
+      "file": "src/content/posts/en/create-and-verify-a-hyper-v-virtual-switch.md",
+      "historical_date": "2024-06-05",
+      "published_markdown_sha256": "bccbe1b04e2c6367420787c0c448d35617ccd30135537bab27fe33302b3a11cc",
+      "body_sha256": "e48fbd6125fa01f2af6160dd377365c58d735995f1976d430305fbf4284546fc"
+    },
+    {
+      "id": "AZC-057",
+      "file": "src/content/posts/en/understand-linux-integration-services-on-hyper-v.md",
+      "historical_date": "2024-06-08",
+      "published_markdown_sha256": "fc2022d59b8387a2dcc369e1581ba48066b7c1e10680c713d179f9aade217c5c",
+      "body_sha256": "663dc6e04de1915ec5634da897f868db8f686323a690e69a78cc7f59f12d1435"
+    },
+    {
+      "id": "AZC-058",
+      "file": "src/content/posts/en/keep-azure-firewall-rules-consistent-with-firewall-policy.md",
+      "historical_date": "2024-06-10",
+      "published_markdown_sha256": "8a82f92e3c6c912dbf1e1817e99f974b94ebf12c0186cae141de425fcc089e43",
+      "body_sha256": "e2b19212ca25bc05fe70c85f23b1898f53de57acc0557263e161cdf439abdfba"
+    },
+    {
+      "id": "AZC-059",
+      "file": "src/content/posts/en/use-privileged-identity-management-for-azure-administration.md",
+      "historical_date": "2024-06-13",
+      "published_markdown_sha256": "ffa706d11debac4deff729acf18d72c731310eb2c3636d613c0710a5acc5f810",
+      "body_sha256": "96b50f29bd0f51bacbdf9b4537152c2696e2dd52d853f4c1d379fbbf52555c54"
+    },
+    {
+      "id": "AZC-060",
+      "file": "src/content/posts/en/prepare-permissions-before-onboarding-copilot-for-security.md",
+      "historical_date": "2024-06-16",
+      "published_markdown_sha256": "80693fdb85b6e0b60692d49e424e9077e24d71cf472334f41033ef0a971808d1",
+      "body_sha256": "e8e809b3aefcfec0c396733a756cc6cf66cdab46508d91d5d6a37c05c819e0b3"
+    },
+    {
+      "id": "AZC-061",
+      "file": "src/content/posts/en/turn-a-detection-requirement-into-an-analytics-rule.md",
+      "historical_date": "2024-06-18",
+      "published_markdown_sha256": "537b9e8ad8ab1aa19bcbcbde3e294e39635c57662c35c8cba0a0144d9a1bfe4e",
+      "body_sha256": "163fbbad2c2f523a338f1528e199e614543c2386218702f08bc86c38edb3d423"
+    },
+    {
+      "id": "AZC-062",
+      "file": "src/content/posts/en/configure-application-insights-for-an-application-deployment.md",
+      "historical_date": "2024-06-21",
+      "published_markdown_sha256": "1ea0d0c19094621adc5265691fb223b34c8779ae5bcf3b9f1ba05d87256342e4",
+      "body_sha256": "a594267d705251c30367dda0b1505e4dc8a6e23b25efd59690028a340057fb6d"
+    },
+    {
+      "id": "AZC-063",
+      "file": "src/content/posts/en/use-trusted-launch-when-creating-a-supported-virtual-machine.md",
+      "historical_date": "2024-06-24",
+      "published_markdown_sha256": "5d2ff302cf24c376f0c006aa15e208f1b7070f90db96303554c187c924f51fdd",
+      "body_sha256": "451edbcba96d2478864a77b5d2eab8185e5bd48f4630a12da6e4030aee07e7c6"
+    },
+    {
+      "id": "AZC-064",
+      "file": "src/content/posts/en/prepare-a-repeatable-hpc-compute-image.md",
+      "historical_date": "2024-06-26",
+      "published_markdown_sha256": "1c761805da37100aa984c6ca89feb391a31f163ce7371e943d626b43966406c8",
+      "body_sha256": "43a621fb8d98dddb1ae8452ee724e7e618322e78927c7301a2b45e85ff89a819"
+    },
+    {
+      "id": "AZC-065",
+      "file": "src/content/posts/en/assess-a-server-estate-with-azure-migrate.md",
+      "historical_date": "2024-06-29",
+      "published_markdown_sha256": "2d869832d20cac231a4240664ab8b410c50e588b1715f5be81cdf0aeca0e43a9",
+      "body_sha256": "7031bbbcc03be877098d527701e09dab69234d549aefd56bf6d4579c9ec4c18e"
+    },
+    {
+      "id": "AZC-066",
+      "file": "src/content/posts/en/keep-environment-configuration-separate-from-deployment-logic.md",
+      "historical_date": "2024-07-03",
+      "published_markdown_sha256": "43e6894f83c1f3b276df23958df34a3d477bca029fbdfa36b430736b24378bba",
+      "body_sha256": "7e31607aa781cb248005854ab44313fb7b3d5e2387556071d437c9eec8329556"
+    },
+    {
+      "id": "AZC-067",
+      "file": "src/content/posts/en/choose-a-service-bus-queue-or-topic-for-an-integration.md",
+      "historical_date": "2024-07-06",
+      "published_markdown_sha256": "84f00f26bc60b449ff43d39ea48b3e832227b02ca48d8de144123383e87dca9b",
+      "body_sha256": "3ccfc28a64d18882460a812dffbfda38ce3f6f348e7d2ad16c8ce334f9cd9cf3"
+    },
+    {
+      "id": "AZC-068",
+      "file": "src/content/posts/en/use-network-security-groups-with-clear-traffic-ownership.md",
+      "historical_date": "2024-07-08",
+      "published_markdown_sha256": "1223a82325bc4ddb8788982760f47608a7e8cbf0a024a0cc0cca885cacc6d85c",
+      "body_sha256": "4d08fecdb096cc5cd4f20087e11c606d0ed350da84336d576e1a7f56f6383ac9"
+    },
+    {
+      "id": "AZC-069",
+      "file": "src/content/posts/en/use-data-collection-rules-to-control-server-telemetry.md",
+      "historical_date": "2024-07-11",
+      "published_markdown_sha256": "ba8a4a3e1e8525b3d11f5f4c4f45fe6f23c4c969e3308a5635d4858c5f789e04",
+      "body_sha256": "a7d71b39bf99346c4a5f325e9175771269922da14fcd9b2eb6a1bfcec459ff12"
+    },
+    {
+      "id": "AZC-070",
+      "file": "src/content/posts/en/create-a-narrowly-scoped-shared-access-signature.md",
+      "historical_date": "2024-07-14",
+      "published_markdown_sha256": "7ca0adbf6da429cfc1f4eb05f8fe9d96658138f8a790c2d24d6a7f48d98bbeab",
+      "body_sha256": "146ec43ce6ac2aa6378a6888cb2625057f1328a4806cedfff728aed132c00973"
+    },
+    {
+      "id": "AZC-071",
+      "file": "src/content/posts/en/set-rpo-and-rto-before-selecting-a-recovery-design.md",
+      "historical_date": "2024-07-16",
+      "published_markdown_sha256": "d24c93e7b9d254fbde08538f9f0ffa5c9c533189a9de97e6c33efe8e093877a4",
+      "body_sha256": "b5db6d31d43f7fbde529a8107e9cc74f067d16ac10e9bb523dcdbccb84c3bf77"
+    },
+    {
+      "id": "AZC-072",
+      "file": "src/content/posts/en/handle-script-failures-using-try-catch-and-erroraction.md",
+      "historical_date": "2024-07-19",
+      "published_markdown_sha256": "06adf9d44b6a47941e82bad0f37120c656e1b6ae078d6ca1e2e2bfcbc4d41e19",
+      "body_sha256": "212ef5f0950aee0f1d4153b7fd36cf3b01de6096d809850e3511ad895c4360e3"
+    },
+    {
+      "id": "AZC-073",
+      "file": "src/content/posts/en/use-windows-admin-center-for-a-defined-administration-task.md",
+      "historical_date": "2024-07-22",
+      "published_markdown_sha256": "2d626ea22f43eb071de496f06d6fd634cb03885ce458541ba5e2d01f5c804f40",
+      "body_sha256": "023a7ce452af38bcd8ca0b087f618d33c56b610fec056f8eb7430143970d4205"
+    },
+    {
+      "id": "AZC-074",
+      "file": "src/content/posts/en/plan-cluster-networks-around-storage-and-client-traffic.md",
+      "historical_date": "2024-07-24",
+      "published_markdown_sha256": "a97bae504b5418e4788371d079167894e881aae74e54bc1e2fa01df0a44f4927",
+      "body_sha256": "a652afda3b1bcbe364220c8311b06802070bd2b44659ab2fb037dcd74231d356"
+    },
+    {
+      "id": "AZC-075",
+      "file": "src/content/posts/en/build-a-repeatable-virtual-machine-with-powershell.md",
+      "historical_date": "2024-07-27",
+      "published_markdown_sha256": "27780de60c155dbbef3426bc27fd900b386e121bd850dfb81924be9469e35f66",
+      "body_sha256": "a17f6b285661a030a3d91f8a15c3b664287a0e73011b25b93b6ae347192adfeb"
+    },
+    {
+      "id": "AZC-076",
+      "file": "src/content/posts/en/configure-networking-inside-an-ubuntu-hyper-v-guest.md",
+      "historical_date": "2024-07-31",
+      "published_markdown_sha256": "83046d2d63cfdb59641eef230b4adf084f5e8d5516bb2ac4a2779aae5da07e69",
+      "body_sha256": "bff21f169608100ca7120a54c1017db88811b0905fcfefd1984edb4f84bdd6d1"
+    },
+    {
+      "id": "AZC-077",
+      "file": "src/content/posts/en/trace-a-blocked-outbound-connection-in-azure-firewall-logs.md",
+      "historical_date": "2024-08-03",
+      "published_markdown_sha256": "b5245a6f018a1738b1f7139797a05f338b0fb6274e3f384903633623bb04e5f2",
+      "body_sha256": "220c43fb15fcb97722336d44cd94e83cfc7dc8e09cf26e8407cc674b4b9bf547"
+    },
+    {
+      "id": "AZC-078",
+      "file": "src/content/posts/en/replace-a-service-principal-secret-with-workload-identity-federation.md",
+      "historical_date": "2024-08-05",
+      "published_markdown_sha256": "84dcb13d81275d79e8fe0cab56c45b1609b40b6f6148bea2f14ef2c0e9e849d8",
+      "body_sha256": "cf08db3f6b376a7fc77e7133aa86381f8d73ad66e26515c26c915849d2ce6826"
+    },
+    {
+      "id": "AZC-079",
+      "file": "src/content/posts/en/set-up-an-initial-copilot-for-security-investigation-session.md",
+      "historical_date": "2024-08-08",
+      "published_markdown_sha256": "c111cc610f5c40aba71ac9cc251915f3637f653d708ae9b753c666579637219b",
+      "body_sha256": "8638fd081f186040403a3edf31321ffbf4bdf4723cae30a7da8092c3267193d1"
+    },
+    {
+      "id": "AZC-080",
+      "file": "src/content/posts/en/troubleshoot-a-sentinel-connector-that-stopped-sending-data.md",
+      "historical_date": "2024-08-11",
+      "published_markdown_sha256": "c4a6b544051ff7a245837e58300789dfa7e662c5d6a5f56cd2c8e241a0038e7f",
+      "body_sha256": "09f2b40f494d20a45cee4f7c0207f7c32d162fec2f6228927a683bdd07e42ef1"
+    },
+    {
+      "id": "AZC-081",
+      "file": "src/content/posts/en/troubleshoot-an-application-that-fails-to-start-in-app-service.md",
+      "historical_date": "2024-08-13",
+      "published_markdown_sha256": "dc6ef23461cead88b33ac4251e120519a7bb7b901db44e731c1713dc6e9da216",
+      "body_sha256": "4b990cc946be3f78761c71ebf8f796394492519f328025c7e7d4935906e04bcb"
+    },
+    {
+      "id": "AZC-082",
+      "file": "src/content/posts/en/check-azure-quota-before-a-compute-deployment-fails.md",
+      "historical_date": "2024-08-16",
+      "published_markdown_sha256": "9e09858b42d5186deda4e563eca1662a06253d3f073c1b16d82c93bccec0731a",
+      "body_sha256": "863e123accaff2cd3e4e7f47ab166a544b888ef6f309b8c6755c07a7a39f7cf1"
+    },
+    {
+      "id": "AZC-083",
+      "file": "src/content/posts/en/prepare-azure-administrators-for-mandatory-multifactor-authentication.md",
+      "historical_date": "2024-08-19",
+      "published_markdown_sha256": "0a16a6a39bd0ca000be2234c2e1c2a4fa61553526affcb3918257c50e5aac950",
+      "body_sha256": "71b5176fcf974cee9aa3c8cceac83964fca5ec31ae3848b860d630231071c9c8"
+    },
+    {
+      "id": "AZC-084",
+      "file": "src/content/posts/en/understand-where-an-rdma-network-helps-an-mpi-workload.md",
+      "historical_date": "2024-08-21",
+      "published_markdown_sha256": "c230ebca85c26b315f0303585172dc7aebdb71d7aa45750da76fa2189836568b",
+      "body_sha256": "cf1e32e7498473721c9bd64b1b87bb92c6303f9afc651b5e2cc344a259ec6812"
+    },
+    {
+      "id": "AZC-085",
+      "file": "src/content/posts/en/use-dependency-information-to-plan-migration-waves.md",
+      "historical_date": "2024-08-24",
+      "published_markdown_sha256": "06f7bbc7cbbac549c39525db6fcf0c55149be2ad06d485ec35bce49d750e440a",
+      "body_sha256": "b701e371631b0d0b4dc5f5e5886f8561afe8469a0c6729cf238ec91a75c2bbc2"
+    },
+    {
+      "id": "AZC-086",
+      "file": "src/content/posts/en/choose-a-state-boundary-for-azure-terraform-deployments.md",
+      "historical_date": "2024-08-28",
+      "published_markdown_sha256": "bd60a5fd8178b593d98418004a2e2f1bd2df3d8a5033db82e63a3eb5624db0fd",
+      "body_sha256": "66ae6093ccefc025889ca8ff8819e238b245e8292a95c9ff112871999e9eaa71"
+    },
+    {
+      "id": "AZC-087",
+      "file": "src/content/posts/en/send-and-receive-an-initial-service-bus-message.md",
+      "historical_date": "2024-08-31",
+      "published_markdown_sha256": "27c8967ee1d7fc0d0c8e211f9c480a8acc9b97c82a9128b557ec7c131cea9bd7",
+      "body_sha256": "14e66b7a504e37fc45d852bc6469241986b3cd3689553c36f303a37542f810b1"
+    },
+    {
+      "id": "AZC-088",
+      "file": "src/content/posts/en/diagnose-a-route-that-sends-traffic-to-the-wrong-next-hop.md",
+      "historical_date": "2024-09-02",
+      "published_markdown_sha256": "e03850b936b181165df05d7b2981530b4a496120a8581879bd122b6eca47accc",
+      "body_sha256": "23b90587a3a3a81462e80f2675698822b4032d17d48b4baf5600062e4d8aab67"
+    },
+    {
+      "id": "AZC-089",
+      "file": "src/content/posts/en/investigate-a-server-that-stopped-sending-logs.md",
+      "historical_date": "2024-09-05",
+      "published_markdown_sha256": "a564668996c65214f09e33530bf307eb968d1630b27cb50f5a488e287df52522",
+      "body_sha256": "db7e706c47ed87a933c8a299f751cd9deb2d15962027d39c491f167b5bcdd8ae"
+    },
+    {
+      "id": "AZC-090",
+      "file": "src/content/posts/en/investigate-a-storage-request-that-returns-an-authorisation-error.md",
+      "historical_date": "2024-09-08",
+      "published_markdown_sha256": "7670f6ff7076f21a6b4aaae06f26bfd4983f5c2532bdf619becd6434de02bdd1",
+      "body_sha256": "30ea9a2c04996efd31986a9bc5bf7c45041acb31131089500d31df4ad46e9860"
+    },
+    {
+      "id": "AZC-091",
+      "file": "src/content/posts/en/review-a-workload-against-the-well-architected-reliability-pillar.md",
+      "historical_date": "2024-09-10",
+      "published_markdown_sha256": "30877feb78f0c919a4e55f6893e1eb0575299dc7b5f440a5e140c3c11150311a",
+      "body_sha256": "013d0da4bbde442f4698581ac0e66377677c61566c7bf25d8e92fc6f389504af"
+    },
+    {
+      "id": "AZC-092",
+      "file": "src/content/posts/en/export-an-azure-inventory-without-losing-object-structure.md",
+      "historical_date": "2024-09-13",
+      "published_markdown_sha256": "7313864a065127475362099352977db733756810a0e9416e5ce30e4a077ad5a3",
+      "body_sha256": "c5c90f717cc6938c81eec424d2b0e5adf032a367d8f8d6a18de728dee67fe535"
+    },
+    {
+      "id": "AZC-093",
+      "file": "src/content/posts/en/configure-a-file-share-with-clear-windows-permissions.md",
+      "historical_date": "2024-09-16",
+      "published_markdown_sha256": "ef4fef84412101501daf2060d795d128802a62645da2785d7628114d29649d78",
+      "body_sha256": "16649c1523b7eadd82f5e010e50638e5377e348a6e363b825079e60613a92cc7"
+    },
+    {
+      "id": "AZC-094",
+      "file": "src/content/posts/en/configure-and-verify-a-cluster-witness.md",
+      "historical_date": "2024-09-18",
+      "published_markdown_sha256": "3f694e962137a5d854f1f7b01e721fdb2235508d727f5d6b25a0a921ef2bfb86",
+      "body_sha256": "ca1eeb8ccc9a56cade379bd9df99b7aa1e3b9e7391199c81ef6ca5a8087fa9f8"
+    },
+    {
+      "id": "AZC-095",
+      "file": "src/content/posts/en/choose-fixed-or-dynamic-memory-for-a-vm.md",
+      "historical_date": "2024-09-21",
+      "published_markdown_sha256": "4cec0bae0a95242b8847f4c21bc4cd01aa79e9147e59e9771b819e6192654807",
+      "body_sha256": "d22195d0b8463ebaa680567f6d4a789a64ff228ee5af9510dbc8a61380b298ae"
+    },
+    {
+      "id": "AZC-096",
+      "file": "src/content/posts/en/investigate-a-linux-guest-with-a-missing-network-adapter.md",
+      "historical_date": "2024-09-25",
+      "published_markdown_sha256": "5c60e3ee9cb96c99f2d66008dc038323964964bb790b4ca10741dda24a14457f",
+      "body_sha256": "496b2c259d8820a27deccc72617af084bf069ab3a1796a03564262286515b19f"
+    },
+    {
+      "id": "AZC-097",
+      "file": "src/content/posts/en/connect-github-repositories-to-defender-for-cloud.md",
+      "historical_date": "2024-09-28",
+      "published_markdown_sha256": "c7082c3b7bb387397b3029f0e78df81ce7faaf78a07969cd5b5a2485fd340611",
+      "body_sha256": "17bbd8170e045d6891e6de91c65f7aabdbb1b5ad806b1e29829084e0a91144da"
+    },
+    {
+      "id": "AZC-098",
+      "file": "src/content/posts/en/connect-github-actions-to-azure-using-openid-connect.md",
+      "historical_date": "2024-09-30",
+      "published_markdown_sha256": "c36a1586ae51ca567e41931a0119311ffaa42f8bfeb5a492583cd98a06f65998",
+      "body_sha256": "9afca44a4269f03f9060c43bf6ed72366f04f37142185cccb4ab91aac700d774"
+    },
+    {
+      "id": "AZC-099",
+      "file": "src/content/posts/en/plan-security-compute-unit-usage-for-a-small-pilot.md",
+      "historical_date": "2024-10-03",
+      "published_markdown_sha256": "005e1926db016889fe59a0c7e9401b767e5f59dbc1763aac229677b3f6d32e2b",
+      "body_sha256": "9d696f86143b8e32070fa5931177c5384072ec55f28862e7607ca29a8eaab090"
+    },
+    {
+      "id": "AZC-100",
+      "file": "src/content/posts/en/map-entities-so-incidents-contain-useful-context.md",
+      "historical_date": "2024-10-06",
+      "published_markdown_sha256": "6226142d3e2bf92a1e9004b476f3c28c21675c4f95349520d5bd8b22e5d764e1",
+      "body_sha256": "8cead33c0500d9118f07b86170f9ed79c87da16e37e5ec4088de40c53bea2aae"
+    },
+    {
+      "id": "AZC-101",
+      "file": "src/content/posts/en/give-an-app-service-application-private-access-to-a-database.md",
+      "historical_date": "2024-10-08",
+      "published_markdown_sha256": "1743028ac4db418e8973fa91909767d4bd16bdf835649df51705b2f5ac9a89bc",
+      "body_sha256": "0438cded6c35f929ff334eb87b0ef306e87c2216f53571bac0fd52a4bc3ab3f2"
+    },
+    {
+      "id": "AZC-102",
+      "file": "src/content/posts/en/decide-when-a-virtual-machine-scale-set-is-appropriate.md",
+      "historical_date": "2024-10-11",
+      "published_markdown_sha256": "1fef46c6f612b95c954c87a2bd9bb806d4aa5aec83370bb5179f6aa068562e41",
+      "body_sha256": "db1a34f8ad2279c081df59ea8e29ed87bed1965fa9707d6c8ecb910374630600"
+    },
+    {
+      "id": "AZC-103",
+      "file": "src/content/posts/en/plan-shared-storage-access-for-an-azure-hpc-cluster.md",
+      "historical_date": "2024-10-14",
+      "published_markdown_sha256": "146c12c4304124c5cb0013c9604919c72ba64212651c3f3d80ebae438276d883",
+      "body_sha256": "c9141b88cab911d4bb4f4d7405c3f291a223ab7b38a8194ca621e0df3df6a43c"
+    },
+    {
+      "id": "AZC-104",
+      "file": "src/content/posts/en/test-a-migration-before-scheduling-the-production-cutover.md",
+      "historical_date": "2024-10-16",
+      "published_markdown_sha256": "71867c74ef83bd2a7ac43e778835ebb2898a32d41c3a7f4414b429b721101b55",
+      "body_sha256": "11411cef38666eaf31b904184f62c2e269822b698b0ee3d79c53e7945e88995d"
+    },
+    {
+      "id": "AZC-105",
+      "file": "src/content/posts/en/azure-cobalt-100-vms-check-arm-compatibility-before-moving-a-workload.md",
+      "historical_date": "2024-10-19",
+      "published_markdown_sha256": "91a7dcbbba4446df5ceccfa0db82ef7ae5e7a490f67cb1a838002cb985285354",
+      "body_sha256": "5cfc4177ec279dd629e688bb69df78338859be531cbb0c62dd8758f60ccc4579"
+    },
+    {
+      "id": "AZC-106",
+      "file": "src/content/posts/en/use-a-remote-backend-for-terraform-state-in-azure.md",
+      "historical_date": "2024-10-23",
+      "published_markdown_sha256": "053864148f4868e1f9d62e52401dc16b4831564ae0850c257f56c270ec1f7742",
+      "body_sha256": "cf7de8f22f078c5f2870a49b9b36471ce53b2387a4295623fd5779be25bc91b0"
+    },
+    {
+      "id": "AZC-107",
+      "file": "src/content/posts/en/investigate-messages-in-a-service-bus-dead-letter-queue.md",
+      "historical_date": "2024-10-26",
+      "published_markdown_sha256": "88b9e6fc7e302735e08e292d9aba98aefecec5b0df1269cf2d64f3419251019d",
+      "body_sha256": "bd6cf07be2f0f8827746603bfac8f313af0cc866cc3a6e86989ea71ef030713f"
+    },
+    {
+      "id": "AZC-108",
+      "file": "src/content/posts/en/create-a-private-endpoint-and-verify-name-resolution.md",
+      "historical_date": "2024-10-28",
+      "published_markdown_sha256": "735378effcad17d495e78ad83c358005b6e60622dd8b62eaa42d391ab6f7d7ee",
+      "body_sha256": "1ba2e3cb38d497777a35e3761ddb1a9e69363d3778906cb61e5bc4fe56a24ae5"
+    },
+    {
+      "id": "AZC-109",
+      "file": "src/content/posts/en/build-an-azure-workbook-around-an-operational-question.md",
+      "historical_date": "2024-10-31",
+      "published_markdown_sha256": "77d7164c1244c32cd47fb81f0d41588735fcc4ee470be0989393ee60793a3ced",
+      "body_sha256": "c447ce064eb08809e93f7cc634e5a40c7fe8d5929e90b311cbfa7736ce4b0e61"
+    },
+    {
+      "id": "AZC-110",
+      "file": "src/content/posts/en/configure-blob-soft-delete-and-versioning.md",
+      "historical_date": "2024-11-03",
+      "published_markdown_sha256": "6a5d78647ead400eb1eb51c2e9a4bed5147b1946ecbcd88f713fe0483555b993",
+      "body_sha256": "3f1ccc51a83d470678a81c788916ddc334ee6a59db427b1d4ba8a4893522fc62"
+    },
+    {
+      "id": "AZC-111",
+      "file": "src/content/posts/en/windows-server-2025-is-available-what-belongs-in-the-evaluation-plan.md",
+      "historical_date": "2024-11-05",
+      "published_markdown_sha256": "7fdb818c51472b2264fd75871f84a584bb03614418cc4d26247089e3ccc8f926",
+      "body_sha256": "cf60cef9e564dfe8d3b8d4a5de266b30f12ea6689ceac842438393c7f611de4b"
+    },
+    {
+      "id": "AZC-112",
+      "file": "src/content/posts/en/choose-availability-zones-without-assuming-application-resilience.md",
+      "historical_date": "2024-11-08",
+      "published_markdown_sha256": "1f58dd1aca881c10a359e7d4365b07d8581cd66ced35ec54095131057f94bc39",
+      "body_sha256": "2b948f2b78d9d6da5bfe1afa07890def50ff9370c162c1713ef34494ce612c1b"
+    },
+    {
+      "id": "AZC-113",
+      "file": "src/content/posts/en/investigate-a-module-that-loads-in-one-shell-but-not-another.md",
+      "historical_date": "2024-11-11",
+      "published_markdown_sha256": "eeb49ddb0c46894fa70c9b237be9885f78da552560da6c15108403e58ad714ed",
+      "body_sha256": "40cbbba8410c279de33fd588495a9b8bb09bd57b95650889a8680e1cf39e29c8"
+    },
+    {
+      "id": "AZC-114",
+      "file": "src/content/posts/en/investigate-a-windows-service-that-fails-after-a-restart.md",
+      "historical_date": "2024-11-13",
+      "published_markdown_sha256": "49023d818f897e69f015dc00b5ed38f60b79e89b73e377afa53133c0d3f78d2c",
+      "body_sha256": "dbe03f2d9291732cfb95db22ae956c61fda9b8662c851ea59379bd0666431193"
+    },
+    {
+      "id": "AZC-115",
+      "file": "src/content/posts/en/investigate-a-cluster-resource-that-keeps-moving-between-nodes.md",
+      "historical_date": "2024-11-16",
+      "published_markdown_sha256": "64d1a914782398b3356aa0065529b0629ccdca0252b19d41c2d258fbc29f1489",
+      "body_sha256": "a9225024ad60815f0985430d9d9353336801068eae8854be6b197728b585e596"
+    },
+    {
+      "id": "AZC-116",
+      "file": "src/content/posts/en/configure-a-virtual-network-adapter-and-vlan.md",
+      "historical_date": "2024-11-20",
+      "published_markdown_sha256": "eebb8dbc408e9954cba7f8c21f5983b8ca745c6a0fc4e921f69a5f3f9fd60da6",
+      "body_sha256": "84d6a276332b8288857bca4096e981d257ae9b39abfe18a7fdb90ab450ea136a"
+    },
+    {
+      "id": "AZC-117",
+      "file": "src/content/posts/en/azure-local-understand-the-operating-model-announced-at-ignite.md",
+      "historical_date": "2024-11-23",
+      "published_markdown_sha256": "8458fe1a5606e2a6820250ad6d460d071bd529b1779503e8faed6d7a4bdb20b7",
+      "body_sha256": "ab20b6c59b217d9c860977cf781f72f74079d8ae85263af8527f7a61cf889696"
+    },
+    {
+      "id": "AZC-118",
+      "file": "src/content/posts/en/check-time-synchronisation-in-a-linux-vm.md",
+      "historical_date": "2024-11-25",
+      "published_markdown_sha256": "252be21bee1bfd9e8682947396b1113f62cc852456b8b85cb33fa4c8f16a7ddf",
+      "body_sha256": "8aeefc83fb1743f233879fdb44e985e20bf33340a4eb0952586cf6e238808ac8"
+    },
+    {
+      "id": "AZC-119",
+      "file": "src/content/posts/en/enable-github-secret-scanning-and-assign-alert-ownership.md",
+      "historical_date": "2024-11-28",
+      "published_markdown_sha256": "58c0079346bc86788591846c81e75b06f03e48da0f9f6356a731d8f57883c378",
+      "body_sha256": "0ddb469ff9165b38d2f708496e2b19fffc22578730f569edd6ab88123274f331"
+    },
+    {
+      "id": "AZC-120",
+      "file": "src/content/posts/en/investigate-a-failed-sign-in-using-entra-logs.md",
+      "historical_date": "2024-12-01",
+      "published_markdown_sha256": "d3d45fcd22e054708d17e4697cbe66ec8dbdf821d20b79f20774453d6e4bbc85",
+      "body_sha256": "80cc81d4d80df025b094a71918a41d9a4b63e3ef5a471364fd43593252a1d3bf"
+    },
+    {
+      "id": "AZC-121",
+      "file": "src/content/posts/en/build-a-prompt-that-produces-a-useful-incident-summary.md",
+      "historical_date": "2024-12-03",
+      "published_markdown_sha256": "21a8cc0ff87558ff4e0cc58a38f1ecd386ae59295b474e92f9adc6bf9673d08a",
+      "body_sha256": "24a6ea7402201ad232349d3df1f8012aefa9aa86ccb0d5aca0e15925d330ef75"
+    },
+    {
+      "id": "AZC-122",
+      "file": "src/content/posts/en/choose-retention-settings-around-investigation-needs.md",
+      "historical_date": "2024-12-06",
+      "published_markdown_sha256": "0d5875e91ca3c560be2681ce2735081e1581ec9d5bca00df920063c20956f4bc",
+      "body_sha256": "48c3567a01ed0768f1f03527b7c68207c2548a0d06414e0e72a3a25381233d05"
+    },
+    {
+      "id": "AZC-123",
+      "file": "src/content/posts/en/understand-deployment-slots-before-an-app-service-swap.md",
+      "historical_date": "2024-12-09",
+      "published_markdown_sha256": "dccbbcc1a8e2c31730b4c34302b2dee89e50a5b882ac009c8529a9e560d47c92",
+      "body_sha256": "d2a76c7aa76a702db960fce35026d8849ab134bedd8451dd0c8545435f371747"
+    },
+    {
+      "id": "AZC-124",
+      "file": "src/content/posts/en/configure-a-scale-set-health-probe-before-autoscaling.md",
+      "historical_date": "2024-12-11",
+      "published_markdown_sha256": "b6a40e1333c1eaebc1e7bef2112c9c8ca8ab3a453d775c8dcef65f3a3838e8ec",
+      "body_sha256": "e4dd2ff5e90547e25810813ac52c1725a06ca755e647e6c74408130da38c9d76"
+    },
+    {
+      "id": "AZC-125",
+      "file": "src/content/posts/en/configure-an-azure-batch-pool-for-a-repeatable-compute-job.md",
+      "historical_date": "2024-12-14",
+      "published_markdown_sha256": "872093b2876f8eacb57a2dbb86d2555b52c148fddd424949944615486c22d2a4",
+      "body_sha256": "bff700738e02fa811956754ae00256bb3347b3aef4ba126fa8ef4f1c69f48cb3"
+    },
+    {
+      "id": "AZC-126",
+      "file": "src/content/posts/en/investigate-an-arc-enabled-server-that-appears-disconnected.md",
+      "historical_date": "2024-12-18",
+      "published_markdown_sha256": "5e0f0abfd6ca69c0806072e7ab2b358fa15a6e6afa360ca1305a0d8dd4a40b4f",
+      "body_sha256": "8e81b43829852c13b9b9954e9fe0f6ce2811416a245bc28ead7b464cc1d0dc02"
+    },
+    {
+      "id": "AZC-127",
+      "file": "src/content/posts/en/investigate-a-deployment-that-failed-after-creating-some-resources.md",
+      "historical_date": "2024-12-21",
+      "published_markdown_sha256": "4a46cccf696ada9facaac8c2dac440b4b8a89f55a26ddd0041e6295a9e675e4a",
+      "body_sha256": "a9e64398c5d00b2d538478169eb5598f87f171eb27e8ac559c6d6c106a0ed65b"
+    },
+    {
+      "id": "AZC-128",
+      "file": "src/content/posts/en/use-message-sessions-when-processing-order-matters.md",
+      "historical_date": "2024-12-23",
+      "published_markdown_sha256": "38e5799bbe55b4af99ac8efdddb253fadd6e534f519989a4ce29d94a01afbeb1",
+      "body_sha256": "4d57fb72810d6e8e0b6462d2d4b102116bf39b0dbd7e3ae7d85c2a91ed877d54"
+    },
+    {
+      "id": "AZC-129",
+      "file": "src/content/posts/en/plan-private-dns-zones-before-adding-private-endpoints.md",
+      "historical_date": "2024-12-26",
+      "published_markdown_sha256": "e2ee710b5f7d19402c1cda5b1c5dc4394a467dc6a6685d736514a4a38bf01a07",
+      "body_sha256": "8d360fee9ced8ef67ddb5217a3c74264a702886e731f9b2bd3b2884a3b4aacab"
+    },
+    {
+      "id": "AZC-130",
+      "file": "src/content/posts/en/choose-alert-thresholds-around-an-actionable-response.md",
+      "historical_date": "2024-12-29",
+      "published_markdown_sha256": "a220c752609f1b2d7481f21a7b5795174d298a540be31fa47f00ca8f0924dfa8",
+      "body_sha256": "fd23df5ebb26e6dac9863f53301c774c509ee268f8c3d7206c33ea1d8267e4d8"
+    },
+    {
+      "id": "AZC-131",
+      "file": "src/content/posts/en/choose-a-lifecycle-policy-around-data-access-patterns.md",
+      "historical_date": "2024-12-31",
+      "published_markdown_sha256": "2c6534f0ef536b126cce25c0d418d693039aa1ffb7c31de5d9989e7b671531c5",
+      "body_sha256": "fbdac81db2468a5e848368444578f6d1509059ef2d84b40a7ff28542591edd09"
+    },
+    {
+      "id": "AZC-132",
+      "file": "src/content/posts/en/document-an-application-dependency-map-for-a-recovery-exercise.md",
+      "historical_date": "2025-01-03",
+      "published_markdown_sha256": "341e6ae9899630d42d010f273bd12adbabe4818ef0952708a5bd6ecb0e808980",
+      "body_sha256": "79195162bbae62ed6bfef2c50576b29acf8877dfe9b50836db81219cb887964e"
+    },
+    {
+      "id": "AZC-133",
+      "file": "src/content/posts/en/add-structured-logging-to-an-infrastructure-script.md",
+      "historical_date": "2025-01-06",
+      "published_markdown_sha256": "db17b47492b8f4bc5f0b6be65fffa2637af3ec1f34cd02836f44fe268f98e178",
+      "body_sha256": "917fc8696743681f809bcc76ab1f0f68e53272030179efb3cbdeb2896a21fbc5"
+    },
+    {
+      "id": "AZC-134",
+      "file": "src/content/posts/en/choose-an-active-directory-site-and-subnet-design.md",
+      "historical_date": "2025-01-08",
+      "published_markdown_sha256": "b23cfd1077883ab215d489c53b169dcd1bbf9b7cb2a39a76060caee68a0a140a",
+      "body_sha256": "c317080a755ad7e312fdc57604a56542b66c2e1009ad3d2ec8fec389b7d1a686"
+    },
+    {
+      "id": "AZC-135",
+      "file": "src/content/posts/en/use-cluster-aware-updating-with-a-tested-maintenance-process.md",
+      "historical_date": "2025-01-11",
+      "published_markdown_sha256": "3b462aed9f643f8df67e112582056b37fbfb88446f6161c17beb85947adeec9d",
+      "body_sha256": "1de571a7b2f6f0a6f38ac9bbf73ff55670eed85a34d17d8b0092e007dceecf23"
+    },
+    {
+      "id": "AZC-136",
+      "file": "src/content/posts/en/investigate-a-vm-that-cannot-boot-from-installation-media.md",
+      "historical_date": "2025-01-15",
+      "published_markdown_sha256": "bb2ad651e06b0f569db0d8b08e000f2d758ff219d2fccb8ac2a0f2d5f3778f45",
+      "body_sha256": "c380ed1346638cb7b312134a2dc777db9db7ddcb2bec4abd250a8fd53819f7aa"
+    },
+    {
+      "id": "AZC-137",
+      "file": "src/content/posts/en/plan-memory-allocation-for-linux-on-hyper-v.md",
+      "historical_date": "2025-01-18",
+      "published_markdown_sha256": "7c5c53dd50a2bf5f120494502e54bc6273920c68f6480343387ef30117b3ee44",
+      "body_sha256": "56901ac341c7ceccdab70319cf40a9c026d020715dfc7680c3c43690eb3d3b2d"
+    },
+    {
+      "id": "AZC-138",
+      "file": "src/content/posts/en/roll-out-github-push-protection-without-disrupting-developers.md",
+      "historical_date": "2025-01-20",
+      "published_markdown_sha256": "3dd60bc2578451710c610c71d0ab1eac3b3d0fb1e998682f38e95e04bd01214b",
+      "body_sha256": "a5c7f880060a576154c6f779df3f0a63cb4704b50b32e380e4915467d8b695db"
+    },
+    {
+      "id": "AZC-139",
+      "file": "src/content/posts/en/separate-azure-control-plane-roles-from-data-plane-permissions.md",
+      "historical_date": "2025-01-23",
+      "published_markdown_sha256": "d9604d32bd93f64d7495029156157ff5472e823e80cfda6a3b72276c4dae587c",
+      "body_sha256": "92b1d094381eb8a024c2e929acac0c96b38d663a1828bef4e43fdbad868ce5b3"
+    },
+    {
+      "id": "AZC-140",
+      "file": "src/content/posts/en/use-promptbooks-for-repeatable-security-investigations.md",
+      "historical_date": "2025-01-26",
+      "published_markdown_sha256": "0c0a47a93db51bbd46db8e0f065cf0fa3dff15aaac88ffbab41db5dee68736f8",
+      "body_sha256": "964675d05064ab587d8d055b424329fff51bea6dd488a2b4c6f56082e7860cd8"
+    },
+    {
+      "id": "AZC-141",
+      "file": "src/content/posts/en/use-a-watchlist-to-enrich-a-detection-query.md",
+      "historical_date": "2025-01-28",
+      "published_markdown_sha256": "ede303ddb16014f84808dcd617b8cd00332f9ea20ea8b7251c7e0ce35c927593",
+      "body_sha256": "dc6eec0649484df2cad07480297ed1aabe556b819cc9bf9aa60ab2a0af579509"
+    },
+    {
+      "id": "AZC-142",
+      "file": "src/content/posts/en/add-a-health-check-before-enabling-application-scale-out.md",
+      "historical_date": "2025-01-31",
+      "published_markdown_sha256": "f56363e2b54c9840bcf79290c6db11269bfc5e0c686bcfded38ea175b07032e5",
+      "body_sha256": "1b8f079de9a22dbf91220a1bbd4dac20ae4b879bd55cdc1adec49042b68f2847"
+    },
+    {
+      "id": "AZC-143",
+      "file": "src/content/posts/en/use-azure-bastion-to-administer-a-private-vm.md",
+      "historical_date": "2025-02-03",
+      "published_markdown_sha256": "7eca1a8a7e4735376135150c08d9fb6372288fff6fafa2b3d820614c417121bb",
+      "body_sha256": "c70ae9a0857c5c898d3723031153ec205fccf84b25b527ae0d47a88126b58654"
+    },
+    {
+      "id": "AZC-144",
+      "file": "src/content/posts/en/investigate-an-hpc-job-waiting-for-compute-capacity.md",
+      "historical_date": "2025-02-05",
+      "published_markdown_sha256": "bb68a909283c2b87c498e941595fcc516eb93f96387accf70e39401de0fe6607",
+      "body_sha256": "7de264e6daacf1d5e8620a465f8231c918a148d49d7346e88205e73d26eb4432"
+    },
+    {
+      "id": "AZC-145",
+      "file": "src/content/posts/en/choose-what-to-manage-through-azure-arc.md",
+      "historical_date": "2025-02-08",
+      "published_markdown_sha256": "0b98839c6d8d54ec90cb789e65988ab0644d15128db09717ac29f955d821f2bf",
+      "body_sha256": "95aa9a23fe61ff92fb9da7f7089c20e7e7a63a5a4f26b6e4f4623c971970651d"
+    },
+    {
+      "id": "AZC-146",
+      "file": "src/content/posts/en/deploy-infrastructure-through-a-federated-pipeline-identity.md",
+      "historical_date": "2025-02-12",
+      "published_markdown_sha256": "ca02da587aefe18591c4fdc40315ddcce9951302be0eebf1aa2663516db8b88a",
+      "body_sha256": "eb6c93a15ce9635e056e20b264f32b8c82b74e3065b54283cb2c58ddef42747c"
+    },
+    {
+      "id": "AZC-147",
+      "file": "src/content/posts/en/powershell-7-5-is-available-review-compatibility-before-upgrading-automation.md",
+      "historical_date": "2025-02-15",
+      "published_markdown_sha256": "8b07ec7b479906f20aea8bd094ae8c459d8c5bf9028eed00278d7ca3572a76a7",
+      "body_sha256": "3247ce2455018964da61df3ab938baf69a33082302dfe971025e414fe35cb153"
+    },
+    {
+      "id": "AZC-148",
+      "file": "src/content/posts/en/design-retry-behaviour-without-creating-duplicate-work.md",
+      "historical_date": "2025-02-17",
+      "published_markdown_sha256": "d8eab0d3774addb5b05b21f0ddcdf12846d3a2eb66433a49ab880eb6dec1d7b3",
+      "body_sha256": "418bb981fbb334b29f89757b0121cda3c01be820beba654285320020d599510a"
+    },
+    {
+      "id": "AZC-149",
+      "file": "src/content/posts/en/check-connectivity-with-azure-network-watcher.md",
+      "historical_date": "2025-02-20",
+      "published_markdown_sha256": "0c221baf67312d07f3bd085988de8bc944fb928298c8772c9826b28bcf9677b8",
+      "body_sha256": "7b20e9ce1c927e9031b7c41e2738db0254c76fa8286f04a023292e67bad4c47a"
+    },
+    {
+      "id": "AZC-150",
+      "file": "src/content/posts/en/use-azure-policy-to-report-on-missing-configuration.md",
+      "historical_date": "2025-02-23",
+      "published_markdown_sha256": "8fe60c8eee899c1dc0791eb1b681295cca170d809b38cdea56e590ca18e8dfd1",
+      "body_sha256": "9465edef05e88ebb55e40d472fc43d43afc3f75f65b85da359a670df7f1f3e2e"
+    },
+    {
+      "id": "AZC-151",
+      "file": "src/content/posts/en/mount-an-azure-file-share-from-a-windows-server.md",
+      "historical_date": "2025-02-25",
+      "published_markdown_sha256": "88fbf358056c7962b115487cbeae9f650dfed28e9a0f0c95cfb2f1326053f4f5",
+      "body_sha256": "67a58d072c85feb9eaf04dfd8af9aa87f66f9dded2724c60a7b78995f08c5197"
+    },
+    {
+      "id": "AZC-152",
+      "file": "src/content/posts/en/plan-an-outage-test-that-produces-useful-evidence.md",
+      "historical_date": "2025-02-28",
+      "published_markdown_sha256": "b1960bc2ac833303ba2a661825d34c58df1037ea7c829272aca19d3b874b1cc5",
+      "body_sha256": "8b9b4ddbe742d552afd96d8182981b594afef75e7b307a1e28c8c415a6c3eb3c"
+    },
+    {
+      "id": "AZC-153",
+      "file": "src/content/posts/en/choose-a-safe-approach-to-powershell-credential-handling.md",
+      "historical_date": "2025-03-03",
+      "published_markdown_sha256": "0b9742dfbcbd559959a3b7963a66d135503c69e7610ba2dcae45a55c860003e4",
+      "body_sha256": "2e408eacad6fac3a90cca1c1ac413a61c4264be995ef09ff2b8506c7a39f4d03"
+    },
+    {
+      "id": "AZC-154",
+      "file": "src/content/posts/en/check-dns-configuration-before-investigating-a-domain-problem.md",
+      "historical_date": "2025-03-05",
+      "published_markdown_sha256": "7cb0ccd4621df8f289b251a467169cdc3af106ecbdefe9ed33de689214a41d4f",
+      "body_sha256": "9b2ad86e5bf967316b2bcf6686f8f754b803879990e4276426bbd126886df3ad"
+    },
+    {
+      "id": "AZC-155",
+      "file": "src/content/posts/en/github-code-security-and-secret-protection-plan-for-the-new-product-choices.md",
+      "historical_date": "2025-03-08",
+      "published_markdown_sha256": "9b5b539416fcf44ef0f14ccb6bd846364f82e512c264228c3e9a35a27a31f924",
+      "body_sha256": "efdc0418ba75c80aa614e34fc67766c326dcfaed9a236213f0c73381ac89fd3d"
+    },
+    {
+      "id": "AZC-156",
+      "file": "src/content/posts/en/understand-cluster-shared-volumes-in-a-hyper-v-design.md",
+      "historical_date": "2025-03-12",
+      "published_markdown_sha256": "99e8832a4312ab5e1713019093d027e6756f4af435bba9489e809ad0c98c9e41",
+      "body_sha256": "5518fe0e68cdd9bab1dba4abc9fd44768af378f5f13dd1a2c0852d466a6da448"
+    },
+    {
+      "id": "AZC-157",
+      "file": "src/content/posts/en/choose-vhdx-settings-around-capacity-and-performance-needs.md",
+      "historical_date": "2025-03-15",
+      "published_markdown_sha256": "feff26ceb759be927114d83479d181a76ee02ac55e90e0aa9da0134a9558c37b",
+      "body_sha256": "ac841a46279aac3b6ee8847ab15aeb530165174c6bff22aef7c2486208de7999"
+    },
+    {
+      "id": "AZC-158",
+      "file": "src/content/posts/en/expand-a-linux-guest-disk-and-verify-the-file-system.md",
+      "historical_date": "2025-03-17",
+      "published_markdown_sha256": "b5553dcfc5296e5fb709894e9b812cbbe0742156e0499f42b325efaa6a31d079",
+      "body_sha256": "51887bccaf41165180dc16e60b5816b5f7772cbf1f081baf249da2ddb42f8478"
+    },
+    {
+      "id": "AZC-159",
+      "file": "src/content/posts/en/review-infrastructure-security-findings-during-a-pull-request.md",
+      "historical_date": "2025-03-20",
+      "published_markdown_sha256": "caf4132543d51713ee4d184fd17eec851a8e6219e618e4f3d4b24b7584f1d7b3",
+      "body_sha256": "23f036828728f4fb2dfa2db8e004fe70a54bd145d8dd782c586c7e4dccff7af4"
+    },
+    {
+      "id": "AZC-160",
+      "file": "src/content/posts/en/run-an-access-review-for-privileged-group-membership.md",
+      "historical_date": "2025-03-23",
+      "published_markdown_sha256": "38cd3958b71e974eb9a0f8138401c9373337a167aac15e82521c6f1c2128becd",
+      "body_sha256": "549eea8b0ae54dad70c8c8d208e509c4e844105a5dd66f2580caccf9c6c777d7"
+    },
+    {
+      "id": "AZC-161",
+      "file": "src/content/posts/en/understand-the-boundary-between-a-generated-answer-and-evidence.md",
+      "historical_date": "2025-03-25",
+      "published_markdown_sha256": "bcb0fbd7bd79e91eeb120c402e54457251f6d99e676bafa2ca1425fa42a855d1",
+      "body_sha256": "aed0afec4b400c59e19d511327d9f7881f83f75dca25e277a3f9b791e678682e"
+    },
+    {
+      "id": "AZC-162",
+      "file": "src/content/posts/en/build-an-automation-rule-with-a-clear-owner.md",
+      "historical_date": "2025-03-28",
+      "published_markdown_sha256": "14265405216eeceece4e1a46d3c1e9d36a52d0ee32e30ad3f25282328b01360e",
+      "body_sha256": "d726b0a959727dfe24ec3450d9e8cf2eb8db7f32251fa6e3600bd9d9f658c618"
+    },
+    {
+      "id": "AZC-163",
+      "file": "src/content/posts/en/deploy-an-azure-functions-application-with-clear-configuration-boundaries.md",
+      "historical_date": "2025-03-31",
+      "published_markdown_sha256": "0e06873edbe25aa8a8501be996257ebeb54f1aadc46f24d2719ff4b3eca3b2ac",
+      "body_sha256": "0466fb8ff571a6e062cdf6461df776854512a1a4f7b38cb095e50dd21cd1cef3"
+    },
+    {
+      "id": "AZC-164",
+      "file": "src/content/posts/en/understand-the-trade-offs-of-azure-spot-virtual-machines.md",
+      "historical_date": "2025-04-02",
+      "published_markdown_sha256": "9ad0ea986fa9a9e16916ce05f0334f0217dc05a7b04ccd7fe1115f74de7fbb64",
+      "body_sha256": "c393a51cf5f006d651aa03af3635ea69e17544c16de15e939d7502b3ad6ae294"
+    },
+    {
+      "id": "AZC-165",
+      "file": "src/content/posts/en/review-repository-protection-as-github-security-product-choices-change.md",
+      "historical_date": "2025-04-05",
+      "published_markdown_sha256": "ad573d2ed22e78dfe75ee0531112baed1fc7f936ab66a203abc9110eb04dfd87",
+      "body_sha256": "612b5446375899ed5ac90dc78551d04e2362f29376b6bfc5a82168d011694154"
+    },
+    {
+      "id": "AZC-166",
+      "file": "src/content/posts/en/compare-scale-up-and-scale-out-for-a-compute-workload.md",
+      "historical_date": "2025-04-09",
+      "published_markdown_sha256": "8281883ea78da9af9c562396e2f0d59fac9d890c5c819cbd4c7fee957d78619c",
+      "body_sha256": "5db33b8cfcc4665fbaf608b2d91890254da7d984127baf3e83ea1fe42767fd89"
+    },
+    {
+      "id": "AZC-167",
+      "file": "src/content/posts/en/apply-azure-policy-to-arc-enabled-servers.md",
+      "historical_date": "2025-04-12",
+      "published_markdown_sha256": "ea1f6351d4c0ac7a04af882a40381f44abee2c03959256c8bf66067453bf3a73",
+      "body_sha256": "de8acb82f5aa43c7b41b7a16390dc3db32134c6704f253c8fa825830685254fa"
+    },
+    {
+      "id": "AZC-168",
+      "file": "src/content/posts/en/choose-where-reusable-infrastructure-modules-should-live.md",
+      "historical_date": "2025-04-14",
+      "published_markdown_sha256": "8426ba9fa6134fd8123246a63595b1b1d51b095bab61f1886d0b19e19eb16c99",
+      "body_sha256": "e8a3b6e2c31408756968174c23d0c0a7fb193bc8fa4b3491c6296968fb48c350"
+    },
+    {
+      "id": "AZC-169",
+      "file": "src/content/posts/en/filter-an-event-grid-subscription-around-a-consumer-need.md",
+      "historical_date": "2025-04-17",
+      "published_markdown_sha256": "7d854c502e9b9f890aa4025a234f707efeb169794120d863a73f50634c876399",
+      "body_sha256": "d7cebf5b221bab7da7c10ce29684b3567a7c9d71d8371f7edf9c04f7acf37001"
+    },
+    {
+      "id": "AZC-170",
+      "file": "src/content/posts/en/choose-a-vpn-gateway-around-connectivity-requirements.md",
+      "historical_date": "2025-04-20",
+      "published_markdown_sha256": "4fee970a48c69f754b5e1219c4408527497832a5e11d285f56f953c82c5a4e26",
+      "body_sha256": "7ef1a5b418df354b2047ec06996eacc7e835a21c0bb823b72523b47c1463c7c7"
+    },
+    {
+      "id": "AZC-171",
+      "file": "src/content/posts/en/schedule-server-updates-with-azure-update-manager.md",
+      "historical_date": "2025-04-22",
+      "published_markdown_sha256": "489c62a7c88488874189e1195071ef2e814a16b1e96b4d630811a0c0b3de8d94",
+      "body_sha256": "165b550883eae20d470d26e8d942172edae2a1a118d00ae3ed937960bd04be6a"
+    },
+    {
+      "id": "AZC-172",
+      "file": "src/content/posts/en/plan-a-private-endpoint-for-a-storage-account.md",
+      "historical_date": "2025-04-25",
+      "published_markdown_sha256": "1950b3f0264947cfd3682017a1b57fd1f8c6178065e29db1ffb127af94ea5ab5",
+      "body_sha256": "9603ef87956714b4fa8d19893ff5f131f54f48d3c6b6e1c33ace91392b63e7a3"
+    },
+    {
+      "id": "AZC-173",
+      "file": "src/content/posts/en/build-a-recovery-runbook-with-an-explicit-validation-step.md",
+      "historical_date": "2025-04-28",
+      "published_markdown_sha256": "316a73f3d0f2a64c6553d2d2f37c53d5625170d758dc5ea6ae4406037242b4e4",
+      "body_sha256": "f7abe71a513136f8a3edea59670fb2289e7211e61e2679e688420aa5e0ddadbc"
+    },
+    {
+      "id": "AZC-174",
+      "file": "src/content/posts/en/use-remoting-to-inspect-several-windows-servers.md",
+      "historical_date": "2025-04-30",
+      "published_markdown_sha256": "8586e1cf3b9d7b565a853b3b9cd45e357288c22c862b509462a276255f10ae62",
+      "body_sha256": "f80822773ce28a93aea324b918fc5d92655ab4f04f540ce43552262b04ae5d75"
+    },
+    {
+      "id": "AZC-175",
+      "file": "src/content/posts/en/apply-a-baseline-windows-firewall-configuration.md",
+      "historical_date": "2025-05-03",
+      "published_markdown_sha256": "ce7c8732d222d0bbafa38dea3817562dfef19749faaf9185541dd746f10fac07",
+      "body_sha256": "2c51f51a8625714a6f70d7f22fe195112e0c7f29de129d35c8f4fb850fc12add"
+    },
+    {
+      "id": "AZC-176",
+      "file": "src/content/posts/en/test-a-planned-failover-and-record-the-application-result.md",
+      "historical_date": "2025-05-07",
+      "published_markdown_sha256": "0c97dbe9acb0ac063bbb537979d7a4bad743ed425f170ad7f4c5109610796659",
+      "body_sha256": "32576d3b937540b9b2c4e1645013bc9827b66b6649a5ae55baa0af697b861c25"
+    },
+    {
+      "id": "AZC-177",
+      "file": "src/content/posts/en/use-production-checkpoints-with-a-clear-recovery-purpose.md",
+      "historical_date": "2025-05-10",
+      "published_markdown_sha256": "2080fa90b6dec594e03da35478d511ce1ef289f36371a6e38af3ec370d064385",
+      "body_sha256": "ae2a04dc57e311be714b91207710f34175051da34c7c07419b3d04e17d8520ce"
+    },
+    {
+      "id": "AZC-178",
+      "file": "src/content/posts/en/investigate-a-linux-guest-that-enters-an-emergency-shell.md",
+      "historical_date": "2025-05-12",
+      "published_markdown_sha256": "058219b757863382d07a5f80bae5d66cae1f695a8fde3ce760e2621a809fbfff",
+      "body_sha256": "acaa374fd222e85742d2d2de1d723756845b8d02f4194c3167754e0cf982665c"
+    },
+    {
+      "id": "AZC-179",
+      "file": "src/content/posts/en/use-attack-paths-to-prioritise-exposed-azure-resources.md",
+      "historical_date": "2025-05-15",
+      "published_markdown_sha256": "e3200e52fcbda96e095571fb56722dc8df8f566af88b464daba041820437fa94",
+      "body_sha256": "16eafa5087a0aba68b7d3f06f4ddd29b53766c9ce419a02a7f16b1e779a6435d"
+    },
+    {
+      "id": "AZC-180",
+      "file": "src/content/posts/en/decide-where-azure-rbac-assignments-should-live.md",
+      "historical_date": "2025-05-18",
+      "published_markdown_sha256": "6f83edf19e0f66a82649ba89a8482568e4ed0c735ac166e900512628bbe01149",
+      "body_sha256": "86f5987f14049e88f591d2a43e89554fc65759c2c438937debedeeffa0664ba7"
+    },
+    {
+      "id": "AZC-181",
+      "file": "src/content/posts/en/review-the-plugins-available-to-a-copilot-for-security-session.md",
+      "historical_date": "2025-05-20",
+      "published_markdown_sha256": "941f792fde9a6dad6d0a6bbe4953e17dd5c536887edcd7a6a83b4f9da0edac7f",
+      "body_sha256": "bb6a55522f47e30c24f6b733ddf6c2e45911e410d7486419dca4e60c936d9785"
+    },
+    {
+      "id": "AZC-182",
+      "file": "src/content/posts/en/decide-which-response-steps-belong-in-a-playbook.md",
+      "historical_date": "2025-05-23",
+      "published_markdown_sha256": "0d343b00cab582dc4fe557d8f9436957e8c4e29dd1849182a67d4c30dbb98fea",
+      "body_sha256": "3000dd3f6ec6a4531251e4a60d69d28fe291cf58b13090d15a44e3a909ba9f4a"
+    },
+    {
+      "id": "AZC-183",
+      "file": "src/content/posts/en/investigate-a-function-timeout-without-changing-every-setting.md",
+      "historical_date": "2025-05-26",
+      "published_markdown_sha256": "5f7fcb98be8b675abdbe4e7be46ff263ce1564422ecaa44850f7480ef75ef9ec",
+      "body_sha256": "a95b74b56429c9a09fb8c14033fa962eef30c36cece2971e9c2935ad5f4f20d8"
+    },
+    {
+      "id": "AZC-184",
+      "file": "src/content/posts/en/investigate-a-vm-that-cannot-complete-provisioning.md",
+      "historical_date": "2025-05-28",
+      "published_markdown_sha256": "34c0f55c047edaf48f2c7bfefdc62c3ea79116d34c965aa82fe7d4723697565d",
+      "body_sha256": "693454beb2d81f4b9357adad26e55bf3fd51bf9b746dc299da6a89c3947a408d"
+    },
+    {
+      "id": "AZC-185",
+      "file": "src/content/posts/en/record-gpu-driver-and-library-versions-in-a-workload-image.md",
+      "historical_date": "2025-05-31",
+      "published_markdown_sha256": "cb7257684a1a0b67007d1bd605ae084b46c6cfffc363b6e1a5e4212306d5fc94",
+      "body_sha256": "5adde7ca18eb5f1f6c53547f3ed04cad0e2514deacedda72ee5ffb4a22731229"
+    },
+    {
+      "id": "AZC-186",
+      "file": "src/content/posts/en/plan-rollback-before-a-server-migration.md",
+      "historical_date": "2025-06-04",
+      "published_markdown_sha256": "88c53a0a22544d3c7617a47795c876854d01c0b55a4aa5587be9a50dcca7d52c",
+      "body_sha256": "862d3786c7689530e0b8576332b97082df18da1208769a60f6cbb297d5029c80"
+    },
+    {
+      "id": "AZC-187",
+      "file": "src/content/posts/en/add-validation-before-deploying-a-bicep-change.md",
+      "historical_date": "2025-06-07",
+      "published_markdown_sha256": "63b775d34a327c3c53d48bf36f426495a61c3602f4accac34b68c21cda719ccd",
+      "body_sha256": "79209591ebf25847a94d9d77e0d58f1565a5fc06a28d02dfe1e9ee584d49c4ff"
+    },
+    {
+      "id": "AZC-188",
+      "file": "src/content/posts/en/put-an-api-behind-azure-api-management.md",
+      "historical_date": "2025-06-09",
+      "published_markdown_sha256": "d7cdc534d8850d4cb671e3af21a825cecacb9dc66e0c2bf1a5d5b7ba883e8615",
+      "body_sha256": "e1fec4234de6d78bafc5ba13dea75bc569e9132858200b6ce3ff6e4fb72c9cb3"
+    },
+    {
+      "id": "AZC-189",
+      "file": "src/content/posts/en/build-a-route-table-for-a-controlled-outbound-path.md",
+      "historical_date": "2025-06-12",
+      "published_markdown_sha256": "b6cd133813dbefa2b6a0281c6650c44875e4c554d2bfe1dc1e83806b03889ec8",
+      "body_sha256": "7e71819430510ec0fe67894eb78ee666d30e523c86e065bc54d55ac5f5de8026"
+    },
+    {
+      "id": "AZC-190",
+      "file": "src/content/posts/en/investigate-an-alert-that-repeatedly-closes-and-reopens.md",
+      "historical_date": "2025-06-15",
+      "published_markdown_sha256": "2697dfb7ca8e72fdac4a20734f54821aa328133e62b59a6260f63835187901c2",
+      "body_sha256": "b86fa4882db9ecf40606dbc0a183254b35396de509d4d4c600370baf630a4cbe"
+    },
+    {
+      "id": "AZC-191",
+      "file": "src/content/posts/en/compare-azure-files-and-blob-storage-for-an-application.md",
+      "historical_date": "2025-06-17",
+      "published_markdown_sha256": "20326f26be48f5ade430d2d3d08e2999780ff779fcad7d1ca2aadc9992e255bf",
+      "body_sha256": "dca84e82cbaccd1d23c09f1a583e8e1f56884e7b82e8ce62f79f961215113eb6"
+    },
+    {
+      "id": "AZC-192",
+      "file": "src/content/posts/en/investigate-a-failover-that-leaves-an-application-unavailable.md",
+      "historical_date": "2025-06-20",
+      "published_markdown_sha256": "c80bc12c370449011de96792c4399a76e5b509db984c751f5e7f79608e406977",
+      "body_sha256": "6809dacda1c615a933a770b34e5c886e4fda0db78734f965e59d9bc3177f62f4"
+    },
+    {
+      "id": "AZC-193",
+      "file": "src/content/posts/en/read-and-validate-json-configuration-in-powershell.md",
+      "historical_date": "2025-06-23",
+      "published_markdown_sha256": "9251b9ef5f58618899e4a26b315538f9f21d2bac1a4587f29572028d9c2d8b17",
+      "body_sha256": "41b3c7d6116b54f6648f735bd40f457b51d8c92ab9873e31834e34b28f8e58dd"
+    },
+    {
+      "id": "AZC-194",
+      "file": "src/content/posts/en/review-event-logs-around-a-windows-infrastructure-change.md",
+      "historical_date": "2025-06-25",
+      "published_markdown_sha256": "03b67e832dc18823faf836be08890e53f8cc520f60822889da122fdcbf39e873",
+      "body_sha256": "ffafe276c2c7d1285f4b438f72fa027d579a4f9f9ff9b2a19bf4e61a79eafa5f"
+    },
+    {
+      "id": "AZC-195",
+      "file": "src/content/posts/en/investigate-a-cluster-validation-report-before-dismissing-warnings.md",
+      "historical_date": "2025-06-28",
+      "published_markdown_sha256": "6de78f96e85f9682d86305027ef949bcdd1c4d599a4618ce05c3e09f8366295c",
+      "body_sha256": "9e0509ec1cf6031f008b33d3eaad84db639b25770ed082993543355804c17915"
+    },
+    {
+      "id": "AZC-196",
+      "file": "src/content/posts/en/export-and-import-a-hyper-v-virtual-machine.md",
+      "historical_date": "2025-07-02",
+      "published_markdown_sha256": "57bf9ca55b7c0a284f9b859945c774af25d25e2229141c946b73901b223423d9",
+      "body_sha256": "9b1e1a9b7878a0e1f8fb804f8b501af0481bc583d63c8b47c6f92e27ec57f48d"
+    },
+    {
+      "id": "AZC-197",
+      "file": "src/content/posts/en/use-ssh-for-routine-linux-guest-administration.md",
+      "historical_date": "2025-07-05",
+      "published_markdown_sha256": "7a1a133a08e1b0602f358ac5db33ea568a6930881daae11d69c1f66a9db8f56c",
+      "body_sha256": "2f06739a053c67359d3b98373aa1e0fdc64a175934224eb0ee867783caa48e8e"
+    },
+    {
+      "id": "AZC-198",
+      "file": "src/content/posts/en/investigate-agentless-vulnerability-findings-before-remediation.md",
+      "historical_date": "2025-07-07",
+      "published_markdown_sha256": "bcb503f0c6d3e34e4d3b5230d19bb658158fcae13b396833057dad9f8d9e9317",
+      "body_sha256": "c83dfd6fdf6d1104a62a3f92a9948ce7ab9b10f63834c1407775392691f1b3f6"
+    },
+    {
+      "id": "AZC-199",
+      "file": "src/content/posts/en/plan-arc-enabled-windows-server-2025-hotpatch-with-its-baseline-reboots.md",
+      "historical_date": "2025-07-10",
+      "published_markdown_sha256": "8bbed4e24af6f607838481e476cd9cbb7b64203f84455b3c6d0c33bc3a1dd5dd",
+      "body_sha256": "42d3ff18eba4676c52563d60b9b3441620014bbf0ad642ed9f30634b8324a796"
+    },
+    {
+      "id": "AZC-200",
+      "file": "src/content/posts/en/require-stronger-authentication-for-privileged-operations.md",
+      "historical_date": "2025-07-13",
+      "published_markdown_sha256": "df29f50f93e80a19d362001fe2a1daeaab0301a70fc98ced61c6db32f0341563",
+      "body_sha256": "09278834415fd5fb2142bcecd60550d011536f355b387c3299758e58ac3a035e"
+    },
+    {
+      "id": "AZC-201",
+      "file": "src/content/posts/en/investigate-an-answer-that-lacks-the-expected-security-context.md",
+      "historical_date": "2025-07-15",
+      "published_markdown_sha256": "9d0d6eb9bc507d98fe5c12c1e73dfffb0c99b59fcccb815273f11c697cd12703",
+      "body_sha256": "01164693bff1d51db332a5adf40167782b5a074fcd15e8b3b1c1847cb33a2786"
+    },
+    {
+      "id": "AZC-202",
+      "file": "src/content/posts/en/use-content-hub-templates-with-a-production-review.md",
+      "historical_date": "2025-07-18",
+      "published_markdown_sha256": "47efb5b8a7a297a71c9e4865680cb3e221e45aa78473b5aee76a9e49771aee3e",
+      "body_sha256": "b1dec6da96627143f4d2a01ff6aab946318c59c3f3e179151d7812f9a7549e40"
+    },
+    {
+      "id": "AZC-203",
+      "file": "src/content/posts/en/compare-app-service-and-container-apps-for-a-small-service.md",
+      "historical_date": "2025-07-21",
+      "published_markdown_sha256": "b4a24c2aa5a540004cce2d33e4fc02cf57d6a4a7825a23d04735e64b8cc932e0",
+      "body_sha256": "57051947ba74fa53a62e5f143d9f795e8b8071f34cb1246892e056dffc6c65a9"
+    },
+    {
+      "id": "AZC-204",
+      "file": "src/content/posts/en/configure-vm-backup-and-test-the-recovery-path.md",
+      "historical_date": "2025-07-23",
+      "published_markdown_sha256": "7a28e12d2b6c7e5fb33f8c5b314fdbc3a9eef0672445b4547070d210bc4bdc89",
+      "body_sha256": "9f5f05dfc5c42d989989f123e07628a97b704c66637c98b3fe0e0369e1a96088"
+    },
+    {
+      "id": "AZC-205",
+      "file": "src/content/posts/en/separate-storage-bottlenecks-from-compute-bottlenecks.md",
+      "historical_date": "2025-07-26",
+      "published_markdown_sha256": "3831cad548cc3d0e354c96170841efad4d763bb3867825053a084809fe51743f",
+      "body_sha256": "b7c8133ca980a0a7e785e83fa89e8e9c59d964b8d3dff1c4dfa0c3fae77ffc06"
+    },
+    {
+      "id": "AZC-206",
+      "file": "src/content/posts/en/connect-a-linux-server-to-azure-arc.md",
+      "historical_date": "2025-07-30",
+      "published_markdown_sha256": "e097fd0e3022a9bb69e16c1718e81152bcbccab505abc5a44dcc76535eaf91e2",
+      "body_sha256": "efefb9b2dddbd2c3c7c7616b2d45538524058428437a6417947d39bab859c744"
+    },
+    {
+      "id": "AZC-207",
+      "file": "src/content/posts/en/import-an-existing-azure-resource-into-a-terraform-workflow.md",
+      "historical_date": "2025-08-02",
+      "published_markdown_sha256": "615c86a765a755a6a2a452aa3b3bd4fd6f692be546c77d67a373443b9fbb3267",
+      "body_sha256": "ac1afbed2cb192e3927555a07437fc1db01769c1afe9fb1fad4216465fab82cb"
+    },
+    {
+      "id": "AZC-208",
+      "file": "src/content/posts/en/separate-api-authentication-from-subscription-keys.md",
+      "historical_date": "2025-08-04",
+      "published_markdown_sha256": "0ab3ed6f9d45edbf9d49a1cd200ff009664e409b52cc13af4380491d36060e5d",
+      "body_sha256": "048bfe2a766432399e9a02dfc568a890e4efb433a4721e9a87188d1e3fc8fabb"
+    },
+    {
+      "id": "AZC-209",
+      "file": "src/content/posts/en/investigate-asymmetric-routing-through-an-azure-firewall.md",
+      "historical_date": "2025-08-07",
+      "published_markdown_sha256": "724a259a8ecc0b906a8476a5fac0c0875139747652d015b0e47036a62a153f6c",
+      "body_sha256": "29a4eecc4005a72236883e9009f9b68a7d275f904a9f29bc0c2223a6481f60e8"
+    },
+    {
+      "id": "AZC-210",
+      "file": "src/content/posts/en/review-log-ingestion-cost-alongside-retention-requirements.md",
+      "historical_date": "2025-08-10",
+      "published_markdown_sha256": "b0fea93021c17b8685c18bdede8add6602224fd771ed18cfdb2b1cbd0997680e",
+      "body_sha256": "4afeb83dd8aaebfb8382257cea5c4e550ce3fe9e29ec0a3f4bf2ae9b02942ecc"
+    },
+    {
+      "id": "AZC-211",
+      "file": "src/content/posts/en/check-dns-when-a-private-file-share-is-unreachable.md",
+      "historical_date": "2025-08-12",
+      "published_markdown_sha256": "e7e5c6e7451c74ed27d4bd1050b72a62baa7dfa8777dc8c7ecadfde5359dda88",
+      "body_sha256": "32b102460d9935a5a2c74c1a6a34f39cb428d3158f51ff91611d223c670a2274"
+    },
+    {
+      "id": "AZC-212",
+      "file": "src/content/posts/en/review-resilience-trade-offs-in-a-cost-constrained-workload.md",
+      "historical_date": "2025-08-15",
+      "published_markdown_sha256": "baa3942ab0d52452b3259bfee0d82a75695493d0977e01cd0d42be8c2ccd7b09",
+      "body_sha256": "0278a309c5b7a01e2e534089f8f5071df2d67a0d0d4434f6efa4f983fa15ab51"
+    },
+    {
+      "id": "AZC-213",
+      "file": "src/content/posts/en/check-native-command-exit-codes-in-an-automation-script.md",
+      "historical_date": "2025-08-18",
+      "published_markdown_sha256": "feabea2d1977e194a1308d5044ae71a742f9c8274ca1926bf8c2b64167c10dd4",
+      "body_sha256": "126bb0cc92f4989c855ca36bf8da3d18bf52724b33ce3b980506ba3612950460"
+    },
+    {
+      "id": "AZC-214",
+      "file": "src/content/posts/en/use-group-policy-to-configure-a-small-server-estate.md",
+      "historical_date": "2025-08-20",
+      "published_markdown_sha256": "80764cea45f160afb3c239f4241a185b482c96e53955a454b1be53e9793c472f",
+      "body_sha256": "1fc752574f2945f3539ac4a6a2af4c36f2f20f686b36665fc7be7affeb793480"
+    },
+    {
+      "id": "AZC-215",
+      "file": "src/content/posts/en/plan-storage-availability-across-cluster-nodes.md",
+      "historical_date": "2025-08-23",
+      "published_markdown_sha256": "0efb190865f632375a320108da6ce6a2ab546a36f5c4c0305365b6f0e5fc2f1e",
+      "body_sha256": "f4ffe10d05a2af09bbc16c6247a0424dfe307ad9f1e836461e3d8400a1c964ad"
+    },
+    {
+      "id": "AZC-216",
+      "file": "src/content/posts/en/investigate-a-checkpoint-chain-before-deleting-files.md",
+      "historical_date": "2025-08-27",
+      "published_markdown_sha256": "e7dbb7d4f20ddd465205d86693c50187cae7b41b6388bc4b00a9dce37005d8c4",
+      "body_sha256": "fe5b02042a76d7b45ddded269605695a3a97d1ff6322fc3e3da9a3708abe5877"
+    },
+    {
+      "id": "AZC-217",
+      "file": "src/content/posts/en/choose-a-supported-linux-distribution-for-hyper-v.md",
+      "historical_date": "2025-08-30",
+      "published_markdown_sha256": "ba558814846c0948f1adcc38d5be89ad11d813b710de1d1d8860eef234267d08",
+      "body_sha256": "2cc726a0f5c20034bd419f24fbfd90e83ab3be8337d1c5aeb4289ce10596d874"
+    },
+    {
+      "id": "AZC-218",
+      "file": "src/content/posts/en/configure-malware-scanning-for-an-azure-storage-account.md",
+      "historical_date": "2025-09-01",
+      "published_markdown_sha256": "aa5b8409d6b10b8355d578f640a35670bc56d2569f85a19dc7f8be21a844ad1a",
+      "body_sha256": "764c269c7280775fba54559ee8c046076d75d7750ac9977e2245002674270124"
+    },
+    {
+      "id": "AZC-219",
+      "file": "src/content/posts/en/troubleshoot-a-managed-identity-that-cannot-reach-a-resource.md",
+      "historical_date": "2025-09-04",
+      "published_markdown_sha256": "e0ec3da7f5b31dd4c3e9bb30b5b3d4d50fb9127dfa6627fe99debcf7ee04aa90",
+      "body_sha256": "73e1024beb39159538ed737316d42bb1fbd9c6cf69bb6a0bf4fb90d0b4ee7d11"
+    },
+    {
+      "id": "AZC-220",
+      "file": "src/content/posts/en/define-useful-pilot-outcomes-without-assuming-productivity-gains.md",
+      "historical_date": "2025-09-07",
+      "published_markdown_sha256": "c65f31e2998270d73831fbfcf5cfd82e215784930fdd772faa9a691da250bd2b",
+      "body_sha256": "1e52f4d19c0926b87e8c678bf5fc3e7232d054d43828122cee789e0ff45b5f4c"
+    },
+    {
+      "id": "AZC-221",
+      "file": "src/content/posts/en/investigate-a-rule-that-creates-too-many-incidents.md",
+      "historical_date": "2025-09-09",
+      "published_markdown_sha256": "23f95405764869d8d255e223c67f1a126f107dfcbe4a7d84c0edd01db830d7f0",
+      "body_sha256": "713c8c4ce6455c0357681333dd5185c60ab54a9ce7a008d269cacacfea4e332e"
+    },
+    {
+      "id": "AZC-222",
+      "file": "src/content/posts/en/store-application-settings-outside-a-container-image.md",
+      "historical_date": "2025-09-12",
+      "published_markdown_sha256": "d189d9695d1e55594dbe4263443c141e7c2c3ed66cc266915b82887174a1331c",
+      "body_sha256": "e7885066710d5a3d104f7a088f49eea11bdd8cf15511b82adf1f847c29e0ea13"
+    },
+    {
+      "id": "AZC-223",
+      "file": "src/content/posts/en/choose-ephemeral-os-disks-when-the-workload-permits-it.md",
+      "historical_date": "2025-09-15",
+      "published_markdown_sha256": "a18266c9670a4afa16f3e6801fffb6fb1b3be01cf291246433ccabbaef59256c",
+      "body_sha256": "835eed6f1c6df407acdc4a70229a61f0b198f458a20f18acf848a9662f4225b5"
+    },
+    {
+      "id": "AZC-224",
+      "file": "src/content/posts/en/plan-data-movement-before-moving-an-hpc-workload-to-azure.md",
+      "historical_date": "2025-09-17",
+      "published_markdown_sha256": "7e233cb4e9903a964caf2c592ab6c55f6880c6e5dfd293f64ae82f99f062c9f0",
+      "body_sha256": "082eca9922198a4861e52297a8474546806dc55a65855d831047d4c3b9b5fd46"
+    },
+    {
+      "id": "AZC-225",
+      "file": "src/content/posts/en/review-agent-logs-when-an-arc-extension-fails.md",
+      "historical_date": "2025-09-20",
+      "published_markdown_sha256": "e53827cb4928af160469ee12428bd171ff65de4e9c0479cdd1436d2d64715775",
+      "body_sha256": "af7c4a7df29589068b5637806110366de3eef32b67aba10f01ae677e600d7346"
+    },
+    {
+      "id": "AZC-226",
+      "file": "src/content/posts/en/review-drift-before-applying-another-infrastructure-deployment.md",
+      "historical_date": "2025-09-24",
+      "published_markdown_sha256": "61973ba6905ecc6f3dbf932f79987b094df7df5a5c9931cf5029ff67b38e1c9a",
+      "body_sha256": "2a76b03321324c03c2640318f8d7b304d43becf5a5df73f0fd869b838a62f71e"
+    },
+    {
+      "id": "AZC-227",
+      "file": "src/content/posts/en/trace-a-failed-request-through-an-api-management-policy.md",
+      "historical_date": "2025-09-27",
+      "published_markdown_sha256": "8c7dc56bf995b0a06806cc7cfdbb0d5093849cd70c30a57fa26290ac4961a24d",
+      "body_sha256": "c1ee0c0d6a5b51fbfafdc2ce46b3eb7e08f1b2e069b8ee1c4b3a1ba92c6a079b"
+    },
+    {
+      "id": "AZC-228",
+      "file": "src/content/posts/en/choose-load-balancer-or-application-gateway-for-a-workload.md",
+      "historical_date": "2025-09-29",
+      "published_markdown_sha256": "5961d4f6e22df7945149769e3798ed907237627fa570af93fbb520047782ee53",
+      "body_sha256": "56b6a597ae31d2493a640d7602f4bfcda5d8c6e5f1d56ced47139d03d3c84d5c"
+    },
+    {
+      "id": "AZC-229",
+      "file": "src/content/posts/en/use-resource-health-information-during-an-incident.md",
+      "historical_date": "2025-10-02",
+      "published_markdown_sha256": "8210aae180df8e248ec94fef8babab6109a9d36319233f9c6ae19ac3696ff1d0",
+      "body_sha256": "5866bd771abf0cfc3dac41d3e446a3689f2f8fe5beb7e7a56cd6687ddd40e889"
+    },
+    {
+      "id": "AZC-230",
+      "file": "src/content/posts/en/use-azure-file-sync-with-a-deliberate-endpoint-design.md",
+      "historical_date": "2025-10-05",
+      "published_markdown_sha256": "f52b965912d4013f324a21e0817a7135616fc5931cd4b2472be78ed9919c120d",
+      "body_sha256": "7c90a44c935df339af9b61b59c4da5caf84c6cbb390d872ddd408139636dd051"
+    },
+    {
+      "id": "AZC-231",
+      "file": "src/content/posts/en/define-health-checks-across-application-and-infrastructure-layers.md",
+      "historical_date": "2025-10-07",
+      "published_markdown_sha256": "fdf374d4cdabf5d587c22bdffdddc5ac65745b73aeac33db43baec20b5c4c6ea",
+      "body_sha256": "1e797fc8f08c033c6d9ff2687628c313af404e6aa0132f2a9d1c9b8cc85efd25"
+    },
+    {
+      "id": "AZC-232",
+      "file": "src/content/posts/en/decide-when-parallel-execution-improves-a-script.md",
+      "historical_date": "2025-10-10",
+      "published_markdown_sha256": "1879f804cee50c25c1e710028bbf8536a5b3f729ec9a65684405c571da3723d9",
+      "body_sha256": "33cc1906becb2c63c55f138857007423c62c3ace574ec799e973a124e7a9347d"
+    },
+    {
+      "id": "AZC-233",
+      "file": "src/content/posts/en/investigate-a-time-synchronisation-problem-on-windows-server.md",
+      "historical_date": "2025-10-13",
+      "published_markdown_sha256": "7f7617c7f7781bb21b693837b7dced62915c2e7e5734603cb7699e1be12900aa",
+      "body_sha256": "14532025f19ed6600dd930f522b500c1459893be3c7081dc5f2614bb0f42a842"
+    },
+    {
+      "id": "AZC-234",
+      "file": "src/content/posts/en/review-cluster-event-logs-during-a-node-failure.md",
+      "historical_date": "2025-10-15",
+      "published_markdown_sha256": "bb34bd71a7d9f797859423d86a2a225507812b7ef2161c9ed7fd3034032325e6",
+      "body_sha256": "33109d7bef53031fdf4fba91df40d533dd4349ef1010f5e4a65d76781d248f06"
+    },
+    {
+      "id": "AZC-235",
+      "file": "src/content/posts/en/plan-host-storage-for-hyper-v-virtual-machines.md",
+      "historical_date": "2025-10-18",
+      "published_markdown_sha256": "3b9978eb5331a552e06e4eb3c42ce0ced4917834bffd00dd44bcfc2dc552aedf",
+      "body_sha256": "7c9fad5c71e002f7b9370e1594adb1f24b934752692633761e42b5911b493bdc"
+    },
+    {
+      "id": "AZC-236",
+      "file": "src/content/posts/en/check-storage-and-network-drivers-in-a-linux-guest.md",
+      "historical_date": "2025-10-22",
+      "published_markdown_sha256": "50650b57d99f6ca2c9f619ec20d52e913c084ecf58ac1eca832209589f3fd9e6",
+      "body_sha256": "8355f56a885995db3cdc6e7278270e1399ecdb35cf992f391b849a0721382337"
+    },
+    {
+      "id": "AZC-237",
+      "file": "src/content/posts/en/choose-between-network-security-groups-azure-firewall-and-waf.md",
+      "historical_date": "2025-10-25",
+      "published_markdown_sha256": "3417accbd0cd7051233de4529e07ec31a2df29801edbc05971843702f2e938a5",
+      "body_sha256": "ee18a81d79205e0939f694feb3b82084bf2c85b146881b64bf90f4866c2746ba"
+    },
+    {
+      "id": "AZC-238",
+      "file": "src/content/posts/en/review-guest-access-before-sharing-an-azure-application.md",
+      "historical_date": "2025-10-27",
+      "published_markdown_sha256": "5cea29564471fae193df58fb2357f9d4a45e6466f65835438622fd84226cd909",
+      "body_sha256": "6e0d7a90ebdff2730bb6c8476cabe48f78cf21b006a936acb0b888ca13a15100"
+    },
+    {
+      "id": "AZC-239",
+      "file": "src/content/posts/en/use-copilot-for-security-alongside-defender-investigations.md",
+      "historical_date": "2025-10-30",
+      "published_markdown_sha256": "f97208db4294656a6f5e8cfa6e851cd8fc657b3e2001f74e51987175e27af631",
+      "body_sha256": "008ce608a87114d2fd79fd48e6d433d0280d09b96314fe1239ac807ef1f2aff5"
+    },
+    {
+      "id": "AZC-240",
+      "file": "src/content/posts/en/connect-sentinel-incidents-with-defender-xdr-context.md",
+      "historical_date": "2025-11-02",
+      "published_markdown_sha256": "011dc54ccd954f6ce6ff552eb2eaf716bbd469c3cbd87ee9027bfa82d01a8110",
+      "body_sha256": "cd424e451a286de2dcef36e2a1e248a10adc23685cbfcf8300dea0c43d76aff0"
+    },
+    {
+      "id": "AZC-241",
+      "file": "src/content/posts/en/configure-a-custom-domain-and-https-for-a-web-application.md",
+      "historical_date": "2025-11-04",
+      "published_markdown_sha256": "738907123ee3e76bf9e3d4f0a0eb227689bae679dcf7b57b58bb078e99a1fbde",
+      "body_sha256": "25d9d3e65816a0ae4a3ee96282c2d594a823ae4b5c4bded53fabee8b9e8c1f3f"
+    },
+    {
+      "id": "AZC-242",
+      "file": "src/content/posts/en/apply-a-consistent-patching-approach-to-azure-servers.md",
+      "historical_date": "2025-11-07",
+      "published_markdown_sha256": "4708d9bd3daa62ad6990932172f7cd0d7dd546d51d8cf745f61fdbb433b5ed7a",
+      "body_sha256": "8a1532cf1892dc33d329d69979d5b15f20a0b3d4f63e98e29b7798ce472d678e"
+    },
+    {
+      "id": "AZC-243",
+      "file": "src/content/posts/en/set-a-budget-boundary-around-a-compute-experiment.md",
+      "historical_date": "2025-11-10",
+      "published_markdown_sha256": "38af30c6a8ec0bfa6e196b73e65c52b8f0da603b6248451b19586a1984f62efd",
+      "body_sha256": "14a5e8c40e9b2970bce38aee2b7ccc476005be0256415b49fe3f45ac687a7795"
+    },
+    {
+      "id": "AZC-244",
+      "file": "src/content/posts/en/understand-the-operating-model-of-azure-local.md",
+      "historical_date": "2025-11-12",
+      "published_markdown_sha256": "fe0e22881264ebdb2c1031fe25a6543679caee640ae4576c8cac0fa68b5ae6a8",
+      "body_sha256": "4e5fae1b8b9dc809d114938abc8d222a323e5e7bbe3fb9dffaeb9e1d1e2f8338"
+    },
+    {
+      "id": "AZC-245",
+      "file": "src/content/posts/en/troubleshoot-deployment-permissions-without-assigning-owner.md",
+      "historical_date": "2025-11-15",
+      "published_markdown_sha256": "d7fb15627bacac9bdfa8b26826eb9807ff9df5d588b2dd93236899e2ac529613",
+      "body_sha256": "054386fc74ec21390ce5e96447beab284b993a5ddd8ad756c3c2da43316582a7"
+    },
+    {
+      "id": "AZC-246",
+      "file": "src/content/posts/en/protect-a-workflow-secret-with-key-vault.md",
+      "historical_date": "2025-11-19",
+      "published_markdown_sha256": "638615f02c4a9b29c2702c787755fd5bfbed66c382c8db2b51a66e0554bd22b6",
+      "body_sha256": "7bee296c72a03e24d621d67c8c85983289de9211e07015015e2a3826e2c048f8"
+    },
+    {
+      "id": "AZC-247",
+      "file": "src/content/posts/en/configure-health-probes-that-reflect-application-readiness.md",
+      "historical_date": "2025-11-22",
+      "published_markdown_sha256": "1a37de597e2240281d8e4447aa1be3b271a9347e8494330c5b135b157da04445",
+      "body_sha256": "b7fa281434556a6dacf2c0fd8f1cc7b6acf4038f5a87ce980c77d1cbdf49c02b"
+    },
+    {
+      "id": "AZC-248",
+      "file": "src/content/posts/en/apply-diagnostic-settings-consistently-across-azure-resources.md",
+      "historical_date": "2025-11-24",
+      "published_markdown_sha256": "a44645491f4c470025e74385472910b31446b52c36a8297884cb63d1173d694b",
+      "body_sha256": "4432b6b0d1e69a793fde9a72111f99b452853c041988e3b33a84e343a0eff83e"
+    },
+    {
+      "id": "AZC-249",
+      "file": "src/content/posts/en/plan-an-immutable-storage-policy-before-retaining-regulated-data.md",
+      "historical_date": "2025-11-27",
+      "published_markdown_sha256": "aa4efefeb8fb5319b207f8112d0bc7d26abd48e6a1fc9c09c273983e0e9302e5",
+      "body_sha256": "595194d1c7d5104b06f5acf8382edbc0b81faaa0000aedba2216675e154d8c84"
+    },
+    {
+      "id": "AZC-250",
+      "file": "src/content/posts/en/choose-a-deployment-approach-that-limits-the-impact-of-failure.md",
+      "historical_date": "2025-11-30",
+      "published_markdown_sha256": "23f824410a13ad324b9e9ca544b1fa50f5398dc10a1f0a3b3015307013b8ba91",
+      "body_sha256": "b856d44bd2c717830a384550a1ee427e3052019252cd776ca033e80f141e327c"
+    },
+    {
+      "id": "AZC-251",
+      "file": "src/content/posts/en/test-a-reusable-function-with-pester.md",
+      "historical_date": "2025-12-02",
+      "published_markdown_sha256": "918ad7095a70f1e710b72662fa17b6cd8ad34e6362e822cb9c5eac535faad2de",
+      "body_sha256": "304e4c986d5273fdbedd2e785c5eb328fc84c38ecd3711fce9aae0f720104f9d"
+    },
+    {
+      "id": "AZC-252",
+      "file": "src/content/posts/en/plan-an-in-place-windows-server-upgrade-around-dependencies.md",
+      "historical_date": "2025-12-05",
+      "published_markdown_sha256": "6bfc900d86a1b0c238a2178f26e35a9aeecc6065dd8ebec913b61120e102fdf0",
+      "body_sha256": "06be6290f8c2f7ade9af8d20b5e6404e042a5fdd1ac158c1284b029ba0d5fa98"
+    },
+    {
+      "id": "AZC-253",
+      "file": "src/content/posts/en/choose-failover-priorities-around-application-dependencies.md",
+      "historical_date": "2025-12-08",
+      "published_markdown_sha256": "afcdbc854ace3d1a890ff8a1e672eaa840313998748a9e70cc50a87a6f838228",
+      "body_sha256": "ddb25fd4d45bd03abb2db6090b652e92689db0e1055dfb9943053710276d7a18"
+    },
+    {
+      "id": "AZC-254",
+      "file": "src/content/posts/en/configure-hyper-v-replica-for-a-defined-recovery-scenario.md",
+      "historical_date": "2025-12-10",
+      "published_markdown_sha256": "e4466b5442fac5e89a9609e4bfe674a410210c992c314788f4f3897310d54dc0",
+      "body_sha256": "be390c800eaf125bffd2f955218ab20e694cde73077dfa732c590874a56ddc66"
+    },
+    {
+      "id": "AZC-255",
+      "file": "src/content/posts/en/investigate-slow-disk-access-in-a-linux-vm.md",
+      "historical_date": "2025-12-13",
+      "published_markdown_sha256": "3e67629c7dcdf7f4b98eed72e3abd290990555e2b70a10ab243dfbab60a45c13",
+      "body_sha256": "2cc7c4f15dce1ec487e628495c277b8b4f0dc226b8f1d14ffeb4fd57d587f52f"
+    },
+    {
+      "id": "AZC-256",
+      "file": "src/content/posts/en/assign-owners-to-cloud-security-recommendations.md",
+      "historical_date": "2025-12-17",
+      "published_markdown_sha256": "0426e0a4b5d51a7ed83d15bb73d2dfe55ea7ee3909999fb573bfcf7a9fb3e262",
+      "body_sha256": "6e5e16dca23f28298e7eb67638f75b6ff29a13e02da8edd12c63cfd2e3755525"
+    },
+    {
+      "id": "AZC-257",
+      "file": "src/content/posts/en/use-conditional-access-authentication-strengths-carefully.md",
+      "historical_date": "2025-12-20",
+      "published_markdown_sha256": "eeab03a74c8dcfee7fba21de4482090c24ee242896e39b0946c0951814138215",
+      "body_sha256": "bf3ce96b1090384b887449df63b22a9863e9a8d2270d85eef93e1391733b7ac9"
+    },
+    {
+      "id": "AZC-258",
+      "file": "src/content/posts/en/ask-focused-questions-about-an-identity-related-incident.md",
+      "historical_date": "2025-12-22",
+      "published_markdown_sha256": "0dbe9aae371e3c06d13605559faab4f0dca61cb94e06c16a42897d229c106e8a",
+      "body_sha256": "1af6d6fa3f57b1691e1ff8514d960849e7d8037ded6909d4664ad72c859089de"
+    },
+    {
+      "id": "AZC-259",
+      "file": "src/content/posts/en/use-advanced-hunting-to-test-a-defender-xdr-hypothesis.md",
+      "historical_date": "2025-12-25",
+      "published_markdown_sha256": "066dfa9c056bf88a7ebb0ea0c23af4bf913700e5234a30ad362211c74d1f9d8f",
+      "body_sha256": "03bc7accf2cf1941ab77edcb3fff41766cfd2bdf5daeba3768e43b341a42aaca"
+    },
+    {
+      "id": "AZC-260",
+      "file": "src/content/posts/en/plan-certificate-renewal-before-the-production-release.md",
+      "historical_date": "2025-12-28",
+      "published_markdown_sha256": "67930ab2a73115d696c6d095e284b9f77d20b9ab8ead4116a98f94a9da4929a1",
+      "body_sha256": "2767d33cbc6fe6a9cac762fbc2451d5f1e4301c8609dfcb2dab2893eecdd4640"
+    },
+    {
+      "id": "AZC-261",
+      "file": "src/content/posts/en/diagnose-a-vm-boot-problem-using-serial-console-evidence.md",
+      "historical_date": "2025-12-30",
+      "published_markdown_sha256": "e4573169a760099393de405e1048b0f76eb64df71dcb2a4552320138e0183176",
+      "body_sha256": "7182cacc3d190111ff35db7fdafcb98891903f9cd7d6556dc4512c76ef3ff812"
+    },
+    {
+      "id": "AZC-262",
+      "file": "src/content/posts/en/choose-a-placement-approach-for-tightly-coupled-compute-jobs.md",
+      "historical_date": "2026-01-02",
+      "published_markdown_sha256": "4c5e71ba9d48885f267d1ddf0ce5814a90e7b4b24f7bf3674352cf6bf880439b",
+      "body_sha256": "422599aca2a5471de35d95dd100640ab14c3a7203eebc46906c0edb4b350d473"
+    },
+    {
+      "id": "AZC-263",
+      "file": "src/content/posts/en/prepare-a-hybrid-server-patching-workflow.md",
+      "historical_date": "2026-01-05",
+      "published_markdown_sha256": "2b493cd2e3551086170f424f284851305d1ae82ae1b14f815875041716f64cd1",
+      "body_sha256": "244a66adf97ab37f0896e57a4e1179212dbaf1687921d393ad928379aa4dce89"
+    },
+    {
+      "id": "AZC-264",
+      "file": "src/content/posts/en/use-deployment-outputs-without-exposing-secrets.md",
+      "historical_date": "2026-01-07",
+      "published_markdown_sha256": "62563329a425f2ea07b08a83168511247a38186beba547b6c996d4c05359bcfc",
+      "body_sha256": "08dbf8ba77fa5624846f7086367e253d3ff499e3d9f1d335501b2af74f09eb1c"
+    },
+    {
+      "id": "AZC-265",
+      "file": "src/content/posts/en/compare-event-hubs-and-service-bus-for-an-ingestion-workload.md",
+      "historical_date": "2026-01-10",
+      "published_markdown_sha256": "6a7e5e2af5499141bf838de99f9f4eddf45e25ec4cb317f530539e49cf9bed47",
+      "body_sha256": "d6601954bcb24ed2765255e99a95bb78ba8c8f5d130c3d5ba5eb97f884361b37"
+    },
+    {
+      "id": "AZC-266",
+      "file": "src/content/posts/en/plan-expressroute-resilience-beyond-the-primary-connection.md",
+      "historical_date": "2026-01-14",
+      "published_markdown_sha256": "01bf50b65acc1e7d3002b6e66b9589c1eee2bdfec37ba1425cf490bb096c1e89",
+      "body_sha256": "7d4891dccbbc57227cc38bda0ec01464083307708241e23a1e5b7a29c5a2f58c"
+    },
+    {
+      "id": "AZC-267",
+      "file": "src/content/posts/en/plan-permissions-for-an-operations-automation-identity.md",
+      "historical_date": "2026-01-17",
+      "published_markdown_sha256": "0b691116158ec50c0b74843af90fb96d8fb940d517ec58cd2fbc9cf413eecce5",
+      "body_sha256": "f098230d1ae147e01f2c330616ac35209d72dc8b03be5c11a248332265a176cd"
+    },
+    {
+      "id": "AZC-268",
+      "file": "src/content/posts/en/measure-storage-performance-without-confusing-capacity-and-throughput.md",
+      "historical_date": "2026-01-19",
+      "published_markdown_sha256": "fa02413ebdf8c35febb7c5010b138d98752b7c7a759eb8006d895694fddc9f3e",
+      "body_sha256": "4f12a267e2e864e678c4c96edfebd47fbbcdb17bbe0ee3073750b33c35922fec"
+    },
+    {
+      "id": "AZC-269",
+      "file": "src/content/posts/en/record-a-recovery-decision-before-an-infrastructure-change.md",
+      "historical_date": "2026-01-22",
+      "published_markdown_sha256": "be421b8d7e8acf7871d59f19e8e7b6429ce6a616e7d9d2c354944242c094a46d",
+      "body_sha256": "9134008a9ffcbefbe678aaae5b690dca928a995accbfb835e3be6e3968c05f35"
+    },
+    {
+      "id": "AZC-270",
+      "file": "src/content/posts/en/use-shouldprocess-for-an-infrastructure-change-function.md",
+      "historical_date": "2026-01-25",
+      "published_markdown_sha256": "94ad837403085e7b0d3f0b691f8418e4be888ad71ddcba7745d1d3ff26de0789",
+      "body_sha256": "d2a356c52bf09d8183fccfca2557f1f103de75029a6c91844c4e0baeb03b5b19"
+    },
+    {
+      "id": "AZC-271",
+      "file": "src/content/posts/en/check-smb-settings-before-changing-a-file-service-workload.md",
+      "historical_date": "2026-01-27",
+      "published_markdown_sha256": "b981fc7b247fde1603050740a70b68b16196ae42aec443d95059cd1be5e11986",
+      "body_sha256": "245f7137091bf1365e844be44e0323bea83298389187380b44f3c485baad6ae6"
+    },
+    {
+      "id": "AZC-272",
+      "file": "src/content/posts/en/document-a-cluster-recovery-procedure-before-it-is-needed.md",
+      "historical_date": "2026-01-30",
+      "published_markdown_sha256": "85d5f1ffbcc552f65b3ccfc6544168556017e8e887d60c69dac832c0f9e90726",
+      "body_sha256": "255f3d06e0075fe0556ee5d58f018c76701ebe6ab1a412b1cee3b768c5c7be26"
+    },
+    {
+      "id": "AZC-273",
+      "file": "src/content/posts/en/review-cpu-compatibility-before-moving-a-vm.md",
+      "historical_date": "2026-02-02",
+      "published_markdown_sha256": "9aacb4a3865e60e89a4babdda94cfc3e7fbbd2c612239921082093f0e3e05042",
+      "body_sha256": "5651609722f8940cbc79e2a0454421d03e5d21a6726df6e87169175fb09b16aa"
+    },
+    {
+      "id": "AZC-274",
+      "file": "src/content/posts/en/plan-linux-guest-backup-around-application-consistency.md",
+      "historical_date": "2026-02-04",
+      "published_markdown_sha256": "05c0597b2340abecdf08033a3a15f7d064e5fd3024dfe18777367ed01f0a9de7",
+      "body_sha256": "47ccee36e9637863673fa2632b7216d4b39df83cf389c7ff1252a48af496cc96"
+    },
+    {
+      "id": "AZC-275",
+      "file": "src/content/posts/en/review-the-regulatory-compliance-dashboard-in-defender-for-cloud.md",
+      "historical_date": "2026-02-07",
+      "published_markdown_sha256": "998b54ccdacf640864cabc53c56aa8857f9637752941b7e55b25fe476e2a4104",
+      "body_sha256": "a163106b25df65889a534bef366f210dda8876524ac37310e6f52764f7fc5854"
+    },
+    {
+      "id": "AZC-276",
+      "file": "src/content/posts/en/plan-identity-permissions-for-a-production-deployment-pipeline.md",
+      "historical_date": "2026-02-11",
+      "published_markdown_sha256": "175b46882898cdbc36ca4d77a0b4889bb0d13e6f6def35aa7d230c5934d004e9",
+      "body_sha256": "89cc1cdd7ba00392ca189ad90ce764c561ef7a85c9d379a12c113371201c76b4"
+    },
+    {
+      "id": "AZC-277",
+      "file": "src/content/posts/en/review-access-boundaries-before-sharing-investigation-results.md",
+      "historical_date": "2026-02-14",
+      "published_markdown_sha256": "a61ba7e8b0f280d01f0373ec900599f64ebfda0e845b6af2e66fd21f8e1640c6",
+      "body_sha256": "a0af68e59380519c444a0803c53a2062b1964f6be4924dc87eb61e8993d04de5"
+    },
+    {
+      "id": "AZC-278",
+      "file": "src/content/posts/en/choose-a-detection-exclusion-or-a-rule-change.md",
+      "historical_date": "2026-02-16",
+      "published_markdown_sha256": "317fafd0a833fd63942f98653cf937e57ca6bee3b5bf4112097e4e670c27ca3b",
+      "body_sha256": "d787f25757de69ac27c0ee2d0698073c0a1cfd7627fcc309cb1d820971c2269b"
+    },
+    {
+      "id": "AZC-279",
+      "file": "src/content/posts/en/set-application-scaling-rules-around-measurable-demand.md",
+      "historical_date": "2026-02-19",
+      "published_markdown_sha256": "7f4a1780a7062ac5467a20455357d329f3eb4bbac131a4472434bd85e899de66",
+      "body_sha256": "c288ba716288088f45dcb44cefbde916817313049757a1e7c7b58f9cb9447da6"
+    },
+    {
+      "id": "AZC-280",
+      "file": "src/content/posts/en/choose-availability-zones-during-the-initial-vm-design.md",
+      "historical_date": "2026-02-22",
+      "published_markdown_sha256": "dcce6476c87d68e412126244918337d527b30bba6df14aef9148c9798501d04c",
+      "body_sha256": "ec1084978878ee91b0c24144722e4e0bcf15056e0a71a40d869c2a315c1cf041"
+    },
+    {
+      "id": "AZC-281",
+      "file": "src/content/posts/en/monitor-an-hpc-run-without-confusing-observations-and-benchmarks.md",
+      "historical_date": "2026-02-24",
+      "published_markdown_sha256": "18be06301a97068de8a94a42dc8c18f7ced56c37239ca95c89e58dba93e94b02",
+      "body_sha256": "ad0ebf099de48b8b89760f4cbe8eb43c2bf92343b9eea4666686a4d0a37eb3b8"
+    },
+    {
+      "id": "AZC-282",
+      "file": "src/content/posts/en/review-identity-and-dns-dependencies-before-a-migration.md",
+      "historical_date": "2026-02-27",
+      "published_markdown_sha256": "35fcb0c1e00e5b3e738b04413ede807364b3f7da5c00815d40410948e6be586c",
+      "body_sha256": "dee9961d0d71fdfc63b3ed8972c7f2a50cdc72874fab08d39705cb7bdf8b4259"
+    },
+    {
+      "id": "AZC-283",
+      "file": "src/content/posts/en/plan-ownership-and-deletion-behaviour-for-an-infrastructure-stack.md",
+      "historical_date": "2026-03-02",
+      "published_markdown_sha256": "53f2d49e76b4afb4dd887953f56e1ef14142144c2d4f998a6343fab768f61142",
+      "body_sha256": "ec4c704e1540b34d3411a7260b72268bfdd36459dc2daf42cf25ab908eb38e1c"
+    },
+    {
+      "id": "AZC-284",
+      "file": "src/content/posts/en/add-correlation-identifiers-across-an-integration-workflow.md",
+      "historical_date": "2026-03-04",
+      "published_markdown_sha256": "1054318c01e38505dc82c52cd23518b1c89cd63dc6bbbaaadccfa45fb722ad58",
+      "body_sha256": "8ea241afd3e1b905745f6def7ca545afee64cbb1548a9e92091ac2067bbe9379"
+    },
+    {
+      "id": "AZC-285",
+      "file": "src/content/posts/en/use-dns-private-resolver-for-hybrid-name-resolution.md",
+      "historical_date": "2026-03-07",
+      "published_markdown_sha256": "6d37c93c6c8fc3f897b80f7366f944ebf84c32051ad1ba70adda43a453583781",
+      "body_sha256": "62fab5685d3992c46490a3ea72fdff351b995aecc0b99c0ad548408d4eeac666"
+    },
+    {
+      "id": "AZC-286",
+      "file": "src/content/posts/en/check-a-failed-runbook-using-its-job-evidence.md",
+      "historical_date": "2026-03-11",
+      "published_markdown_sha256": "aa93e2ca27e762248823a7f82929c05ee52f02238feb0d28f53d54590dc34639",
+      "body_sha256": "f4c47baf33dd4bb6d2e668641ca45b60c0dfddcda659fed9e8624e2239daf08b"
+    },
+    {
+      "id": "AZC-287",
+      "file": "src/content/posts/en/protect-an-application-against-accidental-blob-deletion.md",
+      "historical_date": "2026-03-14",
+      "published_markdown_sha256": "deaa7c33e043ea9fc790e851a2fa3f3bfa61029fabac0a34eee11f0c4cabd988",
+      "body_sha256": "94706be489b37b2b12596918976e75db45ea7d8727e792cc7687d6ab6aaf3531"
+    },
+    {
+      "id": "AZC-288",
+      "file": "src/content/posts/en/plan-regional-recovery-without-overlooking-identity-and-dns.md",
+      "historical_date": "2026-03-16",
+      "published_markdown_sha256": "8757876a4b0561d52af110368ad720cbf93f5d66796402f7a6e5860c5189d0ce",
+      "body_sha256": "a4f3d45b39a6bbd82c4acb039a13cca45039e3d2dce26b12ec3d8473bf54e4b2"
+    },
+    {
+      "id": "AZC-289",
+      "file": "src/content/posts/en/powershell-7-6-lts-prepare-an-automation-compatibility-check.md",
+      "historical_date": "2026-03-19",
+      "published_markdown_sha256": "1db21f4a0b92becd4702ebc00ab207a12b6920b418556dee309f0510493c34ee",
+      "body_sha256": "4c77bab0b267e1a98873ab0348198ac84f630535995bc6854994ed0ddeb41abb"
+    },
+    {
+      "id": "AZC-290",
+      "file": "src/content/posts/en/pin-module-versions-for-a-repeatable-automation-job.md",
+      "historical_date": "2026-03-22",
+      "published_markdown_sha256": "4b94f7cf13bb726ed93e545d0840c31712f6253d775c2a67ea2d51632f1ca378",
+      "body_sha256": "9046e95fe92fa7fe57f45ccc9380525f49c92f4c8e6d2ad78743d24148f171e0"
+    },
+    {
+      "id": "AZC-291",
+      "file": "src/content/posts/en/review-certificate-expiry-across-windows-servers.md",
+      "historical_date": "2026-03-24",
+      "published_markdown_sha256": "45c65689f75d2e324055fa428e271d332046ade233da1cb516d70c7b5e6e938a",
+      "body_sha256": "a44e28952d66d46c942c7b5fa175ee9e9f9ad2ed532a688627a93cc07683c532"
+    },
+    {
+      "id": "AZC-292",
+      "file": "src/content/posts/en/investigate-a-live-migration-that-stalls-during-maintenance.md",
+      "historical_date": "2026-03-27",
+      "published_markdown_sha256": "4a10380eaa40173267d964ab429e7d5cf54810403a9c132bc05e7febc5878db9",
+      "body_sha256": "f251efc2d4a73ae8b8f5f1c591217fc8a352402feaea164952c8597d4a2335dd"
+    },
+    {
+      "id": "AZC-293",
+      "file": "src/content/posts/en/use-powershell-direct-for-windows-guest-administration.md",
+      "historical_date": "2026-03-30",
+      "published_markdown_sha256": "fb40114cd9d2d318a344573d867a571cef60bf71cc5041622f101dc3bc70210f",
+      "body_sha256": "107e42f2c588e1dcb8dff68fd648ec164c4d2fff885bd27f0991c5f4f83a300d"
+    },
+    {
+      "id": "AZC-294",
+      "file": "src/content/posts/en/review-linux-guest-shutdown-during-host-maintenance.md",
+      "historical_date": "2026-04-01",
+      "published_markdown_sha256": "9c9ef204fc2f08452ed7bfee29db2646f8801e4a88b84ace343a217689ac23d1",
+      "body_sha256": "1edd953ba72346dc128ac61fe401b178c06a5c907824692e4656b8214ead3c81"
+    },
+    {
+      "id": "AZC-295",
+      "file": "src/content/posts/en/set-useful-boundaries-for-security-exemptions.md",
+      "historical_date": "2026-04-04",
+      "published_markdown_sha256": "5a4a866d32616f480bc0129f8c3491dae170e08b4dcbae02d2616631d5035eae",
+      "body_sha256": "a7484414155beb301aa08980a0bd0e4544db906770529c617c15853cac400162"
+    },
+    {
+      "id": "AZC-296",
+      "file": "src/content/posts/en/review-application-consent-and-service-principal-permissions.md",
+      "historical_date": "2026-04-08",
+      "published_markdown_sha256": "36d16860ed7bf13a24d7d54913cd67c607cf9692fdf5411d9cd3cf222c05723f",
+      "body_sha256": "973091d9da12c23f106aeec52c0ee4a26ff404f12ab1bb866ff12d8336994307"
+    },
+    {
+      "id": "AZC-297",
+      "file": "src/content/posts/en/keep-an-analyst-review-step-in-a-repeatable-promptbook.md",
+      "historical_date": "2026-04-11",
+      "published_markdown_sha256": "0d21e788361ad00e68993ea0f900f534ed3d3f12469dd0777ad556d9aa7450c8",
+      "body_sha256": "af423dc06e54e6bab2b738cec0fd5c0fdc521f2a2b24c857dec941c70252c7a8"
+    },
+    {
+      "id": "AZC-298",
+      "file": "src/content/posts/en/build-an-incident-triage-workbook-for-the-operations-team.md",
+      "historical_date": "2026-04-13",
+      "published_markdown_sha256": "ff9aaf8183008c9beee00147686f5e56607eefc35b44ad1954642ed1986661c1",
+      "body_sha256": "ce66cd9d3ff4b19952797763313bcb0f32e5d5402666d488f68320c965a03157"
+    },
+    {
+      "id": "AZC-299",
+      "file": "src/content/posts/en/trace-a-request-through-application-and-platform-logs.md",
+      "historical_date": "2026-04-16",
+      "published_markdown_sha256": "046c899d76607cc947a88d11753810864c873b160bc7175b5f0b823789d53e12",
+      "body_sha256": "c786c981e1d407b98352cea7b602d95e0bd0e41701226637c2ab92db3438c084"
+    },
+    {
+      "id": "AZC-300",
+      "file": "src/content/posts/en/separate-compute-image-versions-from-application-releases.md",
+      "historical_date": "2026-04-19",
+      "published_markdown_sha256": "798673d2ae1c9abc54d38ded381f1b26fdaaa5a7cadb603a8950527931336b9b",
+      "body_sha256": "0cbf0076196196c27c02af9097fbb29de35a9508394b2d31e8c629a09f9bbd8e"
+    },
+    {
+      "id": "AZC-301",
+      "file": "src/content/posts/en/investigate-failed-node-startup-in-an-azure-batch-pool.md",
+      "historical_date": "2026-04-21",
+      "published_markdown_sha256": "844e10cb24c9eea9a487157d2c0e2eede8df47249026ad9d5730c84b3a1f5384",
+      "body_sha256": "68cec11014965eaff7843a431b82dd235613b0df3361381844b2b8a21b3c3bf8"
+    },
+    {
+      "id": "AZC-302",
+      "file": "src/content/posts/en/validate-a-migrated-server-before-closing-the-change.md",
+      "historical_date": "2026-04-24",
+      "published_markdown_sha256": "91651e25d4cf32bad3ae7c82cc1897a6ee7e6ee06a52d84a123809c0472d7664",
+      "body_sha256": "576cb3f75e271b2a7a60e2718914e4fccf365366da8e58461c969a325c1727fd"
+    },
+    {
+      "id": "AZC-303",
+      "file": "src/content/posts/en/pin-provider-and-module-versions-in-an-azure-deployment.md",
+      "historical_date": "2026-04-27",
+      "published_markdown_sha256": "676901a8d421a5af9cb0851c2bbabcfbee85039b2e81c3a4aa53994e2e7a49e7",
+      "body_sha256": "61ebef90cc05c80574cf40cae33a16b88cd4a3345613c100603a30ba1b252e40"
+    },
+    {
+      "id": "AZC-304",
+      "file": "src/content/posts/en/investigate-a-workflow-trigger-that-fires-unexpectedly.md",
+      "historical_date": "2026-04-29",
+      "published_markdown_sha256": "71bd23f667cc583f8474c3ef15fb87ec34be9c97aec5f48c76a8bf16abe6f2ca",
+      "body_sha256": "2e1d97c07ed5573dac8ca9507faafa57ca35086535f3e81362c8ba753a8b6cab"
+    },
+    {
+      "id": "AZC-305",
+      "file": "src/content/posts/en/investigate-a-private-endpoint-that-resolves-to-a-public-address.md",
+      "historical_date": "2026-05-02",
+      "published_markdown_sha256": "4539442c02b639efbded13aba0c7f6fc4570dc9270333cb0be54888b84bd23b1",
+      "body_sha256": "5b319a3bac9e89424558ea47ae28121cccdecdeaf8d79433cb4082ec361db738"
+    },
+    {
+      "id": "AZC-306",
+      "file": "src/content/posts/en/connect-a-change-record-to-a-useful-monitoring-check.md",
+      "historical_date": "2026-05-06",
+      "published_markdown_sha256": "18455e7646b814e4523eecaecf3111d81067651e87848b649febc0c123609129",
+      "body_sha256": "f27b1df83a1e7769767b0ff6294f00a91095dd3582bfb27d6a5cef905e4d4f64"
+    },
+    {
+      "id": "AZC-307",
+      "file": "src/content/posts/en/investigate-throttling-before-changing-a-storage-account-design.md",
+      "historical_date": "2026-05-09",
+      "published_markdown_sha256": "cc32fef338338656d3ff22e8fd265c90df9298730bc712d38f2c6fea62de90cc",
+      "body_sha256": "d9fd996fc437e8d8a9d396502c3779d732b1753952a16427e174eb686ebde9bf"
+    },
+    {
+      "id": "AZC-308",
+      "file": "src/content/posts/en/check-hidden-dependencies-after-an-application-failover.md",
+      "historical_date": "2026-05-11",
+      "published_markdown_sha256": "0eb7d2817d1a7d2bedd0f82721baebfea14fa0f28891acede7dd350ce02b56ce",
+      "body_sha256": "45b19ddc2a9d75b4594b4a04a211034f74f158c0ebf391c54c357d65cb267d5e"
+    },
+    {
+      "id": "AZC-309",
+      "file": "src/content/posts/en/investigate-a-scheduled-script-that-works-interactively.md",
+      "historical_date": "2026-05-14",
+      "published_markdown_sha256": "b32dbfdafea95e818d8dd25d4b226716803a093ae26b994860e408fcefe153ad",
+      "body_sha256": "48730fb4d8cffe4dd69bbb4abab7eeeaeb4bc4565fe04b6e28b216efbeeb94fa"
+    },
+    {
+      "id": "AZC-310",
+      "file": "src/content/posts/en/investigate-a-server-update-that-repeatedly-fails.md",
+      "historical_date": "2026-05-17",
+      "published_markdown_sha256": "f1f106ae8608e7a0308285749d10816c5fb0c23bb14409dcd0875eafb6ff628b",
+      "body_sha256": "67a72a263cb68eccd64605716cc1583157ad6a135b06ec57d5ddc85669353b15"
+    },
+    {
+      "id": "AZC-311",
+      "file": "src/content/posts/en/review-split-brain-risk-in-a-stretched-infrastructure-design.md",
+      "historical_date": "2026-05-19",
+      "published_markdown_sha256": "61cb7581ca3ea13e16660d173b053be253ab212b98195d90d1f9f4566adca4ae",
+      "body_sha256": "f29dde0199298f0751b3206cdc9f70e269ac5857188bb07bc5b9dd4e6272dda8"
+    },
+    {
+      "id": "AZC-312",
+      "file": "src/content/posts/en/review-the-revised-cost-assumptions-for-arc-enabled-windows-server-hotpatch.md",
+      "historical_date": "2026-05-22",
+      "published_markdown_sha256": "1116fa5b82f085a58b858d9638c67f554ef0dae6aa42a8dfe0388b2d221dcc45",
+      "body_sha256": "6c054f1b9e1d3dc63d209130f767e5161f72a66324a16b78f8c6421f4a9eacde"
+    },
+    {
+      "id": "AZC-313",
+      "file": "src/content/posts/en/investigate-a-virtual-switch-after-a-host-network-change.md",
+      "historical_date": "2026-05-25",
+      "published_markdown_sha256": "b11903d19f3aa44494aaac686f4adbf394e07b4e4f19fc4efb6b3263c1258ceb",
+      "body_sha256": "d7a97ecdbe0c7fb3da2cb7d9ffe2d50fa2140edc15d61d7f99f063c85d361534"
+    },
+    {
+      "id": "AZC-314",
+      "file": "src/content/posts/en/understand-checkpoints-for-a-linux-application.md",
+      "historical_date": "2026-05-27",
+      "published_markdown_sha256": "769be40ff2d96c6bf89184019d6eda6d6504f4a2fcbbe7f4e36a293619995f52",
+      "body_sha256": "0fe65bc27cb7c20bfdd2a66eca533a97c135a46681e0a2b9432778814705c1ad"
+    },
+    {
+      "id": "AZC-315",
+      "file": "src/content/posts/en/investigate-a-codeql-alert-before-merging-a-pull-request.md",
+      "historical_date": "2026-05-30",
+      "published_markdown_sha256": "c895cc32b35323f6f758934a48b10a861f891a91c3c8065497913bc4971f4454",
+      "body_sha256": "239e92749a4f614d36004bf90c9c65a88c803863d3107525aa487215a5ec9e81"
+    },
+    {
+      "id": "AZC-316",
+      "file": "src/content/posts/en/investigate-an-unexpected-conditional-access-result.md",
+      "historical_date": "2026-06-03",
+      "published_markdown_sha256": "3656d3f4dd4e16d1b2abe57bbbdaa54fb42025ab1c2bfe87acaff251e0053122",
+      "body_sha256": "59996bc97f66eafe0155e38b03fb4ed7d1c2c01498050d9a7bf1f70b8d2d34cb"
+    },
+    {
+      "id": "AZC-317",
+      "file": "src/content/posts/en/check-permissions-when-a-security-plugin-cannot-retrieve-data.md",
+      "historical_date": "2026-06-06",
+      "published_markdown_sha256": "6be8f626d5aee502bdc69d7de14739cf0fc8fac8a4ea1182bff61aa2b238da1d",
+      "body_sha256": "b67b52835dd87033906ec31611a2e88c7c10f8b0fc9bbba2a34e84eeb4dbc4ab"
+    },
+    {
+      "id": "AZC-318",
+      "file": "src/content/posts/en/check-entity-mapping-when-related-alerts-remain-separate.md",
+      "historical_date": "2026-06-08",
+      "published_markdown_sha256": "a2a553aa94dd31a2d382dddd3be2040697da9070e9f35644c3414e948ee7d220",
+      "body_sha256": "11fa1245a360e6e5ce01800b152a1c89ac7a8c1f93b5619c3b00b1a149a0b11b"
+    },
+    {
+      "id": "AZC-319",
+      "file": "src/content/posts/en/restrict-access-to-an-application-deployment-endpoint.md",
+      "historical_date": "2026-06-11",
+      "published_markdown_sha256": "677da5c601f409ca02474dcbc9ba686de37ec73961f5501d988109b09d5e95d4",
+      "body_sha256": "d2c9f99921cd71aa6ba130e308af7c019c77f2091281f5fb6c4cc3330d8ddd16"
+    },
+    {
+      "id": "AZC-320",
+      "file": "src/content/posts/en/move-configuration-out-of-a-manually-maintained-vm.md",
+      "historical_date": "2026-06-14",
+      "published_markdown_sha256": "85bc992d81747fe0268394daad876cfe2b3b0964cd93ea4da79aec488bd10d7f",
+      "body_sha256": "fba449811752aefc64523decc7ef23c46060fab3808faa989ea1476ec7acb8b3"
+    },
+    {
+      "id": "AZC-321",
+      "file": "src/content/posts/en/plan-checkpoint-and-restart-behaviour-for-long-running-jobs.md",
+      "historical_date": "2026-06-16",
+      "published_markdown_sha256": "b6a0d50f49ab11aaedfe779c473e6c96703242534d17ac5585bf12e9a1a83a6c",
+      "body_sha256": "e40d5e2c6f1eb4796f537fcc0e908d8da46a623a2bbe5c52a2e1ad64067964f0"
+    },
+    {
+      "id": "AZC-322",
+      "file": "src/content/posts/en/separate-an-infrastructure-move-from-application-modernisation.md",
+      "historical_date": "2026-06-19",
+      "published_markdown_sha256": "1b58b98de8da51ad70958bb0edd8eca91d5192ae48cfb1cd37c31b1a608893c6",
+      "body_sha256": "ea5ecad3a77183449162878c117f4d7ce1ac5a6bd28897de24c069a3dccb68bc"
+    },
+    {
+      "id": "AZC-323",
+      "file": "src/content/posts/en/review-infrastructure-changes-as-an-application-dependency.md",
+      "historical_date": "2026-06-22",
+      "published_markdown_sha256": "bd8fbc1d329f4fa11daab4895bf038dc600c959fdacdcfe1ffed804846e78294",
+      "body_sha256": "4d152869e2e39ebadd0baca1f2729baf8bafbd0776e0c8e909914c8ee41c744e"
+    },
+    {
+      "id": "AZC-324",
+      "file": "src/content/posts/en/use-api-management-policies-for-a-controlled-backend-change.md",
+      "historical_date": "2026-06-24",
+      "published_markdown_sha256": "be3f2b046be68ba19657ffadc23b4a6273f9fb247e9d36b9eb168f7ae19faabc",
+      "body_sha256": "8a34ba92d0b7a1913ee2f3551b7b16baf70a9e203b7056ee162087cda3b8cdd4"
+    },
+    {
+      "id": "AZC-325",
+      "file": "src/content/posts/en/choose-nat-gateway-when-stable-outbound-connectivity-matters.md",
+      "historical_date": "2026-06-27",
+      "published_markdown_sha256": "0926d5284e2dea6893059e8f0ad3892a9e4fb4947b655fe5f6a99cccdfc9b2f0",
+      "body_sha256": "5efa8b712fa2be037b6105d10dcb52f0ff558ee6cbd66f7a05f40742a47d724f"
+    },
+    {
+      "id": "AZC-326",
+      "file": "src/content/posts/en/design-a-dashboard-with-clear-service-ownership.md",
+      "historical_date": "2026-07-01",
+      "published_markdown_sha256": "c3c52410a630c68f26512d5b23cd00227d7eb78e6fb1f6e4cfc6541eb2e41540",
+      "body_sha256": "b7059cb67fbc658e46ac1ad601fcc927befe76a423da635dcd84502e9b3cb7f1"
+    },
+    {
+      "id": "AZC-327",
+      "file": "src/content/posts/en/choose-managed-disks-around-workload-i-o-patterns.md",
+      "historical_date": "2026-07-04",
+      "published_markdown_sha256": "619dfd0ea581aa861ccf53230f96329ca13b70d40410646ea4b8aed7d47ff3a2",
+      "body_sha256": "acbd9cbe05c21dde117621da2d10e7d91aac014da4ecdfca1e3d055d2cdeae75"
+    },
+    {
+      "id": "AZC-328",
+      "file": "src/content/posts/en/run-a-well-architected-review-with-the-operations-team.md",
+      "historical_date": "2026-07-06",
+      "published_markdown_sha256": "a1f9c1acfe5c534d71dfc57bdc31d17d6184f987de8a5ce7c3d9543851235e64",
+      "body_sha256": "0602d93af76d490d3b387213c3fff617b0cb7a88625e4df2c143922c6d51dda5"
+    },
+    {
+      "id": "AZC-329",
+      "file": "src/content/posts/en/build-an-automation-script-that-can-resume-after-a-failure.md",
+      "historical_date": "2026-07-09",
+      "published_markdown_sha256": "d7e7dacaeeccfde260cbc16c7073bc3aae3b9f07b6fc93843571951336f7cc5e",
+      "body_sha256": "1b090a309c414c88721770914467f7da5bab293539ac548dc0cfca2b7f758b2d"
+    },
+    {
+      "id": "AZC-330",
+      "file": "src/content/posts/en/separate-local-administration-from-domain-wide-privileges.md",
+      "historical_date": "2026-07-12",
+      "published_markdown_sha256": "9c8a09f7d6524c1c86ec9f045725a36acec55e719153b3f3b258e3c679e2e308",
+      "body_sha256": "d007e455e850425f179d227b02b13ba899a410b0ee5d2549ceb05f0e9a25bca0"
+    },
+    {
+      "id": "AZC-331",
+      "file": "src/content/posts/en/validate-a-cluster-after-a-network-or-storage-change.md",
+      "historical_date": "2026-07-14",
+      "published_markdown_sha256": "de6618563643447c52f7dd1168e75f1641ad0b866097ef0563e4d3c2c6960099",
+      "body_sha256": "c92404e62b3f432e918e6950e58f5571efd9b2677480a3353d39ad9e526a4d62"
+    },
+    {
+      "id": "AZC-332",
+      "file": "src/content/posts/en/review-integration-service-health-across-a-hyper-v-host.md",
+      "historical_date": "2026-07-17",
+      "published_markdown_sha256": "24608381f1e4724db4786ce272e3b4509bcfacef250b7e5f358cf3603116d72a",
+      "body_sha256": "dfaa1578fbdba934707d4b4e7e22cff96bcb2713c3c030850e86c310fc4790b0"
+    },
+    {
+      "id": "AZC-333",
+      "file": "src/content/posts/en/create-a-repeatable-ubuntu-guest-configuration.md",
+      "historical_date": "2026-07-20",
+      "published_markdown_sha256": "9656244ee146907a5756f9176d0158f046db2c9720d2eb2826c0d150711f4fbf",
+      "body_sha256": "e40347899f2c8d8fa2f76981b75ea475481d8b38062998fcee0e9d1004ebe144"
+    },
+    {
+      "id": "AZC-334",
+      "file": "src/content/posts/en/build-a-security-review-into-a-new-azure-workload.md",
+      "historical_date": "2026-07-22",
+      "published_markdown_sha256": "c52701331b17cc498b39e7f2da07e1bbfbfd225dcb498a9666342b971067073c",
+      "body_sha256": "63fbe5c2ee3981473a980e7d6c35a1dc1c9c4207062bb0e9661a3b409861a86e"
+    },
+    {
+      "id": "AZC-335",
+      "file": "src/content/posts/en/use-group-based-administration-without-hiding-excessive-access.md",
+      "historical_date": "2026-07-25",
+      "published_markdown_sha256": "3064d6ea26beb5aed3a4b2b3c62a92026bfcf3aba9d8cc0ac515941b59f88a27",
+      "body_sha256": "c5d27a708ca5897b2c55abc20dd7942c5bd17f4faa67373e66c7dd0308b4b9f6"
+    },
+    {
+      "id": "AZC-336",
+      "file": "src/content/posts/en/compare-standalone-and-embedded-investigation-workflows.md",
+      "historical_date": "2026-07-29",
+      "published_markdown_sha256": "9f16920e87397a4a915a7736bc0efc33c23264af1d959448519bccbe36893006",
+      "body_sha256": "74d944ee2579925655d3dd90a70c78efb7f0052306e95c669aff6cfd0809ea9f"
+    },
+    {
+      "id": "AZC-337",
+      "file": "src/content/posts/en/review-connector-health-and-ingestion-changes-together.md",
+      "historical_date": "2026-08-01",
+      "published_markdown_sha256": "922bfcc5c69c26ea8fc68b02b7c30c519e36ef57d0996bffd37ab6abf1bd2b64",
+      "body_sha256": "1ffebdc7fd4b2e5f05e1073ba6cb7d32aa3045b7488e84a25a3a5d5acd8595a6"
+    },
+    {
+      "id": "AZC-338",
+      "file": "src/content/posts/en/plan-a-rollback-that-includes-application-configuration.md",
+      "historical_date": "2026-08-03",
+      "published_markdown_sha256": "8546111ccca48982279218e90bde2e416f940ba0a1a2c3033ad292f495156818",
+      "body_sha256": "dd1a125ca4d4df34a569ae7d4b48fbd95ab9412b61ac86094d1a5dfed539baf1"
+    },
+    {
+      "id": "AZC-339",
+      "file": "src/content/posts/en/investigate-disk-latency-before-resizing-a-virtual-machine.md",
+      "historical_date": "2026-08-06",
+      "published_markdown_sha256": "27390e735af79180e59173db61d9d58e4ea3e4fb4c768d6a3e61714344b63577",
+      "body_sha256": "5db68c082014f1f63ebabf35e009bdb8d1692e188a3f5acc6c7b0952b61bfab2"
+    },
+    {
+      "id": "AZC-340",
+      "file": "src/content/posts/en/separate-job-input-data-from-temporary-compute-storage.md",
+      "historical_date": "2026-08-09",
+      "published_markdown_sha256": "af3bdada5d8924f2089b9486c63625cedbc19c7c95f4896c53bbf36f344b086d",
+      "body_sha256": "53bff2f1b42b06c5795035d87a35e85121b0709424a534d0ea3dfb181ae17696"
+    },
+    {
+      "id": "AZC-341",
+      "file": "src/content/posts/en/investigate-an-assessment-with-incomplete-server-data.md",
+      "historical_date": "2026-08-11",
+      "published_markdown_sha256": "32db0016dfcfb3720da613186d1d603965e761dfe6efcf8f06407e625e8afc92",
+      "body_sha256": "75f2b3f42002bc3b6893b157de3f937322a0d6aeb32536c3a711050ef01c609c"
+    },
+    {
+      "id": "AZC-342",
+      "file": "src/content/posts/en/test-a-module-using-a-disposable-development-environment.md",
+      "historical_date": "2026-08-14",
+      "published_markdown_sha256": "8e14205ee976ec17484d2124d3ddfc4b8745d2df4a173a552810c60d550a4d0a",
+      "body_sha256": "520af1361be5d16b5af4700e409435e9328b8e471bc856803bdf49ddc836f59b"
+    },
+    {
+      "id": "AZC-343",
+      "file": "src/content/posts/en/plan-an-integration-that-can-recover-after-an-outage.md",
+      "historical_date": "2026-08-17",
+      "published_markdown_sha256": "d2e6f829b54f2550eedbac2542503fc10b8cbde73c1ffe30830aba9fc9e9d63c",
+      "body_sha256": "a5e8659d4839181b0d94f3fa6fc0c10ae59397c2c8d1390669f373ead26da90f"
+    },
+    {
+      "id": "AZC-344",
+      "file": "src/content/posts/en/document-the-network-path-before-an-infrastructure-change.md",
+      "historical_date": "2026-08-19",
+      "published_markdown_sha256": "aba4152adc4a81ef876ac6d727928ea79f94519472c689627a022672e28850c8",
+      "body_sha256": "aadb14d6d9381d96d64b95f0f210d36d11a6e93f7e1eea7afdd1dc5afcfc4e11"
+    },
+    {
+      "id": "AZC-345",
+      "file": "src/content/posts/en/export-a-small-azure-resource-inventory-with-powershell.md",
+      "historical_date": "2026-08-22",
+      "published_markdown_sha256": "e333ac14c84ce79650b8f192a490fdcb55ca7c99b05680eaaaf08b69550324a0",
+      "body_sha256": "74765ffa3a0e85cf2ea088c1d4ebef761301feaafba5583e04fadae3c3d91fa6"
+    },
+    {
+      "id": "AZC-346",
+      "file": "src/content/posts/en/review-storage-access-after-rotating-an-application-identity.md",
+      "historical_date": "2026-08-26",
+      "published_markdown_sha256": "08183b45dfec6a7aab98e0ef6abd13d80096904da10337effe1cafc96a8af2c5",
+      "body_sha256": "c14a11d6b3ee5bad97e8fe58302c2fb08d05ed6a10c4e2b52f9be044a0f7a052"
+    },
+    {
+      "id": "AZC-347",
+      "file": "src/content/posts/en/use-recovery-evidence-to-refine-an-availability-target.md",
+      "historical_date": "2026-08-29",
+      "published_markdown_sha256": "1edaff8af3427c895991b18924dddca3008cf3a3ae1da21f52361b3c2aff66f2",
+      "body_sha256": "d8de8472651100ef9e257fbaaeb4f64b13e2746a45455413a465a516fd820772"
+    },
+    {
+      "id": "AZC-348",
+      "file": "src/content/posts/en/separate-configuration-execution-and-reporting-in-powershell.md",
+      "historical_date": "2026-08-31",
+      "published_markdown_sha256": "d47415d99fea02e3a062b30637e2f1db0271b7b80fc440afc3a866a265976df7",
+      "body_sha256": "3ec08f7bdacf281131bfc3d248be88234dafd1f1c175edf42df6cb067947a63f"
+    },
+    {
+      "id": "AZC-349",
+      "file": "src/content/posts/en/create-a-recovery-checklist-for-a-windows-infrastructure-server.md",
+      "historical_date": "2026-09-03",
+      "published_markdown_sha256": "523aba63a5cb3870ab22af996510ff5299d938f8bcc6ca0420c0c8f86ce885e7",
+      "body_sha256": "8906afa186ad94c16a819db632bc3630ddc267cb6ae8d12f6f3698ffc26b50df"
+    },
+    {
+      "id": "AZC-350",
+      "file": "src/content/posts/en/plan-maintenance-with-only-one-spare-node.md",
+      "historical_date": "2026-09-06",
+      "published_markdown_sha256": "07651bb86435698de46e87e4ddaff3a68ad90deb63f20eae8406ddc2a30045e9",
+      "body_sha256": "efa791ea02e878b0ac04e4fa93ee46a00e7a26b7152a15cd3ef070f4088241de"
+    },
+    {
+      "id": "AZC-351",
+      "file": "src/content/posts/en/plan-backup-coverage-for-a-hyper-v-workload.md",
+      "historical_date": "2026-09-08",
+      "published_markdown_sha256": "97ce316938f7a70e3846827bec70d47eb140df69978d0d5e69fd4a50a71a7c61",
+      "body_sha256": "7d6631fdbaad9af97d071041d59aff09b27f3e1e0a914fec858d131f856c032f"
+    },
+    {
+      "id": "AZC-352",
+      "file": "src/content/posts/en/check-kernel-changes-after-a-linux-guest-update.md",
+      "historical_date": "2026-09-11",
+      "published_markdown_sha256": "96a7bb366fc7b6207c7738838f6ff38918d31ba4b7877045e7ca76e16892f113",
+      "body_sha256": "3713f54d07ce5cd91b8cdbabdbda25b4f2c4739d798f66bfa66115d27340eafd"
+    },
+    {
+      "id": "AZC-353",
+      "file": "src/content/posts/en/find-gaps-between-enabled-defender-plans-and-protected-resources.md",
+      "historical_date": "2026-09-14",
+      "published_markdown_sha256": "e95d86567eff00ac2bcad5f1a775359b290767755ccba5d3f5d3a7a733e71e91",
+      "body_sha256": "4b0cc46784deae0dea02af357e3205cbb63b6f3b5bfaf5bf02c37323d90f3283"
+    },
+    {
+      "id": "AZC-354",
+      "file": "src/content/posts/en/build-a-repeatable-privileged-access-review.md",
+      "historical_date": "2026-09-16",
+      "published_markdown_sha256": "fa131be85716a33e747e681b8e647ade40b86cf3c683ff214c3440cfed9ef7a5",
+      "body_sha256": "cc29338bad147c007ce1bc1de890b4704f446ae03900543b6582887fc1a11d22"
+    },
+    {
+      "id": "AZC-355",
+      "file": "src/content/posts/en/document-the-evidence-behind-a-generated-incident-timeline.md",
+      "historical_date": "2026-09-19",
+      "published_markdown_sha256": "1daa77bed11770d6227af2426c47f08f5473cbc98579b4574abeeed047a849c9",
+      "body_sha256": "75f0c8e9efc447a7508d8e962f886463688f34b1e19d7c4ecc438a474839149e"
+    },
+    {
+      "id": "AZC-356",
+      "file": "src/content/posts/en/plan-access-separation-between-security-operations-teams.md",
+      "historical_date": "2026-09-23",
+      "published_markdown_sha256": "77f5c478233af59fe134055198d297d0af5d809081b50d49ef53fd12e6d4b7f1",
+      "body_sha256": "dfa574a7ff7f2515392fefb48b7f4d4256d1b6d0ce28fb8dbcf2b2a720e1530e"
+    },
+    {
+      "id": "AZC-357",
+      "file": "src/content/posts/en/separate-staging-and-production-identities-for-a-paas-application.md",
+      "historical_date": "2026-09-26",
+      "published_markdown_sha256": "398dfec2d5493387a9dc6b7892d6c84877dfd8e2e4f80062d8955a67d09177c0",
+      "body_sha256": "7fb4934aa7788d01bb5909e8ed6f0e108d53eea60dd1bdeedb618bead83dda8c"
+    },
+    {
+      "id": "AZC-358",
+      "file": "src/content/posts/en/plan-vm-maintenance-around-application-recovery-requirements.md",
+      "historical_date": "2026-09-28",
+      "published_markdown_sha256": "70bf42db32e0da7b3d09f82826ca9220faf34ee4506df723c727f5aefbe6b51b",
+      "body_sha256": "dfc8325615fb3cba1e857c37c083c674cfcfb3b7178a3b8cab9dbb48448dd444"
+    },
+    {
+      "id": "AZC-359",
+      "file": "src/content/posts/en/review-networking-requirements-before-selecting-an-accelerator-vm.md",
+      "historical_date": "2026-10-01",
+      "published_markdown_sha256": "34ede5c359f762361cbaa4d3ab035b83fe1cef0c1a66dacb456bac4541537079",
+      "body_sha256": "334125eba733b7939e279abe9e193cb562cc0fc2eb4125dee225157fc7f7696d"
+    },
+    {
+      "id": "AZC-360",
+      "file": "src/content/posts/en/build-a-migration-handover-the-operations-team-can-use.md",
+      "historical_date": "2026-10-04",
+      "published_markdown_sha256": "33a4919839e1b13af6d69f0cc48912838058dc2144f7ad3ee15fe12d76a78e32",
+      "body_sha256": "66d4c27ba968f384927cc10c8c4ecdf189113878f82fe8dfba0d466d1f963dc0"
+    },
+    {
+      "id": "AZC-361",
+      "file": "src/content/posts/en/resolve-a-terraform-state-lock-without-losing-deployment-history.md",
+      "historical_date": "2026-10-06",
+      "published_markdown_sha256": "2e8b2c6d7908ae2c22b2e516a89fcbd0dd89bba61c2229d912b341f0d86eabf8",
+      "body_sha256": "3b1625a018b8f6f38bfe41fa972a6078d4c6686df5d506d18dba7ab1d757776d"
+    },
+    {
+      "id": "AZC-362",
+      "file": "src/content/posts/en/document-and-test-manual-replay-of-failed-messages.md",
+      "historical_date": "2026-10-09",
+      "published_markdown_sha256": "a7c91a60ca4c2599e318a22024fff6a19baf4dfacc7d63fcc0f66ea4b21e3a63",
+      "body_sha256": "8e8f68c611497527d174baf0038e39274888cdfa3964d1db65ae01b11c510de1"
+    },
+    {
+      "id": "AZC-363",
+      "file": "src/content/posts/en/review-network-boundaries-before-connecting-another-environment.md",
+      "historical_date": "2026-10-12",
+      "published_markdown_sha256": "33697956e01f26807613cd0f4bfafd5f9df3d0f4ad56e5b2a02a212dbe176e92",
+      "body_sha256": "8c90df967703510299c88b21fb9b20abb598656aa790c4ca29b19ede6b1517fe"
+    },
+    {
+      "id": "AZC-364",
+      "file": "src/content/posts/en/investigate-a-policy-remediation-task-that-did-not-run.md",
+      "historical_date": "2026-10-14",
+      "published_markdown_sha256": "b55fb652f0dfd3c6394c40bb1e554535bf6279af8b38947deb9141dfcbbfb4d5",
+      "body_sha256": "b29d085e1fc6d4d815d01e4393a8d2720c924f1d0196f48babdc5e8d995d743a"
+    },
+    {
+      "id": "AZC-365",
+      "file": "src/content/posts/en/plan-a-storage-recovery-exercise-with-a-verifiable-outcome.md",
+      "historical_date": "2026-10-17",
+      "published_markdown_sha256": "7fdc7f65cccbd55b09d8271302898b31cd81f6323c93fb48efab24e829788b1d",
+      "body_sha256": "81f3a6e3adb8bc39013707df8b03a8160d706a1be34d7c6c4ce959eabd5bb8c3"
+    },
+    {
+      "id": "AZC-366",
+      "file": "src/content/posts/en/create-a-practical-workload-readiness-checklist.md",
+      "historical_date": "2026-10-21",
+      "published_markdown_sha256": "973ea74faef8484458ef794775c7e40238a4729607bf5d8fa09d16697a1e5ffb",
+      "body_sha256": "5a09896776faf176455945ccb5b6e81fa2a4716c5c43beed8f6d2057cebdb04e"
+    }
+  ],
+  "review_record_policy": "Prior review records describe the draft stage and are preserved unchanged. This publication record and status.json record the explicit subsequent authorisation."
+}

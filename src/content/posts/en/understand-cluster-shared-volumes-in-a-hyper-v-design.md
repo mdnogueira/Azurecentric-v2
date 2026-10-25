@@ -5,7 +5,7 @@ pubDate: 2025-03-12
 category: backup-dr
 tags: ["csv", "bitlocker", "failover-clustering", "hyper-v", "windows-server-2025"]
 translationKey: understand-cluster-shared-volumes-in-a-hyper-v-design
-draft: true
+draft: false
 ---
 
 You are designing a Hyper-V failover cluster on Windows Server 2025 and need to encrypt the storage. The immediate technical constraint is not whether to use BitLocker, but how to configure the unlock mechanism so the cluster service can access the volumes automatically when a node starts or when a role fails over.

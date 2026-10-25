@@ -5,7 +5,7 @@ pubDate: 2024-06-16
 category: governance
 tags: ["copilot-for-security", "azure-rbac", "onboarding", "documentation", "github"]
 translationKey: prepare-permissions-before-onboarding-copilot-for-security
-draft: true
+draft: false
 ---
 
 You are preparing to onboard Microsoft Copilot for Security, and the first technical hurdle is often permission management. It is easy to assume that the community repository for the service contains the operational guidance needed to deploy it, but that is not the case. The [Microsoft Copilot for Security Community repository](https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md) is strictly for open-source contributions to plugins and connectors. It does not document the Azure Resource Manager permissions, built-in roles, or licensing prerequisites required to enable the service itself.

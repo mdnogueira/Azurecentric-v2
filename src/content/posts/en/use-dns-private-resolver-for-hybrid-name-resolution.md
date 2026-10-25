@@ -5,7 +5,7 @@ pubDate: 2026-03-07
 category: networking
 tags: ["azure-dns", "private-resolver", "hybrid-networking", "dns-resolution", "virtual-network"]
 translationKey: use-dns-private-resolver-for-hybrid-name-resolution
-draft: true
+draft: false
 ---
 
 You need to resolve Azure private DNS zones from on-premises and on-premises domains from Azure. Azure DNS Private Resolver provides a managed path for this without requiring you to maintain custom DNS virtual machines.

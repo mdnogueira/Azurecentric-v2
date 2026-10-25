@@ -5,7 +5,7 @@ pubDate: 2025-12-30
 category: compute
 tags: ["azure-virtual-machines", "boot-diagnostics", "serial-console", "troubleshooting", "azure-monitor"]
 translationKey: diagnose-a-vm-boot-problem-using-serial-console-evidence
-draft: true
+draft: false
 ---
 
 A virtual machine that fails to boot leaves you with a connection timeout or a black screen. Guest-level monitoring tools like the Azure Monitor Agent cannot report on a machine that never reaches the operating system. In these cases, you must rely on host-level diagnostics. Azure Boot Diagnostics provides serial log information and screenshots, capturing the state of the VM from the moment the hypervisor starts until the point where it stalls or crashes.

@@ -5,7 +5,7 @@ pubDate: 2026-08-31
 category: automation
 tags: ["powershell", "performance", "scripting", "best-practices", "architecture"]
 translationKey: separate-configuration-execution-and-reporting-in-powershell
-draft: true
+draft: false
 ---
 
 When a PowerShell script starts to take minutes instead of seconds, the first thing to check is not the network latency or the remote service, but how the script is structured. A common culprit is mixing configuration, execution logic and reporting in a single block of code. This makes it hard to tune performance, reuse components or test individual parts.

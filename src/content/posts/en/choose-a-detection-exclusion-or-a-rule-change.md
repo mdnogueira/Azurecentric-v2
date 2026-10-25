@@ -5,7 +5,7 @@ pubDate: 2026-02-16
 category: governance
 tags: ["microsoft-sentinel", "detection-tuning", "false-positives", "analytics-rules", "kql"]
 translationKey: choose-a-detection-exclusion-or-a-rule-change
-draft: true
+draft: false
 ---
 
 You are seeing too many alerts from a Microsoft Sentinel analytics rule, and you need to reduce the noise without losing visibility into the actual threats. The first question to answer is not whether to tune the rule, but whether the noise comes from a known benign source or from a logic gap in the detection itself.

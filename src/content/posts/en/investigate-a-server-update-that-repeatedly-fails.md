@@ -5,7 +5,7 @@ pubDate: 2026-05-17
 category: windows-server
 tags: ["wsus", "windows-server-2025", "troubleshooting", "windows-update", "system-administration"]
 translationKey: investigate-a-server-update-that-repeatedly-fails
-draft: true
+draft: false
 ---
 
 A server update that repeatedly fails is rarely a single broken file. It is usually a mismatch between what the client expects, what the WSUS server offers, and what the network allows. When you see a failure loop, the first thing to check is whether the update is actually approved for that specific computer group, and whether the server has successfully synchronised the latest metadata.

@@ -5,7 +5,7 @@ pubDate: 2025-12-02
 category: automation
 tags: ["powershell", "pester", "testing", "modules", "scripting"]
 translationKey: test-a-reusable-function-with-pester
-draft: true
+draft: false
 ---
 
 You have a PowerShell function that needs to be tested. The most reliable way to do this is with Pester, but only if the function is packaged as a module and the test environment is isolated from the rest of your session. A function sitting in a script file is hard to test consistently because its scope and availability depend on how it was loaded. A module, by contrast, gives you a predictable entry point and a clear boundary for what is exported.

@@ -5,7 +5,7 @@ pubDate: 2024-05-16
 category: networking
 tags: ["virtual-network", "peering", "azure-cli", "networking", "routing"]
 translationKey: create-virtual-network-peering-and-verify-the-routing-path
-draft: true
+draft: false
 ---
 
 You need to connect two virtual networks so resources can communicate as if they were in the same network. Virtual network peering achieves this by routing traffic through the Microsoft backbone infrastructure, avoiding the public internet and gateways. The key decision is ensuring the address spaces do not overlap and that you have the correct permissions in both subscriptions before attempting the connection.

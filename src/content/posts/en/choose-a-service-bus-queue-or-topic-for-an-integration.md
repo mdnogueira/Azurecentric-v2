@@ -5,7 +5,7 @@ pubDate: 2024-07-06
 category: apps
 tags: ["azure-service-bus", "queues", "topics", "messaging", "integration", "publish-subscribe"]
 translationKey: choose-a-service-bus-queue-or-topic-for-an-integration
-draft: true
+draft: false
 ---
 
 You are designing an integration between two systems and need to choose between a Service Bus queue and a topic. The decision rests on a single operational question: do you need one consumer to process each message, or do you need multiple distinct consumers to receive copies of the same message? 

@@ -5,7 +5,7 @@ pubDate: 2025-02-20
 category: networking
 tags: ["network-watcher", "connection-troubleshoot", "azure-virtual-machines", "networking", "troubleshooting"]
 translationKey: check-connectivity-with-azure-network-watcher
-draft: true
+draft: false
 ---
 
 A virtual machine cannot reach a destination port, but the network configuration looks correct. The first step is to isolate whether the block is in the network path, the security rules, or the destination service itself. Azure Network Watcher’s Connection troubleshoot tool provides a single-point diagnostic that tests connectivity and returns a detailed hop-by-hop analysis. It is designed for on-demand checks, not continuous monitoring.

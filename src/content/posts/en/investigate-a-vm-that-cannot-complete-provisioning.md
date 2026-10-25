@@ -5,7 +5,7 @@ pubDate: 2025-05-28
 category: compute
 tags: []
 translationKey: investigate-a-vm-that-cannot-complete-provisioning
-draft: true
+draft: false
 ---
 
 A virtual machine that hangs during provisioning is usually stuck in one of three places: the host infrastructure, the guest OS boot sequence, or the initialisation configuration. Before you open a support ticket, you need to determine which layer is blocking the deployment.

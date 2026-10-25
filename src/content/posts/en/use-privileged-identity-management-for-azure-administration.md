@@ -5,7 +5,7 @@ pubDate: 2024-06-13
 category: governance
 tags: ["privileged-identity-management", "azure-administration", "microsoft-entra-id", "role-based-access-control", "security-best-practices"]
 translationKey: use-privileged-identity-management-for-azure-administration
-draft: true
+draft: false
 ---
 
 You have a Global Administrator account. It is likely the most powerful identity in your tenant, and it is likely the one you use for daily tasks. That is a problem. If that account is compromised, the attacker has unrestricted access to every cloud service your organisation subscribes to. The first step in securing your administration is to stop using permanent privileged assignments and start using Microsoft Entra Privileged Identity Management (PIM).

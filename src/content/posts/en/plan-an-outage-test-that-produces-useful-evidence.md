@@ -5,7 +5,7 @@ pubDate: 2025-02-28
 category: governance
 tags: ["chaos-studio", "service-health", "disaster-recovery", "availability-zones", "business-continuity"]
 translationKey: plan-an-outage-test-that-produces-useful-evidence
-draft: true
+draft: false
 ---
 
 When an Azure service disruption occurs, the immediate question is rarely "what happened?" It is "does this affect my workload?" and "do I need to act?" If you have not tested your recovery procedures before the incident, you are likely to make rushed decisions that can worsen the situation. A practical way to build confidence is to run controlled outage tests that produce evidence your team can review.

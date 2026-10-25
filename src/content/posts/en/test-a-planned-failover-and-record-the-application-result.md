@@ -5,7 +5,7 @@ pubDate: 2025-05-07
 category: backup-dr
 tags: []
 translationKey: test-a-planned-failover-and-record-the-application-result
-draft: true
+draft: false
 ---
 
 You need to confirm that a clustered role on Windows Server 2025 survives a planned node removal. The goal is to verify that the cluster coordinates a graceful migration and that the application starts correctly on the new node. This is not a simulation of a crash; it is a controlled move that allows the service to shut down and restart cleanly.

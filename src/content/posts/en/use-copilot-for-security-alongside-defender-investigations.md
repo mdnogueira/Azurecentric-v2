@@ -5,7 +5,7 @@ pubDate: 2025-10-30
 category: governance
 tags: []
 translationKey: use-copilot-for-security-alongside-defender-investigations
-draft: true
+draft: false
 ---
 
 You have an incident in Microsoft Defender for Cloud or a hunt in Microsoft Sentinel. The raw data is there, but synthesising it into a coherent narrative takes time. Security Copilot offers a way to query that data using natural language, provided you understand how to structure your questions. The [Security Copilot sample prompts repository](https://github.com/Azure/Security-Copilot/blob/5d29a8a755ba427a87dbc0dd0ec6b6a11b151f55/Sample Prompts/Microsoft Defender and Microsoft Sentinel/Readme.md) provides a structured set of examples for interacting with these services. These are not guaranteed API calls; they are prompt patterns designed to extract structured information from security posture and incident data.

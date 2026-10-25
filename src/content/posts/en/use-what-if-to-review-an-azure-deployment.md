@@ -5,7 +5,7 @@ pubDate: 2024-05-11
 category: automation
 tags: ["bicep", "azure-cli", "azure-powershell", "deployment", "what-if", "azure-resource-manager"]
 translationKey: use-what-if-to-review-an-azure-deployment
-draft: true
+draft: false
 ---
 
 You are about to change a virtual network address space or remove a subnet. The first thing to check is whether the change will actually delete the resources you expect, or if it will trigger a silent redeployment that breaks connectivity. Azure Resource Manager provides a what-if operation that predicts these changes without modifying any existing resources.

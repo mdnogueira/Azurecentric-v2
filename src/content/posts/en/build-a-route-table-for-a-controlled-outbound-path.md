@@ -5,7 +5,7 @@ pubDate: 2025-06-12
 category: networking
 tags: ["azure-virtual-network", "user-defined-routes", "network-virtual-appliance", "networking", "azure-cli"]
 translationKey: build-a-route-table-for-a-controlled-outbound-path
-draft: true
+draft: false
 ---
 
 Azure routes traffic between subnets within a virtual network by default. If you need to inspect or filter that traffic before it leaves the virtual network, you must override the default system routes. The standard way to do this is to create a user-defined route (UDR) that directs traffic to a network virtual appliance (NVA). This guide shows you how to build that route table and associate it with a subnet.

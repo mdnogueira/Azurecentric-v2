@@ -5,7 +5,7 @@ pubDate: 2025-06-20
 category: governance
 tags: ["disaster-recovery", "failover", "azure-service-health", "dns", "data-replication"]
 translationKey: investigate-a-failover-that-leaves-an-application-unavailable
-draft: true
+draft: false
 ---
 
 The application is unavailable after a failover. It is tempting to assume the new primary is broken, but the outage is usually a mismatch between the traffic routing and the new service state. Before you start redeploying resources or blaming the network, you need to verify three things: whether the underlying service is healthy, whether traffic is actually reaching the new primary, and whether the data replication is keeping pace with your Recovery Point Objective (RPO).

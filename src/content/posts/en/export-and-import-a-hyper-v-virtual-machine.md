@@ -5,7 +5,7 @@ pubDate: 2025-07-02
 category: hyper-v
 tags: ["hyper-v", "virtual-machines", "export-import", "windows-server", "virtualization"]
 translationKey: export-and-import-a-hyper-v-virtual-machine
-draft: true
+draft: false
 ---
 
 You need to move a virtual machine to a new host or back it up. Exporting and importing is the standard way to do this without the complexity of Failover Clustering. The process gathers the virtual hard disk, configuration, and checkpoint files into a portable unit. You can perform this while the virtual machine is running or stopped, but the import step requires careful selection of the import type to avoid ID conflicts or data loss.

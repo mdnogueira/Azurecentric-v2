@@ -5,7 +5,7 @@ pubDate: 2025-02-12
 category: automation
 tags: ["azure-pipelines", "bicep", "federated-identity", "ci-cd", "azure-cli"]
 translationKey: deploy-infrastructure-through-a-federated-pipeline-identity
-draft: true
+draft: false
 ---
 
 How do you deploy infrastructure through a federated pipeline identity without managing long-lived service principal secrets? The answer is to combine Azure DevOps federated credentials with the `AzureCLI@2` task and a `bicepparam` file. This approach removes the need for static credentials while keeping the deployment logic declarative and repeatable.

@@ -5,7 +5,7 @@ pubDate: 2024-02-22
 category: governance
 tags: [defender-for-cloud, secure-score, remediation, security-posture]
 translationKey: turn-secure-score-findings-into-a-practical-remediation-queue
-draft: true
+draft: false
 ---
 
 Defender for Cloud can show a long list of recommendations without telling the operations team what to change this week. A useful remediation queue needs an affected resource, an owner, a proposed change and a way to verify the result. Secure score helps organise that work, but the percentage alone does not establish the order.

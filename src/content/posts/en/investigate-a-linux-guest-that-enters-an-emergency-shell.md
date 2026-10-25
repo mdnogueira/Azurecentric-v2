@@ -5,7 +5,7 @@ pubDate: 2025-05-12
 category: hyper-v
 tags: ["hyper-v", "linux", "troubleshooting", "emergency-shell", "synthetic-drivers"]
 translationKey: investigate-a-linux-guest-that-enters-an-emergency-shell
-draft: true
+draft: false
 ---
 
 A Linux virtual machine dropping into an emergency shell is a clear signal that the boot process could not mount the root filesystem. On a Hyper-V host, this usually points to a configuration error in `/etc/fstab`, filesystem corruption, or a failure in the synthetic storage driver that prevents the virtual disk from appearing as a block device. The first step is to determine whether the disk is visible to the kernel and whether the mount instructions are correct.

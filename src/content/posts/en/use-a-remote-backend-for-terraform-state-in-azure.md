@@ -5,7 +5,7 @@ pubDate: 2024-10-23
 category: automation
 tags: ["bicep", "azure-container-registry", "iac", "private-registry", "modules"]
 translationKey: use-a-remote-backend-for-terraform-state-in-azure
-draft: true
+draft: false
 ---
 
 ## Why a private registry?

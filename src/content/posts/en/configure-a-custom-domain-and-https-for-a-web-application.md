@@ -5,7 +5,7 @@ pubDate: 2025-11-04
 category: apps
 tags: ["azure-app-service", "custom-domain", "ssl-certificate", "managed-certificate", "https"]
 translationKey: configure-a-custom-domain-and-https-for-a-web-application
-draft: true
+draft: false
 ---
 
 You have a web application running on Azure App Service and need to replace the default `*.azurewebsites.net` domain with your own branded address, secured with HTTPS. The practical answer is to map your DNS, bind the domain in the portal, and then enable the free App Service Managed Certificate. This approach removes the burden of manual renewal, but it requires that your app is publicly reachable during the validation process and that you understand the scope limitations of managed certificates.

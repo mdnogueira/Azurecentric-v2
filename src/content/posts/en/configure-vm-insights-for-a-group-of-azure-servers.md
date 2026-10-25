@@ -5,7 +5,7 @@ pubDate: 2024-03-24
 category: governance
 tags: ["azure-monitor", "vm-insights", "azure-monitor-agent", "data-collection-rules", "log-analytics"]
 translationKey: configure-vm-insights-for-a-group-of-azure-servers
-draft: true
+draft: false
 ---
 
 A monitoring extension showing as installed is only part of the job. For a group of Azure servers, we also need to know which data each machine collects, where it sends that data and whether it is arriving.

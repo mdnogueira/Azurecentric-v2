@@ -5,7 +5,7 @@ pubDate: 2024-12-29
 category: governance
 tags: ["azure-monitor", "alerts", "thresholds", "dynamic-thresholds", "log-search", "action-groups"]
 translationKey: choose-alert-thresholds-around-an-actionable-response
-draft: true
+draft: false
 ---
 
 An alert rule is a commitment to act. If the threshold fires but no one can resolve the issue, or if the signal is too noisy to distinguish from normal variance, the alert has failed its primary purpose. The first question when designing a threshold is not "What value indicates a problem?" but "What specific action will we take when this fires, and is that action feasible within the evaluation window?"

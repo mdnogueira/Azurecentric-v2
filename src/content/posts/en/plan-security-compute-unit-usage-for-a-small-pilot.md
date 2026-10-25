@@ -5,7 +5,7 @@ pubDate: 2024-10-03
 category: governance
 tags: ["microsoft-copilot-for-security", "security-compute-units", "cost-management", "pilot-planning", "sentinel"]
 translationKey: plan-security-compute-unit-usage-for-a-small-pilot
-draft: true
+draft: false
 ---
 
 You are planning a pilot for Microsoft Copilot for Security and need to estimate the cost and capacity required. The service operates on a consumption-based model driven by Security Compute Units (SCUs). To keep the pilot within budget, you must understand what generates those units and how to track them, rather than relying on fixed per-user estimates. 

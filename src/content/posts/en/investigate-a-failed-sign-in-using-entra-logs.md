@@ -5,7 +5,7 @@ pubDate: 2024-12-01
 category: governance
 tags: ["entra-id", "sign-in-logs", "conditional-access", "troubleshooting", "mfa"]
 translationKey: investigate-a-failed-sign-in-using-entra-logs
-draft: true
+draft: false
 ---
 
 A user reports they cannot sign in to Microsoft 365. The first thing to check is not the password, but the sign-in log. Microsoft Entra ID records every attempt, including failures, and provides structured data to pinpoint where the authentication flow broke. You can resolve many issues without opening a support ticket by following the log details and using the built-in diagnostics.

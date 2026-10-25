@@ -5,7 +5,7 @@ pubDate: 2026-03-19
 category: automation
 tags: ["automation", "compatibility", "lts", "breaking-changes"]
 translationKey: powershell-7-6-lts-prepare-an-automation-compatibility-check
-draft: true
+draft: false
 ---
 
 PowerShell 7.6 is now generally available as a Long Term Support (LTS) release, built on .NET 10. The announcement explicitly positions it as the recommended version for production automation environments [PowerShell 7.6 LTS: prepare an automation compatibility check](https://devblogs.microsoft.com/powershell/announcing-powershell-7-6/). However, moving from a previous LTS version or Windows PowerShell 5.1 requires a structured compatibility check. You cannot assume that because PowerShell 7 runs side-by-side with Windows PowerShell, every script or module will behave identically [Migrating from Windows PowerShell 5.1 to PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7).

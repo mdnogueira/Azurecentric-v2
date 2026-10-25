@@ -5,7 +5,7 @@ pubDate: 2025-02-08
 category: cloud
 tags: ["azure-arc", "hybrid-cloud", "server-management", "azure-policies", "rbac"]
 translationKey: choose-what-to-manage-through-azure-arc
-draft: true
+draft: false
 ---
 
 The decision to introduce Azure Arc-enabled servers usually begins with a practical observation: you have servers outside Azure that you want to manage using the same governance, security, and monitoring tools you apply to your native cloud resources. This includes physical machines in your own data centres, virtual machines on VMware vSphere, or instances running on other public clouds like AWS or GCP. The service allows you to project these non-Azure machines into the Azure management plane, treating them as connected machines with Resource IDs, resource groups, and tags.

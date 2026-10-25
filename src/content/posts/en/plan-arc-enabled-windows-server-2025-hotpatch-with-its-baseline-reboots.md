@@ -5,7 +5,7 @@ pubDate: 2025-07-10
 category: windows-server
 tags: ["windows-server-2025", "hotpatch", "azure-arc", "virtual-secure-mode", "patch-management"]
 translationKey: plan-arc-enabled-windows-server-2025-hotpatch-with-its-baseline-reboots
-draft: true
+draft: false
 ---
 
 Hotpatching for Windows Server 2025 allows you to install security updates without restarting the operating system, but it does not eliminate the need for reboots entirely. When planning this feature for Azure Arc-enabled servers, you must account for the quarterly baseline updates that require a restart, the Virtual Secure Mode (VSM) prerequisites, and the subscription billing cycle.

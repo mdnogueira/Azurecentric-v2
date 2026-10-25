@@ -5,7 +5,7 @@ pubDate: 2025-12-10
 category: hyper-v
 tags: ["hyper-v", "hyper-v-replica", "disaster-recovery", "windows-server-2025", "virtualization"]
 translationKey: configure-hyper-v-replica-for-a-defined-recovery-scenario
-draft: true
+draft: false
 ---
 
 You are planning a disaster recovery scenario for a Windows Server 2025 environment and need to replicate a virtual machine (VM) to a secondary site. Hyper-V Replica is an integral part of the Hyper-V role and contributes to your disaster recovery strategy by replicating a VM from one Hyper-V host server to another to keep your workloads available [Set up Hyper-V Replica](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica). It creates a copy of a live VM to a replica offline VM.

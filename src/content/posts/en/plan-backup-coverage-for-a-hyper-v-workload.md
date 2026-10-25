@@ -5,7 +5,7 @@ pubDate: 2026-09-08
 category: hyper-v
 tags: ["hyper-v", "backup", "replication", "windows-server-2025", "disaster-recovery"]
 translationKey: plan-backup-coverage-for-a-hyper-v-workload
-draft: true
+draft: false
 ---
 
 You are running a Hyper-V workload on Windows Server 2025 and need to define a recovery strategy. The first step is to separate two capabilities that are often conflated: backup and replication. A backup preserves a copy of data at a specific point in time, protecting against corruption or accidental deletion. Replication maintains a copy of the virtual machine on a secondary host, protecting against site failure. Confusing the two leaves gaps in your disaster recovery plan.

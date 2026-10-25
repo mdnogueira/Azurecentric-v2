@@ -5,7 +5,7 @@ pubDate: 2026-06-08
 category: governance
 tags: ["microsoft-sentinel", "entity-mapping", "incident-correlation", "security-operations", "troubleshooting"]
 translationKey: check-entity-mapping-when-related-alerts-remain-separate
-draft: true
+draft: false
 ---
 
 Two alerts clearly relate to the same threat, but Microsoft Sentinel keeps them as separate incidents. The analyst investigating the case has to manually link them, which breaks automation and dilutes context. The first thing to check is not the incident settings, but how the analytics rules that generated those alerts map their data fields to entities.

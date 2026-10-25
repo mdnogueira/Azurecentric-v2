@@ -5,7 +5,7 @@ pubDate: 2025-03-08
 category: governance
 tags: ["github", "security", "advanced-security", "secret-protection", "code-security"]
 translationKey: github-code-security-and-secret-protection-plan-for-the-new-product-choices
-draft: true
+draft: false
 ---
 
 The announcement on 4 March 2025 changes how GitHub structures its advanced security offerings. Starting 1 April 2025, GitHub Advanced Security (GHAS) splits into two standalone products: GitHub Secret Protection and GitHub Code Security. This separation forces a decision that many organisations have previously avoided: do you need to stop secrets leaking, or do you need to fix vulnerabilities in your code? Or both?

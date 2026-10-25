@@ -5,7 +5,7 @@ pubDate: 2026-06-06
 category: governance
 tags: ["security-copilot", "plugins", "permissions", "troubleshooting", "azure-identity"]
 translationKey: check-permissions-when-a-security-plugin-cannot-retrieve-data
-draft: true
+draft: false
 ---
 
 A Security Copilot plugin returns empty results or errors when querying a data source. The plugin configuration appears correct, the connector is enabled, and the syntax is valid. The first thing to check is not the plugin code, but the permissions under which the plugin runs.

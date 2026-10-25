@@ -5,7 +5,7 @@ pubDate: 2025-09-27
 category: apps
 tags: ["api-management", "policy-debugging", "visual-studio-code", "trace-policy", "troubleshooting"]
 translationKey: trace-a-failed-request-through-an-api-management-policy
-draft: true
+draft: false
 ---
 
 Intermittent 500 errors or time-outs in Azure API Management often point to backend connectivity issues, but when the backend logs are clean, the problem usually lies in the policy pipeline. The gateway processes requests in milliseconds, making it difficult to spot where a variable is empty or a condition fails. You need a way to step through the logic without guessing.

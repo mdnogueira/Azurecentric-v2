@@ -5,7 +5,7 @@ pubDate: 2026-06-19
 category: cloud
 tags: ["azure-migrate", "cloud-migration", "infrastructure-modernisation", "application-modernisation", "azure-virtual-machines", "azure-sql-database"]
 translationKey: separate-an-infrastructure-move-from-application-modernisation
-draft: true
+draft: false
 ---
 
 You are planning a move to Azure, but your application team wants to refactor the code while your infrastructure team wants to lift and shift the servers. These two objectives often collide because they require different timelines, different risk profiles, and different validation criteria. Treating them as a single monolithic project usually delays the infrastructure move or forces premature, risky code changes.

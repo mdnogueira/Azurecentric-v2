@@ -5,7 +5,7 @@ pubDate: 2026-05-27
 category: hyper-v
 tags: ["hyper-v", "linux", "checkpoints", "virtualization", "data-consistency"]
 translationKey: understand-checkpoints-for-a-linux-application
-draft: true
+draft: false
 ---
 
 You are preparing to apply a software update or configuration change to a Linux virtual machine running on Windows Server 2025. The immediate question is not how to revert the VM, but which checkpoint type will preserve your application's data integrity when you do. For a Linux application, the answer is almost always a production checkpoint. Using a standard checkpoint on a production workload risks data inconsistency, particularly with databases or file systems that replicate state.

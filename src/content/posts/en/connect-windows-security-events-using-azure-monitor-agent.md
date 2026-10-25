@@ -5,7 +5,7 @@ pubDate: 2024-02-27
 category: governance
 tags: [microsoft-sentinel, azure-monitor-agent, windows-security, data-collection-rules]
 translationKey: connect-windows-security-events-using-azure-monitor-agent
-draft: true
+draft: false
 ---
 
 Windows security event collection needs three things to agree: the server must produce the events, the agent must collect them, and the intended Sentinel workspace must receive them. An installed agent alone does not establish that a detection has the records it needs.

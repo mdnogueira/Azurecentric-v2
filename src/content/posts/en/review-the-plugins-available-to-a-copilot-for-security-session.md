@@ -5,7 +5,7 @@ pubDate: 2025-05-20
 category: governance
 tags: ["security-copilot", "plugins", "data-sources", "azure-security", "how-to"]
 translationKey: review-the-plugins-available-to-a-copilot-for-security-session
-draft: true
+draft: false
 ---
 
 You are working in Microsoft Security Copilot and need to understand which security domains the product can address. The interface does not always provide a static list of active data sources or plugins. Instead, the most reliable way to understand the scope of capabilities is to look at the official sample prompt library. This library categorises examples by the underlying security domain, giving you a clear view of what the product is designed to support.

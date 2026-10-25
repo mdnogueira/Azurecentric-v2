@@ -5,7 +5,7 @@ pubDate: 2024-03-29
 category: governance
 tags: ["disaster-recovery", "high-availability", "azure-backup", "resiliency", "rpo-rto"]
 translationKey: separate-backup-high-availability-and-disaster-recovery
-draft: true
+draft: false
 ---
 
 Two running copies of an application do not necessarily give you a way to recover yesterday's data. A successful backup does not necessarily give you a working application within an hour. Backup, high availability and disaster recovery contribute to resilience, but each needs a clear job.

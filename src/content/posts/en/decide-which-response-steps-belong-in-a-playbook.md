@@ -5,7 +5,7 @@ pubDate: 2025-05-23
 category: governance
 tags: ["microsoft-sentinel", "playbooks", "automation", "soar", "logic-apps"]
 translationKey: decide-which-response-steps-belong-in-a-playbook
-draft: true
+draft: false
 ---
 
 When you design a Microsoft Sentinel playbook, the first decision is not which connector to use, but which category of action the step belongs to. Playbooks handle enrichment, bi-directional sync, orchestration, and response. Mixing these categories in a single workflow often creates fragile automation that is hard to audit or reuse.

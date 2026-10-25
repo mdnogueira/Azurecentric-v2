@@ -5,7 +5,7 @@ pubDate: 2024-09-28
 category: governance
 tags: ["defender-for-cloud", "github", "devops-security", "github-actions", "msdo"]
 translationKey: connect-github-repositories-to-defender-for-cloud
-draft: true
+draft: false
 ---
 
 Defender for Cloud does not automatically scan your GitHub repositories for security issues. To get a complete picture of your DevOps security, you need to combine two distinct capabilities: DevOps security posture management and code scanning. The first step is to link your GitHub organization to Defender for Cloud. This creates a connector that allows Defender for Cloud to discover your repositories and apply posture assessments. However, this alone does not scan your code. To enable code scanning, you must also configure the Microsoft Security DevOps (MSDO) GitHub action in your workflows.

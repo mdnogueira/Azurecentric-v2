@@ -5,7 +5,7 @@ pubDate: 2026-08-11
 category: cloud
 tags: ["azure-migrate", "troubleshooting", "assessment", "performance-data", "vmware", "hyper-v"]
 translationKey: investigate-an-assessment-with-incomplete-server-data
-draft: true
+draft: false
 ---
 
 You open the Azure Migrate assessment report and see that the performance coverage is low, or the export flags `PercentageOfCoresUtilizedMissing` and `PercentageOfMemoryUtilizedMissing`. The sizing recommendations are likely based on allocated cores and memory rather than actual utilisation, which can lead to over-provisioning if the workload is bursty or under-provisioning if the peak demand is missed.

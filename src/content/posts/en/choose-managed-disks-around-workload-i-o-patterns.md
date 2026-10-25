@@ -5,7 +5,7 @@ pubDate: 2026-07-04
 category: storage
 tags: ["managed-disks", "lrs", "zrs", "availability-zones", "shared-disks"]
 translationKey: choose-managed-disks-around-workload-i-o-patterns
-draft: true
+draft: false
 ---
 
 You are deploying a virtual machine and need to decide between locally redundant storage (LRS) and zone-redundant storage (ZRS) for the managed disks. The choice is not about which is "better" in general, but which matches your workload's tolerance for latency and its ability to survive a zone outage.

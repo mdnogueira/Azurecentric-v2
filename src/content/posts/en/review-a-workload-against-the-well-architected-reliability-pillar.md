@@ -5,7 +5,7 @@ pubDate: 2024-09-10
 category: governance
 tags: ["well-architected-framework", "reliability", "disaster-recovery", "availability-zones", "rto-rpo"]
 translationKey: review-a-workload-against-the-well-architected-reliability-pillar
-draft: true
+draft: false
 ---
 
 You have a workload in Azure and need to verify its reliability posture against the Well-Architected Framework. The first step is not to open a dashboard, but to define the business requirements that the architecture must satisfy. Reliability is not a single setting; it is the result of aligning your application design with specific availability and recovery targets.

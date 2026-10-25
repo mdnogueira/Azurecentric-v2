@@ -5,7 +5,7 @@ pubDate: 2024-08-11
 category: governance
 tags: []
 translationKey: troubleshoot-a-sentinel-connector-that-stopped-sending-data
-draft: true
+draft: false
 ---
 
 A data connector has stopped sending data. The first thing to check is not the connector's configuration, but whether Microsoft Sentinel has recorded the failure. If the health monitoring feature is enabled, the service logs these events explicitly; if it is not, you are relying on missing log volume, which is less precise.

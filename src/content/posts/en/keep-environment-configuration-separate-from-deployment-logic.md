@@ -5,7 +5,7 @@ pubDate: 2024-07-03
 category: automation
 tags: ["bicep", "configuration-set-pattern", "infrastructure-as-code", "azure-resource-manager", "best-practices"]
 translationKey: keep-environment-configuration-separate-from-deployment-logic
-draft: true
+draft: false
 ---
 
 You are writing a Bicep file to deploy an App Service plan and a storage account. You need to support both non-production and production environments. The obvious approach is to add parameters for every property: SKU, capacity, replication type, and so on. This works, but it quickly becomes unwieldy. Users must understand the impact of every individual setting, and the risk of selecting an invalid combination increases as the template grows.

@@ -5,7 +5,7 @@ pubDate: 2026-08-03
 category: apps
 tags: ["azure-app-service", "deployment-slots", "rollback", "configuration-management", "swap-with-preview"]
 translationKey: plan-a-rollback-that-includes-application-configuration
-draft: true
+draft: false
 ---
 
 You have swapped a staging slot into production, and the application is failing. The immediate instinct is often to swap back immediately. That works for the code, but it leaves the configuration in a state that may not match your expectations. If you need to roll back an application that includes specific configuration changes, you must plan for the swap mechanics before you execute the first swap.

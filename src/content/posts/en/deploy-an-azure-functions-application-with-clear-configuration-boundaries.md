@@ -5,7 +5,7 @@ pubDate: 2025-03-31
 category: apps
 tags: ["azure-functions", "configuration", "host-json", "app-settings", "best-practices"]
 translationKey: deploy-an-azure-functions-application-with-clear-configuration-boundaries
-draft: true
+draft: false
 ---
 
 You are configuring an Azure Functions application and need to decide which settings belong in `host.json` and which belong in the function app's environment variables. The line between them is not arbitrary; it determines how your application scales, how it handles secrets, and whether a configuration change forces a restart.

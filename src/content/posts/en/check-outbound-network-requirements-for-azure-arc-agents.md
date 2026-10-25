@@ -5,7 +5,7 @@ pubDate: 2024-03-09
 category: cloud
 tags: [azure-arc, networking, connected-machine-agent, private-link]
 translationKey: check-outbound-network-requirements-for-azure-arc-agents
-draft: true
+draft: false
 ---
 
 An Azure Arc onboarding failure can begin well before the server attempts to register. DNS resolution, the egress route and the required service endpoints all need to work from that machine. A successful browser session on an administrator's laptop does not establish the server's connectivity.

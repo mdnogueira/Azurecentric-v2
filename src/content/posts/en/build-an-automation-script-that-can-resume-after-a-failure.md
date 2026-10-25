@@ -5,7 +5,7 @@ pubDate: 2026-07-09
 category: automation
 tags: ["powershell", "error-handling", "automation", "resilience", "state-management"]
 translationKey: build-an-automation-script-that-can-resume-after-a-failure
-draft: true
+draft: false
 ---
 
 You have a long-running automation script that processes a batch of items. The network drops, the machine reboots, or the process is interrupted. When you restart the script, it starts from the beginning, reprocessing everything. This wastes time, risks duplicate actions, and fills logs with noise.

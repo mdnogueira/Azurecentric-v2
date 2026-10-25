@@ -5,7 +5,7 @@ pubDate: 2025-06-23
 category: automation
 tags: ["powershell", "json", "configuration", "validation", "scripting"]
 translationKey: read-and-validate-json-configuration-in-powershell
-draft: true
+draft: false
 ---
 
 You have a JSON configuration file and need to read it into a PowerShell object, validate its structure, and extract specific values without relying on external tools. The immediate answer is to use `Get-Content` to read the file and `ConvertFrom-Json` to parse it into a native PowerShell object. Once parsed, you can validate the structure by checking for expected properties and types using standard PowerShell comparison operators and type casting.

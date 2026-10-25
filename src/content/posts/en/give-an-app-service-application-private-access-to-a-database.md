@@ -5,7 +5,7 @@ pubDate: 2024-10-08
 category: apps
 tags: ["app-service", "private-endpoint", "managed-identity", "azure-sql", "vnet-integration", "service-connector"]
 translationKey: give-an-app-service-application-private-access-to-a-database
-draft: true
+draft: false
 ---
 
 You need an App Service application to talk to a database, but the connection must stay within your private network and the application must not carry database passwords. This requires two distinct controls: a private network path and an identity-based authentication mechanism. One handles where the traffic goes; the other handles who is allowed in.

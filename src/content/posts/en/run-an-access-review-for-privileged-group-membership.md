@@ -5,7 +5,7 @@ pubDate: 2025-03-23
 category: governance
 tags: ["microsoft-entra-id", "privileged-identity-management", "access-reviews", "role-based-access-control", "group-management"]
 translationKey: run-an-access-review-for-privileged-group-membership
-draft: true
+draft: false
 ---
 
 Privileged group membership drifts. Users leave teams, projects end, and temporary assignments linger. If you rely on groups to grant Microsoft Entra roles, stale membership becomes a direct path to excessive privilege. Access reviews solve this by forcing periodic validation of who actually needs that access.

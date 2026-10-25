@@ -5,7 +5,7 @@ pubDate: 2025-12-17
 category: governance
 tags: ["defender-for-cloud", "governance", "security-posture", "remediation", "azure-policy"]
 translationKey: assign-owners-to-cloud-security-recommendations
-draft: true
+draft: false
 ---
 
 Security recommendations pile up quickly. A dashboard showing a high secure score is useful for reporting, but it does not guarantee that the underlying misconfigurations are resolved. To move from visibility to action, you need to assign owners and deadlines to specific findings.

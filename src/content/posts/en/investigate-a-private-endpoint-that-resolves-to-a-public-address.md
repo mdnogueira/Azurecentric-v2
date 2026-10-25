@@ -5,7 +5,7 @@ pubDate: 2026-05-02
 category: networking
 tags: ["private-link", "dns", "troubleshooting", "private-endpoint", "networking"]
 translationKey: investigate-a-private-endpoint-that-resolves-to-a-public-address
-draft: true
+draft: false
 ---
 
 A private endpoint is designed to bring a service into your virtual network via a private IP address. If a client resolves the service's fully qualified domain name (FQDN) to a public IP, the traffic leaves the Microsoft backbone and traverses the public internet. This bypasses the private link path. Whether this breaks connectivity depends entirely on the target service's network access settings; many Azure PaaS services disable public network access by default or enforce private link, meaning a public resolution will result in a connection failure.

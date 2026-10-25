@@ -5,7 +5,7 @@ pubDate: 2026-04-04
 category: governance
 tags: ["defender-for-cloud", "governance-rules", "suppression-rules", "security-posture", "alert-management"]
 translationKey: set-useful-boundaries-for-security-exemptions
-draft: true
+draft: false
 ---
 
 When a security recommendation or alert persists, the instinct is often to silence it. But silencing a signal is not the same as managing the risk behind it. In Microsoft Defender for Cloud, there are two distinct mechanisms for handling unwanted findings: governance rules and suppression rules. They serve different purposes, apply to different data types, and require different permissions. Confusing them leads to either unmanaged technical debt or blind spots in your threat detection.

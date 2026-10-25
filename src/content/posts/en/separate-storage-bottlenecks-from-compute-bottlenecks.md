@@ -5,7 +5,7 @@ pubDate: 2025-07-26
 category: compute
 tags: ["azure-batch", "application-insights", "monitoring", "troubleshooting", "performance"]
 translationKey: separate-storage-bottlenecks-from-compute-bottlenecks
-draft: true
+draft: false
 ---
 
 When an Azure Batch job runs slowly, the first instinct is often to blame the compute nodes. You see high CPU usage or long task durations and assume the virtual machines are underpowered. However, in many workloads, the bottleneck is not the processor but the network path to the storage account where input data resides. If you do not separate these two concerns, you will either over-provision compute or chase storage issues that are actually network or configuration problems.

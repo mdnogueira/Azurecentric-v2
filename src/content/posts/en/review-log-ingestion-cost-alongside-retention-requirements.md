@@ -5,7 +5,7 @@ pubDate: 2025-08-10
 category: governance
 tags: ["azure-monitor", "log-analytics", "cost-management", "data-retention", "table-plans"]
 translationKey: review-log-ingestion-cost-alongside-retention-requirements
-draft: true
+draft: false
 ---
 
 The monthly invoice for Azure Monitor Logs rarely comes from the workspace itself. It comes from the data you keep and how you keep it. When the bill rises, the first thing to check is not the number of resources sending logs, but the interaction between ingestion volume, retention periods, and table plans.

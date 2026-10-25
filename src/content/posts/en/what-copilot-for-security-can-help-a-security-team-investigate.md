@@ -5,7 +5,7 @@ pubDate: 2024-04-23
 category: governance
 tags: ["copilot-for-security", "microsoft-sentinel", "kql", "security-operations", "ai"]
 translationKey: what-copilot-for-security-can-help-a-security-team-investigate
-draft: true
+draft: false
 ---
 
 You are looking at an alert in Microsoft Sentinel and need to understand the scope of a potential compromise. The traditional approach involves writing or copying KQL queries, switching contexts, and manually correlating data. Microsoft Copilot for Security offers a different path by acting as a generative AI assistant that can interact with your security data through plugins.

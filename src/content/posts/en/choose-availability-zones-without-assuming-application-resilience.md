@@ -5,7 +5,7 @@ pubDate: 2024-11-08
 category: governance
 tags: ["availability-zones", "high-availability", "azure-reliability", "zone-redundant", "zonal-deployment"]
 translationKey: choose-availability-zones-without-assuming-application-resilience
-draft: true
+draft: false
 ---
 
 Placing resources in different availability zones does not automatically make an application resilient. It provides a physical separation of infrastructure, but the application must be designed to handle the failure of one of those zones. The first thing to check is whether your workload relies on zonal or zone-redundant configuration, as the responsibilities for replication and failover differ significantly between the two.

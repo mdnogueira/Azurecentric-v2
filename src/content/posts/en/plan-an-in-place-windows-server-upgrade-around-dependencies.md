@@ -5,7 +5,7 @@ pubDate: 2025-12-05
 category: windows-server
 tags: ["windows-server", "in-place-upgrade", "server-management", "operating-system", "migration"]
 translationKey: plan-an-in-place-windows-server-upgrade-around-dependencies
-draft: true
+draft: false
 ---
 
 You are planning an in-place upgrade of Windows Server. This is a feature update that moves an older operating system to a newer one while retaining settings, server roles, and data. It is not a migration to new hardware, nor is it a clean installation. The process is straightforward for nonclustered systems, but it requires careful verification of supported upgrade paths and dependency isolation before execution.

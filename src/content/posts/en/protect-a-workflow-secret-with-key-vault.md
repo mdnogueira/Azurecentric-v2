@@ -5,7 +5,7 @@ pubDate: 2025-11-19
 category: apps
 tags: ["logic-apps", "key-vault", "security", "managed-identity", "run-history"]
 translationKey: protect-a-workflow-secret-with-key-vault
-draft: true
+draft: false
 ---
 
 You have a workflow that needs to authenticate to a backend service. The most common mistake is storing the credential as plain text in the workflow definition or in a connection string that gets logged. If you do that, anyone with access to the run history can see the secret.

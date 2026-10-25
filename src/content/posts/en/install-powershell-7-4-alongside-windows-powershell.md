@@ -5,7 +5,7 @@ pubDate: 2024-02-07
 category: automation
 tags: ["powershell", "windows", "side-by-side", "remoting", "installation"]
 translationKey: install-powershell-7-4-alongside-windows-powershell
-draft: true
+draft: false
 ---
 
 Installing PowerShell 7.4 does not require removing Windows PowerShell 5.1. We can retain the host used by existing automation while checking which scripts and modules work in the newer runtime. A successful installation is the first step; it does not migrate scheduled tasks or validate their dependencies.

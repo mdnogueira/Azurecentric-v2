@@ -5,7 +5,7 @@ pubDate: 2024-11-28
 category: governance
 tags: ["github-advanced-security", "secret-scanning", "push-protection", "security-configurations", "devops"]
 translationKey: enable-github-secret-scanning-and-assign-alert-ownership
-draft: true
+draft: false
 ---
 
 You have a repository, or perhaps an entire organisation, and you want to know if secrets are leaking into the codebase. The first step is not to write code, but to configure the scanning service and decide who owns the resulting alerts. GitHub Secret Scanning is a gated feature within GitHub Advanced Security. It does not run by default on private repositories, and enabling it requires specific permissions and a clear plan for handling the findings.

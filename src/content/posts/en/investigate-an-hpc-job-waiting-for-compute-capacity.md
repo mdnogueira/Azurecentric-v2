@@ -5,7 +5,7 @@ pubDate: 2025-02-05
 category: compute
 tags: ["azure-batch", "hpc", "autoscaling", "troubleshooting", "vm-quotas"]
 translationKey: investigate-an-hpc-job-waiting-for-compute-capacity
-draft: true
+draft: false
 ---
 
 Your Azure Batch job is in the `Active` state, but the tasks are not running. The pool shows nodes in a `Starting` or `Idle` state, or perhaps the node count is simply lower than the number of tasks waiting. Before rewriting your workload, you need to determine which constraint is holding the job back. In Azure Batch, a job waiting for compute is usually a symptom of one of three things: a hard quota limit, a regional VM availability gap, or an autoscale formula that isn't triggering the growth you expect.

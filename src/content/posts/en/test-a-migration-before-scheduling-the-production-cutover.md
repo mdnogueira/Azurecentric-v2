@@ -5,7 +5,7 @@ pubDate: 2024-10-16
 category: cloud
 tags: []
 translationKey: test-a-migration-before-scheduling-the-production-cutover
-draft: true
+draft: false
 ---
 
 You have the assessment data, the sizing estimates, and the budget approval. The next logical step is often the most risky: moving the first machine. If you proceed directly to a production cutover without a dry run, you risk discovering that drive letters have shifted, network interfaces are misconfigured, or remote access is blocked. A test migration validates the preparation steps and the connectivity path without impacting the live workload.

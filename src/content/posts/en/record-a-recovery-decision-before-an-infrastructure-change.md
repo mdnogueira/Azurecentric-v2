@@ -5,7 +5,7 @@ pubDate: 2026-01-22
 category: governance
 tags: ["azure-reliability", "incident-response", "business-continuity", "disaster-recovery", "azure-service-health"]
 translationKey: record-a-recovery-decision-before-an-infrastructure-change
-draft: true
+draft: false
 ---
 
 You are planning an infrastructure change. The maintenance window is open. The risk register is signed off. The deployment pipeline is green. Then a notification appears in Azure Service Health: a regional outage is affecting a dependency you didn't expect, or a zone failure is impacting a resource you assumed was zone-redundant.

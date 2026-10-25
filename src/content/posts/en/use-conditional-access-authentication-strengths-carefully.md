@@ -5,7 +5,7 @@ pubDate: 2025-12-20
 category: governance
 tags: ["conditional-access", "authentication-strengths", "external-users", "cross-tenant-access", "entra-id"]
 translationKey: use-conditional-access-authentication-strengths-carefully
-draft: true
+draft: false
 ---
 
 You need to enforce a specific authentication strength for external users accessing your resources, but you are unsure how the home tenant's authentication interacts with your Conditional Access policy. The core issue is that authentication strength does not work in isolation; it relies on cross-tenant access settings to determine whether the external user's home tenant can satisfy the requirement or if your tenant must issue a new challenge.

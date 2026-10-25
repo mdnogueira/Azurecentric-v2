@@ -5,7 +5,7 @@ pubDate: 2026-10-06
 category: automation
 tags: ["bicep", "azure-resource-manager", "deployment", "what-if", "terraform"]
 translationKey: resolve-a-terraform-state-lock-without-losing-deployment-history
-draft: true
+draft: false
 ---
 
 You are trying to deploy a Bicep file, but the operation fails or produces unexpected results because a deployment with the same name is already in progress or has recently completed. This is not a state lock in the traditional sense of a database transaction; it is an Azure Resource Manager (ARM) concurrency guard. The service prevents two deployments with the same name from running simultaneously against the same scope to avoid overwriting each other's history and resource states.

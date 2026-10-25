@@ -5,7 +5,7 @@ pubDate: 2025-01-26
 category: governance
 tags: []
 translationKey: use-promptbooks-for-repeatable-security-investigations
-draft: true
+draft: false
 ---
 
 You need to move a security investigation workflow between environments, but the Microsoft Security Copilot interface does not offer a direct export or import button for promptbooks. The only available method relies on community-supplied PowerShell scripts that interact with the underlying API. These scripts are not officially supported by Microsoft, use unpublished API calls, and are subject to change without notice. You should treat them as a temporary automation tool rather than a stable operational component. If the API structure changes, these scripts will break, and Microsoft support cannot assist with their functionality.

@@ -5,7 +5,7 @@ pubDate: 2024-09-21
 category: hyper-v
 tags: ["hyper-v", "virtual-machines", "dynamic-memory", "windows-server-2022", "best-practices"]
 translationKey: choose-fixed-or-dynamic-memory-for-a-vm
-draft: true
+draft: false
 ---
 
 You are configuring a new virtual machine on a Windows Server 2022 host and need to decide whether to enable Dynamic Memory or stick with a fixed allocation. The choice is not merely about saving RAM on the host; it determines how the guest OS perceives its hardware and how the hypervisor manages contention. If your workload requires predictable performance and stable memory boundaries, fixed memory is the safer baseline. If the workload has variable demands and you are managing a large number of similar VMs, Dynamic Memory can improve host density, but it introduces complexity in guest configuration and storage planning.

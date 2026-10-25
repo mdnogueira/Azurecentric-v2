@@ -5,7 +5,7 @@ pubDate: 2026-06-16
 category: compute
 tags: ["azure-batch", "job-manager-task", "task-retries", "job-constraints", "batch-scheduling"]
 translationKey: plan-checkpoint-and-restart-behaviour-for-long-running-jobs
-draft: true
+draft: false
 ---
 
 Long-running batch workloads rarely proceed without interruption. Nodes fail, connectivity drops, and applications hang. If you submit a job without explicit constraints, Azure Batch will keep trying until you intervene or the job reaches its maximum lifetime. The first step in planning for reliability is defining how the service should behave when things go wrong.

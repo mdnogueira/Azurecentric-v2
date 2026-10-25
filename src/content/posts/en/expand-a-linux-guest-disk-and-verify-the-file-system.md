@@ -5,7 +5,7 @@ pubDate: 2025-03-17
 category: hyper-v
 tags: ["hyper-v", "linux", "vhdx", "gpt", "resize2fs"]
 translationKey: expand-a-linux-guest-disk-and-verify-the-file-system
-draft: true
+draft: false
 ---
 
 You have increased the size of a virtual hard disk (VHDX) attached to a Linux virtual machine, but the guest operating system still reports the original capacity. The hypervisor has updated the block device, but the guest partition table and file system have not yet been informed of the change. This is a two-step process: first, update the partition layout to reflect the new disk boundaries, and second, expand the file system to use the newly available space.

@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 category: governance
 tags: ["github", "security", "ghas", "secret-protection", "code-security", "configuration"]
 translationKey: review-repository-protection-as-github-security-product-choices-change
-draft: true
+draft: false
 ---
 
 The April 2025 restructuring of GitHub Advanced Security (GHAS) changes how you manage repository protection. The single monolithic product has split into two standalone offerings: GitHub Secret Protection and GitHub Code Security. This split affects both the billing model and the configuration strategy for GitHub Team and Enterprise customers.

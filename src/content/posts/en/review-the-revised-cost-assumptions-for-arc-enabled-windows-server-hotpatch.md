@@ -5,7 +5,7 @@ pubDate: 2026-05-22
 category: windows-server
 tags: ["azure-arc", "windows-server-2025", "hotpatch", "azure-update-manager", "vbs"]
 translationKey: review-the-revised-cost-assumptions-for-arc-enabled-windows-server-hotpatch
-draft: true
+draft: false
 ---
 
 Hotpatch allows you to install Windows Server security updates without requiring a reboot. For Azure Arc-enabled servers running Windows Server 2025, this feature is available at no additional cost as of May 2026, removing previous per-core metering [Review the revised cost assumptions for Arc-enabled Windows Server Hotpatch](https://learn.microsoft.com/en-us/azure/update-manager/manage-hot-patching-arc-machines). 

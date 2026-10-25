@@ -5,7 +5,7 @@ pubDate: 2024-05-04
 category: compute
 tags: ["azure-batch", "gpu-vm", "quotas", "deployment", "hpc"]
 translationKey: check-regional-quota-before-planning-a-gpu-deployment
-draft: true
+draft: false
 ---
 
 You have a parallel workload that needs GPU acceleration. You have selected the right VM series, such as the NCv3-series for high-performance computing or the NVv4-series for remote visualization. The next step is not writing the deployment script, but checking whether Azure will allow the deployment to succeed.

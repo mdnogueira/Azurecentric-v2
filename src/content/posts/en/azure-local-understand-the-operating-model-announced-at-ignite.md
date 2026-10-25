@@ -5,7 +5,7 @@ pubDate: 2024-11-23
 category: cloud
 tags: ["azure-local", "azure-stack-hci", "azure-arc", "hybrid-cloud", "ignite-2024"]
 translationKey: azure-local-understand-the-operating-model-announced-at-ignite
-draft: true
+draft: false
 ---
 
 Azure Local is the new name for the infrastructure solution previously known as Azure Stack HCI. It is not a separate product line but a rebranding that signals a shift in how Microsoft positions hybrid infrastructure. The core operating model remains consistent: you own the hardware, you control the operations, and Azure Arc provides the management plane. The announcement at Ignite 2024 clarifies that Azure Local is cloud-connected infrastructure, meaning the control plane lives in Azure, but the data plane stays local.

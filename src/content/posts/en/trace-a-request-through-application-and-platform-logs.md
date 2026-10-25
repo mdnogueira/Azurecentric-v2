@@ -5,7 +5,7 @@ pubDate: 2026-04-16
 category: apps
 tags: ["azure-app-service", "azure-functions", "application-insights", "diagnostic-logs", "live-metrics", "troubleshooting"]
 translationKey: trace-a-request-through-application-and-platform-logs
-draft: true
+draft: false
 ---
 
 You have a request that is failing or behaving unexpectedly. The first thing to check is not the code, but the path the request takes through the platform and the application. Azure App Service and Azure Functions provide different logging mechanisms depending on whether you are looking at the platform infrastructure or the application logic. To trace a request effectively, you need to distinguish between platform-level HTTP logs, application-level execution logs, and the correlation data that ties them together.

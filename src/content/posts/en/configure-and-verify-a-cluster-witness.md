@@ -5,7 +5,7 @@ pubDate: 2024-09-18
 category: backup-dr
 tags: ["failover-clustering", "quorum", "file-share-witness", "windows-server", "powershell"]
 translationKey: configure-and-verify-a-cluster-witness
-draft: true
+draft: false
 ---
 
 When a cluster has an even number of voting nodes, quorum is at risk. If half the nodes go down or lose network connectivity, the cluster cannot determine a majority and stops. Adding a witness vote breaks the tie. A file share witness is a practical option when a disk witness is unavailable, such as in Storage Spaces Direct or Always On Availability Groups, or when a cloud witness is not viable due to unreliable internet connectivity.

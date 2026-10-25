@@ -5,7 +5,7 @@ pubDate: 2024-09-02
 category: networking
 tags: ["azure-network-watcher", "virtual-network", "routing", "troubleshooting", "azure-cli"]
 translationKey: diagnose-a-route-that-sends-traffic-to-the-wrong-next-hop
-draft: true
+draft: false
 ---
 
 You are trying to connect to a resource, but the traffic from your virtual machine is going to the wrong next hop. This usually happens when a custom route overrides an Azure system route, or when a route table is associated with the wrong subnet. The first thing to check is not the application logs, but the network path itself.

@@ -5,7 +5,7 @@ pubDate: 2026-01-10
 category: apps
 tags: ["azure-event-hubs", "azure-service-bus", "messaging", "architecture", "ingestion"]
 translationKey: compare-event-hubs-and-service-bus-for-an-ingestion-workload
-draft: true
+draft: false
 ---
 
 You are designing an ingestion workload and need to decide between Azure Event Hubs and Azure Service Bus. The choice depends on whether your data represents high-volume telemetry streams or discrete business messages requiring strict ordering and transactional integrity.

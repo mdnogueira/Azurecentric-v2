@@ -5,7 +5,7 @@ pubDate: 2026-09-14
 category: governance
 tags: ["defender-for-cloud", "troubleshooting", "security-posture", "workspaces", "permissions"]
 translationKey: find-gaps-between-enabled-defender-plans-and-protected-resources
-draft: true
+draft: false
 ---
 
 You have enabled Defender for Cloud plans, but the resources you expect to see protected are missing from the inventory or showing as unprotected. This is rarely a service outage; it is usually a scope mismatch. Defender for Cloud operates on distinct layers: subscription-level toggles, workspace-level agent data collection, and resource-level assignments. If any layer is misaligned, the plan appears enabled but the workload remains uncovered.

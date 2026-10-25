@@ -5,7 +5,7 @@ pubDate: 2025-10-07
 category: governance
 tags: ["health-checks", "business-continuity", "high-availability", "disaster-recovery", "azure-monitor", "incident-response"]
 translationKey: define-health-checks-across-application-and-infrastructure-layers
-draft: true
+draft: false
 ---
 
 When a service disruption occurs, the first question is not whether the platform is down, but whether your workload is still serving its users. Defining health checks across application and infrastructure layers provides the visibility needed to distinguish between a transient fault, a degraded state, and a full outage. This distinction determines whether you initiate a disaster recovery plan or simply wait for the platform to recover.

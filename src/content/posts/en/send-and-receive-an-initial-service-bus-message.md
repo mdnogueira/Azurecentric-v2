@@ -5,7 +5,7 @@ pubDate: 2024-08-31
 category: apps
 tags: []
 translationKey: send-and-receive-an-initial-service-bus-message
-draft: true
+draft: false
 ---
 
 You need to get a message into an Azure Service Bus queue and read it back to confirm the pipeline works. The first step is always infrastructure: a namespace and a queue. After that, you choose how the application authenticates. Microsoft recommends using passwordless authentication with Microsoft Entra ID for production workloads, as it avoids hard-coded secrets. However, for a quick initial test, a connection string is often simpler to set up.

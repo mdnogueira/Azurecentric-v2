@@ -5,7 +5,7 @@ pubDate: 2025-11-22
 category: networking
 tags: ["azure-load-balancer", "application-gateway", "health-probes", "networking", "high-availability"]
 translationKey: configure-health-probes-that-reflect-application-readiness
-draft: true
+draft: false
 ---
 
 A health probe that only checks if a port is open is not a health probe; it is a port scanner. If your application is listening on port 80 but is stuck in a restart loop, a TCP probe will mark the instance as healthy. The load balancer will then send traffic to a broken application, resulting in failures for your users.

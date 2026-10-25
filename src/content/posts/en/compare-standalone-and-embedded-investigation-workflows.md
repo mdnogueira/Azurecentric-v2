@@ -5,7 +5,7 @@ pubDate: 2026-07-29
 category: governance
 tags: ["microsoft-security-copilot", "security-operations", "investigation-workflows", "sentinel-integration", "generative-ai"]
 translationKey: compare-standalone-and-embedded-investigation-workflows
-draft: true
+draft: false
 ---
 
 You are faced with a security question. The answer is not always in the same place. Microsoft Security Copilot is a generative AI-powered assistant for daily operations in security and IT 1. It empowers teams to protect at the speed and scale of AI by connecting to various data sources through plugins and connectors 1. The first decision you make is how to anchor your investigation: do you start a standalone session with broad context, or do you embed the assistant into an existing workflow with specific data? The choice depends on whether you are exploring a threat landscape or responding to a specific alert in a tool like Microsoft Sentinel.

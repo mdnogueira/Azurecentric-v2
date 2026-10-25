@@ -5,7 +5,7 @@ pubDate: 2026-03-30
 category: hyper-v
 tags: ["hyper-v", "powershell-direct", "windows-server", "virtualization", "automation"]
 translationKey: use-powershell-direct-for-windows-guest-administration
-draft: true
+draft: false
 ---
 
 You have a Windows virtual machine on a Hyper-V host, but the network is down, the guest OS hasn't finished booting, or you simply don't want to configure WinRM or remote management endpoints. PowerShell Direct lets you run commands inside that virtual machine directly from the host, bypassing the network stack entirely.

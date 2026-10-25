@@ -5,7 +5,7 @@ pubDate: 2026-10-14
 category: governance
 tags: ["azure-policy", "remediation", "managed-identities", "troubleshooting", "rbac"]
 translationKey: investigate-a-policy-remediation-task-that-did-not-run
-draft: true
+draft: false
 ---
 
 A remediation task for a `deployIfNotExists` or `modify` policy sits in a pending or failed state. Compliance data shows resources are non-compliant, but the task is not progressing. This usually points to a gap in the identity configuration or permissions required to execute the remediation logic.

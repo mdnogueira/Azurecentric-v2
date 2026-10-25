@@ -5,7 +5,7 @@ pubDate: 2025-02-15
 category: automation
 tags: ["powershell", "azure-automation", "net-9", "compatibility", "upgrade"]
 translationKey: powershell-7-5-is-available-review-compatibility-before-upgrading-automation
-draft: true
+draft: false
 ---
 
 PowerShell 7.5 is generally available. It is built on .NET 9 and is supported for 18 months as a standard support release. If you are running automation workloads on PowerShell 7.4, the immediate question is whether to upgrade the managed runtime now or wait. The answer depends on your dependency chain: the modules you use, the .NET APIs they call, and the platform where the automation runs.

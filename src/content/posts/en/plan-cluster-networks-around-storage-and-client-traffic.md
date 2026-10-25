@@ -5,7 +5,7 @@ pubDate: 2024-07-24
 category: backup-dr
 tags: []
 translationKey: plan-cluster-networks-around-storage-and-client-traffic
-draft: true
+draft: false
 ---
 
 You are planning a Windows Server 2022 failover cluster. The immediate operational question is how to arrange the network topology so that live migrations do not starve storage traffic, or vice versa. The answer lies in two distinct mechanisms: Simplified SMB Multichannel for storage throughput, and Cluster-wide Live Migration SMB Bandwidth Control for traffic shaping. You must configure both to ensure reliability.

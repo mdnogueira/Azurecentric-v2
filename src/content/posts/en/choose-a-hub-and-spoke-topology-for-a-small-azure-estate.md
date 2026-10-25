@@ -5,7 +5,7 @@ pubDate: 2024-03-21
 category: networking
 tags: ["azure-virtual-network", "hub-and-spoke", "azure-firewall", "network-routing", "virtual-network-peering"]
 translationKey: choose-a-hub-and-spoke-topology-for-a-small-azure-estate
-draft: true
+draft: false
 ---
 
 A hub-and-spoke design is useful when several workloads need a shared network service, such as a VPN gateway or a firewall. The hub gives that service a home, and the spokes give the workloads their own virtual networks. Before creating either, write down which connections you intend to allow.

@@ -5,7 +5,7 @@ pubDate: 2025-03-28
 category: governance
 tags: ["microsoft-sentinel", "automation-rules", "incident-management", "soar", "security-operations"]
 translationKey: build-an-automation-rule-with-a-clear-owner
-draft: true
+draft: false
 ---
 
 Which incidents need an owner, and who should get them? Automation rules in Microsoft Sentinel can assign ownership automatically, but only if you define the scope and trigger precisely. A rule that is too broad creates noise; one that is too narrow misses the incidents that need attention.

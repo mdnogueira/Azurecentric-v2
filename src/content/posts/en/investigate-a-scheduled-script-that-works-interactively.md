@@ -5,7 +5,7 @@ pubDate: 2026-05-14
 category: automation
 tags: ["powershell", "scheduled-tasks", "troubleshooting", "error-handling", "profiles"]
 translationKey: investigate-a-scheduled-script-that-works-interactively
-draft: true
+draft: false
 ---
 
 You have a PowerShell 7.6 script that works perfectly when you run it in your interactive session, but it fails or produces no output when triggered by a scheduled task. The task scheduler reports success, and the script does not throw visible errors. This is a common scenario when moving from an interactive shell to a non-interactive execution context.

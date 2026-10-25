@@ -5,7 +5,7 @@ pubDate: 2024-12-06
 category: governance
 tags: ["microsoft-sentinel", "log-analytics", "data-retention", "cost-management", "azure-monitor"]
 translationKey: choose-retention-settings-around-investigation-needs
-draft: true
+draft: false
 ---
 
 You need to keep security logs for a specific period, but you also need to keep the cost predictable. The answer lies in separating what you query daily from what you store for compliance or deep-dive investigations. Microsoft Sentinel and Azure Monitor handle this through two distinct retention periods: interactive retention and long-term retention. Getting the balance right prevents you from paying premium prices for old data while ensuring you don't lose the evidence needed for a thorough investigation.

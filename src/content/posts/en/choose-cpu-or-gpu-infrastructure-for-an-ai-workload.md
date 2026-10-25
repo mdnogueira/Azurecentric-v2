@@ -5,7 +5,7 @@ pubDate: 2024-03-06
 category: compute
 tags: [azure-compute, gpu, ai-infrastructure, performance, capacity-planning]
 translationKey: choose-cpu-or-gpu-infrastructure-for-an-ai-workload
-draft: true
+draft: false
 ---
 
 “AI workload” is not enough information to select a GPU VM. Identify the actual computation, the software that performs it and the result the service must deliver. Training a model, preparing its data and serving individual predictions can place very different demands on the infrastructure.

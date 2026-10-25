@@ -5,7 +5,7 @@ pubDate: 2024-01-22
 category: automation
 tags: [bicep, infrastructure-as-code, modules, azure-resource-manager]
 translationKey: build-a-small-azure-deployment-with-bicep-modules
-draft: true
+draft: false
 ---
 
 A Bicep module gives a group of resources an explicit interface. The calling file supplies parameters, and the module returns only the outputs the caller needs. That makes a useful boundary even in a small deployment.

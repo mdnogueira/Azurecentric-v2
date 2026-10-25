@@ -5,7 +5,7 @@ pubDate: 2024-01-10
 category: apps
 tags: [app-service, scaling, application-design, cost-management]
 translationKey: choose-an-app-service-plan-around-the-workload
-draft: true
+draft: false
 ---
 
 Two web applications can have different names, different deployment pipelines and different owners, while still competing for the same compute. In Azure App Service, the boundary to look at is the App Service plan.

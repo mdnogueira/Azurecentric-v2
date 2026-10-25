@@ -5,7 +5,7 @@ pubDate: 2026-09-28
 category: compute
 tags: ["virtual-machine-scale-sets", "maintenance", "self-service-maintenance", "maintenance-control", "high-availability"]
 translationKey: plan-vm-maintenance-around-application-recovery-requirements
-draft: true
+draft: false
 ---
 
 You are planning maintenance for a Virtual Machine Scale Set (VMSS) because your application recovery requirements demand control over the reboot sequence. This usually means you need to ensure front-end instances are drained before back-end instances restart, or that you have more than 30 minutes to verify stability between update domains. To achieve this, you must distinguish between two different maintenance events: host infrastructure updates and automatic OS image upgrades. Only one of these gives you the immediate control you need to sequence reboots safely.

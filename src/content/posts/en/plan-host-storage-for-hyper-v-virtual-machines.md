@@ -5,7 +5,7 @@ pubDate: 2025-10-18
 category: hyper-v
 tags: ["hyper-v", "windows-server", "storage-architecture", "storage-spaces-direct", "san", "nas"]
 translationKey: plan-host-storage-for-hyper-v-virtual-machines
-draft: true
+draft: false
 ---
 
 You are planning to host virtual machines on Windows Server 2025. The first technical decision is not about the VMs themselves, but about where their disks live. Windows Server Hyper-V supports a wide range of physical storage architectures, from simple local disks to complex clustered environments. Choosing the wrong foundation can limit your ability to migrate workloads, scale resources, or recover from hardware failures.

@@ -5,7 +5,7 @@ pubDate: 2025-10-05
 category: storage
 tags: ["azure-file-sync", "private-endpoints", "dns-configuration", "file-storage", "networking"]
 translationKey: use-azure-file-sync-with-a-deliberate-endpoint-design
-draft: true
+draft: false
 ---
 
 You have a Windows Server file share that needs to sit alongside an Azure file share. The first decision is not which agent to install, but how to structure the sync topology so that data isolation, performance limits, and network access behave as expected. Azure File Sync is not a simple replication tool; it is a management service that ties registered servers, sync groups, and cloud endpoints together. If you design the endpoints loosely, you will hit scale limits, permission conflicts, or network timeouts later. The correct approach is to start with the sync group as the boundary for data and access, then enforce network isolation through private endpoints and DNS.

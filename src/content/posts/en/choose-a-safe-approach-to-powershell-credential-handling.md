@@ -5,7 +5,7 @@ pubDate: 2025-03-03
 category: automation
 tags: ["powershell", "credential-handling", "security", "script-injection", "best-practices"]
 translationKey: choose-a-safe-approach-to-powershell-credential-handling
-draft: true
+draft: false
 ---
 
 You need to run a PowerShell function as a different user, or allow it to run with or without elevated credentials. The first thing to check is whether the underlying cmdlet accepts a `PSCredential` object, and how you will handle the case where no credential is provided.

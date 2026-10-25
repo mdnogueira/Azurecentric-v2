@@ -5,7 +5,7 @@ pubDate: 2024-04-06
 category: windows-server
 tags: ["windows-server-2022", "powershell", "server-configuration", "roles-and-features", "features-on-demand"]
 translationKey: configure-a-windows-server-2022-host-using-powershell
-draft: true
+draft: false
 ---
 
 You have a Windows Server 2022 host that needs to be configured. PowerShell allows you to automate role installation, manage features, and optimise disk space by removing unnecessary files. This guide walks you through the essential steps to get your server ready for its intended workload.

@@ -5,7 +5,7 @@ pubDate: 2025-04-12
 category: cloud
 tags: ["azure-arc", "azure-policy", "azure-monitor", "ama", "security", "tier0"]
 translationKey: apply-azure-policy-to-arc-enabled-servers
-draft: true
+draft: false
 ---
 
 You have an Azure Arc-enabled server and you need to ensure it is monitored. The most direct way to enforce this at scale is to use Azure Policy. This approach lets you audit compliance or automatically install the Azure Monitor Agent (AMA) on servers that are missing it.

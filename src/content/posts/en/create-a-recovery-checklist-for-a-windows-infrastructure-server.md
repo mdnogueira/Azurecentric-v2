@@ -5,7 +5,7 @@ pubDate: 2026-09-03
 category: windows-server
 tags: ["windows-server", "active-directory", "backup-and-recovery", "wbadmin", "forest-recovery"]
 translationKey: create-a-recovery-checklist-for-a-windows-infrastructure-server
-draft: true
+draft: false
 ---
 
 When a Windows infrastructure server fails, the difference between a manageable outage and a prolonged disaster often comes down to whether you have a recovery checklist that matches your actual environment. For a domain controller or other critical role, relying on ad-hoc memory is insufficient. You need a documented, tested procedure that covers both the backup creation and the restoration path.

@@ -5,7 +5,7 @@ pubDate: 2024-10-31
 category: governance
 tags: ["azure-workbooks", "azure-monitor", "kql", "observability", "azure-portal"]
 translationKey: build-an-azure-workbook-around-an-operational-question
-draft: true
+draft: false
 ---
 
 You have an operational question that keeps coming up in your team's monitoring routine. It might be "Why did latency spike last Tuesday?" or "Which storage accounts are consuming most of our egress budget?" The first step is not to open the workbook editor and start dragging controls. It is to define the question precisely enough that the data sources and parameters can answer it.

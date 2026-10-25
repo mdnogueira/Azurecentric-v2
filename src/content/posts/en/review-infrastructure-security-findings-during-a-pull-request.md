@@ -5,7 +5,7 @@ pubDate: 2025-03-20
 category: governance
 tags: ["defender-for-cloud", "devops-security", "pull-request-annotations", "iac", "github-advanced-security", "azure-devops"]
 translationKey: review-infrastructure-security-findings-during-a-pull-request
-draft: true
+draft: false
 ---
 
 You are reviewing a pull request that modifies a Bicep or Terraform file. You want to see security findings for that infrastructure-as-code (IaC) change immediately, rather than waiting for a post-merge scan. Microsoft Defender for Cloud provides pull request annotations to surface these IaC misconfigurations directly in the source control system.

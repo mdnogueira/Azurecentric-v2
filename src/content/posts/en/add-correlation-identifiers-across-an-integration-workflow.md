@@ -5,7 +5,7 @@ pubDate: 2026-03-04
 category: apps
 tags: ["api-management", "service-bus", "distributed-tracing", "application-insights", "opentelemetry"]
 translationKey: add-correlation-identifiers-across-an-integration-workflow
-draft: true
+draft: false
 ---
 
 You have an integration workflow where an API request triggers a Service Bus message, which is then processed by a downstream consumer. The logs for the API call, the message send, and the message processing appear as separate, unconnected events in your monitoring tool. You cannot trace the latency or the error path across the boundary.

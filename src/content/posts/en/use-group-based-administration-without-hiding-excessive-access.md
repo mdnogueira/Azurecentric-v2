@@ -5,7 +5,7 @@ pubDate: 2026-07-25
 category: governance
 tags: ["entra-id", "rbac", "groups", "security", "governance"]
 translationKey: use-group-based-administration-without-hiding-excessive-access
-draft: true
+draft: false
 ---
 
 You want to simplify role management by assigning Microsoft Entra roles to groups. It is a sensible move, but it introduces a specific risk: you might inadvertently grant excessive access or create an unmanageable permission surface if you do not understand the constraints of role-assignable groups. The key is to use them deliberately, not as a drop-in replacement for every group you currently manage.

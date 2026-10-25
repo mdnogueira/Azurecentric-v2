@@ -5,7 +5,7 @@ pubDate: 2024-12-09
 category: apps
 tags: ["azure-app-service", "deployment-slots", "zero-downtime", "configuration-management", "swap-operations"]
 translationKey: understand-deployment-slots-before-an-app-service-swap
-draft: true
+draft: false
 ---
 
 You are planning a deployment to Azure App Service and want to avoid downtime. The standard approach is to use a deployment slot. However, slots are not just empty containers for code; they are live applications with their own hostnames, configurations, and compute resources. If you treat a slot as a simple staging area without understanding how configuration elements behave during a swap, or the billing implications of running it, you risk introducing production issues or unexpected billing charges.

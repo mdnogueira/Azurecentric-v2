@@ -5,7 +5,7 @@ pubDate: 2024-02-25
 category: governance
 tags: [entra-id, emergency-access, conditional-access, authentication, identity]
 translationKey: create-and-test-emergency-access-accounts-in-microsoft-entra-id
-draft: true
+draft: false
 ---
 
 Emergency access accounts provide an administrative route when the normal one is unavailable. Their value comes from independence: a recovery account that relies on the same federation service, personal phone or policy dependency as the affected administrator can fail for the same reason.

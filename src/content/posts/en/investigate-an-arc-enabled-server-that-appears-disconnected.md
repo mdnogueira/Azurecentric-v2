@@ -5,7 +5,7 @@ pubDate: 2024-12-18
 category: cloud
 tags: ["azure-arc", "troubleshooting", "hybrid-compute", "azcmagent", "connectivity"]
 translationKey: investigate-an-arc-enabled-server-that-appears-disconnected
-draft: true
+draft: false
 ---
 
 An Arc-enabled server showing as disconnected usually means the Azure Connected Machine agent can no longer reach the Azure Arc service, or the local agent service has stopped responding. Before you start tearing down configurations, confirm whether the issue is network-related, credential-related, or a local agent failure. The first step is always to check the agent's own logs and connectivity status from the machine itself.

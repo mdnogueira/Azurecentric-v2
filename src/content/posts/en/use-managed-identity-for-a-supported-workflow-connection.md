@@ -5,7 +5,7 @@ pubDate: 2024-05-13
 category: apps
 tags: ["managed-identity", "logic-apps", "api-management", "azure-rbac", "security"]
 translationKey: use-managed-identity-for-a-supported-workflow-connection
-draft: true
+draft: false
 ---
 
 You have a workflow or an API gateway that needs to talk to another Azure service. The old way is to store a username and password, or a service principal secret, in a connection string or a policy. That creates a rotation problem and a leak risk. The modern way is to use a managed identity. Azure handles the token acquisition and expiration, so you only need to ensure the identity has the right permissions on the target resource.

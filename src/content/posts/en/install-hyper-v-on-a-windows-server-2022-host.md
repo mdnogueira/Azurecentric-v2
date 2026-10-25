@@ -5,7 +5,7 @@ pubDate: 2024-02-17
 category: hyper-v
 tags: [hyper-v, windows-server-2022, powershell, virtualisation]
 translationKey: install-hyper-v-on-a-windows-server-2022-host
-draft: true
+draft: false
 ---
 
 Installing Hyper-V enables the host to run virtual machines. It does not finish the virtualisation design. Before adding the role, decide how the server will be managed, where VM files will live and which network connections guests should use.

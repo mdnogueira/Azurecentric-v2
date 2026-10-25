@@ -5,7 +5,7 @@ pubDate: 2026-09-06
 category: backup-dr
 tags: ["failover-clustering", "cluster-aware-updating", "quorum", "windows-server-2025", "maintenance"]
 translationKey: plan-maintenance-with-only-one-spare-node
-draft: true
+draft: false
 ---
 
 You have a two-node failover cluster and a maintenance window. You need to apply updates, but you only have one spare node to keep the cluster running. The question is whether you can update both nodes sequentially without losing quorum, or if you need a third node to act as a witness.

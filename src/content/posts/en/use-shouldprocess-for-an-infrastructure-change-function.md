@@ -5,7 +5,7 @@ pubDate: 2026-01-25
 category: automation
 tags: ["powershell", "automation", "infrastructure", "shouldprocess", "cmdletbinding"]
 translationKey: use-shouldprocess-for-an-infrastructure-change-function
-draft: true
+draft: false
 ---
 
 Infrastructure automation often requires modifying resources outside the PowerShell runtime. A broad filter or a typo can apply changes to the wrong targets. Adding `-WhatIf` and `-Confirm` support to your functions provides a safety net, allowing you to preview or validate changes before they happen.

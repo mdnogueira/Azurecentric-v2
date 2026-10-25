@@ -5,7 +5,7 @@ pubDate: 2025-06-15
 category: governance
 tags: ["azure-monitor", "alerts", "troubleshooting", "log-alerts", "incident-management"]
 translationKey: investigate-an-alert-that-repeatedly-closes-and-reopens
-draft: true
+draft: false
 ---
 
 An alert that seems to close and reopen is a common source of confusion. It often looks like a system bug, but it is usually a result of how Azure Monitor handles alert state, manual user responses, or specific configuration settings. The first thing to do is determine whether you are looking at a single alert instance changing status, or multiple distinct alert instances firing in sequence.

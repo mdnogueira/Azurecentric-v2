@@ -5,7 +5,7 @@ pubDate: 2024-06-10
 category: governance
 tags: ["azure-firewall", "firewall-policy", "network-security", "rule-configuration", "performance"]
 translationKey: keep-azure-firewall-rules-consistent-with-firewall-policy
-draft: true
+draft: false
 ---
 
 You have a firewall policy with dozens of rule collections, and traffic is behaving unexpectedly. The most likely culprit is not a missing rule, but a mismatch between the priority values in your policy and the order in which Azure Firewall actually processes them. When rule collection groups and collections are not aligned with the processing hierarchy, you risk allowing traffic that should be denied, or incurring unnecessary latency as the firewall scans through irrelevant rules.

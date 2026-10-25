@@ -5,7 +5,7 @@ pubDate: 2024-03-26
 category: storage
 tags: ["azure-storage", "storage-redundancy", "disaster-recovery", "geo-replication", "data-protection"]
 translationKey: choose-storage-redundancy-around-recovery-requirements
-draft: true
+draft: false
 ---
 
 The useful question when choosing storage redundancy is what the application needs to do when a copy of its data becomes unavailable. Surviving a disk failure, continuing through a zone outage and recovering after a regional disruption are different requirements.

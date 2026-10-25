@@ -5,7 +5,7 @@ pubDate: 2024-05-29
 category: windows-server
 tags: ["wsus", "group-policy", "windows-server-2022", "patching", "system-administration"]
 translationKey: plan-a-windows-server-patching-and-rollback-window
-draft: true
+draft: false
 ---
 
 You have approved the updates in WSUS. Now you need to ensure they install and restart the servers at the right time. The patching window is not defined by the approval itself, but by the Group Policy settings that control client detection, installation timing, and restart behaviour. If these are misaligned, servers either patch outside the window or fail to reboot, leaving them vulnerable.

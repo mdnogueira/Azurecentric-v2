@@ -5,7 +5,7 @@ pubDate: 2024-11-20
 category: hyper-v
 tags: ["hyper-v", "vlan", "windows-server", "networking", "powershell"]
 translationKey: configure-a-virtual-network-adapter-and-vlan
-draft: true
+draft: false
 ---
 
 You need to isolate virtual machine traffic on a Windows Server Hyper-V host. The most direct way to achieve this is by configuring VLAN IDs on the virtual network adapter. This ensures that traffic leaving the virtual machine is tagged correctly before it reaches the physical switch.

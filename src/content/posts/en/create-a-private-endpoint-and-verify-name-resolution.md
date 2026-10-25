@@ -5,7 +5,7 @@ pubDate: 2024-10-28
 category: networking
 tags: ["azure-private-link", "private-endpoint", "dns-resolution", "app-service", "networking"]
 translationKey: create-a-private-endpoint-and-verify-name-resolution
-draft: true
+draft: false
 ---
 
 You have an Azure App Service web app and you want to access it from a virtual machine without traversing the public internet. The standard way to do this is to create a private endpoint. However, creating the endpoint is only half the job; the other half is ensuring the virtual machine resolves the web app's name to the private IP address. If DNS is not configured correctly, the connection will fail, often with a vague timeout or a "host not found" error.

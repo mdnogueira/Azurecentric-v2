@@ -5,7 +5,7 @@ pubDate: 2026-06-22
 category: automation
 tags: ["bicep", "infrastructure-as-code", "azure-resource-manager", "deployment", "modules"]
 translationKey: review-infrastructure-changes-as-an-application-dependency
-draft: true
+draft: false
 ---
 
 You are building a deployment pipeline where the application cannot start until the database is ready. The infrastructure team updates the schema, and the application deployment fails because it tried to connect before the migration finished. The issue is rarely the infrastructure itself; it is usually how the dependency is declared in the deployment template.

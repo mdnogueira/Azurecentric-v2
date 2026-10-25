@@ -5,7 +5,7 @@ pubDate: 2024-12-23
 category: apps
 tags: ["azure-service-bus", "message-sessions", "ordering", "fifo", "messaging"]
 translationKey: use-message-sessions-when-processing-order-matters
-draft: true
+draft: false
 ---
 
 You have a queue where the order of messages matters. If you send an "update" followed by a "commit", the consumer must process them in that exact sequence. You might reach for Service Bus's built-in sequencing first, but sequence numbers alone do not guarantee processing order. To enforce it, you need message sessions.

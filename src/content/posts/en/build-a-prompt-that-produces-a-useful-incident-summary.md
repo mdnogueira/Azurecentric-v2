@@ -5,7 +5,7 @@ pubDate: 2024-12-03
 category: governance
 tags: ["security-copilot", "incident-response", "prompting", "microsoft-defender", "threat-intelligence"]
 translationKey: build-a-prompt-that-produces-a-useful-incident-summary
-draft: true
+draft: false
 ---
 
 You need to summarise an incident for a non-technical executive, but the default output is too technical or lacks the specific entity context required for decision-making. The first step is to stop asking for a generic summary and start defining the goal, the audience, the source data, and the output format explicitly.

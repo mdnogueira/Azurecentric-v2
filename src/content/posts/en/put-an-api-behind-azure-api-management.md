@@ -5,7 +5,7 @@ pubDate: 2025-06-09
 category: apps
 tags: ["azure-api-management", "how-to", "api-gateway", "azure-portal", "backend-integration"]
 translationKey: put-an-api-behind-azure-api-management
-draft: true
+draft: false
 ---
 
 You have an API Management instance ready and a backend service you want to expose. The first practical step is to add the API and map its operations so that API Management can route traffic correctly. This guide shows how to do that manually in the Azure portal, including how to handle parameterised paths and wildcard operations.

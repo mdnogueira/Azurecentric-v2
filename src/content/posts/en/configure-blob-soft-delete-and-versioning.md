@@ -5,7 +5,7 @@ pubDate: 2024-11-03
 category: storage
 tags: ["azure-storage", "blob-storage", "soft-delete", "versioning", "data-protection"]
 translationKey: configure-blob-soft-delete-and-versioning
-draft: true
+draft: false
 ---
 
 You have a storage account and you need to ensure that blobs survive accidental deletion or overwriting. The most direct way to achieve this is to enable blob soft delete and blob versioning. These two features work together: versioning preserves every state change, while soft delete ensures that the versions themselves are not permanently removed immediately upon deletion.

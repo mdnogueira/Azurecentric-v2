@@ -5,7 +5,7 @@ pubDate: 2025-01-03
 category: governance
 tags: ["business-continuity", "disaster-recovery", "high-availability", "azure-reliability", "recovery-planning"]
 translationKey: document-an-application-dependency-map-for-a-recovery-exercise
-draft: true
+draft: false
 ---
 
 You are planning a recovery exercise and need to know exactly which components must be restored, in what order, and within what time limits. The first step is not to configure failover, but to document the dependency map of the application. A recovery exercise without a clear dependency map is a guesswork exercise, and guesswork is where recovery plans fail.

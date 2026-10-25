@@ -5,7 +5,7 @@ pubDate: 2025-09-07
 category: governance
 tags: ["security-copilot", "pilot", "measurable-outcomes", "ai-assistant", "security-operations"]
 translationKey: define-useful-pilot-outcomes-without-assuming-productivity-gains
-draft: true
+draft: false
 ---
 
 You are planning a pilot for Microsoft Security Copilot. The temptation is to measure success by how much faster analysts feel they are working. That is a subjective metric that is difficult to verify and easy to misinterpret. A more reliable approach is to define outcomes that can be observed in the system and the workflow, grounded in the capabilities the product actually provides.

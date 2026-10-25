@@ -5,7 +5,7 @@ pubDate: 2025-02-23
 category: governance
 tags: ["azure-policy", "governance", "compliance", "audit", "azure-arc"]
 translationKey: use-azure-policy-to-report-on-missing-configuration
-draft: true
+draft: false
 ---
 
 You want to know which resources in your Azure environment are missing a required configuration, but you don't want to block deployments or change anything yet. The answer is to create a policy assignment with an auditing effect, such as `Audit` or `AuditIfNotExist`, scoped to the relevant management group, subscription, or resource group.

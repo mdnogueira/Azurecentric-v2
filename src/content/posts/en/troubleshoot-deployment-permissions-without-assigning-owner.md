@@ -5,7 +5,7 @@ pubDate: 2025-11-15
 category: automation
 tags: ["azure-rbac", "bicep", "deployment", "permissions", "troubleshooting"]
 translationKey: troubleshoot-deployment-permissions-without-assigning-owner
-draft: true
+draft: false
 ---
 
 You are trying to deploy a Bicep file that creates a role assignment, but the deployment fails with a permissions error. The first thing to check is the scope of the deployment command and the scope of the role assignment resource. Azure RBAC permissions are strictly scoped. If you are deploying to a resource group, you need permissions on that resource group. If you are deploying to a subscription, you need permissions on the subscription. The deployment command determines the context in which Azure validates your permissions.

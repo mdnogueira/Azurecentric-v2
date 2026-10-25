@@ -5,7 +5,7 @@ pubDate: 2026-03-11
 category: governance
 tags: ["azure-automation", "runbooks", "troubleshooting", "powershell", "permissions"]
 translationKey: check-a-failed-runbook-using-its-job-evidence
-draft: true
+draft: false
 ---
 
 A runbook job has failed. The portal shows a red status, but the error message is either missing, generic, or points to a permission issue that doesn't match what you expect. The first step is not to guess the cause, but to look at the job evidence. Azure Automation provides specific streams and status codes that tell you exactly where the execution stopped and why.
