@@ -12,8 +12,6 @@ Autoscaling a Virtual Machine Scale Set (VMSS) based on CPU or memory metrics is
 
 The Application Health extension provides this capability by monitoring the application from inside the VM. It is important to distinguish this from the load balancer health probe. The load balancer probe checks connectivity and is used for traffic distribution. The Application Health extension checks the application's internal state and is used by the scale set orchestration engine for repairs and upgrades. You cannot use both simultaneously for orchestration purposes; you must choose one source of health monitoring for the scale set.
 
-[![VMSS Health and Autoscaling Flow](/images/posts/2024/azc-124-checkpoints.svg)](/images/posts/2024/azc-124-checkpoints.svg)
-
 ## Choose between Binary and Rich Health States
 
 The Application Health extension offers two modes: Binary Health States and Rich Health States. Your choice depends on whether you need an initialisation grace period for new instances and whether you want to use custom health logic in your application response.

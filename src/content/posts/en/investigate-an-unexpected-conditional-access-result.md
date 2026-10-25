@@ -12,8 +12,6 @@ A user reports a sign-in failure, or perhaps they are not being challenged for m
 
 ## Start with the sign-in log
 
-[![Conditional Access Troubleshooting Flow](/images/posts/2026/azc-316-checkpoints.svg)](/images/posts/2026/azc-316-checkpoints.svg)
-
 The Microsoft Entra sign-in logs provide the ground truth for every authentication attempt. If you are troubleshooting a specific user’s failure, you need to find the corresponding event.
 
 1. Sign in to the Microsoft Entra admin center as at least a [Reports Reader](https://learn.microsoft.com/en-us/entra/identity/conditional-access/troubleshoot-conditional-access).

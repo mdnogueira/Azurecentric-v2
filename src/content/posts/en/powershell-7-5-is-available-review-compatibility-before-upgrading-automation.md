@@ -12,8 +12,6 @@ PowerShell 7.5 is generally available. It is built on .NET 9 and is supported fo
 
 ## Check module compatibility first
 
-[![PowerShell 7.5 Upgrade Flow](/images/posts/2025/azc-147-checkpoints.svg)](/images/posts/2025/azc-147-checkpoints.svg)
-
 PowerShell 7 is designed to run side-by-side with Windows PowerShell 5.1, but it is built on .NET (version 9 in 7.5), whereas Windows PowerShell 5.1 runs on the .NET Framework 4.x. This architectural difference means that scripts calling .NET methods directly may behave differently. The PowerShell team has improved compatibility with existing Windows PowerShell modules, and many Microsoft modules, including Azure PowerShell and Active Directory, already work with PowerShell 7. However, compatibility is not guaranteed for every module.
 
 Before upgrading, verify the modules your automation uses. The [PowerShell 7 module compatibility](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/module-compatibility) page lists known compatible modules. For example, the Az PowerShell module recommends PowerShell 7.0.6 LTS or higher, and the Microsoft Graph SDK recommends PowerShell 7 and later. If your automation uses these, 7.5 is likely compatible. If it uses older or custom modules, test them in an isolated environment first.

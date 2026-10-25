@@ -12,8 +12,6 @@ You have configured a private endpoint for an Azure Files storage account and es
 
 When you create a private endpoint, Azure automatically creates a private DNS zone and links it to the virtual network containing the endpoint. This zone contains a CNAME record mapping `storageaccount.file.core.windows.net` to a private `privatelink` A record. However, this configuration only affects clients within that virtual network. On-premises DNS servers still resolve the storage account name to its public IP address. If your network routing directs traffic for the private subnet through the tunnel, or if the public endpoint is blocked by firewall rules, the public IP address is useless. You need the on-premises DNS server to return the private IP address instead.
 
-[![DNS Resolution Flow for Azure Files Private Endpoint](/images/posts/2025/azc-211-checkpoints.svg)](/images/posts/2025/azc-211-checkpoints.svg)
-
 ## How DNS resolution differs by location
 
 It is useful to understand what happens when you query the storage account name from different locations. From an Azure virtual machine in the same VNet as the private endpoint, the query hits the Azure private DNS zone.

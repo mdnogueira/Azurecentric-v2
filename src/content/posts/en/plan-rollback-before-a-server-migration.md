@@ -12,8 +12,6 @@ You have discovered your estate, assessed the workloads, and built a migration p
 
 ## Why test migrations matter
 
-[![Test Migration Workflow](/images/posts/2025/azc-186-checkpoints.svg)](/images/posts/2025/azc-186-checkpoints.svg)
-
 A test migration serves two primary purposes: validation and refinement. First, it provides an opportunity to discover any potential issues and fix them before the full migration [Build a migration plan with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning). This includes verifying that the Azure VMs boot correctly, that connectivity is established, and that applications function as expected. Second, it helps you estimate the time involved in the migration process, allowing you to refine your migration plan [Build a migration plan with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning).
 
 Without a test migration, you risk encountering unexpected blockers during the actual cutover, such as compatibility issues, unsupported features, or network latency constraints [Build a migration plan with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning). These issues can lead to extended downtime, data loss, or operational disruptions. By running a test migration, you can identify and mitigate these risks in a controlled environment.

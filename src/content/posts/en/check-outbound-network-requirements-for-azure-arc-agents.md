@@ -12,8 +12,6 @@ An Azure Arc onboarding failure can begin well before the server attempts to reg
 
 Check the path in stages and retain the results. The Connected Machine agent's [network requirements](https://learn.microsoft.com/en-us/azure/azure-arc/servers/network-requirements) describe outbound HTTPS communication over TCP 443, with different dependencies for installation, ongoing management and optional features.
 
-[![Azure Arc connectivity verification checkpoints](/images/posts/2024/azc-025-checkpoints.svg)](/images/posts/2024/azc-025-checkpoints.svg)
-
 ## Record the intended connection path
 
 Identify the server, Azure cloud and region where its Arc resource will be registered. Confirm whether the agent should use direct public connectivity, an approved proxy or an Azure Arc Private Link Scope.

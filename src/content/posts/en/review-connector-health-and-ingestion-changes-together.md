@@ -12,8 +12,6 @@ You notice a gap in your security telemetry and the first question is not whethe
 
 Using both together prevents you from reacting to transient errors while ensuring you do not miss sustained failures. The health table records status changes and hourly summaries, while the workbook aggregates volume, EPS rates and anomalies. You need to enable the health feature, install the workbook, and then build a query that distinguishes between a temporary blip and a connector that needs intervention.
 
-[![Sentinel Health Monitoring Flow](/images/posts/2026/azc-337-checkpoints.svg)](/images/posts/2026/azc-337-checkpoints.svg)
-
 ## Enable health monitoring and understand the data
 
 Health monitoring for Microsoft Sentinel is not enabled by default. You must turn it on in the Microsoft Sentinel settings to start collecting events in the *SentinelHealth* table [Auditing and health monitoring in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/health-audit). Once enabled, the table captures events for specific connectors, including AWS CloudTrail and S3, Dynamics 365, Office 365, Microsoft Defender for Endpoint, and TAXII or TIP threat intelligence connectors [Monitor the health of your Microsoft Sentinel data connectors](https://learn.microsoft.com/en-us/azure/sentinel/monitor-data-connector-health).

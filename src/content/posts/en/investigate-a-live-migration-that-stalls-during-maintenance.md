@@ -12,8 +12,6 @@ A live migration that stalls usually means the cluster is waiting for something 
 
 ## Verify the SMB bandwidth limit
 
-[![Live Migration Stall Troubleshooting](/images/posts/2026/azc-292-checkpoints.svg)](/images/posts/2026/azc-292-checkpoints.svg)
-
 When you configure Hyper-V to use SMB for Live Migration, the cluster applies a bandwidth limit to prevent migration traffic from starving storage and cluster communication traffic. The default limit is 25% of the total bandwidth available to the cluster node. If you have recently added high-throughput workloads or increased the number of simultaneous migrations, that default cap may be the bottleneck.
 
 You can check the current cluster-wide SMB bandwidth settings using PowerShell. Run the following command on any cluster node:

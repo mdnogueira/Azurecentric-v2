@@ -12,8 +12,6 @@ You are planning an infrastructure change. The maintenance window is open. The r
 
 In that moment, you face a choice: proceed with the change, or initiate a recovery plan. The most critical step is not the technical execution of either option, but having a pre-defined decision record ready. Microsoft's reliability guidance warns that "Rushed decisions can sometimes make things worse" [What to do during an Azure service disruption](https://learn.microsoft.com/en-us/azure/reliability/incident-response). A pre-recorded decision removes the cognitive load of choosing a path while an incident is unfolding.
 
-[![Decision Flow for Infrastructure Changes During Incidents](/images/posts/2026/azc-269-checkpoints.svg)](/images/posts/2026/azc-269-checkpoints.svg)
-
 ## Why pre-record the decision?
 
 A recovery decision is a commitment to a specific course of action under uncertainty. It serves to prevent the kind of rushed actions that Microsoft explicitly advises against. When an incident occurs, the "actual impact" on your production resources is often unclear initially [What to do during an Azure service disruption](https://learn.microsoft.com/en-us/azure/reliability/incident-response). Without a pre-defined plan, you might be tempted to scale out, fail over, or rollback simultaneously. These actions can conflict or exacerbate the issue.

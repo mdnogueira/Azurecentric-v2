@@ -12,8 +12,6 @@ You are about to peer a virtual network in one subscription with another in a di
 
 Virtual network peering makes two networks appear as one for connectivity purposes. Traffic stays on the Microsoft backbone, which offers low latency and high bandwidth. However, this convenience comes with strict constraints. You must understand these boundaries before you click 'Create'.
 
-[![Virtual Network Peering Decision Flow](/images/posts/2026/azc-363-checkpoints.svg)](/images/posts/2026/azc-363-checkpoints.svg)
-
 ## Check for address space overlap
 
 A virtual network requires a custom private IP address space. When you peer two networks, their address spaces must not overlap. This is the most common reason for peering failures. You need to confirm the exact CIDR blocks for both the local and remote virtual networks.

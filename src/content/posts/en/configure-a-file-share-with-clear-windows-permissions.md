@@ -12,8 +12,6 @@ A domain-based DFS namespace often feels too open because every folder is visibl
 
 To restrict visibility, you must switch from inherited permissions to explicit permissions. This allows you to set specific Access Control Lists (ACLs) on the namespace folders that are stored in the DFS namespace metadata. Once visibility is controlled, you should protect the data moving between the client and the file server. Windows Server 2022 supports SMB 3.1.1, which includes mandatory preauthentication integrity and advanced encryption suites. Enabling SMB encryption ensures end-to-end privacy and integrity, protecting data from eavesdropping on untrusted networks.
 
-[![DFS Namespace Permission and Encryption Flow](/images/posts/2024/azc-093-checkpoints.svg)](/images/posts/2024/azc-093-checkpoints.svg)
-
 ## Control visibility with explicit permissions
 
 Inherited permissions are not replicated to other namespace servers. If you rely on them, you must implement a third-party replication system to keep the Access Control Lists (ACLs) on all namespace servers synchronized. This makes inherited permissions inappropriate for most domain-based environments.

@@ -12,8 +12,6 @@ When a resource becomes unavailable, the first question is whether the issue lie
 
 Resource Health notifications are stored in the Azure activity log. This means you can use the same alerting infrastructure you already have for other subscription-level events. The key is to configure the alert conditions carefully. A broad alert on the `ResourceHealth` category will fire for every status change, including transient states or informational updates, which creates noise. You need to filter for the specific statuses and causes that matter during an incident.
 
-[![Resource Health Incident Flow](/images/posts/2025/azc-229-checkpoints.svg)](/images/posts/2025/azc-229-checkpoints.svg)
-
 ## Set up a high-signal Resource Health alert
 
 The most effective way to use Resource Health during an incident is to set up an alert that triggers on `Active` or `In Progress` statuses for `Unavailable` or `Degraded` events. Filtering for `PlatformInitiated` causes helps distinguish platform outages from user changes, though other causes exist and may require investigation.

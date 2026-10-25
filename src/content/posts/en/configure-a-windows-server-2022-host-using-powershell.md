@@ -12,8 +12,6 @@ You have a Windows Server 2022 host that needs to be configured. PowerShell allo
 
 ## Prerequisites and Permissions
 
-[![Windows Server 2022 Configuration Flow](/images/posts/2024/azc-035-checkpoints.svg)](/images/posts/2024/azc-035-checkpoints.svg)
-
 Before you begin, ensure you have administrator rights on the local server or the target remote server. If you are logged on with an account that does not have administrator rights on the target server, you will need to provide an account that does. For local installations, run Windows PowerShell as Administrator.
 
 Windows PowerShell is a task-based command-line shell and scripting language designed especially for system administration. It is built on the .NET Framework and helps IT professionals control and automate the administration of the Windows operating system and applications that run on Windows [1].

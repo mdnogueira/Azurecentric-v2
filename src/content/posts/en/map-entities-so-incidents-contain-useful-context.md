@@ -12,8 +12,6 @@ An alert without context is just a line in a log. To turn that alert into an inv
 
 This is not an optional cosmetic step. Without entity mapping, the incident remains a flat list of fields. With it, Sentinel can link the alert to the entity pages, correlate it with other alerts involving the same account or host, and provide the building blocks for investigation [Map data fields to Microsoft Sentinel entities | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/map-data-fields-to-entities).
 
-[![Entity Mapping Flow in Analytics Rules](/images/posts/2024/azc-100-checkpoints.svg)](/images/posts/2024/azc-100-checkpoints.svg)
-
 ## Why entity mapping matters
 
 Entities are classifications or labels for data elements in your alerts. Sentinel uses them to recognise data elements as a particular entity type, correlate data across alerts, and provide a rich foundation for investigation [Entities in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/entities).

@@ -12,8 +12,6 @@ You have a Global Administrator account. It is likely the most powerful identity
 
 PIM allows you to make users eligible for roles rather than permanently assigned to them. When you need to perform an administrative task, you activate the role for a limited time. This reduces the attack surface by ensuring that high-privilege permissions exist only when actively needed. It also provides an audit trail of who activated what, when, and for how long.
 
-[![PIM Role Assignment and Activation Flow](/images/posts/2024/azc-059-checkpoints.svg)](/images/posts/2024/azc-059-checkpoints.svg)
-
 ## Start with the prerequisites
 
 Before you can configure PIM, you need the right permissions and licenses. PIM is included in Microsoft Entra ID P2, which is part of the EMS E5 and Microsoft 365 E5 suites. If you do not have these licenses, the PIM features will not be available.

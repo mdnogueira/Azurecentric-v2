@@ -12,8 +12,6 @@ Your Azure Batch job is in the `Active` state, but the tasks are not running. Th
 
 ## Check the Batch account core quota first
 
-[![Azure Batch Compute Wait Diagnosis](/images/posts/2025/azc-144-checkpoints.svg)](/images/posts/2025/azc-144-checkpoints.svg)
-
 The most common reason a pool fails to reach its target node count is a quota limit on the Batch account itself. When you create a Batch account, you can specify the pool allocation mode. If you used the default Batch service configuration, your account is limited to a maximum number of cores that can be used for processing. The Batch service scales compute nodes only up to that core limit. Even if your autoscale formula requests 50 nodes, the service will not provision them if the total cores exceed your account's quota.
 
 You can view your current quota usage and limits via the Azure portal or the Batch Management API. If your target node count is not being reached, check the "Quotas and limits" section for your Batch account. You may need to request a quota increase. This is a critical prerequisite because no amount of autoscale tuning will bypass a hard quota ceiling.

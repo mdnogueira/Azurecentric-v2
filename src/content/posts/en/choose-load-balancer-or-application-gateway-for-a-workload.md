@@ -12,8 +12,6 @@ You have a workload that needs to accept network traffic and you need to decide 
 
 Azure Load Balancer operates at Layer 4 of the OSI model. It distributes incoming network traffic across backend virtual machines (VMs) or virtual machine scale sets (VMSS) based on IP address and port. It is designed for high-throughput, low-latency scenarios where you need to balance raw TCP or UDP flows. Azure Application Gateway, specifically the v2 SKU, operates at Layer 7. It understands HTTP, HTTPS, and WebSocket protocols, allowing it to make routing decisions based on URL paths, host headers, and cookies. It also provides built-in Web Application Firewall (WAF) capabilities.
 
-[![Load Balancer vs Application Gateway Decision Flow](/images/posts/2025/azc-228-checkpoints.svg)](/images/posts/2025/azc-228-checkpoints.svg)
-
 ## Understand the Layer 4 vs Layer 7 distinction
 
 The fundamental difference lies in the OSI layer at which the service operates. Azure Load Balancer is a Layer 4 service. It sees traffic as streams of packets identified by source and destination IP addresses and ports. It does not inspect the content of the traffic. This makes it ideal for non-HTTP workloads, such as database traffic, gaming servers, or custom TCP/UDP applications. It provides pass-through load balancing, which means it forwards the client's original IP address to the backend without modification, preserving the original connection state.

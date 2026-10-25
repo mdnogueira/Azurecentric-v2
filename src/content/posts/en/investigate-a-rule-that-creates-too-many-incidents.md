@@ -12,8 +12,6 @@ You have an analytics rule generating too many incidents. The immediate problem 
 
 ## Check the rule insights to understand the volume
 
-[![Sentinel Rule Tuning Flow](/images/posts/2025/azc-221-checkpoints.svg)](/images/posts/2025/azc-221-checkpoints.svg)
-
 Before changing the query, you need to know why the rule is firing so often. Microsoft Sentinel includes an **Insights** tab on the **Analytics** page that shows execution history and classification data. This feature is in preview and requires health and audit monitoring to be enabled for your workspace.
 
 1. Open **Microsoft Sentinel** in the Azure portal.

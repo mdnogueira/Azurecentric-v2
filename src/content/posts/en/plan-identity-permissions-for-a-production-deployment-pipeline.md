@@ -12,8 +12,6 @@ A production deployment pipeline needs identity permissions that are precise, au
 
 The pipeline identity is a workload identity, typically a service principal. It does not have a user account, cannot perform multifactor authentication, and often stores credentials in a way that makes it a target for compromise. Protecting it requires separating the permission to manage the identity from the permission to use it, and then applying network or risk-based controls to its usage.
 
-[![Identity Permission Flow for Deployment Pipeline](/images/posts/2026/azc-276-checkpoints.svg)](/images/posts/2026/azc-276-checkpoints.svg)
-
 ## Scope the management permissions
 
 The pipeline needs permission to manage the service principal it represents, or the applications it deploys. Microsoft Entra ID allows roles to be assigned at different scopes: tenant-wide, at the level of a specific application registration, or within an administrative unit. For a production pipeline, tenant-wide assignment is rarely appropriate.

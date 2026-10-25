@@ -12,8 +12,6 @@ You cannot select the right migration method until you know what you are moving.
 
 The first step is establishing a project that captures discovery metadata. Azure Migrate projects store the discovery, assessment, and migration metadata collected from your environment. Without this central repository, you are working with fragmented spreadsheets or manual estimates, which often miss dependencies or storage requirements.
 
-[![Azure Migrate Project Setup Flow](/images/posts/2024/azc-046-checkpoints.svg)](/images/posts/2024/azc-046-checkpoints.svg)
-
 ## Create the project scope
 
 Before adding tools, you need a container for the assessment data. You must have Contributor or Owner permissions in the Azure subscription where the project will reside.

@@ -12,8 +12,6 @@ An alert rule is a commitment to act. If the threshold fires but no one can reso
 
 Azure Monitor provides two distinct alert types: metric alerts for numerical data points and log search alerts for structured log events. Both allow you to define conditions, but the mechanics of threshold calculation and the resulting noise profile differ significantly. Choosing the right threshold model depends on whether you have a fixed business limit or a dynamic operational baseline.
 
-[![Alert Threshold Decision Flow](/images/posts/2024/azc-130-checkpoints.svg)](/images/posts/2024/azc-130-checkpoints.svg)
-
 ## Static thresholds require a defined business limit
 
 Static thresholds are appropriate when you have a hard constraint that must not be exceeded. Examples include storage account capacity limits, API rate limits, or a maximum acceptable latency for a specific transaction type. In these cases, the threshold value is derived from business requirements or architectural specifications, not from historical data analysis.

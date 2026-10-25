@@ -12,8 +12,6 @@ Azure Local is the new name for the infrastructure solution previously known as 
 
 The first thing to understand is the relationship between Azure Local and Azure Arc. Azure Local is enabled by Azure Arc. You do not install Azure Arc separately to get management; it is part of the Azure Local software stack, which is packaged as Azure Arc extensions installed onto your machines. This is distinct from using Azure Arc-enabled servers, where you connect existing infrastructure to Azure. Azure Local is for new or refreshed infrastructure at distributed locations. If you already have servers, you use Azure Arc. If you need new infrastructure, you use Azure Local.
 
-[![Azure Local Operating Model](/images/posts/2024/azc-117-checkpoints.svg)](/images/posts/2024/azc-117-checkpoints.svg)
-
 ## Ownership and Operational Control
 
 A common misconception is that "cloud-connected" implies Microsoft manages the workload. It does not. The operating model is customer-operated. You own the hardware and have operational control of your Azure Local environment. Day-to-day monitoring, management, support, and other functions are surfaced through Azure tools, but actions are customer-initiated. For example, when a software update is available, a notification appears in the Azure portal, but you control when the update gets applied.

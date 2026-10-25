@@ -12,8 +12,6 @@ When a security recommendation or alert persists, the instinct is often to silen
 
 The core distinction is simple. Governance rules drive accountability for security posture recommendations by assigning owners and deadlines. Suppression rules automatically dismiss specific security alerts, typically to reduce noise from false positives. You use governance rules when you need to track remediation. You use suppression rules when you need to stop seeing a specific alert type.
 
-[![Defender for Cloud Finding Management Flow](/images/posts/2026/azc-295-checkpoints.svg)](/images/posts/2026/azc-295-checkpoints.svg)
-
 ## Governance rules: Driving remediation
 
 Governance rules are part of the Cloud Security Posture Management (CSPM) plan. They do not hide findings; they structure them. When a recommendation is generated, a governance rule can assign an owner and a due date, ensuring that someone is responsible for fixing the issue. This is critical for establishing Service Level Agreements (SLAs) around security hygiene.

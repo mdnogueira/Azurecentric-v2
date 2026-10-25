@@ -12,8 +12,6 @@ When an Azure service disruption occurs, the first question is rarely "how do I 
 
 ## Understand the scope of the disruption
 
-[![Incident Response Decision Flow](/images/posts/2026/azc-366-checkpoints.svg)](/images/posts/2026/azc-366-checkpoints.svg)
-
 The first step during any incident is to determine whether the issue is local to a single availability zone, regional, or service-wide. Azure Service Health is the primary source for this information. It provides details on issues affecting your specific subscriptions and resources, unlike the public Azure Status page, which only shows widespread issues meeting specific criteria [What to do during an Azure service disruption](https://learn.microsoft.com/en-us/azure/reliability/incident-response).
 
 1.  **Check Azure Service Health**: Access [Azure Service Health](https://learn.microsoft.com/en-us/azure/reliability/incident-response) and look for active incidents in your regions. Configure automatic incident update alerts to send these notifications to an action group, ensuring your team is notified even if the portal is slow to load.

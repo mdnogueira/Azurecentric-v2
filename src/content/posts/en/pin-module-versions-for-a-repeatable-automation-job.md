@@ -12,8 +12,6 @@ Automation breaks when a module updates silently. You run a script that worked y
 
 PowerShell modules are designed to be discoverable and updatable, which is excellent for interactive use but risky for unattended jobs. When you call a cmdlet without specifying a version, PowerShell loads the highest installed version of that module. If your CI/CD pipeline, scheduled task, or deployment script does not explicitly request a version, it inherits whatever update landed on the system last.
 
-[![Module Version Resolution Flow](/images/posts/2026/azc-290-checkpoints.svg)](/images/posts/2026/azc-290-checkpoints.svg)
-
 ## Why implicit loading is a risk
 
 In PowerShell 3.0 and later, modules are imported automatically when you use a cmdlet or function from them. This is known as module auto-loading [Importing a PowerShell Module](https://learn.microsoft.com/en-us/powershell/scripting/developer/module/importing-a-powershell-module). The system searches the directories listed in the `PSModulePath` environment variable to find the module [Installing a PowerShell Module](https://learn.microsoft.com/en-us/powershell/scripting/developer/module/installing-a-powershell-module). If multiple versions of the same module are installed, the auto-loader picks the one that appears first in the path. While newer versions are often placed first, this is not guaranteed by the mechanism itself, making the claim technically inaccurate.

@@ -12,8 +12,6 @@ You are seeing high latency in your storage operations, but the service metrics 
 
 The first step is to identify which storage service you are using, as the performance models differ significantly between Azure Files and Azure Blob Storage. Azure Files is a file share service optimised for IOPS and latency, while Blob Storage is an object store optimised for throughput and parallel transfers. If you treat a Blob Storage account like a file share, or vice versa, you will likely hit throttling limits long before you run out of space.
 
-[![Storage Performance Diagnosis Flow](/images/posts/2026/azc-268-checkpoints.svg)](/images/posts/2026/azc-268-checkpoints.svg)
-
 ## Understand the Azure Files performance model
 
 Azure Files performance is defined by IOPS (input/output operations per second), throughput (measured in MiB/s), and latency (measured in milliseconds). The relationship between these is straightforward: throughput is the product of IOPS and the size of each I/O operation. For example, 10,000 IOPS with a 1 MiB I/O size results in 10 GiB/s of throughput, whereas the same IOPS with a 4 KiB I/O size yields only 38 MiB/s [Understand Azure Files performance](https://learn.microsoft.com/en-us/azure/storage/files/understand-performance).

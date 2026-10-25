@@ -12,8 +12,6 @@ You have a storage account and you need to ensure that blobs survive accidental 
 
 Blob soft delete maintains deleted blobs and their versions in the system for a specified retention period, allowing restoration within that window. Blob versioning automatically maintains previous versions of a blob when it is modified or deleted. Enabling both provides a robust recovery path for individual blob data, distinct from container-level or account-level protection.
 
-[![Blob Data Protection Flow](/images/posts/2024/azc-110-checkpoints.svg)](/images/posts/2024/azc-110-checkpoints.svg)
-
 ## Enable blob soft delete
 
 Blob soft delete is enabled by default when you create a new storage account via the Azure portal. However, if you are using PowerShell, Azure CLI, or templates, or if you are configuring an existing account, you must enable it explicitly.

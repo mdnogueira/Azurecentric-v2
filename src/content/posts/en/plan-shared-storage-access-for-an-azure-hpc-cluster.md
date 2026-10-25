@@ -12,8 +12,6 @@ You need shared storage for an Azure Batch pool, but you want tasks to access it
 
 Azure Files is cost-efficient and supports data replication to another region for global redundancy. However, it is not a universal solution for every workload. The planning guidance for Azure Batch advises using Azure Files when you have pools that run a relatively low number of parallel tasks if using non-premium Azure Files. For larger scale or higher performance requirements, you should review the [Azure Files scale targets](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets) to determine if the service meets your IOPS and throughput needs. If your workload involves thousands of concurrent nodes accessing large assets, other options like Avere vFXT or BlobFuse might be more appropriate.
 
-[![Azure Batch Pool Mount Flow](/images/posts/2024/azc-103-checkpoints.svg)](/images/posts/2024/azc-103-checkpoints.svg)
-
 ## Prerequisites and networking
 
 Before configuring the mount, ensure your environment meets the basic requirements. You need an Azure account with an active subscription, Azure PowerShell installed, and an existing Batch account linked to an Azure Storage account that contains a file share. Note that mounting a virtual file system is not supported on Batch pools created before August 8, 2019.

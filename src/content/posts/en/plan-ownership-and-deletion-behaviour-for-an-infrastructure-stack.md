@@ -12,8 +12,6 @@ An Azure deployment stack is a resource that manages a group of Azure resources 
 
 The stack transpiles Bicep files into ARM JSON templates and deploys them as a deployment object. It offers additional capabilities beyond familiar deployment resources, such as preventing undesired modifications via deny settings and efficient environment cleanup using delete flags during stack updates [Create and deploy Azure deployment stacks in Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks).
 
-[![Deployment Stack Lifecycle and Ownership](/images/posts/2026/azc-283-checkpoints.svg)](/images/posts/2026/azc-283-checkpoints.svg)
-
 ## Planning the ownership model
 
 A deployment stack can be created at resource group, subscription, or management group scope. The scope you choose determines where the stack resource lives and where it can deploy resources.

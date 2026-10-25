@@ -12,8 +12,6 @@ You are designing an integration between two systems and need to choose between 
 
 If the answer is the former, use a queue. If the latter, use a topic with subscriptions. This choice dictates how you structure your application logic, how you handle scaling, and how you manage message delivery guarantees.
 
-[![Service Bus Messaging Patterns](/images/posts/2024/azc-067-checkpoints.svg)](/images/posts/2024/azc-067-checkpoints.svg)
-
 ## The core distinction: One-to-one versus one-to-many
 
 Azure Service Bus provides two primary messaging entities: queues and topics. While both offer durable storage and reliable delivery, they serve different architectural patterns.

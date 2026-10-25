@@ -12,8 +12,6 @@ You ask Microsoft Security Copilot about a specific alert or resource, and the a
 
 The first thing to check is whether the underlying data sources are active and contain the information you are querying. A connector being listed does not guarantee it is pulling data, nor does it guarantee the data exists in the source. You need to verify the health of the source systems and the configuration of the connectors.
 
-[![Security Copilot Context Investigation Flow](/images/posts/2025/azc-201-checkpoints.svg)](/images/posts/2025/azc-201-checkpoints.svg)
-
 ## Verify Data Availability in Source Systems
 
 Before investigating the copilot, confirm that the data you are asking about actually exists in the source system. If you are asking about a specific alert in Microsoft Sentinel, open the Sentinel workspace and search for that alert. If the alert is not there, the copilot cannot provide details about it.

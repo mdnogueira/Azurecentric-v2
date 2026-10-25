@@ -12,8 +12,6 @@ You are trying to deploy a Bicep file, but the operation fails or produces unexp
 
 The immediate fix is to use a unique deployment name. The secondary, and more important, practice is to ensure your deployment history remains distinct so you can trace exactly what changed and when. If you are using Terraform, this behaviour mirrors the state locking mechanism, but the resolution is handled at the deployment operation level rather than a backend state file.
 
-[![Deployment Name Conflict Resolution Flow](/images/posts/2026/azc-361-checkpoints.svg)](/images/posts/2026/azc-361-checkpoints.svg)
-
 ## Why deployment names matter
 
 Every time you run a deployment, ARM adds an entry to the deployment history for that scope. If you do not provide a name, ARM uses the name of the Bicep file as the deployment name. For example, if you deploy a file named `main.bicep` without specifying a name, the deployment is recorded as `main`.

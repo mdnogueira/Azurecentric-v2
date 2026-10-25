@@ -12,8 +12,6 @@ When an Azure service disruption occurs, the immediate question is rarely "what 
 
 The goal is not to prove that Azure is always available, but to verify that your specific deployment behaves as expected when a component fails. This requires separating Microsoft's infrastructure resilience from your application's recovery logic.
 
-[![Outage Test Flow](/images/posts/2025/azc-152-checkpoints.svg)](/images/posts/2025/azc-152-checkpoints.svg)
-
 ## Distinguish infrastructure resilience from recovery plans
 
 Azure manages the baseline infrastructure. According to the business continuity management documentation, Microsoft ensures that platform services are available and tests them in "canary environments" that simulate total region failures by literally turning off clusters and power units [Business continuity management program in Azure](https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program). However, this does not mean your workload is automatically protected.

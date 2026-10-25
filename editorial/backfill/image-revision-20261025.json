@@ -1,0 +1,3224 @@
+{
+  "revised_at": "2026-10-25T17:41:22.789952+00:00",
+  "base_commit": "8553993d91399b62662c857ce79afa42e98038b1",
+  "scope": "Remove mandatory template diagrams; retain useful article-specific documentation images and four bespoke explanatory diagrams. Correct AZC-106 topic/image mismatch.",
+  "removed_template_images": 317,
+  "removed_unrelated_images": 1,
+  "articles_changed": 317,
+  "articles": [
+    {
+      "id": "AZC-014",
+      "file": "src/content/posts/en/install-powershell-7-4-alongside-windows-powershell.md",
+      "previous_sha256": "e2853a5de04bee992fb3c8377b2fdaad8b357117dccface6cb79d8e3cfbdb455",
+      "sha256": "765ee4cfbb4b6599748634d2bfb55675d48c070ab31b861eeaf505aa08fb2b16",
+      "removed_template_images": [
+        "/images/posts/2024/azc-014-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-015",
+      "file": "src/content/posts/en/prepare-a-windows-server-2022-installation-for-infrastructure-workloads.md",
+      "previous_sha256": "6cc04bf6d28d9aa96582dd4a0eb4d3a6813a3ee06e44447f4a47a7b444b35ac1",
+      "sha256": "96e1c829d2842ff4565abb38405877a487cff89d8bb10d4e4ad5e72b14f51756",
+      "removed_template_images": [
+        "/images/posts/2024/azc-015-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-016",
+      "file": "src/content/posts/en/choose-a-quorum-witness-for-a-failover-cluster.md",
+      "previous_sha256": "447d8f67f1f904d20e5a6a4ae53c78d6d9ed41ccd813be8c998086688658f5b2",
+      "sha256": "7bf029a24a0efe2b4e18ea862bd4a46bfa8328b171061ef453eadd3f09eec108",
+      "removed_template_images": [
+        "/images/posts/2024/azc-016-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-017",
+      "file": "src/content/posts/en/install-hyper-v-on-a-windows-server-2022-host.md",
+      "previous_sha256": "ae84375305569237b0710faccbb199fe1366acce5bbc1965b656e2f8976d9cae",
+      "sha256": "de79ae903e62d583d37cb549a0d5cc6d3897ce8d445fa6d4e16700b5cd9028e2",
+      "removed_template_images": [
+        "/images/posts/2024/azc-017-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-018",
+      "file": "src/content/posts/en/create-an-ubuntu-22-04-lts-virtual-machine-on-hyper-v.md",
+      "previous_sha256": "f1eceb85542ebd0b9e47ae94c8380f386c3d396f636235798a5d9c8600775e5e",
+      "sha256": "798f9b4bed6d47df95a9e941bf274e218da4792ceed3343d1faa6324649bb1e2",
+      "removed_template_images": [
+        "/images/posts/2024/azc-018-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-019",
+      "file": "src/content/posts/en/turn-secure-score-findings-into-a-practical-remediation-queue.md",
+      "previous_sha256": "41a7f002055f528b6ca831e7d64a311543b88477e48a645a37929669d38eb1ac",
+      "sha256": "c2b4c5b5569e27a8ef0f68a3eb4ec1214888e0a91c7b5e413e088d92b7c38d69",
+      "removed_template_images": [
+        "/images/posts/2024/azc-019-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-020",
+      "file": "src/content/posts/en/create-and-test-emergency-access-accounts-in-microsoft-entra-id.md",
+      "previous_sha256": "9f3037fbb3c3f2d9d5c8b11faf2029c8a123d607ac914678ca848e9aec785842",
+      "sha256": "759ed0c3c540b79a1f281d1435330f01649ec2d84d6f8bab638de97be1844b0e",
+      "removed_template_images": [
+        "/images/posts/2024/azc-020-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-021",
+      "file": "src/content/posts/en/connect-windows-security-events-using-azure-monitor-agent.md",
+      "previous_sha256": "5ff46635b203997896e634e80246e8897bfb8ed5daf10277c107ab0561f48402",
+      "sha256": "59b0d7915f0408de5a0bd8007650843f152fce59a31f43356e35225ffa3700c7",
+      "removed_template_images": [
+        "/images/posts/2024/azc-021-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-022",
+      "file": "src/content/posts/en/deploy-an-app-service-application-with-a-staging-slot.md",
+      "previous_sha256": "a081d2e77bb57d0c4ce398efeecc939dc205bbc723bbe186faf7a7fa43b8d8fd",
+      "sha256": "3bd6c01d0a79293df1a566be8e09bc453e42f4685f8961dd6bdbdeb828108efe",
+      "removed_template_images": [
+        "/images/posts/2024/azc-022-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-023",
+      "file": "src/content/posts/en/choose-a-vm-size-using-workload-requirements.md",
+      "previous_sha256": "4f3d2f9fa7a015bcfc01c08340e343d7b83e32711b1c4cf39bcc3d1155f65d7c",
+      "sha256": "53f0d8cd06fffcc864324c374a443001fab5d1fabec4314747f08c88ebb6942e",
+      "removed_template_images": [
+        "/images/posts/2024/azc-023-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-024",
+      "file": "src/content/posts/en/choose-cpu-or-gpu-infrastructure-for-an-ai-workload.md",
+      "previous_sha256": "a7433b9525a200e7fa45fbae3d213ad21e50e2138f2f330cf5ede395440a84c0",
+      "sha256": "742f48c740669a172eff3d502129ce495445b943e701402a8228e1567af5a75a",
+      "removed_template_images": [
+        "/images/posts/2024/azc-024-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-025",
+      "file": "src/content/posts/en/check-outbound-network-requirements-for-azure-arc-agents.md",
+      "previous_sha256": "e4d130e8443203e71dae9bce6a8cf0ea3b69f3b2b1358e59e76abf25b216bfe3",
+      "sha256": "e100303c948c376efc395a1470add4c08d6131389c38a1ed39fe19179330aec8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-025-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-026",
+      "file": "src/content/posts/en/decide-which-settings-belong-in-bicep-parameters.md",
+      "previous_sha256": "a4fccdf9ddaa23d9d6941538d64b575508808f2cee448c0f06d3bfa6bf1256e5",
+      "sha256": "3b3c19201f8ed7a75697acf5139291238ff773fd722db0166263b56f14d3c411",
+      "removed_template_images": [
+        "/images/posts/2024/azc-026-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-027",
+      "file": "src/content/posts/en/copilot-for-security-is-coming-in-april-prepare-the-pilot-first.md",
+      "previous_sha256": "464f135939556c519e3caa5b3787faa1d8fcbd5098533ccc1fe289f4bd484975",
+      "sha256": "c29c98e6316c66e88b4dbf24499a998c20ba2d1b0bf7d6a4cc4bf5e5b7b34d08",
+      "removed_template_images": [
+        "/images/posts/2024/azc-027-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-028",
+      "file": "src/content/posts/en/create-a-logic-apps-workflow-with-a-clear-failure-path.md",
+      "previous_sha256": "0092f5a83a4fc71a28c85d69b5b776587f3f8158d971c81d42c3aa8617faf277",
+      "sha256": "4778abbf83a0ca9cb2713eca10aa8245ac6a529f88bcea20955b1cdf96919bc4",
+      "removed_template_images": [
+        "/images/posts/2024/azc-028-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-033",
+      "file": "src/content/posts/en/write-a-reusable-function-with-clear-parameters.md",
+      "previous_sha256": "85a31721ec4267500dcfffb325f6573711377fedb619ce0c28cea850a01e1b8b",
+      "sha256": "cbb519e89accad01c449c065f6692521cc7d92f196a80e943b6e3a553f4b8a30",
+      "removed_template_images": [
+        "/images/posts/2024/azc-033-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-034",
+      "file": "src/content/posts/en/copilot-for-security-is-available-plan-a-controlled-first-investigation.md",
+      "previous_sha256": "11e8d5a8ada044a4754830d85cf2e42a33d9aa91e09180bc9160260aba4ee7bf",
+      "sha256": "8ce244babe6bcc57f5f46af62ec275613b03d6e8274a7931ec018030363d2cde",
+      "removed_template_images": [
+        "/images/posts/2024/azc-034-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-035",
+      "file": "src/content/posts/en/configure-a-windows-server-2022-host-using-powershell.md",
+      "previous_sha256": "b84d72156c46af4c3c56f770fae18e7965470d7cc83fc841f2b7431e1fe00fea",
+      "sha256": "42dad487bd25670cbc21ff9d86e321693747e83fbce553061ee1e5623901c862",
+      "removed_template_images": [
+        "/images/posts/2024/azc-035-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-036",
+      "file": "src/content/posts/en/validate-windows-server-nodes-before-creating-a-cluster.md",
+      "previous_sha256": "cd39bd7747eedd29503639917c5db2a716e8f8deccfc7f5a7103042540589296",
+      "sha256": "9da1e7d40722210dee30ba3491d83a7b6bb52e68957b1193aa9be7eaa53ccdec",
+      "removed_template_images": [
+        "/images/posts/2024/azc-036-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-038",
+      "file": "src/content/posts/en/configure-secure-boot-for-a-supported-linux-guest.md",
+      "previous_sha256": "9a75705c5d723f7cfdbb5954c7f32d9e3b7c2dc3ea87579680e90b345ad27598",
+      "sha256": "1a4924381bece6157695804917d9caa337010b22cedc2631b6f60bf13a7f164d",
+      "removed_template_images": [
+        "/images/posts/2024/azc-038-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-039",
+      "file": "src/content/posts/en/compare-defender-plan-coverage-across-subscriptions.md",
+      "previous_sha256": "dec0d8205c45fead036e6778441f96943dc4fb905ce21101f73deab9b10fa45d",
+      "sha256": "0d9df8e4df5d39f3cd3019ba9b4d420113b87773500f3b49e0f5693a4d561b19",
+      "removed_template_images": [
+        "/images/posts/2024/azc-039-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-040",
+      "file": "src/content/posts/en/choose-system-assigned-or-user-assigned-managed-identities.md",
+      "previous_sha256": "81603b384cd263cd6aa43a6c4ee29f282ca533422f85451c8c92b23532fcb82e",
+      "sha256": "8093d3507f910e3b8a1f54562791645de4dcec52a6b564e04643f5ff148e5284",
+      "removed_template_images": [
+        "/images/posts/2024/azc-040-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-041",
+      "file": "src/content/posts/en/what-copilot-for-security-can-help-a-security-team-investigate.md",
+      "previous_sha256": "7b8636f23bdd92ee438f1ab10de8b0c5553986a47f75c389463a00197a4f601b",
+      "sha256": "204e02183a1e1d56f52347770bbbb37def90f580768b41d055d7abd3ec70d798",
+      "removed_template_images": [
+        "/images/posts/2024/azc-041-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-042",
+      "file": "src/content/posts/en/create-a-useful-kql-query-for-an-initial-investigation.md",
+      "previous_sha256": "fe5647f90d21050744fd99eef9be6b3a888335c4cead8cf444ee25489c503959",
+      "sha256": "4c36ae16f01fa0c4e334f01ac1232a9e720aa7fd57271728787e21d8f07eef4e",
+      "removed_template_images": [
+        "/images/posts/2024/azc-042-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-043",
+      "file": "src/content/posts/en/use-managed-identity-to-read-an-application-secret-from-key-vault.md",
+      "previous_sha256": "4933119a3a484bc83f22c2432eafc3f39f7b9afa9676cf9966373995b22c5767",
+      "sha256": "9d93a9714eae2fda3bd4d5860ae5bb7fd0e2d03bb3b289c2b0e6b44a74a36bc8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-043-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-045",
+      "file": "src/content/posts/en/check-regional-quota-before-planning-a-gpu-deployment.md",
+      "previous_sha256": "f7e8bdd011d0baa6d47ebbc5e93e6be751a1893fe3546ad8fe6ce01f847b1df1",
+      "sha256": "15d55ddad43eb83f68ad4939e825976092de6e1c03d7da8dbcafd33d1fb03f6c",
+      "removed_template_images": [
+        "/images/posts/2024/azc-045-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-046",
+      "file": "src/content/posts/en/build-a-migration-inventory-before-selecting-a-migration-method.md",
+      "previous_sha256": "68d655572d14d6bfec98ff2a82c413028c09c129258c72213df1c34749d3f831",
+      "sha256": "f33dba0f1835ed8627c631379ac7cadbb5e4c6c6c181978c6a472a011adca16f",
+      "removed_template_images": [
+        "/images/posts/2024/azc-046-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-047",
+      "file": "src/content/posts/en/use-what-if-to-review-an-azure-deployment.md",
+      "previous_sha256": "a628a34efa1e2f6da64e2650c6252265d3ec1d7c203fb0866f3d59a4c875415f",
+      "sha256": "bf9fbeb6bec4022c09647f264d07472fbd90d8357ee4209c62ae6b2c4d860444",
+      "removed_template_images": [
+        "/images/posts/2024/azc-047-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-048",
+      "file": "src/content/posts/en/use-managed-identity-for-a-supported-workflow-connection.md",
+      "previous_sha256": "844084e3293e0f4e4e6dfd632cfefe100c98bf452916139e9d1582f2a4117db5",
+      "sha256": "c5ba9b4cfd1deaa20988f9e0a98098fce1d3de743a92f8a9408d4a52a211388f",
+      "removed_template_images": [
+        "/images/posts/2024/azc-048-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-049",
+      "file": "src/content/posts/en/create-virtual-network-peering-and-verify-the-routing-path.md",
+      "previous_sha256": "a5538e6a43a6c5b1e9cc1a3ba7f59a78f40e78e464074709acbcdb850410d8e1",
+      "sha256": "c3206f7c0d8fca3e62ba483f18e19acf7652bb98aba50ff070291cb52d694fb9",
+      "removed_template_images": [
+        "/images/posts/2024/azc-049-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-050",
+      "file": "src/content/posts/en/choose-a-log-analytics-workspace-boundary.md",
+      "previous_sha256": "4bfefbc48aa07e565b21fb0262477f3885c29bdc17caa0d7426c8f8d11921965",
+      "sha256": "b76419f988aa676e918711e539fec4e609d045f5d2acb2bc48214a7402629167",
+      "removed_template_images": [
+        "/images/posts/2024/azc-050-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-051",
+      "file": "src/content/posts/en/use-microsoft-entra-permissions-to-access-blob-data.md",
+      "previous_sha256": "4ccebad0623e04776646df032c3fc0172f137921f6ce57dcb12bae194b96fab6",
+      "sha256": "7c78c6ac4920cc1c72a655ef6d94549f02c1ddcadcb211926655c76ea6a4c738",
+      "removed_template_images": [
+        "/images/posts/2024/azc-051-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-053",
+      "file": "src/content/posts/en/choose-objects-rather-than-formatted-text-for-script-output.md",
+      "previous_sha256": "27d5aad5bca6f7c666a50531577703dbc822fc42f49cfccd2474ab57f8e47f48",
+      "sha256": "f712fe8cab66bedae244fb24d39b4d4abf784c5898f49bb06dd4e07f0151c24d",
+      "removed_template_images": [
+        "/images/posts/2024/azc-053-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-054",
+      "file": "src/content/posts/en/plan-a-windows-server-patching-and-rollback-window.md",
+      "previous_sha256": "6274e831754ff320c5c2591f6dc032a4e6130f9624920e2eea2cfc4ffe8017f6",
+      "sha256": "087e56f93f739ad99f7e8d07a1a0bdea07108afbc39a1686af3c39097f2520c7",
+      "removed_template_images": [
+        "/images/posts/2024/azc-054-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-055",
+      "file": "src/content/posts/en/create-a-small-failover-cluster-with-a-clear-network-design.md",
+      "previous_sha256": "3fd6a336eaccb39fd1ed1658a9b84e0ef73e9f345682a5f5f4fecbca57565660",
+      "sha256": "87d4d851175cfafdec93cdab55a80f01153dc7fe4585471d48d65e26bb098c6f",
+      "removed_template_images": [
+        "/images/posts/2024/azc-055-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-056",
+      "file": "src/content/posts/en/create-and-verify-a-hyper-v-virtual-switch.md",
+      "previous_sha256": "bccbe1b04e2c6367420787c0c448d35617ccd30135537bab27fe33302b3a11cc",
+      "sha256": "99271a1792c124cd5c6b01c2c82ae2e105f299bac5482e6fee8c23fee06c8930",
+      "removed_template_images": [
+        "/images/posts/2024/azc-056-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-058",
+      "file": "src/content/posts/en/keep-azure-firewall-rules-consistent-with-firewall-policy.md",
+      "previous_sha256": "8a82f92e3c6c912dbf1e1817e99f974b94ebf12c0186cae141de425fcc089e43",
+      "sha256": "774688a0127e66f0248816a2f5abaab15a3eadeb5a98ac74505994cead5a22e8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-058-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-059",
+      "file": "src/content/posts/en/use-privileged-identity-management-for-azure-administration.md",
+      "previous_sha256": "ffa706d11debac4deff729acf18d72c731310eb2c3636d613c0710a5acc5f810",
+      "sha256": "f3eabe274b0e38f8394fe8cc8d1300bde9967a2d43ff496a42856fb033753ec9",
+      "removed_template_images": [
+        "/images/posts/2024/azc-059-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-060",
+      "file": "src/content/posts/en/prepare-permissions-before-onboarding-copilot-for-security.md",
+      "previous_sha256": "80693fdb85b6e0b60692d49e424e9077e24d71cf472334f41033ef0a971808d1",
+      "sha256": "1bfcf21908c623e982d04d46ccea5aa9cb00889bc9799f46fff305b86aa817f4",
+      "removed_template_images": [
+        "/images/posts/2024/azc-060-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-061",
+      "file": "src/content/posts/en/turn-a-detection-requirement-into-an-analytics-rule.md",
+      "previous_sha256": "537b9e8ad8ab1aa19bcbcbde3e294e39635c57662c35c8cba0a0144d9a1bfe4e",
+      "sha256": "48d53c6dc3f5f85d91a199762008e9b55df692c4bbae4182135e3e743cd4049d",
+      "removed_template_images": [
+        "/images/posts/2024/azc-061-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-062",
+      "file": "src/content/posts/en/configure-application-insights-for-an-application-deployment.md",
+      "previous_sha256": "1ea0d0c19094621adc5265691fb223b34c8779ae5bcf3b9f1ba05d87256342e4",
+      "sha256": "932e64bcfdefd00bf7ca32ca94bf1934a756b6cfd938096064c79bc0e37d2273",
+      "removed_template_images": [
+        "/images/posts/2024/azc-062-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-063",
+      "file": "src/content/posts/en/use-trusted-launch-when-creating-a-supported-virtual-machine.md",
+      "previous_sha256": "5d2ff302cf24c376f0c006aa15e208f1b7070f90db96303554c187c924f51fdd",
+      "sha256": "88fb907bf992809e8226c6c07dc4acc329dfd9700370cba7b2a717505959c89d",
+      "removed_template_images": [
+        "/images/posts/2024/azc-063-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-064",
+      "file": "src/content/posts/en/prepare-a-repeatable-hpc-compute-image.md",
+      "previous_sha256": "1c761805da37100aa984c6ca89feb391a31f163ce7371e943d626b43966406c8",
+      "sha256": "33333556276386ada7a5b59060bc4a2b3678318027bdc7dfd672ea876c3058c2",
+      "removed_template_images": [
+        "/images/posts/2024/azc-064-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-065",
+      "file": "src/content/posts/en/assess-a-server-estate-with-azure-migrate.md",
+      "previous_sha256": "2d869832d20cac231a4240664ab8b410c50e588b1715f5be81cdf0aeca0e43a9",
+      "sha256": "a026c26611d82d6193e5fc6d8f54c8024a7304118afeb7420bf537d9439f8957",
+      "removed_template_images": [
+        "/images/posts/2024/azc-065-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-066",
+      "file": "src/content/posts/en/keep-environment-configuration-separate-from-deployment-logic.md",
+      "previous_sha256": "43e6894f83c1f3b276df23958df34a3d477bca029fbdfa36b430736b24378bba",
+      "sha256": "26c71759a1b83913f81c961fe07b6b6b359e38ea98ddada7350fe206a04135c1",
+      "removed_template_images": [
+        "/images/posts/2024/azc-066-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-067",
+      "file": "src/content/posts/en/choose-a-service-bus-queue-or-topic-for-an-integration.md",
+      "previous_sha256": "84f00f26bc60b449ff43d39ea48b3e832227b02ca48d8de144123383e87dca9b",
+      "sha256": "6ea4d90b28cc0b7f44ecd4c44f9088e2a8f820e81dfe7e2e726c018303a8b544",
+      "removed_template_images": [
+        "/images/posts/2024/azc-067-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-068",
+      "file": "src/content/posts/en/use-network-security-groups-with-clear-traffic-ownership.md",
+      "previous_sha256": "1223a82325bc4ddb8788982760f47608a7e8cbf0a024a0cc0cca885cacc6d85c",
+      "sha256": "a326a516cc1c39481ed0a828b9dbadc5ce6c9660f894a40b6d26a8a391eaf7a8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-068-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-069",
+      "file": "src/content/posts/en/use-data-collection-rules-to-control-server-telemetry.md",
+      "previous_sha256": "ba8a4a3e1e8525b3d11f5f4c4f45fe6f23c4c969e3308a5635d4858c5f789e04",
+      "sha256": "1d667ac9d27c694943abff53349f3771532fdd0eb75c05211a409cd05571ef61",
+      "removed_template_images": [
+        "/images/posts/2024/azc-069-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-070",
+      "file": "src/content/posts/en/create-a-narrowly-scoped-shared-access-signature.md",
+      "previous_sha256": "7ca0adbf6da429cfc1f4eb05f8fe9d96658138f8a790c2d24d6a7f48d98bbeab",
+      "sha256": "d0307939267a05a5ecce523b1c46004eadc94396d88c9edff1b3b740529d2a82",
+      "removed_template_images": [
+        "/images/posts/2024/azc-070-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-071",
+      "file": "src/content/posts/en/set-rpo-and-rto-before-selecting-a-recovery-design.md",
+      "previous_sha256": "d24c93e7b9d254fbde08538f9f0ffa5c9c533189a9de97e6c33efe8e093877a4",
+      "sha256": "4d2e97b96362829c0e87ffe580d2953f6db92b947080105fdd6fa3da9d2ebe91",
+      "removed_template_images": [
+        "/images/posts/2024/azc-071-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-072",
+      "file": "src/content/posts/en/handle-script-failures-using-try-catch-and-erroraction.md",
+      "previous_sha256": "06adf9d44b6a47941e82bad0f37120c656e1b6ae078d6ca1e2e2bfcbc4d41e19",
+      "sha256": "7ef2310e67abc53f7bc0cffa76ade7b21b1b245526a15842c024a5d04bfd06b6",
+      "removed_template_images": [
+        "/images/posts/2024/azc-072-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-073",
+      "file": "src/content/posts/en/use-windows-admin-center-for-a-defined-administration-task.md",
+      "previous_sha256": "2d626ea22f43eb071de496f06d6fd634cb03885ce458541ba5e2d01f5c804f40",
+      "sha256": "53acacde2149c7d1e982317ca20ddd1e6901898519cf39066f92785c795c0483",
+      "removed_template_images": [
+        "/images/posts/2024/azc-073-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-075",
+      "file": "src/content/posts/en/build-a-repeatable-virtual-machine-with-powershell.md",
+      "previous_sha256": "27780de60c155dbbef3426bc27fd900b386e121bd850dfb81924be9469e35f66",
+      "sha256": "95efca68e42f0395e0259a289a716511d267134cbbb8c7ee0ae5678e71e81d43",
+      "removed_template_images": [
+        "/images/posts/2024/azc-075-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-076",
+      "file": "src/content/posts/en/configure-networking-inside-an-ubuntu-hyper-v-guest.md",
+      "previous_sha256": "83046d2d63cfdb59641eef230b4adf084f5e8d5516bb2ac4a2779aae5da07e69",
+      "sha256": "7bd0685aa65aca2e67cdc6b4b9b8e3d080cc72385c94086f99d57d583103ca93",
+      "removed_template_images": [
+        "/images/posts/2024/azc-076-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-077",
+      "file": "src/content/posts/en/trace-a-blocked-outbound-connection-in-azure-firewall-logs.md",
+      "previous_sha256": "b5245a6f018a1738b1f7139797a05f338b0fb6274e3f384903633623bb04e5f2",
+      "sha256": "d85dec2a87de32cb0aa112c19067d4f9fd4fac153b6af13cadbe6c554191521a",
+      "removed_template_images": [
+        "/images/posts/2024/azc-077-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-078",
+      "file": "src/content/posts/en/replace-a-service-principal-secret-with-workload-identity-federation.md",
+      "previous_sha256": "84dcb13d81275d79e8fe0cab56c45b1609b40b6f6148bea2f14ef2c0e9e849d8",
+      "sha256": "7e5675d976226840e8f259419a25bf070b7718a35e00dbe5ba1160d2e9860a54",
+      "removed_template_images": [
+        "/images/posts/2024/azc-078-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-079",
+      "file": "src/content/posts/en/set-up-an-initial-copilot-for-security-investigation-session.md",
+      "previous_sha256": "c111cc610f5c40aba71ac9cc251915f3637f653d708ae9b753c666579637219b",
+      "sha256": "717719bba1ea20909f553d66266484a46fd90759a36a01a6966b1cab47afa71b",
+      "removed_template_images": [
+        "/images/posts/2024/azc-079-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-081",
+      "file": "src/content/posts/en/troubleshoot-an-application-that-fails-to-start-in-app-service.md",
+      "previous_sha256": "dc6ef23461cead88b33ac4251e120519a7bb7b901db44e731c1713dc6e9da216",
+      "sha256": "ad8054587c0e53b1474d5d7fda977dcb4c2d07a7eb5da9227baf2b802f9d46c1",
+      "removed_template_images": [
+        "/images/posts/2024/azc-081-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-082",
+      "file": "src/content/posts/en/check-azure-quota-before-a-compute-deployment-fails.md",
+      "previous_sha256": "9e09858b42d5186deda4e563eca1662a06253d3f073c1b16d82c93bccec0731a",
+      "sha256": "9cf6f0fd3aa1cf9511045a29a6923ca0cfdf5a0e75d8e11582be62de61cf41f8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-082-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-083",
+      "file": "src/content/posts/en/prepare-azure-administrators-for-mandatory-multifactor-authentication.md",
+      "previous_sha256": "0a16a6a39bd0ca000be2234c2e1c2a4fa61553526affcb3918257c50e5aac950",
+      "sha256": "1a9b5f97f025fef4bcb36a03fa679d888da0c088180d0695f7ff15382bff5e88",
+      "removed_template_images": [
+        "/images/posts/2024/azc-083-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-084",
+      "file": "src/content/posts/en/understand-where-an-rdma-network-helps-an-mpi-workload.md",
+      "previous_sha256": "c230ebca85c26b315f0303585172dc7aebdb71d7aa45750da76fa2189836568b",
+      "sha256": "e68051cd93a13adba235c600176fd99608e99d4d6d6ba3084e6a31e739cf0926",
+      "removed_template_images": [
+        "/images/posts/2024/azc-084-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-085",
+      "file": "src/content/posts/en/use-dependency-information-to-plan-migration-waves.md",
+      "previous_sha256": "06f7bbc7cbbac549c39525db6fcf0c55149be2ad06d485ec35bce49d750e440a",
+      "sha256": "0cd57def8fc5c5801d414efa0bfb1b2ecc0a7f428833347a48d252e4dbeb72b1",
+      "removed_template_images": [
+        "/images/posts/2024/azc-085-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-088",
+      "file": "src/content/posts/en/diagnose-a-route-that-sends-traffic-to-the-wrong-next-hop.md",
+      "previous_sha256": "e03850b936b181165df05d7b2981530b4a496120a8581879bd122b6eca47accc",
+      "sha256": "eacc92ebf4555f9d005fdd9341a7243075b6a0b4bce515e64b70e3c54aaa2a3f",
+      "removed_template_images": [
+        "/images/posts/2024/azc-088-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-089",
+      "file": "src/content/posts/en/investigate-a-server-that-stopped-sending-logs.md",
+      "previous_sha256": "a564668996c65214f09e33530bf307eb968d1630b27cb50f5a488e287df52522",
+      "sha256": "9795eee716b210dedefc9d93ac9aa9ebc00d1d646b605bf155d4816eca097b34",
+      "removed_template_images": [
+        "/images/posts/2024/azc-089-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-090",
+      "file": "src/content/posts/en/investigate-a-storage-request-that-returns-an-authorisation-error.md",
+      "previous_sha256": "7670f6ff7076f21a6b4aaae06f26bfd4983f5c2532bdf619becd6434de02bdd1",
+      "sha256": "b646ef8d2637a23123e788a6122c1e2f591f7fa200d934f606b2aca233cde81f",
+      "removed_template_images": [
+        "/images/posts/2024/azc-090-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-091",
+      "file": "src/content/posts/en/review-a-workload-against-the-well-architected-reliability-pillar.md",
+      "previous_sha256": "30877feb78f0c919a4e55f6893e1eb0575299dc7b5f440a5e140c3c11150311a",
+      "sha256": "d4c7627548e43c91aaa7f6023013c7a2ffe88e3e8cf223f974f16a47de62a399",
+      "removed_template_images": [
+        "/images/posts/2024/azc-091-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-092",
+      "file": "src/content/posts/en/export-an-azure-inventory-without-losing-object-structure.md",
+      "previous_sha256": "7313864a065127475362099352977db733756810a0e9416e5ce30e4a077ad5a3",
+      "sha256": "1550163cbf993f029c1bbabf9ccfa3dc6408189c415bb4ae203ef6565085a259",
+      "removed_template_images": [
+        "/images/posts/2024/azc-092-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-093",
+      "file": "src/content/posts/en/configure-a-file-share-with-clear-windows-permissions.md",
+      "previous_sha256": "ef4fef84412101501daf2060d795d128802a62645da2785d7628114d29649d78",
+      "sha256": "4897df75c65c36a58f881b454cc5107fb9513da54887837c5e87872e19777a45",
+      "removed_template_images": [
+        "/images/posts/2024/azc-093-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-094",
+      "file": "src/content/posts/en/configure-and-verify-a-cluster-witness.md",
+      "previous_sha256": "3f694e962137a5d854f1f7b01e721fdb2235508d727f5d6b25a0a921ef2bfb86",
+      "sha256": "fa012729c457e8b7df66e4042e4056d9d19439b8ee3fca1ae1e4e4eddc3c0ae7",
+      "removed_template_images": [
+        "/images/posts/2024/azc-094-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-095",
+      "file": "src/content/posts/en/choose-fixed-or-dynamic-memory-for-a-vm.md",
+      "previous_sha256": "4cec0bae0a95242b8847f4c21bc4cd01aa79e9147e59e9771b819e6192654807",
+      "sha256": "de521a11373de792b131c869ac5d0afd39bc67bf0ea2be6e0dd5506a2fefb9f7",
+      "removed_template_images": [
+        "/images/posts/2024/azc-095-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-096",
+      "file": "src/content/posts/en/investigate-a-linux-guest-with-a-missing-network-adapter.md",
+      "previous_sha256": "5c60e3ee9cb96c99f2d66008dc038323964964bb790b4ca10741dda24a14457f",
+      "sha256": "f57c38c130c44f1a21dca32fd93158f58d9a53f00eea441b91e12930324abb82",
+      "removed_template_images": [
+        "/images/posts/2024/azc-096-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-097",
+      "file": "src/content/posts/en/connect-github-repositories-to-defender-for-cloud.md",
+      "previous_sha256": "c7082c3b7bb387397b3029f0e78df81ce7faaf78a07969cd5b5a2485fd340611",
+      "sha256": "56d999700933696d049da31bcffcfb7da140049a7affc190f7978cda00e9f0e7",
+      "removed_template_images": [
+        "/images/posts/2024/azc-097-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-098",
+      "file": "src/content/posts/en/connect-github-actions-to-azure-using-openid-connect.md",
+      "previous_sha256": "c36a1586ae51ca567e41931a0119311ffaa42f8bfeb5a492583cd98a06f65998",
+      "sha256": "ced697ca8f4616f3636ef26a3164181c07977458998ae72664445658214a2752",
+      "removed_template_images": [
+        "/images/posts/2024/azc-098-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-099",
+      "file": "src/content/posts/en/plan-security-compute-unit-usage-for-a-small-pilot.md",
+      "previous_sha256": "005e1926db016889fe59a0c7e9401b767e5f59dbc1763aac229677b3f6d32e2b",
+      "sha256": "1bd4933e59804053df703e2adf9abf900df420d458cd10acbdab5eb215ffa2d4",
+      "removed_template_images": [
+        "/images/posts/2024/azc-099-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-100",
+      "file": "src/content/posts/en/map-entities-so-incidents-contain-useful-context.md",
+      "previous_sha256": "6226142d3e2bf92a1e9004b476f3c28c21675c4f95349520d5bd8b22e5d764e1",
+      "sha256": "5f3bddfdd5a7c188d223c74a680ccee1789554def84e81ae7c30e3a48ff80212",
+      "removed_template_images": [
+        "/images/posts/2024/azc-100-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-101",
+      "file": "src/content/posts/en/give-an-app-service-application-private-access-to-a-database.md",
+      "previous_sha256": "1743028ac4db418e8973fa91909767d4bd16bdf835649df51705b2f5ac9a89bc",
+      "sha256": "797f8508e6d9f822774d2b6bbf89f7b528b9de057746ef989b1b745d858fbcf2",
+      "removed_template_images": [
+        "/images/posts/2024/azc-101-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-103",
+      "file": "src/content/posts/en/plan-shared-storage-access-for-an-azure-hpc-cluster.md",
+      "previous_sha256": "146c12c4304124c5cb0013c9604919c72ba64212651c3f3d80ebae438276d883",
+      "sha256": "345eabe8f187652694ebb56328ec85567925cb4052a1ab8dc851afe9685359cb",
+      "removed_template_images": [
+        "/images/posts/2024/azc-103-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-105",
+      "file": "src/content/posts/en/azure-cobalt-100-vms-check-arm-compatibility-before-moving-a-workload.md",
+      "previous_sha256": "91a7dcbbba4446df5ceccfa0db82ef7ae5e7a490f67cb1a838002cb985285354",
+      "sha256": "45a04765869a8a3eec0396af98cddd16e81b4fa6496d621d2b1af375670303e9",
+      "removed_template_images": [
+        "/images/posts/2024/azc-105-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-106",
+      "file": "src/content/posts/en/use-a-remote-backend-for-terraform-state-in-azure.md",
+      "previous_sha256": "053864148f4868e1f9d62e52401dc16b4831564ae0850c257f56c270ec1f7742",
+      "sha256": "bd2aeccf6a5c2af942b63133282cb805fc2366b02bcbace7c31c40b2dbe766d3",
+      "removed_template_images": [
+        "/images/posts/2024/azc-106-checkpoints.svg"
+      ],
+      "technical_review": "replaced unrelated Bicep content with source-grounded Terraform state tutorial; examples not executed"
+    },
+    {
+      "id": "AZC-107",
+      "file": "src/content/posts/en/investigate-messages-in-a-service-bus-dead-letter-queue.md",
+      "previous_sha256": "88b9e6fc7e302735e08e292d9aba98aefecec5b0df1269cf2d64f3419251019d",
+      "sha256": "b55899e3f95d65fd6a972e501950b2d32a4f29b55e0e3f1945ee4d8ed702c26e",
+      "removed_template_images": [
+        "/images/posts/2024/azc-107-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-108",
+      "file": "src/content/posts/en/create-a-private-endpoint-and-verify-name-resolution.md",
+      "previous_sha256": "735378effcad17d495e78ad83c358005b6e60622dd8b62eaa42d391ab6f7d7ee",
+      "sha256": "bd562585d108e55e86fb5e79fafe1930a92920cdd771318f500a94d4137d8ed0",
+      "removed_template_images": [
+        "/images/posts/2024/azc-108-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-109",
+      "file": "src/content/posts/en/build-an-azure-workbook-around-an-operational-question.md",
+      "previous_sha256": "77d7164c1244c32cd47fb81f0d41588735fcc4ee470be0989393ee60793a3ced",
+      "sha256": "0d61069681e89e9ac3914dedeeefe62cdb2eac7b55e5f536d40d62594a713da8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-109-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-110",
+      "file": "src/content/posts/en/configure-blob-soft-delete-and-versioning.md",
+      "previous_sha256": "6a5d78647ead400eb1eb51c2e9a4bed5147b1946ecbcd88f713fe0483555b993",
+      "sha256": "a5babb261a0b4ddf4946ad2ae05b64d71c13b9bda42ff3bb469df37088fd6e69",
+      "removed_template_images": [
+        "/images/posts/2024/azc-110-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-111",
+      "file": "src/content/posts/en/windows-server-2025-is-available-what-belongs-in-the-evaluation-plan.md",
+      "previous_sha256": "7fdb818c51472b2264fd75871f84a584bb03614418cc4d26247089e3ccc8f926",
+      "sha256": "7c0a9a1a6bd02e7fc5d0a8d30e8554a0ae4a293f9f8f9dbdc183775596da2d17",
+      "removed_template_images": [
+        "/images/posts/2024/azc-111-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-112",
+      "file": "src/content/posts/en/choose-availability-zones-without-assuming-application-resilience.md",
+      "previous_sha256": "1f58dd1aca881c10a359e7d4365b07d8581cd66ced35ec54095131057f94bc39",
+      "sha256": "899056609a900c5b37a561bc3a8739fa1db263c2513830fe69b6b263df6d1466",
+      "removed_template_images": [
+        "/images/posts/2024/azc-112-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-113",
+      "file": "src/content/posts/en/investigate-a-module-that-loads-in-one-shell-but-not-another.md",
+      "previous_sha256": "eeb49ddb0c46894fa70c9b237be9885f78da552560da6c15108403e58ad714ed",
+      "sha256": "c0ab900202bcf0eb2e8c93beeb021d771e660a9cdbbf9bb95300b36f55a49abc",
+      "removed_template_images": [
+        "/images/posts/2024/azc-113-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-114",
+      "file": "src/content/posts/en/investigate-a-windows-service-that-fails-after-a-restart.md",
+      "previous_sha256": "49023d818f897e69f015dc00b5ed38f60b79e89b73e377afa53133c0d3f78d2c",
+      "sha256": "fa25d5ea21b9f3ffb7bd5b7f7655bba8ecdaa8f50da227164b6be37d82a02d6c",
+      "removed_template_images": [
+        "/images/posts/2024/azc-114-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-115",
+      "file": "src/content/posts/en/investigate-a-cluster-resource-that-keeps-moving-between-nodes.md",
+      "previous_sha256": "64d1a914782398b3356aa0065529b0629ccdca0252b19d41c2d258fbc29f1489",
+      "sha256": "e7e78dfedce369a3faef6406a7d7ad3f381458c5ac6a0f71d6f058c4144d8873",
+      "removed_template_images": [
+        "/images/posts/2024/azc-115-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-116",
+      "file": "src/content/posts/en/configure-a-virtual-network-adapter-and-vlan.md",
+      "previous_sha256": "eebb8dbc408e9954cba7f8c21f5983b8ca745c6a0fc4e921f69a5f3f9fd60da6",
+      "sha256": "c2a98b93fd3d2695c5875ff7edb17b16a9fb6cbfb2c34937f4e5603f6a6ed9f4",
+      "removed_template_images": [
+        "/images/posts/2024/azc-116-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-117",
+      "file": "src/content/posts/en/azure-local-understand-the-operating-model-announced-at-ignite.md",
+      "previous_sha256": "8458fe1a5606e2a6820250ad6d460d071bd529b1779503e8faed6d7a4bdb20b7",
+      "sha256": "1b21078333af6b32f4941ccfaaadd258e22b6ac31df37c0bde43df6ee7d12dbb",
+      "removed_template_images": [
+        "/images/posts/2024/azc-117-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-118",
+      "file": "src/content/posts/en/check-time-synchronisation-in-a-linux-vm.md",
+      "previous_sha256": "252be21bee1bfd9e8682947396b1113f62cc852456b8b85cb33fa4c8f16a7ddf",
+      "sha256": "f6239b75684411672891d12cf5cefd91a1217749a438b2b105ccb7689f3a289f",
+      "removed_template_images": [
+        "/images/posts/2024/azc-118-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-119",
+      "file": "src/content/posts/en/enable-github-secret-scanning-and-assign-alert-ownership.md",
+      "previous_sha256": "58c0079346bc86788591846c81e75b06f03e48da0f9f6356a731d8f57883c378",
+      "sha256": "5e1d117320e79eb88692505efe0fa49dd0d8080117e4c4c5d56d3db3ab2ece44",
+      "removed_template_images": [
+        "/images/posts/2024/azc-119-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-120",
+      "file": "src/content/posts/en/investigate-a-failed-sign-in-using-entra-logs.md",
+      "previous_sha256": "d3d45fcd22e054708d17e4697cbe66ec8dbdf821d20b79f20774453d6e4bbc85",
+      "sha256": "70b7e90e1ccfa9949d44efc25f4d5712e6752bdb37211f540bee7a96a62ba257",
+      "removed_template_images": [
+        "/images/posts/2024/azc-120-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-121",
+      "file": "src/content/posts/en/build-a-prompt-that-produces-a-useful-incident-summary.md",
+      "previous_sha256": "21a8cc0ff87558ff4e0cc58a38f1ecd386ae59295b474e92f9adc6bf9673d08a",
+      "sha256": "24218b2ec83e1d8e26ab959ae5ae66d87434a90bc789cf36ca0a98a2bc7419a8",
+      "removed_template_images": [
+        "/images/posts/2024/azc-121-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-122",
+      "file": "src/content/posts/en/choose-retention-settings-around-investigation-needs.md",
+      "previous_sha256": "0d5875e91ca3c560be2681ce2735081e1581ec9d5bca00df920063c20956f4bc",
+      "sha256": "ef1ea3fb3f5ac478c0cbccc1075a70c7c5ebcec7a82ad04fd96d37551ec5b389",
+      "removed_template_images": [
+        "/images/posts/2024/azc-122-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-123",
+      "file": "src/content/posts/en/understand-deployment-slots-before-an-app-service-swap.md",
+      "previous_sha256": "dccbbcc1a8e2c31730b4c34302b2dee89e50a5b882ac009c8529a9e560d47c92",
+      "sha256": "782bbfe661b2d55eba841744db60cf865b5e7150b22898c351ae96d63f35ad0b",
+      "removed_template_images": [
+        "/images/posts/2024/azc-123-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-124",
+      "file": "src/content/posts/en/configure-a-scale-set-health-probe-before-autoscaling.md",
+      "previous_sha256": "b6a40e1333c1eaebc1e7bef2112c9c8ca8ab3a453d775c8dcef65f3a3838e8ec",
+      "sha256": "2c60357ad0b87f29e8917ccedad3a7954c2c76ba6a6e246b6f679676138ee170",
+      "removed_template_images": [
+        "/images/posts/2024/azc-124-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-125",
+      "file": "src/content/posts/en/configure-an-azure-batch-pool-for-a-repeatable-compute-job.md",
+      "previous_sha256": "872093b2876f8eacb57a2dbb86d2555b52c148fddd424949944615486c22d2a4",
+      "sha256": "40d7fe85f60ee26256711449406a8284544dce85a8f9f2daf23046f450e59905",
+      "removed_template_images": [
+        "/images/posts/2024/azc-125-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-126",
+      "file": "src/content/posts/en/investigate-an-arc-enabled-server-that-appears-disconnected.md",
+      "previous_sha256": "5e0f0abfd6ca69c0806072e7ab2b358fa15a6e6afa360ca1305a0d8dd4a40b4f",
+      "sha256": "95616725de66068b08b7bbea5df8f8ba8c2f5f0f89d4ee38919bdb4d153702fc",
+      "removed_template_images": [
+        "/images/posts/2024/azc-126-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-127",
+      "file": "src/content/posts/en/investigate-a-deployment-that-failed-after-creating-some-resources.md",
+      "previous_sha256": "4a46cccf696ada9facaac8c2dac440b4b8a89f55a26ddd0041e6295a9e675e4a",
+      "sha256": "c0af9f5c3ee91ec2393a553642d5e22bfedb3b7aaf992fede7714e6350b2a3e9",
+      "removed_template_images": [
+        "/images/posts/2024/azc-127-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-128",
+      "file": "src/content/posts/en/use-message-sessions-when-processing-order-matters.md",
+      "previous_sha256": "38e5799bbe55b4af99ac8efdddb253fadd6e534f519989a4ce29d94a01afbeb1",
+      "sha256": "dd45a7ad9ec9a9a3f752653408881c770742e60672916957f1b3ee06126df4a6",
+      "removed_template_images": [
+        "/images/posts/2024/azc-128-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-129",
+      "file": "src/content/posts/en/plan-private-dns-zones-before-adding-private-endpoints.md",
+      "previous_sha256": "e2ee710b5f7d19402c1cda5b1c5dc4394a467dc6a6685d736514a4a38bf01a07",
+      "sha256": "d2744454e7b37e62ec45f34c738e0bd11afc868940f1532fdaaf4333f8f95c39",
+      "removed_template_images": [
+        "/images/posts/2024/azc-129-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-130",
+      "file": "src/content/posts/en/choose-alert-thresholds-around-an-actionable-response.md",
+      "previous_sha256": "a220c752609f1b2d7481f21a7b5795174d298a540be31fa47f00ca8f0924dfa8",
+      "sha256": "7dd759da8907712dff6d672f671181ccd76d860d649d339ddea11fb0f924c567",
+      "removed_template_images": [
+        "/images/posts/2024/azc-130-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-132",
+      "file": "src/content/posts/en/document-an-application-dependency-map-for-a-recovery-exercise.md",
+      "previous_sha256": "341e6ae9899630d42d010f273bd12adbabe4818ef0952708a5bd6ecb0e808980",
+      "sha256": "c97e09424a43c63be5ee222a7e510d6c6168314c62b5ead87d05c55eff61059c",
+      "removed_template_images": [
+        "/images/posts/2025/azc-132-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-133",
+      "file": "src/content/posts/en/add-structured-logging-to-an-infrastructure-script.md",
+      "previous_sha256": "db17b47492b8f4bc5f0b6be65fffa2637af3ec1f34cd02836f44fe268f98e178",
+      "sha256": "4dc82e8fba87676c42e78218d24c985a87001c1f9af48479689956b275c033c0",
+      "removed_template_images": [
+        "/images/posts/2025/azc-133-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-134",
+      "file": "src/content/posts/en/choose-an-active-directory-site-and-subnet-design.md",
+      "previous_sha256": "b23cfd1077883ab215d489c53b169dcd1bbf9b7cb2a39a76060caee68a0a140a",
+      "sha256": "060c17e153849908b1c11028931f90fa08dceaf440c18ebe721da12f6edd3e93",
+      "removed_template_images": [
+        "/images/posts/2025/azc-134-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-135",
+      "file": "src/content/posts/en/use-cluster-aware-updating-with-a-tested-maintenance-process.md",
+      "previous_sha256": "3b462aed9f643f8df67e112582056b37fbfb88446f6161c17beb85947adeec9d",
+      "sha256": "eba9630ada063cab9ff6f5278df6601292e73aefcd53c3ae2eeb171ccd2fe8b5",
+      "removed_template_images": [
+        "/images/posts/2025/azc-135-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-137",
+      "file": "src/content/posts/en/plan-memory-allocation-for-linux-on-hyper-v.md",
+      "previous_sha256": "7c5c53dd50a2bf5f120494502e54bc6273920c68f6480343387ef30117b3ee44",
+      "sha256": "0813c2b8c595fa11aeebaa0e2e094cfc3576b1544811901f431681bcd12748bc",
+      "removed_template_images": [
+        "/images/posts/2025/azc-137-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-138",
+      "file": "src/content/posts/en/roll-out-github-push-protection-without-disrupting-developers.md",
+      "previous_sha256": "3dd60bc2578451710c610c71d0ab1eac3b3d0fb1e998682f38e95e04bd01214b",
+      "sha256": "a336aa4f41e0cc17992aa6d557094081cea0c4d03f20ff69d6eb125407556dba",
+      "removed_template_images": [
+        "/images/posts/2025/azc-138-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-139",
+      "file": "src/content/posts/en/separate-azure-control-plane-roles-from-data-plane-permissions.md",
+      "previous_sha256": "d9604d32bd93f64d7495029156157ff5472e823e80cfda6a3b72276c4dae587c",
+      "sha256": "b6fc507988bbe7d141b4ae4bdf2606f98165dd682454f5ed1854c4ab35007576",
+      "removed_template_images": [
+        "/images/posts/2025/azc-139-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-141",
+      "file": "src/content/posts/en/use-a-watchlist-to-enrich-a-detection-query.md",
+      "previous_sha256": "ede303ddb16014f84808dcd617b8cd00332f9ea20ea8b7251c7e0ce35c927593",
+      "sha256": "4c6393ec3c5e9b0d346397f153391f9bffb9060d171c8545248da4d539d388e2",
+      "removed_template_images": [
+        "/images/posts/2025/azc-141-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-142",
+      "file": "src/content/posts/en/add-a-health-check-before-enabling-application-scale-out.md",
+      "previous_sha256": "f56363e2b54c9840bcf79290c6db11269bfc5e0c686bcfded38ea175b07032e5",
+      "sha256": "88a0848e4b2d6b325db5642165af3eb92ab0f1197f9e91b90665a553287999ea",
+      "removed_template_images": [
+        "/images/posts/2025/azc-142-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-143",
+      "file": "src/content/posts/en/use-azure-bastion-to-administer-a-private-vm.md",
+      "previous_sha256": "7eca1a8a7e4735376135150c08d9fb6372288fff6fafa2b3d820614c417121bb",
+      "sha256": "74d1e0e81a6c5914696f56b6c8ae0bbfed5ab35731c0ae898fb3d8f2084e230a",
+      "removed_template_images": [
+        "/images/posts/2025/azc-143-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-144",
+      "file": "src/content/posts/en/investigate-an-hpc-job-waiting-for-compute-capacity.md",
+      "previous_sha256": "bb68a909283c2b87c498e941595fcc516eb93f96387accf70e39401de0fe6607",
+      "sha256": "3f98b54963bea0f3d4365171f7fded9865d32a9235128ada041570340bf0dfde",
+      "removed_template_images": [
+        "/images/posts/2025/azc-144-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-145",
+      "file": "src/content/posts/en/choose-what-to-manage-through-azure-arc.md",
+      "previous_sha256": "0b98839c6d8d54ec90cb789e65988ab0644d15128db09717ac29f955d821f2bf",
+      "sha256": "669838ef9b8a4b2e941f19fea3ca4d83b34f3add20057e5b94e66a82a9a88530",
+      "removed_template_images": [
+        "/images/posts/2025/azc-145-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-146",
+      "file": "src/content/posts/en/deploy-infrastructure-through-a-federated-pipeline-identity.md",
+      "previous_sha256": "ca02da587aefe18591c4fdc40315ddcce9951302be0eebf1aa2663516db8b88a",
+      "sha256": "ef96b032b15b803c25c8103ae30996f667a4896930d664faef08b98df5f68181",
+      "removed_template_images": [
+        "/images/posts/2025/azc-146-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-147",
+      "file": "src/content/posts/en/powershell-7-5-is-available-review-compatibility-before-upgrading-automation.md",
+      "previous_sha256": "8b07ec7b479906f20aea8bd094ae8c459d8c5bf9028eed00278d7ca3572a76a7",
+      "sha256": "36d54230d99f6fc73b3eb2462413a4add5e3c65a7a9ea5622ed43eb95d88b8ab",
+      "removed_template_images": [
+        "/images/posts/2025/azc-147-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-148",
+      "file": "src/content/posts/en/design-retry-behaviour-without-creating-duplicate-work.md",
+      "previous_sha256": "d8eab0d3774addb5b05b21f0ddcdf12846d3a2eb66433a49ab880eb6dec1d7b3",
+      "sha256": "a479f090a5c5a42c641531a1d25a22f60e2f240a7e1c9ea3a846451648a81caf",
+      "removed_template_images": [
+        "/images/posts/2025/azc-148-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-149",
+      "file": "src/content/posts/en/check-connectivity-with-azure-network-watcher.md",
+      "previous_sha256": "0c221baf67312d07f3bd085988de8bc944fb928298c8772c9826b28bcf9677b8",
+      "sha256": "1368d60a20c72b2416932f9997c69b3a4b2e2b8015d37a32b6ef04b15b024321",
+      "removed_template_images": [
+        "/images/posts/2025/azc-149-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-150",
+      "file": "src/content/posts/en/use-azure-policy-to-report-on-missing-configuration.md",
+      "previous_sha256": "8fe60c8eee899c1dc0791eb1b681295cca170d809b38cdea56e590ca18e8dfd1",
+      "sha256": "b254281bcf96bc7d4627d0110566b1981b38d9198486dec3b3c32482ab1e03af",
+      "removed_template_images": [
+        "/images/posts/2025/azc-150-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-151",
+      "file": "src/content/posts/en/mount-an-azure-file-share-from-a-windows-server.md",
+      "previous_sha256": "88fbf358056c7962b115487cbeae9f650dfed28e9a0f0c95cfb2f1326053f4f5",
+      "sha256": "43c58f21801203a38148986ca27c65d085ced326033b7514d0f1181e454320bb",
+      "removed_template_images": [
+        "/images/posts/2025/azc-151-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-152",
+      "file": "src/content/posts/en/plan-an-outage-test-that-produces-useful-evidence.md",
+      "previous_sha256": "b1960bc2ac833303ba2a661825d34c58df1037ea7c829272aca19d3b874b1cc5",
+      "sha256": "f18aa8ca414d13dca94f9909ca9130a83939de5992275ede2add42305e38c29f",
+      "removed_template_images": [
+        "/images/posts/2025/azc-152-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-153",
+      "file": "src/content/posts/en/choose-a-safe-approach-to-powershell-credential-handling.md",
+      "previous_sha256": "0b9742dfbcbd559959a3b7963a66d135503c69e7610ba2dcae45a55c860003e4",
+      "sha256": "aefe62f740f0a86d083bf28c98b161b290bd909583ad45ae514136055f5806b4",
+      "removed_template_images": [
+        "/images/posts/2025/azc-153-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-154",
+      "file": "src/content/posts/en/check-dns-configuration-before-investigating-a-domain-problem.md",
+      "previous_sha256": "7cb0ccd4621df8f289b251a467169cdc3af106ecbdefe9ed33de689214a41d4f",
+      "sha256": "a02c3c9d50dab9787930c6ca883b7150df94241944d53a5ada1e6b971fd9dd0a",
+      "removed_template_images": [
+        "/images/posts/2025/azc-154-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-155",
+      "file": "src/content/posts/en/github-code-security-and-secret-protection-plan-for-the-new-product-choices.md",
+      "previous_sha256": "9b5b539416fcf44ef0f14ccb6bd846364f82e512c264228c3e9a35a27a31f924",
+      "sha256": "8be6a6c35d891b182129b9b735bcf104cd20a3a5ead520a3c9ca25378a5365d2",
+      "removed_template_images": [
+        "/images/posts/2025/azc-155-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-156",
+      "file": "src/content/posts/en/understand-cluster-shared-volumes-in-a-hyper-v-design.md",
+      "previous_sha256": "99e8832a4312ab5e1713019093d027e6756f4af435bba9489e809ad0c98c9e41",
+      "sha256": "92c86c9b8a55237842a3d6f771e402a937077306bffe0eb766ffd179e3515032",
+      "removed_template_images": [
+        "/images/posts/2025/azc-156-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-157",
+      "file": "src/content/posts/en/choose-vhdx-settings-around-capacity-and-performance-needs.md",
+      "previous_sha256": "feff26ceb759be927114d83479d181a76ee02ac55e90e0aa9da0134a9558c37b",
+      "sha256": "8888caaf7c2aef2550d26c348e54d61683b908567a10abd4d827f98cfdb73230",
+      "removed_template_images": [
+        "/images/posts/2025/azc-157-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-158",
+      "file": "src/content/posts/en/expand-a-linux-guest-disk-and-verify-the-file-system.md",
+      "previous_sha256": "b5553dcfc5296e5fb709894e9b812cbbe0742156e0499f42b325efaa6a31d079",
+      "sha256": "a0c1583c9035cf15ddc7b6f3f4e1be3149ccb54ac89efe8927639b1466eacd2e",
+      "removed_template_images": [
+        "/images/posts/2025/azc-158-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-159",
+      "file": "src/content/posts/en/review-infrastructure-security-findings-during-a-pull-request.md",
+      "previous_sha256": "caf4132543d51713ee4d184fd17eec851a8e6219e618e4f3d4b24b7584f1d7b3",
+      "sha256": "9be8518e1c6394c63810f771b1267b4390046689ed7221139985d05733adc0bd",
+      "removed_template_images": [
+        "/images/posts/2025/azc-159-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-160",
+      "file": "src/content/posts/en/run-an-access-review-for-privileged-group-membership.md",
+      "previous_sha256": "38cd3958b71e974eb9a0f8138401c9373337a167aac15e82521c6f1c2128becd",
+      "sha256": "213d6ad5267dd2f577c70c07b8d28c67ab2163d83f3a4431da5886ee650db3c7",
+      "removed_template_images": [
+        "/images/posts/2025/azc-160-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-161",
+      "file": "src/content/posts/en/understand-the-boundary-between-a-generated-answer-and-evidence.md",
+      "previous_sha256": "bcb0fbd7bd79e91eeb120c402e54457251f6d99e676bafa2ca1425fa42a855d1",
+      "sha256": "583d7920b7abd9ce64f8ec9e2483e1129bf198897e0d2a765374e079f30ae807",
+      "removed_template_images": [
+        "/images/posts/2025/azc-161-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-162",
+      "file": "src/content/posts/en/build-an-automation-rule-with-a-clear-owner.md",
+      "previous_sha256": "14265405216eeceece4e1a46d3c1e9d36a52d0ee32e30ad3f25282328b01360e",
+      "sha256": "e80c671fc74b360ef28cba840e50a2f01ca985b28ab1f8735668038ee5a3b76e",
+      "removed_template_images": [
+        "/images/posts/2025/azc-162-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-163",
+      "file": "src/content/posts/en/deploy-an-azure-functions-application-with-clear-configuration-boundaries.md",
+      "previous_sha256": "0e06873edbe25aa8a8501be996257ebeb54f1aadc46f24d2719ff4b3eca3b2ac",
+      "sha256": "4ca401ad82c4621b52593c57b56b34f3e41d198a0c2905db06ce7efe77128216",
+      "removed_template_images": [
+        "/images/posts/2025/azc-163-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-165",
+      "file": "src/content/posts/en/review-repository-protection-as-github-security-product-choices-change.md",
+      "previous_sha256": "ad573d2ed22e78dfe75ee0531112baed1fc7f936ab66a203abc9110eb04dfd87",
+      "sha256": "4d220174b15adcff2fe5bb685bc1182d7db5ab97e745c26ba0bfd0c099865c16",
+      "removed_template_images": [
+        "/images/posts/2025/azc-165-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-166",
+      "file": "src/content/posts/en/compare-scale-up-and-scale-out-for-a-compute-workload.md",
+      "previous_sha256": "8281883ea78da9af9c562396e2f0d59fac9d890c5c819cbd4c7fee957d78619c",
+      "sha256": "501f576a7979f880133d8decdba752335e456ce3ffb8775340cd2fdf20bbbfdb",
+      "removed_template_images": [
+        "/images/posts/2025/azc-166-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-167",
+      "file": "src/content/posts/en/apply-azure-policy-to-arc-enabled-servers.md",
+      "previous_sha256": "ea1f6351d4c0ac7a04af882a40381f44abee2c03959256c8bf66067453bf3a73",
+      "sha256": "4d3eda9a1489fc528ca1a27279f50d9f8f5e08a9e8e3bafe158888b1c22fd556",
+      "removed_template_images": [
+        "/images/posts/2025/azc-167-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-168",
+      "file": "src/content/posts/en/choose-where-reusable-infrastructure-modules-should-live.md",
+      "previous_sha256": "8426ba9fa6134fd8123246a63595b1b1d51b095bab61f1886d0b19e19eb16c99",
+      "sha256": "08a33e41382ce2ab41fc03018a45c2cb07add12b0bc9f2dec440bffc51ceafea",
+      "removed_template_images": [
+        "/images/posts/2025/azc-168-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-169",
+      "file": "src/content/posts/en/filter-an-event-grid-subscription-around-a-consumer-need.md",
+      "previous_sha256": "7d854c502e9b9f890aa4025a234f707efeb169794120d863a73f50634c876399",
+      "sha256": "d52ed81f895d1700cc2537499b6cdfad53262a20150959c1099a0264b9414f26",
+      "removed_template_images": [
+        "/images/posts/2025/azc-169-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-170",
+      "file": "src/content/posts/en/choose-a-vpn-gateway-around-connectivity-requirements.md",
+      "previous_sha256": "4fee970a48c69f754b5e1219c4408527497832a5e11d285f56f953c82c5a4e26",
+      "sha256": "6f42b506047595cf240d96d0c385643fbaad49c3f5228e152bb5afd202e18f0f",
+      "removed_template_images": [
+        "/images/posts/2025/azc-170-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-171",
+      "file": "src/content/posts/en/schedule-server-updates-with-azure-update-manager.md",
+      "previous_sha256": "489c62a7c88488874189e1195071ef2e814a16b1e96b4d630811a0c0b3de8d94",
+      "sha256": "058458d17a663f5928a924ac46f53cb81bf4b53f3694faac6e368ea96dca13ba",
+      "removed_template_images": [
+        "/images/posts/2025/azc-171-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-172",
+      "file": "src/content/posts/en/plan-a-private-endpoint-for-a-storage-account.md",
+      "previous_sha256": "1950b3f0264947cfd3682017a1b57fd1f8c6178065e29db1ffb127af94ea5ab5",
+      "sha256": "0fd2af371ebaf4d395631b3670f4c5837cfeb3d5fcc3524dc969bd59e61d9adf",
+      "removed_template_images": [
+        "/images/posts/2025/azc-172-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-174",
+      "file": "src/content/posts/en/use-remoting-to-inspect-several-windows-servers.md",
+      "previous_sha256": "8586e1cf3b9d7b565a853b3b9cd45e357288c22c862b509462a276255f10ae62",
+      "sha256": "86ac1b492ecc1c613158e174eb6ed2053f8f69ea8e1ff4fb331c91004ea0cd48",
+      "removed_template_images": [
+        "/images/posts/2025/azc-174-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-175",
+      "file": "src/content/posts/en/apply-a-baseline-windows-firewall-configuration.md",
+      "previous_sha256": "ce7c8732d222d0bbafa38dea3817562dfef19749faaf9185541dd746f10fac07",
+      "sha256": "d7a9e1f744eefca957079c88b60f1ad74386e3fd34ac8c34032b14c680d168ea",
+      "removed_template_images": [
+        "/images/posts/2025/azc-175-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-177",
+      "file": "src/content/posts/en/use-production-checkpoints-with-a-clear-recovery-purpose.md",
+      "previous_sha256": "2080fa90b6dec594e03da35478d511ce1ef289f36371a6e38af3ec370d064385",
+      "sha256": "2ff28df2b07789e132f5b1540cb014acee72a232c35eb1eaed8298b7caffc38c",
+      "removed_template_images": [
+        "/images/posts/2025/azc-177-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-178",
+      "file": "src/content/posts/en/investigate-a-linux-guest-that-enters-an-emergency-shell.md",
+      "previous_sha256": "058219b757863382d07a5f80bae5d66cae1f695a8fde3ce760e2621a809fbfff",
+      "sha256": "d63da9578fb43767eae4059b79b95a571f26a276f7a14ebd58f7d8077a50ff11",
+      "removed_template_images": [
+        "/images/posts/2025/azc-178-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-179",
+      "file": "src/content/posts/en/use-attack-paths-to-prioritise-exposed-azure-resources.md",
+      "previous_sha256": "e3200e52fcbda96e095571fb56722dc8df8f566af88b464daba041820437fa94",
+      "sha256": "df65b3f72111b3cf5eb4170316a84702ea1ae7d2c38aa36bbeeede3edc0117ba",
+      "removed_template_images": [
+        "/images/posts/2025/azc-179-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-180",
+      "file": "src/content/posts/en/decide-where-azure-rbac-assignments-should-live.md",
+      "previous_sha256": "6f83edf19e0f66a82649ba89a8482568e4ed0c735ac166e900512628bbe01149",
+      "sha256": "1c65275d843c44134379798281ae312f0b19c563045697f39bc04f5eb5198214",
+      "removed_template_images": [
+        "/images/posts/2025/azc-180-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-181",
+      "file": "src/content/posts/en/review-the-plugins-available-to-a-copilot-for-security-session.md",
+      "previous_sha256": "941f792fde9a6dad6d0a6bbe4953e17dd5c536887edcd7a6a83b4f9da0edac7f",
+      "sha256": "3810c71ecb54a3d230d46b9b141a1c0862339090361457b3e14e8a4c9bd18ae7",
+      "removed_template_images": [
+        "/images/posts/2025/azc-181-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-182",
+      "file": "src/content/posts/en/decide-which-response-steps-belong-in-a-playbook.md",
+      "previous_sha256": "0d343b00cab582dc4fe557d8f9436957e8c4e29dd1849182a67d4c30dbb98fea",
+      "sha256": "fe15f8e8d754e403e7dad013d50c1f38527ad57021f7b79ed6bdde57b69f76f1",
+      "removed_template_images": [
+        "/images/posts/2025/azc-182-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-183",
+      "file": "src/content/posts/en/investigate-a-function-timeout-without-changing-every-setting.md",
+      "previous_sha256": "5f7fcb98be8b675abdbe4e7be46ff263ce1564422ecaa44850f7480ef75ef9ec",
+      "sha256": "f440b8fcf4ba9c70dbc2a0cb0151eeb08c451247631d3b81f32c08a0aa13a136",
+      "removed_template_images": [
+        "/images/posts/2025/azc-183-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-186",
+      "file": "src/content/posts/en/plan-rollback-before-a-server-migration.md",
+      "previous_sha256": "88c53a0a22544d3c7617a47795c876854d01c0b55a4aa5587be9a50dcca7d52c",
+      "sha256": "d8788992eb0e69b1817defc701269eac7156a01bcc6d1a8311316cc5cba160e5",
+      "removed_template_images": [
+        "/images/posts/2025/azc-186-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-187",
+      "file": "src/content/posts/en/add-validation-before-deploying-a-bicep-change.md",
+      "previous_sha256": "63b775d34a327c3c53d48bf36f426495a61c3602f4accac34b68c21cda719ccd",
+      "sha256": "b8465a32d54adc3a67eb9b4e5e5549ddc6c23b5f6735537519bb4a87f02f7df8",
+      "removed_template_images": [
+        "/images/posts/2025/azc-187-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-188",
+      "file": "src/content/posts/en/put-an-api-behind-azure-api-management.md",
+      "previous_sha256": "d7cdc534d8850d4cb671e3af21a825cecacb9dc66e0c2bf1a5d5b7ba883e8615",
+      "sha256": "1d8eca4c88dc18561edcf6d2f99773111f9ccf04a6590b96d77bcbde5b59c7dd",
+      "removed_template_images": [
+        "/images/posts/2025/azc-188-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-189",
+      "file": "src/content/posts/en/build-a-route-table-for-a-controlled-outbound-path.md",
+      "previous_sha256": "b6cd133813dbefa2b6a0281c6650c44875e4c554d2bfe1dc1e83806b03889ec8",
+      "sha256": "609d476d8cdcc8f1c80dc4216722ab3546caf01038b6856aa302556f8b3eb7f7",
+      "removed_template_images": [
+        "/images/posts/2025/azc-189-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-190",
+      "file": "src/content/posts/en/investigate-an-alert-that-repeatedly-closes-and-reopens.md",
+      "previous_sha256": "2697dfb7ca8e72fdac4a20734f54821aa328133e62b59a6260f63835187901c2",
+      "sha256": "9839c29ec9fcaef4a09efaf1a7dd26759b8e7a2d9284cf4f5a8eb8c65b532a74",
+      "removed_template_images": [
+        "/images/posts/2025/azc-190-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-191",
+      "file": "src/content/posts/en/compare-azure-files-and-blob-storage-for-an-application.md",
+      "previous_sha256": "20326f26be48f5ade430d2d3d08e2999780ff779fcad7d1ca2aadc9992e255bf",
+      "sha256": "25eccbbe855f79dd0a74283f935ad6d1b22ed0e847d7176d878d8c524618fa45",
+      "removed_template_images": [
+        "/images/posts/2025/azc-191-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-192",
+      "file": "src/content/posts/en/investigate-a-failover-that-leaves-an-application-unavailable.md",
+      "previous_sha256": "c80bc12c370449011de96792c4399a76e5b509db984c751f5e7f79608e406977",
+      "sha256": "7e63a691019ac212c06940e57358f9653a759fbeaad8101d866d40e8ca886277",
+      "removed_template_images": [
+        "/images/posts/2025/azc-192-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-193",
+      "file": "src/content/posts/en/read-and-validate-json-configuration-in-powershell.md",
+      "previous_sha256": "9251b9ef5f58618899e4a26b315538f9f21d2bac1a4587f29572028d9c2d8b17",
+      "sha256": "fd42635c1d9729525411e28e76696168c8e18d09b69e1cdbca9e791b680930c8",
+      "removed_template_images": [
+        "/images/posts/2025/azc-193-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-194",
+      "file": "src/content/posts/en/review-event-logs-around-a-windows-infrastructure-change.md",
+      "previous_sha256": "03b67e832dc18823faf836be08890e53f8cc520f60822889da122fdcbf39e873",
+      "sha256": "ea053f10bb777702093920b04c7fc681b279d638cefefbb839f665ad21c4ae07",
+      "removed_template_images": [
+        "/images/posts/2025/azc-194-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-196",
+      "file": "src/content/posts/en/export-and-import-a-hyper-v-virtual-machine.md",
+      "previous_sha256": "57bf9ca55b7c0a284f9b859945c774af25d25e2229141c946b73901b223423d9",
+      "sha256": "25f95df3d77d55f1cd9defa906e4658648766497d50711269f8b919223280156",
+      "removed_template_images": [
+        "/images/posts/2025/azc-196-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-197",
+      "file": "src/content/posts/en/use-ssh-for-routine-linux-guest-administration.md",
+      "previous_sha256": "7a1a133a08e1b0602f358ac5db33ea568a6930881daae11d69c1f66a9db8f56c",
+      "sha256": "820b6b4ff471e15299c267b2eaecdce563244e9a818bff006c6cd90a7f84fe11",
+      "removed_template_images": [
+        "/images/posts/2025/azc-197-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-198",
+      "file": "src/content/posts/en/investigate-agentless-vulnerability-findings-before-remediation.md",
+      "previous_sha256": "bcb503f0c6d3e34e4d3b5230d19bb658158fcae13b396833057dad9f8d9e9317",
+      "sha256": "1aa53d67cb0768ba0a78ec0c47face67fd5d050e272cdbafc4d8021803660f67",
+      "removed_template_images": [
+        "/images/posts/2025/azc-198-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-199",
+      "file": "src/content/posts/en/plan-arc-enabled-windows-server-2025-hotpatch-with-its-baseline-reboots.md",
+      "previous_sha256": "8bbed4e24af6f607838481e476cd9cbb7b64203f84455b3c6d0c33bc3a1dd5dd",
+      "sha256": "9e9dbc43e5922758dd294a7de05b5c6d2adf63d8659e3131d19617b9770d27d2",
+      "removed_template_images": [
+        "/images/posts/2025/azc-199-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-200",
+      "file": "src/content/posts/en/require-stronger-authentication-for-privileged-operations.md",
+      "previous_sha256": "df29f50f93e80a19d362001fe2a1daeaab0301a70fc98ced61c6db32f0341563",
+      "sha256": "b96616c35b567c427873f646487fcf92114bd71e8eb79983ef839cb0c417059d",
+      "removed_template_images": [
+        "/images/posts/2025/azc-200-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-201",
+      "file": "src/content/posts/en/investigate-an-answer-that-lacks-the-expected-security-context.md",
+      "previous_sha256": "9d0d6eb9bc507d98fe5c12c1e73dfffb0c99b59fcccb815273f11c697cd12703",
+      "sha256": "735a359f08818d6d26071d6a8a0de634e8fb62e65e04c2eea4256be297dbeeb1",
+      "removed_template_images": [
+        "/images/posts/2025/azc-201-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-202",
+      "file": "src/content/posts/en/use-content-hub-templates-with-a-production-review.md",
+      "previous_sha256": "47efb5b8a7a297a71c9e4865680cb3e221e45aa78473b5aee76a9e49771aee3e",
+      "sha256": "af49e3f17c26ee1bca09052be977ed82a11c45616a04255a85d4db242440de2d",
+      "removed_template_images": [
+        "/images/posts/2025/azc-202-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-203",
+      "file": "src/content/posts/en/compare-app-service-and-container-apps-for-a-small-service.md",
+      "previous_sha256": "b4a24c2aa5a540004cce2d33e4fc02cf57d6a4a7825a23d04735e64b8cc932e0",
+      "sha256": "1d4f47899ab542cecfa5ff3f07ebbb02005f6eaeafc3da6b858b221eaa90d1b8",
+      "removed_template_images": [
+        "/images/posts/2025/azc-203-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-204",
+      "file": "src/content/posts/en/configure-vm-backup-and-test-the-recovery-path.md",
+      "previous_sha256": "7a28e12d2b6c7e5fb33f8c5b314fdbc3a9eef0672445b4547070d210bc4bdc89",
+      "sha256": "d16ccfa2c5211ad2586b206d390fa63623678a83cae4dd4a0515d52a297a066b",
+      "removed_template_images": [
+        "/images/posts/2025/azc-204-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-205",
+      "file": "src/content/posts/en/separate-storage-bottlenecks-from-compute-bottlenecks.md",
+      "previous_sha256": "3831cad548cc3d0e354c96170841efad4d763bb3867825053a084809fe51743f",
+      "sha256": "f355080c5b957f1f16b414d54d0c7f5bec770f4d34bfdef8d62c9535b62764cb",
+      "removed_template_images": [
+        "/images/posts/2025/azc-205-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-206",
+      "file": "src/content/posts/en/connect-a-linux-server-to-azure-arc.md",
+      "previous_sha256": "e097fd0e3022a9bb69e16c1718e81152bcbccab505abc5a44dcc76535eaf91e2",
+      "sha256": "b39b4ac14113476b66fdf213beb187bfa1290cc910529372003ab7d48294647b",
+      "removed_template_images": [
+        "/images/posts/2025/azc-206-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-207",
+      "file": "src/content/posts/en/import-an-existing-azure-resource-into-a-terraform-workflow.md",
+      "previous_sha256": "615c86a765a755a6a2a452aa3b3bd4fd6f692be546c77d67a373443b9fbb3267",
+      "sha256": "4e5a9e089372eae299e194ae1cc588c43b55c94b30ab15b33afd48794c45a69e",
+      "removed_template_images": [
+        "/images/posts/2025/azc-207-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-208",
+      "file": "src/content/posts/en/separate-api-authentication-from-subscription-keys.md",
+      "previous_sha256": "0ab3ed6f9d45edbf9d49a1cd200ff009664e409b52cc13af4380491d36060e5d",
+      "sha256": "592d0af7e2b9fedca35d7da7071d6d663a1aa49e0dd47aea37e7b695924066c0",
+      "removed_template_images": [
+        "/images/posts/2025/azc-208-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-209",
+      "file": "src/content/posts/en/investigate-asymmetric-routing-through-an-azure-firewall.md",
+      "previous_sha256": "724a259a8ecc0b906a8476a5fac0c0875139747652d015b0e47036a62a153f6c",
+      "sha256": "f98855f80aa5840cf6470bda0108c5a2a3fa969f1938885f0e055b83f12e1cd1",
+      "removed_template_images": [
+        "/images/posts/2025/azc-209-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-210",
+      "file": "src/content/posts/en/review-log-ingestion-cost-alongside-retention-requirements.md",
+      "previous_sha256": "b0fea93021c17b8685c18bdede8add6602224fd771ed18cfdb2b1cbd0997680e",
+      "sha256": "c6f90772da68e7508d34a8f404b4000de6b5a704d907a9a80c3c297e0cf44600",
+      "removed_template_images": [
+        "/images/posts/2025/azc-210-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-211",
+      "file": "src/content/posts/en/check-dns-when-a-private-file-share-is-unreachable.md",
+      "previous_sha256": "e7e5c6e7451c74ed27d4bd1050b72a62baa7dfa8777dc8c7ecadfde5359dda88",
+      "sha256": "8cc28e91076517cc8809568d86f4361ecf359eaaa7629cc09d6ed54505968fa7",
+      "removed_template_images": [
+        "/images/posts/2025/azc-211-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-212",
+      "file": "src/content/posts/en/review-resilience-trade-offs-in-a-cost-constrained-workload.md",
+      "previous_sha256": "baa3942ab0d52452b3259bfee0d82a75695493d0977e01cd0d42be8c2ccd7b09",
+      "sha256": "d8c5ffb4c084b3571c1bb78180275dc6878ee2a961d2ebf85b391183c889733f",
+      "removed_template_images": [
+        "/images/posts/2025/azc-212-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-213",
+      "file": "src/content/posts/en/check-native-command-exit-codes-in-an-automation-script.md",
+      "previous_sha256": "feabea2d1977e194a1308d5044ae71a742f9c8274ca1926bf8c2b64167c10dd4",
+      "sha256": "330bb0aa82bec6e6d96a44ba0f0eea1874388563b933d30e6ca32c3f40d4a1c6",
+      "removed_template_images": [
+        "/images/posts/2025/azc-213-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-214",
+      "file": "src/content/posts/en/use-group-policy-to-configure-a-small-server-estate.md",
+      "previous_sha256": "80764cea45f160afb3c239f4241a185b482c96e53955a454b1be53e9793c472f",
+      "sha256": "b677516a1a5d7c3108d804bf57b24521e915a2d98644752eb46bcc0307e97a4c",
+      "removed_template_images": [
+        "/images/posts/2025/azc-214-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-215",
+      "file": "src/content/posts/en/plan-storage-availability-across-cluster-nodes.md",
+      "previous_sha256": "0efb190865f632375a320108da6ce6a2ab546a36f5c4c0305365b6f0e5fc2f1e",
+      "sha256": "c23cba4c4623517689d8fefd53acc9e5dc7f091f04e159fd9e9aeadc0f3d1910",
+      "removed_template_images": [
+        "/images/posts/2025/azc-215-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-216",
+      "file": "src/content/posts/en/investigate-a-checkpoint-chain-before-deleting-files.md",
+      "previous_sha256": "e7dbb7d4f20ddd465205d86693c50187cae7b41b6388bc4b00a9dce37005d8c4",
+      "sha256": "a2d8b6859f218e0006f74c34b90118a638a1f49c05375616bca92857fccf846c",
+      "removed_template_images": [
+        "/images/posts/2025/azc-216-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-217",
+      "file": "src/content/posts/en/choose-a-supported-linux-distribution-for-hyper-v.md",
+      "previous_sha256": "ba558814846c0948f1adcc38d5be89ad11d813b710de1d1d8860eef234267d08",
+      "sha256": "a63aab5c2ebaa99b1e4cccab460c45dea680e6eecf81d0cc6151c7bc8f641f55",
+      "removed_template_images": [
+        "/images/posts/2025/azc-217-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-218",
+      "file": "src/content/posts/en/configure-malware-scanning-for-an-azure-storage-account.md",
+      "previous_sha256": "aa5b8409d6b10b8355d578f640a35670bc56d2569f85a19dc7f8be21a844ad1a",
+      "sha256": "04e414e3126ea859c1b318dae45ed51f8e478a16cd0b8d715feb6e005178c2ac",
+      "removed_template_images": [
+        "/images/posts/2025/azc-218-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-220",
+      "file": "src/content/posts/en/define-useful-pilot-outcomes-without-assuming-productivity-gains.md",
+      "previous_sha256": "c65f31e2998270d73831fbfcf5cfd82e215784930fdd772faa9a691da250bd2b",
+      "sha256": "9f951ed512f0c016f77e429b65c4af94e6a574dbbd155192744808549194faa0",
+      "removed_template_images": [
+        "/images/posts/2025/azc-220-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-221",
+      "file": "src/content/posts/en/investigate-a-rule-that-creates-too-many-incidents.md",
+      "previous_sha256": "23f95405764869d8d255e223c67f1a126f107dfcbe4a7d84c0edd01db830d7f0",
+      "sha256": "3e7eda607c26dfd24fdca39997149c86207ca259ed8378ee7f9fb330b6a57982",
+      "removed_template_images": [
+        "/images/posts/2025/azc-221-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-222",
+      "file": "src/content/posts/en/store-application-settings-outside-a-container-image.md",
+      "previous_sha256": "d189d9695d1e55594dbe4263443c141e7c2c3ed66cc266915b82887174a1331c",
+      "sha256": "ddb85b345177b11a54a8c0122bb020162de89750afc5644761c98680f0456e75",
+      "removed_template_images": [
+        "/images/posts/2025/azc-222-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-224",
+      "file": "src/content/posts/en/plan-data-movement-before-moving-an-hpc-workload-to-azure.md",
+      "previous_sha256": "7e233cb4e9903a964caf2c592ab6c55f6880c6e5dfd293f64ae82f99f062c9f0",
+      "sha256": "7be2cf9b7c00a0b1d1d077d0186f6549fd69e33369adcd90969d3677e711f75b",
+      "removed_template_images": [
+        "/images/posts/2025/azc-224-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-225",
+      "file": "src/content/posts/en/review-agent-logs-when-an-arc-extension-fails.md",
+      "previous_sha256": "e53827cb4928af160469ee12428bd171ff65de4e9c0479cdd1436d2d64715775",
+      "sha256": "f3c60d1480c5bc254c6697df55c7be28826c3d4fd8596d5bf9f3344404939396",
+      "removed_template_images": [
+        "/images/posts/2025/azc-225-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-226",
+      "file": "src/content/posts/en/review-drift-before-applying-another-infrastructure-deployment.md",
+      "previous_sha256": "61973ba6905ecc6f3dbf932f79987b094df7df5a5c9931cf5029ff67b38e1c9a",
+      "sha256": "23772a3a995113ddc3aa1d78c319ebb7a95a186de23a34b03e1096180bc68ef4",
+      "removed_template_images": [
+        "/images/posts/2025/azc-226-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-227",
+      "file": "src/content/posts/en/trace-a-failed-request-through-an-api-management-policy.md",
+      "previous_sha256": "8c7dc56bf995b0a06806cc7cfdbb0d5093849cd70c30a57fa26290ac4961a24d",
+      "sha256": "d9b71e04d115a5f1b513fe5bc299b8c1f93d1f8a3678a8e356ed48e032a42fcb",
+      "removed_template_images": [
+        "/images/posts/2025/azc-227-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-228",
+      "file": "src/content/posts/en/choose-load-balancer-or-application-gateway-for-a-workload.md",
+      "previous_sha256": "5961d4f6e22df7945149769e3798ed907237627fa570af93fbb520047782ee53",
+      "sha256": "03d4d5992014df018f56e1f8d81f58c041e50d152758a33ce44fa93aae5423a7",
+      "removed_template_images": [
+        "/images/posts/2025/azc-228-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-229",
+      "file": "src/content/posts/en/use-resource-health-information-during-an-incident.md",
+      "previous_sha256": "8210aae180df8e248ec94fef8babab6109a9d36319233f9c6ae19ac3696ff1d0",
+      "sha256": "71e445ffbdf6ed6d170ff87855dded7cb18ce47eae76ee85a7cd919c2cc2fc41",
+      "removed_template_images": [
+        "/images/posts/2025/azc-229-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-230",
+      "file": "src/content/posts/en/use-azure-file-sync-with-a-deliberate-endpoint-design.md",
+      "previous_sha256": "f52b965912d4013f324a21e0817a7135616fc5931cd4b2472be78ed9919c120d",
+      "sha256": "cdd9aadb0aadae9db884f3763775f34a14108651554937cd74b2f7450c88b253",
+      "removed_template_images": [
+        "/images/posts/2025/azc-230-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-231",
+      "file": "src/content/posts/en/define-health-checks-across-application-and-infrastructure-layers.md",
+      "previous_sha256": "fdf374d4cdabf5d587c22bdffdddc5ac65745b73aeac33db43baec20b5c4c6ea",
+      "sha256": "3c67723b5ad6baf08e0a4bae0c055bc630429dbd84d343ae447dcc1d5153b192",
+      "removed_template_images": [
+        "/images/posts/2025/azc-231-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-233",
+      "file": "src/content/posts/en/investigate-a-time-synchronisation-problem-on-windows-server.md",
+      "previous_sha256": "7f7617c7f7781bb21b693837b7dced62915c2e7e5734603cb7699e1be12900aa",
+      "sha256": "cab3c47733daa9a3262f1519b8ec999d34e5025bc8df3a7d56719da2ffa734c3",
+      "removed_template_images": [
+        "/images/posts/2025/azc-233-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-234",
+      "file": "src/content/posts/en/review-cluster-event-logs-during-a-node-failure.md",
+      "previous_sha256": "bb34bd71a7d9f797859423d86a2a225507812b7ef2161c9ed7fd3034032325e6",
+      "sha256": "5636f71785403f91f073f8939cd9f234d32b70c519917245c66b4d0185872e10",
+      "removed_template_images": [
+        "/images/posts/2025/azc-234-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-235",
+      "file": "src/content/posts/en/plan-host-storage-for-hyper-v-virtual-machines.md",
+      "previous_sha256": "3b9978eb5331a552e06e4eb3c42ce0ced4917834bffd00dd44bcfc2dc552aedf",
+      "sha256": "a9f9933664b4f407a37c8d86f6bd75fe97c292948d4893f158662af8666cb4bd",
+      "removed_template_images": [
+        "/images/posts/2025/azc-235-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-236",
+      "file": "src/content/posts/en/check-storage-and-network-drivers-in-a-linux-guest.md",
+      "previous_sha256": "50650b57d99f6ca2c9f619ec20d52e913c084ecf58ac1eca832209589f3fd9e6",
+      "sha256": "467fc89f177b87b234327af5bc619927156a4a1b202f5da8a1ea1324022e301f",
+      "removed_template_images": [
+        "/images/posts/2025/azc-236-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-237",
+      "file": "src/content/posts/en/choose-between-network-security-groups-azure-firewall-and-waf.md",
+      "previous_sha256": "3417accbd0cd7051233de4529e07ec31a2df29801edbc05971843702f2e938a5",
+      "sha256": "b40268c6b2b406e9a3926acb53792dee125c7ccc39fa1cb8085a4ae7001fc3dc",
+      "removed_template_images": [
+        "/images/posts/2025/azc-237-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-238",
+      "file": "src/content/posts/en/review-guest-access-before-sharing-an-azure-application.md",
+      "previous_sha256": "5cea29564471fae193df58fb2357f9d4a45e6466f65835438622fd84226cd909",
+      "sha256": "ca47364969dbac1e79e13f02dd4576eff43f67392c7cb459684565872ed957e9",
+      "removed_template_images": [
+        "/images/posts/2025/azc-238-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-240",
+      "file": "src/content/posts/en/connect-sentinel-incidents-with-defender-xdr-context.md",
+      "previous_sha256": "011dc54ccd954f6ce6ff552eb2eaf716bbd469c3cbd87ee9027bfa82d01a8110",
+      "sha256": "1d260593ec384fce31ecf1c37bcd8450125eef79a0b4694e5cc7caf513a75bbb",
+      "removed_template_images": [
+        "/images/posts/2025/azc-240-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-241",
+      "file": "src/content/posts/en/configure-a-custom-domain-and-https-for-a-web-application.md",
+      "previous_sha256": "738907123ee3e76bf9e3d4f0a0eb227689bae679dcf7b57b58bb078e99a1fbde",
+      "sha256": "cb7efa73ef91e3d5b88dbea5ca39e567448727f35fcc274e016ae904f01150a1",
+      "removed_template_images": [
+        "/images/posts/2025/azc-241-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-242",
+      "file": "src/content/posts/en/apply-a-consistent-patching-approach-to-azure-servers.md",
+      "previous_sha256": "4708d9bd3daa62ad6990932172f7cd0d7dd546d51d8cf745f61fdbb433b5ed7a",
+      "sha256": "4305c278d1801eda6a1395f2c7eaf444e3d9db10d3c19880c86cbeef29f62870",
+      "removed_template_images": [
+        "/images/posts/2025/azc-242-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-243",
+      "file": "src/content/posts/en/set-a-budget-boundary-around-a-compute-experiment.md",
+      "previous_sha256": "38af30c6a8ec0bfa6e196b73e65c52b8f0da603b6248451b19586a1984f62efd",
+      "sha256": "682227181648b6304313cb4d0c7da90783dcf2c4549a71bd8adddf785afe4fe8",
+      "removed_template_images": [
+        "/images/posts/2025/azc-243-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-244",
+      "file": "src/content/posts/en/understand-the-operating-model-of-azure-local.md",
+      "previous_sha256": "fe0e22881264ebdb2c1031fe25a6543679caee640ae4576c8cac0fa68b5ae6a8",
+      "sha256": "a247021865e32cfa7427d27fb6cfff9c0f49630fd9fbe482189bacbdb630350c",
+      "removed_template_images": [
+        "/images/posts/2025/azc-244-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-245",
+      "file": "src/content/posts/en/troubleshoot-deployment-permissions-without-assigning-owner.md",
+      "previous_sha256": "d7fb15627bacac9bdfa8b26826eb9807ff9df5d588b2dd93236899e2ac529613",
+      "sha256": "f0526f630e66407f48336c24367a596288dec9b20e257906b028e385a8a0a8ef",
+      "removed_template_images": [
+        "/images/posts/2025/azc-245-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-246",
+      "file": "src/content/posts/en/protect-a-workflow-secret-with-key-vault.md",
+      "previous_sha256": "638615f02c4a9b29c2702c787755fd5bfbed66c382c8db2b51a66e0554bd22b6",
+      "sha256": "9b1cb7b69535d2a94404af1337863daac9fb7de39caa97125e89ed93fb567d8b",
+      "removed_template_images": [
+        "/images/posts/2025/azc-246-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-247",
+      "file": "src/content/posts/en/configure-health-probes-that-reflect-application-readiness.md",
+      "previous_sha256": "1a37de597e2240281d8e4447aa1be3b271a9347e8494330c5b135b157da04445",
+      "sha256": "2244249fc56e0ccea33b091554721498df9e0973c5b4d40f3d76d3ddbe9cd3aa",
+      "removed_template_images": [
+        "/images/posts/2025/azc-247-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-248",
+      "file": "src/content/posts/en/apply-diagnostic-settings-consistently-across-azure-resources.md",
+      "previous_sha256": "a44645491f4c470025e74385472910b31446b52c36a8297884cb63d1173d694b",
+      "sha256": "2be2dabbe8bbc1054fb238e33d245a82582953776c35f488bb292635810b52c4",
+      "removed_template_images": [
+        "/images/posts/2025/azc-248-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-249",
+      "file": "src/content/posts/en/plan-an-immutable-storage-policy-before-retaining-regulated-data.md",
+      "previous_sha256": "aa4efefeb8fb5319b207f8112d0bc7d26abd48e6a1fc9c09c273983e0e9302e5",
+      "sha256": "556846201153d3fea41b9671bc13396b8fd894c8ecafd6a645f8e6e8d76d5153",
+      "removed_template_images": [
+        "/images/posts/2025/azc-249-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-251",
+      "file": "src/content/posts/en/test-a-reusable-function-with-pester.md",
+      "previous_sha256": "918ad7095a70f1e710b72662fa17b6cd8ad34e6362e822cb9c5eac535faad2de",
+      "sha256": "d5b0b38b6c41588bf5ad4ef173e0a8c1e651b9d738cc09882f20ba5978b839ee",
+      "removed_template_images": [
+        "/images/posts/2025/azc-251-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-252",
+      "file": "src/content/posts/en/plan-an-in-place-windows-server-upgrade-around-dependencies.md",
+      "previous_sha256": "6bfc900d86a1b0c238a2178f26e35a9aeecc6065dd8ebec913b61120e102fdf0",
+      "sha256": "ada0de95ec8ca78b7ba18c5d160d5ef2b43cdf1fc68202b40de6f2cfef2c24b2",
+      "removed_template_images": [
+        "/images/posts/2025/azc-252-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-253",
+      "file": "src/content/posts/en/choose-failover-priorities-around-application-dependencies.md",
+      "previous_sha256": "afcdbc854ace3d1a890ff8a1e672eaa840313998748a9e70cc50a87a6f838228",
+      "sha256": "0bd88daac1d6016ff90bda2a6e6181880d5c27ae73a96d751d2aa6ac8c4d1949",
+      "removed_template_images": [
+        "/images/posts/2025/azc-253-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-254",
+      "file": "src/content/posts/en/configure-hyper-v-replica-for-a-defined-recovery-scenario.md",
+      "previous_sha256": "e4466b5442fac5e89a9609e4bfe674a410210c992c314788f4f3897310d54dc0",
+      "sha256": "26616810fd5f311ecf5e1c4f1a3d497a478c196efa3e3d35918b64310679937f",
+      "removed_template_images": [
+        "/images/posts/2025/azc-254-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-255",
+      "file": "src/content/posts/en/investigate-slow-disk-access-in-a-linux-vm.md",
+      "previous_sha256": "3e67629c7dcdf7f4b98eed72e3abd290990555e2b70a10ab243dfbab60a45c13",
+      "sha256": "d3832e3107a8a6cc572a24d83b93c1fc548e338b221c4c47c6c619d3725b1c98",
+      "removed_template_images": [
+        "/images/posts/2025/azc-255-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-256",
+      "file": "src/content/posts/en/assign-owners-to-cloud-security-recommendations.md",
+      "previous_sha256": "0426e0a4b5d51a7ed83d15bb73d2dfe55ea7ee3909999fb573bfcf7a9fb3e262",
+      "sha256": "d06379d580eb4fd18457e4a34e3d8f0fd3c82bfcb230a46c9122e5a41413a7a0",
+      "removed_template_images": [
+        "/images/posts/2025/azc-256-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-257",
+      "file": "src/content/posts/en/use-conditional-access-authentication-strengths-carefully.md",
+      "previous_sha256": "eeab03a74c8dcfee7fba21de4482090c24ee242896e39b0946c0951814138215",
+      "sha256": "0307bd9ace2fa84b41f9811609ccbdebcaac7a116a6b78e4d5d4c1df0973c946",
+      "removed_template_images": [
+        "/images/posts/2025/azc-257-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-258",
+      "file": "src/content/posts/en/ask-focused-questions-about-an-identity-related-incident.md",
+      "previous_sha256": "0dbe9aae371e3c06d13605559faab4f0dca61cb94e06c16a42897d229c106e8a",
+      "sha256": "6b6fc8977075585650edd2e8e27a97f36f351c40be613968c55778910758fdb9",
+      "removed_template_images": [
+        "/images/posts/2025/azc-258-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-259",
+      "file": "src/content/posts/en/use-advanced-hunting-to-test-a-defender-xdr-hypothesis.md",
+      "previous_sha256": "066dfa9c056bf88a7ebb0ea0c23af4bf913700e5234a30ad362211c74d1f9d8f",
+      "sha256": "46f9eb073dc59a2875d0943d5f2dc62c28c9df467c1460e39f790d0deccdacac",
+      "removed_template_images": [
+        "/images/posts/2025/azc-259-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-260",
+      "file": "src/content/posts/en/plan-certificate-renewal-before-the-production-release.md",
+      "previous_sha256": "67930ab2a73115d696c6d095e284b9f77d20b9ab8ead4116a98f94a9da4929a1",
+      "sha256": "6e251fa47316ac81083a800dc823b2b69dcde77571af075ca712ac0b32356957",
+      "removed_template_images": [
+        "/images/posts/2025/azc-260-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-261",
+      "file": "src/content/posts/en/diagnose-a-vm-boot-problem-using-serial-console-evidence.md",
+      "previous_sha256": "e4573169a760099393de405e1048b0f76eb64df71dcb2a4552320138e0183176",
+      "sha256": "11ab22dde6123184e656f34f6f38b9c2a8816a0778ad2fb67fc87e9bb4059ea4",
+      "removed_template_images": [
+        "/images/posts/2025/azc-261-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-262",
+      "file": "src/content/posts/en/choose-a-placement-approach-for-tightly-coupled-compute-jobs.md",
+      "previous_sha256": "4c5e71ba9d48885f267d1ddf0ce5814a90e7b4b24f7bf3674352cf6bf880439b",
+      "sha256": "f78f1a9969df30e3a9addb4e84566b3b84fb1f454464310e285447c960c83c43",
+      "removed_template_images": [
+        "/images/posts/2026/azc-262-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-263",
+      "file": "src/content/posts/en/prepare-a-hybrid-server-patching-workflow.md",
+      "previous_sha256": "2b493cd2e3551086170f424f284851305d1ae82ae1b14f815875041716f64cd1",
+      "sha256": "c61674b27579749ce4a5fbf672339df1fdca20ff52f02edfb5d46015faad120b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-263-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-264",
+      "file": "src/content/posts/en/use-deployment-outputs-without-exposing-secrets.md",
+      "previous_sha256": "62563329a425f2ea07b08a83168511247a38186beba547b6c996d4c05359bcfc",
+      "sha256": "c1ae5407ef0b29bdd6a513751ffb3c955a977d4fa00aee7bd553480240c16fa9",
+      "removed_template_images": [
+        "/images/posts/2026/azc-264-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-265",
+      "file": "src/content/posts/en/compare-event-hubs-and-service-bus-for-an-ingestion-workload.md",
+      "previous_sha256": "6a7e5e2af5499141bf838de99f9f4eddf45e25ec4cb317f530539e49cf9bed47",
+      "sha256": "cd610647828b0d7dc30a912c682693ddc13c207f3bd73741726bb1ed0d71385b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-265-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-267",
+      "file": "src/content/posts/en/plan-permissions-for-an-operations-automation-identity.md",
+      "previous_sha256": "0b691116158ec50c0b74843af90fb96d8fb940d517ec58cd2fbc9cf413eecce5",
+      "sha256": "8bff2adb0fc5d06ecf12fed26eb49f4d2f473908bfa791be4de9dd0ff066bb5a",
+      "removed_template_images": [
+        "/images/posts/2026/azc-267-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-268",
+      "file": "src/content/posts/en/measure-storage-performance-without-confusing-capacity-and-throughput.md",
+      "previous_sha256": "fa02413ebdf8c35febb7c5010b138d98752b7c7a759eb8006d895694fddc9f3e",
+      "sha256": "7fa036167ceebcf6f2cd9d48baf49510d469b7ad0239d4132586c48c85fd1468",
+      "removed_template_images": [
+        "/images/posts/2026/azc-268-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-269",
+      "file": "src/content/posts/en/record-a-recovery-decision-before-an-infrastructure-change.md",
+      "previous_sha256": "be421b8d7e8acf7871d59f19e8e7b6429ce6a616e7d9d2c354944242c094a46d",
+      "sha256": "b0c3e294ccb5132608d7b86e96c850b07aac28e098d05d5806fb3c616a8bd5d6",
+      "removed_template_images": [
+        "/images/posts/2026/azc-269-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-270",
+      "file": "src/content/posts/en/use-shouldprocess-for-an-infrastructure-change-function.md",
+      "previous_sha256": "94ad837403085e7b0d3f0b691f8418e4be888ad71ddcba7745d1d3ff26de0789",
+      "sha256": "9a6e4627a872ef79a44b7e71e5d51ea41c40ee52ed5624cefddcc3daf51edff2",
+      "removed_template_images": [
+        "/images/posts/2026/azc-270-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-272",
+      "file": "src/content/posts/en/document-a-cluster-recovery-procedure-before-it-is-needed.md",
+      "previous_sha256": "85d5f1ffbcc552f65b3ccfc6544168556017e8e887d60c69dac832c0f9e90726",
+      "sha256": "5ee43a4ecff15d11430f9e639eb1d8cb4076b6a9cc71e15dbd970c67a30f286a",
+      "removed_template_images": [
+        "/images/posts/2026/azc-272-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-273",
+      "file": "src/content/posts/en/review-cpu-compatibility-before-moving-a-vm.md",
+      "previous_sha256": "9aacb4a3865e60e89a4babdda94cfc3e7fbbd2c612239921082093f0e3e05042",
+      "sha256": "72662f5d027758cf14a062392478f0b06705b9f62ac9cb71f0b48b19688eb815",
+      "removed_template_images": [
+        "/images/posts/2026/azc-273-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-274",
+      "file": "src/content/posts/en/plan-linux-guest-backup-around-application-consistency.md",
+      "previous_sha256": "05c0597b2340abecdf08033a3a15f7d064e5fd3024dfe18777367ed01f0a9de7",
+      "sha256": "071a1c85c7674b8177ea121f4b6ef6a2f0c55100ac24e8452a2e8a25e89b4558",
+      "removed_template_images": [
+        "/images/posts/2026/azc-274-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-275",
+      "file": "src/content/posts/en/review-the-regulatory-compliance-dashboard-in-defender-for-cloud.md",
+      "previous_sha256": "998b54ccdacf640864cabc53c56aa8857f9637752941b7e55b25fe476e2a4104",
+      "sha256": "b805fc944bad98223cb56324923352b2f4007d4d1f26bbe0080cbb4f94a3cdce",
+      "removed_template_images": [
+        "/images/posts/2026/azc-275-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-276",
+      "file": "src/content/posts/en/plan-identity-permissions-for-a-production-deployment-pipeline.md",
+      "previous_sha256": "175b46882898cdbc36ca4d77a0b4889bb0d13e6f6def35aa7d230c5934d004e9",
+      "sha256": "092904e1d03e217ba0f66963314529f287c3062b5cea3493d669ce9d39c526a7",
+      "removed_template_images": [
+        "/images/posts/2026/azc-276-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-277",
+      "file": "src/content/posts/en/review-access-boundaries-before-sharing-investigation-results.md",
+      "previous_sha256": "a61ba7e8b0f280d01f0373ec900599f64ebfda0e845b6af2e66fd21f8e1640c6",
+      "sha256": "d39a39693a392d0ad93de97167516fbebc5b1ee2dc914527f0d7ffa6ae309ea4",
+      "removed_template_images": [
+        "/images/posts/2026/azc-277-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-278",
+      "file": "src/content/posts/en/choose-a-detection-exclusion-or-a-rule-change.md",
+      "previous_sha256": "317fafd0a833fd63942f98653cf937e57ca6bee3b5bf4112097e4e670c27ca3b",
+      "sha256": "3d819482c6256d1c43cecdaf95b48aabc70935105a505ad1b39c7f40d0b22b2a",
+      "removed_template_images": [
+        "/images/posts/2026/azc-278-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-279",
+      "file": "src/content/posts/en/set-application-scaling-rules-around-measurable-demand.md",
+      "previous_sha256": "7f4a1780a7062ac5467a20455357d329f3eb4bbac131a4472434bd85e899de66",
+      "sha256": "0ffb68441e3c8eed1f07efd6a2577d7a650f81d4ffc3e49ed8357b3395871c1b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-279-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-280",
+      "file": "src/content/posts/en/choose-availability-zones-during-the-initial-vm-design.md",
+      "previous_sha256": "dcce6476c87d68e412126244918337d527b30bba6df14aef9148c9798501d04c",
+      "sha256": "93db20c05731bba1b1a058218c57284b3bbc0cd0a884cb098bb2f24705f015ab",
+      "removed_template_images": [
+        "/images/posts/2026/azc-280-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-281",
+      "file": "src/content/posts/en/monitor-an-hpc-run-without-confusing-observations-and-benchmarks.md",
+      "previous_sha256": "18be06301a97068de8a94a42dc8c18f7ced56c37239ca95c89e58dba93e94b02",
+      "sha256": "67f0f614384ff7e7ca60db077a9907255d0b52fe8d95f76b80211e0501a05992",
+      "removed_template_images": [
+        "/images/posts/2026/azc-281-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-282",
+      "file": "src/content/posts/en/review-identity-and-dns-dependencies-before-a-migration.md",
+      "previous_sha256": "35fcb0c1e00e5b3e738b04413ede807364b3f7da5c00815d40410948e6be586c",
+      "sha256": "3ae6dd9000e8abfec2141e889f661bf24e025bba9cf7d76d2b108d463e95af39",
+      "removed_template_images": [
+        "/images/posts/2026/azc-282-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-283",
+      "file": "src/content/posts/en/plan-ownership-and-deletion-behaviour-for-an-infrastructure-stack.md",
+      "previous_sha256": "53f2d49e76b4afb4dd887953f56e1ef14142144c2d4f998a6343fab768f61142",
+      "sha256": "f4f687ec24c00c91aa4128441bb125936fc0c3347ce82aac54b8b0333f9cd36a",
+      "removed_template_images": [
+        "/images/posts/2026/azc-283-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-284",
+      "file": "src/content/posts/en/add-correlation-identifiers-across-an-integration-workflow.md",
+      "previous_sha256": "1054318c01e38505dc82c52cd23518b1c89cd63dc6bbbaaadccfa45fb722ad58",
+      "sha256": "92bffc16eca92e51e2fba12e61e8d70aa8b6c3b352a134bc283bd5d350b623e8",
+      "removed_template_images": [
+        "/images/posts/2026/azc-284-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-285",
+      "file": "src/content/posts/en/use-dns-private-resolver-for-hybrid-name-resolution.md",
+      "previous_sha256": "6d37c93c6c8fc3f897b80f7366f944ebf84c32051ad1ba70adda43a453583781",
+      "sha256": "92861c4420c93bfe3bfdbb1f8178ea430171ee5c76d0c06e420c04371835a096",
+      "removed_template_images": [
+        "/images/posts/2026/azc-285-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-286",
+      "file": "src/content/posts/en/check-a-failed-runbook-using-its-job-evidence.md",
+      "previous_sha256": "aa93e2ca27e762248823a7f82929c05ee52f02238feb0d28f53d54590dc34639",
+      "sha256": "40e904f904df8be1f9daf8bb666402cd6bc36962f4f403bfadcb465794069f2a",
+      "removed_template_images": [
+        "/images/posts/2026/azc-286-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-287",
+      "file": "src/content/posts/en/protect-an-application-against-accidental-blob-deletion.md",
+      "previous_sha256": "deaa7c33e043ea9fc790e851a2fa3f3bfa61029fabac0a34eee11f0c4cabd988",
+      "sha256": "db0f510dbdd4df4b0a1e74300723b64bf95a38d6413c02400f113c51ed4d8ef7",
+      "removed_template_images": [
+        "/images/posts/2026/azc-287-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-288",
+      "file": "src/content/posts/en/plan-regional-recovery-without-overlooking-identity-and-dns.md",
+      "previous_sha256": "8757876a4b0561d52af110368ad720cbf93f5d66796402f7a6e5860c5189d0ce",
+      "sha256": "79cf1c437f75362e02cbd7ab1d678efe72697e5be7c85170c221ddc61e105193",
+      "removed_template_images": [
+        "/images/posts/2026/azc-288-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-289",
+      "file": "src/content/posts/en/powershell-7-6-lts-prepare-an-automation-compatibility-check.md",
+      "previous_sha256": "1db21f4a0b92becd4702ebc00ab207a12b6920b418556dee309f0510493c34ee",
+      "sha256": "2583c647b3e82b98f3d284f375616361ad807aa726f5976c8278529347586d4a",
+      "removed_template_images": [
+        "/images/posts/2026/azc-289-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-290",
+      "file": "src/content/posts/en/pin-module-versions-for-a-repeatable-automation-job.md",
+      "previous_sha256": "4b94f7cf13bb726ed93e545d0840c31712f6253d775c2a67ea2d51632f1ca378",
+      "sha256": "e40f89745c86b23c690f04f334c8da1ec43999a80cde9e87e6ff8605243142f8",
+      "removed_template_images": [
+        "/images/posts/2026/azc-290-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-291",
+      "file": "src/content/posts/en/review-certificate-expiry-across-windows-servers.md",
+      "previous_sha256": "45c65689f75d2e324055fa428e271d332046ade233da1cb516d70c7b5e6e938a",
+      "sha256": "03be38f542acb4fdea169cf109c89842a57426a1dd2a7eb96130b7240a5109f6",
+      "removed_template_images": [
+        "/images/posts/2026/azc-291-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-292",
+      "file": "src/content/posts/en/investigate-a-live-migration-that-stalls-during-maintenance.md",
+      "previous_sha256": "4a10380eaa40173267d964ab429e7d5cf54810403a9c132bc05e7febc5878db9",
+      "sha256": "72bf375207bd24fc32771737471d998bb327ed6ea89f94b3ac4b6000ac48b931",
+      "removed_template_images": [
+        "/images/posts/2026/azc-292-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-293",
+      "file": "src/content/posts/en/use-powershell-direct-for-windows-guest-administration.md",
+      "previous_sha256": "fb40114cd9d2d318a344573d867a571cef60bf71cc5041622f101dc3bc70210f",
+      "sha256": "f09f184e5502828ab43259c54afe2645469b09120d0f5a6389721212278fecaf",
+      "removed_template_images": [
+        "/images/posts/2026/azc-293-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-294",
+      "file": "src/content/posts/en/review-linux-guest-shutdown-during-host-maintenance.md",
+      "previous_sha256": "9c9ef204fc2f08452ed7bfee29db2646f8801e4a88b84ace343a217689ac23d1",
+      "sha256": "1122c933b7f414c3b8f92e1df207015acbad82e407cc7fbb041cdb7acfed1dc3",
+      "removed_template_images": [
+        "/images/posts/2026/azc-294-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-295",
+      "file": "src/content/posts/en/set-useful-boundaries-for-security-exemptions.md",
+      "previous_sha256": "5a4a866d32616f480bc0129f8c3491dae170e08b4dcbae02d2616631d5035eae",
+      "sha256": "6dd4b73fee60c689fcbe62d99c136405dfd1df548c0cc384cb118c9df9329603",
+      "removed_template_images": [
+        "/images/posts/2026/azc-295-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-296",
+      "file": "src/content/posts/en/review-application-consent-and-service-principal-permissions.md",
+      "previous_sha256": "36d16860ed7bf13a24d7d54913cd67c607cf9692fdf5411d9cd3cf222c05723f",
+      "sha256": "d8305d5b581a4664cd801c3990f82cd8ac3cf656ba1e4fe4b7ee220171c91c00",
+      "removed_template_images": [
+        "/images/posts/2026/azc-296-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-297",
+      "file": "src/content/posts/en/keep-an-analyst-review-step-in-a-repeatable-promptbook.md",
+      "previous_sha256": "0d21e788361ad00e68993ea0f900f534ed3d3f12469dd0777ad556d9aa7450c8",
+      "sha256": "dc58684aa94c314aef38b293becff84832cd6ae1983538184ed49b6132fc76ee",
+      "removed_template_images": [
+        "/images/posts/2026/azc-297-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-298",
+      "file": "src/content/posts/en/build-an-incident-triage-workbook-for-the-operations-team.md",
+      "previous_sha256": "ff9aaf8183008c9beee00147686f5e56607eefc35b44ad1954642ed1986661c1",
+      "sha256": "049752d97e817aff4f261b4dd785f624dce9736b1df8182b129cb75069cf8960",
+      "removed_template_images": [
+        "/images/posts/2026/azc-298-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-299",
+      "file": "src/content/posts/en/trace-a-request-through-application-and-platform-logs.md",
+      "previous_sha256": "046c899d76607cc947a88d11753810864c873b160bc7175b5f0b823789d53e12",
+      "sha256": "fce0aedb404b5f7e2958c30f099e5510754b4b8d85bb7889b01d15c85410474b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-299-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-300",
+      "file": "src/content/posts/en/separate-compute-image-versions-from-application-releases.md",
+      "previous_sha256": "798673d2ae1c9abc54d38ded381f1b26fdaaa5a7cadb603a8950527931336b9b",
+      "sha256": "01e02b21e8f8b4134ea81cbead60e16c21f13980ba83fff8e8e09385b55a9301",
+      "removed_template_images": [
+        "/images/posts/2026/azc-300-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-301",
+      "file": "src/content/posts/en/investigate-failed-node-startup-in-an-azure-batch-pool.md",
+      "previous_sha256": "844e10cb24c9eea9a487157d2c0e2eede8df47249026ad9d5730c84b3a1f5384",
+      "sha256": "0e3a6c3e83973f8a9bf9fd0063b69c9825b3d3762c8b7f1ddf154f06672230e7",
+      "removed_template_images": [
+        "/images/posts/2026/azc-301-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-302",
+      "file": "src/content/posts/en/validate-a-migrated-server-before-closing-the-change.md",
+      "previous_sha256": "91651e25d4cf32bad3ae7c82cc1897a6ee7e6ee06a52d84a123809c0472d7664",
+      "sha256": "2bec7f02ef3fc9f36dc7206926cf6f7117eb10c260cb3b865334eb0bfa3aa646",
+      "removed_template_images": [
+        "/images/posts/2026/azc-302-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-303",
+      "file": "src/content/posts/en/pin-provider-and-module-versions-in-an-azure-deployment.md",
+      "previous_sha256": "676901a8d421a5af9cb0851c2bbabcfbee85039b2e81c3a4aa53994e2e7a49e7",
+      "sha256": "0cf3adbd4a09490be3273774126511808067cb992eb722edc25ea4e5f3f7c84c",
+      "removed_template_images": [
+        "/images/posts/2026/azc-303-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-304",
+      "file": "src/content/posts/en/investigate-a-workflow-trigger-that-fires-unexpectedly.md",
+      "previous_sha256": "71bd23f667cc583f8474c3ef15fb87ec34be9c97aec5f48c76a8bf16abe6f2ca",
+      "sha256": "a181ce30e9ac9e83bed3f6edee346d6abbb2bfb321f8e50af5752ff5018cca1e",
+      "removed_template_images": [
+        "/images/posts/2026/azc-304-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-305",
+      "file": "src/content/posts/en/investigate-a-private-endpoint-that-resolves-to-a-public-address.md",
+      "previous_sha256": "4539442c02b639efbded13aba0c7f6fc4570dc9270333cb0be54888b84bd23b1",
+      "sha256": "f2d96593c991947f56d980daefcba352d361dbd30d386fa136be06c219ed90ca",
+      "removed_template_images": [
+        "/images/posts/2026/azc-305-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-306",
+      "file": "src/content/posts/en/connect-a-change-record-to-a-useful-monitoring-check.md",
+      "previous_sha256": "18455e7646b814e4523eecaecf3111d81067651e87848b649febc0c123609129",
+      "sha256": "a31be4c44b535dbc98bb7a6f4636581c06f2cbd2209b1346126647683e26fe6b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-306-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-307",
+      "file": "src/content/posts/en/investigate-throttling-before-changing-a-storage-account-design.md",
+      "previous_sha256": "cc32fef338338656d3ff22e8fd265c90df9298730bc712d38f2c6fea62de90cc",
+      "sha256": "2f4a9e0ddb7ec3beb4d68568bdaa0e925dbbd5b3bf0e3ff1f263cf491fcf076e",
+      "removed_template_images": [
+        "/images/posts/2026/azc-307-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-308",
+      "file": "src/content/posts/en/check-hidden-dependencies-after-an-application-failover.md",
+      "previous_sha256": "0eb7d2817d1a7d2bedd0f82721baebfea14fa0f28891acede7dd350ce02b56ce",
+      "sha256": "7ba66f8b3a2f9005b01caf1ebc68a295f019847366d835b9acf9e1671cabd092",
+      "removed_template_images": [
+        "/images/posts/2026/azc-308-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-309",
+      "file": "src/content/posts/en/investigate-a-scheduled-script-that-works-interactively.md",
+      "previous_sha256": "b32dbfdafea95e818d8dd25d4b226716803a093ae26b994860e408fcefe153ad",
+      "sha256": "eac36138a5fc376c2d17009f3b098ca8540e1afdf6bb08d2cc6860c90a27b73f",
+      "removed_template_images": [
+        "/images/posts/2026/azc-309-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-310",
+      "file": "src/content/posts/en/investigate-a-server-update-that-repeatedly-fails.md",
+      "previous_sha256": "f1f106ae8608e7a0308285749d10816c5fb0c23bb14409dcd0875eafb6ff628b",
+      "sha256": "1c7f7a91bea2675dfee8cfaf40b56c95873cc3459cc2fbde5d4562f87f208f7e",
+      "removed_template_images": [
+        "/images/posts/2026/azc-310-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-311",
+      "file": "src/content/posts/en/review-split-brain-risk-in-a-stretched-infrastructure-design.md",
+      "previous_sha256": "61cb7581ca3ea13e16660d173b053be253ab212b98195d90d1f9f4566adca4ae",
+      "sha256": "12beca62cc4727e7ecbc3b890ea927c95067327ae2d1e32305193d4ee5aabf05",
+      "removed_template_images": [
+        "/images/posts/2026/azc-311-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-312",
+      "file": "src/content/posts/en/review-the-revised-cost-assumptions-for-arc-enabled-windows-server-hotpatch.md",
+      "previous_sha256": "1116fa5b82f085a58b858d9638c67f554ef0dae6aa42a8dfe0388b2d221dcc45",
+      "sha256": "e8552c77b838fae6131da45fd89d93e2b06046ed8a9cd130e4bbf3be1e42075e",
+      "removed_template_images": [
+        "/images/posts/2026/azc-312-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-314",
+      "file": "src/content/posts/en/understand-checkpoints-for-a-linux-application.md",
+      "previous_sha256": "769be40ff2d96c6bf89184019d6eda6d6504f4a2fcbbe7f4e36a293619995f52",
+      "sha256": "10fc2f64dc20d8fcdac23f49e1101367ec9ac3ab8b99a1a8ef0f5421d2d92879",
+      "removed_template_images": [
+        "/images/posts/2026/azc-314-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-316",
+      "file": "src/content/posts/en/investigate-an-unexpected-conditional-access-result.md",
+      "previous_sha256": "3656d3f4dd4e16d1b2abe57bbbdaa54fb42025ab1c2bfe87acaff251e0053122",
+      "sha256": "01329450bee165ca593267f3a2360923c02b23087af208be7479c8dac523f954",
+      "removed_template_images": [
+        "/images/posts/2026/azc-316-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-317",
+      "file": "src/content/posts/en/check-permissions-when-a-security-plugin-cannot-retrieve-data.md",
+      "previous_sha256": "6be8f626d5aee502bdc69d7de14739cf0fc8fac8a4ea1182bff61aa2b238da1d",
+      "sha256": "195dc27bbb555b4a6a5b89e4953ad39dbdc0d348ce6b69ea6773272e779a77bc",
+      "removed_template_images": [
+        "/images/posts/2026/azc-317-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-318",
+      "file": "src/content/posts/en/check-entity-mapping-when-related-alerts-remain-separate.md",
+      "previous_sha256": "a2a553aa94dd31a2d382dddd3be2040697da9070e9f35644c3414e948ee7d220",
+      "sha256": "97a8d9bf58c594465d5b479310a3172d58082e46e23a5997926ea3cee580cb3d",
+      "removed_template_images": [
+        "/images/posts/2026/azc-318-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-319",
+      "file": "src/content/posts/en/restrict-access-to-an-application-deployment-endpoint.md",
+      "previous_sha256": "677da5c601f409ca02474dcbc9ba686de37ec73961f5501d988109b09d5e95d4",
+      "sha256": "64e6f5944503faf02e9e1492880e798dc19f95c569012941a9f6cfc2812511a7",
+      "removed_template_images": [
+        "/images/posts/2026/azc-319-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-320",
+      "file": "src/content/posts/en/move-configuration-out-of-a-manually-maintained-vm.md",
+      "previous_sha256": "85bc992d81747fe0268394daad876cfe2b3b0964cd93ea4da79aec488bd10d7f",
+      "sha256": "4d01eaaf39808df56a6648de33a23dd2651a322710dea615acdad51fc8b7901d",
+      "removed_template_images": [
+        "/images/posts/2026/azc-320-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-321",
+      "file": "src/content/posts/en/plan-checkpoint-and-restart-behaviour-for-long-running-jobs.md",
+      "previous_sha256": "b6a0d50f49ab11aaedfe779c473e6c96703242534d17ac5585bf12e9a1a83a6c",
+      "sha256": "84133da03222670cd41734a2a994478b11626a8f9924931b6e5804985c90beef",
+      "removed_template_images": [
+        "/images/posts/2026/azc-321-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-322",
+      "file": "src/content/posts/en/separate-an-infrastructure-move-from-application-modernisation.md",
+      "previous_sha256": "1b58b98de8da51ad70958bb0edd8eca91d5192ae48cfb1cd37c31b1a608893c6",
+      "sha256": "df107c71f02c203e022f15516ec255a9bae5a41219a0e5767cb5b643a0fe5c38",
+      "removed_template_images": [
+        "/images/posts/2026/azc-322-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-323",
+      "file": "src/content/posts/en/review-infrastructure-changes-as-an-application-dependency.md",
+      "previous_sha256": "bd8fbc1d329f4fa11daab4895bf038dc600c959fdacdcfe1ffed804846e78294",
+      "sha256": "7a1a09135368430ec3fb641aea68588e02bc769af8bdf7c9166e3073dab18237",
+      "removed_template_images": [
+        "/images/posts/2026/azc-323-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-324",
+      "file": "src/content/posts/en/use-api-management-policies-for-a-controlled-backend-change.md",
+      "previous_sha256": "be3f2b046be68ba19657ffadc23b4a6273f9fb247e9d36b9eb168f7ae19faabc",
+      "sha256": "acd81d8308fa3a7521684497e63327d226244e9cfaf3f928031e24c9e8ae2c06",
+      "removed_template_images": [
+        "/images/posts/2026/azc-324-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-325",
+      "file": "src/content/posts/en/choose-nat-gateway-when-stable-outbound-connectivity-matters.md",
+      "previous_sha256": "0926d5284e2dea6893059e8f0ad3892a9e4fb4947b655fe5f6a99cccdfc9b2f0",
+      "sha256": "70b20452d6587eec82a0c8a7d4fcbe9cb28db34c0afbee4c0eccdc8fdd614ecc",
+      "removed_template_images": [
+        "/images/posts/2026/azc-325-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-326",
+      "file": "src/content/posts/en/design-a-dashboard-with-clear-service-ownership.md",
+      "previous_sha256": "c3c52410a630c68f26512d5b23cd00227d7eb78e6fb1f6e4cfc6541eb2e41540",
+      "sha256": "3d17d597ea499db5c31ee48ca7a13cf23082d5a4d5e4fcf15697fe68bd437215",
+      "removed_template_images": [
+        "/images/posts/2026/azc-326-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-327",
+      "file": "src/content/posts/en/choose-managed-disks-around-workload-i-o-patterns.md",
+      "previous_sha256": "619dfd0ea581aa861ccf53230f96329ca13b70d40410646ea4b8aed7d47ff3a2",
+      "sha256": "7409bd7a629c2ba071ac60146c17f41c10d87921507ea5d9204578adec750471",
+      "removed_template_images": [
+        "/images/posts/2026/azc-327-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-329",
+      "file": "src/content/posts/en/build-an-automation-script-that-can-resume-after-a-failure.md",
+      "previous_sha256": "d7e7dacaeeccfde260cbc16c7073bc3aae3b9f07b6fc93843571951336f7cc5e",
+      "sha256": "d4af7b636f69b6e0e84e16b4d938923d4b7b2c7acb046b631314a3f76698e1f3",
+      "removed_template_images": [
+        "/images/posts/2026/azc-329-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-330",
+      "file": "src/content/posts/en/separate-local-administration-from-domain-wide-privileges.md",
+      "previous_sha256": "9c8a09f7d6524c1c86ec9f045725a36acec55e719153b3f3b258e3c679e2e308",
+      "sha256": "7a064eb5e18911c27992d83f32f9974ea36de2599ea95db41b01ca08fbeb9360",
+      "removed_template_images": [
+        "/images/posts/2026/azc-330-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-331",
+      "file": "src/content/posts/en/validate-a-cluster-after-a-network-or-storage-change.md",
+      "previous_sha256": "de6618563643447c52f7dd1168e75f1641ad0b866097ef0563e4d3c2c6960099",
+      "sha256": "d3d3b9cf78eea8ea5636b12f62798f4b65d60d0b115e4cb0df49a4909f518640",
+      "removed_template_images": [
+        "/images/posts/2026/azc-331-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-332",
+      "file": "src/content/posts/en/review-integration-service-health-across-a-hyper-v-host.md",
+      "previous_sha256": "24608381f1e4724db4786ce272e3b4509bcfacef250b7e5f358cf3603116d72a",
+      "sha256": "b0a777ebd6c7371987995476f1dcd04aeb3d5228e0464910007a81b0f9ee2c84",
+      "removed_template_images": [
+        "/images/posts/2026/azc-332-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-333",
+      "file": "src/content/posts/en/create-a-repeatable-ubuntu-guest-configuration.md",
+      "previous_sha256": "9656244ee146907a5756f9176d0158f046db2c9720d2eb2826c0d150711f4fbf",
+      "sha256": "586f9317832789fe1edf5d0689b35c882046f4172156ca81ba63842d723f6327",
+      "removed_template_images": [
+        "/images/posts/2026/azc-333-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-334",
+      "file": "src/content/posts/en/build-a-security-review-into-a-new-azure-workload.md",
+      "previous_sha256": "c52701331b17cc498b39e7f2da07e1bbfbfd225dcb498a9666342b971067073c",
+      "sha256": "07661e7cd56574c3b91189c01eb13800265c284d3a83d2fa6b82cfbd9b1c3814",
+      "removed_template_images": [
+        "/images/posts/2026/azc-334-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-335",
+      "file": "src/content/posts/en/use-group-based-administration-without-hiding-excessive-access.md",
+      "previous_sha256": "3064d6ea26beb5aed3a4b2b3c62a92026bfcf3aba9d8cc0ac515941b59f88a27",
+      "sha256": "80bdb4164adf425a0df7a126116faec41172baaaa791b7b21b55270d3ac7ee01",
+      "removed_template_images": [
+        "/images/posts/2026/azc-335-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-336",
+      "file": "src/content/posts/en/compare-standalone-and-embedded-investigation-workflows.md",
+      "previous_sha256": "9f16920e87397a4a915a7736bc0efc33c23264af1d959448519bccbe36893006",
+      "sha256": "e5dfa49cacb33dbbdd2d3722b852fc64ef154de150006dbce3e5d29627f15da9",
+      "removed_template_images": [
+        "/images/posts/2026/azc-336-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-337",
+      "file": "src/content/posts/en/review-connector-health-and-ingestion-changes-together.md",
+      "previous_sha256": "922bfcc5c69c26ea8fc68b02b7c30c519e36ef57d0996bffd37ab6abf1bd2b64",
+      "sha256": "d8362d5f824675ac2113e29553b84c53870f9bc46130adb9d83387c3b6059405",
+      "removed_template_images": [
+        "/images/posts/2026/azc-337-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-338",
+      "file": "src/content/posts/en/plan-a-rollback-that-includes-application-configuration.md",
+      "previous_sha256": "8546111ccca48982279218e90bde2e416f940ba0a1a2c3033ad292f495156818",
+      "sha256": "ade4be5c9d81b4b1245ddcb00729700ce7e4276c53c294cbf4014000333f84d9",
+      "removed_template_images": [
+        "/images/posts/2026/azc-338-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-339",
+      "file": "src/content/posts/en/investigate-disk-latency-before-resizing-a-virtual-machine.md",
+      "previous_sha256": "27390e735af79180e59173db61d9d58e4ea3e4fb4c768d6a3e61714344b63577",
+      "sha256": "1111bfaa935995def5dcd43a692896d6bbfd197763de09416b031884479b9399",
+      "removed_template_images": [
+        "/images/posts/2026/azc-339-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-340",
+      "file": "src/content/posts/en/separate-job-input-data-from-temporary-compute-storage.md",
+      "previous_sha256": "af3bdada5d8924f2089b9486c63625cedbc19c7c95f4896c53bbf36f344b086d",
+      "sha256": "dae6e0fbdf974a90604f684c407b6417b771b93e6ee3f328bdcf8cc7045650f6",
+      "removed_template_images": [
+        "/images/posts/2026/azc-340-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-341",
+      "file": "src/content/posts/en/investigate-an-assessment-with-incomplete-server-data.md",
+      "previous_sha256": "32db0016dfcfb3720da613186d1d603965e761dfe6efcf8f06407e625e8afc92",
+      "sha256": "e513a57a103e6cd8bc0c5f557df1a366ac7e64ec875644d61a47bd8fd03dc35b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-341-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-343",
+      "file": "src/content/posts/en/plan-an-integration-that-can-recover-after-an-outage.md",
+      "previous_sha256": "d2e6f829b54f2550eedbac2542503fc10b8cbde73c1ffe30830aba9fc9e9d63c",
+      "sha256": "d8ba69dab00be00fbf0530e8ea1be3b40aef9542ab611d338dfb556ec0d293e9",
+      "removed_template_images": [
+        "/images/posts/2026/azc-343-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-345",
+      "file": "src/content/posts/en/export-a-small-azure-resource-inventory-with-powershell.md",
+      "previous_sha256": "e333ac14c84ce79650b8f192a490fdcb55ca7c99b05680eaaaf08b69550324a0",
+      "sha256": "c31b2ec670e0eb988d7c20c5571b7dd0d1a5b15792c8a795f79090ffc13d16cb",
+      "removed_template_images": [
+        "/images/posts/2026/azc-345-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-346",
+      "file": "src/content/posts/en/review-storage-access-after-rotating-an-application-identity.md",
+      "previous_sha256": "08183b45dfec6a7aab98e0ef6abd13d80096904da10337effe1cafc96a8af2c5",
+      "sha256": "e107305dda4fa373fc66847326d2248c8e248518f632ef464a104da85e6393df",
+      "removed_template_images": [
+        "/images/posts/2026/azc-346-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-347",
+      "file": "src/content/posts/en/use-recovery-evidence-to-refine-an-availability-target.md",
+      "previous_sha256": "1edaff8af3427c895991b18924dddca3008cf3a3ae1da21f52361b3c2aff66f2",
+      "sha256": "cc4c5f7aeb558f372b04bf6da3acb71498a464d5ba45dbc58f662bb3627c9cee",
+      "removed_template_images": [
+        "/images/posts/2026/azc-347-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-348",
+      "file": "src/content/posts/en/separate-configuration-execution-and-reporting-in-powershell.md",
+      "previous_sha256": "d47415d99fea02e3a062b30637e2f1db0271b7b80fc440afc3a866a265976df7",
+      "sha256": "ebb1a37e108f8797f19ee1d97e42867d9bb628fda301a614e486e62f69c3cfc0",
+      "removed_template_images": [
+        "/images/posts/2026/azc-348-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-349",
+      "file": "src/content/posts/en/create-a-recovery-checklist-for-a-windows-infrastructure-server.md",
+      "previous_sha256": "523aba63a5cb3870ab22af996510ff5299d938f8bcc6ca0420c0c8f86ce885e7",
+      "sha256": "5485cfdcc1d90a688d25bbec1fb76e61797bdb30a7b1114ad0c73c8b188e0cec",
+      "removed_template_images": [
+        "/images/posts/2026/azc-349-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-350",
+      "file": "src/content/posts/en/plan-maintenance-with-only-one-spare-node.md",
+      "previous_sha256": "07651bb86435698de46e87e4ddaff3a68ad90deb63f20eae8406ddc2a30045e9",
+      "sha256": "b59a92fc074d65c0756ff0d01ee4779a25c974d734f7f589dd36dcf04c3fc79b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-350-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-351",
+      "file": "src/content/posts/en/plan-backup-coverage-for-a-hyper-v-workload.md",
+      "previous_sha256": "97ce316938f7a70e3846827bec70d47eb140df69978d0d5e69fd4a50a71a7c61",
+      "sha256": "65b326991fe9d7d6d906edd28f8511da2f4e4e083715cdb4d69007787f5fdd53",
+      "removed_template_images": [
+        "/images/posts/2026/azc-351-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-352",
+      "file": "src/content/posts/en/check-kernel-changes-after-a-linux-guest-update.md",
+      "previous_sha256": "96a7bb366fc7b6207c7738838f6ff38918d31ba4b7877045e7ca76e16892f113",
+      "sha256": "2dec3ee3e54d5d471c6abbb118074dab21265765a9dfc99632c52421b3527758",
+      "removed_template_images": [
+        "/images/posts/2026/azc-352-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-353",
+      "file": "src/content/posts/en/find-gaps-between-enabled-defender-plans-and-protected-resources.md",
+      "previous_sha256": "e95d86567eff00ac2bcad5f1a775359b290767755ccba5d3f5d3a7a733e71e91",
+      "sha256": "c2e31197420186fe5253aa9da78cbab63b43774f775fdcf5c9b782479f179f0f",
+      "removed_template_images": [
+        "/images/posts/2026/azc-353-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-354",
+      "file": "src/content/posts/en/build-a-repeatable-privileged-access-review.md",
+      "previous_sha256": "fa131be85716a33e747e681b8e647ade40b86cf3c683ff214c3440cfed9ef7a5",
+      "sha256": "ce9c4cec76d8009fe3905e5d67472ef13f2b7016c702156a03db702cba667d38",
+      "removed_template_images": [
+        "/images/posts/2026/azc-354-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-355",
+      "file": "src/content/posts/en/document-the-evidence-behind-a-generated-incident-timeline.md",
+      "previous_sha256": "1daa77bed11770d6227af2426c47f08f5473cbc98579b4574abeeed047a849c9",
+      "sha256": "b234ca5d5859024aeef37aafe10d469cef242f7368ced29725edc37e2acfa6bc",
+      "removed_template_images": [
+        "/images/posts/2026/azc-355-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-356",
+      "file": "src/content/posts/en/plan-access-separation-between-security-operations-teams.md",
+      "previous_sha256": "77f5c478233af59fe134055198d297d0af5d809081b50d49ef53fd12e6d4b7f1",
+      "sha256": "a7e20f6fda6b14196df3ae0e05e1304d6a950fc1d98c4deb11ff0415f1323096",
+      "removed_template_images": [
+        "/images/posts/2026/azc-356-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-357",
+      "file": "src/content/posts/en/separate-staging-and-production-identities-for-a-paas-application.md",
+      "previous_sha256": "398dfec2d5493387a9dc6b7892d6c84877dfd8e2e4f80062d8955a67d09177c0",
+      "sha256": "27973ae50baac2cc308b7dbeb052eecb4bb041abb678ba56325c4066e98fb0af",
+      "removed_template_images": [
+        "/images/posts/2026/azc-357-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-358",
+      "file": "src/content/posts/en/plan-vm-maintenance-around-application-recovery-requirements.md",
+      "previous_sha256": "70bf42db32e0da7b3d09f82826ca9220faf34ee4506df723c727f5aefbe6b51b",
+      "sha256": "f5bf7636ea22e60460231a0fa7999c52049cb4fe5e7407d4780cf23842407fc4",
+      "removed_template_images": [
+        "/images/posts/2026/azc-358-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-360",
+      "file": "src/content/posts/en/build-a-migration-handover-the-operations-team-can-use.md",
+      "previous_sha256": "33a4919839e1b13af6d69f0cc48912838058dc2144f7ad3ee15fe12d76a78e32",
+      "sha256": "3f8ed7c88b19661825d4235d7613e3b02ad0aecf62d20abf76d5ba1ca08d0397",
+      "removed_template_images": [
+        "/images/posts/2026/azc-360-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-361",
+      "file": "src/content/posts/en/resolve-a-terraform-state-lock-without-losing-deployment-history.md",
+      "previous_sha256": "2e8b2c6d7908ae2c22b2e516a89fcbd0dd89bba61c2229d912b341f0d86eabf8",
+      "sha256": "dfa23f1140492725ddaaef8282479be033143bb7c3c6f8cad479538bb2c24c60",
+      "removed_template_images": [
+        "/images/posts/2026/azc-361-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-362",
+      "file": "src/content/posts/en/document-and-test-manual-replay-of-failed-messages.md",
+      "previous_sha256": "a7c91a60ca4c2599e318a22024fff6a19baf4dfacc7d63fcc0f66ea4b21e3a63",
+      "sha256": "d39c9f353ad065d841256edd64e0495d776fc5bd882c5911992c8b283d32aed6",
+      "removed_template_images": [
+        "/images/posts/2026/azc-362-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-363",
+      "file": "src/content/posts/en/review-network-boundaries-before-connecting-another-environment.md",
+      "previous_sha256": "33697956e01f26807613cd0f4bfafd5f9df3d0f4ad56e5b2a02a212dbe176e92",
+      "sha256": "2c8f0b6279726e2286c0d7b350b79d2ddd5a7d14b67c5a75c046c61cb8f2517e",
+      "removed_template_images": [
+        "/images/posts/2026/azc-363-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-364",
+      "file": "src/content/posts/en/investigate-a-policy-remediation-task-that-did-not-run.md",
+      "previous_sha256": "b55fb652f0dfd3c6394c40bb1e554535bf6279af8b38947deb9141dfcbbfb4d5",
+      "sha256": "9056e5acccf376a49a63e10c98186b2397df9ac5d507c0836ea9737fb847e08b",
+      "removed_template_images": [
+        "/images/posts/2026/azc-364-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-365",
+      "file": "src/content/posts/en/plan-a-storage-recovery-exercise-with-a-verifiable-outcome.md",
+      "previous_sha256": "7fdc7f65cccbd55b09d8271302898b31cd81f6323c93fb48efab24e829788b1d",
+      "sha256": "b9a9ab8e9c59eebed38c550de0145005035a384e47518d94a2e4bcfe99b6fdfc",
+      "removed_template_images": [
+        "/images/posts/2026/azc-365-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    },
+    {
+      "id": "AZC-366",
+      "file": "src/content/posts/en/create-a-practical-workload-readiness-checklist.md",
+      "previous_sha256": "973ea74faef8484458ef794775c7e40238a4729607bf5d8fa09d16697a1e5ffb",
+      "sha256": "debbf6809dffb44d00a07ac3dad04d7e30836255e0726cac7d482c8a28b2823f",
+      "removed_template_images": [
+        "/images/posts/2026/azc-366-checkpoints.svg"
+      ],
+      "technical_review": "image-only revision"
+    }
+  ],
+  "new_assets": [
+    {
+      "path": "/images/posts/2024/azc-106-terraform-state-lock.png",
+      "alt": "Terraform state blob properties showing Locked lease status and Leased lease state.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-dev-docs/9e07eca7d51d9186a8e9070cbd56a5a3f05de3dd/articles/terraform/media/store-state-in-azure-storage/lock.png",
+      "source_revision": "9e07eca7d51d9186a8e9070cbd56a5a3f05de3dd",
+      "source_revision_date": "2023-08-10T16:08:00Z",
+      "sha256": "0f1b50a2992462e51a2f1a749b8e292c10c1d23a419bc5078ccdbfe2bb77dfcb",
+      "transformations": "none; complete source image",
+      "visual_review": "Inspected complete image: Azure blob properties, Locked lease status, Leased lease state. Embedded documentation account name and timestamps are illustrative."
+    }
+  ],
+  "sources": [
+    {
+      "article": "AZC-106",
+      "url": "https://learn.microsoft.com/en-us/azure/developer/terraform/store-state-in-azure-storage",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-dev-docs/blob/9e07eca7d51d9186a8e9070cbd56a5a3f05de3dd/articles/terraform/store-state-in-azure-storage.md",
+      "revision_date": "2023-08-10T16:08:00Z"
+    }
+  ],
+  "review_limits": "This is an image cleanup, not a complete technical re-review of all 366 posts. Original publication and draft-stage evidence records remain historical. Current article hashes are recorded here for changed posts. No Azure workloads were executed.",
+  "validation": {
+    "content": {
+      "articles_checked": 366,
+      "articles_with_images": 77,
+      "articles_without_images": 289,
+      "body_image_instances": 102,
+      "missing_images": [],
+      "generic_checkpoint_images": 0,
+      "historical_dates_preserved": 366,
+      "published_flags_preserved": 366
+    },
+    "rendered_thumbnails": {
+      "card_instances_checked": 6594,
+      "unique_articles_checked": 1184,
+      "article_image_thumbnails": 1666,
+      "logo_fallbacks": 4928,
+      "errors": []
+    },
+    "production_build": "passed; 1333 pages",
+    "search_index": "passed; 1184 pages in two languages",
+    "server_policy_sync": "not applied: sn-main SSH connection timed out; local exporter and writer corrected"
+  },
+  "hash_method": "SHA-256 of exact file bytes, including line endings"
+}

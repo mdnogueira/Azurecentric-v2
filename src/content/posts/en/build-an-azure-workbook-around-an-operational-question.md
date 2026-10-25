@@ -12,8 +12,6 @@ You have an operational question that keeps coming up in your team's monitoring 
 
 Azure Workbooks are designed to combine text, log queries, metrics, and parameters into a single interactive report. They are not just static dashboards; they are canvases for freeform exploration and structured analysis. The key to a useful workbook is treating it as a conversation with your data, where parameters guide the query and text provides the context.
 
-[![Workbook Construction Flow](/images/posts/2024/azc-109-checkpoints.svg)](/images/posts/2024/azc-109-checkpoints.svg)
-
 ## Define the operational question
 
 Start by writing down the question in plain English. For this example, let's use: "Which virtual machines in our subscription had CPU utilisation above 80% in the last 24 hours?"

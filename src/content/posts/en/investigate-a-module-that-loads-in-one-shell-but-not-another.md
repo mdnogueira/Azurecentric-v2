@@ -12,8 +12,6 @@ You open two PowerShell windows. In one, `Import-Module MyModule` works. In the 
 
 PowerShell loads modules into the active session. If a session cannot find the module, it is usually because the search path is incomplete, a startup script has not run, or the module is already loaded in a way that conflicts with the import. We need to check the environment variables and the startup sequence.
 
-[![Module Load Troubleshooting Flow](/images/posts/2024/azc-113-checkpoints.svg)](/images/posts/2024/azc-113-checkpoints.svg)
-
 ## Check the PSModulePath
 
 PowerShell searches for modules in the directories listed in the `$env:PSModulePath` variable. If a module is installed in a directory not included in this list, PowerShell cannot find it implicitly or explicitly without a full path.

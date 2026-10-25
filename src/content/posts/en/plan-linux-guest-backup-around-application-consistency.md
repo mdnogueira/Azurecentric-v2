@@ -12,8 +12,6 @@ You are running a Linux virtual machine on a Windows Server 2025 host and need t
 
 The answer depends on whether your Linux distribution includes Hyper-V Integration Services (LIS) that cooperate with the host, or whether you must handle consistency inside the guest. For supported SUSE Linux Enterprise Server (SLES) versions, the integration services are built into the distribution. However, even with these services, the backup process requires specific handling to avoid corruption.
 
-[![Linux Guest Backup Consistency Flow](/images/posts/2026/azc-274-checkpoints.svg)](/images/posts/2026/azc-274-checkpoints.svg)
-
 ## Understand the Hyper-V backup mechanisms
 
 Hyper-V on Windows Server provides two primary approaches for backing up virtual machines: VM backups and data-only backups. A VM backup copies the entire virtual machine, including configuration files (`.VMCX`), guest state (`.VMGS`), and runtime state (`.VMRS`). A data-only backup extracts only the data from the virtual hard disks. Both approaches can utilise the Volume Shadow Copy Service (VSS) to create a consistent snapshot of the data at a specific point in time.

@@ -12,8 +12,6 @@ How many Log Analytics workspaces do you actually need? The practical answer is 
 
 A Log Analytics workspace is a unique environment for log data from Azure Monitor and other Azure services, such as Microsoft Sentinel and Microsoft Defender for Cloud. Each workspace has its own data repository and configuration, but it can combine data from multiple sources. The decision to create multiple workspaces usually comes down to a few concrete criteria: data retention requirements, access control boundaries, billing separation, and regulatory location constraints.
 
-[![Log Analytics Workspace Decision Flow](/images/posts/2024/azc-050-checkpoints.svg)](/images/posts/2024/azc-050-checkpoints.svg)
-
 ## Start with a single workspace
 
 Your design should always start with a single workspace to reduce the complexity of managing multiple workspaces and querying data from them. Multiple services and data sources can send data to the same workspace. As you identify criteria to create more workspaces, your design should use the fewest number that will match your requirements.

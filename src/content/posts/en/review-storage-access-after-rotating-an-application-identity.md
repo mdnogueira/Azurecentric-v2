@@ -12,8 +12,6 @@ You have rotated the identity used by an application to access Azure Storage. Th
 
 The first thing to check is whether the new identity actually has the permissions it needs. Identity rotation often fails because the new principal was not assigned the correct role, or because the role assignment has not yet propagated. If the new identity works, you must then ensure the old access path is closed. Microsoft recommends disallowing Shared Key authorization for storage accounts to prevent legacy key-based access, which bypasses identity controls entirely.
 
-[![Storage Access Verification Flow](/images/posts/2026/azc-346-checkpoints.svg)](/images/posts/2026/azc-346-checkpoints.svg)
-
 ## Confirm the new identity has the correct role
 
 Azure Storage data access is controlled through Azure Role-Based Access Control (RBAC). A common mistake is assuming that enabling a managed identity on a resource is enough; you must also assign a specific data plane role to that identity on the storage account. For example, if your application needs to read and write blobs, it requires a role such as `Storage Blob Data Contributor`. If it only needs to read, `Storage Blob Data Reader` is sufficient.

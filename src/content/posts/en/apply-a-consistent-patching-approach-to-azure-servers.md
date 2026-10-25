@@ -12,8 +12,6 @@ You need to patch Azure Virtual Machines, but you are unsure whether to let the 
 
 Azure provides distinct patch orchestration modes. `AutomaticByPlatform` gives Azure control over the schedule and applies availability-first principles. `AutomaticByOS` (Windows) and `ImageDefault` (Linux) leave control to the guest. Selecting the right mode depends on your need for coordinated reboots and your compliance with supported image requirements.
 
-[![Azure VM Patching Orchestration Flow](/images/posts/2025/azc-242-checkpoints.svg)](/images/posts/2025/azc-242-checkpoints.svg)
-
 ## Platform orchestration vs. native updates
 
 `AutomaticByPlatform` is the mode where Azure manages the patching lifecycle. When enabled, Azure assesses the VM for Critical and Security patches, downloads them, and applies them during off-peak hours for the VM's time zone. This mode is supported for both Linux and Windows VMs, provided they are created from supported platform images.

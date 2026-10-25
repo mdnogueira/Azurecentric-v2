@@ -12,8 +12,6 @@ You want to know which resources in your Azure environment are missing a require
 
 This approach lets you see the gap between your current state and your desired state without the risk of disrupting ongoing work. Azure Policy evaluates resources against business rules defined in JSON policy definitions. When you assign a policy with an auditing effect, non-compliant resources are flagged in the compliance dashboard, but the deployment or update that caused the non-compliance is allowed to proceed.
 
-[![Azure Policy Reporting Flow](/images/posts/2025/azc-150-checkpoints.svg)](/images/posts/2025/azc-150-checkpoints.svg)
-
 ## Choose the right effect for reporting
 
 Azure Policy offers several effects that determine how the service responds to non-compliant resources. For a reporting-only scenario, you should avoid enforcement effects like `Deny`, `Modify`, or `DeployIfNotExist`.

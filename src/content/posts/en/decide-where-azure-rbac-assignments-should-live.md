@@ -12,8 +12,6 @@ You have a developer who needs to update the credentials for a specific applicat
 
 Microsoft Entra ID supports assigning roles at three distinct scopes: tenant, application registration, and administrative unit. Choosing the right scope is not about finding the most granular option available, but about matching the role's permissions to the actual boundary of the work. A role assigned at the tenant scope applies to the entire directory. A role assigned at the application scope applies only to that specific app. A role assigned at the administrative unit scope applies only to the members within that unit.
 
-[![Role Assignment Scope Decision Flow](/images/posts/2025/azc-180-checkpoints.svg)](/images/posts/2025/azc-180-checkpoints.svg)
-
 ## Tenant scope: The default for broad management
 
 When you assign a role like Application Administrator or Global Administrator without specifying a scope, it applies to the entire tenant. This is the standard model for roles that require oversight of the whole directory, such as managing all app registrations, configuring authentication policies, or handling user lifecycle events across the organisation.

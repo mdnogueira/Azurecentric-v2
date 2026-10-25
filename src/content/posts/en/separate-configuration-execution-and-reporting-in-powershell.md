@@ -12,8 +12,6 @@ When a PowerShell script starts to take minutes instead of seconds, the first th
 
 The solution is not to write more code, but to separate concerns. You can keep the script simple while gaining significant performance benefits and clearer maintenance paths. The key is to treat configuration as data, execution as pure logic, and reporting as a final formatting step.
 
-[![Script Architecture Flow](/images/posts/2026/azc-348-checkpoints.svg)](/images/posts/2026/azc-348-checkpoints.svg)
-
 ## Define configuration as data, not code
 
 Configuration often ends up as a long list of variables at the top of a script. This works for small tasks, but it becomes fragile when parameters change or when you need to run the same logic against different environments. Instead, define your configuration as a structured object or a hash table.

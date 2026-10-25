@@ -12,8 +12,6 @@ An automation identity requires two distinct sets of permissions: access to the 
 
 Start by defining the operational scope. Who needs to manage the runbooks? Who needs to trigger them? And what specific actions must the runbook perform on the target resources? Answering these questions separately prevents the temptation to assign broad roles like Contributor or Owner to the automation identity.
 
-[![Automation Identity Permission Flow](/images/posts/2026/azc-267-checkpoints.svg)](/images/posts/2026/azc-267-checkpoints.svg)
-
 ## Define the operational roles
 
 Azure Automation provides built-in roles that separate the concerns of managing the account from managing the jobs. The Automation Contributor role allows you to manage all resources in the Automation account, but excludes modifying other users' access permissions. This is suitable for developers who need to update the automation logic.

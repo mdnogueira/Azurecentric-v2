@@ -12,8 +12,6 @@ You are planning a disaster recovery scenario for a Windows Server 2025 environm
 
 Before you begin, you need to define the scope of your recovery. Hyper-V Replica maintains consistency in the state of the VM operating system after a failover, but not the state of applications running on the VM [Set up Hyper-V Replica](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica). If you need application-consistent recovery points, you must configure Volume Shadow Copy Service (VSS) snapshots, which are not available on extended (chained) replica sites [Set up Hyper-V Replica](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica).
 
-[![Hyper-V Replica Configuration Flow](/images/posts/2025/azc-254-checkpoints.svg)](/images/posts/2025/azc-254-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 You need a single Hyper-V host or cluster to receive the replicated VM, and another cluster or single host that runs the VM you want to replicate [Enable Hyper-V Replica on a single host](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/configure-replication-single-host). The host server can be standalone, clustered, or a mixture of both, with no Active Directory dependency between the servers [Set up Hyper-V Replica](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica).

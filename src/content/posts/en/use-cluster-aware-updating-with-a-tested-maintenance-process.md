@@ -12,8 +12,6 @@ Cluster maintenance often feels like a balancing act between keeping services av
 
 The first decision is whether CAU will coordinate updates itself or be managed remotely. Self-updating mode embeds the CAU role within the cluster, allowing it to update itself on a schedule. Remote-updating mode uses a separate Update Coordinator computer to trigger and monitor the process. Both modes require the Failover Clustering feature and tools, but the installation scope differs. For self-updating, you need the tools on every node. For remote updating, the tools sit on the coordinator, though nodes still need specific remote management configurations to allow the coordinator to interact with them.
 
-[![CAU Updating Run Flow](/images/posts/2025/azc-135-checkpoints.svg)](/images/posts/2025/azc-135-checkpoints.svg)
-
 ## Establish the prerequisites
 
 Before configuring CAU, the cluster must meet several baseline requirements. All nodes must be in the same Active Directory domain, and the cluster name must resolve via DNS. The Cluster service must be running on all nodes, and there must be sufficient nodes online to maintain quorum. Note that quorum is a state of operational availability, not a backup mechanism; it ensures the cluster can make decisions, but it does not protect data from corruption or loss.

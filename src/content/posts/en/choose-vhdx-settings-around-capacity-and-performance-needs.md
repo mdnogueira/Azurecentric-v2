@@ -12,8 +12,6 @@ You are planning a new virtual machine or refreshing an existing one. The first 
 
 The practical answer is to use the VHDX format for new server workloads, choose the size type that matches your performance tolerance, and ensure the storage protocol supports the features you need. This is not a matter of preference. It is a matter of architectural support and data integrity.
 
-[![VHDX Configuration Decision Flow](/images/posts/2025/azc-157-checkpoints.svg)](/images/posts/2025/azc-157-checkpoints.svg)
-
 ## Why VHDX is the preferred format for new deployments
 
 The VHD format is legacy. It supports a maximum virtual disk size of 2 terabytes and lacks built-in protection against corruption during unexpected power loss. The VHDX format, introduced with Windows Server 2012, supports up to 64 terabytes and includes reliability mechanisms that help protect the disk from corruptions due to power failures.

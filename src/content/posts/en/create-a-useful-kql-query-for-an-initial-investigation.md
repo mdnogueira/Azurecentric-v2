@@ -12,8 +12,6 @@ When you begin investigating a potential incident, the immediate challenge is of
 
 This approach works because Kusto Query Language (KQL) processes data in a pipeline. Each step passes its output to the next. If you filter early, you reduce the volume of data flowing through the rest of the pipeline, which improves performance and prevents timeouts. You also avoid the cognitive overload of sifting through irrelevant events.
 
-[![KQL Query Pipeline Flow](/images/posts/2024/azc-042-checkpoints.svg)](/images/posts/2024/azc-042-checkpoints.svg)
-
 ## Start with a clear scope and intent
 
 Before writing a single operator, define what you are looking for and where it might live. In a typical endpoint investigation, you might suspect PowerShell is being used to download malicious content. This suspicion points you to process execution events and network connection events. You do not need to search email logs or identity sign-in logs yet. By limiting your scope to these two data sources, you keep the query manageable.

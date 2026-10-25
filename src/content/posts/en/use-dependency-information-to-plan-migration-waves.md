@@ -12,8 +12,6 @@ You have a list of on-premises servers and a deadline. The first question is not
 
 The tool groups servers into logical sets based on their network traffic. You use those groups to define migration waves. A wave is a set of servers that must be migrated simultaneously to maintain application functionality. This approach also helps you identify servers that are no longer in use, so you can decommission them instead of paying for migration.
 
-[![Dependency Analysis and Migration Wave Planning](/images/posts/2024/azc-085-checkpoints.svg)](/images/posts/2024/azc-085-checkpoints.svg)
-
 ## Understand the two analysis methods
 
 Azure Migrate offers two ways to discover dependencies: agentless and agent-based. Your choice depends on your infrastructure and the level of detail you need.

@@ -12,8 +12,6 @@ The decision to introduce Azure Arc-enabled servers usually begins with a practi
 
 However, the first step is to confirm that the resource actually needs Arc. Azure Arc-enabled servers is explicitly designed for machines hosted outside of Azure. It is not designed or supported to enable the management of virtual machines running in Azure. If your servers are already native Azure VMs, they are managed through the Azure Compute plane. While you can technically onboard an Azure VM to Arc, doing so adds management overhead without providing a distinct advantage for the compute layer itself. The value of Arc lies in extending Azure-native capabilities—such as Azure Policy, Microsoft Defender for Cloud, and Azure Monitor—to environments where those capabilities do not natively exist.
 
-[![Azure Arc Management Scope and Flow](/images/posts/2025/azc-145-checkpoints.svg)](/images/posts/2025/azc-145-checkpoints.svg)
-
 ## Define the boundary and prerequisites
 
 Before planning deployment, you must establish the scope and prerequisites. The Connected Machine agent is the component that connects the hybrid machine to Azure. It does not replace the Azure Monitor Agent (AMA). The AMA is required separately if you need to proactively monitor the OS and workloads, manage the machine using Automation runbooks, or use Microsoft Defender for Cloud. You need both agents installed for full functionality, but they serve different purposes.

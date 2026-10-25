@@ -12,8 +12,6 @@ An alert that seems to close and reopen is a common source of confusion. It ofte
 
 ## Distinguish between instance status changes and repeated firings
 
-[![Alert Close/Reopen Investigation Flow](/images/posts/2025/azc-190-checkpoints.svg)](/images/posts/2025/azc-190-checkpoints.svg)
-
 Navigate to **Monitor** > **Alerts** in the Azure portal. The **Alerts** page summarises all alert instances generated in the last 30 days [Manage your alert instances](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances). Filter the list by the specific alert rule and the relevant time range.
 
 If the list shows multiple rows with different timestamps and alert instance IDs, the alert rule is firing repeatedly. Each row represents a distinct firing event. This is often the result of the underlying condition fluctuating around the threshold, or latency causing the same event to be evaluated multiple times.

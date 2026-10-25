@@ -12,8 +12,6 @@ Your container image should contain code, not configuration. When settings are b
 
 App settings are stored encrypted in the function app configuration. They are injected into the container as environment variables when the app starts. This means your code can access them using standard environment variable APIs, regardless of the language or framework. However, changes to function app settings require your function app to be restarted, which can impact availability if not managed carefully.
 
-[![App Settings Flow in Azure Functions](/images/posts/2025/azc-222-checkpoints.svg)](/images/posts/2025/azc-222-checkpoints.svg)
-
 ## Why app settings are the right place
 
 App settings provide a clear boundary between your application code and its runtime environment. You can add any number of app settings as required by your function code, and they are accessible to all functions within the app.

@@ -12,8 +12,6 @@ An application cannot reach an external endpoint. The first thing to establish i
 
 ## Confirm log collection is active
 
-[![Azure Firewall Blocked Traffic Trace Flow](/images/posts/2024/azc-077-checkpoints.svg)](/images/posts/2024/azc-077-checkpoints.svg)
-
 Before analysing traffic, ensure the firewall is sending logs to a destination you can query. Azure Firewall supports two logging methods: legacy Azure Diagnostics logs and Structured Firewall Logs. Structured logs are the recommended approach because they use a predefined schema that ensures consistent field availability for searching and filtering [1].
 
 If you are using the legacy Azure Diagnostics logs, you must enable diagnostic settings for each log category individually. The three service-specific legacy logs available are:

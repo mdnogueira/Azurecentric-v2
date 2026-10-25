@@ -12,8 +12,6 @@ You are preparing to onboard Microsoft Copilot for Security, and the first techn
 
 If you are looking for the steps to configure Azure RBAC for onboarding, you need to look at the official Microsoft Learn documentation, not the community code repository. Conflating the two can lead to confusion about what permissions are actually needed to create the resource versus what permissions are needed to contribute code to the project.
 
-[![Separation of Community Contribution and Service Onboarding](/images/posts/2024/azc-060-checkpoints.svg)](/images/posts/2024/azc-060-checkpoints.svg)
-
 ## Distinguish code contribution from service deployment
 
 The [README](https://github.com/Azure/Security-Copilot/blob/a6f3ba73e1ad766d5279b63bd333414e3a59b89a/README.md) in the community repository outlines a workflow for developers: forking the repository, cloning it locally, creating branches, and submitting pull requests. This process requires a GitHub account and adherence to a Contributor License Agreement (CLA). It is a software development lifecycle, not a service deployment guide.

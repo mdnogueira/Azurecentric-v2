@@ -12,8 +12,6 @@ You have an HPC job running on Azure Batch and the portal shows the tasks are co
 
 ## Understand the two monitoring layers
 
-[![Azure Batch and Application Insights Data Flow](/images/posts/2026/azc-281-checkpoints.svg)](/images/posts/2026/azc-281-checkpoints.svg)
-
 Azure Batch monitoring operates at the subscription and account level through Azure Monitor. This layer collects metrics and logs related to the Batch service infrastructure. The activity log records operational events such as account creation or key management. At the Batch account level, Azure Monitor collects metrics for pools, jobs, and tasks. These metrics are available by default and retain a 30-day rolling history. They allow you to see how many nodes are running, how many tasks are pending, and the general health of the pool. You can export these logs to a Log Analytics workspace if you need long-term retention or complex querying, but this incurs additional costs.
 
 The second layer is application-level monitoring using Application Insights. This is where you gain insight into the actual HPC workload. Application Insights allows you to instrument your code to capture performance counters, exceptions, and custom metrics from the compute nodes. Unlike the default Batch metrics, which only reflect the service state, application telemetry reflects the behaviour of your specific tasks. This distinction is critical for an HPC scenario where the bottleneck is often the application logic or data access, not the Batch service itself.

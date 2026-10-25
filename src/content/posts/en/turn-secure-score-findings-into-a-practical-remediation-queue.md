@@ -12,8 +12,6 @@ Defender for Cloud can show a long list of recommendations without telling the o
 
 Start with a subscription whose workloads and owners are understood. A manageable scope makes it easier to distinguish an exposed production service from an unused lab resource and to check whether a proposed fix will disrupt an application.
 
-[![Remediation ownership and verification checkpoints](/images/posts/2024/azc-019-checkpoints.svg)](/images/posts/2024/azc-019-checkpoints.svg)
-
 ## Understand what contributes to the score
 
 Microsoft's [secure score guidance](https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls) describes how findings are grouped into security controls. The Microsoft cloud security benchmark is applied by default when Defender for Cloud is enabled for a subscription, and its built-in recommendations provide the basis for secure score.

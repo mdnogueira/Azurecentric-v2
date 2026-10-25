@@ -12,8 +12,6 @@ You have an application running on Azure App Service that needs to read a secret
 
 The correct approach is to use a managed identity for the App Service app and Key Vault references for the application settings. This allows the app to retrieve the secret at runtime without the secret value ever appearing in your configuration or code.
 
-[![App Service Managed Identity to Key Vault Flow](/images/posts/2024/azc-043-checkpoints.svg)](/images/posts/2024/azc-043-checkpoints.svg)
-
 ## Why use Key Vault references?
 
 If you use the Azure Identity client library in your code to fetch a secret, you must write code to handle the token acquisition, error handling, and caching. This adds complexity to your application.

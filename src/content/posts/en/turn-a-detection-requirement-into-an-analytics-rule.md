@@ -12,8 +12,6 @@ You have a detection requirement. The first step is not writing a Kusto Query La
 
 Microsoft Sentinel provides built-in templates to operationalise detection logic quickly. These templates are available in the **Rule templates** tab under the **Analytics** configuration section. When you select a template, the system automatically checks for the availability of required data sources. If a source is missing, the creation process may be blocked or warn you accordingly.
 
-[![Analytics Rule Creation and Verification Flow](/images/posts/2024/azc-061-checkpoints.svg)](/images/posts/2024/azc-061-checkpoints.svg)
-
 ## Confirm your data sources are active
 
 Before creating any rule, you must ensure the relevant data connectors are installed and enabled. The documentation for creating scheduled analytics rules notes that each template lists required data sources, and these are automatically checked for availability when you open the template [Create scheduled analytics rules in Microsoft Sentinel | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/create-analytics-rules). If a data source is not enabled, the **Create rule** button may be disabled or display a warning message.

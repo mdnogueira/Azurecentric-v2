@@ -12,8 +12,6 @@ Time drift on a Windows Server can break Kerberos authentication, cause replicat
 
 The first step is to inspect the current state. You do not need to guess which source the server is using or whether the service is running correctly. The `w32tm` command-line tool provides a clear view of the runtime configuration and the actual source being used.
 
-[![Windows Time Service Troubleshooting Flow](/images/posts/2025/azc-233-checkpoints.svg)](/images/posts/2025/azc-233-checkpoints.svg)
-
 ## Check the current time source and configuration
 
 Open an elevated Command Prompt. Run the following query to see the active time source:

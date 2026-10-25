@@ -12,8 +12,6 @@ Windows security event collection needs three things to agree: the server must p
 
 For this walkthrough, use the **Windows Security Events via AMA** connector in Microsoft Sentinel. Its documented destination is the `SecurityEvent` table. Start with a small group of Windows servers whose audit configuration and owners are known, then expand after verifying the collection path.
 
-[![Windows security event collection checkpoints](/images/posts/2024/azc-021-checkpoints.svg)](/images/posts/2024/azc-021-checkpoints.svg)
-
 ## Confirm the workspace and server prerequisites
 
 Use a Log Analytics workspace with Microsoft Sentinel enabled. Microsoft's [Windows agent-based connector guidance](https://learn.microsoft.com/en-us/azure/sentinel/connect-services-windows-based) requires read and write permissions on the Sentinel workspace and directs you to the connector's additional prerequisites.

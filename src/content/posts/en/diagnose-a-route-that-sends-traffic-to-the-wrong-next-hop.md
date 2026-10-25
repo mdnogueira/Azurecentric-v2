@@ -12,8 +12,6 @@ You are trying to connect to a resource, but the traffic from your virtual machi
 
 Azure creates default routes for every subnet. You can override these with User Defined Routes (UDRs) in a route table. If a route table is associated with a subnet, every network interface in that subnet inherits those routes. If the traffic is misbehaving, you need to see exactly which routes are effective for the specific network interface sending the traffic.
 
-[![Routing Diagnosis Flow](/images/posts/2024/azc-088-checkpoints.svg)](/images/posts/2024/azc-088-checkpoints.svg)
-
 ## Check the effective route table
 
 The most direct way to see what the VM sees is to view the effective route table for its network interface. This combines system routes, custom routes from associated route tables, and BGP-propagated routes from on-premises connections.

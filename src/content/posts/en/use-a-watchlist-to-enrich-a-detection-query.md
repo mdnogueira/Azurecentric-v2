@@ -12,8 +12,6 @@ You need to correlate security events with a list of known entities, such as hig
 
 Watchlists are stored in the `Watchlist` table within your Sentinel workspace as name-value pairs. They are cached for optimal query performance, which is essential when running frequent searches or scheduled analytics rules. However, they are designed for reference data, not large datasets. The total number of active watchlist items across all watchlists in a single workspace is limited to 10 million [Watchlists in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/watchlists#limitations-of-watchlists). If your reference data exceeds this or requires more frequent updates than the watchlist refresh cycle allows, consider ingesting it using custom logs instead [Watchlists in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/watchlists#limitations-of-watchlists).
 
-[![Watchlist Data Flow and Query Integration](/images/posts/2025/azc-141-checkpoints.svg)](/images/posts/2025/azc-141-checkpoints.svg)
-
 ## Prepare the reference data
 
 Before creating the watchlist, you need a CSV file containing the data you want to correlate. The file must include a header row. You also need to decide which column will serve as the **SearchKey**. This is the column you expect to use for joins or frequent searches. For example, if you are tracking IP addresses, the `IPAddress` column should be the SearchKey [Create new watchlists](https://learn.microsoft.com/en-us/azure/sentinel/watchlists-create).

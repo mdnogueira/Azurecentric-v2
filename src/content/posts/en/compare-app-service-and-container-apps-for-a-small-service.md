@@ -12,8 +12,6 @@ You are planning a small service and need to decide between Azure App Service an
 
 ## Understand the core hosting models
 
-[![Decision flow for App Service vs Container Apps](/images/posts/2025/azc-203-checkpoints.svg)](/images/posts/2025/azc-203-checkpoints.svg)
-
 Azure App Service provides fully managed hosting for web applications, including websites and web APIs. It is optimised for web applications and supports deployment using code or containers. When building web apps, App Service is an ideal option because it integrates seamlessly with other Azure services and offers a familiar development experience for traditional web workloads. You can deploy your application using code, which is often simpler for standard web frameworks, or use containers if you need specific runtime dependencies.
 
 Azure Container Apps, on the other hand, enables you to build serverless microservices and jobs based on containers. It is optimised to run general-purpose containers, especially for applications that span many microservices deployed in containers. Container Apps is powered by Kubernetes and open-source technologies like Dapr, KEDA, and Envoy. It supports Kubernetes-style apps and microservices with features like service discovery and traffic splitting. However, it does not provide direct access to the underlying Kubernetes APIs. If you require direct access to the Kubernetes APIs and control plane, you should use Azure Kubernetes Service instead.

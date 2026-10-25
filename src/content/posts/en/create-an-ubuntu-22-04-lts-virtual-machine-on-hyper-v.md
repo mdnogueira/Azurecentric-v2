@@ -12,8 +12,6 @@ An Ubuntu VM needs more than a name and a virtual disk. Its generation, firmware
 
 This example uses Ubuntu 22.04 LTS on a Windows Server 2022 Hyper-V host. Microsoft's [Ubuntu support table](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-ubuntu-virtual-machines-on-hyper-v) lists Generation 2, Secure Boot and built-in Linux Integration Services for this combination. These are illustrative settings and commands; a guest has not been deployed for this article.
 
-[![Ubuntu guest creation checkpoints](/images/posts/2024/azc-018-checkpoints.svg)](/images/posts/2024/azc-018-checkpoints.svg)
-
 ## Prepare the host and media
 
 Use a host with Hyper-V installed and working. Open Windows PowerShell as an administrator for this walkthrough and identify the existing switch intended for the guest:

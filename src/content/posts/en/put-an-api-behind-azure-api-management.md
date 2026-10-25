@@ -12,8 +12,6 @@ You have an API Management instance ready and a backend service you want to expo
 
 ## Prerequisites and scope
 
-[![API Management Manual API Addition Flow](/images/posts/2025/azc-188-checkpoints.svg)](/images/posts/2025/azc-188-checkpoints.svg)
-
 You need an existing API Management instance. If you do not have one, the [Create an Azure API Management instance](https://learn.microsoft.com/en-us/azure/api-management/get-started-create-service-instance) quickstart covers the initial setup. The steps below apply to all API Management tiers, including Classic, V2, and Consumption [Manually Add an API by Using the Azure portal | Microsoft Docs](https://learn.microsoft.com/en-us/azure/api-management/add-api-manually).
 
 You also need permission to manage the API Management service. The management plane is where you define APIs, products, and policies, and it is accessed via the Azure portal, Azure CLI, PowerShell, or REST API [Azure API Management - Overview and key concepts](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts). Ensure your account has the necessary role (such as API Management Service Contributor or Owner) on the service resource.

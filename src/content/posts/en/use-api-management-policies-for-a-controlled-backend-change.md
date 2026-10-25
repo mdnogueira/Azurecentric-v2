@@ -12,8 +12,6 @@ You need to migrate an API to a new backend service without breaking existing cl
 
 API Management policies are runtime rules executed inside the gateway. They transform, validate, secure, and route requests and responses. Unlike Azure Policy, which governs resource compliance, API Management policies control the flow of traffic for your APIs. They are applied at specific scopes: global, workspace, product, API, or operation. For a controlled backend change, you typically apply the policy at the API or operation level to target specific traffic.
 
-[![API Management Policy Execution Flow for Backend Migration](/images/posts/2026/azc-324-checkpoints.svg)](/images/posts/2026/azc-324-checkpoints.svg)
-
 ## Create a new version for the change
 
 Before applying any policy, you should isolate the change. API Management supports versioning, which allows you to present groups of related APIs to developers. You can use versions to handle breaking changes safely. Clients can choose to use the new API version when they are ready, while existing clients continue to use the older version.

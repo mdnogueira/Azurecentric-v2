@@ -12,8 +12,6 @@ You need your virtual machines to reach the internet with a predictable source I
 
 Default outbound access assigns a public IP address automatically when no explicit method is defined. That IP is owned by Microsoft and can change without notice. It also lacks support for fragmented packets and ICMP pings, and it yields inconsistent results across scaled sets or multi-NIC VMs. For scenarios requiring deterministic outbound behaviour, Microsoft recommends using an explicit configuration such as a NAT Gateway. This is particularly true as new virtual networks default to private subnets from April 2026 onwards, meaning explicit outbound methods are mandatory for internet access.
 
-[![NAT Gateway Outbound Flow](/images/posts/2026/azc-325-checkpoints.svg)](/images/posts/2026/azc-325-checkpoints.svg)
-
 ## Why NAT Gateway over other explicit methods?
 
 You have several options for explicit outbound connectivity: a standard load balancer with outbound rules, a basic load balancer, or a public IP address directly on the VM. Each has trade-offs.

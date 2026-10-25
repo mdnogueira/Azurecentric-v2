@@ -12,8 +12,6 @@ Subscription keys in Azure API Management are often treated as the primary secur
 
 ## Why subscription keys are insufficient for authentication
 
-[![OAuth 2.0 Authorization Flow in API Management](/images/posts/2025/azc-208-checkpoints.svg)](/images/posts/2025/azc-208-checkpoints.svg)
-
 The documentation for Azure API Management explicitly recommends using a subscription key *in addition to* another method of authentication or authorization. On its own, a subscription key is not a strong form of authentication. It is better viewed as a tracking or access-granting token for specific products or customers. When you move to OAuth 2.0, you shift from a static credential model to a dynamic, time-limited token model that supports granular permissions and identity verification. This separation ensures that even if a subscription key is compromised, it cannot be used to impersonate a specific user or access resources beyond the scope defined by the OAuth token.
 
 ## Choosing the right OAuth 2.0 authorization scenario

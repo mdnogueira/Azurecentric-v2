@@ -12,8 +12,6 @@ You need to summarise an incident for a non-technical executive, but the default
 
 Microsoft Security Copilot responds significantly better to structured instructions that constrain its reasoning. The [prompting tips documentation](https://github.com/Azure/Security-Copilot/blob/17b5582f31b37a2d641aec0d480ddcaaa85170a0/Customer Guides/Prompting Tips for Copilot For Security/readme.md) outlines that vague prompts yield vague results. A prompt that simply asks for "an incident summary" relies entirely on the model's internal defaults for tone and depth. A prompt that specifies the incident ID, the source system, the target audience, and the required data fields forces the model to select the correct plugins and structure the response accordingly.
 
-[![Incident Summary Prompt Flow](/images/posts/2024/azc-121-checkpoints.svg)](/images/posts/2024/azc-121-checkpoints.svg)
-
 ## Define the Goal and Audience Early
 
 The most common failure in incident summarisation is a mismatch between the technical detail provided and the decision-making capability of the reader. An executive needs to know the impact, the scope, and the immediate next steps, not the raw log entries or the specific malware hash, unless that hash is critical to a broader infrastructure decision.

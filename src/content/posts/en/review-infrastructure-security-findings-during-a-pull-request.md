@@ -12,8 +12,6 @@ You are reviewing a pull request that modifies a Bicep or Terraform file. You wa
 
 This feature is part of Defender for Cloud's DevOps security capabilities. It allows security operators and developers to address vulnerabilities before they enter the production stage. The annotations are added to the differences introduced during the pull request, not the entire file. This keeps the feedback focused on the actual change.
 
-[![Pull Request Annotation Flow](/images/posts/2025/azc-159-checkpoints.svg)](/images/posts/2025/azc-159-checkpoints.svg)
-
 ## Prerequisites and Scope
 
 Before enabling annotations, you must confirm the platform and licensing. Pull request annotations in GitHub require you to be a GitHub Advanced Security customer. Azure DevOps does not require this specific add-on but requires write access (owner or contributor) to the Azure subscription.

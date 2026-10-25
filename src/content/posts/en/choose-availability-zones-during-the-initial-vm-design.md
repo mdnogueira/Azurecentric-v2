@@ -12,8 +12,6 @@ You are designing a Virtual Machine Scale Set (VMSS) and need to decide between 
 
 ## Why initial design matters
 
-[![VMSS Zonal Deployment Decision Flow](/images/posts/2026/azc-280-checkpoints.svg)](/images/posts/2026/azc-280-checkpoints.svg)
-
 Availability zones are fault-isolated locations within an Azure region that provide redundant power, cooling, and networking. They allow you to run applications with high availability and fault tolerance to data center failures. Azure regions that support availability zones have a minimum of three separate zones. Each availability zone consists of one or more data centers equipped with independent infrastructure power, network, and cooling. Availability zones are connected by a high-performance network with a round-trip latency of less than 2 milliseconds [Create an Azure scale set that uses Availability Zones](https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones).
 
 When you create a VMSS, you have three zonal deployment models:

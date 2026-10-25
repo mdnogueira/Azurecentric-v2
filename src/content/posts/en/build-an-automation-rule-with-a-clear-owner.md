@@ -12,8 +12,6 @@ Which incidents need an owner, and who should get them? Automation rules in Micr
 
 Automation rules are a central way to manage response in Microsoft Sentinel. They let you define triggers, conditions, and actions that run when incidents or alerts are created or updated. The goal is to streamline your Security Orchestration, Automation and Response (SOAR) operations without relying on complex playbooks for every scenario [Automate threat response in Microsoft Sentinel with automation rules | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/automate-incident-handling-with-automation-rules).
 
-[![Automation Rule Execution Flow](/images/posts/2025/azc-162-checkpoints.svg)](/images/posts/2025/azc-162-checkpoints.svg)
-
 ## Design the rule before you create it
 
 Before opening the portal, decide what you are trying to accomplish. Common use cases include triaging new incidents by changing their status from New to Active, assigning an owner, tagging incidents for classification, or suppressing noisy alerts [Create and use Microsoft Sentinel automation rules to manage response](https://learn.microsoft.com/en-us/azure/sentinel/create-manage-use-automation-rules).

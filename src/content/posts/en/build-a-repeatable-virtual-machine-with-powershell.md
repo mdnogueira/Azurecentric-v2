@@ -12,8 +12,6 @@ You need a Windows Server 2022 virtual machine that you can build consistently, 
 
 PowerShell Direct resolves this by allowing you to run commands inside a guest VM directly from the Hyper-V host, bypassing the network stack entirely. This approach ensures that your baseline configuration is repeatable and deterministic, regardless of the host's network state.
 
-[![PowerShell Direct VM Configuration Flow](/images/posts/2024/azc-075-checkpoints.svg)](/images/posts/2024/azc-075-checkpoints.svg)
-
 ## Prerequisites and constraints
 
 Before writing any code, you must confirm the environment supports PowerShell Direct. According to Microsoft documentation, PowerShell Direct requires the host to run Windows 10 or Windows Server 2016 or later, and the virtual machine must also run Windows 10 or Windows Server 2016 or later [Manage Windows virtual machines with PowerShell Direct](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-windows-virtual-machines-with-powershell-direct). Since we are targeting Windows Server 2022, this requirement is satisfied.

@@ -12,8 +12,6 @@ You are writing an automation script in PowerShell. It calls a native command su
 
 PowerShell treats native command exit codes differently from cmdlet errors. By default, PowerShell does not treat a non-zero exit code as an error that stops execution or triggers a `catch` block. It simply records the exit code in the automatic variable `$LASTEXITCODE`. If you expect PowerShell to stop on failure, you need to configure it to do so.
 
-[![Native Command Error Flow in PowerShell](/images/posts/2025/azc-213-checkpoints.svg)](/images/posts/2025/azc-213-checkpoints.svg)
-
 ## Understand the difference between cmdlet and native errors
 
 Cmdlets written in .NET use PowerShell's error reporting mechanisms, which distinguish between terminating and non-terminating errors. A terminating error stops execution and can be caught with `try/catch`. A non-terminating error is recorded but allows execution to continue, unless `-ErrorAction Stop` is used.

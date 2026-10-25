@@ -12,8 +12,6 @@ You have just triggered a failover. The primary region is unreachable, traffic i
 
 Failover is rarely a single event. It is a chain of dependencies. If you only check the component that failed, you will miss the services that are still pointing at the dead region. This article explains how to verify those hidden dependencies and why a partial failover is often worse than no failover at all.
 
-[![Failover Dependency Verification Flow](/images/posts/2026/azc-308-checkpoints.svg)](/images/posts/2026/azc-308-checkpoints.svg)
-
 ## The illusion of a successful failover
 
 A common mistake is to assume that if the main application tier is running in the secondary region, the solution is healthy. This is not true. Your architecture likely contains other components that were not configured for automatic failover. These are the hidden dependencies.

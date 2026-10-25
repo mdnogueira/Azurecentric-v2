@@ -12,8 +12,6 @@ You have an enterprise application in your tenant that is requesting more permis
 
 ## Understand the difference between admin and user consent
 
-[![Permission Revocation Flow](/images/posts/2026/azc-296-checkpoints.svg)](/images/posts/2026/azc-296-checkpoints.svg)
-
 Permissions granted to an application fall into two categories: admin consent and user consent. Admin consent applies to the entire organisation, while user consent applies only to the individual user who granted it. The portal separates these into distinct tabs, but the mechanisms for revoking them differ.
 
 When you revoke admin consent, you remove the permission for all users. However, if users have previously granted their own consent, those permissions remain active. You cannot revoke user consent permissions directly from the portal; you must use PowerShell or Microsoft Graph API for that. This distinction is critical because a partial revocation might leave the application functional for some users while breaking it for others.

@@ -12,8 +12,6 @@ You have a workflow that needs to authenticate to a backend service. The most co
 
 The correct approach is to keep the secret in Azure Key Vault and have the workflow retrieve it at runtime. Azure Logic Apps supports this natively for many connectors, and you can also use the Key Vault action explicitly. To ensure the secret never appears in logs, you must also configure the workflow to obscure the inputs and outputs that carry the secret.
 
-[![Secure Secret Flow in Logic Apps](/images/posts/2025/azc-246-checkpoints.svg)](/images/posts/2025/azc-246-checkpoints.svg)
-
 ## Store the secret in Key Vault
 
 First, create an Azure Key Vault in your subscription. Store your secret there. Note the secret name and version (if you specify a version, the workflow uses that exact version; if you omit it, the workflow uses the latest version, which can change if you update the secret).

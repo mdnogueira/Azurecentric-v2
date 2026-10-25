@@ -12,8 +12,6 @@ Privileged group membership drifts. Users leave teams, projects end, and tempora
 
 The first step is ensuring the group itself is designed for role assignment. A standard security group cannot hold Microsoft Entra roles, so the access review will have nothing to validate if the group type is incorrect. You need a role-assignable group, which requires Microsoft Entra ID P1 or P2 and the Privileged Role Administrator role to create [1].
 
-[![Access Review Flow for Privileged Groups](/images/posts/2025/azc-160-checkpoints.svg)](/images/posts/2025/azc-160-checkpoints.svg)
-
 ## Create a role-assignable group
 
 Before configuring the review, verify the group structure. If you are starting from scratch, create a new group and explicitly enable role assignment. In the Microsoft Entra admin center, navigate to **Identity** > **Groups** > **All groups** and select **New group** [1].

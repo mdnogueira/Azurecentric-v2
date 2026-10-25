@@ -12,8 +12,6 @@ You have a workload in Azure and need to verify its reliability posture against 
 
 The Azure reliability documentation states that "the required level of reliability for any Azure solution depends on several considerations. Availability and latency SLA and other business requirements drive the architectural choices." Before you can judge whether your workload is reliable, you must establish what "reliable" means for that specific workload in terms of downtime and data loss.
 
-[![Reliability Review Flow](/images/posts/2024/azc-091-checkpoints.svg)](/images/posts/2024/azc-091-checkpoints.svg)
-
 ## Define your reliability targets
 
 Start by determining two key metrics: the Recovery Time Objective (RTO) and the Recovery Point Objective (RPO). These are non-functional requirements dictated by your business needs, not technical defaults.

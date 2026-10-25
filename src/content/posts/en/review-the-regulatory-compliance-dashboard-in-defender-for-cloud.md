@@ -12,8 +12,6 @@ The regulatory compliance dashboard in Microsoft Defender for Cloud is an intera
 
 ## Understanding the default assessment
 
-[![Regulatory Compliance Assessment Flow](/images/posts/2026/azc-275-checkpoints.svg)](/images/posts/2026/azc-275-checkpoints.svg)
-
 When you onboard an Azure subscription to Defender for Cloud, the Microsoft Cloud Security Benchmark (MCSB) is applied automatically. This benchmark is not just an Azure-specific checklist; it is a cloud-neutral standard that applies the same principles to AWS accounts and GCP projects as it does to Azure subscriptions [The Microsoft cloud security benchmark in Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance). This means the dashboard you are about to explore is consistent across your multi-cloud estate, provided you have connected those environments.
 
 The MCSB is composed of security standards, which are further broken down into compliance controls. A control is a logical group of related security recommendations. Defender for Cloud continuously assesses your resources against these controls. The dashboard aggregates these assessments to give you a high-level view of your compliance standing [The Microsoft cloud security benchmark in Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance).

@@ -12,8 +12,6 @@ You are planning a failover cluster that spans multiple sites. The immediate que
 
 Quorum is the mechanism that prevents split-brain scenarios by ensuring only one part of the cluster can continue operating [Failover Clustering](https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview). Failover priorities, on the other hand, determine which node or site takes over workloads when a failure occurs. You cannot rely on failover priorities if the cluster has already lost quorum. Therefore, you must configure quorum to support your desired failover behaviour, particularly in multisite environments.
 
-[![Quorum and Failover Decision Flow](/images/posts/2025/azc-253-checkpoints.svg)](/images/posts/2025/azc-253-checkpoints.svg)
-
 ## Understanding the relationship between quorum and failover
 
 Failover clustering relies on a quorum model to maintain cluster integrity. The quorum is determined by the number of voting elements that must be part of active cluster membership for the cluster to start or continue running [Configure and manage the quorum in a failover cluster](https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum). In a multisite cluster, network partitions can isolate nodes from each other. If the isolated nodes cannot reach a quorum majority, the cluster service halts to prevent data inconsistency [Failover Clustering system log events](https://learn.microsoft.com/en-us/windows-server/failover-clustering/system-events#event-1561-service_nonstorage_witness_better_tag).

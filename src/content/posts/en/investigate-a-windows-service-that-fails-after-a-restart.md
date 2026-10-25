@@ -12,8 +12,6 @@ A service that fails immediately after a restart usually indicates a startup seq
 
 ## Configure Server Manager to alert on service failures
 
-[![Service Failure Investigation Flow](/images/posts/2024/azc-114-checkpoints.svg)](/images/posts/2024/azc-114-checkpoints.svg)
-
 Server Manager monitors the status of services on local and remote servers. By default, it does not highlight every service failure, so you need to configure the alert criteria to catch the specific service or general failure states. This is useful for establishing a baseline or for monitoring a server pool where you cannot be present at the console. It acts as a notification layer, not a diagnostic tool.
 
 To configure service alerts in Server Manager:

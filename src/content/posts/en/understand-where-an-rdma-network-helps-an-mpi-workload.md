@@ -12,8 +12,6 @@ You are configuring an Azure Batch pool for a tightly coupled Message Passing In
 
 The short answer is that RDMA is not a requirement for MPI to function on Azure Batch. You can run MPI workloads on standard VM sizes. However, RDMA becomes a critical component when your workload involves large data transfers between nodes with low latency requirements. If your application is communication-bound, skipping RDMA-capable sizes may result in significantly slower execution times compared to CPU-bound or loosely coupled tasks.
 
-[![MPI Workload Execution Flow with RDMA Consideration](/images/posts/2024/azc-084-checkpoints.svg)](/images/posts/2024/azc-084-checkpoints.svg)
-
 ## Understanding the role of RDMA in MPI
 
 MPI is designed for tightly coupled workloads where applications need to communicate with each other frequently. In Azure Batch, this is handled via multi-instance tasks. By default, compute nodes in a pool communicate over the standard virtual network fabric. This involves the hypervisor and the host network stack, which introduces latency and consumes CPU cycles for data movement.

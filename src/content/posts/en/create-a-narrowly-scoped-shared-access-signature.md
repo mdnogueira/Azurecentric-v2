@@ -12,8 +12,6 @@ You need to delegate access to Azure Storage resources without handing over the 
 
 A SAS is a token appended to a resource URI that grants specific permissions for a defined interval. Azure Storage supports three types of SAS: user delegation SAS, service SAS, and account SAS. User delegation SAS tokens are secured with Microsoft Entra credentials and are recommended for Blob storage where possible, as they avoid the need to store account keys in your application code. However, user delegation SAS tokens must be ad hoc; they cannot be bound to a stored access policy. Service SAS and account SAS tokens are signed with the storage account key. Service SAS tokens delegate access to a single storage service (Blob, Queue, Table, or Files), while account SAS tokens can delegate access to multiple services and even service-level operations.
 
-[![SAS Revocation Flow](/images/posts/2024/azc-070-checkpoints.svg)](/images/posts/2024/azc-070-checkpoints.svg)
-
 To achieve narrow scoping and revocability, you should use a service SAS bound to a stored access policy. Stored access policies are supported for service SAS tokens on blob containers, file shares, queues, and tables. They allow you to define constraints such as start time, expiry time, and permissions on the server side. When you associate a service SAS with a stored access policy, the SAS inherits these constraints. Crucially, you can update or delete the stored access policy to revoke or modify access for all SAS tokens bound to it, without needing to regenerate the storage account keys.
 
 ## Configure an expiration policy at the storage account level

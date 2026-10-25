@@ -12,8 +12,6 @@ A node that fails to start in an Azure Batch pool is a symptom, not a single cau
 
 ## Distinguish pool-level from node-level failures
 
-[![Azure Batch Node Startup Failure Investigation](/images/posts/2026/azc-301-checkpoints.svg)](/images/posts/2026/azc-301-checkpoints.svg)
-
 Pool operations such as creation, resizing, and deletion can fail asynchronously. If the pool itself is in an error state, nodes will not start because the underlying infrastructure was not provisioned correctly. Check the pool state and any associated error codes first.
 
 Pool errors often stem from:

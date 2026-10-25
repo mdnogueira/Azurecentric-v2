@@ -12,8 +12,6 @@ A node drops out of a failover cluster. The immediate operational question is no
 
 ## Check the System log for membership events
 
-[![Node Failure Diagnosis Flow](/images/posts/2025/azc-234-checkpoints.svg)](/images/posts/2025/azc-234-checkpoints.svg)
-
 The first step is to examine the Windows Server System log on the remaining active nodes, filtering for the source **FailoverClustering**. These events provide the timeline of the failure. When a node leaves the cluster, you are primarily looking for Event ID 1135: `EVENT_NODE_DOWN`. This event confirms that the node was removed from active membership. The event description notes that the Cluster service on the node may have stopped, or the node may have lost communication with other active nodes.
 
 However, Event 1135 is a symptom of removal, not the root cause. To understand why the node left, you must look at the events that preceded it. If the failure was caused by network connectivity issues, you might see Event 1553 (`SERVICE_NO_NETWORK_CONNECTIVITY`) or Event 1554 (`SERVICE_NETWORK_CONNECTIVITY_LOST`). Event 1554 specifically indicates that the node has lost all network connectivity, which triggers the termination of the cluster service on that node.

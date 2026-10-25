@@ -12,8 +12,6 @@ You are preparing to apply a software update or configuration change to a Linux 
 
 Hyper-V on Windows Server 2025 supports two distinct checkpoint mechanisms. Standard checkpoints capture the exact state of the virtual machine, including memory, hardware configuration, and disk state. This is effectively a snapshot of the running system. Production checkpoints, by contrast, do not capture memory. Instead, they use guest-side backup technology to create a point-in-time image of the disk data. This distinction determines whether your application state is consistent when the VM is reverted.
 
-[![Production Checkpoint Flow for Linux VM](/images/posts/2026/azc-314-checkpoints.svg)](/images/posts/2026/azc-314-checkpoints.svg)
-
 ## Why standard checkpoints are risky for Linux applications
 
 A standard checkpoint freezes the virtual machine's memory and disk state at a single instant. If your Linux application is a database, a file server, or any service that maintains state across multiple nodes or files, this sudden freeze can leave the application in an inconsistent state. The documentation explicitly warns that standard checkpoints can cause data consistency issues with systems that replicate data between different nodes, such as Active Directory, and by extension, any application relying on similar distributed state mechanisms.

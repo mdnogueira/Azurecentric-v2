@@ -12,8 +12,6 @@ Infrastructure scripts often rely on PowerShell transcripts to capture what happ
 
 The core problem with transcripts is how PowerShell handles output streams. `Write-Host` writes directly to the host process, bypassing the output stream entirely. `Write-Output` sends objects to the pipeline, where they are formatted by `Out-Default`. Transcription captures the output stream, but the timing of formatting can cause output to appear after the transcript has stopped, or to be lost if the pipeline state changes. This makes transcripts unsuitable for any scenario where the order or completeness of log entries matters.
 
-[![Structured Logging Flow](/images/posts/2025/azc-133-checkpoints.svg)](/images/posts/2025/azc-133-checkpoints.svg)
-
 ## Why transcripts fail for structured logs
 
 Transcripts are designed to record a session, not to structure data. When you mix `Write-Host` with `Write-Output`, the transcript file may contain entries in a different order than they appeared in the console, or it may miss output entirely. For example, if an object is emitted at the end of a script, it might not be captured if the transcript stops before the formatting system processes it. This is not a bug; it is a consequence of how PowerShell separates host output from pipeline output.

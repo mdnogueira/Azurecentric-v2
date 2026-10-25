@@ -12,8 +12,6 @@ The monthly invoice for Azure Monitor Logs rarely comes from the workspace itsel
 
 You can reduce costs without losing visibility by adjusting these settings deliberately. This requires understanding how data is billed, choosing the right retention strategy, and applying table plans where appropriate. The following guidance focuses on the mechanics of billing and the configuration options available in Azure Monitor Logs as of August 2025.
 
-[![Log Analytics Cost Decision Flow](/images/posts/2025/azc-210-checkpoints.svg)](/images/posts/2025/azc-210-checkpoints.svg)
-
 ## Understand how data is billed
 
 Azure Monitor Logs charges for two primary factors: data ingestion and data retention. There is no direct cost for creating or maintaining a Log Analytics workspace, but every byte stored contributes to the bill [Log Analytics workspace overview](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview).

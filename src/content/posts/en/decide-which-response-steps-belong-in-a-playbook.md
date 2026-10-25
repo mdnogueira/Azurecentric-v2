@@ -12,8 +12,6 @@ When you design a Microsoft Sentinel playbook, the first decision is not which c
 
 The documentation groups these into four recommended use cases: enrichment, bi-directional sync, orchestration, and response [Automate threat response with playbooks in Microsoft Sentinel | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/automation/automate-responses-with-playbooks). Each has a different purpose, a different trigger pattern, and different failure modes. Understanding these boundaries helps you decide whether a step should be part of an automated response or a manual investigation aid.
 
-[![Playbook Step Categorization Flow](/images/posts/2025/azc-182-checkpoints.svg)](/images/posts/2025/azc-182-checkpoints.svg)
-
 ## Enrichment: Gathering data for investigation
 
 Enrichment playbooks collect data and attach it to an incident to help your team make smarter decisions [Automate threat response with playbooks in Microsoft Sentinel | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/automation/automate-responses-with-playbooks). They are typically triggered by an incident creation or an alert, and they run in the background without requiring immediate human intervention.

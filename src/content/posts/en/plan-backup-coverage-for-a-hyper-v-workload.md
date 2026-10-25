@@ -12,8 +12,6 @@ You are running a Hyper-V workload on Windows Server 2025 and need to define a r
 
 ## Understand the backup approaches
 
-[![Hyper-V Workload Protection Decision Flow](/images/posts/2026/azc-351-checkpoints.svg)](/images/posts/2026/azc-351-checkpoints.svg)
-
 Hyper-V provides two distinct backup methods, each with different implications for what you can restore.
 
 A **VM backup** captures the entire virtual machine. This includes the configuration files (`.VMCX`), the guest state (`.VMGS`), and the runtime state (`.VMRS`) [Hyper-V Backup Approaches](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/backup-approaches). This approach is necessary if you intend to restore the virtual machine to its exact previous state. You must ensure all associated files are copied; missing any of them means the virtual machine state is not fully captured [Hyper-V Backup Approaches](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/backup-approaches).

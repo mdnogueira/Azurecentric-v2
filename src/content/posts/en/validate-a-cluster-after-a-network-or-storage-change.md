@@ -12,8 +12,6 @@ You have changed a network adapter, replaced a storage controller, or updated fi
 
 The Health Service in Windows Server provides a curated list of real-time metrics for the cluster, nodes, and volumes. Combined with the Failover Clustering system event log, you can verify that the infrastructure is stable before declaring the change successful.
 
-[![Post-Change Validation Flow](/images/posts/2026/azc-331-checkpoints.svg)](/images/posts/2026/azc-331-checkpoints.svg)
-
 ## Check the Health Service for latency and throughput
 
 The Health Service aggregates performance data efficiently across nodes. It is designed to give you a point-in-time view of critical metrics such as I/O latency and throughput. This is particularly useful after a storage change to ensure that the new disks or controllers are performing as expected.

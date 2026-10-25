@@ -12,8 +12,6 @@ A Windows Server installation is ready for an infrastructure workload when its d
 
 Start by separating a clean installation from an in-place upgrade. A clean installation gives you a new operating system to configure and a workload to migrate. An in-place upgrade aims to retain the existing settings, roles and data while changing the operating system. Those routes have different risks and recovery steps; they should not share an unexamined checklist.
 
-[![Windows Server preparation checkpoints](/images/posts/2024/azc-015-checkpoints.svg)](/images/posts/2024/azc-015-checkpoints.svg)
-
 ## Define the workload before choosing the route
 
 Record the server's purpose and the applications or infrastructure roles it will host. Include the people or systems that depend on it. A file service, a Hyper-V host and an application server have different storage, connectivity and maintenance requirements.

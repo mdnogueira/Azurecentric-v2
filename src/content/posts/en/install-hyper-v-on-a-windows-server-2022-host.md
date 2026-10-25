@@ -12,8 +12,6 @@ Installing Hyper-V enables the host to run virtual machines. It does not finish 
 
 This walkthrough covers a Windows Server 2022 host and the Hyper-V role. It is separate from enabling Hyper-V on a Windows client. The commands are illustrative and have not been used to install a host for this article.
 
-[![Hyper-V host preparation and installation checkpoints](/images/posts/2024/azc-017-checkpoints.svg)](/images/posts/2024/azc-017-checkpoints.svg)
-
 ## Prepare the destination server
 
 Use Microsoft's [Hyper-V installation guidance](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server) as the starting point. Confirm hardware compatibility against the linked Windows Server and Hyper-V requirements before scheduling installation.

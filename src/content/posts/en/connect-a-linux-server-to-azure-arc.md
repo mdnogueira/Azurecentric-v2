@@ -12,8 +12,6 @@ You have a Linux server outside Azure that needs to appear in the Azure portal. 
 
 The Connected Machine agent is the component that bridges the physical or virtual machine to Azure. It runs as a service and handles communication with the Azure control plane. On Linux, this is typically managed via systemd. The agent supports a wide range of distributions, including Ubuntu 18.04, 20.04, and 22.04 LTS, RHEL 7, 8, and 9, and Debian 11 and 12 [Connected Machine agent prerequisites](https://learn.microsoft.com/en-us/azure/azure-arc/servers/prerequisites). However, support is limited to x86-64 architectures; 32-bit or ARM-based systems are not supported [Connected Machine agent prerequisites](https://learn.microsoft.com/en-us/azure/azure-arc/servers/prerequisites).
 
-[![Azure Arc Linux Onboarding Flow](/images/posts/2025/azc-206-checkpoints.svg)](/images/posts/2025/azc-206-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before attempting to connect the server, you must verify two distinct areas: the local software environment and the Azure identity permissions.

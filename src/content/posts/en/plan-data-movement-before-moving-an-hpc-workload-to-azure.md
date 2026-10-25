@@ -12,8 +12,6 @@ You are moving a high-performance computing workload to Azure Batch, and the bot
 
 The core question is not which storage service is "best," but which access pattern matches your workload. If your tasks need to read a large, shared set of scene files concurrently, copying those files to every node's local disk for each job is inefficient. If your tasks generate massive output files that need to be preserved, relying solely on local node storage risks data loss if a node is reimaged. You need a strategy that aligns data movement with the lifecycle of your Batch jobs.
 
-[![Azure Batch Data Movement Decision Flow](/images/posts/2025/azc-224-checkpoints.svg)](/images/posts/2025/azc-224-checkpoints.svg)
-
 ## Choose the storage type based on access patterns
 
 Azure Batch supports mounting virtual file systems on compute nodes, allowing you to treat cloud storage as a local drive. The documentation outlines three primary approaches, each with distinct trade-offs regarding performance, scale, and complexity.

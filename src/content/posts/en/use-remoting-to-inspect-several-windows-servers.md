@@ -12,8 +12,6 @@ You need to check the status of a service across several Windows servers. Doing 
 
 Before you start, you need to decide which tool fits the job. Many Windows PowerShell cmdlets have a **ComputerName** parameter that enables you to collect data on remote computers without special configuration. These cmdlets use varying communication protocols, such as WMI or RPC, and work on all Windows operating systems. `Get-Service`, `Get-Process`, and `Get-HotFix` are examples of these. If you only need to read data, you might not need to enable PowerShell remoting at all.
 
-[![PowerShell Remoting Flow](/images/posts/2025/azc-174-checkpoints.svg)](/images/posts/2025/azc-174-checkpoints.svg)
-
 However, if you need to run arbitrary commands, execute scripts, or use persistent sessions, you need Windows PowerShell remoting. This uses the WS-Management protocol. For this to work, the remote computer must be configured for remote management. If the remote endpoints are not enabled, your commands will fail with a connection error.
 
 ## Enabling the remoting endpoint

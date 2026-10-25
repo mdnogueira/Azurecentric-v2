@@ -12,8 +12,6 @@ You have just approved a change. The ticket is open, the window is active, and y
 
 Azure Monitor alerts and workbooks serve different purposes in this workflow. Alerts tell you when something has breached a threshold. Workbooks let you visualise the context around that breach. By combining them, you can build a verification view that shows exactly what the change triggered.
 
-[![Change Verification Flow](/images/posts/2026/azc-306-checkpoints.svg)](/images/posts/2026/azc-306-checkpoints.svg)
-
 ## Start with the alert instances
 
 The **Alerts** page in the Azure portal summarises all alert instances generated in the last 30 days [Manage your alert instances](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances). This retention period is critical. If you are verifying a change that happened two days ago, the data is still there. If you are waiting a month, it is gone.

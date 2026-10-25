@@ -12,8 +12,6 @@ You need to isolate virtual machine traffic on a Windows Server Hyper-V host. Th
 
 VLANs rely on 802.1q tagging. This means both the physical network adapter on the host and the physical switch it connects to must support this standard. Without this support, the tags will not be processed correctly by the network infrastructure. The host configuration happens in two stages: first, you configure the virtual switch to handle the management OS and the virtual machines; second, you assign specific VLAN IDs to the individual virtual network adapters.
 
-[![Hyper-V VLAN Configuration Flow](/images/posts/2024/azc-116-checkpoints.svg)](/images/posts/2024/azc-116-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before configuring VLANs, ensure the following:

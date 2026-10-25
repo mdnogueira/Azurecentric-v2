@@ -12,8 +12,6 @@ You have a production release scheduled for next week, and your custom domain ce
 
 The first step is to identify which certificate type is currently bound to your domain. Azure App Service and Azure Container Apps offer different mechanisms for certificate management, and the renewal behaviour depends entirely on which one you are using. Assuming the wrong capability leads to last-minute panic.
 
-[![Certificate Renewal Decision Flow](/images/posts/2025/azc-260-checkpoints.svg)](/images/posts/2025/azc-260-checkpoints.svg)
-
 ## Identify your current certificate type
 
 App Service provides three distinct certificate options, each with different renewal implications. You need to check the **TLS/SSL settings** blade for your web app to see which category your custom domain falls into.

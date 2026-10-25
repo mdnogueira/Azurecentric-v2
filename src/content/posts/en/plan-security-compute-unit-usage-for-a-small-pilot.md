@@ -12,8 +12,6 @@ You are planning a pilot for Microsoft Copilot for Security and need to estimate
 
 Microsoft Copilot for Security is a generative AI-powered assistant designed for security and IT operations. It connects to existing Microsoft security products to help teams investigate and respond to threats. Because it uses generative AI, the compute resources required vary significantly depending on the task. This variability is measured in Security Compute Units (SCUs). 
 
-[![SCU Consumption Flow for Pilot](/images/posts/2024/azc-099-checkpoints.svg)](/images/posts/2024/azc-099-checkpoints.svg)
-
 ## Understand what drives SCU consumption
 
 It is tempting to think of SCU usage as a simple function of the number of users or the size of your subscription. That approach often leads to inaccurate budgets. SCU consumption is driven by the complexity and volume of the interactions with the Copilot service. 

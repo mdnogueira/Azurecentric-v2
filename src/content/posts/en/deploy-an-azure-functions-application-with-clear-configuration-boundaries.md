@@ -12,8 +12,6 @@ You are configuring an Azure Functions application and need to decide which sett
 
 The short answer is: put static, binding-level, and host-wide behavioural settings in `host.json` (checked into source control). Put environment-specific values, secrets, and runtime overrides in the function app's application settings (managed in the portal, CLI, or IaC). Changes to application settings restart the host; changes to `host.json` require a redeployment.
 
-[![Configuration Flow in Azure Functions](/images/posts/2025/azc-163-checkpoints.svg)](/images/posts/2025/azc-163-checkpoints.svg)
-
 ## Why the distinction matters
 
 Azure Functions runs on the App Service platform. This means it inherits certain hosting behaviours. Application settings are stored encrypted and are injected as environment variables into the worker process. `host.json` is a metadata file that configures the Functions host itself. The documentation states that application settings can override specific `host.json` values without changing the file, which is useful for environment-specific tuning without republishing code [App settings reference for Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings).

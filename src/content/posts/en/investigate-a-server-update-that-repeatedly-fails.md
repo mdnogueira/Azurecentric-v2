@@ -12,8 +12,6 @@ A server update that repeatedly fails is rarely a single broken file. It is usua
 
 ## Check the update approval scope
 
-[![WSUS Update Failure Investigation Flow](/images/posts/2026/azc-310-checkpoints.svg)](/images/posts/2026/azc-310-checkpoints.svg)
-
 The most common reason an update fails to install is that it has not been approved for the target computer group. WSUS does not automatically install updates; you must explicitly approve them. If an update remains in the **Not approved** state, the client will evaluate it but will not download or install it, which can manifest as a failure or a persistent "pending" state depending on the client configuration.
 
 Open the WSUS administration console and navigate to **Updates** > **All Updates**. Locate the failing update. Check its approval status. If it is **Not approved**, right-click the update and select **Approve**. In the dialog, select the specific computer group containing the failing server and choose **Approved for Install**. You can also set a deadline if you need the update applied immediately.

@@ -12,8 +12,6 @@ A remediation task for a `deployIfNotExists` or `modify` policy sits in a pendin
 
 Remediation tasks rely on a managed identity associated with the policy assignment. This identity performs the resource deployments or modifications. If the identity lacks the necessary permissions, or if the identity itself has not fully replicated in Microsoft Entra ID, the task will stall or fail.
 
-[![Remediation Task Dependency Flow](/images/posts/2026/azc-364-checkpoints.svg)](/images/posts/2026/azc-364-checkpoints.svg)
-
 ## Check the managed identity status
 
 Each policy assignment can be associated with only one managed identity. This can be a system-assigned identity created by the policy service, or a user-assigned identity provided by you. The location of the managed identity does not affect its operational capability with Azure Policy, but it must exist. System-assigned identities are created in the region of the assignment scope, while user-assigned identities must reside in the same tenant as the assignment.

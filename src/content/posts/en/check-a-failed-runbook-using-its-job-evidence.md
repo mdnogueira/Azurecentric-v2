@@ -12,8 +12,6 @@ A runbook job has failed. The portal shows a red status, but the error message i
 
 ## Check the job status first
 
-[![Runbook Failure Diagnosis Flow](/images/posts/2026/azc-286-checkpoints.svg)](/images/posts/2026/azc-286-checkpoints.svg)
-
 Before diving into logs, confirm the job status. Azure Automation jobs move through a defined lifecycle. If the status is `Queued` or `Starting`, the job hasn't reached the code yet. If it is `Failed`, the job has terminated. Note that `Failed` can mean different things depending on the runbook type. For graphical or PowerShell Workflow runbooks, a compilation failure results in a `Failed` status. For PowerShell runbooks, it means the job failed to start or threw an exception during execution [Runbook execution in Azure Automation](https://learn.microsoft.com/en-us/azure/automation/automation-runbook-execution).
 
 If the job status is `Suspended`, this applies only to graphical and PowerShell Workflow runbooks. The system suspends the job when an exception occurs, provided the `ErrorActionPreference` is set to `Stop` [Runbook execution in Azure Automation](https://learn.microsoft.com/en-us/azure/automation/automation-runbook-execution). If you see this status, the runbook has hit a checkpoint and is waiting for you to resume it or for the system to retry it. If the job is `Stopped`, it was manually halted by a user [Runbook execution in Azure Automation](https://learn.microsoft.com/en-us/azure/automation/automation-runbook-execution).

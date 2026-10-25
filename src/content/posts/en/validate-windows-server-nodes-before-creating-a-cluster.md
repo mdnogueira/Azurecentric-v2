@@ -12,8 +12,6 @@ You have the hardware, the operating system, and the storage. Before you run the
 
 The goal is not to check if the servers boot, but to verify that the specific components required for failover clustering are compatible and correctly configured. The documentation for Windows Server 2022 and earlier versions recommends that all parts of the failover cluster pass the validation tests in the **Validate a Configuration** wizard to ensure stability [Failover clustering hardware requirements and storage options](https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements).
 
-[![Pre-Cluster Validation Flow](/images/posts/2024/azc-036-checkpoints.svg)](/images/posts/2024/azc-036-checkpoints.svg)
-
 ## Check hardware and storage compatibility
 
 Failover clustering is sensitive to hardware mismatches, particularly in the storage stack. If you are using Serial Attached SCSI (SAS) or Fibre Channel, the entire storage path must be identical across all nodes. This includes the multipath I/O (MPIO) software, the Device-Specific Module (DSM), the host bus adapter (HBA), the HBA drivers, and the HBA firmware [Failover clustering hardware requirements and storage options](https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements). If you use different HBAs, you must verify with your storage vendor that you are following their configuration guidelines [Failover clustering hardware requirements and storage options](https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements).

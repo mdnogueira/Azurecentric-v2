@@ -12,8 +12,6 @@ A domain name resolution failure often looks like an application or Active Direc
 
 The first step is to verify basic connectivity and the server's ability to answer queries. Run `ipconfig /all` to confirm the IP address, subnet mask, and default gateway are correct. Then, use `nslookup` to query the specific name against the IP address of the DNS server you expect to handle the request. For example:
 
-[![DNS Troubleshooting Decision Flow](/images/posts/2025/azc-154-checkpoints.svg)](/images/posts/2025/azc-154-checkpoints.svg)
-
 ```cmd
 nslookup app1 10.0.0.1
 ```

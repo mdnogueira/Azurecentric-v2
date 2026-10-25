@@ -12,8 +12,6 @@ You are planning maintenance for a Virtual Machine Scale Set (VMSS) because your
 
 ## Distinguish host maintenance from OS upgrades
 
-[![VMSS Maintenance Decision Flow](/images/posts/2026/azc-358-checkpoints.svg)](/images/posts/2026/azc-358-checkpoints.svg)
-
 Azure performs host infrastructure updates periodically to improve reliability, performance, and security. Most of these updates do not affect the hosted VMs. However, if the maintenance requires a reboot, Azure sends a notification and opens a self-service window. This window typically lasts 35 days. During this period, you can choose when to start the maintenance for your VMs. After the self-service window closes, Azure schedules the maintenance in waves, applying it update domain by update domain, with at least a 30-minute pause between domains.
 
 Separately, if you have enabled automatic OS image upgrades on your VMSS, Azure will periodically upgrade the guest OS. This is a different process. You can control when these upgrades happen by creating a maintenance configuration. This configuration defines a recurring maintenance window, which must be at least 5 hours long and recur at least daily.

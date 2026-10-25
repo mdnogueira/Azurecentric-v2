@@ -12,8 +12,6 @@ You have a parallel workload that needs GPU acceleration. You have selected the 
 
 The first thing to check is the regional quota for the specific GPU VM family you intend to use. Azure enforces core quotas, but the boundary of that enforcement depends on how you allocate pools. If you attempt to create a pool with more nodes than your quota allows, the deployment will fail. This is a hard limit, not a soft recommendation.
 
-[![Quota Enforcement Flow for GPU Pools](/images/posts/2024/azc-045-checkpoints.svg)](/images/posts/2024/azc-045-checkpoints.svg)
-
 ## Understand the quota boundary
 
 Quotas are limits, not capacity guarantees. They vary based on changes from the service or a user request to change a quota value. For GPU workloads, the relevant limit is the core quota for the specific VM series in the region where you plan to deploy.

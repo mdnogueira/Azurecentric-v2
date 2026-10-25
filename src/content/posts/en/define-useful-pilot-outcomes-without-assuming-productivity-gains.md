@@ -12,8 +12,6 @@ You are planning a pilot for Microsoft Security Copilot. The temptation is to me
 
 Microsoft Security Copilot is described as a generative AI-powered assistant for daily operations in security and IT 1. It empowers teams to protect at the speed and scale of AI. However, "speed" and "scale" are not metrics you can capture in a pilot without a clear baseline. The product documentation outlines specific capabilities, such as threat hunting and incident response assistance, which should form the basis of your pilot scope 2.
 
-[![Pilot Outcome Definition Flow](/images/posts/2025/azc-220-checkpoints.svg)](/images/posts/2025/azc-220-checkpoints.svg)
-
 ## Start with a specific operational question
 
 Instead of asking "Is Security Copilot faster?", ask "Can Security Copilot help us resolve a specific type of alert faster?" or "Does it reduce the time to investigate a common incident?"

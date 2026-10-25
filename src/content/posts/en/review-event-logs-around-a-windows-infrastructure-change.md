@@ -12,8 +12,6 @@ You are reviewing a Windows Server 2025 infrastructure change. The goal is to es
 
 ## Start with Server Manager for immediate alerts
 
-[![Infrastructure Change Review Flow](/images/posts/2025/azc-194-checkpoints.svg)](/images/posts/2025/azc-194-checkpoints.svg)
-
 Server Manager is designed to highlight issues across a server pool. It does not capture every event, but it filters the noise. When you configure it, you define what constitutes an alert.
 
 To see what Server Manager is watching, open the **Events** tile on a role, server group, or local server page. Click **Configure Event Data** on the **Tasks** menu. By default, it collects **Critical**, **Error**, and **Warning** severity levels from the **Application**, **Setup**, and **System** logs for the previous 24 hours. This is a broad net. If your change involved a specific service installation or a driver update, the **Setup** log is likely where you will find the confirmation or failure.

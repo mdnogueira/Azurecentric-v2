@@ -12,8 +12,6 @@ You are planning a deployment to Azure App Service and want to avoid downtime. T
 
 The core question is not just "how do I create a slot?" but "how do I ensure the slot behaves like production before I swap, and what happens to my settings when I do?"
 
-[![App Service Slot Swap Flow](/images/posts/2024/azc-123-checkpoints.svg)](/images/posts/2024/azc-123-checkpoints.svg)
-
 ## Compute costs and tier limitations
 
 Deployment slots are not available on every App Service plan. You must be running in the **Standard**, **Premium**, or **Isolated** tier to enable multiple slots. The **Basic** and **Free** tiers do not support this feature. If your app is currently on a lower tier, you will need to upgrade it before you can add a slot [Set up staging environments](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots).

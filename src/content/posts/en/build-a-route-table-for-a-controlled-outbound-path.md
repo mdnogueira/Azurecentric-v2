@@ -12,8 +12,6 @@ Azure routes traffic between subnets within a virtual network by default. If you
 
 ## Understand the default routing behaviour
 
-[![Traffic flow through NVA with UDR](/images/posts/2025/azc-189-checkpoints.svg)](/images/posts/2025/azc-189-checkpoints.svg)
-
 When you create a subnet, Azure automatically adds system routes to its route table. These include a route for the virtual network's address space, routes for private address ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 100.64.0.0/10) with a next hop type of **None**, and a default route for all other traffic (0.0.0.0/0) with a next hop type of **Internet** [Azure virtual network traffic routing](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview).
 
 If you want traffic to pass through a firewall or NVA, you must create a custom route that overrides the 0.0.0.0/0 system route. You cannot modify the system routes directly; you must create new UDRs [Azure virtual network traffic routing](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview).

@@ -12,8 +12,6 @@ You receive an authorisation error when accessing Azure Storage. The first step 
 
 ## Identify the authentication method in use
 
-[![Azure Storage Authorization Flow](/images/posts/2024/azc-090-checkpoints.svg)](/images/posts/2024/azc-090-checkpoints.svg)
-
 The error message usually indicates the failure point, but it rarely specifies the underlying configuration conflict. You need to determine whether the client is using a storage account key, a SAS token, or Microsoft Entra ID credentials.
 
 If the client is using a storage account key, it is performing Shared Key authorization. This method requires the client to sign the request using the SHA256 algorithm and Base64 encode the signature. The storage account must allow Shared Key authorization. If the account has been configured to disallow Shared Key access, any request using the account key will fail with an authorisation error, regardless of whether the key itself is correct.

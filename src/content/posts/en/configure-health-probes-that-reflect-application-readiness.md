@@ -12,8 +12,6 @@ A health probe that only checks if a port is open is not a health probe; it is a
 
 The core problem is that network availability does not equal application readiness. To fix this, you must configure probes that exercise the application logic. This requires choosing the right protocol and path for your specific workload, whether you are using Azure Load Balancer or Application Gateway.
 
-[![Health Probe Decision Flow](/images/posts/2025/azc-247-checkpoints.svg)](/images/posts/2025/azc-247-checkpoints.svg)
-
 ## Choose the right protocol for your workload
 
 The first decision is whether to use TCP, HTTP, or HTTPS. TCP probes are the simplest but the least informative. They confirm that a socket is open but say nothing about the service behind it. Use TCP only when you are load balancing UDP traffic, where HTTP probes are not supported, or when the application itself does not expose an HTTP interface.

@@ -12,8 +12,6 @@ You need an Ubuntu guest on Windows Server 2022 to reach the network. The first 
 
 ## Create the virtual switch on the host
 
-[![Ubuntu Guest Networking Flow](/images/posts/2024/azc-076-checkpoints.svg)](/images/posts/2024/azc-076-checkpoints.svg)
-
 The virtual switch is the software layer that connects your virtual machines to the physical network. You can create it using Hyper-V Manager or PowerShell. Administrative rights are required on the Windows Server 2022 host.
 
 If you prefer PowerShell, open an elevated session and identify the physical network adapter you want to use:

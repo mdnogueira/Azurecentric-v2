@@ -12,8 +12,6 @@ Azure Local brings Azure services to the edge, but the management layer can be c
 
 The Azure Connected Machine agent is the bridge that allows Azure Arc-enabled servers to manage your local machines. It does not replace the Azure Monitor Agent (AMA). The AMA is required for proactive monitoring, security protection via Microsoft Defender for Cloud, and update management. The Connected Machine agent handles identity, policy assignment, and extension management. Confusing these roles leads to incomplete visibility and gaps in security posture.
 
-[![Azure Local Agent Interaction](/images/posts/2025/azc-244-checkpoints.svg)](/images/posts/2025/azc-244-checkpoints.svg)
-
 ## The Connected Machine agent is for identity and policy
 
 The Azure Connected Machine agent enables you to manage Windows and Linux machines hosted outside of Azure, including those in Azure Local, on your corporate network, or in other cloud providers [Overview of the Azure Connected Machine agent](https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview). When you connect a machine to Azure Arc, it becomes a connected machine and is treated as a resource in Azure [Azure Arc-enabled servers Overview](https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview). The agent is responsible for:

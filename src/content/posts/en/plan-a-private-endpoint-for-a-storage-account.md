@@ -12,8 +12,6 @@ You are planning a private endpoint for an Azure Storage account. The immediate 
 
 The first thing to establish is which storage services your workload actually uses. A private endpoint is not a subscription to a storage account; it is a network interface attached to a specific sub-resource. You need a separate private endpoint for each service you intend to access: Blobs, Data Lake Storage (DFS), Files, Queues, Tables, or Static Websites.
 
-[![Private Endpoint Flow for Azure Storage](/images/posts/2025/azc-172-checkpoints.svg)](/images/posts/2025/azc-172-checkpoints.svg)
-
 ## Map services to endpoints
 
 A common mistake is creating one private endpoint for a storage account and expecting all protocols to work. They do not. The documentation states clearly that you need a separate private endpoint for each storage resource [Use private endpoints](https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints).

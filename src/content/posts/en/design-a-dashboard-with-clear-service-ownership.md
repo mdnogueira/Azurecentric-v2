@@ -12,8 +12,6 @@ A dashboard displaying metrics across dozens of subscriptions often fails the mo
 
 Azure Workbooks provide the structural elements to enforce ownership visibility without hard-coding resource lists. By combining parameters, text blocks, and scoped queries, you can create a template that adapts to the user's context while keeping the ownership narrative clear. This approach works because it separates the *who* (ownership metadata) from the *what* (performance data).
 
-[![Workbook Ownership Flow](/images/posts/2026/azc-326-checkpoints.svg)](/images/posts/2026/azc-326-checkpoints.svg)
-
 ## Define ownership as a parameter, not a static label
 
 The most common mistake is to write a query that assumes a single owner or to hard-code a resource group name into the text. Instead, treat ownership as a dynamic filter. Azure Workbooks support parameters that can pull values from Azure Resource Graph, allowing you to list owners or resource groups dynamically.

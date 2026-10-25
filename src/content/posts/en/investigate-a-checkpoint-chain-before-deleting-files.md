@@ -12,8 +12,6 @@ You are looking at a Hyper-V host running low on disk space, or perhaps you are 
 
 The core issue is that Hyper-V virtual hard disks (VHDs) often use a differencing disk structure when checkpoints are involved. A differencing disk records changes made after a checkpoint was taken, pointing back to a parent disk. If you have a chain of checkpoints, you have a linked list of these differencing disks. Deleting a checkpoint triggers a merge, where the changes in the differencing disk are written back into its parent. This process requires significant free space on the physical volume hosting the VHDs.
 
-[![Hyper-V Checkpoint Deletion Flow](/images/posts/2025/azc-216-checkpoints.svg)](/images/posts/2025/azc-216-checkpoints.svg)
-
 ## Understand the checkpoint type first
 
 Not all checkpoints behave the same way during creation, which influences their suitability for different workloads. Since Windows Server 2016, Hyper-V supports two types: standard and production checkpoints [Choose between standard or production checkpoints in Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V).

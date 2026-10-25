@@ -12,8 +12,6 @@ Microsoft Security Copilot became generally available on 1 April 2024. It offers
 
 The service is available as a standalone portal or embedded within existing Microsoft Security products such as Microsoft Defender, Microsoft Entra, and Microsoft Purview. Before you start investigating, you need to decide which experience fits your immediate needs and ensure you have the correct licensing.
 
-[![Security Copilot Investigation Flow](/images/posts/2024/azc-034-checkpoints.svg)](/images/posts/2024/azc-034-checkpoints.svg)
-
 ## Clarify the licensing model
 
 Microsoft Security Copilot uses a provisioned pay-as-you-go licensing model. This consumption-based approach allows you to scale usage and costs according to your needs. You can purchase the service starting from 1 April 2024. Contact your account representative to arrange access. The licensing is separate from other Microsoft 365 or Defender licenses, so do not assume inclusion.

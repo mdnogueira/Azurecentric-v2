@@ -12,8 +12,6 @@ You are planning a move to Azure, but your application team wants to refactor th
 
 The practical solution is to separate the infrastructure migration from the application modernisation. Azure Migrate supports this decoupling by providing distinct tools for assessment, planning, and execution. You can use the service to move the underlying compute and storage to Azure first, ensuring the environment is stable and costed, and then apply application-specific modernisation patterns on top of that new foundation.
 
-[![Decoupled Migration Flow](/images/posts/2026/azc-322-checkpoints.svg)](/images/posts/2026/azc-322-checkpoints.svg)
-
 ## Assess infrastructure readiness separately from application compatibility
 
 The first step is to understand what you are moving. Azure Migrate provides assessment capabilities for servers, databases, and web applications, but these assessments serve specific, distinct purposes. The Server Assessment evaluates readiness for Azure Virtual Machines, rightsizing, and cost estimation [Overview Assessment](https://learn.microsoft.com/en-us/azure/migrate/concepts-overview). The Database Assessment evaluates readiness for Azure SQL Database, Azure SQL Managed Instance, or SQL Server on Azure VM [Build a migration plan with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning).

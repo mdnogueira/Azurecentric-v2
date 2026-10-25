@@ -12,8 +12,6 @@ Hotpatch allows you to install Windows Server security updates without requiring
 
 Enabling Hotpatch requires a supported operating system, Virtualization Based Security (VBS), and Azure Arc connectivity. You can manage the license and updates through Azure Update Manager or the Azure Arc portal. This article explains how to verify prerequisites, enable the feature, and monitor its status.
 
-[![Hotpatch Enablement and Status Flow](/images/posts/2026/azc-312-checkpoints.svg)](/images/posts/2026/azc-312-checkpoints.svg)
-
 ## Prerequisites and Operating System Support
 
 Hotpatch is supported on specific editions of Windows Server. You must ensure your machine runs a compatible version before attempting to enable the feature.

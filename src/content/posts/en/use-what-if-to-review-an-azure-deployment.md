@@ -12,8 +12,6 @@ You are about to change a virtual network address space or remove a subnet. The 
 
 The what-if operation is not a dry run that validates syntax in isolation; it compares your Bicep file against the current state of the target scope. It tells you which resources will be created, modified, or deleted. For a Bicep file that uses complete mode, it can even identify resources that exist in the scope but are missing from the template, marking them for deletion.
 
-[![What-If Operation Flow](/images/posts/2024/azc-047-checkpoints.svg)](/images/posts/2024/azc-047-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 To run a what-if operation, you need the same permissions as a live deployment. You must have write access to the resources you are deploying and access to all operations on the `Microsoft.Resources/deployments` resource type. For example, deploying a virtual machine requires `Microsoft.Compute/virtualMachines/write` and `Microsoft.Resources/deployments/*` permissions [S1, S2].

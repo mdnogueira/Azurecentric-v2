@@ -12,8 +12,6 @@ Defender for Cloud does not automatically scan your GitHub repositories for secu
 
 ## Connect your GitHub organization
 
-[![Defender for Cloud GitHub Integration Flow](/images/posts/2024/azc-097-checkpoints.svg)](/images/posts/2024/azc-097-checkpoints.svg)
-
 Start by navigating to the **Environment settings** page in Microsoft Defender for Cloud. Select **Add environment** and choose **GitHub** from the list of available connectors [Connect your GitHub organizations](https://learn.microsoft.com/en-us/azure/defender-for-cloud/quickstart-onboard-github). You will need to provide a name for the connector, select the target Azure subscription, resource group, and region. The subscription you choose is where Defender for Cloud stores the connection details.
 
 Next, you must authorize access. Select **Next: Configure access** and then **Authorize**. This step redirects you to GitHub to sign in with an account that has the necessary permissions. If you delay the installation of the DevOps security GitHub application, the session may time out [Connect your GitHub organizations](https://learn.microsoft.com/en-us/azure/defender-for-cloud/quickstart-onboard-github).

@@ -12,8 +12,6 @@ You have a two-node failover cluster and a maintenance window. You need to apply
 
 The short answer is that you can update a two-node cluster with one spare node, provided you configure the cluster to use a quorum witness. Without a witness, a two-node cluster cannot survive the loss of one node while the other is in maintenance mode, because the remaining node alone cannot form a majority.
 
-[![Two-Node Cluster Maintenance Flow with Witness](/images/posts/2026/azc-350-checkpoints.svg)](/images/posts/2026/azc-350-checkpoints.svg)
-
 ## Understand the quorum constraint
 
 Cluster-Aware Updating (CAU) automates the update process by putting each node into maintenance mode, moving clustered roles, installing updates, and restarting the node. During this process, the node being updated is effectively offline for the duration of the update and restart.

@@ -12,8 +12,6 @@ You are planning a recovery exercise and need to know exactly which components m
 
 Business continuity is about maintaining operational capability during failures. It relies on proactive planning to identify risks and design high availability or disaster recovery strategies accordingly [What are business continuity, high availability, and disaster recovery?](https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery). A dependency map is the technical record that links your application components to the business processes they support, allowing you to define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) with evidence rather than assumption [Business continuity management program in Azure](https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program).
 
-[![Application Dependency and Recovery Flow](/images/posts/2025/azc-132-checkpoints.svg)](/images/posts/2025/azc-132-checkpoints.svg)
-
 ## Define the scope of the application
 
 Start by identifying the application as a logical unit. In Azure, services are statically identified through tooling and serve as the unit of measure for business continuity management [Business continuity management program in Azure](https://learn.microsoft.com/en-us/azure/reliability/business-continuity-management-program). An application is rarely a single resource; it is a collection of services that interact to deliver a business function.

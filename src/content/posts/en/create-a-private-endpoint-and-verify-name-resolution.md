@@ -12,8 +12,6 @@ You have an Azure App Service web app and you want to access it from a virtual m
 
 This guide walks through creating a private endpoint for an Azure App Service and verifying that name resolution works as expected. We will use the Azure portal for the creation steps and PowerShell for verification. The example uses an App Service web app named **webapp-1** and a virtual machine named **vm-1** in the same subscription.
 
-[![Private Endpoint and DNS Resolution Flow](/images/posts/2024/azc-108-checkpoints.svg)](/images/posts/2024/azc-108-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before starting, ensure you have the following:

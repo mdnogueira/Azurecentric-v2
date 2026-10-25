@@ -12,8 +12,6 @@ A virtual machine reports as "Running" in Hyper-V Manager, but the guest operati
 
 On a Windows Server 2025 host, you can verify the health of these services from the host side without logging into the guest. This is useful for a quick health check across multiple VMs. However, host-side status is only half the picture. For a service to function, it must be enabled in the host configuration and running inside the guest operating system.
 
-[![Integration Service Health Check Flow](/images/posts/2026/azc-332-checkpoints.svg)](/images/posts/2026/azc-332-checkpoints.svg)
-
 ## Check the host-side status
 
 The most efficient way to review integration service health across a Hyper-V host is to use PowerShell. The `Get-VMIntegrationService` cmdlet returns the current state of each service for a specified virtual machine. This command requires administrative privileges on the Hyper-V host.

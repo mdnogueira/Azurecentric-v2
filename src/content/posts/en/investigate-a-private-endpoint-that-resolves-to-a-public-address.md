@@ -12,8 +12,6 @@ A private endpoint is designed to bring a service into your virtual network via 
 
 The resolution to a public IP is almost always a DNS configuration issue. A private endpoint provides the network interface, but it does not automatically push DNS records to every client. You must explicitly configure DNS so that the client's virtual network queries a server that hosts the private zone and returns the private IP address.
 
-[![Private Endpoint DNS Resolution Flow](/images/posts/2026/azc-305-checkpoints.svg)](/images/posts/2026/azc-305-checkpoints.svg)
-
 ## Verify the Private DNS Zone linkage
 
 The first step is to confirm that the private DNS zone is correctly associated with the virtual network containing the client. If the zone is not linked to that specific virtual network, the client's DNS queries will not reach the private zone records.

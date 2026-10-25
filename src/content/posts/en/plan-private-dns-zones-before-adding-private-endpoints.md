@@ -12,8 +12,6 @@ You create a private endpoint, the connection is approved, and the network inter
 
 This is a common trap. Many practitioners assume that enabling a private endpoint automatically routes traffic privately. It does not. The private endpoint provides the network interface and the private IP, but the client must still resolve the service name to that IP. If the DNS configuration is missing or incorrect, the client bypasses the private endpoint and attempts to reach the public endpoint.
 
-[![Private Endpoint DNS Resolution Flow](/images/posts/2024/azc-129-checkpoints.svg)](/images/posts/2024/azc-129-checkpoints.svg)
-
 ## The DNS resolution gap
 
 When you connect to an Azure service like Azure Storage or Azure SQL Database via a public endpoint, the client resolves the service FQDN (e.g., `mystorageaccount.blob.core.windows.net`) to a public IP address via the public DNS infrastructure. Azure creates an A record on the public DNS pointing to that public IP.

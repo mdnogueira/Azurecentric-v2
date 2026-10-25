@@ -12,8 +12,6 @@ You are deploying a Bicep file that references a module from a registry. The dep
 
 In infrastructure as code, reproducibility is not optional. If your deployment script does not explicitly state which version of a module it uses, it will resolve to a default version. This is convenient for development, but it introduces drift in production. Pinning versions ensures that a deployment today behaves exactly the same way a year from now, unless you explicitly choose to update.
 
-[![Module Version Pinning Flow](/images/posts/2026/azc-303-checkpoints.svg)](/images/posts/2026/azc-303-checkpoints.svg)
-
 ## Why pinning matters
 
 Modules are not static. Whether they come from a public registry, a private Azure Container Registry (ACR), or a template spec, they evolve. A new version might introduce a breaking change, such as removing a deprecated property or changing the default value of a parameter. Without a pinned version, your deployment is dependent on external changes you did not review.

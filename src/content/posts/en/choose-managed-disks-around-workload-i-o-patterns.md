@@ -12,8 +12,6 @@ You are deploying a virtual machine and need to decide between locally redundant
 
 LRS offers lower write latency because it synchronously writes data to three copies within a single data centre. ZRS synchronously replicates data across three availability zones, providing higher availability but introducing additional write latency. If your application cannot tolerate the latency of ZRS, or if it already handles synchronous writes across zones at the application layer, LRS may be the more appropriate choice.
 
-[![Managed Disk Redundancy Decision Flow](/images/posts/2026/azc-327-checkpoints.svg)](/images/posts/2026/azc-327-checkpoints.svg)
-
 ## Understand the latency trade-off
 
 The primary technical difference between LRS and ZRS for managed disks is where the synchronous writes occur. LRS replicates data three times within a single data centre in the selected region. This means writes are synchronously committed to three copies in the same physical location, resulting in lower latency. ZRS, on the other hand, synchronously replicates the disk across three separate availability zones. Each zone is a distinct physical location with independent power, cooling, and networking. The need to synchronously replicate across these zones introduces additional write latency compared to LRS.

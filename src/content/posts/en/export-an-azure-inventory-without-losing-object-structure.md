@@ -12,8 +12,6 @@ An Azure inventory should remain a collection of objects until you deliberately 
 
 Start with a clear inventory scope. For the illustrative example here, we want the names, locations and network-interface references of VMs in one resource group. The examples require an authenticated Az PowerShell session with permission to read the selected resources. Replace the example resource-group name before running them; no live Azure inventory was queried while preparing this article.
 
-[![Azure VM Inventory Export Flow](/images/posts/2024/azc-092-checkpoints.svg)](/images/posts/2024/azc-092-checkpoints.svg)
-
 ## Inspect the objects first
 
 Microsoft's guidance on [viewing object structure](https://learn.microsoft.com/en-us/powershell/scripting/samples/Viewing-Object-Structure--Get-Member-) explains how Get-Member exposes properties and methods. Use that inspection before writing a property path from memory.

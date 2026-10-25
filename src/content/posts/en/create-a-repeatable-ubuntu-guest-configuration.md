@@ -12,8 +12,6 @@ You have a Windows Server 2025 host running Hyper-V and you need to deploy Ubunt
 
 This approach works because Hyper-V virtual machines are defined by a set of configuration files and virtual hard disks. When you export a virtual machine, you gather all required files into one unit, including the virtual hard disk files, configuration files, and any checkpoint files [Export and import virtual machines](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines). Importing that export allows you to register the virtual machine on the same host or a new one, effectively cloning the guest state.
 
-[![Ubuntu Guest Configuration Workflow](/images/posts/2026/azc-333-checkpoints.svg)](/images/posts/2026/azc-333-checkpoints.svg)
-
 ## Prepare the reference Ubuntu virtual machine
 
 Start by creating a generation 2 virtual machine. Generation 2 is the recommended choice for modern operating systems because it removes legacy hardware emulation, which simplifies the boot process and improves performance [Create a virtual machine in Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v).

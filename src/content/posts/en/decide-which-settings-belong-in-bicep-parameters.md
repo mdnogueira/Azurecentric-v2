@@ -12,8 +12,6 @@ A deployment parameter is a decision you are asking the caller to make. Exposing
 
 Start with the decisions the caller owns. Resource names and an existing dependency may vary independently. An agreed security baseline may not. Related environment choices can sometimes be selected together rather than entered as separate, loosely coordinated values.
 
-[![Bicep parameter design checkpoints](/images/posts/2024/azc-026-checkpoints.svg)](/images/posts/2024/azc-026-checkpoints.svg)
-
 ## Separate inputs, derived values and invariants
 
 Microsoft's [parameter guidance](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters) describes typed inputs, defaults and decorators. Its [best practices](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices) recommend thinking carefully about which values change between deployments.

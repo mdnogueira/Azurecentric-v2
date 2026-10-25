@@ -12,8 +12,6 @@ You have a Bicep file that looks correct in your editor, but you are about to de
 
 The linter is integrated into the Bicep CLI and the Bicep extension for Visual Studio Code. To use it, you must have version 0.4 or later installed [Use Bicep linter](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/linter).
 
-[![Bicep Linter Workflow](/images/posts/2025/azc-187-checkpoints.svg)](/images/posts/2025/azc-187-checkpoints.svg)
-
 ## How the linter works
 
 The linter checks your Bicep files against a set of default rules. These rules are taken from the ARM Template Test Cases (arm-ttk) and are set to the warning level by default [Use Bicep linter](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/linter). This means that violations will appear in your editor and build output, but they will not stop the build unless you change the level to `error`.

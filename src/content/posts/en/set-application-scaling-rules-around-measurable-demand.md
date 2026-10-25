@@ -12,8 +12,6 @@ You have a containerised application that needs to handle variable HTTP traffic 
 
 The first thing to check is your scaling objective. Do you need the application to scale to zero when idle to minimise cost, or do you require at least one instance to be running at all times to handle immediate requests? This decision sets the minimum replica count. The second decision is the concurrency threshold. This is the number of simultaneous requests that a single replica can handle before the platform decides to add another replica. Setting this too low causes unnecessary scaling; setting it too high risks latency spikes.
 
-[![Container Apps HTTP Scaling Flow](/images/posts/2026/azc-279-checkpoints.svg)](/images/posts/2026/azc-279-checkpoints.svg)
-
 ## Define the scale limits
 
 Scaling in Container Apps is defined by a range of replicas. The minimum number of replicas determines the baseline. If you set this to zero, the application scales to zero when idle, and you are not billed for usage during that time, though idle replicas may still incur a lower billing rate if they are retained in memory. If you set the minimum to one or more, an instance is always running, eliminating cold start latency for incoming requests.

@@ -12,8 +12,6 @@ You are running a compute experiment with Azure Batch and need to ensure the bil
 
 Azure Batch itself is a free service, but the underlying virtual machines, managed disks, storage, and networking used by the pools incur charges. To set a meaningful boundary, you must filter the cost analysis to show only the resources associated with your Batch account or pool. This prevents the budget from being diluted by other subscription costs and ensures alerts trigger when the experiment itself exceeds its allowance.
 
-[![Azure Batch Cost Filtering and Budgeting Flow](/images/posts/2025/azc-243-checkpoints.svg)](/images/posts/2025/azc-243-checkpoints.svg)
-
 ## Understand what you are budgeting for
 
 Before creating the budget, it helps to know what drives the cost. The largest expense is typically the virtual machines allocated for pool nodes. If you are using Virtual Machine Configuration, each VM also uses an Azure-managed OS disk, which adds to the cost. You will also see charges for data transfer, storage of application packages and input/output files, and standard load balancers used by the pool [Get cost analysis and set budgets for Azure Batch](https://learn.microsoft.com/en-us/azure/batch/budget).

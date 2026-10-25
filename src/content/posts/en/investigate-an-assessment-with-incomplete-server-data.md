@@ -12,8 +12,6 @@ You open the Azure Migrate assessment report and see that the performance covera
 
 This is a common symptom when the Azure Migrate appliance cannot collect the necessary performance counters. The assessment service relies on configuration data and performance data fetched at specific intervals. If the data is missing, the service falls back to static allocation data. To restore accurate performance-based sizing, you need to verify the health of the data collection pipeline, starting with the appliance and moving to the source environment.
 
-[![Azure Migrate Performance Data Collection Flow](/images/posts/2026/azc-341-checkpoints.svg)](/images/posts/2026/azc-341-checkpoints.svg)
-
 ## Check the appliance connection status
 
 The first thing to verify is whether the appliance can communicate with the source servers. If the appliance cannot connect, no data will be collected.

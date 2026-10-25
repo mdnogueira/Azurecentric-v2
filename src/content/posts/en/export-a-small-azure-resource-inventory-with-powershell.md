@@ -12,8 +12,6 @@ You need a copy of your Azure Policy definitions, initiatives, and assignments. 
 
 The first thing to check is whether you are looking for a single object or a full inventory. Azure Policy resources—definitions, initiatives (set definitions), and assignments—are distinct types. You export each type individually using its specific cmdlet. You cannot dump everything into one file with a single command; you must query each type and save the results separately.
 
-[![Policy Export Workflow](/images/posts/2026/azc-345-checkpoints.svg)](/images/posts/2026/azc-345-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 You need the `Az.Resources` module installed. If you are using a managed identity or service principal, ensure the identity has at least Reader access to the scope where the policies are defined (management group, subscription, or resource group). To register the `Microsoft.PolicyInsights` resource provider, which is required for compliance state queries, you need Contributor or Owner permissions on the subscription.

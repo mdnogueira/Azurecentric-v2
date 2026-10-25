@@ -12,8 +12,6 @@ You are planning an in-place upgrade of Windows Server. This is a feature update
 
 The first decision is whether an in-place upgrade is supported for your current version. Microsoft allows nonclustered systems to upgrade up to four versions at a time when targeting Windows Server 2025. This means you can move directly from Windows Server 2012 R2, 2016, 2019, or 2022 to Windows Server 2025. For earlier target versions, the jump is limited to two versions. If your current version is not listed in the supported upgrade matrix, or if you are running a prerelease version, an in-place upgrade is not supported, and you must perform a clean installation or migration.
 
-[![In-Place Upgrade Decision Flow](/images/posts/2025/azc-252-checkpoints.svg)](/images/posts/2025/azc-252-checkpoints.svg)
-
 ## Verify the upgrade path and edition constraints
 
 Before downloading media, confirm that your source version can reach your target version. The supported paths are strict. For example, Windows Server 2012 can upgrade to 2012 R2 or 2016. Windows Server 2012 R2 can upgrade to 2016, 2019, 2022, or 2025. Windows Server 2016 can upgrade to 2019, 2022, or 2025. Windows Server 2019 can upgrade to 2022 or 2025. Windows Server 2022 can upgrade to 2025.

@@ -12,8 +12,6 @@ Hotpatching for Windows Server 2025 allows you to install security updates witho
 
 Windows Server 2025 Hotpatch is generally available as a subscription service. It allows you to install security patches in-memory without restarting the operating system, processes, or applications. However, the service operates on a three-month cycle. The first month of each quarter is a baseline month where you receive a standard Latest Cumulative Update (LCU) that includes non-security fixes, drivers, and other updates. This baseline update requires a reboot. The subsequent two months in the cycle provide Hotpatches that do not require a restart.
 
-[![Windows Server 2025 Hotpatch Cycle and Prerequisites](/images/posts/2025/azc-199-checkpoints.svg)](/images/posts/2025/azc-199-checkpoints.svg)
-
 ## Understand the reboot schedule
 
 The Hotpatch service provides up to eight Hotpatches per year, but it also mandates four planned baseline reboots. The baseline months are January, April, July, and October. During these months, you must plan for a restart to install the cumulative update that refreshes the baseline.

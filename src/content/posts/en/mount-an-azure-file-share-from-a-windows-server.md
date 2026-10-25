@@ -12,8 +12,6 @@ You need to connect a Windows server to an Azure file share. The first decision 
 
 ## Prerequisites and network checks
 
-[![Azure File Share Mount Decision Flow](/images/posts/2025/azc-151-checkpoints.svg)](/images/posts/2025/azc-151-checkpoints.svg)
-
 Azure Files uses the Server Message Block (SMB) protocol over TCP port 445. If this port is blocked by a firewall or ISP, the connection will fail. You can verify connectivity before attempting to mount the share.
 
 ```powershell

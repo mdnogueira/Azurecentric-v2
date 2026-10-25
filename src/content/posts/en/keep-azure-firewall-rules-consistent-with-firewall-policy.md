@@ -12,8 +12,6 @@ You have a firewall policy with dozens of rule collections, and traffic is behav
 
 Azure Firewall uses a strict hierarchy to evaluate traffic: rule collection groups, then rule collections within those groups, and finally individual rules. Understanding this structure is essential for maintaining consistency and performance.
 
-[![Azure Firewall Rule Processing Hierarchy](/images/posts/2024/azc-058-checkpoints.svg)](/images/posts/2024/azc-058-checkpoints.svg)
-
 ## Understand the processing hierarchy
 
 Firewall Policy is the top-level resource that contains your security settings. It organises rules into a hierarchy that the firewall processes in a specific order. The first unit processed is the rule collection group. These groups have priority values that determine their processing order. There are three default rule collection groups with preset priorities: Default DNAT (priority 100), Default Network (priority 200), and Default Application (priority 300). You cannot delete these default groups or change their priority values, but you can create custom rule collection groups with different priority values to override the default processing order.

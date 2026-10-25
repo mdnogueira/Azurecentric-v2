@@ -12,8 +12,6 @@ Emergency access accounts provide an administrative route when the normal one is
 
 Microsoft's [emergency access guidance](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access) recommends two or more cloud-only accounts. Creating them is one part of the process. The credentials must be retrievable, the authentication method must work, and their use must reach someone who can investigate.
 
-[![Emergency access preparation and testing checkpoints](/images/posts/2024/azc-020-checkpoints.svg)](/images/posts/2024/azc-020-checkpoints.svg)
-
 ## Establish an independent administrative route
 
 Use accounts created directly in Microsoft Entra ID with the tenant's `onmicrosoft.com` domain. They should not be federated or synchronised from an on-premises directory.

@@ -12,8 +12,6 @@ You have increased the size of a virtual hard disk (VHDX) attached to a Linux vi
 
 The first thing to check is the partition table type. If the disk uses a GUID Partition Table (GPT), resizing the VHDX can leave the secondary GPT header at the end of the disk misaligned with the new disk size. Hyper-V allows shrinking or expanding VHDX files without regard for the partition structures inside [Best Practices for running Linux on Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V). If you expand the disk and then check the partition layout with a tool like `fdisk` or `parted`, you may see a warning about the first and secondary GPT headers. This warning is safe to resolve, but it must be addressed before the file system can be grown.
 
-[![Linux Guest Disk Expansion Flow](/images/posts/2025/azc-158-checkpoints.svg)](/images/posts/2025/azc-158-checkpoints.svg)
-
 ## Update the partition layout
 
 You need to run the partition management tool inside the Linux guest. The goal is to extend the existing partition to fill the new disk space. Using `parted` is generally safer and more direct for this operation than `fdisk`, as it avoids the risk of misconfiguring partition boundaries.

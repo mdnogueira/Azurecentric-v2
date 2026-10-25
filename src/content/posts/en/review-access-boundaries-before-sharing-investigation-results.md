@@ -12,8 +12,6 @@ You have asked Microsoft Security Copilot to investigate a Sentinel alert. The a
 
 Microsoft Security Copilot is a generative AI-powered assistant for daily operations in security and IT that empowers teams to protect at the speed and scale of AI [1]. It connects to your existing security tools, such as Microsoft Sentinel, to provide context and analysis. However, the connection itself does not change the fundamental principle of least privilege. The Copilot service acts as a layer that reads and writes data based on the permissions of the identity used to authenticate it. If that identity has broad access, the Copilot can access and potentially expose data to anyone who can trigger or view the interaction.
 
-[![Security Copilot Data Access Flow](/images/posts/2026/azc-277-checkpoints.svg)](/images/posts/2026/azc-277-checkpoints.svg)
-
 ## Understand the data flow
 
 When you use Security Copilot with Sentinel, the assistant retrieves data from your Sentinel workspace to answer your questions or perform investigations. This data remains within the boundaries defined by your Microsoft Entra ID and Sentinel access controls. The Copilot interface does not create a new, separate data store that bypasses these controls. Instead, it queries the existing data sources.

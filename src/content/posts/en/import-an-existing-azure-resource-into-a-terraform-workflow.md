@@ -12,8 +12,6 @@ You have an Azure resource that was created outside of your current Bicep file, 
 
 This approach is distinct from Bicep's compile-time `import` feature, which brings in types, variables, and functions from other `.bicep` files. The `existing` keyword operates at the Azure Resource Manager (ARM) deployment level, allowing your template to read properties from a resource that already exists in the target scope without attempting to create or modify it.
 
-[![Bicep Existing Resource Reference Flow](/images/posts/2025/azc-207-checkpoints.svg)](/images/posts/2025/azc-207-checkpoints.svg)
-
 ## Why use the `existing` keyword?
 
 When you deploy a Bicep file, ARM expects to manage the lifecycle of every resource declared in that file. If you declare a resource without the `existing` keyword, ARM will attempt to create it if it does not exist, or update it if it does. This is not what you want when you are simply reading a value, such as a storage account endpoint or a private endpoint ID, from a resource managed by a different team or a previous deployment.

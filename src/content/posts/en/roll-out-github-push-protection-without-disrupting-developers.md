@@ -12,8 +12,6 @@ You have enabled secret scanning, but now you face a practical problem: develope
 
 The solution is to enable push protection and configure delegated bypass. This ensures that only authorised reviewers can approve a push containing a detected secret, while the rest of the team must fix the commit. This approach maintains security without grinding development to a halt.
 
-[![Push Protection and Delegated Bypass Flow](/images/posts/2025/azc-138-checkpoints.svg)](/images/posts/2025/azc-138-checkpoints.svg)
-
 ## Prerequisites and scope
 
 Before configuring bypass rules, you must ensure the underlying protection is active. Push protection requires secret scanning to be enabled for the repository. The licensing requirements differ depending on the repository visibility. For public repositories, secret scanning (and thus push protection) can be enabled without GitHub Advanced Security. However, for private or internal repositories, GitHub Advanced Security must be enabled at the organisation level [Push protection for repositories and organizations](https://docs.github.com/en/code-security/secret-scanning/push-protection-for-repositories-and-organizations).

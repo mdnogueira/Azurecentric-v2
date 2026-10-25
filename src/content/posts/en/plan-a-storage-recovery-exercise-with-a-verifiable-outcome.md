@@ -12,8 +12,6 @@ A storage recovery exercise is only useful if you can verify that the data you e
 
 ## Choose the failover type and verify prerequisites
 
-[![Storage Failover Decision and Verification Flow](/images/posts/2026/azc-365-checkpoints.svg)](/images/posts/2026/azc-365-checkpoints.svg)
-
 Before initiating any failover, the storage account must be configured for geo-redundant storage (GRS, RA-GRS, GZRS, or RA-GZRS). If your account is using locally redundant storage (LRS) or zone-redundant storage (ZRS), you must change the redundancy setting first. This triggers an initial synchronization from the primary to the secondary region, which can take several minutes. You cannot initiate a failover until this synchronization is complete [Initiate a storage account failover](https://learn.microsoft.com/en-us/azure/storage/common/storage-initiate-account-failover).
 
 If you are using Azure Files, you must stop all application and client activity before starting a planned failover. Active read or write operations during the failover process can result in file shares entering an inconsistent state [Initiate a storage account failover](https://learn.microsoft.com/en-us/azure/storage/common/storage-initiate-account-failover), [Disaster Recovery and Failover for Azure Files](https://learn.microsoft.com/en-us/azure/storage/files/files-disaster-recovery#best-practices-for-planned-geo-failover). You should also verify that no open file handles exist. For example, you can use PowerShell to list active handles:

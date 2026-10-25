@@ -12,8 +12,6 @@ You cannot select a disaster recovery (DR) strategy until you have defined what 
 
 ## Define the recovery objectives
 
-[![DR Design Decision Flow](/images/posts/2024/azc-071-checkpoints.svg)](/images/posts/2024/azc-071-checkpoints.svg)
-
 A complete DR plan must specify critical business requirements for each process the application implements. These are not technical constraints imposed by Azure; they are business decisions that drive the technical architecture.
 
 **Recovery Point Objective (RPO)** is the maximum duration of acceptable data loss. It is measured in units of time, not volume. For example, an RPO of "30 minutes" means the business can accept losing up to 30 minutes of data. It is about limiting and recovering from data loss, not data theft. If your RPO is zero, you cannot rely on periodic backups alone.

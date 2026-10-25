@@ -12,8 +12,6 @@ You are deploying a PaaS application across staging and production environments,
 
 ## Why separate identities matter
 
-[![Identity Separation Flow](/images/posts/2026/azc-357-checkpoints.svg)](/images/posts/2026/azc-357-checkpoints.svg)
-
 A system-assigned managed identity is tied to the lifecycle of the App Service or Container App. If you use the same system-assigned identity for both staging and production, any role assignment you make to that identity applies to both environments. This means that if you grant the production app access to a Key Vault or a database, the staging app inherits that same access. This is rarely desirable, as staging often requires different data sets, configurations, or access levels.
 
 User-assigned managed identities are standalone Azure resources. They can be assigned to multiple apps, but each app can also have its own unique user-assigned identity. This allows you to create a distinct identity for staging and another for production. You can then manage their permissions independently. For example, you can assign the production identity a role on the production Key Vault, while the staging identity has no such assignment or is assigned to a separate staging Key Vault.

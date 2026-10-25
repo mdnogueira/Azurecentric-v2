@@ -12,8 +12,6 @@ An Azure Arc-enabled server extension fails to install or report status. The por
 
 ## Collect the agent logs
 
-[![Arc Extension Failure Troubleshooting Flow](/images/posts/2025/azc-225-checkpoints.svg)](/images/posts/2025/azc-225-checkpoints.svg)
-
 The `azcmagent` command-line tool includes a dedicated command for gathering diagnostic data. This command packages the relevant log files into a ZIP archive, which is useful for sharing with support or for offline analysis.
 
 Run the following command on the connected machine to collect the most recent logs:

@@ -12,8 +12,6 @@ A deployment fails with a quota error, or a scale set refuses to add instances d
 
 ## Understand the quota structure
 
-[![vCPU Quota Check Flow](/images/posts/2024/azc-082-checkpoints.svg)](/images/posts/2024/azc-082-checkpoints.svg)
-
 vCPU quotas for virtual machines and scale sets are arranged in two tiers for each subscription and region. The first tier is the **Total Regional vCPUs**, which covers all VM sizes in that region. The second tier consists of specific VM size family cores, such as the D-series or E-series vCPUs. 
 
 When you deploy a new VM, the system checks both limits. The vCPUs required for the new VM must not exceed the available quota for the specific VM size family, nor must they exceed the remaining Total Regional vCPUs. If you exceed either of these quotas, the deployment is rejected. There is also a separate quota for the overall number of virtual machines in the region, but the vCPU limits are the most common bottleneck for compute-heavy workloads.

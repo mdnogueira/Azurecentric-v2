@@ -12,8 +12,6 @@ The guest operating system reports high latency or low throughput on its virtual
 
 ## Check the Linux I/O scheduler first
 
-[![Linux VM Disk I/O Troubleshooting Flow](/images/posts/2025/azc-255-checkpoints.svg)](/images/posts/2025/azc-255-checkpoints.svg)
-
 The Linux kernel uses an I/O scheduler to reorder disk requests. On modern Linux distributions running on Hyper-V, the default scheduler may not be optimal for virtualised storage, particularly when the underlying physical media is solid-state. The [best practices for running Linux on Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/Best-Practices-for-running-Linux-on-Hyper-V) recommend using a scheduler that passes scheduling decisions to the underlying hypervisor.
 
 For Linux kernels using the older 'blk' subsystem, the recommended scheduler is "noop". For kernels using the newer 'blk-mq' subsystem, the recommendation is "none". You can verify the current scheduler for a specific disk by reading the following file:

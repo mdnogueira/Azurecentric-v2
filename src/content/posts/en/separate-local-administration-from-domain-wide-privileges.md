@@ -12,8 +12,6 @@ You have a Windows Server 2025 member server joined to an Active Directory domai
 
 The goal is to ensure that even if the local Administrator account is compromised, it cannot be used to access other computers, run services, or execute batch jobs. This is achieved by configuring specific user rights assignments via Group Policy. This approach isolates the privilege to the local machine, preserving the account's utility for local disaster recovery while breaking the chain of network-based attacks.
 
-[![Local Administrator Restriction Flow](/images/posts/2026/azc-330-checkpoints.svg)](/images/posts/2026/azc-330-checkpoints.svg)
-
 ## Why restrict the local Administrator account?
 
 The principle of least privilege applies to built-in accounts just as it does to user accounts. If an attacker compromises a domain-joined server, they often look for credentials that can be used elsewhere. The local Administrator account is a prime target because it exists on every machine with the same name.

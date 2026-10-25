@@ -12,8 +12,6 @@ You have a Generation 2 virtual machine running Linux, and you want to ensure Se
 
 Secure Boot in Hyper-V Generation 2 virtual machines verifies the integrity of the boot process using certificates. It prevents unauthorized firmware, operating systems, or UEFI drivers from running at boot time [Generation 2 virtual machine security settings for Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v). The feature is available for both Windows and Linux distribution operating systems [Generation 2 virtual machine security settings for Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v).
 
-[![Secure Boot Configuration Flow](/images/posts/2024/azc-038-checkpoints.svg)](/images/posts/2024/azc-038-checkpoints.svg)
-
 ## Verify the Secure Boot template
 
 The first thing to check is which Secure Boot template is assigned to the virtual machine. Hyper-V provides specific templates based on the operating system. For Linux, you must use the **Microsoft UEFI Certificate Authority** template [Generation 2 virtual machine security settings for Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v).

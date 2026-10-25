@@ -12,8 +12,6 @@ A user reports they cannot sign in to Microsoft 365. The first thing to check is
 
 ## Gather the sign-in details
 
-[![Sign-in Failure Investigation Flow](/images/posts/2024/azc-120-checkpoints.svg)](/images/posts/2024/azc-120-checkpoints.svg)
-
 You need permission to view the activity logs. The **Reports Reader** role is the least privileged role required to access the sign-in logs in the Microsoft Entra admin center. Any user can also view their own sign-in history at https://mysignins.microsoft.com.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Reports Reader or higher.

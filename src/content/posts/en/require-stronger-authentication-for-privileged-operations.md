@@ -12,8 +12,6 @@ The Azure management plane is moving to mandatory multifactor authentication (MF
 
 The enforcement timeline is strict. Phase 1, which began in late 2024, requires MFA for interactive sign-ins to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. Phase 2, starting September 1, 2025, extends this requirement to Azure CLI, Azure PowerShell, the Azure mobile app, Infrastructure as Code (IaC) tools, and REST API endpoints for Create, Update, or Delete operations [1].
 
-[![MFA Enforcement and Privileged Access Flow](/images/posts/2025/azc-200-checkpoints.svg)](/images/posts/2025/azc-200-checkpoints.svg)
-
 This guide covers two distinct but related actions: preparing your tenant for the mandatory enforcement and strengthening the protection for your most privileged accounts using Conditional Access.
 
 ## Understand the mandatory MFA enforcement scope

@@ -12,8 +12,6 @@ You are building a deployment pipeline where the application cannot start until 
 
 The most reliable way to handle this is to treat infrastructure as a module and the application as the consumer. This approach makes the dependency explicit in the deployment graph, allowing Azure Resource Manager to manage the order and scope correctly. It also keeps the application template clean and focused on its own configuration.
 
-[![Module Dependency Flow](/images/posts/2026/azc-323-checkpoints.svg)](/images/posts/2026/azc-323-checkpoints.svg)
-
 ## Why modules clarify dependencies
 
 Bicep modules allow you to encapsulate infrastructure definitions into separate files. When you reference a module, you are not just importing code; you are creating a deployment unit that Azure Resource Manager treats as a single resource. This distinction is critical for managing dependencies.

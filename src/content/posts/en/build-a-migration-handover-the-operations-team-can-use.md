@@ -12,8 +12,6 @@ A migration is not complete when the virtual machine boots in Azure. It is compl
 
 The goal is to produce a single, verifiable record for each workload that answers three questions: what is it, where does it live, and what must we do to keep it running? Azure Migrate provides the inventory, the dependency map, and the readiness assessment. You need to structure that data into a format the operations team can use immediately after cutover.
 
-[![Migration Handover Data Flow](/images/posts/2026/azc-360-checkpoints.svg)](/images/posts/2026/azc-360-checkpoints.svg)
-
 ## Start with the assessment readiness state
 
 The first thing to verify is whether the workload is actually ready for Azure. The [Azure Migrate assessment report](https://learn.microsoft.com/en-us/azure/migrate/concepts-migration-planning) classifies servers into four states: **Ready for Azure**, **Conditionally ready for Azure**, **Not ready for Azure**, and **Readiness unknown**.
