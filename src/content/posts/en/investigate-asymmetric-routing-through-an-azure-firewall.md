@@ -12,8 +12,6 @@ Your firewall is dropping packets that look legitimate. The source IP is correct
 
 Azure Firewall is a fully stateful firewall as a service. It inspects traffic based on the flow state it records when the first packet of a conversation arrives. If the return traffic takes a different path and arrives at a firewall instance that has no record of that initial flow, the firewall drops the packet. It does not see the original request because it never saw it.
 
-[![Asymmetric Routing Flow and State Mismatch](/images/posts/2025/azc-209-checkpoints.svg)](/images/posts/2025/azc-209-checkpoints.svg)
-
 This usually happens when your network has multiple paths to a destination. You might have an internet connection and an ExpressRoute circuit, or multiple ExpressRoute circuits. The outbound traffic might take one path, but the return traffic takes another. If that return path traverses a firewall that did not see the outbound flow, you get a silent drop.
 
 ## Why the firewall drops the return traffic

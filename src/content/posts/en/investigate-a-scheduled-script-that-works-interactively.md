@@ -12,8 +12,6 @@ You have a PowerShell 7.6 script that works perfectly when you run it in your in
 
 The core issue is usually one of two things: the script relies on environment customisations that only exist in your interactive profile, or it generates non-terminating errors that are swallowed because there is no console to display them.
 
-[![Scheduled Script Execution Flow](/images/posts/2026/azc-309-checkpoints.svg)](/images/posts/2026/azc-309-checkpoints.svg)
-
 ## Check for profile dependencies
 
 When you run PowerShell 7.6 interactively, it loads your user profile. This profile typically contains module imports, alias definitions, and custom functions that your script might depend on. A scheduled task running PowerShell does not load these customisations by default if the task is configured to use the `-NoProfile` flag, or if the profile path differs between the interactive and non-interactive contexts.

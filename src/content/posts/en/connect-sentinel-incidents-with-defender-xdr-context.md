@@ -12,8 +12,6 @@ You have alerts in Microsoft Defender XDR and incidents in Microsoft Sentinel. T
 
 The answer is to enable the Microsoft Defender XDR data connector in Microsoft Sentinel. This connector streams incidents, alerts, and advanced hunting events into Sentinel and keeps them bi-directionally synchronized. It is the foundation for a unified incident queue where Defender XDR acts as the correlation engine and Sentinel acts as the central management plane for all security signals.
 
-[![Defender XDR to Sentinel Incident Flow](/images/posts/2025/azc-240-checkpoints.svg)](/images/posts/2025/azc-240-checkpoints.svg)
-
 ## Why use the Defender XDR connector?
 
 Defender XDR groups alerts from multiple components—Endpoint, Identity, Office 365, Cloud Apps, and others—into unified incidents. By connecting these to Sentinel, you gain:

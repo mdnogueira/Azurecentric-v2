@@ -12,8 +12,6 @@ You have a resource that needs to send logs to a central workspace, but the conf
 
 The core decision is not whether to enable them, but how to manage the configuration consistently across your estate. You need to understand the sources (logs and metrics), the destinations, and the limitations of the system before you start deploying.
 
-[![Diagnostic Settings Flow](/images/posts/2025/azc-248-checkpoints.svg)](/images/posts/2025/azc-248-checkpoints.svg)
-
 ## Understand the sources and destinations
 
 Diagnostic settings define where platform metrics and logs go. There are three main sources:

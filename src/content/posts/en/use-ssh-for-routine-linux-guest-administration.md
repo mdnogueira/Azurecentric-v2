@@ -12,8 +12,6 @@ You are running a Linux virtual machine on a Windows Server 2025 Hyper-V host an
 
 ## Why VMConnect is not the right tool for Linux administration
 
-[![SSH Administration Flow on Hyper-V](/images/posts/2025/azc-197-checkpoints.svg)](/images/posts/2025/azc-197-checkpoints.svg)
-
 VMConnect is a valuable tool for initial setup, troubleshooting, or accessing a VM when the network stack is broken. It allows you to use local resources like printers, USB drives, and the clipboard, but only when the guest operating system supports enhanced session mode [Use local resources on Hyper-V with VMConnect](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/learn-more/use-local-resources-on-hyper-v-virtual-machine-with-vmconnect).
 
 For Linux guests, enhanced session mode is not available. You are limited to a basic console session. This means you cannot easily copy and paste text or files between your host and the Linux guest. You cannot redirect local drives to the Linux guest for easy file transfer. While you can resize the VMConnect window, the experience is fundamentally a video feed of the guest console, not a rich integration. For routine administration, this is inefficient. You are forced to type commands manually, retype long strings, or find workarounds for file transfer.

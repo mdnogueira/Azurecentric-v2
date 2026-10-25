@@ -12,8 +12,6 @@ You are deploying a new workload. The immediate question is not whether to enabl
 
 Microsoft Defender for Cloud provides the framework for this review. It combines cloud security posture management (CSPM) with cloud workload protection (CWP). The CSPM layer assesses your resources against security standards, while the CWP layer provides runtime protection for specific workloads like servers, databases, and containers [What is Microsoft Defender for Cloud?](https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction).
 
-[![Defender for Cloud Review Flow](/images/posts/2026/azc-334-checkpoints.svg)](/images/posts/2026/azc-334-checkpoints.svg)
-
 ## Establish the scope and permissions
 
 The first step is to ensure you have the correct view. Defender for Cloud is enabled at the subscription level. When you enable it, you automatically get the **Foundational CSPM** capabilities, which are free and include security recommendations, asset inventory, and secure score [Cloud Security Posture Management (CSPM)](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-cloud-security-posture-management).

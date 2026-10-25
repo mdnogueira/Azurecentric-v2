@@ -12,8 +12,6 @@ When an Azure Batch job runs slowly, the first instinct is often to blame the co
 
 The distinction matters because the remedies are different. A compute bottleneck might require a larger VM size or more nodes. A storage bottleneck might require moving the pool closer to the storage account, optimising blob access patterns, or adjusting network routing. Without specific telemetry, you are guessing.
 
-[![Telemetry Flow and Metric Separation](/images/posts/2025/azc-205-checkpoints.svg)](/images/posts/2025/azc-205-checkpoints.svg)
-
 ## Measure what actually takes time
 
 Azure Batch provides metrics at the account and pool level, such as node state and task state. These tell you how many tasks are running or how many nodes are idle, but they do not tell you what the tasks are doing while they run. To understand the internal performance of a task, you need to instrument the application code.

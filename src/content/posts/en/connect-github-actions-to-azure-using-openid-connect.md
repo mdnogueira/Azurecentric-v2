@@ -12,8 +12,6 @@ You are configuring a GitHub Actions workflow to deploy to Azure. The traditiona
 
 OpenID Connect (OIDC) in GitHub Actions solves this by issuing short-lived tokens. Azure trusts these tokens via a federated identity credential on a service principal. The token proves the workflow ran in a specific repository, branch, or environment. This removes the need for long-lived secrets.
 
-[![GitHub Actions to Azure OIDC with Conditional Access](/images/posts/2024/azc-098-checkpoints.svg)](/images/posts/2024/azc-098-checkpoints.svg)
-
 However, a federated credential alone does not restrict where the workflow can run. It trusts the token's content, not the network path. If you need to ensure deployments only come from known IP ranges or block high-risk requests, you must layer Microsoft Entra Conditional Access policies for workload identities on top of the OIDC trust.
 
 ## Configure the federated identity credential

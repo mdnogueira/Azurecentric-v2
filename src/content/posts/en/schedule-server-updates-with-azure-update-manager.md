@@ -12,8 +12,6 @@ If you are managing updates for Windows and Linux servers, Azure Update Manager 
 
 The core mechanism for recurring updates is the **maintenance configuration**. This resource defines the schedule, the maintenance window, and the update classifications. Once created, you attach it to your machines. For Azure VMs, this requires ensuring the patch orchestration mode is set to **Customer Managed Schedules** [Scheduling recurring updates in Azure Update Manager](https://learn.microsoft.com/en-us/azure/update-manager/scheduled-patching).
 
-[![Azure Update Manager Scheduling Flow](/images/posts/2025/azc-171-checkpoints.svg)](/images/posts/2025/azc-171-checkpoints.svg)
-
 ## Prerequisites and scope
 
 Before creating a schedule, confirm the scope of your machines. Azure Update Manager supports Azure VMs (Windows and Linux), Azure Arc-enabled servers, on-premises machines connected via Arc, VMware vSphere machines, and System Center Virtual Machine Manager (SCVMM) machines [Azure Update Manager overview](https://learn.microsoft.com/en-us/azure/update-manager/overview).

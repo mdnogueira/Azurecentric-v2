@@ -12,8 +12,6 @@ You have a virtual machine, but the telemetry arriving in your Log Analytics wor
 
 A DCR is a set of instructions stored in Azure that tells the agent which data sources to poll, how to transform that data, and which destination to use. You create the rule, then associate it with your target resources. This decouples the collection logic from the workspace, allowing you to reuse a single rule across multiple machines or apply different rules to different workloads within the same subscription.
 
-[![DCR Creation and Association Flow](/images/posts/2024/azc-069-checkpoints.svg)](/images/posts/2024/azc-069-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before creating a rule, ensure you have the necessary permissions. You need the **Monitoring Contributor** role at the subscription, resource group, or existing DCR scope to create or edit rules and associations. If you are deploying the agent to a new virtual machine, you also need **Virtual Machine Contributor** or **Azure Connected Machine Resource Administrator** to deploy the extension.

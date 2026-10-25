@@ -12,8 +12,6 @@ The Microsoft Copilot for Security community repository is a place where users c
 
 This guide walks you through the technical steps to contribute code to the `Azure/Copilot-For-Security` repository. It assumes you have a GitHub account and are familiar with basic Git operations.
 
-[![Copilot for Security Contribution Flow](/images/posts/2024/azc-079-checkpoints.svg)](/images/posts/2024/azc-079-checkpoints.svg)
-
 ## Fork the repository
 
 The first step is to create your own copy of the repository. This allows you to make changes without affecting the main community repository.

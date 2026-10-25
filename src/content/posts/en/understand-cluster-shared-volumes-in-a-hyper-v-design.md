@@ -12,8 +12,6 @@ You are designing a Hyper-V failover cluster on Windows Server 2025 and need to 
 
 Cluster Shared Volumes (CSV) allow multiple nodes to read and write to the same disk simultaneously. This architecture relies on a coordinator node for metadata and I/O redirection. When you add BitLocker encryption, the cluster service must be able to unlock the volume without user intervention. The method you choose depends entirely on whether your cluster is joined to an Active Directory Domain Services (AD DS) environment or is a standalone workgroup cluster.
 
-[![CSV BitLocker Unlock Flow](/images/posts/2025/azc-156-checkpoints.svg)](/images/posts/2025/azc-156-checkpoints.svg)
-
 ## Understand the CSV architecture and encryption requirements
 
 CSV is a clustered file system layered above NTFS or ReFS. It simplifies management by presenting shared storage as a single namespace (`\\ClusterStorage\VolumeN`) to all nodes. However, this shared access creates a specific challenge for encryption: the volume must be unlocked on every node that needs to access it, but the unlock mechanism must be consistent.

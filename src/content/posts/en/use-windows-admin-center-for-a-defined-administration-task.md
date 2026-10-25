@@ -12,8 +12,6 @@ You need to manage a Windows Server 2022 machine, but you do not want to install
 
 Windows Admin Center is a locally deployed, browser-based management tool set. It runs through a gateway installed on a Windows Server or a domain-joined Windows 10 machine [What is Windows Admin Center](https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is). The gateway manages servers by using Remote PowerShell and WMI over WinRM [What is Windows Admin Center](https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is). This means the management traffic stays within your network infrastructure; it does not require the managed server to be connected to the Internet [What is Windows Admin Center](https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is).
 
-[![Windows Admin Center Connection Flow](/images/posts/2024/azc-073-checkpoints.svg)](/images/posts/2024/azc-073-checkpoints.svg)
-
 ## Install the gateway on a known host
 
 Start with a host that is already in your environment. You can install Windows Admin Center on a Windows Server 2022 machine acting as a gateway, or on a Windows 10/11 client [What is Windows Admin Center](https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is). For this example, we assume a Windows 10 client is used as the management station.

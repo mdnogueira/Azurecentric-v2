@@ -12,8 +12,6 @@ You are about to share an application with external partners. The immediate tech
 
 The practical approach is to define the guest baseline before the first invitation arrives. This involves three distinct controls: restricting what guests can see in the directory, requiring stronger authentication for their access, and establishing a lifecycle process to remove them when collaboration ends.
 
-[![Guest Access Governance Flow](/images/posts/2025/azc-238-checkpoints.svg)](/images/posts/2025/azc-238-checkpoints.svg)
-
 ## Restrict guest user directory visibility
 
 By default, guest users in Microsoft Entra ID have limited access, but they can still see the membership of all non-hidden groups in your tenant. This means a guest invited to one team or application can potentially enumerate groups they are not part of, revealing the organisational structure of your tenant.

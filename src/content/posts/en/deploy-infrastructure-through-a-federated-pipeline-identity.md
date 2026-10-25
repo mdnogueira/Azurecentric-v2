@@ -12,8 +12,6 @@ How do you deploy infrastructure through a federated pipeline identity without m
 
 The first thing to establish is the identity. Azure Pipelines supports federated identity credentials, which allow a pipeline to authenticate to Azure using OpenID Connect. This means the pipeline acts as a trusted workload, and you grant it permissions via standard Azure RBAC. You do not need to store a client secret in Azure DevOps variable groups.
 
-[![Federated Identity Deployment Flow](/images/posts/2025/azc-146-checkpoints.svg)](/images/posts/2025/azc-146-checkpoints.svg)
-
 ## Configure the federated identity
 
 Before writing any pipeline code, you need a service principal that the pipeline can assume. Create a service principal in your Microsoft Entra tenant and note its application (client) ID. Then, add a federated credential to that service principal. The credential should specify the Azure DevOps organization, project, and the specific pipeline resource as the subject. This links the pipeline run directly to the identity.

@@ -12,8 +12,6 @@ PowerShell 7.6 is now generally available as a Long Term Support (LTS) release, 
 
 The first step is to identify which modules in your automation estate are affected by the breaking changes introduced in 7.6. The release notes highlight a small number of changes intended to improve long-term consistency, but they are significant enough to break existing workflows if untested [PowerShell 7.6 LTS: prepare an automation compatibility check](https://devblogs.microsoft.com/powershell/announcing-powershell-7-6/).
 
-[![PowerShell 7.6 Compatibility Check Flow](/images/posts/2026/azc-289-checkpoints.svg)](/images/posts/2026/azc-289-checkpoints.svg)
-
 ## Check the ThreadJob module rename
 
 One of the most common points of failure is the renaming of the `ThreadJob` module. In PowerShell 7.6, the `Microsoft.PowerShell.ThreadJob` module replaces the standalone `ThreadJob` module [What's New in PowerShell 7.6](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/What-s-New-in-PowerShell-76). The `Start-ThreadJob` cmdlet itself has not changed, so scripts using the cmdlet directly will continue to work. However, any script that explicitly references the module-qualified name, such as `ThreadJob\Start-ThreadJob`, will fail [What's New in PowerShell 7.6](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/What-s-New-in-PowerShell-76).

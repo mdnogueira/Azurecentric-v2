@@ -12,8 +12,6 @@ You have a JSON configuration file and need to read it into a PowerShell object,
 
 ## Reading the JSON file
 
-[![JSON Configuration Validation Flow](/images/posts/2025/azc-193-checkpoints.svg)](/images/posts/2025/azc-193-checkpoints.svg)
-
 PowerShell includes `ConvertFrom-Json` as a cmdlet. Cmdlets are native PowerShell commands collected into modules that can be loaded on demand [What is a PowerShell command?](https://learn.microsoft.com/en-us/powershell/scripting/powershell-commands). The first step is to read the raw text from your configuration file. `Get-Content` reads the file as a string array by default, but `ConvertFrom-Json` accepts pipeline input, so you can pass the output directly.
 
 ```powershell

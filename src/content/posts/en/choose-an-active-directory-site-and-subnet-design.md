@@ -12,8 +12,6 @@ Active Directory site topology is not a cosmetic layer; it is the mechanism that
 
 ## Decide which locations become sites
 
-[![Active Directory Site and Subnet Association Flow](/images/posts/2025/azc-134-checkpoints.svg)](/images/posts/2025/azc-134-checkpoints.svg)
-
 You do not need a site for every office. The decision depends on two factors: the presence of domain controllers and the requirements of specific applications.
 
 Create a site for any location where you plan to place a domain controller. This ensures that replication topology is optimised for that location and that the domain controller is treated as a local resource for replication purposes. You also need a site for locations hosting servers running applications that rely on site objects for location-based service discovery. Distributed File System Namespaces (DFS) is a common example; it uses site information to direct clients to the nearest namespace server [Creating a Site Design](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/creating-a-site-design).

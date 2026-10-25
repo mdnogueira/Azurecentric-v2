@@ -12,8 +12,6 @@ You have replicated your on-premises workloads to Azure and the migration looks 
 
 Azure Migrate handles many technical prerequisites, such as installing the Azure VM Agent or configuring SAN policies for Windows servers [Prepare machines for migration with Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/prepare-for-migration). However, it does not configure the network identity or name resolution for the migrated machines. If your applications rely on domain membership or internal DNS names, those dependencies must be resolved in the target Azure environment before the cutover.
 
-[![Identity and DNS Dependency Flow](/images/posts/2026/azc-282-checkpoints.svg)](/images/posts/2026/azc-282-checkpoints.svg)
-
 ## Verify domain identity requirements
 
 If your on-premises servers are members of an Active Directory domain, they will remain standalone computers in Azure unless you explicitly join them to a domain. Azure Migrate is a migration orchestration tool that replicates disks and does not perform identity provisioning tasks like domain joining. Domain joining is a post-migration configuration step required for the OS to function within the target identity infrastructure.

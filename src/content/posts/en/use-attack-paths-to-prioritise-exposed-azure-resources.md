@@ -12,8 +12,6 @@ You have a backlog of security alerts and recommendations. The secure score is r
 
 Defender for Cloud provides a cloud security graph that maps your resources, permissions, network connections, and vulnerabilities. It uses this graph to identify exploitable paths that attackers might use to breach your environment. This is distinct from the secure score, which aggregates static compliance recommendations. As of May 2025, risk prioritisation via attack paths does not affect the secure score calculation, so you must look at the attack paths view separately to understand dynamic risk.
 
-[![Attack Path Analysis Flow](/images/posts/2025/azc-179-checkpoints.svg)](/images/posts/2025/azc-179-checkpoints.svg)
-
 ## Understand the difference between alerts and attack paths
 
 Security alerts in Defender for Cloud indicate detected threats or misconfigurations. They are vital for incident response. You manage these alerts in the **Security alerts** blade, where you can filter by severity, status, and time. Each alert provides context, such as the affected resources and MITRE ATT&CK kill chain intent. However, an alert tells you what happened or what is wrong right now; it does not always show you the full path an attacker could take to reach your most sensitive data.

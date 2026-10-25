@@ -12,8 +12,6 @@ You need to keep security logs for a specific period, but you also need to keep 
 
 ## Understand the two retention periods
 
-[![Log Analytics Data Retention Lifecycle](/images/posts/2024/azc-122-checkpoints.svg)](/images/posts/2024/azc-122-checkpoints.svg)
-
 A Log Analytics workspace has a default interactive retention period, typically 90 days. This is the window during which data is fully indexed and available for fast, interactive querying. Once data exceeds this interactive period, it is no longer immediately accessible for standard queries. However, it does not disappear. If you have configured long-term retention, the data transitions to a low-cost, minimal-access state known as archive.
 
 The total retention period is the sum of the interactive and long-term retention periods. For example, if you set interactive retention to 90 days and total retention to 3 years, the data remains in the workspace for 3 years. For the first 90 days, it is interactive. For the remaining 2.5 years (915 days), it is in long-term retention.

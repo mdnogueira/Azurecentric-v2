@@ -12,8 +12,6 @@ You are working in Microsoft Security Copilot and need to understand which secur
 
 ## Use the sample prompt library as a reference
 
-[![Security Copilot Plugin Verification Flow](/images/posts/2025/azc-181-checkpoints.svg)](/images/posts/2025/azc-181-checkpoints.svg)
-
 Microsoft maintains a Sample Prompts Library on GitHub. This is not a live inventory of your tenant’s configuration, but it is a definitive list of the integration domains the product supports. The library organises examples into specific categories, which helps you understand the intended scope of each domain.
 
 The current categories listed in the library are:

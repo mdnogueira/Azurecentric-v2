@@ -12,8 +12,6 @@ A Linux server has stopped sending logs. The first thing to check is whether the
 
 ## Check the heartbeat status
 
-[![Log Collection Failure Decision Flow](/images/posts/2024/azc-089-checkpoints.svg)](/images/posts/2024/azc-089-checkpoints.svg)
-
 Run this query in your Log Analytics workspace to list machines that have not reported a heartbeat in the last five minutes:
 
 ```kusto

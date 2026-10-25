@@ -12,8 +12,6 @@ You are planning to host virtual machines on Windows Server 2025. The first tech
 
 The core question is whether you need shared storage for high availability, or if local storage with specific migration tools is sufficient. The answer depends on your cluster requirements and how you expect your compute and storage needs to grow.
 
-[![Hyper-V Storage Architecture Decision Flow](/images/posts/2025/azc-235-checkpoints.svg)](/images/posts/2025/azc-235-checkpoints.svg)
-
 ## Standalone Hyper-V with local disks
 
 If you are running a single server or a non-clustered environment, you can use local disks. This is the simplest architecture to deploy. You install Hyper-V on a standalone server and store your virtual machine files on the local drives.

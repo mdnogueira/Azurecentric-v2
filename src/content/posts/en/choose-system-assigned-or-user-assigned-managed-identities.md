@@ -12,8 +12,6 @@ You are building an application that needs to access Azure resources securely, a
 
 ## Understand the lifecycle implications
 
-[![Managed Identity Selection and Flow](/images/posts/2024/azc-040-checkpoints.svg)](/images/posts/2024/azc-040-checkpoints.svg)
-
 A system-assigned managed identity is created when you enable the identity on a specific Azure resource, such as a Virtual Machine or an App Service. The identity is a service principal of a special type in Microsoft Entra ID. Its name is always the same as the name of the Azure resource it is created for. For a deployment slot, the name is `<app-name>/slots/<slot-name>`.
 
 The critical constraint is the shared lifecycle. When the parent resource is deleted, Azure automatically deletes the service principal. This is convenient for simple, ephemeral workloads where the identity should not outlive the resource. However, it means you cannot reuse the identity across different resources or maintain permissions if the resource is replaced.

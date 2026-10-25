@@ -12,8 +12,6 @@ You need to retain regulated blob data without the risk of modification or delet
 
 Container-level policies apply a single retention rule to all blobs in a container. They are simpler to manage and do not require blob versioning. Version-level policies allow granular control per blob version but require versioning to be enabled and cannot be used with Azure Data Lake Storage (accounts with hierarchical namespace enabled). 
 
-[![Immutable Storage Policy Lifecycle and Scope](/images/posts/2025/azc-249-checkpoints.svg)](/images/posts/2025/azc-249-checkpoints.svg)
-
 ## Choose the correct scope
 
 The choice between container-level and version-level WORM depends on how your data is organised and whether you can tolerate the overhead of versioning.

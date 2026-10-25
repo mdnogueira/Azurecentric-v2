@@ -12,8 +12,6 @@ The announcement on 4 March 2025 changes how GitHub structures its advanced secu
 
 The split is not just a billing change. It alters which features you enable, who pays, and how you govern the results. If you are planning a rollout, you need to understand the capabilities of each product before you commit to a budget.
 
-[![GitHub Security Product Decision Flow](/images/posts/2025/azc-155-checkpoints.svg)](/images/posts/2025/azc-155-checkpoints.svg)
-
 ## The two new products
 
 GitHub Secret Protection focuses on preventing sensitive data from entering your repositories. It includes secret scanning, AI detection with a low rate of false positives, and push protection. Push protection is a governance feature that stops commits containing secrets from being pushed to the repository in the first place. This requires configuration to enforce rules, but it prevents the leak from happening.

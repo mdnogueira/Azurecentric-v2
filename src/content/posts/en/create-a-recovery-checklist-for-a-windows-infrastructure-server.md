@@ -12,8 +12,6 @@ When a Windows infrastructure server fails, the difference between a manageable 
 
 The Active Directory Forest Recovery Guide provides a structured approach for these scenarios, distinguishing between backing up the entire server and backing up just the system state data. The choice between these two depends on your recovery objectives and the hardware or virtualisation environment you are targeting. This article outlines how to prepare those backups and how to structure a checklist that ensures you can restore the server when it matters.
 
-[![Backup and Recovery Decision Flow](/images/posts/2026/azc-349-checkpoints.svg)](/images/posts/2026/azc-349-checkpoints.svg)
-
 ## Decide on the backup scope
 
 Before creating a checklist, you must decide what you are backing up. The guidance distinguishes between a full server backup and a system state backup, each with different use cases.

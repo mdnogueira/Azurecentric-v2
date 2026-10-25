@@ -12,8 +12,6 @@ You have two subscriptions with Microsoft Defender for Cloud enabled. One shows 
 
 Defender for Cloud separates foundational posture management from paid workload protection. Foundational Cloud Security Posture Management (CSPM) is always active when you enable the service. Paid plans, such as Defender CSPM and Defender for Servers, add specific capabilities. Comparing coverage requires checking the plan status at the correct scope, confirming the permissions of the account that enabled them, and verifying how those plans interact with Log Analytics workspaces.
 
-[![Defender Plan Coverage Flow](/images/posts/2024/azc-039-checkpoints.svg)](/images/posts/2024/azc-039-checkpoints.svg)
-
 ## Check the plan status at the subscription level
 
 The first step is to identify which plans are active for each subscription. You do this through the Environment settings page.

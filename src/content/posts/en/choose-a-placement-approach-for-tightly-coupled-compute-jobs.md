@@ -12,8 +12,6 @@ You are designing a Batch pool that must survive a datacentre failure. The first
 
 ## Prerequisites and constraints
 
-[![Azure Batch Zonal Pool Allocation Flow](/images/posts/2026/azc-262-checkpoints.svg)](/images/posts/2026/azc-262-checkpoints.svg)
-
 Before configuring a zonal pool, you must verify that your environment supports it. The Batch service maintains parity with Azure on availability zone support, so the region must support zones for the specific VM SKU you intend to use.
 
 ### Validate VM SKU support

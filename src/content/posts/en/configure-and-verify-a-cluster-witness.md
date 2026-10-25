@@ -12,8 +12,6 @@ When a cluster has an even number of voting nodes, quorum is at risk. If half th
 
 This guide covers configuring a file share witness on a non-domain joined device using PowerShell. While the graphical wizard in Failover Cluster Manager is the standard approach for domain-joined environments, the documentation specifies PowerShell for non-domain joined scenarios, where local account credentials are required.
 
-[![File Share Witness Quorum Flow](/images/posts/2024/azc-094-checkpoints.svg)](/images/posts/2024/azc-094-checkpoints.svg)
-
 ## Prerequisites and constraints
 
 Before configuring the witness, ensure the following conditions are met:

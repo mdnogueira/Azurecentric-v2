@@ -12,8 +12,6 @@ You have an Azure Arc-enabled server and you need to ensure it is monitored. The
 
 The process splits into two distinct parts: preparing the monitoring infrastructure (the Data Collection Rule) and defining the policy that checks for, or installs, the agent. You cannot skip the first part; the policy needs a Data Collection Rule (DCR) resource ID to associate with the agent once installed.
 
-[![Azure Policy Assignment Flow for Arc Servers](/images/posts/2025/azc-167-checkpoints.svg)](/images/posts/2025/azc-167-checkpoints.svg)
-
 ## Prepare the Data Collection Rule
 
 Azure Monitor requires a DCR to define what data is collected and where it goes. Before creating the policy, you must have a DCR ready.

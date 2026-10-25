@@ -12,8 +12,6 @@ You have a Bicep file that deploys a resource requiring a secret, such as a data
 
 The solution depends on whether the secret is generated during the deployment or retrieved from an existing resource. In both cases, the goal is to ensure the value never appears in the deployment history or command-line output.
 
-[![Secret Handling Decision Flow](/images/posts/2026/azc-264-checkpoints.svg)](/images/posts/2026/azc-264-checkpoints.svg)
-
 ## Mark sensitive outputs as secure
 
 If your Bicep file generates a secret, such as a random password for a new resource, you can mark the output as secure. Bicep supports the `@secure()` decorator for outputs of type `string` or `object`. When you apply this decorator, Azure Resource Manager treats the value as sensitive. It prevents the value from being logged or displayed in the deployment history, the Azure portal, or command-line outputs.

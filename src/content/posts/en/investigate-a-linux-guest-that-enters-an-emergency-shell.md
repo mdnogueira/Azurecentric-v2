@@ -12,8 +12,6 @@ A Linux virtual machine dropping into an emergency shell is a clear signal that 
 
 ## Check if the virtual disk is visible
 
-[![Linux VM Emergency Shell Troubleshooting Flow](/images/posts/2025/azc-178-checkpoints.svg)](/images/posts/2025/azc-178-checkpoints.svg)
-
 The synthetic storage driver (`hv_storvsc`) is part of the mainline Linux kernel. If the driver is not loaded, the virtual disk will not appear as a block device, and the boot process will fail before the operating system can mount the root partition. However, in most modern Linux distributions, this driver is built into the kernel, so its absence usually indicates a kernel issue rather than a missing package.
 
 From the emergency shell, check if the `hv_storvsc` module is loaded. Run the following command:

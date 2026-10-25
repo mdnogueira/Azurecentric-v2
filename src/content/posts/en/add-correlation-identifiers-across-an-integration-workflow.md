@@ -12,8 +12,6 @@ You have an integration workflow where an API request triggers a Service Bus mes
 
 The solution is to stamp every event with a trace context. This requires two distinct actions: configuring Azure API Management (APIM) to inject a correlation identifier into the message properties, and ensuring the Service Bus client libraries propagate that context to the consumer. This approach relies on the W3C Trace-Context protocol, which is the standard for distributed tracing in Azure.
 
-[![Correlation Flow in APIM and Service Bus](/images/posts/2026/azc-284-checkpoints.svg)](/images/posts/2026/azc-284-checkpoints.svg)
-
 ## Inject the correlation identifier in API Management
 
 The first step is to capture the incoming trace context from the client and pass it into the Service Bus message. API Management policies allow you to manipulate both the request headers and the message properties sent to the backend.

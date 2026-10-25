@@ -12,8 +12,6 @@ Infrastructure automation often requires modifying resources outside the PowerSh
 
 The core mechanism is the `SupportsShouldProcess` attribute in the `CmdletBinding` block, combined with calls to `$PSCmdlet.ShouldProcess()` around the actual modification logic. This approach works for both functions and compiled cmdlets, ensuring consistent behaviour across your toolset.
 
-[![ShouldProcess Flow](/images/posts/2026/azc-270-checkpoints.svg)](/images/posts/2026/azc-270-checkpoints.svg)
-
 ## Declare support in CmdletBinding
 
 The first step is to tell PowerShell that your function supports these common parameters. You do this by adding `SupportsShouldProcess` to the `[CmdletBinding()]` attribute.

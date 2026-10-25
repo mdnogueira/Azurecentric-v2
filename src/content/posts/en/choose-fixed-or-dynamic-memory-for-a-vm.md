@@ -12,8 +12,6 @@ You are configuring a new virtual machine on a Windows Server 2022 host and need
 
 ## Understand the memory management models
 
-[![Decision Flow for VM Memory Configuration](/images/posts/2024/azc-095-checkpoints.svg)](/images/posts/2024/azc-095-checkpoints.svg)
-
 Fixed memory allocates a specific amount of RAM to the virtual machine at startup. The VM receives exactly that amount, and the host reserves it. This model is straightforward: the guest OS sees a static hardware profile, and the hypervisor guarantees that resource. It is the default behaviour for many workloads because it eliminates the overhead of memory balancing and the potential for guest-side memory pressure spikes.
 
 Dynamic Memory allows the hypervisor to adjust the memory assigned to a VM in real-time. The host monitors the guest's memory usage and reallocates RAM from idle VMs to busy ones. This requires the Integration Services to be installed and functioning correctly, as the guest OS must communicate its memory needs to the hypervisor. The key parameters are the startup memory, minimum memory, maximum memory, and the memory buffer percentage.

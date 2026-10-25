@@ -12,8 +12,6 @@ You have a long-running automation script that processes a batch of items. The n
 
 The solution is to make the script stateful. You record what has been completed before the script stops, and you skip those items when it runs again. This requires two things: a reliable way to persist state, and a robust exception handling structure that cleans up after itself.
 
-[![Resume-able Script Flow](/images/posts/2026/azc-329-checkpoints.svg)](/images/posts/2026/azc-329-checkpoints.svg)
-
 ## Record state efficiently
 
 The most common mistake is to update the state file after the work is done. If the script crashes during the work, the state file is not updated, and the script will retry the failed item. This is correct. However, if the script crashes *after* updating the state but *before* finishing the cleanup, you might have a partial state. 

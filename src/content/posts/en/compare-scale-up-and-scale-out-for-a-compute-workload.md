@@ -12,8 +12,6 @@ You need to decide whether a Batch workload scales best by adding more nodes or 
 
 ## Scale-out: Increasing Node Count
 
-[![Azure Batch Scaling Decision Flow](/images/posts/2025/azc-166-checkpoints.svg)](/images/posts/2025/azc-166-checkpoints.svg)
-
 Scale-out is the default and most common scaling strategy for Azure Batch. It involves adding more compute nodes to the pool to handle increased task volume. This approach is ideal for stateless, parallelisable workloads where tasks can be distributed across many nodes.
 
 ### Autoscale Formulas for Scale-Out

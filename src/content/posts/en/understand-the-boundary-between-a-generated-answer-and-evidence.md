@@ -12,8 +12,6 @@ Security Copilot is a generative AI-powered assistant for daily operations in se
 
 ## Understand the nature of the output
 
-[![Verification Flow for Security Copilot Outputs](/images/posts/2025/azc-161-checkpoints.svg)](/images/posts/2025/azc-161-checkpoints.svg)
-
 Security Copilot operates by aggregating information from connected data sources and presenting it in a structured format. This format can appear authoritative, but it is a synthesis of available data, not a direct query result in the traditional sense. When the assistant provides a summary of a security event, it is interpreting data it has been given access to via connectors and plugins. The [README](https://github.com/Azure/Security-Copilot/blob/546fc8520e9443e311cc9df30ab5e0ac79301a9f/README.md) describes the tool as an assistant for daily operations, implying a supportive role rather than an autonomous decision-making one.
 
 If the assistant references a specific log entry, IP address, or user account, that information must be traceable to a source. The assistant does not create evidence; it reports on evidence that exists within the connected data sources. If a connector is not active, or if the data is incomplete, the generated answer may be incomplete or misleading. This is not a failure of the AI model per se, but a reflection of the data it has been provided. The connectors overview explains how different data sources are integrated, and it is essential to understand that the assistant's view is limited to what these connectors provide.

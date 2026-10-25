@@ -12,8 +12,6 @@ A quorum witness should be chosen around the failures a cluster must handle. The
 
 Quorum determines whether enough voting members remain for the cluster to start or continue running. It helps prevent disconnected groups of nodes from independently continuing as the same cluster. A witness participates in that decision; it does not provide application capacity, replicate workload data or replace a recovery plan.
 
-[![Quorum witness selection checkpoints](/images/posts/2024/azc-016-checkpoints.svg)](/images/posts/2024/azc-016-checkpoints.svg)
-
 ## Start with the topology
 
 Draw the cluster nodes, their sites, the workload storage and the paths to the proposed witness. Include dependencies that are easy to overlook, such as a file server running on the cluster it is meant to support.

@@ -12,8 +12,6 @@ You are building a repeatable incident response workflow in Microsoft Security C
 
 Promptbooks in Security Copilot allow you to chain prompts together. They are stored as JSON files. You can manage these files using PowerShell scripts provided in the Azure Security Copilot GitHub repository. These scripts use unpublished API calls, which means they are subject to change without notice and are not officially supported by Microsoft. You cannot raise support tickets for their functionality. Treat them as a practical tool for prototyping or internal tooling, not as a permanent production dependency.
 
-[![Promptbook Management and Review Flow](/images/posts/2026/azc-297-checkpoints.svg)](/images/posts/2026/azc-297-checkpoints.svg)
-
 ## Structure the Promptbook for an Analyst Review
 
 The core of your workflow is the JSON structure. You need to define prompts that gather context, ask for an analyst's decision, and then branch or continue based on that decision. Security Copilot Promptbooks execute prompts sequentially. To insert a review step, you simply add a prompt that asks the analyst for confirmation or input.

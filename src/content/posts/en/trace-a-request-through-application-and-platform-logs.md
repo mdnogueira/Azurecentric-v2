@@ -12,8 +12,6 @@ You have a request that is failing or behaving unexpectedly. The first thing to 
 
 The most reliable way to see the full picture in near real time is to use Application Insights Live Metrics. This method works across multiple instances and plan types, including Consumption plans for Functions where built-in streaming is limited. If you are debugging a single instance locally or in a development environment, the built-in log stream provides a closer view of the raw output, but it has significant limitations in production scale.
 
-[![Request Trace Flow](/images/posts/2026/azc-299-checkpoints.svg)](/images/posts/2026/azc-299-checkpoints.svg)
-
 ## Choose the right streaming method
 
 When a request arrives, it first hits the App Service or Functions host. The host generates HTTP logs (web server logging) and your application generates execution logs. To trace the request, you need to see both.

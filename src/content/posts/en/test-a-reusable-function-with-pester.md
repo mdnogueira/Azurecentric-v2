@@ -12,8 +12,6 @@ You have a PowerShell function that needs to be tested. The most reliable way to
 
 The first step is to ensure your function is in a script module. Save your code in a `.psm1` file inside a directory with the same name. For example, `MyModule/MyModule.psm1`. This structure allows you to use `Import-Module` to load it cleanly. If you are testing a function that relies on other modules, include those dependencies at the top of your `.psm1` file using `Import-Module`. This ensures the function has the context it needs when the test runs.
 
-[![Pester Test Execution Flow](/images/posts/2025/azc-251-checkpoints.svg)](/images/posts/2025/azc-251-checkpoints.svg)
-
 ## Set up the module structure
 
 A script module is simply a valid PowerShell script saved with a `.psm1` extension. The directory containing it must be in a path listed in `$Env:PSModulePath`, or you must specify the path explicitly when importing. Using a standard module path makes it easier to manage versions and updates, but for testing, you can often work directly in a local folder.

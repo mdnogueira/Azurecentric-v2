@@ -12,8 +12,6 @@ The April 2025 restructuring of GitHub Advanced Security (GHAS) changes how you 
 
 If you are managing an organisation on the GitHub Team plan, you now have the option to purchase these products separately. For Enterprise customers, the transition depends on your renewal cycle. The immediate operational question is not just which product to buy, but how to apply the new security configurations to your repositories effectively.
 
-[![GitHub Security Configuration Flow](/images/posts/2025/azc-165-checkpoints.svg)](/images/posts/2025/azc-165-checkpoints.svg)
-
 ## Understand the new product boundaries
 
 GitHub Secret Protection and GitHub Code Security serve different purposes. Secret Protection focuses on detecting and preventing secret leaks. It includes secret scanning, AI-detected passwords, and push protection. Code Security focuses on vulnerabilities in your code and dependencies. It includes Copilot Autofix, security campaigns, and Dependabot features.

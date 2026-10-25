@@ -12,8 +12,6 @@ The Azure portal, Microsoft Entra admin center, and Intune admin center will req
 
 This requirement is part of Microsoft’s Secure Future Initiative. The goal is to reduce the risk of account compromise. Research cited by Microsoft indicates that MFA can block more than 99.2% of account compromise attacks. While the enforcement for interactive portals begins in the second half of 2024, a second phase targeting Azure CLI, Azure PowerShell, and Infrastructure as Code (IaC) tools will commence in early 2025. For now, the immediate priority is securing the interactive sign-in experience for administrators.
 
-[![MFA Enforcement Preparation Flow](/images/posts/2024/azc-083-checkpoints.svg)](/images/posts/2024/azc-083-checkpoints.svg)
-
 ## Identify the scope and affected accounts
 
 Before configuring any policies, you need to know who is affected. The mandatory requirement applies to all users who sign into the Azure portal, Microsoft Entra admin center, or Intune admin center to perform any Create, Read, Update, or Delete (CRUD) operation. This includes Global Administrators, but it also extends to any user with administrative privileges in these portals.

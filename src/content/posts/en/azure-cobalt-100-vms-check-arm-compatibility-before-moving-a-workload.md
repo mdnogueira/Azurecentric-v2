@@ -12,8 +12,6 @@ You are planning to move a workload to Azure Cobalt 100-based Virtual Machines t
 
 Azure Cobalt 100-based VMs are built on Microsoft’s first 64-bit Arm-based processor. They are not x86 machines. If your workload relies on x86-specific binaries, drivers, or libraries, it will not run on these VMs regardless of how well the underlying hardware is optimised. The announcement of general availability on 16 October 2024 confirms that the Dpsv6, Dplsv6, Epsv6 series and their disk-enabled variants (Dpdsv6, Dpldsv6, Epdsv6) are now production-ready, but the architectural shift remains the primary constraint for migration [Azure Cobalt 100 VMs: check Arm compatibility before moving a workload](https://azure.microsoft.com/en-us/blog/azure-cobalt-100-based-virtual-machines-are-now-generally-available/).
 
-[![Cobalt 100 Migration Decision Flow](/images/posts/2024/azc-105-checkpoints.svg)](/images/posts/2024/azc-105-checkpoints.svg)
-
 ## Confirm the architecture of your current workload
 
 Before selecting a VM size, you must determine if your application stack is Arm-native or x86-dependent. This is a binary decision that dictates your migration path.

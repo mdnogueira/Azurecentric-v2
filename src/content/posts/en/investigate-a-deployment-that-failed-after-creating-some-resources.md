@@ -12,8 +12,6 @@ A deployment fails after creating some resources. The error message points to a 
 
 The first thing to do is not to guess. You need to isolate whether the failure is in the validation phase, the permission check, or the actual resource creation. Microsoft's deployment documentation outlines a clear path for this: check what the deployment *would* do before it actually tries to do it, and ensure your template follows the established best practices.
 
-[![Bicep Deployment Troubleshooting Flow](/images/posts/2024/azc-127-checkpoints.svg)](/images/posts/2024/azc-127-checkpoints.svg)
-
 ## Check permissions first
 
 Before you even look at the template syntax, confirm you have the right permissions. A deployment failure often masquerades as a resource error when it is actually an identity issue. To deploy a Bicep file, you need write access on the resources you're deploying and access to all operations on the `Microsoft.Resources/deployments` resource type [Deploy resources with Azure CLI and Bicep files | Microsoft Docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli#deploy-remote-template).

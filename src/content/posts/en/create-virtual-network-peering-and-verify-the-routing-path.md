@@ -12,8 +12,6 @@ You need to connect two virtual networks so resources can communicate as if they
 
 ## Prerequisites and permissions
 
-[![Virtual Network Peering Flow](/images/posts/2024/azc-049-checkpoints.svg)](/images/posts/2024/azc-049-checkpoints.svg)
-
 Before creating a peering, confirm the virtual networks have non-overlapping IP address ranges. If the address spaces overlap, the peering will fail. You also need the Network Contributor role on both virtual networks. If the virtual networks are in different subscriptions or tenants, you must assign permissions in each subscription. For example, if UserA owns the first virtual network and UserB owns the second, UserA needs Network Contributor rights on UserB's network, and vice versa.
 
 The account you use to create the peering must have these permissions. The Azure portal, Azure CLI, and Azure PowerShell all require the same underlying permissions. If you are using the Azure CLI, ensure you are logged in with an account that has access to both subscriptions.

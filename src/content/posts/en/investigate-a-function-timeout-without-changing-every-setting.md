@@ -12,8 +12,6 @@ A function times out. The instinct is often to increase the timeout setting, cha
 
 Azure Functions provides two primary diagnostic paths that require no extra configuration or complex setup: the built-in **Diagnose and solve problems** blade and **Streaming logs**. Using these tools in sequence lets you isolate the cause without guessing.
 
-[![Azure Functions Timeout Troubleshooting Flow](/images/posts/2025/azc-183-checkpoints.svg)](/images/posts/2025/azc-183-checkpoints.svg)
-
 ## Step 1: Use the built-in diagnostic blade
 
 The first thing to check is whether Azure Functions has already identified a structural or resource issue. The **Diagnose and solve problems** blade runs a series of automated checks against your function app.

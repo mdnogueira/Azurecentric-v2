@@ -12,8 +12,6 @@ Two alerts clearly relate to the same threat, but Microsoft Sentinel keeps them 
 
 Microsoft Sentinel uses entity mapping to recognise data elements in alerts as specific entity types, such as accounts, hosts, or IP addresses. When the service identifies an entity using a strong identifier, it can correlate data across different sources. If the mapping is incomplete or uses weak identifiers, the same real-world object may appear as two distinct entities in the system. This separation prevents the system from automatically grouping the alerts into a single investigative context.
 
-[![Entity Mapping and Alert Correlation Flow](/images/posts/2026/azc-318-checkpoints.svg)](/images/posts/2026/azc-318-checkpoints.svg)
-
 ## How entity mapping controls correlation
 
 Entity mapping is an integral part of the configuration for scheduled analytics rules. It enriches the rule's output with essential information that serves as the building blocks for investigative processes [Map data fields to Microsoft Sentinel entities | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/map-data-fields-to-entities).

@@ -12,8 +12,6 @@ You have a Generation 2 virtual machine running in Azure, and you want to enable
 
 Trusted Launch is designed to protect against advanced and persistent attack techniques like boot kits and rootkits. It achieves this by combining Secure Boot, a virtual Trusted Platform Module (vTPM), and boot integrity monitoring. While Secure Boot ensures that only signed operating systems and drivers can boot, the vTPM provides a secure vault for keys and measurements, enabling remote attestation. This attestation allows Microsoft Defender for Cloud to verify that your VM booted correctly and has not been compromised.
 
-[![Trusted Launch Upgrade Flow](/images/posts/2024/azc-063-checkpoints.svg)](/images/posts/2024/azc-063-checkpoints.svg)
-
 ## Check prerequisites before you start
 
 Before attempting to upgrade an existing VM, you must ensure it meets specific criteria. If the VM does not meet these requirements, the upgrade will fail.

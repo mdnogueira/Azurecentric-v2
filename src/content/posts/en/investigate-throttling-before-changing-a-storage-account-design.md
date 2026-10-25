@@ -12,8 +12,6 @@ Latency spikes or request failures in Azure Storage often trigger an instinct to
 
 ## Confirm the symptom against the error codes
 
-[![Throttling Investigation Flow](/images/posts/2026/azc-307-checkpoints.svg)](/images/posts/2026/azc-307-checkpoints.svg)
-
 Throttling in Azure Storage is not always a silent slowdown. When a client exceeds the performance targets for a storage account or a specific partition, the service returns specific HTTP status codes. According to the performance checklist for Blob Storage, when an application reaches the limit of what a partition can handle, Azure Storage returns error code 503 (Server Busy) or error code 500 (Operation Timeout) [Performance checklist for Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist).
 
 If you are seeing 503 or 500 errors, you are likely facing throttling. However, these codes can also indicate transient network issues or backend service unavailability. The first step is to verify that the errors correlate with high request rates or large data transfers. If your application is retrying requests aggressively without a backoff policy, it can exacerbate the throttling [Performance checklist for Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist). The exponential backoff allows the load on the partition to decrease, and to ease out spikes in traffic to that partition [Scalability and performance targets for standard storage accounts](https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account).

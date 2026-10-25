@@ -12,8 +12,6 @@ Azure Batch nodes are ephemeral. When a node is removed from a pool, or when the
 
 ## Understand the node file system structure
 
-[![Azure Batch Data Flow and Persistence](/images/posts/2026/azc-340-checkpoints.svg)](/images/posts/2026/azc-340-checkpoints.svg)
-
 Azure Batch exposes a portion of the compute node's file system as the *root directory*. This directory is located on the temporary storage drive of the VM, not on the OS drive. The Batch service provides several environment variables to help you navigate this structure, but it is crucial to understand what each part is for.
 
 The root directory contains:

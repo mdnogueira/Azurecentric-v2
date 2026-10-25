@@ -12,8 +12,6 @@ You assign a user the Global Administrator role in Microsoft Entra ID, and they 
 
 Many practitioners assume that directory-level administrative rights automatically translate to resource management rights. They do not. Microsoft Entra ID and Azure Resource Manager operate on different data stores and policy decision points. Understanding this distinction is critical for delegating access without over-provisioning or creating security gaps.
 
-[![Separation of Control Planes](/images/posts/2025/azc-139-checkpoints.svg)](/images/posts/2025/azc-139-checkpoints.svg)
-
 ## Two separate control planes
 
 Microsoft Entra ID and Azure have their own role-based access control (RBAC) systems. As documented in the [Understand Microsoft Entra role concepts](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles) article, these are distinct systems with different data stores and policy decision points. 

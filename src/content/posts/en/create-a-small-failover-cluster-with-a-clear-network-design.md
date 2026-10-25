@@ -12,8 +12,6 @@ You are planning a small failover cluster on Windows Server 2022. The immediate 
 
 Failover clustering is not a simple "add servers" operation. Microsoft supports a cluster solution only if the complete configuration passes all validation tests and if all hardware is certified for the version of Windows Server that the cluster nodes are running [Create a failover cluster](https://learn.microsoft.com/en-us/windows-server/failover-clustering/create-failover-cluster). This means the network design must be proven compatible before the cluster is created, not after.
 
-[![Failover Cluster Creation Flow](/images/posts/2024/azc-055-checkpoints.svg)](/images/posts/2024/azc-055-checkpoints.svg)
-
 ## Verify prerequisites and network isolation
 
 Before installing any clustering features, you must ensure the environment meets the baseline requirements. All servers that you want to add as cluster nodes must be running the same version of Windows Server and joined to the same Active Directory domain [Create a failover cluster](https://learn.microsoft.com/en-us/windows-server/failover-clustering/create-failover-cluster). Mismatched versions or domain memberships are immediate blockers.

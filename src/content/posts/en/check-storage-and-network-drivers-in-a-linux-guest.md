@@ -12,8 +12,6 @@ You have a Linux virtual machine on a Windows Server 2025 host. It is not behavi
 
 Hyper-V Integration Services enhance virtual machine performance and provide convenience features by leveraging two-way communication with the Hyper-V host [Manage Hyper-V Integration Services](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services). Many of these services are conveniences, such as guest file copy, while others are important to the virtual machine's functionality, such as synthetic device drivers [Manage Hyper-V Integration Services](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services). The driver components are not intended to be serviced manually [Manage Hyper-V Integration Services](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
 
-[![Hyper-V Linux Integration Service Verification Flow](/images/posts/2025/azc-236-checkpoints.svg)](/images/posts/2025/azc-236-checkpoints.svg)
-
 ## Check the host-side configuration
 
 Before looking inside the guest, confirm that the host has enabled the relevant integration services for the virtual machine. You need to know the virtual machine name and have appropriate permissions on the host.

@@ -12,8 +12,6 @@ Security recommendations pile up quickly. A dashboard showing a high secure scor
 
 Microsoft Defender for Cloud provides governance rules for this purpose. These rules allow you to define who is responsible for remediating specific security findings and set a timeframe for that remediation. This creates accountability and ensures that critical issues do not sit in a backlog indefinitely.
 
-[![Governance Rule Assignment Flow](/images/posts/2025/azc-256-checkpoints.svg)](/images/posts/2025/azc-256-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before defining governance rules, ensure you have the necessary permissions. The documentation specifies that you require **Contributor**, **Security Admin**, or **Owner** permissions on the Azure subscriptions where the rules will apply [Drive remediation of recommendations with governance rules](https://learn.microsoft.com/en-us/azure/defender-for-cloud/governance-rules). 

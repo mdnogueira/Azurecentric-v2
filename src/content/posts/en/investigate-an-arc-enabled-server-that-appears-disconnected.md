@@ -12,8 +12,6 @@ An Arc-enabled server showing as disconnected usually means the Azure Connected 
 
 ## Check the local agent status and logs
 
-[![Arc Server Disconnection Troubleshooting Flow](/images/posts/2024/azc-126-checkpoints.svg)](/images/posts/2024/azc-126-checkpoints.svg)
-
 The Azure Connected Machine agent runs as a service on the server. If it is not running, or if it is running but cannot authenticate, the server will appear disconnected in the Azure portal. Start by verifying the service state on the machine.
 
 On Windows, check the status of the **Azure Connected Machine Agent** service. On Linux, check the `azcmagent` systemd service. If the service is stopped, start it and observe whether the connection state changes. If the service is running but the server remains disconnected, the agent is likely failing to communicate with Azure or has encountered an error during authentication.

@@ -12,8 +12,6 @@ You have enabled Defender for Cloud plans, but the resources you expect to see p
 
 The first thing to check is whether the plan is enabled at the correct scope for the workload type. Defender for Cloud does not automatically extend all plan coverage across every hierarchy level. A subscription-level toggle for Defender for Servers, for example, does not automatically extend that coverage to an attached Log Analytics workspace [Deploy Defender for Servers](https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan). Similarly, enabling the Defender CSPM plan at the subscription level requires specific permissions to activate agentless scanning components [Protect your resources with Defender CSPM](https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-cspm-plan).
 
-[![Defender Plan Scope Verification Flow](/images/posts/2026/azc-353-checkpoints.svg)](/images/posts/2026/azc-353-checkpoints.svg)
-
 ## Check subscription-level plan enablement
 
 Start by confirming that the relevant Defender plan is toggled on for the subscription containing the resource. Open **Microsoft Defender for Cloud** in the Azure portal and navigate to **Environment settings** [Protect your resources with Defender CSPM](https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-cspm-plan). Select the subscription in question and review the **Defender plans** page.

@@ -12,8 +12,6 @@ You have an on-premises server estate to move to Azure, but you are unsure which
 
 ## Select the right assessment scenario
 
-[![Azure Migrate Assessment Data Flow](/images/posts/2024/azc-065-checkpoints.svg)](/images/posts/2024/azc-065-checkpoints.svg)
-
 Azure Migrate separates server assessment from database and web app assessment. You must choose the scenario that matches your primary migration goal before adding tools.
 
 1. Open your Azure Migrate project in the Azure portal.

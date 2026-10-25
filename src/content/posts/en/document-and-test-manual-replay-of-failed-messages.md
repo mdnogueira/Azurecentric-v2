@@ -12,8 +12,6 @@ Messages end up in the dead-letter queue (DLQ) or become deferred for different 
 
 ## Identify where the message is
 
-[![Service Bus Message Recovery Flow](/images/posts/2026/azc-362-checkpoints.svg)](/images/posts/2026/azc-362-checkpoints.svg)
-
 Dead-lettered messages are moved to a subqueue when they cannot be processed after the maximum delivery count is exceeded, when they expire, or when a system error occurs. Deferred messages, by contrast, remain in the main queue but are set aside because processing is not currently possible, such as in a workflow waiting for a prior step. You can discover deferred messages via message browsing (peeking) if you have lost track of their sequence numbers.
 
 To check the dead-letter queue, you address the subqueue directly. For a queue, the path is `<queue path>/$deadletterqueue`. For a topic subscription, it is `<topic path>/Subscriptions/<subscription path>/$deadletterqueue`. Service Bus Explorer provides a UI for browsing these queues, which is often the quickest way to inspect messages without writing code.

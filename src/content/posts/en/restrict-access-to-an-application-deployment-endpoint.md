@@ -12,8 +12,6 @@ You need to deploy code to an Azure App Service app from a virtual network, but 
 
 The goal here is to allow your deployment pipeline (running in a virtual network) to reach the app, while denying all other public access. We will use a private endpoint for the deployment traffic and disable public network access to secure the app.
 
-[![App Service Access Control Flow](/images/posts/2026/azc-319-checkpoints.svg)](/images/posts/2026/azc-319-checkpoints.svg)
-
 ## Understand the traffic paths
 
 App Service evaluates traffic based on the entry point. If traffic arrives via a private endpoint, it goes directly to the site without being checked against access restriction rules [App Service Access restrictions](https://learn.microsoft.com/en-us/azure/app-service/overview-access-restrictions). This means that simply adding a private endpoint does not secure the app against public access; it just adds another entry point.

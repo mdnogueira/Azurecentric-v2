@@ -12,8 +12,6 @@ If a Linux virtual machine on Hyper-V drifts from the host time, the first thing
 
 ## Confirm the host-side integration service is enabled
 
-[![Time Synchronisation Flow](/images/posts/2024/azc-118-checkpoints.svg)](/images/posts/2024/azc-118-checkpoints.svg)
-
 The Time Synchronization service must be enabled on the Hyper-V host for the virtual machine. For Windows guests, integration services are on by default, but Linux guests require the host to have the service enabled to allow the guest kernel module to function. You can verify the state using PowerShell on the host.
 
 Run the following command to list the integration services for the target virtual machine:

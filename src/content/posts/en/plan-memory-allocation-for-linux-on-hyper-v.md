@@ -12,8 +12,6 @@ How much memory should you allocate to a Linux virtual machine on Hyper-V? The a
 
 ## Static memory: the baseline choice
 
-[![Linux VM Memory Allocation Decision Flow](/images/posts/2025/azc-137-checkpoints.svg)](/images/posts/2025/azc-137-checkpoints.svg)
-
 Static memory allocation assigns a fixed amount of RAM to the virtual machine at creation. The guest operating system sees this amount as its total available memory, regardless of the host's current load. This approach avoids the complexity of configuring minimum, maximum, and startup memory values, and eliminates the potential interactions with memory ballooning drivers.
 
 For workloads where memory usage is predictable, such as database servers or application servers with defined capacity, static memory is often the preferred choice. It simplifies troubleshooting because the memory footprint of the VM is constant. You can set the memory using Hyper-V Manager or PowerShell:

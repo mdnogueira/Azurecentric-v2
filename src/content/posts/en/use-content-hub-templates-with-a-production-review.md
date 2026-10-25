@@ -12,8 +12,6 @@ You have selected a solution from the Microsoft Sentinel Content hub. It looks c
 
 The Microsoft Sentinel Content hub is your centralized location to discover and manage out-of-the-box content. Solutions provide a consolidated way to acquire this content in your workspace with a single deployment step [Microsoft Sentinel content hub catalog | Microsoft Docs](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-catalog). However, a solution deployment does not automatically configure every component it contains. Some content types, particularly data connectors and playbooks, require additional configuration steps after installation to become active.
 
-[![Sentinel Content Hub Deployment and Configuration Flow](/images/posts/2025/azc-202-checkpoints.svg)](/images/posts/2025/azc-202-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before you begin, ensure you have the correct permissions. To install, update, and delete standalone content or solutions in the Content hub, you need the **Microsoft Sentinel Contributor** role at the resource group level [Discover and deploy Microsoft Sentinel out-of-the-box content from Content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy). For other roles and permissions supported for Microsoft Sentinel, refer to the permissions documentation [Discover and deploy Microsoft Sentinel out-of-the-box content from Content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy).

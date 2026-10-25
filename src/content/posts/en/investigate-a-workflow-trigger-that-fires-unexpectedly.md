@@ -12,8 +12,6 @@ You notice a workflow running when you didn't expect it to. The first thing to c
 
 ## Check the trigger history
 
-[![Logic Apps Trigger Investigation Flow](/images/posts/2026/azc-304-checkpoints.svg)](/images/posts/2026/azc-304-checkpoints.svg)
-
 Every workflow run begins with a trigger. The trigger history lists all trigger attempts, including those that did not result in a successful workflow execution. This is the starting point for any investigation into unexpected behaviour.
 
 In the Azure portal, open your Logic App resource. Navigate to the **Workflow** section and select **Trigger history**. This view shows a chronological list of trigger attempts. Each entry represents a moment the trigger evaluated its condition or received an event.

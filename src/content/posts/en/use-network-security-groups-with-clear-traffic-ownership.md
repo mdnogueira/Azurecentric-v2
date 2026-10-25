@@ -12,8 +12,6 @@ Inbound traffic evaluation order determines whether a network security group (NS
 
 An NSG contains security rules that allow or deny inbound and outbound traffic. Each rule has a priority number between 100 and 4096. Lower numbers have higher priority and are processed first. Once traffic matches a rule, processing stops. This means a rule with priority 100 will always take precedence over a rule with priority 200, regardless of the source or destination. Azure default security rules are assigned the lowest priority (highest numbers, 65000 and above) to ensure that custom rules are always processed first [Azure network security groups overview](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview).
 
-[![NSG Rule Evaluation Flow](/images/posts/2024/azc-068-checkpoints.svg)](/images/posts/2024/azc-068-checkpoints.svg)
-
 ## Understand the evaluation order
 
 The order in which rules are evaluated depends on the direction of the traffic and the association of the NSG. You can associate an NSG to a subnet, a network interface, or both. The same NSG can be associated with multiple subnets and network interfaces [Network security group - how it works](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works).

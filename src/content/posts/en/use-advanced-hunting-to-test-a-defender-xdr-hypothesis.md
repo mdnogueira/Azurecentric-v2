@@ -12,8 +12,6 @@ You suspect a specific process signature is being used for lateral movement, but
 
 ## Start with a clear hypothesis
 
-[![Hypothesis Testing and Validation Flow](/images/posts/2025/azc-259-checkpoints.svg)](/images/posts/2025/azc-259-checkpoints.svg)
-
 A hunting query without a specific question often returns noise. Define what you are looking for before opening the query editor. For example: "Are there any instances of `process.exe` running on workstations that are not signed by the vendor?"
 
 This clarity determines which data sources you need. Advanced Hunting supports queries that check a broader data set coming from Microsoft Defender for Endpoint, Microsoft Defender for Office 365, Microsoft Defender for Cloud Apps, and Microsoft Defender for Identity. If your hypothesis involves only endpoint activity, you might not need to query email or cloud app logs.

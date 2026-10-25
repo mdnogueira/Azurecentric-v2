@@ -12,8 +12,6 @@ You are trying to deploy a Bicep file that creates a role assignment, but the de
 
 ## Match the deployment scope to the permission requirement
 
-[![RBAC Deployment Permission Flow](/images/posts/2025/azc-245-checkpoints.svg)](/images/posts/2025/azc-245-checkpoints.svg)
-
 When you use the Azure CLI to deploy a Bicep file, the command you choose dictates the required permissions. According to the deployment documentation, you need write access on the resources you are deploying and access to all operations on the `Microsoft.Resources/deployments` resource type [Deploy Bicep files with the Azure CLI](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli#deploy-remote-template).
 
 For a resource group deployment, you use `az deployment group create`. This requires permissions on the resource group itself. For a subscription deployment, you use `az deployment sub create`. This requires permissions on the subscription. If you try to deploy a role assignment scoped to a resource group using a subscription-level deployment command, the deployment will fail because you lack the necessary permissions on the `Microsoft.Resources/deployments` resource at the subscription scope for that specific operation, or the role assignment itself is being evaluated against the wrong scope.

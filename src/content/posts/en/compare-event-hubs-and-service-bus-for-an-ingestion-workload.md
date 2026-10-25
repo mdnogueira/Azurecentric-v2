@@ -12,8 +12,6 @@ You are designing an ingestion workload and need to decide between Azure Event H
 
 Event Hubs is a big data streaming platform designed to receive and process millions of events per second. It facilitates the capture, retention, and replay of telemetry and event stream data. Service Bus is a fully managed enterprise message broker intended for applications that require transactions, ordering, duplicate detection, and strong durability. Using Event Hubs for order processing or Service Bus for telemetry ingestion introduces unnecessary complexity or performance bottlenecks.
 
-[![Ingestion Workload Decision Flow](/images/posts/2026/azc-265-checkpoints.svg)](/images/posts/2026/azc-265-checkpoints.svg)
-
 ## Understand the data: Events versus Messages
 
 The first step is to classify the data you are ingesting. Azure messaging services distinguish between events and messages, and this distinction drives the architecture.

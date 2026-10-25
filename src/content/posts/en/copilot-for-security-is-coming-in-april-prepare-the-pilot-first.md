@@ -12,8 +12,6 @@ Microsoft has announced that **Microsoft Copilot for Security** will become gene
 
 Use it to define the first pilot, not to assume that a new interface will improve every investigation. Before launch, agree which task will be assessed, what information it needs and how an analyst will decide whether the output is useful.
 
-[![Copilot for Security pilot preparation checkpoints](/images/posts/2024/azc-027-checkpoints.svg)](/images/posts/2024/azc-027-checkpoints.svg)
-
 ## Choose one task with an observable result
 
 “Help the security team” is too broad for a pilot brief. A more useful starting point is a bounded task, such as drafting an incident summary from an agreed set of evidence.

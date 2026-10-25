@@ -12,8 +12,6 @@ A failover cluster stops when it loses quorum. The cluster service halts to prev
 
 If you cannot restore the lost quorum source quickly, you may need to force the cluster to start without quorum. This is a critical skill for disaster recovery, especially in multisite configurations where the primary site is unreachable. However, this action temporarily bypasses the cluster's quorum configuration and places the cluster in **ForceQuorum** mode. You must document this procedure clearly, because once forced, the administrator takes complete control over the cluster's operations.
 
-[![Cluster Recovery Flow](/images/posts/2026/azc-272-checkpoints.svg)](/images/posts/2026/azc-272-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before attempting recovery, ensure the following:

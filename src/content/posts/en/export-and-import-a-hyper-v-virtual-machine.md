@@ -12,8 +12,6 @@ You need to move a virtual machine to a new host or back it up. Exporting and im
 
 ## Check configuration version compatibility
 
-[![Hyper-V Export and Import Decision Flow](/images/posts/2025/azc-196-checkpoints.svg)](/images/posts/2025/azc-196-checkpoints.svg)
-
 Before exporting, verify that the destination host supports the virtual machine's configuration version. Hyper-V configurations have specific version numbers. You can typically import a virtual machine to a host running a newer version of Hyper-V, but you cannot import a virtual machine created on a newer version to an older version [Export and import virtual machines](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines). If you are moving a virtual machine to a host running Windows Server 2012 R2, you must ensure the configuration version is 5 or lower, as newer versions are not supported [Create a virtual machine in Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v). You cannot change the virtual machine configuration version after it is created, so this check is critical before you start [Create a virtual machine in Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v).
 
 ## Export the virtual machine

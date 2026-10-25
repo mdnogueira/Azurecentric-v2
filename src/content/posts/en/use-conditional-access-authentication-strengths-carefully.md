@@ -12,8 +12,6 @@ You need to enforce a specific authentication strength for external users access
 
 Authentication strength is a Conditional Access control that specifies which combinations of authentication methods users can use to access a resource. For external users, this becomes complex because the user authenticates in their home tenant first. Your tenant then evaluates whether the authentication session from the home tenant meets your requirements. If it does not, or if you do not trust the home tenant's MFA claim, you may need to challenge the user again in your tenant.
 
-[![External User Authentication Strength Flow](/images/posts/2025/azc-257-checkpoints.svg)](/images/posts/2025/azc-257-checkpoints.svg)
-
 ## Check cross-tenant MFA trust settings
 
 Before creating any Conditional Access policy, you must verify your cross-tenant access settings. These settings determine how your tenant trusts MFA claims from external identities.

@@ -12,8 +12,6 @@ draft: false
 
 The decision is whether the application can use a candidate's hardware effectively and meet its requirements. An accelerator that is visible to the operating system is not evidence that the model is running on it or that the overall service is faster.
 
-[![CPU and GPU infrastructure decision checkpoints](/images/posts/2024/azc-024-checkpoints.svg)](/images/posts/2024/azc-024-checkpoints.svg)
-
 ## Separate the stages before choosing the hardware
 
 Map the workload from input to output. Include data access, preprocessing, the model operation and the point where a result becomes available to the caller.

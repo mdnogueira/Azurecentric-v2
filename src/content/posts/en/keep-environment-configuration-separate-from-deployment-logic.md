@@ -12,8 +12,6 @@ You are writing a Bicep file to deploy an App Service plan and a storage account
 
 The configuration set pattern offers a cleaner alternative. Instead of exposing every configuration detail, you accept a single parameter that indicates the environment type. A variable then maps that type to a predefined set of values. This keeps the deployment logic decoupled from the environment-specific configuration.
 
-[![Configuration Set Pattern Flow](/images/posts/2024/azc-066-checkpoints.svg)](/images/posts/2024/azc-066-checkpoints.svg)
-
 ## Define the environment parameter
 
 Start by defining a parameter that restricts the user to known environment types. Using the `@allowed` decorator ensures that the deployment fails early if an unexpected value is provided.

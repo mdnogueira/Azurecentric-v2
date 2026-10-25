@@ -12,8 +12,6 @@ You have swapped a staging slot into production, and the application is failing.
 
 The core issue is that deployment slots do not treat all configuration equally. Some settings move with the code when you swap slots; others stay behind in the slot they were originally defined in. If your rollback plan assumes a simple "undo" button, you may find that the previous version of the app is running with the new configuration, or vice versa. This mismatch is a common source of post-swap instability.
 
-[![Slot Swap Configuration Flow](/images/posts/2026/azc-338-checkpoints.svg)](/images/posts/2026/azc-338-checkpoints.svg)
-
 ## Understand which settings move and which stay
 
 Before you configure your slots, you need to know how App Service handles configuration during a swap. When you swap two slots, the platform applies specific settings from the target slot (usually production) to the source slot (staging) before the traffic switch. These are the settings that are "swapped".

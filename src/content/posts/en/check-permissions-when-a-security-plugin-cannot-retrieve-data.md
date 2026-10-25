@@ -12,8 +12,6 @@ A Security Copilot plugin returns empty results or errors when querying a data s
 
 Microsoft Security Copilot uses plugins to extend its capabilities. These plugins connect to external data sources, such as Azure resources, to enrich analysis. When a plugin cannot retrieve data, it is often because the identity executing the query lacks the necessary permissions on the target resources. This is a common point of confusion: having permission to manage the plugin does not imply permission to read the data it accesses.
 
-[![Security Copilot Plugin Permission Flow](/images/posts/2026/azc-317-checkpoints.svg)](/images/posts/2026/azc-317-checkpoints.svg)
-
 ## Understand the permission boundary
 
 Security Copilot plugins operate within a specific identity context. This identity needs access to the data sources defined in the plugin configuration. If the identity lacks read access to the target resources, the plugin will fail to retrieve data, regardless of how well the plugin is configured.

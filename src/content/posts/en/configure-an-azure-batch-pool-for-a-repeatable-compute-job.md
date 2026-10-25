@@ -12,8 +12,6 @@ You have a compute job that needs to run repeatedly. The first decision is how t
 
 The key to repeatability is ensuring that every node in the pool is in the same state before it accepts work. Azure Batch handles this through the start task. This task runs on every node when it joins the pool and whenever it is restarted or reimaged. It is the mechanism that installs your application, configures the environment, and prepares the node for the actual workload. Without a start task, you would need to manage application deployment manually or rely on application packages, which are also installed via the start task process.
 
-[![Azure Batch Pool Lifecycle and Start Task Flow](/images/posts/2024/azc-125-checkpoints.svg)](/images/posts/2024/azc-125-checkpoints.svg)
-
 ## Define the pool configuration
 
 A pool is a collection of compute nodes. When you create a pool, you specify the operating system, the node size, and the number of nodes. The node size determines the CPU, memory, and local storage available to each task. You can choose from almost all Azure VM families, but you must select the size at creation time; it cannot be changed later [Nodes and pools in Azure Batch](https://learn.microsoft.com/en-us/azure/batch/nodes-and-pools).

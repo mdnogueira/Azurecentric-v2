@@ -12,8 +12,6 @@ A retry repeats an attempt. It does not establish whether the earlier attempt al
 
 A timeout can leave the caller uncertain even though the destination committed the work. Retrying that request safely needs an agreement with the destination about duplicate handling. A retry count alone cannot provide that agreement.
 
-[![Retry Flow and Idempotency Check](/images/posts/2025/azc-148-checkpoints.svg)](/images/posts/2025/azc-148-checkpoints.svg)
-
 ## Decide which operations are safe to repeat
 
 Start by identifying the business operation and its side effects. A read-only status request is a different case from creating a payment. Even when an HTTP method is normally idempotent, inspect the API's actual contract and any additional side effects.

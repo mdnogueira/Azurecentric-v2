@@ -12,8 +12,6 @@ Windows Server 2025 includes Windows Defender Firewall with Advanced Security. I
 
 ## Prerequisites and Permissions
 
-[![BranchCache and NPS Firewall Traffic Flow](/images/posts/2025/azc-175-checkpoints.svg)](/images/posts/2025/azc-175-checkpoints.svg)
-
 You need membership in the **Administrators** group on the target server to modify firewall rules. If you are configuring a non-domain member, manual configuration is required. If the server is domain-joined and BranchCache is managed via Group Policy, the policy settings will override any manual firewall rules applied to that client [Configure Firewall Rules for Non-Domain Members to Allow BranchCache Traffic](https://learn.microsoft.com/en-us/windows-server/networking/branchcache/deploy/configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic).
 
 For NPS, the firewall exceptions are typically created automatically during installation. However, on Windows Server 2019, a specific service account configuration was required for these exceptions to function correctly with default ports. Without this change, the firewall would drop RADIUS traffic [Configure Firewalls for RADIUS Traffic](https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-firewalls-configure). For Windows Server 2025, verify if the default firewall exceptions function correctly after NPS installation. Only apply the SID change if troubleshooting confirms traffic drops, citing the 2019 documentation as a reference for the legacy behavior.

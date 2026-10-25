@@ -12,8 +12,6 @@ You have a small estate of Windows Server 2025 machines and need to enforce conf
 
 The first thing to establish is the structure of your Active Directory. Group Policy settings are applied based on the hierarchy of sites, domains, and OUs. An OU is the lowest-level container to which you can assign GPO settings directly. If you place all your servers in a single OU, they will all receive the same policies. If you need different settings for, say, database servers versus web servers, you should create separate OUs for them. This separation prevents conflicts and makes it easier to delegate administrative control.
 
-[![Group Policy Processing Flow](/images/posts/2025/azc-214-checkpoints.svg)](/images/posts/2025/azc-214-checkpoints.svg)
-
 ## Design the OU structure
 
 Before creating any policies, map out your server roles. A common mistake is to create a flat structure with no OUs, forcing you to link GPOs to the domain root. This causes every policy to apply to every computer, which can lead to unexpected overrides and performance issues. Instead, create OUs that reflect the administrative or functional grouping of your servers.

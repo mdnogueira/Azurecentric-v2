@@ -12,8 +12,6 @@ A virtual machine cannot reach a destination port, but the network configuration
 
 Connection troubleshoot is one of the diagnostic tools in Network Watcher, alongside tools like IP flow verify and effective security rules. While IP flow verify checks if a specific packet is allowed or denied at the VM level, Connection troubleshoot performs an actual connectivity test and maps the path. It helps you understand why a connection fails by identifying the exact hop where the issue occurs, whether it is a network security group (NSG) rule, a user-defined route, or a destination port issue.
 
-[![Connection Troubleshoot Diagnostic Flow](/images/posts/2025/azc-149-checkpoints.svg)](/images/posts/2025/azc-149-checkpoints.svg)
-
 ## Prerequisites and scope
 
 Before running a test, ensure you have the necessary permissions and that the source resource is correctly configured. Connection troubleshoot requires the source resource to have the Network Watcher agent VM extension installed. This is a critical dependency that is often overlooked. The extension is not required on the destination resource.

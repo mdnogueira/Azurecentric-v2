@@ -12,8 +12,6 @@ Intermittent 500 errors or time-outs in Azure API Management often point to back
 
 The most direct way to trace a failed request is to use the Azure API Management extension in Visual Studio Code. This tool lets you initiate a debugging session, send a test request, and step through the effective policies one by one. It also integrates with the `trace` policy to inject custom diagnostics into the request trace output and Application Insights.
 
-[![API Management Policy Debugging Flow](/images/posts/2025/azc-227-checkpoints.svg)](/images/posts/2025/azc-227-checkpoints.svg)
-
 ## Prerequisites and scope
 
 Policy debugging is currently supported only in the Developer tier of API Management. If you are working in a Premium or Standard tier, you cannot use the VS Code debugger directly. You would need to enable request tracing via the REST API and inspect the trace logs, which is a more manual process. For this guide, we assume you are in the Developer tier.

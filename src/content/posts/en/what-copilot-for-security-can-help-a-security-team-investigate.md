@@ -12,8 +12,6 @@ You are looking at an alert in Microsoft Sentinel and need to understand the sco
 
 The core capability relevant to this scenario is the ability to ask natural language questions and have the system retrieve and summarise information from connected data sources. This is not a magic button that solves every investigation, but it does reduce the friction of data retrieval and initial analysis. The key to making this work is understanding the architecture: Copilot for Security does not read your data directly. It uses connectors to link to your data sources and plugins to define how it interacts with them.
 
-[![Copilot for Security Investigation Flow](/images/posts/2024/azc-041-checkpoints.svg)](/images/posts/2024/azc-041-checkpoints.svg)
-
 ## The role of connectors and plugins
 
 Before you can ask Copilot for Security to investigate an alert, you must ensure the relevant data sources are connected. The connectors overview explains that you need to establish these links for Copilot to access your data. For Microsoft Sentinel, this typically involves ensuring the workspace is connected and that the necessary permissions are in place for the Copilot service principal to query the data.

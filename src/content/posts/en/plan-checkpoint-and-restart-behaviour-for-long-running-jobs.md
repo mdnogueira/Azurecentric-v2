@@ -12,8 +12,6 @@ Long-running batch workloads rarely proceed without interruption. Nodes fail, co
 
 ## Define the boundaries before you start
 
-[![Job Lifecycle and Failure Handling](/images/posts/2026/azc-321-checkpoints.svg)](/images/posts/2026/azc-321-checkpoints.svg)
-
 Azure Batch imposes a hard limit on task lifetime: a task cannot run for more than 180 days from the moment it is added to the job. Completed tasks persist for only 7 days. If your workload approaches these limits, you must structure the work into smaller chunks or implement external state tracking. For most operational jobs, the immediate risk is not the 180-day cap, but uncontrolled retries or indefinite hangs.
 
 You can constrain a job at two levels: the job itself and individual tasks. Job-level constraints apply to all tasks in the collection. Task-level constraints allow you to tune behaviour for specific units of work.

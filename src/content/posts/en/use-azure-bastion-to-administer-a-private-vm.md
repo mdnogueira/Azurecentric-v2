@@ -12,8 +12,6 @@ You have a Linux virtual machine in a private subnet with no public IP address, 
 
 Azure Bastion is a fully managed Platform-as-a-Service (PaaS) that provides secure RDP and SSH connectivity to virtual machines directly over TLS from the Azure portal or via the native client. It operates on port 443, which typically traverses corporate firewalls more easily than traditional RDP or SSH ports. Crucially, the target VM does not need a public IP address, an agent, or special client software installed to receive the connection.
 
-[![Azure Bastion SSH Connection Flow](/images/posts/2025/azc-143-checkpoints.svg)](/images/posts/2025/azc-143-checkpoints.svg)
-
 ## Choose the right SKU for your needs
 
 Before attempting a connection, you must verify the SKU of the Azure Bastion host provisioned in your virtual network. The features available to you depend entirely on this tier. A common mistake is assuming that a Basic SKU bastion host can reach VMs in peered virtual networks; it cannot.

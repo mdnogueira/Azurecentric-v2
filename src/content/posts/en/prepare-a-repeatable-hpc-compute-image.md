@@ -12,8 +12,6 @@ You have a workload that needs consistent compute nodes: the same libraries, the
 
 The recommended path is to create a managed image from snapshots, publish it to an Azure Compute Gallery, and reference that gallery image when you create your Batch pool. This approach avoids the pitfalls of post-provisioning scripts and gives you version control over your HPC environment.
 
-[![HPC Image Preparation and Pool Creation Flow](/images/posts/2024/azc-064-checkpoints.svg)](/images/posts/2024/azc-064-checkpoints.svg)
-
 ## Why snapshots are the preferred source
 
 You might be tempted to generalize a running virtual machine and capture an image from it. While that is technically possible, Azure Batch documentation explicitly recommends creating managed images using snapshots of the VM's disks instead. The reason is reliability. When you scale a pool, especially one with hundreds of nodes, you need the image source to be immutable and consistent. Snapshots provide a static, read-only copy of the OS and data disks at a specific point in time [Use a managed image to create a custom image pool](https://learn.microsoft.com/en-us/azure/batch/batch-custom-images).

@@ -12,8 +12,6 @@ How do you give your operations team a consistent way to triage incidents withou
 
 ## Prerequisites and permissions
 
-[![Triage Workbook Lifecycle](/images/posts/2026/azc-298-checkpoints.svg)](/images/posts/2026/azc-298-checkpoints.svg)
-
 Before creating a workbook, confirm the scope and permissions. You need access to the Microsoft Sentinel workspace where the workbook will live. The [Microsoft Sentinel Responder](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#microsoft-sentinel-responder) role is sufficient for investigating incidents and viewing data. If your team uses guest users who need to assign incidents, those users also require the Directory Reader role in the Microsoft Entra tenant.
 
 Ensure the workspace has the relevant data connectors enabled. A triage workbook is only as useful as the data it can query. If the workspace does not ingest the logs required for your triage steps, the workbook will return empty results. Check the [Data collection health monitoring](https://learn.microsoft.com/en-us/azure/sentinel/top-workbooks) workbook to confirm ingestion is active for the sources you intend to visualise.

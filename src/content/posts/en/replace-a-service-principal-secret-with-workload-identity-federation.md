@@ -12,8 +12,6 @@ You have a service principal with a client secret that you need to replace. The 
 
 Workload identity federation allows an external identity provider (IdP) to authenticate to Microsoft Entra ID. In this case, your CI/CD system (GitHub Actions, GitLab CI, etc.) acts as the IdP. The Azure resource (e.g., an App Service, Kubernetes cluster, or virtual machine) uses a managed identity. The link between the two is a federated credential on the service principal associated with that managed identity.
 
-[![Workload Identity Federation Flow](/images/posts/2024/azc-078-checkpoints.svg)](/images/posts/2024/azc-078-checkpoints.svg)
-
 ## Prerequisites and Permissions
 
 Before starting, ensure you have the following:

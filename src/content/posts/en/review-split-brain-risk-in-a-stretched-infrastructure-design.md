@@ -12,8 +12,6 @@ A stretched infrastructure design distributes cluster nodes across separate phys
 
 The solution is not simply to spread nodes out. It requires defining the physical topology so the cluster understands where its components live, and configuring a witness that breaks ties when the sites are partitioned. Without these, a network partition causes the cluster to lose quorum entirely or, in manual failover scenarios, leaves you with no clear path to recovery.
 
-[![Stretched Cluster Quorum and Fault Domain Flow](/images/posts/2026/azc-311-checkpoints.svg)](/images/posts/2026/azc-311-checkpoints.svg)
-
 ## Define the physical topology with fault domains
 
 Windows Server Failover Clustering (WSFC) does not automatically know which nodes are in which physical site. You must define this topology using fault domains. This allows the cluster to understand the physical layout and apply storage affinity rules, which is critical for stretch clustering performance and resiliency [Fault domain awareness](https://learn.microsoft.com/en-us/windows-server/failover-clustering/fault-domains).

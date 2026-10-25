@@ -12,8 +12,6 @@ You need to run a PowerShell function as a different user, or allow it to run wi
 
 A `PSCredential` object represents a set of security credentials, such as a username and password. You can create one interactively using `Get-Credential`, or programmatically using a secure string. When you add a credential parameter to your own function, you should follow the conventions used by existing PowerShell cmdlets to make your code predictable for other practitioners.
 
-[![Credential Handling Flow](/images/posts/2025/azc-153-checkpoints.svg)](/images/posts/2025/azc-153-checkpoints.svg)
-
 ## Define the parameter correctly
 
 Start by adding the parameter in the `param` block of your function. The recommended name is `$Credential`, and the type should be `[System.Management.Automation.PSCredential]`. To make the parameter more robust, you can add validation attributes and a default value.

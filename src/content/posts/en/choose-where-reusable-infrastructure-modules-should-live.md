@@ -12,8 +12,6 @@ Where should reusable infrastructure modules live? The answer depends on whether
 
 ## Understand the core differences
 
-[![Module Sharing Decision Flow](/images/posts/2025/azc-168-checkpoints.svg)](/images/posts/2025/azc-168-checkpoints.svg)
-
 The Bicep private module registry is built on Azure Container Registry (ACR). It is designed specifically for Bicep. If you are not using Bicep, you cannot use this registry. Conversely, template specs are a broader Azure Resource Manager (ARM) feature. They can be deployed from the Azure portal, Azure PowerShell, the Azure CLI, and via the API, not just from Bicep files.
 
 A critical distinction lies in artifact packaging. Bicep allows you to embed non-template files, such as PowerShell scripts or binaries, using functions like `loadTextContent`. The Bicep private registry preserves this capability. Template specs cannot package these additional artifacts; they only store the compiled ARM template JSON. If your modules rely on embedding scripts, the private registry is the only viable option among the two.

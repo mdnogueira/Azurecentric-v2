@@ -12,8 +12,6 @@ You are managing a storage account and need to ensure that blobs are not lost if
 
 These features operate at the storage account level, meaning they apply to all blobs within the account. They are complementary. Soft delete handles deletion events. Versioning handles modification events. Using both provides a robust layer of protection against common human and application errors.
 
-[![Blob Protection Flow](/images/posts/2026/azc-287-checkpoints.svg)](/images/posts/2026/azc-287-checkpoints.svg)
-
 ## Enable blob soft delete
 
 Blob soft delete protects an individual blob and its versions, snapshots, and metadata from accidental deletes. When a blob is deleted, it is marked as soft-deleted and remains in the system for a specified retention period. During this period, you can restore the blob to its state at deletion. After the retention period expires, the blob is permanently deleted.

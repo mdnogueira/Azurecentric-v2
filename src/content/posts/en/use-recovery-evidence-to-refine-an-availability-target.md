@@ -12,8 +12,6 @@ You have a target uptime percentage in mind, perhaps derived from a service leve
 
 ## Distinguish the risk class
 
-[![Risk Classification and Availability Target Refinement](/images/posts/2026/azc-347-checkpoints.svg)](/images/posts/2026/azc-347-checkpoints.svg)
-
 Business continuity planning starts with risk identification and classification. Microsoft’s reliability guidance defines high availability as designing a solution to be resilient to day-to-day issues, while disaster recovery is about planning for uncommon risks and catastrophic outages [What are business continuity, high availability, and disaster recovery?](https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery).
 
 Common risks include transient network issues, virtual machine reboots, and occasional hardware failures within a datacentre. These are frequent enough that your workload must handle them automatically to maintain uptime. Uncommon risks, such as a full datacentre outage or a region-wide disaster, are rare but severe. Your availability target should reflect the likelihood of these events. If your target is 99.99%, you are effectively demanding that the workload survive common failures without interruption. If you are also targeting survival of a region outage, you are entering disaster recovery territory, which requires a different set of controls.

@@ -12,8 +12,6 @@ You have an Event Grid topic receiving a high volume of events, but your consume
 
 Event Grid supports three distinct filtering mechanisms: event types, subject prefixes or suffixes, and advanced data-based operators. Choosing the right one depends on what information is available in the event payload and how granular your consumer needs to be.
 
-[![Event Grid Subscription Filtering Flow](/images/posts/2025/azc-169-checkpoints.svg)](/images/posts/2025/azc-169-checkpoints.svg)
-
 ## Filter by event type
 
 The simplest filter limits delivery to specific event types. This is useful when your topic publishes multiple distinct events, such as `Microsoft.Resources.ResourceWriteSuccess` and `Microsoft.Resources.ResourceWriteFailure`, but your consumer only handles one.

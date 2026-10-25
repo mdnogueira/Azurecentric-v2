@@ -12,8 +12,6 @@ The application is unavailable after a failover. It is tempting to assume the ne
 
 A failover is not an instantaneous switch. It is a process involving detection, selection of a new primary, and redirection of requests. If any part of that chain is broken, the application remains unavailable. The first step is to understand the scope of the failure. Is this a zone outage, a region outage, or a service-specific issue? The response differs significantly depending on the scope.
 
-[![Post-Failover Troubleshooting Flow](/images/posts/2025/azc-192-checkpoints.svg)](/images/posts/2025/azc-192-checkpoints.svg)
-
 ## Check the service health and scope
 
 The first thing to verify is whether the underlying Azure service is experiencing a disruption. If the service is healthy, the issue is likely in your configuration or data state. If the service is down, the issue is external to your application logic.

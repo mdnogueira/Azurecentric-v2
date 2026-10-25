@@ -12,8 +12,6 @@ You have a Windows virtual machine on a Hyper-V host, but the network is down, t
 
 This capability is particularly useful for initial guest configuration, troubleshooting boot issues, or automating setup in isolated environments. It works regardless of the network configuration or remote management settings on either the Hyper-V host or the virtual machine.
 
-[![PowerShell Direct Connection Flow](/images/posts/2026/azc-293-checkpoints.svg)](/images/posts/2026/azc-293-checkpoints.svg)
-
 ## Prerequisites and scope
 
 PowerShell Direct is not available for every virtual machine configuration. Before attempting to connect, verify that the environment meets the following requirements:

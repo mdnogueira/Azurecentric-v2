@@ -12,8 +12,6 @@ You have messages stuck in a Service Bus dead-letter queue (DLQ). The immediate 
 
 The DLQ is a secondary subqueue that exists automatically for every queue and topic subscription. You do not create it, and you cannot delete it independently of the parent entity. Its purpose is to hold messages that the messaging engine cannot deliver or that your application could not process. Messages remain in the DLQ until you explicitly retrieve them and complete the dead-letter message. There is no automatic cleanup.
 
-[![Dead-Letter Queue Investigation Flow](/images/posts/2024/azc-107-checkpoints.svg)](/images/posts/2024/azc-107-checkpoints.svg)
-
 ## Identify the dead-letter reason
 
 The first step is to determine why the message was dead-lettered. Service Bus attaches two properties to every dead-lettered message: `DeadLetterReason` and `DeadLetterDescription`. These properties are set by the system when the messaging engine moves the message.

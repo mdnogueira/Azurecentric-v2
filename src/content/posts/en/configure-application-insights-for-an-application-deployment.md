@@ -12,8 +12,6 @@ You have deployed an application on Azure App Service or Azure Functions. The ne
 
 Application Insights is part of Azure Monitor. It uses the powerful data analysis platform to provide telemetry that helps you understand how your application behaves in production. While App Service and Azure Functions provide built-in diagnostics logging for debugging, Application Insights offers dedicated application performance management capabilities for additional telemetry and logs.
 
-[![Application Insights Integration Flow](/images/posts/2024/azc-062-checkpoints.svg)](/images/posts/2024/azc-062-checkpoints.svg)
-
 ## Choose the right monitoring approach
 
 Before enabling Application Insights, it is useful to understand where it fits in the broader monitoring landscape. Azure App Service and Azure Functions offer several monitoring options, each suited to different scenarios:

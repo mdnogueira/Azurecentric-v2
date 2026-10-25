@@ -12,8 +12,6 @@ You have a Microsoft Sentinel workspace ingesting logs from across your estate. 
 
 The solution is to use resource-context RBAC for the applications teams and keep the SOC on standard workspace-level roles. This approach lets you share a single workspace while enforcing strict data boundaries.
 
-[![Access Flow in Shared Sentinel Workspace](/images/posts/2026/azc-356-checkpoints.svg)](/images/posts/2026/azc-356-checkpoints.svg)
-
 ## Understand the access models
 
 Microsoft Sentinel runs on top of a Log Analytics workspace. Access to that workspace is controlled by Azure RBAC. By default, if you give a user or group access to the workspace, they can see all the data inside it. This is fine for the SOC, but it is too broad for other teams.

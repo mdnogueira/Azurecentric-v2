@@ -12,8 +12,6 @@ You need a virtual switch to give your Hyper-V virtual machines network access. 
 
 The Hyper-V role must be installed on the Windows Server 2022 host before you can create a switch. You also need administrative rights to run the necessary PowerShell cmdlets. If you are configuring an external switch, be aware that binding a virtual switch to a physical network adapter can disrupt your current network connectivity. You will need to confirm this disruption during the creation process.
 
-[![Hyper-V Virtual Switch Creation Flow](/images/posts/2024/azc-056-checkpoints.svg)](/images/posts/2024/azc-056-checkpoints.svg)
-
 ## Identify the correct network adapter
 
 Before creating the switch, you must identify the physical network adapter you intend to bind. For an external switch, this is the adapter that provides the network path you want the virtual machines to use. For internal or private switches, no physical adapter is required, but you still need to know the available network interfaces on the host for verification purposes.

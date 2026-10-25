@@ -12,8 +12,6 @@ A VM size is a collection of resource limits, not just a vCPU count. Two candida
 
 Write down that outcome before opening the size selector. It might be a batch job finishing inside a maintenance window or an application meeting its response-time target at peak demand. Without that condition, comparing sizes becomes a search for impressive specifications rather than a capacity decision.
 
-[![Workload-led VM sizing checkpoints](/images/posts/2024/azc-023-checkpoints.svg)](/images/posts/2024/azc-023-checkpoints.svg)
-
 ## Build a small workload profile
 
 For an existing system, capture representative behaviour across normal and busy periods. Record CPU demand, memory use, storage latency and throughput, and network traffic alongside the application's own measurements.

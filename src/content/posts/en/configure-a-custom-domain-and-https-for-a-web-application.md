@@ -12,8 +12,6 @@ You have a web application running on Azure App Service and need to replace the 
 
 ## Map the custom domain to your app
 
-[![Custom Domain and Managed Certificate Flow](/images/posts/2025/azc-241-checkpoints.svg)](/images/posts/2025/azc-241-checkpoints.svg)
-
 Before App Service can issue a certificate, it must know that the domain belongs to your app. This involves two distinct steps: configuring your DNS provider and binding the domain in Azure.
 
 ### Configure DNS records

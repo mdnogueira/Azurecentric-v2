@@ -12,8 +12,6 @@ You have a Linux virtual machine where configuration is managed by running scrip
 
 Cloud-init runs on first boot, applying configuration before user login. This ensures the VM is in the desired state immediately after provisioning, without requiring a separate post-deployment step or remote access. It is supported on Linux VMs and flexible scale sets in Azure.
 
-[![Cloud-init VM Provisioning Flow](/images/posts/2026/azc-320-checkpoints.svg)](/images/posts/2026/azc-320-checkpoints.svg)
-
 ## Why cloud-init over other script execution methods?
 
 Azure provides several ways to run scripts in a Linux VM, each with different trade-offs. Understanding these helps you choose the right tool for the job.

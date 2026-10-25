@@ -12,8 +12,6 @@ A virtual machine that fails to boot leaves you with a connection timeout or a b
 
 The first step is to confirm that Boot Diagnostics is enabled and accessible. When you create a VM in the Azure portal, Boot Diagnostics is enabled by default and uses a managed storage account. If you are troubleshooting a legacy VM or one created via a template that disabled this feature, you may need to enable it manually. The diagnostic data is stored in a storage container, and the serial log is the most reliable source for identifying early boot failures, such as missing bootloaders, kernel panics, or configuration errors in the guest OS.
 
-[![VM Boot Diagnostics Flow](/images/posts/2025/azc-261-checkpoints.svg)](/images/posts/2025/azc-261-checkpoints.svg)
-
 ## Enable and access Boot Diagnostics
 
 Boot Diagnostics is a debugging feature for Azure VMs. It collects serial log information and screenshots as the VM boots up. You can access this data through the Azure portal.

@@ -12,8 +12,6 @@ You have a virtual machine running in Azure and need to protect it against regio
 
 ## Create a restore point collection and point
 
-[![VM Restore Point Lifecycle and Cross-Region Copy](/images/posts/2025/azc-204-checkpoints.svg)](/images/posts/2025/azc-204-checkpoints.svg)
-
 VM restore points are stored in a restore point collection, which is an Azure Resource Manager resource. You must create this collection in the same region as the VM before you can create any restore points [Creating Virtual Machine Restore Points using Azure CLI](https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points-cli).
 
 Start by creating the collection. You need Contributor or Owner permissions on the resource group containing the VM. The following command creates a collection named `ExampleRpc` in the `ExampleRg` resource group, referencing the VM by its resource ID [Creating Virtual Machine Restore Points using Azure CLI](https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points-cli):

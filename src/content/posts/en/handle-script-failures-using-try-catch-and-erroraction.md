@@ -12,8 +12,6 @@ A script that continues after a failure is often harder to debug than one that s
 
 The core issue is that many cmdlets generate non-terminating errors by default. These errors are recorded in the error stream but do not trigger a `catch` block. To handle them, you must explicitly convert them to terminating errors using `-ErrorAction Stop`.
 
-[![PowerShell Error Handling Flow](/images/posts/2024/azc-072-checkpoints.svg)](/images/posts/2024/azc-072-checkpoints.svg)
-
 ## Distinguish error types
 
 PowerShell reports errors in two ways. A terminating error stops the current pipeline execution and can be caught. A non-terminating error is recorded in the error stream but allows execution to continue. `Write-Error` generates a non-terminating error by default. Throwing an exception generates a terminating error.

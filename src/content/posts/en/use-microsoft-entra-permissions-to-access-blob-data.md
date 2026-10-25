@@ -12,8 +12,6 @@ You need a user or application to read or write blobs using Microsoft Entra ID. 
 
 To access blob data via Microsoft Entra ID, you must explicitly assign a data access role, such as **Storage Blob Data Reader** or **Storage Blob Data Contributor**, at the appropriate scope. This is separate from the permissions required to manage the account.
 
-[![Blob Access Authorization Flow](/images/posts/2024/azc-051-checkpoints.svg)](/images/posts/2024/azc-051-checkpoints.svg)
-
 ## Understand the two layers of permission
 
 Azure Storage separates management operations from data operations. This distinction is critical when troubleshooting access issues.

@@ -12,8 +12,6 @@ You have a repository, or perhaps an entire organisation, and you want to know i
 
 The core question is scope: are you protecting a single repository, an organisation, or an enterprise? The answer determines where you click, who you need to ask for permission, and how you assign ownership. A common mistake is to enable scanning at the repository level without considering whether organisation-wide policies would be more efficient, or to assume that enabling scanning automatically blocks pushes. It does not. You must enable push protection separately to prevent new secrets from being committed.
 
-[![Secret Scanning and Push Protection Workflow](/images/posts/2024/azc-119-checkpoints.svg)](/images/posts/2024/azc-119-checkpoints.svg)
-
 ## Confirm permissions and plan scope
 
 Before you touch any settings, verify your role. For a public repository, any administrator can enable Secret Scanning. For a private repository, you need to be an organisation owner or have the Advanced Security feature enabled at the organisation level. If your organisation is part of an enterprise, an enterprise owner can enable the feature at the enterprise level, which cascades to all organisations and repositories within that enterprise.

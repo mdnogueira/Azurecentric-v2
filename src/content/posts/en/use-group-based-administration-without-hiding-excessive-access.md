@@ -12,8 +12,6 @@ You want to simplify role management by assigning Microsoft Entra roles to group
 
 Role-assignable groups are designed to simplify role management, ensure consistent access, and make auditing permissions more straightforward [Use Microsoft Entra groups to manage role assignments](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept). However, they come with strict immutability rules and membership restrictions that differentiate them from standard security or dynamic groups. If you treat them like any other group, you risk creating groups that cannot be modified, cannot use dynamic membership, or can be exploited for privilege escalation.
 
-[![Role-Assignable Group Lifecycle and Access Flow](/images/posts/2026/azc-335-checkpoints.svg)](/images/posts/2026/azc-335-checkpoints.svg)
-
 ## Understand the immutability and creation constraints
 
 The most critical constraint is that the `isAssignableToRole` property is immutable. You can only set this property when creating a new group. You cannot change an existing group into a role-assignable group, nor can you remove this capability once set [Use Microsoft Entra groups to manage role assignments](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept). This means the decision to use a role-assignable group must be made at the point of creation, based on a clear understanding of the role’s scope and the group’s lifecycle.

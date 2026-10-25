@@ -12,8 +12,6 @@ Linux kernel updates are routine, but they change the environment inside the vir
 
 The first thing to check is whether the core kernel module is loaded. The Linux integration services driver is named `hv_utils`. It provides the foundation for several key services, including time synchronization and shutdown coordination. You can verify its presence with a simple module check.
 
-[![Linux Hyper-V Integration Service Verification Flow](/images/posts/2026/azc-352-checkpoints.svg)](/images/posts/2026/azc-352-checkpoints.svg)
-
 ```bash
 lsmod | grep hv_utils
 ```

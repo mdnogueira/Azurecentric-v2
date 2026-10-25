@@ -12,8 +12,6 @@ You cannot patch a hybrid server if you cannot see its state. The first step in 
 
 The workflow relies on two distinct mechanisms: deploying the monitoring agents at scale using Azure Policy, and enabling automatic extension upgrades to maintain them. This approach ensures that every Arc-enabled server has the necessary agents installed and that those agents are upgraded when new versions become available, reducing the operational overhead of manual maintenance.
 
-[![Hybrid Server Patching Workflow](/images/posts/2026/azc-263-checkpoints.svg)](/images/posts/2026/azc-263-checkpoints.svg)
-
 ## Deploy the Azure Monitor Agent using Azure Policy
 
 Azure Policy provides a scalable way to enforce the presence of the Azure Monitor Agent on Arc-enabled servers. It automatically installs the agent on newly registered machines and reinstalls it if it is removed, ensuring consistent monitoring coverage.

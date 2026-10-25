@@ -3,74 +3,34 @@
   "title": "Use a remote backend for Terraform state in Azure",
   "slug": "use-a-remote-backend-for-terraform-state-in-azure",
   "historical_date": "2024-10-23",
-  "input_sha256": "3a1270f554f30596a048cba5ce7d949bdc6dbca8e09cd318013c81819d6144df",
+  "input_sha256": null,
   "created_at": "2026-10-23T14:38:09.624031+00:00",
   "author": "Marcos Nogueira",
-  "description": "Host private Bicep modules in Azure Container Registry for controlled sharing and versioning.",
+  "description": "Keep Terraform state in a private Azure Storage container, with a separate blob per environment and locking to protect shared changes.",
   "tags": [
-    "bicep",
-    "azure-container-registry",
-    "iac",
-    "private-registry",
-    "modules"
+    "terraform",
+    "azure-storage",
+    "remote-state",
+    "infrastructure-as-code"
   ],
   "assets": [
     {
-      "path": "/images/posts/2024/azc-106-learn-1.png",
-      "alt": "Screenshot that shows Azure Verified Modules.",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/c8f6b7c585b9b29976b1c808cc47c38bbb0dc876/articles/azure-resource-manager/bicep/media/modules/bicep-azure-verified-modules-avm.png",
-      "source_id": "S2",
-      "source_revision_date": "2024-09-30T21:47:24Z",
-      "sha256": "d2f28633fc1c4a04aa44964c2ec779147337ccb309c4ce0b46539d9823f16b9f",
+      "path": "/images/posts/2024/azc-106-terraform-state-lock.png",
+      "alt": "Terraform state blob properties showing Locked lease status and Leased lease state.",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-dev-docs/9e07eca7d51d9186a8e9070cbd56a5a3f05de3dd/articles/terraform/media/store-state-in-azure-storage/lock.png",
+      "source_revision": "9e07eca7d51d9186a8e9070cbd56a5a3f05de3dd",
+      "source_revision_date": "2023-08-10T16:08:00Z",
+      "sha256": "0f1b50a2992462e51a2f1a749b8e292c10c1d23a419bc5078ccdbfe2bb77dfcb",
       "transformations": "none; complete source image",
-      "credit": "Used with permission from Microsoft.",
-      "visual_review": "pending"
-    },
-    {
-      "path": "/images/posts/2024/azc-106-learn-2.png",
-      "alt": "Screenshot of bicep module registry with source.",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/f002a6226a6eec2af0194e9331c7358859c2f752/articles/azure-resource-manager/bicep/media/private-module-registry/bicep-module-with-source-manifest.png",
-      "source_id": "S3",
-      "source_revision_date": "2024-09-17T19:43:24Z",
-      "sha256": "6c9766c09d590611012cf1cfd8cf4a4bac09ebaf13a0a7edf8f46f690b49f7fa",
-      "transformations": "none; complete source image",
-      "credit": "Used with permission from Microsoft.",
-      "visual_review": "pending"
+      "visual_review": "Inspected complete image: Azure blob properties, Locked lease status, Leased lease state. Embedded documentation account name and timestamps are illustrative."
     }
   ],
   "sources": [
     {
-      "repository": "MicrosoftDocs/azure-docs",
-      "path": "articles/azure-resource-manager/bicep/best-practices.md",
-      "revision": "9dab744dd92a844521ff089faf5b6b3fbd6b391f",
-      "revision_date": "2024-07-11T14:50:01Z",
-      "checked_at": "2026-10-23T11:49:39.246521+00:00",
-      "title": "Learn best practices when developing Bicep files",
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices",
-      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/9dab744dd92a844521ff089faf5b6b3fbd6b391f/articles/azure-resource-manager/bicep/best-practices.md",
-      "rank_score": 100
-    },
-    {
-      "repository": "MicrosoftDocs/azure-docs",
-      "path": "articles/azure-resource-manager/bicep/modules.md",
-      "revision": "c8f6b7c585b9b29976b1c808cc47c38bbb0dc876",
-      "revision_date": "2024-09-30T21:47:24Z",
-      "checked_at": "2026-10-23T11:49:39.246521+00:00",
-      "title": "Bicep modules",
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules",
-      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/c8f6b7c585b9b29976b1c808cc47c38bbb0dc876/articles/azure-resource-manager/bicep/modules.md",
-      "rank_score": 99
-    },
-    {
-      "repository": "MicrosoftDocs/azure-docs",
-      "path": "articles/azure-resource-manager/bicep/private-module-registry.md",
-      "revision": "f002a6226a6eec2af0194e9331c7358859c2f752",
-      "revision_date": "2024-09-17T19:43:24Z",
-      "checked_at": "2026-10-23T11:49:39.246521+00:00",
-      "title": "Create private registry for Bicep module",
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/private-module-registry",
-      "snapshot_url": "https://github.com/MicrosoftDocs/azure-docs/blob/f002a6226a6eec2af0194e9331c7358859c2f752/articles/azure-resource-manager/bicep/private-module-registry.md",
-      "rank_score": 98
+      "article": "AZC-106",
+      "url": "https://learn.microsoft.com/en-us/azure/developer/terraform/store-state-in-azure-storage",
+      "snapshot_url": "https://github.com/MicrosoftDocs/azure-dev-docs/blob/9e07eca7d51d9186a8e9070cbd56a5a3f05de3dd/articles/terraform/store-state-in-azure-storage.md",
+      "revision_date": "2023-08-10T16:08:00Z"
     }
   ],
   "model": "local",
@@ -85,7 +45,7 @@
     "status": "not_run",
     "integration_validation": "not_run"
   },
-  "review_status": "Bulk draft; automated structural checks only. Detailed source, code and visual review remains pending.",
+  "review_status": "Image and topic revision checked against a pre-publication-date Microsoft documentation snapshot; code examples not executed. See image-revision-20261025.json.",
   "publication_approved": false,
   "bulk_preparation": {
     "at": "2026-10-24T08:20:02.978071+00:00",
@@ -94,60 +54,9 @@
     "previous_editor_findings": "Prior model feedback retained; not independently confirmed resolved"
   },
   "file": "src/content/posts/en/use-a-remote-backend-for-terraform-state-in-azure.md",
-  "draft": true,
-  "word_count": 883,
-  "claim_support_checks": [
-    {
-      "claim": "Bicep modules can be published to Azure Container Registry for private sharing.",
-      "source_id": "S3",
-      "span_found": false
-    },
-    {
-      "claim": "The private container registry must have the policy azureADAuthenticationAsArmPolicy set to enabled.",
-      "source_id": "S3",
-      "span_found": false
-    },
-    {
-      "claim": "Publishing with the --with-source flag allows Go to Definition in Visual Studio Code.",
-      "source_id": "S3",
-      "span_found": false
-    },
-    {
-      "claim": "Bicep modules are converted into a single ARM template with nested templates during deployment.",
-      "source_id": "S2",
-      "span_found": false
-    },
-    {
-      "claim": "The public module registry is retiring non-Azure Verified Modules.",
-      "source_id": "S2",
-      "span_found": true
-    }
-  ],
-  "model_editor_issues": [
-    {
-      "severity": "high",
-      "problem": "The title 'Use a remote backend for Terraform state in Azure' is completely misleading. The content describes using Azure Container Registry as a Bicep module registry, not Terraform state storage. This confuses two fundamentally different IaC concepts (state backend vs. module registry).",
-      "fix": "Rewrite the title to 'Host Private Bicep Modules in Azure Container Registry' and update the description to reflect Bicep module sharing, not Terraform state management."
-    },
-    {
-      "severity": "high",
-      "problem": "The verification section includes a screenshot of the Azure Verified Modules index (S2), which is irrelevant to the private registry workflow described. The text claims this verifies the module is published, which is factually incorrect; the ACR repository view verifies publication.",
-      "fix": "Remove the Azure Verified Modules screenshot from the verification step. Use a screenshot showing the specific repository tag in the ACR portal to verify the published module."
-    },
-    {
-      "severity": "medium",
-      "problem": "The alias example in the body uses `br/ContosoModules:storage` but the config defines `br/ContosoModules` mapping to a full path with a tag. The syntax in the example omits the tag, which contradicts the config structure and the standard `br/alias:path:tag` format shown in S2.",
-      "fix": "Correct the Bicep module reference to include the tag, e.g., `br/ContosoModules:storage:v1`, or update the `bicepconfig.json` example to match the usage without a tag if that is the intended behavior."
-    },
-    {
-      "severity": "medium",
-      "problem": "The conclusion contains generic prose ('By following these steps...') which violates the editorial guidance to end with a concrete verification or next action. It adds no technical value.",
-      "fix": "Remove the concluding paragraph. End the article after the 'Common pitfalls' section or with a direct link to the next logical step, such as 'Deploy the module' or 'Configure CI/CD integration'."
-    },
-    {
-      "severity": "low",
-      "problem": "The text states 'The Azure Bicep module registry provides that capability' in the intro, which is ambiguous. It conflates the concept of a 'registry' with the specific implementation of ACR. S2 distinguishes between public, private, and template specs.",
-      "fix": "Clarify that 'Azure Container Registry serves as the private module registry' rather than using the vague term 'Azure Bicep module registry' which might imply a separate service."
-    }
-  ]
+  "draft": false,
+  "word_count": 728,
+  "claim_support_checks": [],
+  "model_editor_issues": [],
+  "image_revision": "2026-10-25: replaced unrelated Bicep article and screenshot with Terraform state tutorial; examples not executed"
 }

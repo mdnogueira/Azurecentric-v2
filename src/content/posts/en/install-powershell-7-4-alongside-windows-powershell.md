@@ -12,8 +12,6 @@ Installing PowerShell 7.4 does not require removing Windows PowerShell 5.1. We c
 
 Windows PowerShell uses `powershell.exe`, whereas PowerShell 7 uses `pwsh.exe`. An MSI installation normally places the newer executable in `C:\Program Files\PowerShell\7`. These separate executables let us choose the host explicitly. They do not provide complete module isolation: PowerShell 7 can also search Windows PowerShell module locations.
 
-[![PowerShell 7.4 and Windows PowerShell 5.1 Coexistence](/images/posts/2024/azc-014-checkpoints.svg)](/images/posts/2024/azc-014-checkpoints.svg)
-
 ## Choosing an installation method
 
 The method you choose depends on your environment and whether you need to manage updates centrally.

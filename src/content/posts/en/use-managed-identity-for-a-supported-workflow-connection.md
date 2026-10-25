@@ -12,8 +12,6 @@ You have a workflow or an API gateway that needs to talk to another Azure servic
 
 This works for Azure Logic Apps and Azure API Management. Both services can use a system-assigned identity, which is tied to the lifecycle of the resource, or a user-assigned identity, which is a standalone resource that can be shared. The choice depends on whether you need to share credentials across multiple services or keep them strictly bound to one instance.
 
-[![Managed Identity Authentication Flow](/images/posts/2024/azc-048-checkpoints.svg)](/images/posts/2024/azc-048-checkpoints.svg)
-
 ## Understand the identity types
 
 A system-assigned managed identity is created automatically when you enable the feature on a resource. It is deleted when the resource is deleted. You cannot have more than one system-assigned identity per resource. This is the simplest option for most single-service scenarios.

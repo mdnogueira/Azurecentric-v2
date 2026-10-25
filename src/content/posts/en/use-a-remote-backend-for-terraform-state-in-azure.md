@@ -1,121 +1,64 @@
 ---
 title: "Use a remote backend for Terraform state in Azure"
-description: "Host private Bicep modules in Azure Container Registry for controlled sharing and versioning."
+description: "Keep Terraform state in a private Azure Storage container, with a separate blob per environment and locking to protect shared changes."
 pubDate: 2024-10-23
 category: automation
-tags: ["bicep", "azure-container-registry", "iac", "private-registry", "modules"]
+tags: ["terraform", "azure-storage", "remote-state", "infrastructure-as-code"]
 translationKey: use-a-remote-backend-for-terraform-state-in-azure
 draft: false
 ---
 
-## Why a private registry?
+When two people manage the same infrastructure, a state file on one laptop quickly becomes a problem. Terraform needs that file to connect the configuration to the resources it manages. Passing copies between engineers makes it too easy to work from different versions.
 
-If your team shares Bicep modules, you need a place to store them that enforces access control and versioning. The Azure Bicep module registry provides that capability. You publish compiled templates (and optionally the source Bicep files) to an Azure Container Registry (ACR) instance, then reference them from your deployment files using a `br:` URI.
+For an Azure workload, use the `azurerm` backend with a private Blob Storage container. Everyone working on that environment must use the same backend configuration and credentials with the appropriate access. Microsoft's [remote state walkthrough](https://learn.microsoft.com/en-us/azure/developer/terraform/store-state-in-azure-storage) explains the storage setup and locking behaviour.
 
-[![Bicep Module Registry Workflow](/images/posts/2024/azc-106-checkpoints.svg)](/images/posts/2024/azc-106-checkpoints.svg)
+## Prepare storage before moving state
 
-This approach keeps your IaC assets under your own governance. It avoids the pitfalls of storing templates in public repositories where versioning and access control might not align with your security requirements. It also ensures that the modules you consume are the ones your organisation has reviewed and approved.
+Have the storage account and private container ready before initialising the backend. They are dependencies of the deployment workflow, so decide who owns them and how their access is managed. Do not make the container public to resolve an authentication error.
 
-## Prerequisites and permissions
+Choose a distinct blob key for each independently managed environment. For example, `payments/dev.tfstate` and `payments/prod.tfstate` describe separate state objects. A folder-like name helps organisation; it does not grant or restrict access by itself.
 
-Before you begin, ensure you have the following:
+Also check the network path from every machine that runs Terraform. A developer laptop and a build agent might reach Azure through different routes. Storage firewall or private endpoint settings must permit the intended callers, and private endpoint users need working name resolution. Establish this path before moving an existing state file.
 
-*   An Azure Container Registry instance. You can use any SKU, but consider geo-replication if your team is distributed.
-*   Bicep CLI version 0.4.1008 or later. If you are using Azure CLI, you need version 2.31.0 or later; for Azure PowerShell, version 7.0.0 or later.
-*   Permissions to push to the ACR repository. Typically, this means the **AcrPush** role.
-*   Permissions to pull from the ACR repository. Typically, this means the **AcrPull** role.
+Treat state as sensitive data. It can contain values you would never put in a source repository. A private container and encryption at rest are useful controls, but access to the account and credentials still needs deliberate management.
 
-Note that the private container registry is accessed over the public internet. If your security policy requires it, you can configure the ACR to be accessible only via a private endpoint. Additionally, the registry must have the `azureADAuthenticationAsArmPolicy` set to `enabled`. If this policy is disabled, you will receive a 401 Unauthorized error when attempting to publish modules.
+## Configure the backend
 
-## Publishing a module
+The following is a backend configuration fragment to add to the root Terraform configuration. Replace the illustrative account name with your own globally unique storage account name. Keep the resource group, container and key consistent across the people and automation managing this environment.
 
-To publish a module, you use the `publish` command. This command compiles the Bicep file into an ARM template JSON and pushes it to the specified ACR repository.
-
-```azurecli
-az bicep publish --file storage.bicep --target br:exampleregistry.azurecr.io/bicep/modules/storage:v1 --documentationUri https://www.contoso.com/exampleregistry.html
-```
-
-You can also publish the original Bicep source code alongside the compiled template. This allows developers to use "Go to Definition" in Visual Studio Code to inspect the source of the module. To do this, add the `--with-source` flag:
-
-```azurecli
-az bicep publish --file storage.bicep --target br:exampleregistry.azurecr.io/bicep/modules/storage:v1 --documentationUri https://www.contoso.com/exampleregistry.html --with-source
-```
-
-When you publish with source, the manifest in the ACR includes an additional layer containing the Bicep code. This is visible in the registry's artifact details.
-
-[![Bicep module registry with source code included in the manifest.](/images/posts/2024/azc-106-learn-2.png)](/images/posts/2024/azc-106-learn-2.png)
-
-## Referencing the module
-
-Once the module is published, you can reference it in your Bicep files using the `br:` scheme. The syntax is:
-
-```bicep
-module stgModule 'br:exampleregistry.azurecr.io/bicep/modules/storage:v1' = {
-  name: 'storageDeploy'
-  params: {
-    storagePrefix: 'examplestg1'
+```hcl
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-terraform-state"
+    storage_account_name = "examplestateaccount"
+    container_name       = "tfstate"
+    key                  = "payments/dev.tfstate"
   }
 }
 ```
 
-The `br:` prefix indicates a Bicep registry. The path follows the standard ACR repository structure. You can use tags to specify the version of the module you want to consume.
+Authentication is a separate choice from this location block. The Microsoft walkthrough demonstrates an access key supplied through `ARM_ACCESS_KEY`. Keep any such key out of committed configuration, shell transcripts and build logs. Evaluate the backend's supported authentication options against your organisation's identity requirements rather than assuming a storage key is the only approach.
 
-If the full path is cumbersome, you can define an alias in your `bicepconfig.json` file. This simplifies the reference in your code:
+For a new configuration with no existing state, initialise it after configuring authentication:
 
-```json
-{
-  "moduleAliases": {
-    "br/ContosoModules": {
-      "storage": "br:exampleregistry.azurecr.io/bicep/modules/storage:v1"
-    }
-  }
-}
+```shell
+terraform init
 ```
 
-With this alias, your module declaration becomes:
+For an existing deployment, moving the backend also involves migrating its state. Keep a protected backup, stop other writers and review Terraform's migration prompts. Do not create a fresh empty state for resources that are already managed elsewhere. These are configuration examples, not a record of an executed migration.
 
-```bicep
-module stgModule 'br/ContosoModules:storage:v1' = {
-  name: 'storageDeploy'
-  params: {
-    storagePrefix: 'examplestg1'
-  }
-}
-```
+## Check what locking protects
 
-## Local caching and updates
+The Azure backend uses blob locking to coordinate state writes. During an operation that holds the lock, the storage view can show the blob as **Locked** and **Leased**:
 
-When you declare a reference to a remote module, the Bicep extension in Visual Studio Code automatically attempts to download the module to your local cache. The cache location depends on your operating system:
+![Terraform state blob properties showing Locked lease status and Leased lease state.](/images/posts/2024/azc-106-terraform-state-lock.png)
 
-*   **Windows:** `%USERPROFILE%\.bicep\br\<registry-name>.azurecr.io\<module-path\<tag>`
-*   **Linux/Mac:** `~/.bicep`
+This is a documentation example, so its account name and timestamps will differ from yours. The useful detail is the lease state. A lock helps prevent two writers updating the same state simultaneously; it does not prevent someone choosing the wrong environment or running an unwanted infrastructure change.
 
-Your local environment will use the cached version until you explicitly refresh it. To update your local cache, run:
+If Terraform cannot acquire a lock, identify the operation holding it before taking action. A long-running pipeline and an abandoned operation require different responses. HashiCorp's [state locking guidance](https://developer.hashicorp.com/terraform/language/state/locking) warns that forcing an unlock while another writer is active can allow concurrent writes.
 
-```azurecli
-az bicep restore --file <bicep-file> [--force]
-```
+## Verify the destination before sharing it
 
-This ensures that your local development environment reflects the latest published version of the module. If you encounter issues with IntelliSense or compilation, running a restore is often the first step to resolve them.
+After initialisation and the first controlled operation, check that the expected state blob exists in the intended container. Confirm the subscription, storage account and environment key with the team. Check that an authorised build agent can reach it and that unrelated users cannot read it.
 
-## Verification
-
-To verify that your module is published and accessible:
-
-1.  Sign in to the Azure portal.
-2.  Navigate to your Azure Container Registry.
-3.  Select **Services** > **Repositories**.
-4.  Locate the repository path you specified (e.g., `bicep/modules/storage`).
-5.  Select the tag (e.g., `v1`).
-6.  Check the **Artifact reference**. It should match the URI you used in your Bicep file.
-
-If the artifact reference matches, your module is ready for consumption. You can now test the deployment using your main Bicep file. Remember that the module is converted into a nested template during deployment, so the deployment history will show the nested deployment with the name you specified in the `name` property of the module declaration.
-
-## Common pitfalls
-
-*   **Authentication errors:** Ensure `azureADAuthenticationAsArmPolicy` is enabled on your ACR. If it is disabled, publishing will fail with a 401 error.
-*   **Version mismatches:** If you update a module in the registry, your local cache will not automatically update. You must run `az bicep restore` to fetch the latest version.
-*   **Scope mismatches:** When referencing a module, ensure that the scope of the module (if specified) aligns with the resources it creates. A module deployed to a resource group cannot create resources in a different subscription unless explicitly scoped to do so.
-*   **Public vs. Private:** Remember that the public module registry is being retired for non-Azure Verified Modules. For internal organisational use, a private registry is the recommended approach.
-
-References for Use a remote backend for Terraform state in Azure: [Learn best practices when developing Bicep files](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices), [Bicep modules](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules), [Create private registry for Bicep module](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/private-module-registry).
+Then review the Terraform plan against the resources you expect to manage. Unexpected creation of existing resources is a reason to stop and investigate the selected state. Once the destination and permissions are correct, give the team the backend configuration and authentication procedure so the next engineer starts from the same state.

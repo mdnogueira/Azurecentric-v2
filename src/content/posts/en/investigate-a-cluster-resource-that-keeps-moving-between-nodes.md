@@ -12,8 +12,6 @@ A cluster resource moving between nodes is rarely a configuration error in the r
 
 ## Check the system log for cluster events
 
-[![Cluster Resource Failover Investigation Flow](/images/posts/2024/azc-115-checkpoints.svg)](/images/posts/2024/azc-115-checkpoints.svg)
-
 Open Event Viewer on the affected nodes and navigate to **Windows Logs > System**. Filter the log by the source **FailoverClustering**. You are looking for a sequence of events that explains why the resource failed and why the cluster decided to move it.
 
 Event 1069 is the primary indicator of a resource failure. The description states: "Cluster resource '%1' in clustered role '%2' failed." The cluster service uses the failure policies for the resource and role to decide whether to restart the resource on the same node or move the group to another node. If you see this event followed by a resource start error on a different node, the cluster has already made the decision to move.

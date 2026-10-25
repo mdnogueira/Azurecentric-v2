@@ -12,8 +12,6 @@ When Microsoft Entra flags a user as risky, the immediate task is to determine w
 
 Microsoft Security Copilot provides a structured way to gather this evidence using specific plugins. The [Entra Risky User investigation](https://github.com/Azure/Security-Copilot/blob/9207edc6d06f62481f5afe714e5a4b6482d0ee91/Promptbook samples/Entra Risky User investigation.md) promptbook outlines a workflow that moves from identity status to behavioural evidence, then to context, and finally to remediation. This is not an automated agent; it is a set of instructions you use to guide the Copilot interface and the underlying plugins.
 
-[![Entra Risky User Investigation Flow](/images/posts/2025/azc-258-checkpoints.svg)](/images/posts/2025/azc-258-checkpoints.svg)
-
 ## Establish the identity risk status
 
 The starting point is to confirm the user’s risk level and understand why the system flagged them. You need to know if the risk is based on a single anomalous event or a pattern of behaviour.

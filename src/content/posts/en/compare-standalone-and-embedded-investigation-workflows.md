@@ -12,8 +12,6 @@ You are faced with a security question. The answer is not always in the same pla
 
 ## Standalone investigations: broad exploration
 
-[![Investigation Workflow Decision](/images/posts/2026/azc-336-checkpoints.svg)](/images/posts/2026/azc-336-checkpoints.svg)
-
 A standalone session is the default entry point. You open the Copilot interface, type a query, and let the assistant retrieve information from its connected data sources. This approach is best when you do not have a specific starting point, or when you need to synthesise information across multiple disparate sources that are not currently linked in your primary tool.
 
 Consider a scenario where you are researching a new threat actor. You might ask Copilot to summarise recent tactics, techniques, and procedures (TTPs) based on connected intelligence feeds. Because the session is standalone, it is not constrained by the scope of a single alert or a specific resource group. You can pivot freely between topics, ask follow-up questions, and let the AI build a narrative from the available data.

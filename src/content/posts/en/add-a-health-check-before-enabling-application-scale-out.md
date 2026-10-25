@@ -12,8 +12,6 @@ You have configured automatic scaling on an App Service plan to handle traffic b
 
 Automatic scaling in Azure App Service prewarms instances to act as a buffer, ensuring smooth performance transitions [How to enable automatic scaling](https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling). However, prewarming does not guarantee that your application code has finished initialising, connecting to databases, or loading configuration. Health check increases availability by rerouting requests away from unhealthy instances and replacing them if they remain unhealthy [Monitor the health of App Service instances](https://learn.microsoft.com/en-us/azure/app-service/monitor-instances-health-check). When scaling out, App Service pings the Health check path to ensure new instances are ready before adding them to the load balancer [Monitor the health of App Service instances](https://learn.microsoft.com/en-us/azure/app-service/monitor-instances-health-check).
 
-[![Health Check and Automatic Scaling Flow](/images/posts/2025/azc-142-checkpoints.svg)](/images/posts/2025/azc-142-checkpoints.svg)
-
 ## Why Health check is a prerequisite for reliable scaling
 
 Automatic scaling monitors HTTP traffic load and adds instances when load increases [How to enable automatic scaling](https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling). It also monitors worker health assessments at least once every few seconds [How to enable automatic scaling](https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling). If you do not define a specific Health check path, the platform relies on its internal mechanisms, which may not account for application-specific startup dependencies.

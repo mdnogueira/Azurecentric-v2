@@ -12,8 +12,6 @@ When a dependent service goes down, your integration logic needs a clear path to
 
 ## Replicate messages across Service Bus namespaces
 
-[![Integration Recovery Flow](/images/posts/2026/azc-343-checkpoints.svg)](/images/posts/2026/azc-343-checkpoints.svg)
-
 If your application depends on Azure Service Bus, you can insulate it against outages by deploying multiple namespaces. The documentation distinguishes between two general-purpose patterns: active and passive replication. These are not built-in Service Bus features but application-level logic that you implement in your sender and receiver clients.
 
 Active replication sends every message to both the primary and secondary namespaces. The sender tags each message with a unique identifier, such as `ServiceBusMessage.MessageId`. The receiver processes the first copy and suppresses duplicates. This approach doubles the operation count and cost, but it ensures that if one namespace fails, the other is already populated.

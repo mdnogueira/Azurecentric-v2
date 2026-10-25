@@ -12,8 +12,6 @@ You are writing a script to check service statuses. You see `Get-Service` return
 
 The difference between a script that works and one that fails in the next release often comes down to whether you are handling objects or strings. When you pipe output from one cmdlet to another, you are passing .NET objects, not formatted lines of text. This distinction is not just semantic; it determines whether your code is robust, readable, and maintainable.
 
-[![PowerShell Output Flow](/images/posts/2024/azc-053-checkpoints.svg)](/images/posts/2024/azc-053-checkpoints.svg)
-
 ## The pipeline carries objects, not text
 
 Every cmdlet in PowerShell produces output that flows through the pipeline. By default, the host application (like the console or Visual Studio Code) takes those objects and formats them into text for your eyes. That text is the end of the line for human consumption, but it is not what moves between commands.

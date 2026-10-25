@@ -12,8 +12,6 @@ You open a Linux virtual machine on a Windows Server 2022 host and find the netw
 
 Hyper-V relies on synthetic drivers for performance and functionality. The synthetic network adapter is the primary interface for Linux guests, and it depends on the `hv_netvsc` kernel module. If that module is not loaded, or if the virtual hardware is not attached, the guest cannot see the network hardware.
 
-[![Linux Network Adapter Troubleshooting Flow](/images/posts/2024/azc-096-checkpoints.svg)](/images/posts/2024/azc-096-checkpoints.svg)
-
 ## Check the synthetic network driver
 
 The synthetic network adapter is provided by the `hv_netvsc` driver, which is part of the Linux kernel integration services included in modern distributions. You need to confirm that this driver is loaded and that the underlying VMBus channel is active.

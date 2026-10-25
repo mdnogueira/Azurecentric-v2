@@ -12,8 +12,6 @@ You have a batch of Windows Server 2025 machines to audit, and you need to know 
 
 The first thing to establish is where the certificates live. Windows stores certificates in several distinct stores, such as the local machine's personal store, the trusted root store, and the certificate authority store. For server identity and TLS, you are usually interested in the certificates in the `Cert:\LocalMachine\My` store. These are the certificates that the server presents to clients. However, if you are auditing the trust chain, you also need to check the `Cert:\LocalMachine\Root` store for trusted roots and the `Cert:\LocalMachine\CA` store for intermediate certificates.
 
-[![Certificate Expiry Review Flow](/images/posts/2026/azc-291-checkpoints.svg)](/images/posts/2026/azc-291-checkpoints.svg)
-
 ## Query the local certificate store
 
 To get a list of certificates in the local machine's personal store, you can use the `Get-ChildItem` cmdlet with the `Cert:` drive. This drive is a provider that exposes the certificate stores as a file-system-like hierarchy.

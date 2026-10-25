@@ -12,8 +12,6 @@ You need to resolve Azure private DNS zones from on-premises and on-premises dom
 
 The service relies on two components: inbound endpoints that accept queries from outside Azure, and outbound endpoints that forward queries from Azure to external servers. These are connected by forwarding rulesets that determine where specific domain names should be sent.
 
-[![Hybrid DNS Resolution Flow](/images/posts/2026/azc-285-checkpoints.svg)](/images/posts/2026/azc-285-checkpoints.svg)
-
 ## Understand the resolution flow
 
 When a client in an Azure virtual network issues a DNS query, the resolver follows a specific sequence. If the virtual network has custom DNS servers configured, the query is forwarded there first. If default Azure-provided DNS is used, the system checks for linked private DNS zones. If the query does not match a linked zone, it consults the virtual network links attached to DNS forwarding rulesets.

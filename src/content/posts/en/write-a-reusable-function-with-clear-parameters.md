@@ -12,8 +12,6 @@ You have a script that works for one server, but now you need it for ten. The te
 
 A well-written function is a tool you can drop into any script. It should be predictable, documented, and safe to run. The difference between a script fragment and a reusable function usually comes down to three things: naming, parameters, and help.
 
-[![PowerShell Function Development Flow](/images/posts/2024/azc-033-checkpoints.svg)](/images/posts/2024/azc-033-checkpoints.svg)
-
 ## Name the function so it is discoverable
 
 PowerShell has a list of approved verbs. If you use an unapproved verb in a function that ends up in a module, PowerShell generates a warning at load time. That warning makes the module look unprofessional and limits the discoverability of your command [Functions](https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions).

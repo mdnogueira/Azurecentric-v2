@@ -12,8 +12,6 @@ Placing resources in different availability zones does not automatically make an
 
 ## Zonal versus zone-redundant configurations
 
-[![Availability Zone Configuration Decision Flow](/images/posts/2024/azc-112-checkpoints.svg)](/images/posts/2024/azc-112-checkpoints.svg)
-
 Azure offers two primary ways to use availability zones within a region. Understanding the distinction is critical before deploying any workload.
 
 **Zonal resources** are pinned to a specific availability zone. You are responsible for managing data replication and distributing requests across zones. If an outage occurs in a single availability zone, you must handle the failover to another zone. This approach is often chosen for latency-sensitive components that require physical proximity, such as high-frequency trading or certain gaming simulations, where round-trip latency must remain under 2ms.

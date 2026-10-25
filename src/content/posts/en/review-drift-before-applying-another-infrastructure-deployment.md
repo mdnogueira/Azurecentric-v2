@@ -12,8 +12,6 @@ You are about to run a Bicep deployment that modifies an existing virtual networ
 
 Azure Resource Manager provides a What-If operation that predicts these changes without modifying any resources. It is the standard way to review drift and validate templates before deployment.
 
-[![Bicep What-If Deployment Flow](/images/posts/2025/azc-226-checkpoints.svg)](/images/posts/2025/azc-226-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 To run What-If, you need the same permissions as a live deployment. You require write access on the resources you are deploying and access to all operations on the `Microsoft.Resources/deployments` resource type. For example, deploying a virtual machine requires `Microsoft.Compute/virtualMachines/write` and `Microsoft.Resources/deployments/*` permissions [Bicep What-If: Preview Changes Before Deployment](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if).

@@ -12,8 +12,6 @@ You are managing a fleet of virtual machines and find yourself rebuilding images
 
 Azure Compute Gallery provides a dedicated resource type for this purpose. While image definitions and versions capture the operating system state, VM Applications allow you to package and distribute application installers or scripts independently. This means you can publish a new application version without touching the underlying image definition, and your virtual machines can pull the latest application configuration at deployment time or during a managed update.
 
-[![VM Application Lifecycle and Deployment](/images/posts/2026/azc-300-checkpoints.svg)](/images/posts/2026/azc-300-checkpoints.svg)
-
 ## Understand the resource model
 
 An Azure Compute Gallery organises resources into three main types: the gallery itself, image definitions, and image versions. Image versions are snapshots used to create virtual machine disks. They are static; once created, they do not change. If your application logic changes, you traditionally had to create a new image version, replicate it to target regions, and then update your scale sets or deployment scripts to point to the new version. This process is slow and consumes significant storage and network resources.

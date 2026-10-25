@@ -12,8 +12,6 @@ You have a queue where the order of messages matters. If you send an "update" fo
 
 Service Bus assigns a gap-free, increasing `SequenceNumber` to every message as it arrives. This number reflects the true order of arrival in the broker. However, as the documentation notes, "Sequence number on its own guarantees the queuing order and the extraction order of messages, but not the processing order" [Azure Service Bus message sequencing and timestamps](https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-sequencing).
 
-[![Session Lock and Processing Flow](/images/posts/2024/azc-128-checkpoints.svg)](/images/posts/2024/azc-128-checkpoints.svg)
-
 Consider a scenario with two consumers. Consumer A picks up message 1. Consumer B picks up message 2. Consumer B finishes processing message 2 and picks up message 3, while Consumer A is still working on message 1. Consumer B then finishes message 3. Finally, Consumer A completes message 1. The processing order is now 2, 3, 1. If your business logic requires 1, 2, 3 to be processed in order, you must use sessions [Azure Service Bus message sequencing and timestamps](https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-sequencing).
 
 ## Why sessions are necessary for ordered processing

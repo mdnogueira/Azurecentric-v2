@@ -12,8 +12,6 @@ You have approved the updates in WSUS. Now you need to ensure they install and r
 
 The mechanism is straightforward. WSUS acts as the source of truth for which updates are available. Group Policy dictates how and when the client checks for those updates and whether it restarts automatically. By configuring these two components correctly, you can ensure that updates are downloaded during a maintenance window, installed at a specific time, and that the restart is either deferred or scheduled precisely.
 
-[![WSUS and GPO Patching Flow](/images/posts/2024/azc-054-checkpoints.svg)](/images/posts/2024/azc-054-checkpoints.svg)
-
 ## Define the approval schedule in WSUS
 
 Your WSUS server is the control plane for update availability. Before configuring the clients, you must decide which updates are safe to deploy and when they become available. The standard practice is to approve updates for a test group first, verify stability, and then approve them for production groups.

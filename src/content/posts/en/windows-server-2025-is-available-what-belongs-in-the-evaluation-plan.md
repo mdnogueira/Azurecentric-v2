@@ -12,8 +12,6 @@ Windows Server 2025 is generally available as of 4 November 2024 [Windows Server
 
 The first step is to define the scope of the evaluation. Are you testing a clean installation, an in-place upgrade, or a migration? The supported upgrade paths have shifted. Windows Server 2025 allows in-place upgrades from Windows Server 2012 R2 and later [Overview of Windows Server upgrades | Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-overview). This is a significant change from previous releases, which typically allowed upgrades of only two versions at a time. If you are still running Windows Server 2012 (non-R2), an in-place upgrade to 2025 is not supported; you must migrate or perform a clean installation [Overview of Windows Server upgrades | Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-overview).
 
-[![Windows Server 2025 Evaluation Decision Flow](/images/posts/2024/azc-111-checkpoints.svg)](/images/posts/2024/azc-111-checkpoints.svg)
-
 ## Audit for removed and deprecated features
 
 Before planning the evaluation, you must identify components that will no longer function. Windows Server 2025 removes several features entirely and deprecates others. Applications depending on these will break unless you migrate to supported alternatives.

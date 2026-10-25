@@ -12,8 +12,6 @@ An application that fails to start in Azure App Service usually returns a 500, 5
 
 ## Enable diagnostics logging
 
-[![App Service Startup Troubleshooting Flow](/images/posts/2024/azc-081-checkpoints.svg)](/images/posts/2024/azc-081-checkpoints.svg)
-
 App Service provides built-in diagnostics to assist with debugging. You need to enable these before you can see the internal state of the application. The logging options differ between Windows and Linux containers.
 
 For Windows apps, navigate to your app in the Azure portal and select **App Service logs**. Enable **Application Logging (Filesystem)** or **Application Logging (Blob)**. The Filesystem option is suitable for temporary debugging, as it turns itself off after 12 hours. The Blob option is for long-term logging and includes additional metadata such as the origin VM instance ID and thread ID. Note that currently only .NET application logs can be written to blob storage; Java, PHP, Node.js, and Python logs are stored on the App Service file system.

@@ -12,8 +12,6 @@ You are designing a network perimeter or a hub-and-spoke topology and need to de
 
 ## Understand the layer of operation
 
-[![Network Security Service Selection Flow](/images/posts/2025/azc-237-checkpoints.svg)](/images/posts/2025/azc-237-checkpoints.svg)
-
 NSGs operate at Layer 3 and Layer 4. They filter traffic based on source and destination IP addresses, ports, and protocols. They are stateful, meaning they allow return traffic automatically if an outbound rule permits the initial connection. NSGs are lightweight, attached directly to subnets or network interfaces, and are the default security boundary for most Azure resources. They are cost-effective and suitable for basic segmentation, such as allowing web servers to communicate with databases on specific ports.
 
 Azure Firewall operates as a fully managed, cloud-based network security service that protects your Azure Virtual Network resources. It is a stateful firewall as a service, featuring built-in high availability and unlimited cloud scalability. Unlike NSGs, Azure Firewall inspects both east-west and north-south traffic. It provides Layer 3 through Layer 7 filtering, including application-level FQDN filtering and network-level FQDN filtering. It also offers threat intelligence-based filtering, DNS proxy, and web content filtering. Azure Firewall is deployed in a hub virtual network and acts as a central choke point for traffic leaving or entering the spoke networks.

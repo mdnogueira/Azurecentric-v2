@@ -12,8 +12,6 @@ You are building an application that needs to store data. The first technical de
 
 The decision comes down to how your application interacts with the data. If your application expects a traditional file system with mounted drives, Azure Files is the natural fit. If your application is designed to work with objects, APIs, and distributed access, Blob storage is the correct choice.
 
-[![Azure Files vs Blob Storage Decision Flow](/images/posts/2025/azc-191-checkpoints.svg)](/images/posts/2025/azc-191-checkpoints.svg)
-
 ## Understand the access model
 
 Azure Files is designed to replace or supplement on-premises file servers. It presents a file share that clients can mount using industry-standard protocols. According to the documentation, Azure Files supports the Server Message Block (SMB) protocol and the Network File System (NFS) protocol [Introduction to Azure Files](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction).

@@ -12,8 +12,6 @@ Privileged access review is not a single button you press; it is a cycle of assi
 
 The core decision here is whether to use static groups or dynamic, just-in-time access. For a repeatable review process, role-assignable groups provide a clear boundary. You assign the role to the group, not the individual. When the review cycle ends, you remove the user from the group, and the role assignment disappears with it. This is significantly cleaner than hunting down individual role assignments across the directory.
 
-[![Privileged Access Review Flow](/images/posts/2026/azc-354-checkpoints.svg)](/images/posts/2026/azc-354-checkpoints.svg)
-
 ## Prerequisites and permissions
 
 Before you start, you need the right licence and permissions. Microsoft Entra ID P1 or P2 is required to create role-assignable groups [Create a role-assignable group in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-create-eligible). You also need the Privileged Role Administrator role to perform these actions [Create a role-assignable group in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-create-eligible). If you are using PIM, you will need P2 [Remove Microsoft Entra role assignments](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-remove-assignment).

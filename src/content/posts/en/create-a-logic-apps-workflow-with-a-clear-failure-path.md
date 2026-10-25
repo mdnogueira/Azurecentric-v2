@@ -12,8 +12,6 @@ A failure handler running successfully does not mean that the business operation
 
 Start with a disposable Consumption workflow and a controlled test API. Define the expected success and failure behaviour before connecting production systems. The example below has not been deployed or executed for this article.
 
-[![Logic Apps processing and failure checkpoints](/images/posts/2024/azc-028-checkpoints.svg)](/images/posts/2024/azc-028-checkpoints.svg)
-
 ## Group the work and define the failure outcome
 
 Place the related processing actions inside a scope named `Process_Data`. A [scope](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-control-flow-run-steps-group-scopes) groups actions and exposes an aggregate status that a later action can use.

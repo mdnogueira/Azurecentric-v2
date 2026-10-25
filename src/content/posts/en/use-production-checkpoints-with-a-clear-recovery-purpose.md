@@ -12,8 +12,6 @@ A checkpoint is not a backup. It is a point-in-time capture of a virtual machine
 
 The first decision is whether the workload supports production checkpoints. Active Directory Domain Services (AD DS) and Active Directory Lightweight Directory Services (AD LDS) roles only support production checkpoints. For other server workloads, production checkpoints are the default for new virtual machines on Windows Server 2016 and later, but you must still verify that the workload can tolerate the backup process inside the guest.
 
-[![Checkpoint Type Decision and Storage Flow](/images/posts/2025/azc-177-checkpoints.svg)](/images/posts/2025/azc-177-checkpoints.svg)
-
 ## Select the correct checkpoint type
 
 Open Hyper-V Manager and right-click the virtual machine. Select **Settings** and navigate to the **Checkpoints** section under **Management**. Here you can choose between production checkpoints and standard checkpoints.

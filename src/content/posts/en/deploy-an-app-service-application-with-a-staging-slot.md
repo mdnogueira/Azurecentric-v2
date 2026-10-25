@@ -12,8 +12,6 @@ A staging slot lets us deploy and inspect an application before directing produc
 
 This walkthrough assumes an existing App Service web app and a release package or pipeline already used by the team. Microsoft's [staging environment guidance](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots) documents deployment slots for the Standard, Premium and Isolated App Service plan tiers. Confirm the tier and available slot capacity before starting.
 
-[![App Service staging and swap checkpoints](/images/posts/2024/azc-022-checkpoints.svg)](/images/posts/2024/azc-022-checkpoints.svg)
-
 ## Add the slot and inspect what was copied
 
 Open the web app in the Azure portal. Select **Deployment slots**, then **Add Slot**. Give the slot a name such as `staging` and choose whether to clone configuration from an existing slot.

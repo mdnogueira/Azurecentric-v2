@@ -12,8 +12,6 @@ You are seeing too many alerts from a Microsoft Sentinel analytics rule, and you
 
 Microsoft Sentinel provides two distinct paths for this. You can exclude specific entities from the rule's query, or you can change the rule's logic. These are not interchangeable steps. Excluding an entity is a targeted filter for data you know is safe. Changing the logic is a structural adjustment when the detection criteria are too broad.
 
-[![Sentinel Rule Tuning Decision Flow](/images/posts/2026/azc-278-checkpoints.svg)](/images/posts/2026/azc-278-checkpoints.svg)
-
 ## Understand the source of the false positives
 
 Before making any changes, confirm that the alerts are genuinely false positives. Microsoft Sentinel's tuning insights use machine learning to analyse your incident history over a 14-day period [Get fine-tuning recommendations for your analytics rules in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/detection-tuning). These insights show statistical information, such as the average number of alerts per incident and the classification of incidents as true or false positives [Get fine-tuning recommendations for your analytics rules in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/detection-tuning).

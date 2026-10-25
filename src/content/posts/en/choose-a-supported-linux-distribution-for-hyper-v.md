@@ -12,8 +12,6 @@ You are planning a Linux virtual machine on a Windows Server 2025 Hyper-V host. 
 
 Hyper-V supports both emulated and Hyper-V-specific devices for Linux virtual machines. When running with emulated devices, no additional software is required to be installed. However, emulated devices do not provide high performance and cannot leverage the rich virtual machine management infrastructure that Hyper-V offers. To make full use of all benefits, it is best to use Hyper-V-specific devices, which require Linux Integration Services (LIS). The availability and management of these drivers depend entirely on the Linux distribution vendor.
 
-[![Linux VM Selection and Configuration Flow](/images/posts/2025/azc-217-checkpoints.svg)](/images/posts/2025/azc-217-checkpoints.svg)
-
 ## Built-in drivers versus downloadable packages
 
 Most modern Linux distributions include LIS directly in their kernel. When a distribution lists LIS as "Built in," the Microsoft-provided downloadable LIS package is not compatible with that distribution and should not be installed. The kernel module version numbers for built-in LIS will differ from the standalone download package, which is expected and does not indicate an outdated driver.

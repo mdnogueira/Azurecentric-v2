@@ -12,8 +12,6 @@ When a service disruption occurs, the first question is not whether the platform
 
 Health checks provide the telemetry data used to measure compliance with your Service Level Objectives (SLOs). They tell you if the business flow is functional, not just if the underlying components are powered on. Without this layered visibility, incident response becomes reactive guessing rather than informed decision-making.
 
-[![Health Check Integration with Incident Response](/images/posts/2025/azc-231-checkpoints.svg)](/images/posts/2025/azc-231-checkpoints.svg)
-
 ## Distinguish business continuity from platform status
 
 The starting point is understanding that Azure Service Health and the Azure Status page provide information about Microsoft's infrastructure, not your workload's ability to serve customers. Azure Service Health alerts you to issues impacting your subscriptions, but it does not know your application's logic or data state [What to do during an Azure service disruption](https://learn.microsoft.com/en-us/azure/reliability/incident-response). Conversely, the public Azure Status page only shows widespread issues meeting specific criteria, meaning smaller, subscription-specific incidents may not appear there [What to do during an Azure service disruption](https://learn.microsoft.com/en-us/azure/reliability/incident-response).

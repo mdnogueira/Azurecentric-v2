@@ -12,8 +12,6 @@ draft: false
 
 The first decision is which gateway SKU to provision. The Azure VPN Gateway documentation provides aggregate throughput benchmarks and maximum tunnel counts for each generation and tier [About Azure VPN Gateway](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways). These numbers are not aspirational; they define the hard limits of the virtual network gateway resource.
 
-[![VPN Gateway SKU and Topology Decision Flow](/images/posts/2025/azc-170-checkpoints.svg)](/images/posts/2025/azc-170-checkpoints.svg)
-
 If your design requires more than 100 site-to-site (S2S) or VNet-to-VNet tunnels, VPN Gateway is not the correct service. You should use Virtual WAN instead [About Azure VPN Gateway](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways). For smaller deployments, the choice comes down to Generation 1 or Generation 2, and whether you need zone redundancy.
 
 Generation 2 gateways offer higher aggregate throughput than Generation 1 equivalents. For example, a Generation 2 VpnGW2 provides 1.25 Gbps, compared to 1 Gbps for a Generation 1 VpnGW2 [About Azure VPN Gateway](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways). A Generation 2 VpnGW5 supports up to 10 Gbps and 10,000 Point-to-Site (P2S) IKEv2/OpenVPN connections, whereas a Generation 1 VpnGW3 tops out at 1.25 Gbps and 1,000 P2S connections [About Azure VPN Gateway](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways).

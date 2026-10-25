@@ -12,8 +12,6 @@ You are running a Windows Server failover cluster on Azure Local and need to ens
 
 ## Define fault domains to match physical hardware
 
-[![Cluster Quorum and Fault Domain Flow](/images/posts/2025/azc-215-checkpoints.svg)](/images/posts/2025/azc-215-checkpoints.svg)
-
 Fault domain awareness allows the cluster to understand the physical topology of your servers. This is critical for Storage Spaces Direct, which uses these domains to place data copies in separate fault domains to maximise data safety. If all copies are in the same rack, a single rack failure can take down the storage pool.
 
 Fault domains are defined at four levels: site, rack, chassis, and node. You must configure these to reflect the actual physical arrangement of your hardware. The cluster software does not verify that your software-defined topology matches the physical world; if you create two rack fault domains but all servers are in one rack, you have no rack fault tolerance.

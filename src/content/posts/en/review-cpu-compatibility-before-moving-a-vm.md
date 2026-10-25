@@ -12,8 +12,6 @@ You are planning to live migrate a virtual machine between Hyper-V hosts or clus
 
 ## Understand the two modes of compatibility
 
-[![Processor Compatibility Decision Flow](/images/posts/2026/azc-273-checkpoints.svg)](/images/posts/2026/azc-273-checkpoints.svg)
-
 Standard processor compatibility mode uses a fixed, minimal set of processor features. This ensures the widest possible compatibility but hides newer instruction sets, which can impact performance for workloads that rely on hardware optimizations like encryption or vector calculations. Dynamic processor compatibility mode was introduced in Windows Server 2025. It calculates the common denominator of CPU features supported by all nodes in a cluster. This allows VMs to use the maximum number of processor instruction sets present across the cluster, improving performance while still ensuring compatibility for live migration within that cluster. This mode is only available for VMs with configuration version 10.0 or later running on a Hyper-V host running Windows Server 2025 or Azure Local version 21H2.
 
 It is important to note that processor compatibility mode does not allow migration between hosts with different processor manufacturers. You cannot live migrate a running VM from an Intel host to an AMD host, or vice versa. For such moves, the VM must be shut down and restarted on the new host.

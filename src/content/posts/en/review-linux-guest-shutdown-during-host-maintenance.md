@@ -12,8 +12,6 @@ You are planning host maintenance on a Windows Server 2025 Hyper-V host. Your Li
 
 The answer lies in the Hyper-V Integration Services, specifically the shutdown component. Hyper-V coordinates with the guest operating system to initiate a clean shutdown before suspending or checkpointing the virtual machine. If the Integration Services are not installed, are outdated, or are not functioning correctly, the host cannot communicate with the guest OS. In that case, the host must resort to a hard power-off to proceed with maintenance, which risks file system corruption and data loss.
 
-[![Hyper-V Host Maintenance and Linux Guest Shutdown Flow](/images/posts/2026/azc-294-checkpoints.svg)](/images/posts/2026/azc-294-checkpoints.svg)
-
 ## Why Integration Services matter for shutdown
 
 Hyper-V relies on a set of drivers and services known as Integration Services to manage the virtual machine efficiently. One of these services is responsible for handling shutdown signals. When you initiate a shutdown or live migration from the host, Hyper-V sends a signal to the guest. The guest OS, via the Integration Services, receives this signal and initiates its own shutdown sequence: stopping services, flushing file systems, and powering off cleanly.

@@ -12,8 +12,6 @@ A virtual machine is slow. The instinct is often to resize it to a larger SKU wi
 
 Start by checking the host-level metrics. These are available by default and require no additional setup. They show you the performance of the physical host managing the virtual machine. If the host is saturated, the VM will struggle regardless of its SKU. If the host is healthy, the issue likely lies within the guest or the application.
 
-[![Disk Latency Investigation Flow](/images/posts/2026/azc-339-checkpoints.svg)](/images/posts/2026/azc-339-checkpoints.svg)
-
 ## Check host-level disk metrics
 
 Host metrics for Azure VMs are collected automatically. You do not need to install any agents to see them. In the Azure portal, navigate to the virtual machine and open the **Monitoring** section. Select **Metrics**.
