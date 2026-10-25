@@ -2,10 +2,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { site } from './site.config.mjs';
+import remarkFirstArticleImage from './scripts/remark-first-article-image.mjs';
 
 export default defineConfig({
   site: site.url,
   output: 'static',
+  markdown: { remarkPlugins: [remarkFirstArticleImage] },
   trailingSlash: 'never',
   build: { format: 'directory' },
   i18n: {
