@@ -2,8 +2,8 @@
 title: "Enable Defender for Cloud with a clear subscription scope"
 description: "Enable Defender for Cloud deliberately: confirm the subscription, separate posture management from paid protection, and give the first recommendations an owner."
 pubDate: 2024-01-02
-category: governance
-tags: [defender-for-cloud, cloud-security, security-posture, subscriptions]
+category: cloud-security
+tags: ["defender-for-cloud", "cloud-security", "security-posture"]
 translationKey: enable-defender-for-cloud-with-a-clear-subscription-scope
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Add a health check before enabling application scale-out"
 description: "Enable App Service Health check to protect scaling events by removing unhealthy instances from the load balancer."
 pubDate: 2025-01-31
-category: apps
-tags: ["azure-app-service", "health-check", "automatic-scaling", "availability", "troubleshooting"]
+category: app-paas
+tags: ["health-checks", "azure-app-service", "autoscaling", "troubleshooting"]
 translationKey: add-a-health-check-before-enabling-application-scale-out
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Investigate a cluster resource that keeps moving between nodes"
 description: "Investigate a cluster resource moving between nodes by correlating Failover Clustering events with Storage Spaces Direct Health Service faults."
 pubDate: 2024-11-16
-category: backup-dr
-tags: ["failover-clustering", "troubleshooting", "windows-server", "storage-spaces-direct", "health-service"]
+category: high-availability
+tags: ["failover-clustering", "troubleshooting", "health-service", "storage-spaces-direct"]
 translationKey: investigate-a-cluster-resource-that-keeps-moving-between-nodes
 draft: false
 ---

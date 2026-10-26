@@ -3,7 +3,7 @@ title: "Azure Updates Series – August 2017"
 description: "From the all the enhances or new features that Azure releases on the month of August, there was 2 that will make our live easier, at least in my opinion/experience/area of work…"
 pubDate: 2017-08-24
 category: cloud
-tags: [subscriptions]
+tags: ["cloud-computing"]
 translationKey: azure-updates-series-august-2017
 legacy: true
 legacyUrl: /2017/08/azure-updates-series-august-2017.html

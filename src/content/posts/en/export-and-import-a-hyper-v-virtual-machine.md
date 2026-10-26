@@ -3,7 +3,7 @@ title: "Export and import a Hyper-V virtual machine"
 description: "How to export and import Hyper-V virtual machines using PowerShell or Hyper-V Manager, covering import types and version compatibility."
 pubDate: 2025-07-02
 category: hyper-v
-tags: ["hyper-v", "virtual-machines", "export-import", "windows-server", "virtualization"]
+tags: ["hyper-v", "export-import", "powershell", "windows-server"]
 translationKey: export-and-import-a-hyper-v-virtual-machine
 draft: false
 ---

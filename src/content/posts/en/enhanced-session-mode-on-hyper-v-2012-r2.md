@@ -3,7 +3,7 @@ title: "Enhanced Session Mode on Hyper-V 2012 R2"
 description: "One of the new features or improved feature on Windows Server 2012 R2 is the enhanced session mode through virtual machine connection. Hyper-V and the Virtual Machine…"
 pubDate: 2013-07-03
 category: hyper-v
-tags: [hyper-v-server]
+tags: ["hyper-v", "windows-server"]
 translationKey: enhanced-session-mode-on-hyper-v-2012-r2
 legacy: true
 legacyUrl: /2013/07/enhanced-session-mode-on-hyper-v-2012-r2.html

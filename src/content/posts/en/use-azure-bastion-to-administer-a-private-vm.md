@@ -2,8 +2,8 @@
 title: "Use Azure Bastion to administer a private VM"
 description: "Connect to a private Linux VM using Azure Bastion SSH, addressing SKU constraints, permissions, and authentication methods."
 pubDate: 2025-02-03
-category: compute
-tags: ["azure-bastion", "ssh", "linux", "virtual-machines", "networking"]
+category: networking
+tags: ["azure-bastion", "ssh", "linux"]
 translationKey: use-azure-bastion-to-administer-a-private-vm
 draft: false
 ---

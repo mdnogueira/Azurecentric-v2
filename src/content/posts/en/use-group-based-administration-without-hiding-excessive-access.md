@@ -2,8 +2,8 @@
 title: "Use group-based administration without hiding excessive access"
 description: "Create role-assignable groups deliberately: understand immutability, membership restrictions, and privilege elevation risks."
 pubDate: 2026-07-25
-category: governance
-tags: ["entra-id", "rbac", "groups", "security", "governance"]
+category: identity-access
+tags: ["microsoft-entra-id", "groups", "privileged-identity-management"]
 translationKey: use-group-based-administration-without-hiding-excessive-access
 draft: false
 ---

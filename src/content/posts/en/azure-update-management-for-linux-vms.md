@@ -2,8 +2,8 @@
 title: "Azure Update Management for Linux VMs"
 description: "Another day, I started to play around with the Update Management, to see how I could automate the patching of Linux VMs on Azure. I’ve been using this feature to patch Windows…"
 pubDate: 2018-04-13
-category: compute
-tags: [linux]
+category: operations
+tags: ["azure-monitor", "linux", "patch-management"]
 translationKey: azure-update-management-for-linux-vms
 cover: ../../../assets/old/posts/2018/04/LinuxUpdate.png
 coverAlt: "Azure Update Management for Linux VMs"

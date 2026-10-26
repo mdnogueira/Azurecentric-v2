@@ -3,7 +3,7 @@ title: "Choose generation 1 or generation 2 for a Hyper-V VM"
 description: "Decide between Hyper-V generation 1 and 2 VMs by checking guest OS support, boot requirements, and feature needs."
 pubDate: 2024-04-13
 category: hyper-v
-tags: []
+tags: ["hyper-v", "linux", "secure-boot"]
 translationKey: choose-generation-1-or-generation-2-for-a-hyper-v-vm
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Protect an application against accidental blob deletion"
 description: "Enable blob soft delete and versioning to protect against accidental deletion and overwrites in Azure Storage."
 pubDate: 2026-03-14
 category: storage
-tags: ["azure-storage", "blob-storage", "soft-delete", "versioning", "data-protection"]
+tags: ["azure-storage", "blob-storage", "azure-cli", "data-protection", "soft-delete", "versioning"]
 translationKey: protect-an-application-against-accidental-blob-deletion
 draft: false
 ---

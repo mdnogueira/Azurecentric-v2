@@ -3,7 +3,7 @@ title: "Review certificate expiry across Windows servers"
 description: "Review certificate expiry on Windows Server 2025 using PowerShell and the local certificate store."
 pubDate: 2026-03-24
 category: windows-server
-tags: ["windows-server-2025", "certificates", "powershell", "pki", "automation"]
+tags: ["certificates", "windows-server", "powershell", "windows-server-2025"]
 translationKey: review-certificate-expiry-across-windows-servers
 draft: false
 ---

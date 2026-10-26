@@ -2,8 +2,8 @@
 title: "Build an automation rule with a clear owner"
 description: "Create Microsoft Sentinel automation rules with clear scope, triggers, and verification steps."
 pubDate: 2025-03-28
-category: governance
-tags: ["microsoft-sentinel", "automation-rules", "incident-management", "soar", "security-operations"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "automation-rules"]
 translationKey: build-an-automation-rule-with-a-clear-owner
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Document the network path before an infrastructure change"
 description: "Document the network path before an infrastructure change using Network Watcher topology and effective routes."
 pubDate: 2026-08-19
 category: networking
-tags: []
+tags: ["networking", "azure-network-watcher", "azure-cli"]
 translationKey: document-the-network-path-before-an-infrastructure-change
 draft: false
 ---

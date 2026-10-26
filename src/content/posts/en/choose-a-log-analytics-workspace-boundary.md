@@ -2,8 +2,8 @@
 title: "Choose a Log Analytics workspace boundary"
 description: "Decide on Log Analytics workspace boundaries using retention, access, and billing criteria to balance cost and operational simplicity."
 pubDate: 2024-05-19
-category: governance
-tags: ["log-analytics", "azure-monitor", "workspace-design", "data-retention", "access-control"]
+category: operations
+tags: ["log-analytics", "data-retention", "access-control", "workspace-design", "azure-monitor"]
 translationKey: choose-a-log-analytics-workspace-boundary
 draft: false
 ---

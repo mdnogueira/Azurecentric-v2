@@ -3,7 +3,7 @@ title: "Azure Site Recovery Planning Considerations – Part 4 – For VMware Vi
 description: "On these post series, I want to cover some of the planning considerations that I usually use, when I’m designing/planning with my costumers, an ASR deployment/infrastructure. I…"
 pubDate: 2017-06-21
 category: backup-dr
-tags: [azure-site-recovery, architecture, private-cloud, vmware, hybrid]
+tags: ["azure-site-recovery", "vmware"]
 translationKey: azure-site-recovery-planning-considerations-part-4-for-vmware-virtual-machines-and-physical-server
 legacy: true
 legacyUrl: /2017/06/azure-site-recovery-planning-considerations-part-4-for-vmware-virtual-machines-and-physical-server.html

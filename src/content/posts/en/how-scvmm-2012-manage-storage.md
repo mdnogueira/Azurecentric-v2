@@ -3,7 +3,7 @@ title: "How SCVMM 2012 manage storage"
 description: "The key piece within the new storage architecture for SCVMM 2012 is the Storage Service. This service is part of SCVMM 2012 and will not be available separately. The storage…"
 pubDate: 2012-02-22
 category: windows-server
-tags: [scvmm, storage]
+tags: ["scvmm", "windows-server"]
 translationKey: how-scvmm-2012-manage-storage
 cover: ../../../assets/old/posts/2012/02/scvmm11.jpg
 coverAlt: "How SCVMM 2012 manage storage"

@@ -2,8 +2,8 @@
 title: "Prepare a repeatable HPC compute image"
 description: "Create a repeatable HPC compute image for Azure Batch using snapshots and Azure Compute Gallery, with correct permissions and pool sizing."
 pubDate: 2024-06-26
-category: compute
-tags: ["azure-batch", "azure-compute-gallery", "hpc", "virtual-machines", "infrastructure-as-code"]
+category: hpc-ai
+tags: ["hpc", "azure-compute-gallery", "azure-batch"]
 translationKey: prepare-a-repeatable-hpc-compute-image
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Choose system-assigned or user-assigned managed identities"
 description: "Compare system-assigned and user-assigned managed identities to decide which fits your workload lifecycle and permission requirements."
 pubDate: 2024-04-21
-category: governance
-tags: ["managed-identities", "azure-security", "entra-id", "best-practices", "authentication"]
+category: identity-access
+tags: ["microsoft-entra-id", "managed-identities"]
 translationKey: choose-system-assigned-or-user-assigned-managed-identities
 draft: false
 ---

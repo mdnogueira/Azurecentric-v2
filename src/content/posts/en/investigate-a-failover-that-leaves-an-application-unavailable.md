@@ -2,8 +2,8 @@
 title: "Investigate a failover that leaves an application unavailable"
 description: "Troubleshoot post-failover unavailability by verifying service scope, traffic routing, and data readiness."
 pubDate: 2025-06-20
-category: governance
-tags: ["disaster-recovery", "failover", "azure-service-health", "dns", "data-replication"]
+category: well-architected
+tags: ["well-architected-framework", "troubleshooting", "failover", "azure-service-health", "data-replication", "replication"]
 translationKey: investigate-a-failover-that-leaves-an-application-unavailable
 draft: false
 ---

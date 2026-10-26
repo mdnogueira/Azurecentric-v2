@@ -2,8 +2,8 @@
 title: "Choose a detection exclusion or a rule change"
 description: "Decide whether to exclude entities or adjust rule logic in Microsoft Sentinel to reduce false positives."
 pubDate: 2026-02-16
-category: governance
-tags: ["microsoft-sentinel", "detection-tuning", "false-positives", "analytics-rules", "kql"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "analytics-rules", "detection-tuning", "false-positives", "kql"]
 translationKey: choose-a-detection-exclusion-or-a-rule-change
 draft: false
 ---

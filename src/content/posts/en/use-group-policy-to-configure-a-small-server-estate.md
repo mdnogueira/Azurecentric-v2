@@ -3,7 +3,7 @@ title: "Use group policy to configure a small server estate"
 description: "Configure Windows Server 2025 servers using Group Policy Objects, OU structure, and GPMC with clear processing order and verification."
 pubDate: 2025-08-20
 category: windows-server
-tags: ["group-policy", "windows-server-2025", "active-directory", "gpmc", "server-management"]
+tags: ["group-policy", "windows-server", "gpmc", "server-management", "windows-server-2025", "active-directory"]
 translationKey: use-group-policy-to-configure-a-small-server-estate
 draft: false
 ---

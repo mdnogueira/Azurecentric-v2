@@ -2,8 +2,8 @@
 title: "Plan rollback before a server migration"
 description: "Use Azure Migrate test migrations to validate readiness and refine the plan before committing to a full cutover."
 pubDate: 2025-06-04
-category: cloud
-tags: ["azure-migrate", "migration", "test-migration", "vmware", "hyper-v", "cloud-adoption"]
+category: hybrid-migration
+tags: ["migration", "hybrid-cloud", "azure-migrate", "test-migration", "replication", "hyper-v"]
 translationKey: plan-rollback-before-a-server-migration
 draft: false
 ---

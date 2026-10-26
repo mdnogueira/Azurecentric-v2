@@ -3,7 +3,7 @@ title: "Free, simple, standalone tool to migrate vms from a VMware environment t
 description: "With Windows Server 2012 RTM version available for all customers around the world, there is great news for organizations that are looking for a way to migrate virtual machines…"
 pubDate: 2012-09-20
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server", "migration", "vmware"]
 translationKey: mvmc-migrate-vmware-vms-to-hyper-v
 legacy: true
 legacyUrl: /2012/09/free-simple-standalone-tool-to-migrate-vms-from-a-vmware-environment-to-hyper-v-in-windows-server-2012.html

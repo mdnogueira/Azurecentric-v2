@@ -2,8 +2,8 @@
 title: "Review resilience trade-offs in a cost-constrained workload"
 description: "Balance cost and resilience by classifying risks into HA and DR, then selecting matching redundancy levels."
 pubDate: 2025-08-15
-category: governance
-tags: ["reliability", "high-availability", "disaster-recovery", "cost-optimization", "business-continuity"]
+category: well-architected
+tags: ["well-architected-framework", "business-continuity", "reliability", "disaster-recovery", "high-availability"]
 translationKey: review-resilience-trade-offs-in-a-cost-constrained-workload
 draft: false
 ---

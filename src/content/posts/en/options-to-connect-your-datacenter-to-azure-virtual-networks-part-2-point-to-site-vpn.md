@@ -3,7 +3,7 @@ title: "Options to connect your datacenter to Azure Virtual Networks – Part 2 
 description: "On the previous post (see here) I briefly describe the options that you have to cross-premise connections to Azure. On this post I want to explore more one of the options:…"
 pubDate: 2017-05-24
 category: networking
-tags: [hybrid]
+tags: ["azure-virtual-network", "azure-vpn-gateway", "vpn"]
 translationKey: options-to-connect-your-datacenter-to-azure-virtual-networks-part-2-point-to-site-vpn
 legacy: true
 legacyUrl: /2017/05/options-to-connect-your-datacenter-to-azure-virtual-networks-part-2-point-to-site-vpn.html

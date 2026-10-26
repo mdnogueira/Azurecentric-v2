@@ -2,8 +2,8 @@
 title: "Configure and verify a cluster witness"
 description: "Configure a file share witness for Windows Server failover clustering using PowerShell, with verification steps."
 pubDate: 2024-09-18
-category: backup-dr
-tags: ["failover-clustering", "quorum", "file-share-witness", "windows-server", "powershell"]
+category: high-availability
+tags: ["failover-clustering", "quorum", "powershell", "windows-server", "file-share-witness"]
 translationKey: configure-and-verify-a-cluster-witness
 draft: false
 ---

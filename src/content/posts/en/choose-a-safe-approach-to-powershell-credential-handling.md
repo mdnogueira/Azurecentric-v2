@@ -2,8 +2,8 @@
 title: "Choose a safe approach to PowerShell credential handling"
 description: "Define robust PowerShell credential parameters, handle legacy cmdlet constraints, and prevent injection without relying on Invoke-Expression."
 pubDate: 2025-03-03
-category: automation
-tags: ["powershell", "credential-handling", "security", "script-injection", "best-practices"]
+category: powershell
+tags: ["powershell", "credential-handling", "script-injection"]
 translationKey: choose-a-safe-approach-to-powershell-credential-handling
 draft: false
 ---

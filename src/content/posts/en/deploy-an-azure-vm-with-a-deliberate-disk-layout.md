@@ -3,7 +3,7 @@ title: "Deploy an Azure VM with a deliberate disk layout"
 description: "Plan the operating-system and data disks before creating an Azure VM, then verify the new volume inside Windows and record its recovery requirements."
 pubDate: 2024-01-13
 category: compute
-tags: [virtual-machines, managed-disks, windows-server, storage]
+tags: ["azure-virtual-machines", "managed-disks", "windows-server"]
 translationKey: deploy-an-azure-vm-with-a-deliberate-disk-layout
 draft: false
 ---

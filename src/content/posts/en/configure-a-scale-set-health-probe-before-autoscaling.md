@@ -3,7 +3,7 @@ title: "Configure a scale set health probe before autoscaling"
 description: "Configure Application Health extension for VMSS instance repairs and upgrades before enabling metric-based autoscaling."
 pubDate: 2024-12-11
 category: compute
-tags: ["azure-virtual-machine-scale-sets", "autoscaling", "application-health", "instance-repairs", "vmss-orchestration"]
+tags: ["azure-virtual-machines", "autoscaling", "virtual-machine-scale-sets", "health-checks", "application-health", "instance-repairs"]
 translationKey: configure-a-scale-set-health-probe-before-autoscaling
 draft: false
 ---

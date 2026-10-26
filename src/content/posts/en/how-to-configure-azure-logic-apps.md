@@ -2,8 +2,8 @@
 title: "How to configure Azure Logic Apps"
 description: "Usually for social media automation I used for a long time IFTTT, although with Azure Logic Apps I decide to give a try. I started to use Azure Logic Apps for a project not…"
 pubDate: 2017-06-14
-category: apps
-tags: [logic-apps]
+category: integration
+tags: ["azure-logic-apps"]
 translationKey: how-to-configure-azure-logic-apps
 cover: ../../../assets/old/posts/2017/06/LogicApps1.png
 coverAlt: "How to configure Azure Logic Apps"

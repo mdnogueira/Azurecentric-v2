@@ -3,7 +3,7 @@ title: "Error on adding virtual machines to Azure Backup"
 description: "At one of my costumer Azure Subscription, I was adding a new virtual machine to the existing Azure Recovery Vault previously configured, when I run into this error:"
 pubDate: 2019-04-11
 category: backup-dr
-tags: [azure-backup, portal]
+tags: ["azure-backup", "troubleshooting", "backup", "azure-subscriptions"]
 translationKey: error-on-adding-virtual-machines-to-azure-backup
 cover: ../../../assets/old/posts/2019/04/AzBkpError.png
 coverAlt: "Error on adding virtual machines to Azure Backup"

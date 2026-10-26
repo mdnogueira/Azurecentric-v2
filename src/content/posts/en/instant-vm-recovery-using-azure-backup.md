@@ -3,7 +3,7 @@ title: "Instant VM Recovery using Azure Backup"
 description: "We all know that Azure is grow and evolving in a very fast pace. On a project that I’m working right now, I had the opportunity to work with big VMs (M Series), although…"
 pubDate: 2018-05-22
 category: backup-dr
-tags: [azure-backup, managed-disks]
+tags: ["backup", "azure-backup", "azure-virtual-machines"]
 translationKey: instant-vm-recovery-using-azure-backup
 legacy: true
 legacyUrl: /2018/05/instant-vm-recovery-using-azure-backup.html

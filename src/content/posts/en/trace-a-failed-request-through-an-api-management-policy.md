@@ -2,8 +2,8 @@
 title: "Trace a failed request through an API Management policy"
 description: "Use the VS Code extension to debug API Management policies and the trace policy to add custom diagnostics to request traces."
 pubDate: 2025-09-27
-category: apps
-tags: ["api-management", "policy-debugging", "visual-studio-code", "trace-policy", "troubleshooting"]
+category: integration
+tags: ["azure-api-management", "troubleshooting", "trace-policy", "policy-debugging", "visual-studio-code"]
 translationKey: trace-a-failed-request-through-an-api-management-policy
 draft: false
 ---

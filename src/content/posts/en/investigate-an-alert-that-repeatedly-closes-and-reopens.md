@@ -2,8 +2,8 @@
 title: "Investigate an alert that repeatedly closes and reopens"
 description: "Investigate why an Azure Monitor alert instance appears to close and reopen by distinguishing between manual status changes, automatic resolution settings, and repeated firings."
 pubDate: 2025-06-15
-category: governance
-tags: ["azure-monitor", "alerts", "troubleshooting", "log-alerts", "incident-management"]
+category: operations
+tags: ["azure-monitor", "troubleshooting", "alerts"]
 translationKey: investigate-an-alert-that-repeatedly-closes-and-reopens
 draft: false
 ---

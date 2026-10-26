@@ -2,8 +2,8 @@
 title: "Pin module versions for a repeatable automation job"
 description: "Pin PowerShell module versions in automation to ensure predictable execution and avoid breaking changes from silent updates."
 pubDate: 2026-03-22
-category: automation
-tags: ["powershell", "automation", "module-management", "devops", "reliability"]
+category: powershell
+tags: ["powershell", "automation"]
 translationKey: pin-module-versions-for-a-repeatable-automation-job
 draft: false
 ---

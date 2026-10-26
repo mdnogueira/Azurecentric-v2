@@ -2,8 +2,8 @@
 title: "Assess a server estate with Azure Migrate"
 description: "Add assessment tools in Azure Migrate and verify data collection to ensure accurate server sizing and confidence ratings."
 pubDate: 2024-06-29
-category: cloud
-tags: ["azure-migrate", "server-assessment", "vm-sizing", "migration-planning"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "azure-migrate", "migration", "server-assessment", "vm-sizing"]
 translationKey: assess-a-server-estate-with-azure-migrate
 draft: false
 ---

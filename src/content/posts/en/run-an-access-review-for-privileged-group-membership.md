@@ -2,8 +2,8 @@
 title: "Run an access review for privileged group membership"
 description: "Run access reviews on role-assignable groups to validate privileged membership and remove stale assignments."
 pubDate: 2025-03-23
-category: governance
-tags: ["microsoft-entra-id", "privileged-identity-management", "access-reviews", "role-based-access-control", "group-management"]
+category: identity-access
+tags: ["access-reviews", "microsoft-entra-id", "privileged-identity-management"]
 translationKey: run-an-access-review-for-privileged-group-membership
 draft: false
 ---

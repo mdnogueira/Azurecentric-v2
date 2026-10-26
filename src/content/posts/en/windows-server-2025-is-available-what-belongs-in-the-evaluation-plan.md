@@ -3,7 +3,7 @@ title: "Windows Server 2025 is available: what belongs in the evaluation plan"
 description: "Windows Server 2025 evaluation plan: audit upgrade paths, removed features, and new security defaults."
 pubDate: 2024-11-05
 category: windows-server
-tags: ["windows-server-2025", "upgrade-planning", "security", "active-directory", "deprecation"]
+tags: ["windows-server", "windows-server-2025", "active-directory"]
 translationKey: windows-server-2025-is-available-what-belongs-in-the-evaluation-plan
 draft: false
 ---

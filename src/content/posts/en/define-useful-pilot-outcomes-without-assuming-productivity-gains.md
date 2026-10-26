@@ -2,8 +2,8 @@
 title: "Define useful pilot outcomes without assuming productivity gains"
 description: "Define measurable pilot outcomes for Microsoft Security Copilot using operational baselines and supported integrations."
 pubDate: 2025-09-07
-category: governance
-tags: ["security-copilot", "pilot", "measurable-outcomes", "ai-assistant", "security-operations"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "pilot", "ai-assistant", "measurable-outcomes", "plugins"]
 translationKey: define-useful-pilot-outcomes-without-assuming-productivity-gains
 draft: false
 ---

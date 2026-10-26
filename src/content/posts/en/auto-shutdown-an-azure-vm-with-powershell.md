@@ -2,8 +2,8 @@
 title: "Auto shutdown an Azure VM with PowerShell"
 description: "At one of my costumers, after starting the process of Azure Governance, it come to my attention the following scenario, the majority of the Virtual Machines on the DevTest Labs…"
 pubDate: 2019-01-29
-category: automation
-tags: [devtest-labs, powershell]
+category: powershell
+tags: ["powershell", "azure-virtual-machines", "devtest-labs"]
 translationKey: auto-shutdown-an-azure-vm-with-powershell
 legacy: true
 legacyUrl: /2019/01/auto-shutdown-an-azure-vm-with-powershell.html

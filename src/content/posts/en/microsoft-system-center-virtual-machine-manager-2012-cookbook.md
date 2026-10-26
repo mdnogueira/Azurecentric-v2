@@ -3,7 +3,7 @@ title: "Microsoft System Center Virtual Machine Manager 2012 Cookbook"
 description: "I definitely recommend this book for who wants to know in deep System Center 2012 Virtual Machine Manager SP1."
 pubDate: 2013-05-16
 category: cloud
-tags: [scvmm, system-center]
+tags: ["ebooks", "scvmm", "system-center"]
 translationKey: microsoft-system-center-virtual-machine-manager-2012-cookbook
 cover: ../../../assets/old/posts/2013/05/image.png
 coverAlt: "Microsoft System Center Virtual Machine Manager 2012 Cookbook"

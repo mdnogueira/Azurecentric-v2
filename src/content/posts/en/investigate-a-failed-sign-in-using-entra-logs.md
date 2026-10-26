@@ -2,8 +2,8 @@
 title: "Investigate a failed sign-in using Entra logs"
 description: "Investigate a failed Entra sign-in by isolating error codes, checking CA status, and using the Diagnostics tool."
 pubDate: 2024-12-01
-category: governance
-tags: ["entra-id", "sign-in-logs", "conditional-access", "troubleshooting", "mfa"]
+category: identity-access
+tags: ["troubleshooting", "microsoft-entra-id", "sign-in-logs", "conditional-access", "multifactor-authentication"]
 translationKey: investigate-a-failed-sign-in-using-entra-logs
 draft: false
 ---

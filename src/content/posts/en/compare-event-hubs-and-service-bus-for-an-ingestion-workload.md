@@ -2,8 +2,8 @@
 title: "Compare Event Hubs and Service Bus for an ingestion workload"
 description: "Choose between Event Hubs and Service Bus for ingestion by matching data semantics to service capabilities."
 pubDate: 2026-01-10
-category: apps
-tags: ["azure-event-hubs", "azure-service-bus", "messaging", "architecture", "ingestion"]
+category: integration
+tags: ["azure-service-bus", "azure-event-hubs", "ingestion", "messaging"]
 translationKey: compare-event-hubs-and-service-bus-for-an-ingestion-workload
 draft: false
 ---

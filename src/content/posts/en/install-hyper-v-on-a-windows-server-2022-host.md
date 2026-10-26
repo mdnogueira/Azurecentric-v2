@@ -3,7 +3,7 @@ title: "Install Hyper-V on a Windows Server 2022 host"
 description: "Install the Hyper-V role on Windows Server 2022, plan the required restart, and verify the host before configuring networking, storage and virtual machines."
 pubDate: 2024-02-17
 category: hyper-v
-tags: [hyper-v, windows-server-2022, powershell, virtualisation]
+tags: ["hyper-v", "windows-server", "windows-server-2022", "powershell", "virtualisation"]
 translationKey: install-hyper-v-on-a-windows-server-2022-host
 draft: false
 ---

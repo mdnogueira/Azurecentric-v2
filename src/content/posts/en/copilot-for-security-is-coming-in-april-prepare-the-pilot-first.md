@@ -2,8 +2,8 @@
 title: "Copilot for Security is coming in April: prepare the pilot first"
 description: "Prepare a bounded Microsoft Copilot for Security pilot before its announced April launch, with defined tasks, evidence review, access checks and capacity ownership."
 pubDate: 2024-03-16
-category: governance
-tags: [copilot-for-security, security-operations, ai-governance, pilot-planning]
+category: security-copilot
+tags: ["microsoft-security-copilot"]
 translationKey: copilot-for-security-is-coming-in-april-prepare-the-pilot-first
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Put an API behind Azure API Management"
 description: "How to manually add an API to Azure API Management, map operations, and test them using the Azure portal."
 pubDate: 2025-06-09
-category: apps
-tags: ["azure-api-management", "how-to", "api-gateway", "azure-portal", "backend-integration"]
+category: integration
+tags: ["azure-api-management"]
 translationKey: put-an-api-behind-azure-api-management
 draft: false
 ---

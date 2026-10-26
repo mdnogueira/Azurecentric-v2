@@ -3,7 +3,7 @@ title: "How to configure your Hybrid Network Solution with Azure"
 description: "By combining the existing Azure networking features, it is possible to configure Azure virtual networks to function as an extension of your on-premises datacenter. You have the…"
 pubDate: 2017-06-12
 category: networking
-tags: [architecture, hybrid]
+tags: ["networking", "hybrid", "azure-virtual-network"]
 translationKey: how-to-configure-your-hybrid-network-solution-with-azure
 legacy: true
 legacyUrl: /2017/06/how-to-configure-your-hybrid-network-solution-with-azure.html

@@ -3,7 +3,7 @@ title: "Windows Server 2012 R2 Hyper-V vs VMware vSphere 5.5"
 description: "On my search for comparing the newest version of VMware with Hyper-V 2012 R2 I found this chart that I think it will summarize what you need to know about the two Hypervisors."
 pubDate: 2013-09-30
 category: hyper-v
-tags: [dynamic-optimization, system-center, scvmm]
+tags: ["vmware", "hyper-v", "windows-server", "dynamic-optimization", "high-availability", "system-center"]
 translationKey: windows-server-2012-r2-hyper-v-vs-vmware-vsphere-5-5
 legacy: true
 legacyUrl: /2013/09/windows-server-2012-r2-hyper-v-vs-vmware-vsphere-5-5.html

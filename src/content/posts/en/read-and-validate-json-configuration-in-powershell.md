@@ -2,8 +2,8 @@
 title: "Read and validate JSON configuration in PowerShell"
 description: "Read and validate JSON configuration in PowerShell using native cmdlets, with explicit scope and verification steps."
 pubDate: 2025-06-23
-category: automation
-tags: ["powershell", "json", "configuration", "validation", "scripting"]
+category: powershell
+tags: ["powershell", "configuration", "json", "error-handling", "troubleshooting"]
 translationKey: read-and-validate-json-configuration-in-powershell
 draft: false
 ---

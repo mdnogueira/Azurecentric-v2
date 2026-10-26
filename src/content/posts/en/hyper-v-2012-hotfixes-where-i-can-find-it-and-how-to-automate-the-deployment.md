@@ -3,7 +3,7 @@ title: "Hyper-V 2012 Hotfixes: Where I can find it and how to automate the deplo
 description: "After my session at TechEd about Best Practices for Virtualizing and Managing Microsoft SharePoint 2013 with Microsoft System Center 2012 R2 and Windows Server 2012 R2 one of…"
 pubDate: 2014-05-28
 category: hyper-v
-tags: [hotfix, powershell]
+tags: ["hyper-v", "hotfix", "system-center", "windows-server", "powershell"]
 translationKey: hyper-v-2012-hotfixes-where-i-can-find-it-and-how-to-automate-the-deployment
 legacy: true
 legacyUrl: /2014/05/hyper-v-2012-hotfixes-where-i-can-find-it-and-how-to-automate-the-deployment.html

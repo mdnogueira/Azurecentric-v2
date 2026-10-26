@@ -3,7 +3,7 @@ title: "System Center 2012 R2 Infrastructure overview"
 description: "The notion of infrastructure provisioning is about enabling enterprises and service providers to provision physical, virtual, and cloud infrastructure that meets key…"
 pubDate: 2013-06-25
 category: windows-server
-tags: [orchestrator, app-controller, scvmm]
+tags: ["windows-server", "system-center", "migration", "scvmm"]
 translationKey: system-center-2012-r2-infrastructure-overview
 cover: ../../../assets/old/posts/2013/06/clip_image002.jpg
 coverAlt: "System Center 2012 R2 Infrastructure overview"

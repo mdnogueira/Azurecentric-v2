@@ -3,7 +3,7 @@ title: "Check time synchronisation in a Linux VM"
 description: "Check Hyper-V time synchronisation for Linux VMs by verifying host integration services and guest kernel modules."
 pubDate: 2024-11-25
 category: hyper-v
-tags: ["hyper-v", "linux", "time-synchronization", "integration-services", "troubleshooting"]
+tags: ["hyper-v", "linux", "time-synchronisation", "integration-services", "troubleshooting"]
 translationKey: check-time-synchronisation-in-a-linux-vm
 draft: false
 ---

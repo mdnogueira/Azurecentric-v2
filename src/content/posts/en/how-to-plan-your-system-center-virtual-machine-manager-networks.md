@@ -3,7 +3,7 @@ title: "How to plan your System Center Virtual Machine Manager Networks"
 description: "For several times I have just ending up to explain how we should handle with networks on SCVMM in different scenarios. Here is the base that I use to planning SCVMM networks…"
 pubDate: 2013-10-01
 category: windows-server
-tags: [networking, scvmm]
+tags: ["scvmm", "windows-server", "system-center"]
 translationKey: how-to-plan-your-system-center-virtual-machine-manager-networks
 legacy: true
 legacyUrl: /2013/10/how-to-plan-your-system-center-virtual-machine-manager-networks-2.html

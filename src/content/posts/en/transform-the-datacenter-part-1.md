@@ -3,7 +3,7 @@ title: "Transform the Datacenter – Part 1"
 description: "The goal of the series of posts, is based on one of my previous blog post about What we are learning from the cloud (see here). The idea is talk about the datacenter…"
 pubDate: 2016-05-30
 category: cloud
-tags: [hybrid, software-defined-datacenter]
+tags: ["cloud-computing"]
 translationKey: transform-the-datacenter-part-1
 cover: ../../../assets/old/posts/2016/06/Cloud-Infrastructure3.png
 coverAlt: "Transform the Datacenter – Part 1"

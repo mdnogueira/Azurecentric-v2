@@ -3,7 +3,7 @@ title: "Azure Innovations in the last 18 months"
 description: "How can we be up-to-date with all the new or enhanced features on Azure if this is what Microsoft had been working on in the last 18 months."
 pubDate: 2016-01-08
 category: cloud
-tags: [networking, storage]
+tags: ["cloud-computing"]
 translationKey: azure-innovations-in-the-last-18-months
 legacy: true
 legacyUrl: /2016/01/azure-innovations-in-the-last-18-months.html

@@ -2,8 +2,8 @@
 title: "Validate a migrated server before closing the change"
 description: "Validate migrated servers against IaC-generated baselines using Azure Migrate templates and pre-migration checks."
 pubDate: 2026-04-24
-category: cloud
-tags: ["azure-migrate", "infrastructure-as-code", "server-migration", "validation", "post-migration"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "migration", "infrastructure-as-code", "azure-migrate", "post-migration", "server-migration"]
 translationKey: validate-a-migrated-server-before-closing-the-change
 draft: false
 ---

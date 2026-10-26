@@ -2,8 +2,8 @@
 title: "Design retry behaviour without creating duplicate work"
 description: "Design retry policies for Azure API Management, Logic Apps, and Event Grid to ensure reliability without creating duplicate work."
 pubDate: 2025-02-17
-category: apps
-tags: ["azure-api-management", "logic-apps", "event-grid", "retry-policies", "idempotency", "integration"]
+category: integration
+tags: ["azure-logic-apps", "azure-api-management", "azure-event-grid", "retry-policies"]
 translationKey: design-retry-behaviour-without-creating-duplicate-work
 draft: false
 ---

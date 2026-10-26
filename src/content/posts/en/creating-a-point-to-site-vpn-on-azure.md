@@ -3,7 +3,7 @@ title: "Creating a Point-to-Site VPN on Azure"
 description: "To understand deeper what are the options you have to connect your organization with Azure, I recommend read this older post. On this post, I want to share what do you need to…"
 pubDate: 2017-06-05
 category: networking
-tags: [architecture, hybrid, powershell]
+tags: ["vpn", "azure-vpn-gateway", "powershell"]
 translationKey: creating-a-point-to-site-vpn-on-azure
 legacy: true
 legacyUrl: /2017/06/creating-a-point-to-site-vpn-on-azure.html

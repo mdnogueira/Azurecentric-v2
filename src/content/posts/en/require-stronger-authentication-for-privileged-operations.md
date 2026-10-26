@@ -2,8 +2,8 @@
 title: "Require stronger authentication for privileged operations"
 description: "Plan for mandatory Azure MFA enforcement and configure phishing-resistant authentication for privileged roles."
 pubDate: 2025-07-13
-category: governance
-tags: ["conditional-access", "mfa", "entra-id", "security", "automation"]
+category: identity-access
+tags: ["microsoft-entra-id", "multifactor-authentication", "conditional-access", "automation"]
 translationKey: require-stronger-authentication-for-privileged-operations
 draft: false
 ---

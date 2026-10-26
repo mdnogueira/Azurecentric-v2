@@ -3,7 +3,7 @@ title: "Configure health probes that reflect application readiness"
 description: "Configure health probes that reflect application readiness using Azure Load Balancer and Application Gateway, avoiding common pitfalls."
 pubDate: 2025-11-22
 category: networking
-tags: ["azure-load-balancer", "application-gateway", "health-probes", "networking", "high-availability"]
+tags: ["health-checks", "azure-application-gateway", "azure-load-balancer"]
 translationKey: configure-health-probes-that-reflect-application-readiness
 draft: false
 ---

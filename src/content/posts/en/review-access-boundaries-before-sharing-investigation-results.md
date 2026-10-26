@@ -2,8 +2,8 @@
 title: "Review access boundaries before sharing investigation results"
 description: "Verify identity permissions and data scope before sharing Security Copilot investigation results."
 pubDate: 2026-02-14
-category: governance
-tags: ["security-copilot", "sentinel", "data-governance", "access-control", "ai-security"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "access-control", "ai-security", "microsoft-sentinel"]
 translationKey: review-access-boundaries-before-sharing-investigation-results
 draft: false
 ---

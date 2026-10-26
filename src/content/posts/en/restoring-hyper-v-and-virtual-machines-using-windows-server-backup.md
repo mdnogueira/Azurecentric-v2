@@ -3,7 +3,7 @@ title: "Restoring Hyper-V and Virtual Machines using Windows Server Backup"
 description: "Cluster, Hyper-V Replica, Storage Migration, and other features makes for a higher availability for Hyper-V virtual machines, but it is impossible to provide 100 percent…"
 pubDate: 2013-10-13
 category: hyper-v
-tags: []
+tags: ["hyper-v", "backup", "hyper-v-replica", "windows-server", "migration"]
 translationKey: restoring-hyper-v-and-virtual-machines-using-windows-server-backup
 legacy: true
 legacyUrl: /2013/10/restoring-hyper-v-and-virtual-machines-using-windows-server-backup.html

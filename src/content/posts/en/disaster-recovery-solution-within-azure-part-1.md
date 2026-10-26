@@ -3,7 +3,7 @@ title: "Disaster Recovery solution within Azure – Part 1"
 description: "We know that in the Public Cloud, special Azure, we are cover by the SLA. Although some organizations like to be redundant where it comes to critical workloads. In this post I…"
 pubDate: 2017-11-02
 category: backup-dr
-tags: [azure-site-recovery, portal]
+tags: ["disaster-recovery", "azure-site-recovery"]
 translationKey: disaster-recovery-solution-within-azure-part-1
 cover: ../../../assets/old/posts/2017/11/ASR-P1-1.png
 coverAlt: "Disaster Recovery solution within Azure – Part 1"

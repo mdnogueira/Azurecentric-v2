@@ -2,8 +2,8 @@
 title: "Create a practical workload readiness checklist"
 description: "A practical checklist for verifying workload readiness before an incident, based on Azure's shared responsibility model and service health."
 pubDate: 2026-10-21
-category: governance
-tags: ["azure-reliability", "business-continuity", "disaster-recovery", "azure-service-health", "incident-response"]
+category: well-architected
+tags: ["well-architected-framework", "azure-service-health", "business-continuity", "disaster-recovery", "incident-response"]
 translationKey: create-a-practical-workload-readiness-checklist
 draft: false
 ---

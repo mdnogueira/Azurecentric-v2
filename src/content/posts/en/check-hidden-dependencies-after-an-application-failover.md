@@ -2,8 +2,8 @@
 title: "Check hidden dependencies after an application failover"
 description: "Verify hidden dependencies after a failover to avoid partial recovery and data loss."
 pubDate: 2026-05-11
-category: governance
-tags: ["failover", "disaster-recovery", "azure-reliability", "troubleshooting", "business-continuity"]
+category: well-architected
+tags: ["well-architected-framework", "failover", "replication", "troubleshooting"]
 translationKey: check-hidden-dependencies-after-an-application-failover
 draft: false
 ---

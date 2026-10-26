@@ -2,8 +2,8 @@
 title: "Plan shared storage access for an Azure HPC cluster"
 description: "Mount Azure Files on Azure Batch pools using PowerShell, covering prerequisites, configuration, and troubleshooting steps."
 pubDate: 2024-10-14
-category: compute
-tags: ["azure-batch", "azure-files", "virtual-file-mount", "powershell", "hpc"]
+category: hpc-ai
+tags: ["hpc", "troubleshooting", "azure-files", "azure-batch", "powershell", "virtual-file-mount"]
 translationKey: plan-shared-storage-access-for-an-azure-hpc-cluster
 draft: false
 ---

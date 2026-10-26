@@ -2,8 +2,8 @@
 title: "Turn secure score findings into a practical remediation queue"
 description: "Turn Defender for Cloud recommendations into owned remediation work, using secure score alongside resource exposure, operational impact and verification."
 pubDate: 2024-02-22
-category: governance
-tags: [defender-for-cloud, secure-score, remediation, security-posture]
+category: cloud-security
+tags: ["defender-for-cloud", "remediation", "secure-score"]
 translationKey: turn-secure-score-findings-into-a-practical-remediation-queue
 draft: false
 ---

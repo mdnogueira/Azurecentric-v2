@@ -2,8 +2,8 @@
 title: "Review infrastructure security findings during a pull request"
 description: "Enable and triage Defender for Cloud pull request annotations for Infrastructure-as-Code in GitHub and Azure DevOps."
 pubDate: 2025-03-20
-category: governance
-tags: ["defender-for-cloud", "devops-security", "pull-request-annotations", "iac", "github-advanced-security", "azure-devops"]
+category: cloud-security
+tags: ["defender-for-cloud", "github", "azure-devops", "devops-security", "pull-request-annotations", "infrastructure-as-code"]
 translationKey: review-infrastructure-security-findings-during-a-pull-request
 draft: false
 ---

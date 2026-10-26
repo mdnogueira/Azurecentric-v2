@@ -2,8 +2,8 @@
 title: "Review agent logs when an Arc extension fails"
 description: "Diagnose Arc extension failures by separating agent diagnostics from Guest Config extension logs."
 pubDate: 2025-09-20
-category: cloud
-tags: ["azure-arc", "troubleshooting", "vm-extensions", "azcmagent", "logs"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "troubleshooting", "logs", "azcmagent", "vm-extensions", "azure-arc"]
 translationKey: review-agent-logs-when-an-arc-extension-fails
 draft: false
 ---

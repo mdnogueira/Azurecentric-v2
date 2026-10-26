@@ -2,8 +2,8 @@
 title: "Roll out Conditional Access using report-only mode"
 description: "Build a small Conditional Access pilot, read report-only sign-in results correctly, and check the effect of other policies before enforcing MFA."
 pubDate: 2024-01-05
-category: governance
-tags: [entra-id, conditional-access, mfa, identity]
+category: identity-access
+tags: ["microsoft-entra-id", "conditional-access", "multifactor-authentication"]
 translationKey: roll-out-conditional-access-using-report-only-mode
 draft: false
 ---

@@ -1,5 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { categories } from '../site.config.mjs';
+import tagAliases from './data/tag-aliases.json';
 
 // Posts live in src/content/posts/<lang>/<file>.md
 // The folder is the language; `translationKey` links an EN post to its PT version.
@@ -23,8 +25,10 @@ const posts = defineCollection({
       description: z.string().max(200),
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
-      category: z.string(),
-      tags: z.array(z.string()).default([]),
+      category: z.string().refine((key) => Object.hasOwn(categories, key), 'Use a category registered in site.config.mjs'),
+      tags: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase kebab-case tags')
+        .refine((tag) => !Object.hasOwn(tagAliases, tag), 'Use the canonical tag from src/data/tag-aliases.json'))
+        .min(1).max(6).refine((tags) => new Set(tags).size === tags.length, 'Tags must be distinct'),
       translationKey: z.string(),
       cover: image().optional(),
       coverAlt: z.string().optional(),

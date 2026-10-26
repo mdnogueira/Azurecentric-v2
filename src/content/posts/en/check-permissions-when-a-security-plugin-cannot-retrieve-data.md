@@ -2,8 +2,8 @@
 title: "Check permissions when a security plugin cannot retrieve data"
 description: "Troubleshoot Security Copilot plugin data retrieval failures by verifying data-plane access for the plugin's execution identity."
 pubDate: 2026-06-06
-category: governance
-tags: ["security-copilot", "plugins", "permissions", "troubleshooting", "azure-identity"]
+category: security-copilot
+tags: ["plugins", "microsoft-security-copilot", "permissions", "troubleshooting", "azure-identity"]
 translationKey: check-permissions-when-a-security-plugin-cannot-retrieve-data
 draft: false
 ---

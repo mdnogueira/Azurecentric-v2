@@ -3,7 +3,7 @@ title: "Creating Windows Server 2016 virtual machine on Azure"
 description: "To create an Azure Resource Manager virtual machine from the Azure portal, perform the following steps: 1. Sign in to the Azure portal at portal.azure.com. 2. On the Hub menu,…"
 pubDate: 2016-11-06
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "windows-server", "azure-resource-manager"]
 translationKey: creating-windows-server-2016-virtual-machine-on-azure
 cover: ../../../assets/old/posts/2016/11/VM1.png
 coverAlt: "Creating Windows Server 2016 virtual machine on Azure"

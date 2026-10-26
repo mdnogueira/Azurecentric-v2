@@ -3,7 +3,7 @@ title: "Azure enhancement Site-to-Site VPN functionality"
 description: "After Scott Guthrie announce the new enhancements on Azure, last May, I was very excited with one in particular. Multi Site-to-Site VPN. This enhancement comes at the best…"
 pubDate: 2014-06-27
 category: networking
-tags: [vpn]
+tags: ["vpn", "azure-vpn-gateway"]
 translationKey: azure-enhancement-site-to-site-vpn-functionality
 cover: ../../../assets/old/posts/2014/06/clip_image01.png
 coverAlt: "Azure enhancement Site-to-Site VPN functionality"

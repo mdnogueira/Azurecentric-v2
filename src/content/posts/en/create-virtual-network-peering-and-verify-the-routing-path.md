@@ -3,7 +3,7 @@ title: "Create virtual network peering and verify the routing path"
 description: "Create virtual network peerings with Azure CLI and verify the routing path using effective route tables."
 pubDate: 2024-05-16
 category: networking
-tags: ["virtual-network", "peering", "azure-cli", "networking", "routing"]
+tags: ["azure-virtual-network", "virtual-network-peering", "routing", "azure-cli"]
 translationKey: create-virtual-network-peering-and-verify-the-routing-path
 draft: false
 ---

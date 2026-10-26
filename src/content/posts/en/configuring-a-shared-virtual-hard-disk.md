@@ -3,7 +3,7 @@ title: "Configuring a Shared Virtual Hard Disk"
 description: "Starting in Windows Server 2012 R2 Preview, Hyper-V makes it possible to share a virtual hard disk file between multiple virtual machines. Sharing a virtual hard disk file…"
 pubDate: 2013-08-29
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server"]
 translationKey: configuring-a-shared-virtual-hard-disk
 cover: ../../../assets/old/posts/2013/08/clip_image002.jpg
 coverAlt: "Configuring a Shared Virtual Hard Disk"

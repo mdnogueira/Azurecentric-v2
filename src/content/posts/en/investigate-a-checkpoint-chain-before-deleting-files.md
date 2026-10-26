@@ -3,7 +3,7 @@ title: "Investigate a checkpoint chain before deleting files"
 description: "Investigate Hyper-V checkpoint chains and disk space before deletion to prevent corruption and storage exhaustion."
 pubDate: 2025-08-27
 category: hyper-v
-tags: ["hyper-v", "virtualization", "windows-server", "troubleshooting", "vhd"]
+tags: ["checkpoints", "hyper-v", "troubleshooting", "vhd", "windows-server"]
 translationKey: investigate-a-checkpoint-chain-before-deleting-files
 draft: false
 ---

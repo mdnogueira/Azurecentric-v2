@@ -3,7 +3,7 @@ title: "Virtualizing Your Data Center with Hyper-V and System Center"
 description: "Free online event with live Q&A: http://aka.ms/virtDC"
 pubDate: 2014-02-14
 category: cloud
-tags: [hyper-v, scvmm, system-center, vmware]
+tags: ["cloud-computing", "system-center", "hyper-v", "vmware", "scvmm"]
 translationKey: virtualizing-your-data-center-with-hyper-v-and-system-center
 legacy: true
 legacyUrl: /2014/02/virtualizing-your-data-center-with-hyper-v-and-system-center.html

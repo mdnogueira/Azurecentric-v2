@@ -2,8 +2,8 @@
 title: "Configure an Azure Batch pool for a repeatable compute job"
 description: "Configure a repeatable Azure Batch pool using start tasks, scaling, and job constraints for consistent compute."
 pubDate: 2024-12-14
-category: compute
-tags: ["azure-batch", "compute-automation", "start-tasks", "scaling", "jobs-and-tasks"]
+category: hpc-ai
+tags: ["hpc", "azure-batch", "jobs-and-tasks", "start-tasks", "autoscaling"]
 translationKey: configure-an-azure-batch-pool-for-a-repeatable-compute-job
 draft: false
 ---

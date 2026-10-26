@@ -3,7 +3,7 @@ title: "New CPS Whitepaper is out now!"
 description: "The Microsoft CPS Team (Cloud Platfform System aka Cloud-in-Box) recently authored a white paper that covers a variety of performance metrics. The white paper is broken down…"
 pubDate: 2015-03-09
 category: cloud
-tags: []
+tags: ["ebooks"]
 translationKey: new-cps-whitepaper-is-out-now
 cover: ../../../assets/old/posts/2015/03/image001.jpg
 coverAlt: "New CPS Whitepaper is out now!"

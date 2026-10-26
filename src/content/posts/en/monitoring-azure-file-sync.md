@@ -3,7 +3,7 @@ title: "Monitoring Azure File Sync"
 description: "After implementing Azure File Sync, you wonder, how I can monitor what I just implemented? My first thought was to investigate in the Azure Resource himself, to look the sync…"
 pubDate: 2019-03-04
 category: storage
-tags: [azure-files, backup, monitoring]
+tags: ["azure-files", "azure-storage", "azure-file-sync", "monitoring", "troubleshooting", "azure-monitor"]
 translationKey: monitoring-azure-file-sync
 cover: ../../../assets/old/posts/2019/02/FileSync1.png
 coverAlt: "Monitoring Azure File Sync"

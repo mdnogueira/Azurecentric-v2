@@ -3,7 +3,7 @@ title: "Serial Console access on Azure Virtual Machine"
 description: "Finally come the day that Microsoft was able to announce this feature. Accessing the serial console on an Azure VM is a huge step forward. But why is so important? It’s huge!…"
 pubDate: 2018-03-27
 category: compute
-tags: [portal]
+tags: ["azure-virtual-machines"]
 translationKey: serial-console-access-on-azure-virtual-machine
 cover: ../../../assets/old/posts/2018/03/SC1.png
 coverAlt: "Serial Console access on Azure Virtual Machine"

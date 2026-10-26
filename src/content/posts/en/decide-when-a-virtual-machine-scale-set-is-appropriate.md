@@ -3,7 +3,7 @@ title: "Decide when a virtual machine scale set is appropriate"
 description: "Decide between Azure VMs and Scale Sets by comparing orchestration modes, scaling needs, and specific feature constraints."
 pubDate: 2024-10-11
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "virtual-machine-scale-sets"]
 translationKey: decide-when-a-virtual-machine-scale-set-is-appropriate
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "What is a Cloud for IT Pro?"
 description: "When talking to IT pros about the cloud and you’ll hear things like: “What is the cloud? Is it just a set of fancy catchphrases that's kind of lacking technical backing?” or “I…"
 pubDate: 2011-12-30
 category: cloud
-tags: [private-cloud]
+tags: ["cloud-computing", "private-cloud"]
 translationKey: what-is-a-cloud-for-it-pro
 cover: ../../../assets/old/logo1.png
 coverAlt: "What is a Cloud for IT Pro?"

@@ -3,7 +3,7 @@ title: "Plan VM maintenance around application recovery requirements"
 description: "Align VMSS maintenance with recovery needs by distinguishing self-service host reboots from OS upgrade windows."
 pubDate: 2026-09-28
 category: compute
-tags: ["virtual-machine-scale-sets", "maintenance", "self-service-maintenance", "maintenance-control", "high-availability"]
+tags: ["azure-virtual-machines", "maintenance", "maintenance-control", "self-service-maintenance", "virtual-machine-scale-sets"]
 translationKey: plan-vm-maintenance-around-application-recovery-requirements
 draft: false
 ---

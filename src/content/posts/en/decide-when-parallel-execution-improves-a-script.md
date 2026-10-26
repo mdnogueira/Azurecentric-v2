@@ -2,8 +2,8 @@
 title: "Decide when parallel execution improves a script"
 description: "Decide when parallel execution improves a script using PowerShell 7.5 performance data."
 pubDate: 2025-10-10
-category: automation
-tags: []
+category: powershell
+tags: ["powershell"]
 translationKey: decide-when-parallel-execution-improves-a-script
 draft: false
 ---

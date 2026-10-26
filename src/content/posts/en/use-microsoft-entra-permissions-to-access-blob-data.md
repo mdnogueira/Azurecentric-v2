@@ -3,7 +3,7 @@ title: "Use Microsoft Entra permissions to access blob data"
 description: "Assign Azure RBAC roles for blob data access, distinguishing data-plane permissions from control-plane management."
 pubDate: 2024-05-21
 category: storage
-tags: ["azure-rbac", "blob-storage", "microsoft-entra-id", "data-access", "storage-security"]
+tags: ["azure-storage", "blob-storage", "microsoft-entra-id", "data-access", "rbac", "powershell"]
 translationKey: use-microsoft-entra-permissions-to-access-blob-data
 draft: false
 ---

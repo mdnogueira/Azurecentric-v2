@@ -3,7 +3,7 @@ title: "Installing and running Hyper-V 2012 R2 from a USB stick"
 description: "Hyper-V 2012 R2 Server is the free version of Hyper-V and it offers all the components and features that are available in Windows Server 2012 R2 with Hyper-V. It is a Windows…"
 pubDate: 2013-10-07
 category: hyper-v
-tags: [usb]
+tags: ["hyper-v", "usb", "windows-server"]
 translationKey: installing-and-running-hyper-v-2012-r2-from-a-usb-stick
 legacy: true
 legacyUrl: /2013/10/installing-and-running-hyper-v-2012-r2-from-a-usb-stick-2.html

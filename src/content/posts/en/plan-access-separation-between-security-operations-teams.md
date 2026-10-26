@@ -2,8 +2,8 @@
 title: "Plan access separation between security operations teams"
 description: "Separate security and operations access in Microsoft Sentinel using resource-context RBAC and table-level RBAC."
 pubDate: 2026-09-23
-category: governance
-tags: ["microsoft-sentinel", "rbac", "log-analytics", "security-operations", "azure-monitor"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "rbac", "security-operations", "azure-monitor", "log-analytics"]
 translationKey: plan-access-separation-between-security-operations-teams
 draft: false
 ---

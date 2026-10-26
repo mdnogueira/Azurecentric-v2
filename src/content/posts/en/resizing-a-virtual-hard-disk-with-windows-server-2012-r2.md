@@ -3,7 +3,7 @@ title: "Resizing a virtual hard disk with Windows Server 2012 R2"
 description: "Starting in Windows Server 2012 R2 Preview, Hyper-V delivers the ability to expand or shrink the size of a virtual hard disk while the virtual machine is still running."
 pubDate: 2013-07-10
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server"]
 translationKey: resizing-a-virtual-hard-disk-with-windows-server-2012-r2
 legacy: true
 legacyUrl: /2013/07/resizing-a-virtual-hard-disk-with-windows-server-2012-r2.html

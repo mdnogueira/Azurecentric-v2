@@ -3,7 +3,7 @@ title: "Choose managed disks around workload I/O patterns"
 description: "Choose managed disk redundancy and sharing by matching write latency, cross-zone needs, and cluster requirements."
 pubDate: 2026-07-04
 category: storage
-tags: ["managed-disks", "lrs", "zrs", "availability-zones", "shared-disks"]
+tags: ["azure-storage", "managed-disks", "lrs", "shared-disks", "zrs", "availability-zones"]
 translationKey: choose-managed-disks-around-workload-i-o-patterns
 draft: false
 ---

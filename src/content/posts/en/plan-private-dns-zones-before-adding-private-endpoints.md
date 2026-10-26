@@ -3,7 +3,7 @@ title: "Plan private DNS zones before adding private endpoints"
 description: "Plan private DNS zones before adding private endpoints to ensure correct resolution and avoid connectivity failures."
 pubDate: 2024-12-26
 category: networking
-tags: ["azure-private-link", "private-dns", "private-endpoints", "dns-configuration", "networking"]
+tags: ["dns", "private-dns", "private-endpoints", "troubleshooting"]
 translationKey: plan-private-dns-zones-before-adding-private-endpoints
 draft: false
 ---

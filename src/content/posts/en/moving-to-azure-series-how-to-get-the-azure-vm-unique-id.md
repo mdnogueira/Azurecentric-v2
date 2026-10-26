@@ -3,7 +3,7 @@ title: "Moving to Azure Series – How to get the Azure VM Unique ID"
 description: "On this series, I want to explore all the situations that you might encounter when you are moving your workloads to the cloud, specially to Azure."
 pubDate: 2019-01-04
 category: compute
-tags: [linux, wmi]
+tags: ["azure-virtual-machines", "linux"]
 translationKey: moving-to-azure-series-how-to-get-the-azure-vm-unique-id
 cover: ../../../assets/old/posts/2019/03/VMID.png
 coverAlt: "Moving to Azure Series – How to get the Azure VM Unique ID"

@@ -3,7 +3,7 @@ title: "Configure blob soft delete and versioning"
 description: "Enable blob soft delete and versioning to protect against accidental deletion and overwrites, with verification steps and cost considerations."
 pubDate: 2024-11-03
 category: storage
-tags: ["azure-storage", "blob-storage", "soft-delete", "versioning", "data-protection"]
+tags: ["azure-storage", "blob-storage", "soft-delete", "versioning", "azure-cli", "powershell"]
 translationKey: configure-blob-soft-delete-and-versioning
 draft: false
 ---

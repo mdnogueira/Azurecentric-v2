@@ -2,8 +2,8 @@
 title: "Choose retention settings around investigation needs"
 description: "Configure Log Analytics retention to balance investigation depth and cost using interactive and long-term periods."
 pubDate: 2024-12-06
-category: governance
-tags: ["microsoft-sentinel", "log-analytics", "data-retention", "cost-management", "azure-monitor"]
+category: siem-xdr
+tags: ["data-retention", "microsoft-sentinel", "log-analytics", "azure-monitor", "cost-management"]
 translationKey: choose-retention-settings-around-investigation-needs
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Multiple level alerts with ARM Template"
 description: "If you run into the situation, that you want to set multiple activity alerts into a resource that you want to monitor, but when you configure or want to edit the alert, you…"
 pubDate: 2017-08-07
 category: automation
-tags: [arm-templates]
+tags: ["alerts", "arm-templates"]
 translationKey: multiple-level-alerts-with-arm-template
 cover: ../../../assets/old/posts/2017/08/ARM2.png
 coverAlt: "Multiple level alerts with ARM Template"

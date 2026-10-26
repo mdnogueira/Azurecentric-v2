@@ -3,7 +3,7 @@ title: "File level restore numa Azure VM com discos encriptados"
 description: "O Azure Backup não faz restore ao nível de ficheiro em VMs com discos encriptados. Num File Server com discos de mais de 1 TB, as opções que considerámos e a solução híbrida a que chegámos."
 pubDate: 2019-10-04
 category: backup-dr
-tags: [architecture, azure-backup, disk-encryption]
+tags: ["backup", "azure-virtual-machines", "azure-backup"]
 translationKey: file-level-restore-on-an-azure-vm-with-encrypted-disks
 ---
 

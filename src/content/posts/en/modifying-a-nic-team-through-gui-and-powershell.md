@@ -3,7 +3,7 @@ title: "Modifying a NIC Team through GUI and PowerShell"
 description: "Within the UI, modifications to the team can be done by selecting a team in the Team tile, right-clicking on the team, and selecting the Modify Team action. Selecting Modify…"
 pubDate: 2013-05-13
 category: windows-server
-tags: [failover-cluster, hyper-v, powershell, nic-teaming]
+tags: ["windows-server", "powershell", "nic-teaming", "hyper-v"]
 translationKey: modifying-a-nic-team-through-gui-and-powershell
 cover: ../../../assets/old/posts/2013/05/clip_image002.jpg
 coverAlt: "Modifying a NIC Team through GUI and PowerShell"

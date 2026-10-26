@@ -3,7 +3,7 @@ title: "Storage, backup, and disaster recovery: a comparison"
 description: "With terms like cloud storage, backup and disaster recovery floating around, it can help to take a step back and get a better idea of what each of these really mean and how…"
 pubDate: 2017-02-08
 category: backup-dr
-tags: [azure-site-recovery, storage, azure-backup]
+tags: ["backup", "disaster-recovery"]
 translationKey: storage-backup-and-disaster-recovery-a-comparison
 legacy: true
 legacyUrl: /2017/02/storage-backup-and-disaster-recovery-a-comparison.html

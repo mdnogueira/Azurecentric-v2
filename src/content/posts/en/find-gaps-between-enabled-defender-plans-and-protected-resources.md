@@ -2,8 +2,8 @@
 title: "Find gaps between enabled Defender plans and protected resources"
 description: "Troubleshoot gaps between enabled Defender plans and protected resources by checking subscription, workspace, and resource-level scopes."
 pubDate: 2026-09-14
-category: governance
-tags: ["defender-for-cloud", "troubleshooting", "security-posture", "workspaces", "permissions"]
+category: cloud-security
+tags: ["defender-for-cloud", "troubleshooting", "permissions"]
 translationKey: find-gaps-between-enabled-defender-plans-and-protected-resources
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "What’s New in Windows Server 2012 R2 – Hyper-V"
 description: "During the last TechEd North America, Microsoft wraps off what will be the new Windows Server 2012 R2. The upgrade brings an impressive number of features as well as…"
 pubDate: 2013-06-07
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server"]
 translationKey: whats-new-in-windows-server-2012-r2-hyper-v
 cover: ../../../assets/old/posts/2013/06/clip_image002.png
 coverAlt: "What’s New in Windows Server 2012 R2 – Hyper-V"

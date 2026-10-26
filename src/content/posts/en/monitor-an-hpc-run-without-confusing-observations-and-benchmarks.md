@@ -2,8 +2,8 @@
 title: "Monitor an HPC run without confusing observations and benchmarks"
 description: "Distinguish Azure Batch operational metrics from Application Insights telemetry to monitor HPC runs effectively."
 pubDate: 2026-02-24
-category: compute
-tags: ["azure-batch", "application-insights", "hpc", "monitoring", "telemetry"]
+category: hpc-ai
+tags: ["hpc", "application-insights", "azure-batch", "monitoring", "telemetry"]
 translationKey: monitor-an-hpc-run-without-confusing-observations-and-benchmarks
 draft: false
 ---

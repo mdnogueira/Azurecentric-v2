@@ -2,8 +2,8 @@
 title: "Plan an outage test that produces useful evidence"
 description: "Plan controlled outage tests using Chaos Studio to verify recovery logic, distinguishing control plane resilience from workload configuration."
 pubDate: 2025-02-28
-category: governance
-tags: ["chaos-studio", "service-health", "disaster-recovery", "availability-zones", "business-continuity"]
+category: well-architected
+tags: ["well-architected-framework", "business-continuity", "chaos-studio", "disaster-recovery", "availability-zones"]
 translationKey: plan-an-outage-test-that-produces-useful-evidence
 draft: false
 ---

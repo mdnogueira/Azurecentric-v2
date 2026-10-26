@@ -3,7 +3,7 @@ title: "Choose an Active Directory site and subnet design"
 description: "Design Active Directory sites and subnets using latency thresholds and application requirements to control replication and client traffic."
 pubDate: 2025-01-08
 category: windows-server
-tags: ["active-directory", "site-topology", "subnet-design", "replication", "windows-server"]
+tags: ["windows-server", "active-directory", "subnet-design", "replication", "site-topology"]
 translationKey: choose-an-active-directory-site-and-subnet-design
 draft: false
 ---

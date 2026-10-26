@@ -2,8 +2,8 @@
 title: "Azure Resource Manager PowerShell Module"
 description: "If you are like me that like to have all the tools on your desktop/laptop, special the Azure PowerShell module, now your live is way easier. Not long time ago, you had to…"
 pubDate: 2017-09-15
-category: automation
-tags: [powershell]
+category: powershell
+tags: ["powershell", "azure-resource-manager", "azure-powershell"]
 translationKey: azure-resource-manager-powershell-module
 cover: ../../../assets/old/posts/2017/09/AzureRMPS1.png
 coverAlt: "Azure Resource Manager PowerShell Module"

@@ -3,7 +3,7 @@ title: "Review event logs around a Windows infrastructure change"
 description: "Review Windows infrastructure changes by correlating Server Manager alerts, specific security event IDs, and Windows Admin Center management logs."
 pubDate: 2025-06-25
 category: windows-server
-tags: ["windows-server-2025", "event-logging", "server-manager", "windows-admin-center", "security-auditing"]
+tags: ["windows-server", "windows-admin-center", "alerts", "server-manager"]
 translationKey: review-event-logs-around-a-windows-infrastructure-change
 draft: false
 ---

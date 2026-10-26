@@ -3,7 +3,7 @@ title: "Deploy ARM Templates using Key Vault"
 description: "I’ve been deploying to Azure a lot of resources, one of my favorite things is to create templates where I can reuse for other situations. But sometimes, and in some situations,…"
 pubDate: 2017-10-03
 category: automation
-tags: [arm-templates, portal, storage]
+tags: ["arm-templates", "azure-key-vault"]
 translationKey: deploy-arm-templates-using-key-vault
 cover: ../../../assets/old/posts/2017/10/SAS1.png
 coverAlt: "Deploy ARM Templates using Key Vault"

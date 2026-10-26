@@ -3,7 +3,7 @@ title: "Hyper-V Replica"
 description: "Beginning with Windows Server 2008 R2, Hyper-V and Failover Clustering can be used together to make a virtual machine highly available and minimize disruptions. Administrators…"
 pubDate: 2012-09-04
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "windows-server", "failover-clustering", "high-availability"]
 translationKey: hyper-v-replica
 cover: ../../../assets/old/posts/2012/09/hyprep.png
 coverAlt: "Hyper-V Replica"

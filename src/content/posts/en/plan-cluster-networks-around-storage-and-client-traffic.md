@@ -2,8 +2,8 @@
 title: "Plan cluster networks around storage and client traffic"
 description: "Plan Windows Server 2022 cluster networks using SMB Multichannel for storage and cluster-wide bandwidth controls for live migrations."
 pubDate: 2024-07-24
-category: backup-dr
-tags: []
+category: high-availability
+tags: ["failover-clustering", "live-migration", "smb", "windows-server", "migration"]
 translationKey: plan-cluster-networks-around-storage-and-client-traffic
 draft: false
 ---

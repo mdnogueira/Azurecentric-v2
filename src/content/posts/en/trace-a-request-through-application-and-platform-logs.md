@@ -2,8 +2,8 @@
 title: "Trace a request through application and platform logs"
 description: "Trace requests through Azure App Service and Functions using Application Insights Live Metrics and platform diagnostic logs."
 pubDate: 2026-04-16
-category: apps
-tags: ["azure-app-service", "azure-functions", "application-insights", "diagnostic-logs", "live-metrics", "troubleshooting"]
+category: app-paas
+tags: ["azure-app-service", "application-insights", "diagnostic-logs", "live-metrics", "azure-functions", "troubleshooting"]
 translationKey: trace-a-request-through-application-and-platform-logs
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "How to Create a Cluster in a Restrictive Active Directory Environment"
 description: "In Windows Server 2012 there have been several enhancements to how Windows Server Failover Clusters integrate with the Active Directory. In this post we going to discuss some…"
 pubDate: 2012-03-31
-category: windows-server
-tags: [failover-cluster, active-directory]
+category: high-availability
+tags: ["failover-clustering", "active-directory", "windows-server", "powershell"]
 translationKey: how-to-create-a-cluster-in-a-restrictive-active-directory-environment
 cover: ../../../assets/old/posts/2012/03/cluster.png
 coverAlt: "How to Create a Cluster in a Restrictive Active Directory Environment"

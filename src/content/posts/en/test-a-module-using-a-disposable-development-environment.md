@@ -3,7 +3,7 @@ title: "Test a module using a disposable development environment"
 description: "Test Bicep modules safely using a disposable resource group, matching the module's target scope and cleaning up correctly."
 pubDate: 2026-08-14
 category: automation
-tags: []
+tags: ["bicep", "resource-groups"]
 translationKey: test-a-module-using-a-disposable-development-environment
 draft: false
 ---

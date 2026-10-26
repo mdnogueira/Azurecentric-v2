@@ -2,8 +2,8 @@
 title: "Build an Azure workbook around an operational question"
 description: "Build an Azure workbook around a specific operational question using parameters, queries, and text."
 pubDate: 2024-10-31
-category: governance
-tags: ["azure-workbooks", "azure-monitor", "kql", "observability", "azure-portal"]
+category: operations
+tags: ["azure-monitor", "azure-workbooks"]
 translationKey: build-an-azure-workbook-around-an-operational-question
 draft: false
 ---

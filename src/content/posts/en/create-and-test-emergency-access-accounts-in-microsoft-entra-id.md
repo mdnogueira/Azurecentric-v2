@@ -2,8 +2,8 @@
 title: "Create and test emergency access accounts in Microsoft Entra ID"
 description: "Create cloud-only emergency administrators, choose independent authentication, monitor their use and test the recovery process without disrupting normal access."
 pubDate: 2024-02-25
-category: governance
-tags: [entra-id, emergency-access, conditional-access, authentication, identity]
+category: identity-access
+tags: ["microsoft-entra-id", "emergency-access", "authentication", "conditional-access"]
 translationKey: create-and-test-emergency-access-accounts-in-microsoft-entra-id
 draft: false
 ---

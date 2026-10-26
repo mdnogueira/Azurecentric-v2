@@ -2,8 +2,8 @@
 title: "Understand where an RDMA network helps an MPI workload"
 description: "Determine when Azure Batch MPI workloads benefit from RDMA-capable VM sizes versus standard networking."
 pubDate: 2024-08-21
-category: compute
-tags: ["azure-batch", "mpi", "rdma", "hpc", "virtual-machines"]
+category: hpc-ai
+tags: ["hpc", "mpi", "rdma", "vm-sizing", "azure-batch"]
 translationKey: understand-where-an-rdma-network-helps-an-mpi-workload
 draft: false
 ---

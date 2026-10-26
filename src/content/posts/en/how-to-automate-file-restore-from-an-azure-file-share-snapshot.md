@@ -3,7 +3,7 @@ title: "How to automate file restore from an Azure File Share Snapshot"
 description: "One of my costumers, send me an email asking if there is a possibility of automating the file restore from an Azure File Share Snapshot. He was using the Azure portal for…"
 pubDate: 2020-01-09
 category: storage
-tags: [azure-backup, azure-files, azure-cli]
+tags: ["azure-storage", "azure-files", "azure-cli"]
 translationKey: how-to-automate-file-restore-from-an-azure-file-share-snapshot
 legacy: true
 legacyUrl: /2020/01/How-to-automate-file-restore-from-an-Azure-File-Share-Snapshot.html

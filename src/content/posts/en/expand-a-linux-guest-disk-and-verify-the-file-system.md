@@ -3,7 +3,7 @@ title: "Expand a Linux guest disk and verify the file system"
 description: "Expand a Linux guest disk on Hyper-V by updating the partition table and file system, ensuring GPT headers are aligned."
 pubDate: 2025-03-17
 category: hyper-v
-tags: ["hyper-v", "linux", "vhdx", "gpt", "resize2fs"]
+tags: ["hyper-v", "linux", "gpt", "vhdx"]
 translationKey: expand-a-linux-guest-disk-and-verify-the-file-system
 draft: false
 ---

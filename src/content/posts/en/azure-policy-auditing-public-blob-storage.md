@@ -3,7 +3,7 @@ title: "Azure Policy – Auditing public blob storage"
 description: "In a Governance project, one of the most common policy to implement is the one that you don’t allow any blob storage to be public. That usually could be a major information…"
 pubDate: 2018-06-05
 category: governance
-tags: [azure-policy]
+tags: ["azure-policy", "blob-storage"]
 translationKey: azure-policy-auditing-public-blob-storage
 legacy: true
 legacyUrl: /2018/06/azure-policy-auditing-public-blob-storage.html

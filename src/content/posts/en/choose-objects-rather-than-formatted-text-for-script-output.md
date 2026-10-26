@@ -2,8 +2,8 @@
 title: "Choose objects rather than formatted text for script output"
 description: "Why PowerShell scripts should handle objects, not text, and how to use Get-Member to verify pipeline data."
 pubDate: 2024-05-27
-category: automation
-tags: ["powershell", "objects", "pipeline", "get-member", "scripting"]
+category: powershell
+tags: ["powershell", "objects", "get-member", "pipeline"]
 translationKey: choose-objects-rather-than-formatted-text-for-script-output
 draft: false
 ---

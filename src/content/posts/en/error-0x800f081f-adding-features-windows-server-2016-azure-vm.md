@@ -3,7 +3,7 @@ title: "Error 0x800F081F when adding features on Windows Server 2016 on Azure Vi
 description: "At one of my costumers, I needed to add the SMBv1 feature to enable communication with a legacy File Server running on Windows Server 2003."
 pubDate: 2020-03-04
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "windows-server", "troubleshooting"]
 translationKey: error-0x800f081f-adding-features-windows-server-2016-azure-vm
 cover: ../../../assets/old/posts/2020/03/SMBv1-1.png
 coverAlt: "Error 0x800F081F when adding features on Windows Server 2016 on Azure Virtual Machine"

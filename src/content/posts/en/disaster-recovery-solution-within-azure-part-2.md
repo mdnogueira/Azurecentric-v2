@@ -3,7 +3,7 @@ title: "Disaster Recovery solution within Azure – Part 2"
 description: "On the previous post (see here), I create the Recovery Service vault that is required to configured the Site Recovery infrastructure to protect the workloads, in order to have…"
 pubDate: 2017-11-08
 category: backup-dr
-tags: [portal, azure-site-recovery]
+tags: ["disaster-recovery", "azure-site-recovery"]
 translationKey: disaster-recovery-solution-within-azure-part-2
 cover: ../../../assets/old/posts/2017/11/ASR-P2-1.png
 coverAlt: "Disaster Recovery solution within Azure – Part 2"

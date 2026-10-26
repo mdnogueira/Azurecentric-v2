@@ -3,7 +3,7 @@ title: "Azure Cobalt 100 VMs: check Arm compatibility before moving a workload"
 description: "Verify Arm compatibility and select the correct Cobalt 100 VM series before migrating workloads to the new general-purpose and memory-optimized sizes."
 pubDate: 2024-10-19
 category: compute
-tags: ["azure-virtual-machines", "arm-architecture", "cobalt-100", "migration", "compatibility"]
+tags: ["azure-virtual-machines", "cobalt-100", "compatibility", "migration", "arm-architecture"]
 translationKey: azure-cobalt-100-vms-check-arm-compatibility-before-moving-a-workload
 draft: false
 ---

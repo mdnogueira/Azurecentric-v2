@@ -2,8 +2,8 @@
 title: "Use managed identity for a supported workflow connection"
 description: "Enable managed identities for Logic Apps and API Management to authenticate connections without storing credentials."
 pubDate: 2024-05-13
-category: apps
-tags: ["managed-identity", "logic-apps", "api-management", "azure-rbac", "security"]
+category: integration
+tags: ["azure-api-management", "managed-identities", "azure-logic-apps", "rbac"]
 translationKey: use-managed-identity-for-a-supported-workflow-connection
 draft: false
 ---

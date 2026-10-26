@@ -2,8 +2,8 @@
 title: "Build a migration inventory before selecting a migration method"
 description: "Use Azure Migrate to build a migration inventory before selecting a method, avoiding assumptions about workload suitability."
 pubDate: 2024-05-08
-category: cloud
-tags: ["azure-migrate", "migration", "assessment", "inventory", "cloud-adoption"]
+category: hybrid-migration
+tags: ["migration", "hybrid-cloud", "inventory", "azure-migrate", "assessment"]
 translationKey: build-a-migration-inventory-before-selecting-a-migration-method
 draft: false
 ---

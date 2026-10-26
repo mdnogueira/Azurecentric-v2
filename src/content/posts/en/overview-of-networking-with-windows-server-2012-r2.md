@@ -3,7 +3,7 @@ title: "Overview of Networking with Windows Server 2012 R2"
 description: "Windows Server 2012 R2 makes it as straightforward to manage an entire network as a single server, giving you the reliability and scalability of multiple servers at a lower…"
 pubDate: 2013-06-23
 category: windows-server
-tags: [hyper-v]
+tags: ["windows-server", "hyper-v"]
 translationKey: overview-of-networking-with-windows-server-2012-r2
 legacy: true
 legacyUrl: /2013/06/overview-of-server-virtualization-with-windows-server-2012-r2-2.html

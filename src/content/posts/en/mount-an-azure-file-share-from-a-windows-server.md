@@ -3,7 +3,7 @@ title: "Mount an Azure file share from a Windows server"
 description: "Mount an Azure file share on Windows using SMB, covering prerequisites, key-based and identity-based methods, and verification steps."
 pubDate: 2025-02-25
 category: storage
-tags: ["azure-files", "smb", "windows-server", "identity-based-auth", "networking"]
+tags: ["azure-storage", "azure-files", "windows-server", "smb", "identity-based-auth"]
 translationKey: mount-an-azure-file-share-from-a-windows-server
 draft: false
 ---

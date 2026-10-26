@@ -2,8 +2,8 @@
 title: "Use data collection rules to control server telemetry"
 description: "Control server telemetry by creating and associating Azure Monitor data collection rules with virtual machines."
 pubDate: 2024-07-11
-category: governance
-tags: ["azure-monitor", "data-collection-rules", "azure-monitor-agent", "log-analytics", "virtual-machines"]
+category: operations
+tags: ["azure-monitor", "data-collection-rules", "azure-monitor-agent", "log-analytics"]
 translationKey: use-data-collection-rules-to-control-server-telemetry
 draft: false
 ---

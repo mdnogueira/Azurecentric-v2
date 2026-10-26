@@ -3,7 +3,7 @@ title: "Use what-if to review an Azure deployment"
 description: "Preview Bicep deployment changes using the Azure Resource Manager what-if operation to verify creates, modifications, and deletions before applying them."
 pubDate: 2024-05-11
 category: automation
-tags: ["bicep", "azure-cli", "azure-powershell", "deployment", "what-if", "azure-resource-manager"]
+tags: ["bicep", "deployment", "what-if", "azure-cli", "azure-resource-manager", "azure-powershell"]
 translationKey: use-what-if-to-review-an-azure-deployment
 draft: false
 ---

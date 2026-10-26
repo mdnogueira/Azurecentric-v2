@@ -3,7 +3,7 @@ title: "Understand checkpoints for a Linux application"
 description: "Configure Linux Hyper-V VMs for production checkpoints to ensure data consistency during application changes."
 pubDate: 2026-05-27
 category: hyper-v
-tags: ["hyper-v", "linux", "checkpoints", "virtualization", "data-consistency"]
+tags: ["checkpoints", "linux", "hyper-v", "data-consistency", "powershell"]
 translationKey: understand-checkpoints-for-a-linux-application
 draft: false
 ---

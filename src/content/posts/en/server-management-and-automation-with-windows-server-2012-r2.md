@@ -3,7 +3,7 @@ title: "Server management and automation with Windows Server 2012 R2"
 description: "Datacenter infrastructure has become complex: Multiple industry standards are confusing hardware vendors, and customers are looking for guidance on how to best automate their…"
 pubDate: 2013-06-28
 category: windows-server
-tags: [hyper-v, rsat]
+tags: ["windows-server"]
 translationKey: server-management-and-automation-with-windows-server-2012-r2
 legacy: true
 legacyUrl: /2013/06/overview-of-server-virtualization-with-windows-server-2012-r2-2-2.html

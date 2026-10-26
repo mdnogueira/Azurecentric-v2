@@ -3,7 +3,7 @@ title: "How to remove a HostPool from the Windows Virtual Desktop on Azure"
 description: "After a few times deploying a Windows Virtual Desktop (WVD) infrastructure on Azure, I always found that sometimes you have the necessity to reset your environment, specially…"
 pubDate: 2019-05-27
 category: compute
-tags: [powershell, virtual-desktop]
+tags: ["azure-virtual-desktop", "azure-virtual-machines", "powershell"]
 translationKey: how-to-remove-a-hostpool-from-the-windows-virtual-desktop-on-azure
 cover: ../../../assets/old/posts/2019/05/RDSRem1-2.png
 coverAlt: "How to remove a HostPool from the Windows Virtual Desktop on Azure"

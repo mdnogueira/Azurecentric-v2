@@ -3,7 +3,7 @@ title: "Use production checkpoints with a clear recovery purpose"
 description: "Configure Hyper-V production checkpoints for AD workloads, manage storage impact, and apply or delete checkpoints safely."
 pubDate: 2025-05-10
 category: hyper-v
-tags: ["hyper-v", "production-checkpoints", "virtual-machines", "windows-server", "backup-and-recovery"]
+tags: ["checkpoints", "hyper-v", "production-checkpoints", "backup", "windows-server"]
 translationKey: use-production-checkpoints-with-a-clear-recovery-purpose
 draft: false
 ---

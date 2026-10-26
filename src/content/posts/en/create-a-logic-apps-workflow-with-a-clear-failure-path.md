@@ -2,8 +2,8 @@
 title: "Create a Logic Apps workflow with a clear failure path"
 description: "Use a scope, bounded retries and explicit run-after conditions to handle a Logic Apps failure while preserving an accurate failed run status."
 pubDate: 2024-03-18
-category: apps
-tags: [logic-apps, error-handling, scopes, workflows, retries]
+category: integration
+tags: ["azure-logic-apps", "troubleshooting", "retries"]
 translationKey: create-a-logic-apps-workflow-with-a-clear-failure-path
 draft: false
 ---

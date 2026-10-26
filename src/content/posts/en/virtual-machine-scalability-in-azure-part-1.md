@@ -3,7 +3,7 @@ title: "Virtual Machine Scalability in Azure – Part 1"
 description: "You can provide automatic scalability for Azure VMs by using Azure VM scale sets. A VM scale set consists of a group of automatically provisioned Windows or Linux virtual…"
 pubDate: 2017-04-03
 category: compute
-tags: [architecture, powershell, arm-templates, azure-cli]
+tags: ["azure-virtual-machines", "virtual-machine-scale-sets", "autoscaling", "linux", "arm-templates", "azure-cli"]
 translationKey: virtual-machine-scalability-in-azure-part-1
 legacy: true
 legacyUrl: /2017/04/virtual-machine-scalability-in-azure-part-1.html

@@ -2,8 +2,8 @@
 title: "Use ShouldProcess for an infrastructure change function"
 description: "Implement ShouldProcess in PowerShell functions to safely manage infrastructure changes with WhatIf and Confirm support."
 pubDate: 2026-01-25
-category: automation
-tags: ["powershell", "automation", "infrastructure", "shouldprocess", "cmdletbinding"]
+category: powershell
+tags: ["powershell", "shouldprocess", "cmdletbinding"]
 translationKey: use-shouldprocess-for-an-infrastructure-change-function
 draft: false
 ---

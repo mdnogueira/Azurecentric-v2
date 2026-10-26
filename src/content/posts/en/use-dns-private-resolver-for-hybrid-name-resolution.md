@@ -3,7 +3,7 @@ title: "Use DNS Private Resolver for hybrid name resolution"
 description: "Configure Azure DNS Private Resolver for hybrid name resolution between Azure VNets and on-premises DNS servers."
 pubDate: 2026-03-07
 category: networking
-tags: ["azure-dns", "private-resolver", "hybrid-networking", "dns-resolution", "virtual-network"]
+tags: ["dns", "azure-dns-private-resolver", "azure-dns", "private-resolver", "azure-virtual-network"]
 translationKey: use-dns-private-resolver-for-hybrid-name-resolution
 draft: false
 ---

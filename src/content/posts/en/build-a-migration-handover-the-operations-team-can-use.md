@@ -2,8 +2,8 @@
 title: "Build a migration handover the operations team can use"
 description: "Structure a migration handover using Azure Migrate data to ensure operational readiness."
 pubDate: 2026-10-04
-category: cloud
-tags: ["azure-migrate", "migration-handover", "operations-readiness", "dependency-mapping", "assessment"]
+category: hybrid-migration
+tags: ["migration", "hybrid-cloud", "migration-handover", "azure-migrate", "assessment", "operations-readiness"]
 translationKey: build-a-migration-handover-the-operations-team-can-use
 draft: false
 ---

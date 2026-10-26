@@ -3,7 +3,7 @@ title: "Choosing the type of Azure Blob storage for SQL Backups"
 description: "During the storage design on the Azure Foundation workshop that I usually deliver on a beginning of a new Azure project, come the topic and following that, the discussion about…"
 pubDate: 2018-05-31
 category: storage
-tags: [architecture, azure-backup, backup, sql]
+tags: ["azure-storage", "blob-storage", "sql", "backup"]
 translationKey: choosing-the-type-of-azure-blob-storage-for-sql-backups
 legacy: true
 legacyUrl: /2018/05/choosing-the-type-of-azure-blob-storage-for-sql-backups.html

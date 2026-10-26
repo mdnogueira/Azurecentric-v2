@@ -3,7 +3,7 @@ title: "Azure Site Recovery"
 description: "Microsoft Azure Site Recovery was first introduced in January 2014, and helps customers to protect important services by coordinating the replication and recovery of System…"
 pubDate: 2015-10-12
 category: backup-dr
-tags: [azure-site-recovery, hybrid]
+tags: ["azure-site-recovery", "replication"]
 translationKey: azure-site-recovery
 legacy: true
 legacyUrl: /2015/10/azure-site-recovery.html

@@ -3,7 +3,7 @@ title: "Implementing Self-signed Certificates in Hyper-V Replica"
 description: "The command installs a test certificate in the Personal store of the local machine and is saved as a file locally. The certificate can be used for both Client and Server…"
 pubDate: 2012-12-25
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "certificates", "hyper-v"]
 translationKey: implementing-self-signed-certificates-in-hyper-v-replica
 legacy: true
 legacyUrl: /2012/12/implementing-self-signed-certificates-in-hyper-v-replica.html

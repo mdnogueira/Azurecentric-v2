@@ -2,8 +2,8 @@
 title: "Review connector health and ingestion changes together"
 description: "Monitor Microsoft Sentinel data connectors by combining the SentinelHealth table with the Data collection health workbook to detect ingestion drifts and configure alerts."
 pubDate: 2026-08-01
-category: governance
-tags: ["microsoft-sentinel", "data-connectors", "health-monitoring", "kql", "workbooks"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "alerts", "data-connectors", "monitoring", "kql"]
 translationKey: review-connector-health-and-ingestion-changes-together
 draft: false
 ---

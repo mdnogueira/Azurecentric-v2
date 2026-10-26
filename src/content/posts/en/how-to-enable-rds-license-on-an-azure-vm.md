@@ -3,7 +3,7 @@ title: "How to enable RDS license on an Azure VM"
 description: "In some organization, it’s common practice to have a jump server in Azure to be used, specially when you have several tools that need to run “locally” on the server. Usually…"
 pubDate: 2018-05-15
 category: compute
-tags: [rds]
+tags: ["azure-virtual-machines", "rds"]
 translationKey: how-to-enable-rds-license-on-an-azure-vm
 cover: ../../../assets/old/posts/2018/05/RDS1.png
 coverAlt: "How to enable RDS license on an Azure VM"

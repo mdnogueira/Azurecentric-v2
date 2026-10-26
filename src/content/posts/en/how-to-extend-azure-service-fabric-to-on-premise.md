@@ -3,7 +3,7 @@ title: "How to extend Azure Service Fabric to on-premise?"
 description: "You can deploy a Service Fabric cluster on any physical or virtual machine running the Windows Server operating system, including ones residing in your on-premises datacenters.…"
 pubDate: 2017-04-19
 category: apps
-tags: [service-fabric, powershell, failover-cluster, high-availability, hyper-v]
+tags: ["service-fabric", "windows-server", "failover-clustering", "powershell"]
 translationKey: how-to-extend-azure-service-fabric-to-on-premise
 legacy: true
 legacyUrl: /2017/04/how-to-extend-azure-service-fabric-to-on-premise.html

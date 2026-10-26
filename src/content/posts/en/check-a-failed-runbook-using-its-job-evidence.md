@@ -2,8 +2,8 @@
 title: "Check a failed runbook using its job evidence"
 description: "Diagnose failed Azure Automation runbooks by tracing job status, stream output, and permission scopes."
 pubDate: 2026-03-11
-category: governance
-tags: ["azure-automation", "runbooks", "troubleshooting", "powershell", "permissions"]
+category: operations
+tags: ["azure-automation", "troubleshooting", "permissions", "runbooks", "powershell"]
 translationKey: check-a-failed-runbook-using-its-job-evidence
 draft: false
 ---

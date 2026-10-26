@@ -2,8 +2,8 @@
 title: "Check entity mapping when related alerts remain separate"
 description: "Troubleshoot why related alerts remain separate in Microsoft Sentinel by checking entity mapping identifiers."
 pubDate: 2026-06-08
-category: governance
-tags: ["microsoft-sentinel", "entity-mapping", "incident-correlation", "security-operations", "troubleshooting"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "alerts", "entity-mapping", "troubleshooting", "incident-correlation"]
 translationKey: check-entity-mapping-when-related-alerts-remain-separate
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Build a repeatable privileged-access review"
 description: "Use role-assignable groups and PIM to manage privileged access reviews, ensuring clear separation between group membership and role eligibility."
 pubDate: 2026-09-16
-category: governance
-tags: ["entra-id", "privileged-access-management", "role-based-access-control", "pim", "security"]
+category: identity-access
+tags: ["microsoft-entra-id", "access-reviews", "privileged-identity-management"]
 translationKey: build-a-repeatable-privileged-access-review
 draft: false
 ---

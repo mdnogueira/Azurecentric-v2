@@ -3,7 +3,7 @@ title: "Configure a file share with clear Windows permissions"
 description: "Fix DFS visibility by switching from inherited to explicit permissions and enforce SMB encryption on Windows Server 2022."
 pubDate: 2024-09-16
 category: windows-server
-tags: ["dfs-namespaces", "smb-encryption", "windows-server-2022", "file-sharing", "security"]
+tags: ["windows-server", "smb", "smb-encryption", "windows-server-2022"]
 translationKey: configure-a-file-share-with-clear-windows-permissions
 draft: false
 ---

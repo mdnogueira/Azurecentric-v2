@@ -3,7 +3,7 @@ title: "Management Tasks for Hyper-V Replica"
 description: "The Hyper-V Manager interface is used to manage standalone Hyper-V Primary, Replica servers, and the virtualized workloads running on those servers. The Failover Cluster…"
 pubDate: 2013-04-06
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "replication", "failover-clustering"]
 translationKey: management-tasks-for-hyper-v-replica
 cover: ../../../assets/old/posts/2013/04/mgmt_rep.png
 coverAlt: "Management Tasks for Hyper-V Replica"

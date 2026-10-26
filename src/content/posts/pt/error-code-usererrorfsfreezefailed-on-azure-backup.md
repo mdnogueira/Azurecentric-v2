@@ -3,7 +3,7 @@ title: "Error code UserErrorFsFreezeFailed no Azure Backup"
 description: "Os backups de três worker nodes de Kubernetes em Ubuntu 16.04 começaram a falhar com UserErrorFsFreezeFailed. O que significa o erro, a causa provável (fsfreeze bloqueado) e como resolver."
 pubDate: 2019-06-11
 category: backup-dr
-tags: [azure-backup, portal, docker, linux]
+tags: ["azure-backup", "troubleshooting", "backup", "linux"]
 translationKey: error-code-usererrorfsfreezefailed-on-azure-backup
 ---
 

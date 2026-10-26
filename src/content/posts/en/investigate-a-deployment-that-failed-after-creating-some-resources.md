@@ -3,7 +3,7 @@ title: "Investigate a deployment that failed after creating some resources"
 description: "Troubleshoot a failed Bicep deployment by validating permissions, linting the template, and using what-if to identify conflicts before applying changes."
 pubDate: 2024-12-21
 category: automation
-tags: ["bicep", "troubleshooting", "azure-cli", "deployment", "what-if"]
+tags: ["troubleshooting", "bicep", "deployment", "what-if", "azure-cli"]
 translationKey: investigate-a-deployment-that-failed-after-creating-some-resources
 draft: false
 ---

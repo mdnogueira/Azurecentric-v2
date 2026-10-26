@@ -3,7 +3,7 @@ title: "ARM vs Classic Virtual Machines"
 description: "Right now, Azure allows us to use the classic and the ARM portal. They might be very similar, except the end-user experience (in this case the portal himself), because you can…"
 pubDate: 2016-02-16
 category: compute
-tags: [vhd]
+tags: ["azure-virtual-machines"]
 translationKey: arm-vs-classic-virtual-machines
 legacy: true
 legacyUrl: /2016/02/arm-vs-classic-virtual-machines.html

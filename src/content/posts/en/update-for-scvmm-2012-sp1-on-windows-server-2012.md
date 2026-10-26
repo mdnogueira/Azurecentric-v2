@@ -3,7 +3,7 @@ title: "Update for SCVMM 2012 SP1 on Windows server 2012"
 description: "If you are using System Center 2012 Virtual Machine Manager Service Pack 1 (SCVMM) to manage storage and assign LUNS, there is a collection of updates that may improve this…"
 pubDate: 2013-03-21
 category: windows-server
-tags: [scvmm]
+tags: ["scvmm", "windows-server", "system-center"]
 translationKey: update-for-scvmm-2012-sp1-on-windows-server-2012
 legacy: true
 legacyUrl: /2013/03/update-for-scvmm-2012-sp1-on-windows-server-2012.html

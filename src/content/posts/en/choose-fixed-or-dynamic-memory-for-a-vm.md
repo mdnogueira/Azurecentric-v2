@@ -3,7 +3,7 @@ title: "Choose fixed or dynamic memory for a VM"
 description: "Decide between fixed and dynamic memory for Hyper-V VMs based on workload stability, checkpoint requirements, and host resource constraints."
 pubDate: 2024-09-21
 category: hyper-v
-tags: ["hyper-v", "virtual-machines", "dynamic-memory", "windows-server-2022", "best-practices"]
+tags: ["hyper-v", "dynamic-memory", "checkpoints"]
 translationKey: choose-fixed-or-dynamic-memory-for-a-vm
 draft: false
 ---

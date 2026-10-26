@@ -2,8 +2,8 @@
 title: "Understand Cluster Shared Volumes in a Hyper-V design"
 description: "Configure CSV BitLocker for Windows Server 2025, distinguishing between AD DS and workgroup unlock methods."
 pubDate: 2025-03-12
-category: backup-dr
-tags: ["csv", "bitlocker", "failover-clustering", "hyper-v", "windows-server-2025"]
+category: high-availability
+tags: ["failover-clustering", "cluster-shared-volumes", "hyper-v", "windows-server", "bitlocker", "windows-server-2025"]
 translationKey: understand-cluster-shared-volumes-in-a-hyper-v-design
 draft: false
 ---
@@ -90,7 +90,7 @@ This example demonstrates provisioning a CSV with a local recovery key protector
 5.  **Configure the cluster parameter**:
     Set the `BitLockerProtectorInfo` parameter on the CSV resource. The format is `{KeyProtectorId}:RecoveryPassword`.
     ```powershell
-    Get-ClusterSharedVolume "Cluster Disk 1" | Set-ClusterParameter -Name BitLockerProtectorInfo -Value "{26935AC3-8B17-482D-BA3F-D373C7954D29}:271733-258533-688985-480293-713394-034012-061963-061963" -Create
+    Get-ClusterSharedVolume "Cluster Disk 1" | Set-ClusterParameter -Name BitLockerProtectorInfo -Value "{<your-key-protector-id>}:<your-recovery-password>" -Create
     ```
     Verify the parameter was set correctly:
     ```powershell

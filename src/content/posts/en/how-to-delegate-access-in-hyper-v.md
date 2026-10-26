@@ -3,7 +3,7 @@ title: "How to delegate access in Hyper-V"
 description: "In some medium/large organizations, it is common practice to have different access levels for systems, such as administrator, help desk, support and auditor. When implementing…"
 pubDate: 2013-10-17
 category: hyper-v
-tags: [azman, rbac, powershell, security]
+tags: ["hyper-v", "azman"]
 translationKey: how-to-delegate-access-in-hyper-v
 legacy: true
 legacyUrl: /2013/10/how-to-delegate-access-in-hyper-v.html

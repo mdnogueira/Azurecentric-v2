@@ -2,8 +2,8 @@
 title: "Record GPU driver and library versions in a workload image"
 description: "Record GPU driver and library versions in a Batch custom image using Azure Compute Gallery and snapshot-based provisioning."
 pubDate: 2025-05-31
-category: compute
-tags: []
+category: hpc-ai
+tags: ["hpc", "gpu", "azure-compute-gallery"]
 translationKey: record-gpu-driver-and-library-versions-in-a-workload-image
 draft: false
 ---

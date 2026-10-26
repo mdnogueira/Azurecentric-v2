@@ -2,8 +2,8 @@
 title: "Separate job input data from temporary compute storage"
 description: "Separate persistent job data from temporary node storage in Azure Batch to avoid data loss on node reimage."
 pubDate: 2026-08-09
-category: compute
-tags: ["azure-batch", "azure-files", "data-persistence", "cloud-computing", "best-practices"]
+category: hpc-ai
+tags: ["hpc", "azure-batch", "azure-files"]
 translationKey: separate-job-input-data-from-temporary-compute-storage
 draft: false
 ---

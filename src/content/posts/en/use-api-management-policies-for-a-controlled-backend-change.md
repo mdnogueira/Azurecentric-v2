@@ -2,8 +2,8 @@
 title: "Use API Management policies for a controlled backend change"
 description: "Use API Management policies to transform request paths for a new backend version while keeping the public API contract stable."
 pubDate: 2026-06-24
-category: apps
-tags: ["api-management", "policies", "versioning", "backend-migration", "rewrite-uri"]
+category: integration
+tags: ["azure-api-management", "policies", "rewrite-uri", "versioning"]
 translationKey: use-api-management-policies-for-a-controlled-backend-change
 draft: false
 ---

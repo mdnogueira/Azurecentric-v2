@@ -2,8 +2,8 @@
 title: "Build an Azure Monitor alert with a useful action group"
 description: "Create an actionable Azure Monitor metric alert, test its notification route, and verify the alert condition separately from the action group."
 pubDate: 2024-01-30
-category: governance
-tags: [azure-monitor, action-groups, metric-alerts, monitoring]
+category: operations
+tags: ["alerts", "action-groups", "azure-monitor"]
 translationKey: build-an-azure-monitor-alert-with-a-useful-action-group
 draft: false
 ---

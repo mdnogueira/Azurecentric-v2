@@ -2,8 +2,8 @@
 title: "Choose CPU or GPU infrastructure for an AI workload"
 description: "Compare CPU and GPU candidates for an AI workload using software support, memory requirements, end-to-end performance and the cost of the required result."
 pubDate: 2024-03-06
-category: compute
-tags: [azure-compute, gpu, ai-infrastructure, performance, capacity-planning]
+category: hpc-ai
+tags: ["hpc", "gpu", "ai-infrastructure", "azure-compute", "performance"]
 translationKey: choose-cpu-or-gpu-infrastructure-for-an-ai-workload
 draft: false
 ---

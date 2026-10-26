@@ -3,7 +3,7 @@ title: "Review network boundaries before connecting another environment"
 description: "Review address spaces and peering constraints before connecting virtual networks to avoid routing conflicts and connectivity failures."
 pubDate: 2026-10-12
 category: networking
-tags: ["azure-virtual-network", "peering", "networking", "security", "architecture"]
+tags: ["networking", "azure-virtual-network", "virtual-network-peering"]
 translationKey: review-network-boundaries-before-connecting-another-environment
 draft: false
 ---

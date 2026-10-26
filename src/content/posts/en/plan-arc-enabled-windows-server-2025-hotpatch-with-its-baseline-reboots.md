@@ -3,7 +3,7 @@ title: "Plan Arc-enabled Windows Server 2025 Hotpatch with its baseline reboots"
 description: "Plan Windows Server 2025 Hotpatch for Arc-enabled servers: baseline reboots, VSM prerequisites, and subscription management."
 pubDate: 2025-07-10
 category: windows-server
-tags: ["windows-server-2025", "hotpatch", "azure-arc", "virtual-secure-mode", "patch-management"]
+tags: ["azure-arc", "windows-server", "hotpatch", "windows-server-2025", "virtual-secure-mode", "patch-management"]
 translationKey: plan-arc-enabled-windows-server-2025-hotpatch-with-its-baseline-reboots
 draft: false
 ---

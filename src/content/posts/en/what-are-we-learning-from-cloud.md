@@ -3,7 +3,7 @@ title: "What are we learning from cloud?"
 description: "From the past 8 years, we are seeing this transformation called CLOUD! It’s started with Public and Private! But from those early days what we learn from the Cloud?"
 pubDate: 2016-05-19
 category: cloud
-tags: [hybrid, private-cloud]
+tags: ["cloud-computing", "hybrid", "private-cloud"]
 translationKey: what-are-we-learning-from-cloud
 legacy: true
 legacyUrl: /2016/05/what-are-we-learning-from-cloud.html

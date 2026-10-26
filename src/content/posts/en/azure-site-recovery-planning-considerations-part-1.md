@@ -3,7 +3,7 @@ title: "Azure Site Recovery Planning Considerations – Part 1"
 description: "I have been writing quite a bit about how Azure Site Recovery can help you build a Disaster Recovery solution, help you migrating workloads in to Azure, help you migrate…"
 pubDate: 2017-06-14
 category: backup-dr
-tags: [azure-site-recovery, architecture, hybrid, vhd]
+tags: ["azure-site-recovery", "migration", "disaster-recovery", "azure-virtual-machines", "capacity-planning", "vhd"]
 translationKey: azure-site-recovery-planning-considerations-part-1
 legacy: true
 legacyUrl: /2017/06/azure-site-recovery-planning-considerations-part-1.html

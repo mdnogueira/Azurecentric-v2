@@ -3,7 +3,7 @@ title: "Enhancements on Azure Portal Notifications"
 description: "If you are like me and your Azure Portal is your center on your day, you probably see this enhancement of the notifications. I found very useful and make my day way more…"
 pubDate: 2017-11-23
 category: cloud
-tags: [portal]
+tags: ["cloud-computing"]
 translationKey: enhancements-on-azure-portal-notifications
 cover: ../../../assets/old/posts/2017/11/APNotifications.png
 coverAlt: "Enhancements on Azure Portal Notifications"

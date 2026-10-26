@@ -2,8 +2,8 @@
 title: "GitHub Code Security and Secret Protection: plan for the new product choices"
 description: "Plan for GitHub's new security products starting April 2025, separating secret protection from code security."
 pubDate: 2025-03-08
-category: governance
-tags: ["github", "security", "advanced-security", "secret-protection", "code-security"]
+category: cloud-security
+tags: ["github-advanced-security", "github", "github-secret-protection", "github-code-security"]
 translationKey: github-code-security-and-secret-protection-plan-for-the-new-product-choices
 draft: false
 ---

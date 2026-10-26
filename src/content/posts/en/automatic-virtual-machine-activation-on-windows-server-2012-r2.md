@@ -3,7 +3,7 @@ title: "Automatic Virtual Machine Activation on Windows Server 2012 R2"
 description: "Automatic Virtual Machine Activation (AVMA) acts as a proof-of-purchase mechanism, helping to ensure that Windows products are used in accordance with the Product Use Rights…"
 pubDate: 2013-07-15
 category: hyper-v
-tags: [avma]
+tags: ["hyper-v", "windows-server", "avma"]
 translationKey: automatic-virtual-machine-activation-on-windows-server-2012-r2
 legacy: true
 legacyUrl: /2013/07/automatic-virtual-machine-activatin-on-windows-server-2012-r2-2.html

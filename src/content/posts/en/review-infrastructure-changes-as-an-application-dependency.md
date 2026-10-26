@@ -3,7 +3,7 @@ title: "Review infrastructure changes as an application dependency"
 description: "Map infrastructure changes to application dependencies using Bicep modules, explicit scoping, and property references."
 pubDate: 2026-06-22
 category: automation
-tags: ["bicep", "infrastructure-as-code", "azure-resource-manager", "deployment", "modules"]
+tags: ["bicep", "deployment", "modules", "azure-resource-manager"]
 translationKey: review-infrastructure-changes-as-an-application-dependency
 draft: false
 ---

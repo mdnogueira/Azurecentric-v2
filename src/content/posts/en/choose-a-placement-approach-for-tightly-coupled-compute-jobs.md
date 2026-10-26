@@ -2,8 +2,8 @@
 title: "Choose a placement approach for tightly coupled compute jobs"
 description: "Configure Azure Batch pools across availability zones, handling SKU constraints and inter-node communication limits."
 pubDate: 2026-01-02
-category: compute
-tags: ["azure-batch", "availability-zones", "fault-tolerance", "compute", "infrastructure"]
+category: hpc-ai
+tags: ["hpc", "availability-zones", "azure-batch"]
 translationKey: choose-a-placement-approach-for-tightly-coupled-compute-jobs
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Separate an infrastructure move from application modernisation"
 description: "Separate infrastructure lift-and-shift from application modernisation using Azure Migrate's distinct assessment and migration tools."
 pubDate: 2026-06-19
-category: cloud
-tags: ["azure-migrate", "cloud-migration", "infrastructure-modernisation", "application-modernisation", "azure-virtual-machines", "azure-sql-database"]
+category: hybrid-migration
+tags: ["hybrid-cloud", "migration", "application-modernisation", "infrastructure-modernisation", "azure-migrate", "azure-sql-database"]
 translationKey: separate-an-infrastructure-move-from-application-modernisation
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Troubleshoot deployment permissions without assigning Owner"
 description: "Troubleshoot Bicep RBAC deployment failures by verifying deployment scope, role assignment syntax, and permission requirements."
 pubDate: 2025-11-15
 category: automation
-tags: ["azure-rbac", "bicep", "deployment", "permissions", "troubleshooting"]
+tags: ["bicep", "troubleshooting", "deployment", "permissions", "rbac"]
 translationKey: troubleshoot-deployment-permissions-without-assigning-owner
 draft: false
 ---

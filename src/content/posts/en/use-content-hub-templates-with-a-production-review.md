@@ -2,8 +2,8 @@
 title: "Use Content Hub templates with a production review"
 description: "Deploy Microsoft Sentinel Content Hub solutions with a production review to validate dependencies and configuration before activation."
 pubDate: 2025-07-18
-category: governance
-tags: ["microsoft-sentinel", "content-hub", "security-operations", "deployment", "configuration"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "content-hub", "configuration"]
 translationKey: use-content-hub-templates-with-a-production-review
 draft: false
 ---

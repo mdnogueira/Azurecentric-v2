@@ -2,8 +2,8 @@
 title: "Use Privileged Identity Management for Azure administration"
 description: "Use Microsoft Entra Privileged Identity Management to manage Azure administration with just-in-time access and audit trails."
 pubDate: 2024-06-13
-category: governance
-tags: ["privileged-identity-management", "azure-administration", "microsoft-entra-id", "role-based-access-control", "security-best-practices"]
+category: identity-access
+tags: ["microsoft-entra-id", "privileged-identity-management", "azure-administration", "multifactor-authentication", "emergency-access"]
 translationKey: use-privileged-identity-management-for-azure-administration
 draft: false
 ---

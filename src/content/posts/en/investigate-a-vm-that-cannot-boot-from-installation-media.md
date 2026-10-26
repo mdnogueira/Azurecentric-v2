@@ -3,7 +3,7 @@ title: "Investigate a VM that cannot boot from installation media"
 description: "Troubleshoot a Hyper-V VM failing to boot from installation media by verifying generation, boot order, and ISO attachment."
 pubDate: 2025-01-15
 category: hyper-v
-tags: []
+tags: ["hyper-v", "troubleshooting"]
 translationKey: investigate-a-vm-that-cannot-boot-from-installation-media
 draft: false
 ---

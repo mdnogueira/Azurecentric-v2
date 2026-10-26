@@ -3,7 +3,7 @@ title: "Decide which settings belong in Bicep parameters"
 description: "Design Bicep inputs around genuine deployment choices, derive related values from a configuration set, and keep fixed security settings explicit."
 pubDate: 2024-03-13
 category: automation
-tags: [bicep, infrastructure-as-code, parameters, azure-resource-manager]
+tags: ["bicep", "parameters"]
 translationKey: decide-which-settings-belong-in-bicep-parameters
 draft: false
 ---

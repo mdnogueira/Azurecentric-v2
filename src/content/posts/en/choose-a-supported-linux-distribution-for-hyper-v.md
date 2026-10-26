@@ -3,7 +3,7 @@ title: "Choose a supported Linux distribution for Hyper-V"
 description: "Selecting a supported Linux distribution for Hyper-V requires checking LIS integration, kernel version, and secure boot compatibility."
 pubDate: 2025-08-30
 category: hyper-v
-tags: ["hyper-v", "linux", "virtual-machines", "integration-services", "secure-boot"]
+tags: ["hyper-v", "linux", "secure-boot", "integration-services"]
 translationKey: choose-a-supported-linux-distribution-for-hyper-v
 draft: false
 ---

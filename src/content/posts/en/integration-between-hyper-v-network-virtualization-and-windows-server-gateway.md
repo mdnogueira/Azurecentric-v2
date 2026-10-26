@@ -3,7 +3,7 @@ title: "Integration between Hyper-V Network Virtualization and Windows Server Ga
 description: "One of features on Windows Server 2012 R2 that was improved since the last version is network virtualization. Virtual networks are created by using Hyper-V Network…"
 pubDate: 2013-11-01
 category: hyper-v
-tags: [network-virtualization, windows-server-gateway]
+tags: ["windows-server", "hyper-v", "network-virtualization", "windows-server-gateway", "azure-virtual-network", "vpn"]
 translationKey: integration-between-hyper-v-network-virtualization-and-windows-server-gateway
 legacy: true
 legacyUrl: /2013/11/integration-between-hyper-v-network-virtualization-and-windows-server-gateway.html

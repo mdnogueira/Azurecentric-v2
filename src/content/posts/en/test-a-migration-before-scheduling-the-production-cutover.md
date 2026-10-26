@@ -2,8 +2,8 @@
 title: "Test a migration before scheduling the production cutover"
 description: "Validate migration readiness by running a test migration in Azure Migrate, verifying OS state and connectivity before production cutover."
 pubDate: 2024-10-16
-category: cloud
-tags: []
+category: hybrid-migration
+tags: ["migration", "hybrid-cloud", "azure-migrate", "azure-virtual-machines", "linux"]
 translationKey: test-a-migration-before-scheduling-the-production-cutover
 draft: false
 ---

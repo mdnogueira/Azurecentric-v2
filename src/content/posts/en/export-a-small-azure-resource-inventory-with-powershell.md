@@ -2,8 +2,8 @@
 title: "Export a small Azure resource inventory with PowerShell"
 description: "Export Azure Policy definitions, initiatives, and assignments to JSON using PowerShell for backup or policy-as-code workflows."
 pubDate: 2026-08-22
-category: governance
-tags: ["azure-policy", "powershell", "governance", "policy-as-code", "export"]
+category: powershell
+tags: ["powershell", "export", "azure-policy", "backup", "policy-as-code"]
 translationKey: export-a-small-azure-resource-inventory-with-powershell
 draft: false
 ---

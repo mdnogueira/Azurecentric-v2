@@ -3,7 +3,7 @@ title: "Use a remote backend for Terraform state in Azure"
 description: "Keep Terraform state in a private Azure Storage container, with a separate blob per environment and locking to protect shared changes."
 pubDate: 2024-10-23
 category: automation
-tags: ["terraform", "azure-storage", "remote-state", "infrastructure-as-code"]
+tags: ["terraform", "remote-state", "azure-storage"]
 translationKey: use-a-remote-backend-for-terraform-state-in-azure
 draft: false
 ---

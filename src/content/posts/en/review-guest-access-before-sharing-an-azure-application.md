@@ -2,8 +2,8 @@
 title: "Review guest access before sharing an Azure application"
 description: "Restrict guest directory visibility, enforce MFA via Conditional Access, and automate cleanup using Access Reviews."
 pubDate: 2025-10-27
-category: governance
-tags: ["entra-id", "guest-access", "conditional-access", "access-reviews", "identity-governance", "security"]
+category: identity-access
+tags: ["microsoft-entra-id", "guest-access", "multifactor-authentication", "conditional-access", "access-reviews"]
 translationKey: review-guest-access-before-sharing-an-azure-application
 draft: false
 ---

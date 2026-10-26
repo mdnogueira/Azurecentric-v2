@@ -2,8 +2,8 @@
 title: "Choose availability zones without assuming application resilience"
 description: "Distinguish zonal and zone-redundant configurations to avoid assuming application resilience from infrastructure placement alone."
 pubDate: 2024-11-08
-category: governance
-tags: ["availability-zones", "high-availability", "azure-reliability", "zone-redundant", "zonal-deployment"]
+category: well-architected
+tags: ["well-architected-framework", "availability-zones", "zonal-deployment", "zone-redundant", "high-availability"]
 translationKey: choose-availability-zones-without-assuming-application-resilience
 draft: false
 ---

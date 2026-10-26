@@ -2,8 +2,8 @@
 title: "Using PowerShell to create VMs in Azure"
 description: "There are several methods to deploy virtual machines on Azure. One of my favorite is using PowerShell. Using PowerShell to deploy VMs, gives you the ability to automate the…"
 pubDate: 2017-03-01
-category: automation
-tags: [hybrid, powershell]
+category: powershell
+tags: ["powershell"]
 translationKey: using-powershell-to-create-vms-in-azure
 legacy: true
 legacyUrl: /2017/03/using-powershell-to-create-vms-in-azure.html

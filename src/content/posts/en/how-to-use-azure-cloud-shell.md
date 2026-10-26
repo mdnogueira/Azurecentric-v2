@@ -3,7 +3,7 @@ title: "How to use Azure Cloud Shell"
 description: "Since when they announce the Azure Cloud Shell (see post here), I’ve been waiting to use the PowerShell on the Azure Cloud Shell. I’m still growing my learning how to use the…"
 pubDate: 2017-11-15
 category: automation
-tags: [azure-cli, powershell]
+tags: ["azure-cloud-shell", "powershell", "azure-cli"]
 translationKey: how-to-use-azure-cloud-shell
 cover: ../../../assets/old/posts/2017/11/ACS1.png
 coverAlt: "How to use Azure Cloud Shell"

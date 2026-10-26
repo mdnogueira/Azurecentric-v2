@@ -3,7 +3,7 @@ title: "Why is the \"Hyper-V Replica Broker\" required?"
 description: "Hyper-V Replica requires the Failover Clustering role Hyper-V Replica Broker to be configured if either the primary or replica Hyper-V server is part of a cluster. This post…"
 pubDate: 2012-04-03
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "failover-clustering", "replication"]
 translationKey: why-is-the-hyper-v-replica-broker-required
 cover: ../../../assets/old/posts/2012/04/hyp-rep-1.png
 coverAlt: "Why is the \"Hyper-V Replica Broker\" required?"

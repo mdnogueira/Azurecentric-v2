@@ -3,7 +3,7 @@ title: "Technical Overview of Hyper-V Replica"
 description: "To take advantage of the Hyper-V Replica, which is included as part of the Hyper-V server role, the following pre-requisites must be met: Hardware that supports the Hyper-V…"
 pubDate: 2012-08-15
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v"]
 translationKey: technical-overview-of-hyper-v-replica
 cover: ../../../assets/old/posts/2012/08/rep2.png
 coverAlt: "Technical Overview of Hyper-V Replica"

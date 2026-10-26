@@ -3,7 +3,7 @@ title: "Plan Linux guest backup around application consistency"
 description: "Plan Linux guest backup consistency on Hyper-V by distinguishing host-side snapshot mechanisms from guest-level application quiescence."
 pubDate: 2026-02-04
 category: hyper-v
-tags: ["hyper-v", "linux", "backup", "vss", "sles", "virtualization"]
+tags: ["backup", "hyper-v", "linux", "sles", "vss", "integration-services"]
 translationKey: plan-linux-guest-backup-around-application-consistency
 draft: false
 ---

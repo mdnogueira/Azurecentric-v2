@@ -3,7 +3,7 @@ title: "Deploy a ARM VM using an existing VHD in Azure"
 description: "Another day, one of my costumer wants to rebuild a virtual machine from the existing VHD and place on the new Resource Group and on a different VLAN, but without transferring…"
 pubDate: 2017-07-11
 category: compute
-tags: [arm-templates, powershell, vhd]
+tags: ["azure-virtual-machines", "vhd", "resource-groups", "powershell"]
 translationKey: deploy-a-arm-vm-using-an-existing-vhd-in-azure
 legacy: true
 legacyUrl: /2017/07/deploy-a-arm-vm-using-an-existing-vhd-in-azure.html

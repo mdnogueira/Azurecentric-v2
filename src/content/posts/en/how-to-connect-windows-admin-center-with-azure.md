@@ -2,8 +2,8 @@
 title: "How to Connect Windows Admin Center with Azure"
 description: "When I start a project with a new costumer and the conversation ends how to manage your workloads either On-Premises or on Azure, I always like to add the Windows Admin Center…"
 pubDate: 2019-10-16
-category: automation
-tags: [hybrid, subscriptions, windows-admin-center]
+category: windows-server
+tags: ["windows-server", "windows-admin-center"]
 translationKey: how-to-connect-windows-admin-center-with-azure
 cover: ../../../assets/old/posts/2019/10/WAC1.png
 coverAlt: "How to Connect Windows Admin Center with Azure"

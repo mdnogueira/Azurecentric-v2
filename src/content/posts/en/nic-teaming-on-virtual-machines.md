@@ -3,7 +3,7 @@ title: "NIC teaming on Virtual Machines"
 description: "NIC Teaming in a VM only applies to VM-NICs connected to external switches. VM-NICs connected to internal or private switches will show as disconnected when they are in a team."
 pubDate: 2013-04-12
 category: windows-server
-tags: [nic-teaming, hyper-v]
+tags: ["nic-teaming", "windows-server", "hyper-v"]
 translationKey: nic-teaming-on-virtual-machines
 cover: ../../../assets/old/posts/2013/04/clip_image0021.jpg
 coverAlt: "NIC teaming on Virtual Machines"

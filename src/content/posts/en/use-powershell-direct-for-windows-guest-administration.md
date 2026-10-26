@@ -3,7 +3,7 @@ title: "Use PowerShell Direct for Windows guest administration"
 description: "Use PowerShell Direct to manage Windows VMs on a Hyper-V host without network or remote management configuration."
 pubDate: 2026-03-30
 category: hyper-v
-tags: ["hyper-v", "powershell-direct", "windows-server", "virtualization", "automation"]
+tags: ["hyper-v", "powershell", "powershell-direct", "troubleshooting", "windows-server"]
 translationKey: use-powershell-direct-for-windows-guest-administration
 draft: false
 ---

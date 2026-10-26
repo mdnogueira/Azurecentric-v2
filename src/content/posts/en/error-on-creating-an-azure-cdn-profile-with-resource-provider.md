@@ -2,8 +2,8 @@
 title: "Error on creating an Azure CDN profile with Resource Provider"
 description: "Today I was creating an Azure CDN Profile, so I could deploy static content across different azure regions. So, I went to Azure Portal I start the process. First step is to…"
 pubDate: 2020-11-21
-category: storage
-tags: [powershell, cdn, portal]
+category: networking
+tags: ["azure-cdn", "troubleshooting", "powershell"]
 translationKey: error-on-creating-an-azure-cdn-profile-with-resource-provider
 cover: ../../../assets/old/posts/2020/11/cnd1.png
 coverAlt: "Error on creating an Azure CDN profile with Resource Provider"

@@ -2,8 +2,8 @@
 title: "Compare App Service and Container Apps for a small service"
 description: "Decide between Azure App Service and Container Apps for a small service by comparing web optimisation, container requirements, and scaling models."
 pubDate: 2025-07-21
-category: apps
-tags: ["azure-app-service", "azure-container-apps", "cloud-computing", "microservices", "serverless"]
+category: app-paas
+tags: ["azure-app-service", "azure-container-apps", "containers", "microservices"]
 translationKey: compare-app-service-and-container-apps-for-a-small-service
 draft: false
 ---

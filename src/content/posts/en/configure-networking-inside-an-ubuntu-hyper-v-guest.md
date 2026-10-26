@@ -3,7 +3,7 @@ title: "Configure networking inside an Ubuntu Hyper-V guest"
 description: "Configure Ubuntu networking on Windows Server 2022 Hyper-V using external switches, correct adapters, and static MACs."
 pubDate: 2024-07-31
 category: hyper-v
-tags: ["hyper-v", "ubuntu", "virtual-switch", "networking", "windows-server-2022"]
+tags: ["ubuntu", "linux", "hyper-v", "windows-server", "virtual-switch", "windows-server-2022"]
 translationKey: configure-networking-inside-an-ubuntu-hyper-v-guest
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "The components of the NIC Teaming Management UI"
 description: "The NIC Teaming management UI consists of 3 primary windows (tiles): The Servers tile The Teams tile The Adapters and Interfaces tile"
 pubDate: 2013-04-24
 category: windows-server
-tags: [hyper-v, nic-teaming]
+tags: ["windows-server", "nic-teaming"]
 translationKey: the-components-of-the-nic-teaming-management-ui
 cover: ../../../assets/old/posts/2013/04/clip_image0025.png
 coverAlt: "The components of the NIC Teaming Management UI"

@@ -3,7 +3,7 @@ title: "Check kernel changes after a Linux guest update"
 description: "Verify Linux Hyper-V integration services after kernel updates by checking kernel modules and daemons."
 pubDate: 2026-09-11
 category: hyper-v
-tags: ["hyper-v", "linux", "integration-services", "kernel", "troubleshooting"]
+tags: ["hyper-v", "linux", "kernel", "integration-services", "troubleshooting"]
 translationKey: check-kernel-changes-after-a-linux-guest-update
 draft: false
 ---

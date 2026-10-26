@@ -3,7 +3,7 @@ title: "Extending the Hyper-V Extensible Switch"
 description: "Many enterprises need the ability to extend virtual switch features with their own plug-ins to suit their virtual environment. If you’re in charge of making IT purchasing…"
 pubDate: 2012-12-30
 category: hyper-v
-tags: []
+tags: ["hyper-v", "windows-server"]
 translationKey: extending-the-hyper-v-extensible-switch
 cover: ../../../assets/old/posts/2012/12/hypext.png
 coverAlt: "Extending the Hyper-V Extensible Switch"

@@ -3,7 +3,7 @@ title: "Global VNet Peering is available"
 description: "Finally! I have been waiting for this to blog it and start to setup. Being an Azure MVP is AWESOME, although sometimes you can’t share what is coming with no one. Even your…"
 pubDate: 2018-04-19
 category: networking
-tags: [vnet-peering, vnet]
+tags: ["azure-virtual-network", "virtual-network-peering", "mvp"]
 translationKey: global-vnet-peering-is-available
 cover: ../../../assets/old/posts/2018/04/GlobalVnet.png
 coverAlt: "Global VNet Peering is available"

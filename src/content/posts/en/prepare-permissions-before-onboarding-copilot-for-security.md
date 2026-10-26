@@ -2,8 +2,8 @@
 title: "Prepare permissions before onboarding Copilot for Security"
 description: "Clarify that the community repo covers code contributions, not service onboarding permissions, and direct readers to official deployment docs."
 pubDate: 2024-06-16
-category: governance
-tags: ["copilot-for-security", "azure-rbac", "onboarding", "documentation", "github"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "onboarding", "documentation", "rbac", "github"]
 translationKey: prepare-permissions-before-onboarding-copilot-for-security
 draft: false
 ---

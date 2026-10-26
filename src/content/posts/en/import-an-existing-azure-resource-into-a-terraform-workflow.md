@@ -3,7 +3,7 @@ title: "Import an existing Azure resource into a Terraform workflow"
 description: "Reference existing Azure resources in Bicep without taking ownership, distinguishing compile-time imports from deployment-time references."
 pubDate: 2025-08-02
 category: automation
-tags: ["bicep", "azure-resource-manager", "existing-resources", "infrastructure-as-code", "azure"]
+tags: ["bicep", "infrastructure-as-code", "existing-resources", "azure-resource-manager"]
 translationKey: import-an-existing-azure-resource-into-a-terraform-workflow
 draft: false
 ---

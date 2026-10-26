@@ -2,8 +2,8 @@
 title: "Understanding the limits on Azure Key Vault"
 description: "When you are designing the architecture for your application on Azure, I always revisit the Azure Subscription Service Limits to see if all the requirements are not over the…"
 pubDate: 2018-04-30
-category: governance
-tags: [key-vault]
+category: cloud-security
+tags: ["azure-key-vault", "azure-subscriptions"]
 translationKey: understanding-the-limits-on-azure-key-vault
 cover: ../../../assets/old/posts/2018/04/KeyVaultLimits.png
 coverAlt: "Understanding the limits on Azure Key Vault"

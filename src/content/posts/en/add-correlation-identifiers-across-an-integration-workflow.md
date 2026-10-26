@@ -2,8 +2,8 @@
 title: "Add correlation identifiers across an integration workflow"
 description: "Propagate correlation identifiers through Azure API Management and Service Bus using set-variable and Diagnostic-Id."
 pubDate: 2026-03-04
-category: apps
-tags: ["api-management", "service-bus", "distributed-tracing", "application-insights", "opentelemetry"]
+category: integration
+tags: ["azure-service-bus", "azure-api-management", "application-insights"]
 translationKey: add-correlation-identifiers-across-an-integration-workflow
 draft: false
 ---

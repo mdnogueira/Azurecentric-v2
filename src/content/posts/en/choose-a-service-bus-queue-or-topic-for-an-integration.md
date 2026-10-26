@@ -2,8 +2,8 @@
 title: "Choose a Service Bus queue or topic for an integration"
 description: "Decide between Service Bus queues and topics by matching your integration pattern to competing consumers or publish-subscribe needs."
 pubDate: 2024-07-06
-category: apps
-tags: ["azure-service-bus", "queues", "topics", "messaging", "integration", "publish-subscribe"]
+category: integration
+tags: ["azure-service-bus", "integration", "messaging", "publish-subscribe", "queues", "topics"]
 translationKey: choose-a-service-bus-queue-or-topic-for-an-integration
 draft: false
 ---

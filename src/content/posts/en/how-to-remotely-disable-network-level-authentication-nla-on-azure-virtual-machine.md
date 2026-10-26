@@ -3,7 +3,7 @@ title: "How to remotely disable Network Level Authentication (NLA) on Azure Virt
 description: "Today, I received an email from a colleague, saying that he could RDP into his Azure VM after he rebooted the machine through the OS (applying patches). When he tried to access…"
 pubDate: 2018-05-09
 category: compute
-tags: [troubleshooting]
+tags: ["azure-virtual-machines"]
 translationKey: how-to-remotely-disable-network-level-authentication-nla-on-azure-virtual-machine
 legacy: true
 legacyUrl: /2018/05/how-to-remotely-disable-network-level-authentication-nla-on-azure.html

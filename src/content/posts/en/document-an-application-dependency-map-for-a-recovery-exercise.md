@@ -2,8 +2,8 @@
 title: "Document an application dependency map for a recovery exercise"
 description: "Document application dependencies to define recovery scope and validate RTO/RPO targets for Azure workloads."
 pubDate: 2025-01-03
-category: governance
-tags: ["business-continuity", "disaster-recovery", "high-availability", "azure-reliability", "recovery-planning"]
+category: well-architected
+tags: ["well-architected-framework", "rpo-rto", "business-continuity", "recovery-planning", "reliability", "disaster-recovery"]
 translationKey: document-an-application-dependency-map-for-a-recovery-exercise
 draft: false
 ---

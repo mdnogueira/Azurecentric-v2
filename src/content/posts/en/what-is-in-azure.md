@@ -3,7 +3,7 @@ title: "What is in Azure?"
 description: "While i was doing my annual backup, i found this in the middle. This will give you a bit what are the main services that i normally use or at least a see the majority of the…"
 pubDate: 2016-01-20
 category: cloud
-tags: [architecture, mobile-services]
+tags: ["cloud-computing", "backup"]
 translationKey: what-is-in-azure
 cover: ../../../assets/old/posts/2016/01/Microsoft-Azure-in-the-Enterprise.png
 coverAlt: "What is in Azure?"

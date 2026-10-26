@@ -2,8 +2,8 @@
 title: "Choose between network security groups, Azure Firewall and WAF"
 description: "Compare Azure Firewall SKUs and NSGs to choose the right network security layer for your workload."
 pubDate: 2025-10-25
-category: governance
-tags: ["azure-firewall", "network-security-groups", "waf", "networking", "security"]
+category: cloud-security
+tags: ["azure-firewall", "waf", "network-security-groups"]
 translationKey: choose-between-network-security-groups-azure-firewall-and-waf
 draft: false
 ---

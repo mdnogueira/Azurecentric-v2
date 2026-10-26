@@ -3,7 +3,7 @@ title: "Azure Subscriptions Best Practices - Part 1"
 description: "Frequently when I’m working on an Azure Foundation project, one of the topic that I like to explore is the Azure Subscriptions. These series of blog post will detail all the…"
 pubDate: 2017-02-18
 category: governance
-tags: [rbac, subscriptions]
+tags: ["azure-subscriptions", "rbac"]
 translationKey: azure-subscriptions-best-practices-part-1
 legacy: true
 legacyUrl: /2017/02/azure-subscriptions-best-practices-part-1.html

@@ -2,8 +2,8 @@
 title: "Deploy an Azure Functions application with clear configuration boundaries"
 description: "Define clear boundaries between host configuration and app settings in Azure Functions to avoid deployment conflicts and runtime errors."
 pubDate: 2025-03-31
-category: apps
-tags: ["azure-functions", "configuration", "host-json", "app-settings", "best-practices"]
+category: app-paas
+tags: ["azure-functions", "configuration", "app-settings", "host-json"]
 translationKey: deploy-an-azure-functions-application-with-clear-configuration-boundaries
 draft: false
 ---

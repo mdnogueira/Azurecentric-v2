@@ -3,7 +3,7 @@ title: "Azure Subscriptions Best Practices – Part 2"
 description: "On the previous blog post (see here), we saw the characteristics of an Azure subscriptions. Now lets see how we can architect the Azure Subscription model, using best practices."
 pubDate: 2017-02-21
 category: governance
-tags: [rbac, subscriptions]
+tags: ["azure-subscriptions", "rbac"]
 translationKey: azure-subscriptions-best-practices-part-2
 cover: ../../../assets/old/posts/2017/02/AzureSubs1.png
 coverAlt: "Azure Subscriptions Best Practices – Part 2"

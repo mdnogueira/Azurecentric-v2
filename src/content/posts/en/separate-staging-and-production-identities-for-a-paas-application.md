@@ -2,8 +2,8 @@
 title: "Separate staging and production identities for a PaaS application"
 description: "Separate staging and production identities using user-assigned managed identities to prevent shared access risks."
 pubDate: 2026-09-26
-category: apps
-tags: ["managed-identities", "app-service", "container-apps", "security", "separation-of-concerns"]
+category: app-paas
+tags: ["azure-app-service", "managed-identities", "azure-container-apps", "azure-key-vault", "containers"]
 translationKey: separate-staging-and-production-identities-for-a-paas-application
 draft: false
 ---

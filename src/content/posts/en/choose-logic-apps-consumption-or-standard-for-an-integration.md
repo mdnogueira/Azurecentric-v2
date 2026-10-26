@@ -2,8 +2,8 @@
 title: "Choose Logic Apps Consumption or Standard for an integration"
 description: "Compare Logic Apps Consumption and Standard using workflow boundaries, connectivity, deployment and operating costs rather than the size of a first workflow."
 pubDate: 2024-01-25
-category: apps
-tags: [logic-apps, integration, workflow-design, paas]
+category: integration
+tags: ["azure-logic-apps", "integration", "workflow-design"]
 translationKey: choose-logic-apps-consumption-or-standard-for-an-integration
 draft: false
 ---

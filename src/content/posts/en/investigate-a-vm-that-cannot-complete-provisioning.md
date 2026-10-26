@@ -3,7 +3,7 @@ title: "Investigate a VM that cannot complete provisioning"
 description: "Troubleshoot a VM stuck in provisioning by checking instance view, activity logs, and boot diagnostics."
 pubDate: 2025-05-28
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "troubleshooting"]
 translationKey: investigate-a-vm-that-cannot-complete-provisioning
 draft: false
 ---

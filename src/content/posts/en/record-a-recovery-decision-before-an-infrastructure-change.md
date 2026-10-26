@@ -2,8 +2,8 @@
 title: "Record a recovery decision before an infrastructure change"
 description: "Establish a pre-defined recovery decision record to prevent rushed actions during infrastructure changes or incidents."
 pubDate: 2026-01-22
-category: governance
-tags: ["azure-reliability", "incident-response", "business-continuity", "disaster-recovery", "azure-service-health"]
+category: well-architected
+tags: ["well-architected-framework", "azure-service-health", "reliability", "disaster-recovery"]
 translationKey: record-a-recovery-decision-before-an-infrastructure-change
 draft: false
 ---

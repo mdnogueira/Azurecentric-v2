@@ -2,8 +2,8 @@
 title: "Turn an application availability target into design decisions"
 description: "Define what availability means to the business, set recovery objectives, and test the complete application path before choosing redundancy and recovery mechanisms."
 pubDate: 2024-02-05
-category: governance
-tags: [reliability, availability, disaster-recovery, rto-rpo]
+category: well-architected
+tags: ["well-architected-framework", "availability", "rpo-rto"]
 translationKey: turn-an-application-availability-target-into-design-decisions
 draft: false
 ---

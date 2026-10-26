@@ -2,8 +2,8 @@
 title: "Use message sessions when processing order matters"
 description: "Use Service Bus sessions to guarantee ordered processing of related messages, avoiding the pitfalls of sequence numbers alone."
 pubDate: 2024-12-23
-category: apps
-tags: ["azure-service-bus", "message-sessions", "ordering", "fifo", "messaging"]
+category: integration
+tags: ["azure-service-bus", "message-sessions"]
 translationKey: use-message-sessions-when-processing-order-matters
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Why Microsoft Azure?"
 description: "I understand that there is a lot of competition when you consider all the cloud platform players out there. When I looked at what makes Microsoft unique in this space, is the…"
 pubDate: 2015-11-22
 category: cloud
-tags: []
+tags: ["cloud-computing"]
 translationKey: why-microsoft-azure
 cover: ../../../assets/old/posts/2015/11/AzureLogo.png
 coverAlt: "Why Microsoft Azure?"

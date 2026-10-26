@@ -3,7 +3,7 @@ title: "Investigate a private endpoint that resolves to a public address"
 description: "Diagnose why a private endpoint resolves to a public IP by checking DNS zone linkage, record accuracy, and client resolver settings."
 pubDate: 2026-05-02
 category: networking
-tags: ["private-link", "dns", "troubleshooting", "private-endpoint", "networking"]
+tags: ["private-endpoints", "troubleshooting", "dns", "private-dns", "azure-private-link"]
 translationKey: investigate-a-private-endpoint-that-resolves-to-a-public-address
 draft: false
 ---

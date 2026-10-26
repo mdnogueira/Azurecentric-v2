@@ -2,8 +2,8 @@
 title: "Test a planned failover and record the application result"
 description: "Execute a planned failover in a Windows Server failover cluster and verify application health using PowerShell."
 pubDate: 2025-05-07
-category: backup-dr
-tags: []
+category: high-availability
+tags: ["failover-clustering", "powershell", "windows-server", "troubleshooting"]
 translationKey: test-a-planned-failover-and-record-the-application-result
 draft: false
 ---

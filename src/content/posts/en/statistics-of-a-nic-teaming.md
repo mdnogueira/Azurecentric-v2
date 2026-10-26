@@ -3,7 +3,7 @@ title: "Statistics of a NIC Teaming"
 description: "If the UI window is sufficiently tall a statistics tile appears at the bottom of the Team tile and the Adapters and Interfaces tile. These statistics windows reflect the…"
 pubDate: 2013-05-17
 category: windows-server
-tags: [failover-cluster, nic-teaming, hyper-v]
+tags: ["windows-server", "nic-teaming"]
 translationKey: statistics-of-a-nic-teaming
 cover: ../../../assets/old/posts/2013/05/image.png
 coverAlt: "Statistics of a NIC Teaming"

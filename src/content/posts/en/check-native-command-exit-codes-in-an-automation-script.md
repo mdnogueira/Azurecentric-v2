@@ -2,8 +2,8 @@
 title: "Check native command exit codes in an automation script"
 description: "Native commands in PowerShell only set $LASTEXITCODE. Use a wrapper to trigger try/catch."
 pubDate: 2025-08-18
-category: automation
-tags: ["powershell", "error-handling", "native-commands", "exit-codes", "troubleshooting"]
+category: powershell
+tags: ["powershell", "exit-codes", "error-handling", "native-commands", "troubleshooting"]
 translationKey: check-native-command-exit-codes-in-an-automation-script
 draft: false
 ---

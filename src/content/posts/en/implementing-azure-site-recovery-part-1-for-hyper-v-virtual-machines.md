@@ -3,7 +3,7 @@ title: "Implementing Azure Site Recovery – Part 1 – For Hyper-V Virtual Mach
 description: "After the series of Azure Site Recovery (ASR) Planning considerations, I received an enormous quantity of feedback how It should be implemented, following those considerations.…"
 pubDate: 2017-06-23
 category: backup-dr
-tags: [azure-site-recovery, hybrid, hyper-v]
+tags: ["azure-site-recovery", "hyper-v"]
 translationKey: implementing-azure-site-recovery-part-1-for-hyper-v-virtual-machines
 legacy: true
 legacyUrl: /2017/06/implementing-azure-site-recovery-part-1-for-hyper-v-virtual-machines.html

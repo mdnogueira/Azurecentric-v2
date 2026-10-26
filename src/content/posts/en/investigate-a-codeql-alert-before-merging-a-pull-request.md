@@ -2,8 +2,8 @@
 title: "Investigate a CodeQL alert before merging a pull request"
 description: "Investigate a CodeQL alert in a pull request: locate the annotation, assess the data flow, and push a fix to pass the check."
 pubDate: 2026-05-30
-category: governance
-tags: []
+category: cloud-security
+tags: ["alerts", "github-advanced-security", "codeql", "troubleshooting"]
 translationKey: investigate-a-codeql-alert-before-merging-a-pull-request
 draft: false
 ---

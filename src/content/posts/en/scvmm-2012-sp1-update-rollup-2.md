@@ -3,7 +3,7 @@ title: "Update on System Center 2012 SP1 Update Rollup 2 (UR2) for Virtual Machi
 description: "Yesterday Microsoft added Update Rollup 2 for System Center 2012 SP1 Virtual Machine Manager to System Center 2012 SP1 Update Rollup 2 release."
 pubDate: 2013-04-24
 category: windows-server
-tags: [scvmm]
+tags: ["system-center", "scvmm", "windows-server"]
 translationKey: scvmm-2012-sp1-update-rollup-2
 legacy: true
 legacyUrl: /2013/04/update-on-system-center-2012-sp1-update-rollup-2-ur2-for-virtual-machine-manager.html

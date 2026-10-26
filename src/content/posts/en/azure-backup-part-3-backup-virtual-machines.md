@@ -3,7 +3,7 @@ title: "Azure Backup – Part 3 – Backup Virtual Machines"
 description: "On the first post (see here), I explained how the Azure backup works. On this post, I’m explaining how to backup Virtual Machines with Azure Backup."
 pubDate: 2017-03-24
 category: backup-dr
-tags: [azure-backup, azure-site-recovery, storage]
+tags: ["backup", "azure-backup"]
 translationKey: azure-backup-part-3-backup-virtual-machines
 legacy: true
 legacyUrl: /2017/03/azure-backup-part-3-backup-virtual-machines.html

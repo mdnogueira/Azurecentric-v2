@@ -3,7 +3,7 @@ title: "Check SMB settings before changing a file-service workload"
 description: "Verify SMB dialect and baseline configuration before applying performance tuning to prevent regressions."
 pubDate: 2026-01-27
 category: windows-server
-tags: []
+tags: ["windows-server", "smb"]
 translationKey: check-smb-settings-before-changing-a-file-service-workload
 draft: false
 ---

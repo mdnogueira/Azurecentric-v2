@@ -3,7 +3,7 @@ title: "Storage and Continuous Availability Enhancements in Windows Server 2012"
 description: "Windows Server 2012 will provide a continuum of availability options to protect against a wide range of failure modes in different tiers – storage, network, and compute. These…"
 pubDate: 2012-06-02
 category: windows-server
-tags: []
+tags: ["windows-server", "smb"]
 translationKey: storage-and-continuous-availability-enhancements-in-windows-server-2012
 legacy: true
 legacyUrl: /2012/06/storage-and-continuous-availability-enhancements-in-windows-server-2012.html

@@ -2,8 +2,8 @@
 title: "Create a useful KQL query for an initial investigation"
 description: "Construct a focused KQL query for initial threat investigation using union, where, and project operators."
 pubDate: 2024-04-26
-category: governance
-tags: ["kql", "advanced-hunting", "threat-investigation", "microsoft-defender-xdr", "sentinel"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "kql", "threat-investigation", "microsoft-defender-xdr"]
 translationKey: create-a-useful-kql-query-for-an-initial-investigation
 draft: false
 ---

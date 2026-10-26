@@ -3,7 +3,7 @@ title: "Updates on Hyper-V Server? How to see what had been installed?"
 description: "When do you need to see what updates had been installed on your Hyper-V server, you can use this PowerShell cmdlet to list all the updates. powershell Get-WmiObject -Class…"
 pubDate: 2013-11-04
 category: hyper-v
-tags: [powershell]
+tags: ["hyper-v", "powershell"]
 translationKey: updates-on-hyper-v-server-how-to-see-what-had-been-installed
 legacy: true
 legacyUrl: /2013/11/updates-on-hyper-v-server-how-to-see-what-had-been-installed.html

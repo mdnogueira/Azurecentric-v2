@@ -3,7 +3,7 @@ title: "How to use Blob containers in Azure"
 description: "I know that Microsoft Azure looks easy, because you create your subscription, then you start to consume all the resources. But in some cases, start to be overwhelming, with so…"
 pubDate: 2017-03-13
 category: storage
-tags: [architecture, powershell]
+tags: ["azure-storage", "blob-storage", "powershell"]
 translationKey: how-to-use-blob-containers-in-azure
 legacy: true
 legacyUrl: /2017/03/how-to-use-blob-containers-in-azure.html

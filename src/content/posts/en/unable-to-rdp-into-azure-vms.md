@@ -3,7 +3,7 @@ title: "Unable to RDP into Azure VMs"
 description: "After patching all the Windows Server in Azure, a colleague calls me in panic, because their users, could not access their VMs through RDP. They were getting a CredSSP error…"
 pubDate: 2018-05-19
 category: compute
-tags: [rdp, troubleshooting]
+tags: ["azure-virtual-machines", "troubleshooting", "rdp", "patch-management", "windows-server"]
 translationKey: unable-to-rdp-into-azure-vms
 cover: ../../../assets/old/posts/2018/05/CredSSP.png
 coverAlt: "Unable to RDP into Azure VMs"

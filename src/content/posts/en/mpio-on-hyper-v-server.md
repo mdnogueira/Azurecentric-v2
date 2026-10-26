@@ -3,7 +3,7 @@ title: "MPIO on Hyper-V Server"
 description: "On the previous version of Windows Server (prior Windows Server 2012) you have to download and install MultiPath I/O (MPIO). Since Windows Server 2012 MPIO is a feature that…"
 pubDate: 2013-10-28
 category: hyper-v
-tags: [mpio, powershell, server-core]
+tags: ["hyper-v", "mpio", "windows-server", "powershell"]
 translationKey: mpio-on-hyper-v-server
 legacy: true
 legacyUrl: /2013/10/mpio-on-hyper-v-server.html

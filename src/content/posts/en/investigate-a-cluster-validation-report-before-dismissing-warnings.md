@@ -2,8 +2,8 @@
 title: "Investigate a cluster validation report before dismissing warnings"
 description: "Investigate cluster validation warnings by cross-referencing Health Service metrics with system log events to identify root causes."
 pubDate: 2025-06-28
-category: backup-dr
-tags: []
+category: high-availability
+tags: ["failover-clustering", "troubleshooting"]
 translationKey: investigate-a-cluster-validation-report-before-dismissing-warnings
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: "Plan a Sentinel workspace before connecting data"
 description: "Use tenant boundaries, data residency, analyst access and ingestion needs to decide where Microsoft Sentinel data belongs before enabling connectors."
 pubDate: 2024-01-08
-category: governance
-tags: [microsoft-sentinel, log-analytics, siem, security-operations]
+category: siem-xdr
+tags: ["microsoft-sentinel", "log-analytics"]
 translationKey: plan-a-sentinel-workspace-before-connecting-data
 draft: false
 ---

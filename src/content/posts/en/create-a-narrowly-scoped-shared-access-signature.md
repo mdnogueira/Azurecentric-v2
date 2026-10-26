@@ -3,7 +3,7 @@ title: "Create a narrowly scoped shared access signature"
 description: "Delegate Azure Storage access securely using stored access policies and account-level expiration policies."
 pubDate: 2024-07-14
 category: storage
-tags: ["azure-storage", "sas", "security", "access-control", "best-practices"]
+tags: ["azure-storage", "access-control", "sas"]
 translationKey: create-a-narrowly-scoped-shared-access-signature
 draft: false
 ---

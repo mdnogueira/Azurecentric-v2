@@ -3,7 +3,7 @@ title: "Adding an IP to an existing Azure Virtual Network Gateway"
 description: "So, you have a Virtual Network Gateway deployed in Azure and it’s working just fine, although you would like to add another public IP to an existing Azure Virtual Network…"
 pubDate: 2018-04-20
 category: networking
-tags: [portal, vpn-gateway, vnet, high-availability]
+tags: ["azure-virtual-network"]
 translationKey: adding-an-ip-to-an-existing-azure-virtual-network-gateway
 cover: ../../../assets/old/posts/2018/04/VNetGatewayIP.png
 coverAlt: "Adding an IP to an existing Azure Virtual Network Gateway"

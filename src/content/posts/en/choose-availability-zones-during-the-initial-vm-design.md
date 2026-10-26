@@ -3,7 +3,7 @@ title: "Choose availability zones during the initial VM design"
 description: "Why availability zones must be chosen during initial VMSS design and how to configure them correctly."
 pubDate: 2026-02-22
 category: compute
-tags: ["azure-virtual-machines", "availability-zones", "virtual-machine-scale-sets", "high-availability", "azure-cli", "arm-templates"]
+tags: ["availability-zones", "azure-virtual-machines", "virtual-machine-scale-sets", "arm-templates", "azure-cli", "azure-powershell"]
 translationKey: choose-availability-zones-during-the-initial-vm-design
 draft: false
 ---

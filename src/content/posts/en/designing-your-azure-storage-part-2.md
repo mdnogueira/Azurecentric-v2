@@ -3,7 +3,7 @@ title: "Designing your Azure Storage – Part 2"
 description: "On the previous post, we talked about the designing standard Azure Storage (see here). On this post, I will focus more on the Premium Azure Storage designing."
 pubDate: 2017-03-11
 category: storage
-tags: [architecture]
+tags: ["azure-storage"]
 translationKey: designing-your-azure-storage-part-2
 legacy: true
 legacyUrl: /2017/03/designing-your-azure-storage-part-2.html

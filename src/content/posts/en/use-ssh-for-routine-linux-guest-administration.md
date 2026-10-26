@@ -3,7 +3,7 @@ title: "Use SSH for routine Linux guest administration"
 description: "Configure SSH for routine Linux guest administration on Hyper-V, avoiding VMConnect limitations."
 pubDate: 2025-07-05
 category: hyper-v
-tags: ["hyper-v", "linux", "ssh", "virtualization", "windows-server-2025"]
+tags: ["hyper-v", "linux", "ssh", "windows-server-2025"]
 translationKey: use-ssh-for-routine-linux-guest-administration
 draft: false
 ---

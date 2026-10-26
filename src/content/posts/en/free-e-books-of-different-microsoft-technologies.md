@@ -3,7 +3,7 @@ title: "Free E-Books of different Microsoft Technologies."
 description: "Today I found, completely by accident I might add, a collection of free E-Book of different Microsoft Technologies."
 pubDate: 2013-06-24
 category: cloud
-tags: [system-center]
+tags: ["ebooks", "system-center", "windows-server"]
 translationKey: free-e-books-of-different-microsoft-technologies
 cover: ../../../assets/old/posts/2013/06/clip_image0021.jpg
 coverAlt: "Free E-Books of different Microsoft Technologies."

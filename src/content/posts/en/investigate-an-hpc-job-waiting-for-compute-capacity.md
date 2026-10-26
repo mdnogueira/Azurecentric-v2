@@ -2,8 +2,8 @@
 title: "Investigate an HPC job waiting for compute capacity"
 description: "Troubleshoot Azure Batch jobs waiting for compute by checking quotas, VM availability, and autoscale formula logic."
 pubDate: 2025-02-05
-category: compute
-tags: ["azure-batch", "hpc", "autoscaling", "troubleshooting", "vm-quotas"]
+category: hpc-ai
+tags: ["hpc", "troubleshooting", "capacity-planning", "autoscaling", "azure-batch", "quotas"]
 translationKey: investigate-an-hpc-job-waiting-for-compute-capacity
 draft: false
 ---

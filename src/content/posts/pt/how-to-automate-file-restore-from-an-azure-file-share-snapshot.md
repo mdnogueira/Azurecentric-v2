@@ -3,7 +3,7 @@ title: "Como automatizar o restore de ficheiros a partir de um Azure File Share 
 description: "Um cliente queria deixar de restaurar ficheiros um a um no Azure Portal a partir de um File Share Snapshot. Três formas de o fazer: montar o snapshot, AzCopy sync e um comando de Azure CLI."
 pubDate: 2020-01-09
 category: storage
-tags: [azure-backup, azure-files, azure-cli]
+tags: ["azure-storage", "azure-files", "azure-cli"]
 translationKey: how-to-automate-file-restore-from-an-azure-file-share-snapshot
 ---
 

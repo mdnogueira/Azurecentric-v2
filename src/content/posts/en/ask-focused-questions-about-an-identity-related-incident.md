@@ -2,8 +2,8 @@
 title: "Ask focused questions about an identity-related incident"
 description: "Use Security Copilot prompts to investigate Entra risky users systematically."
 pubDate: 2025-12-22
-category: governance
-tags: ["entra-id", "security-copilot", "incident-response", "threat-intelligence", "identity-security"]
+category: security-copilot
+tags: ["microsoft-security-copilot", "microsoft-entra-id", "identity-security", "troubleshooting"]
 translationKey: ask-focused-questions-about-an-identity-related-incident
 draft: false
 ---

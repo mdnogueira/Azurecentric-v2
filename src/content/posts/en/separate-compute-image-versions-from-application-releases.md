@@ -3,7 +3,7 @@ title: "Separate compute image versions from application releases"
 description: "Decouple application updates from VM image maintenance using Azure Compute Gallery VM Applications."
 pubDate: 2026-04-19
 category: compute
-tags: ["azure-compute-gallery", "vm-applications", "infrastructure-as-code", "virtual-machines", "application-deployment"]
+tags: ["azure-virtual-machines", "azure-compute-gallery", "application-deployment", "vm-applications"]
 translationKey: separate-compute-image-versions-from-application-releases
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "How to access Azure Blob Storage container via a SAS token"
 description: "Today I received an email, from a colleague ask me if it’s there is a way that you can download the entire blob container having a SAS token via PowerShell."
 pubDate: 2018-06-12
 category: storage
-tags: [azcopy, blob-storage, powershell]
+tags: ["azure-storage", "blob-storage", "powershell", "azcopy"]
 translationKey: how-to-access-azure-blob-storage-container-via-a-sas-token
 legacy: true
 legacyUrl: /2018/06/how-to-access-azure-blob-storage-container-via-a-sas-token.html

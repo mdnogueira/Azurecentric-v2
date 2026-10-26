@@ -2,8 +2,8 @@
 title: "Investigate a module that loads in one shell but not another"
 description: "Troubleshoot a PowerShell module that loads in one shell but not another by comparing PSModulePath, profiles, and session state."
 pubDate: 2024-11-11
-category: automation
-tags: ["powershell", "modules", "troubleshooting", "profiles", "psmodulepath"]
+category: powershell
+tags: ["powershell", "troubleshooting", "modules", "profiles", "psmodulepath"]
 translationKey: investigate-a-module-that-loads-in-one-shell-but-not-another
 draft: false
 ---

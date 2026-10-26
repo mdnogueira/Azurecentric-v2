@@ -2,8 +2,8 @@
 title: "Trace a blocked outbound connection in Azure Firewall logs"
 description: "Trace blocked Azure Firewall traffic using structured logs, legacy diagnostics, and DNS proxy checks."
 pubDate: 2024-08-03
-category: governance
-tags: ["azure-firewall", "networking", "troubleshooting", "structured-logs", "kql"]
+category: cloud-security
+tags: ["azure-firewall", "dns", "structured-logging", "troubleshooting"]
 translationKey: trace-a-blocked-outbound-connection-in-azure-firewall-logs
 draft: false
 ---

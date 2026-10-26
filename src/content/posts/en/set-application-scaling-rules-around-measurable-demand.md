@@ -2,8 +2,8 @@
 title: "Set application scaling rules around measurable demand"
 description: "Define measurable scaling rules for Azure Container Apps using HTTP concurrency thresholds and replica limits."
 pubDate: 2026-02-19
-category: apps
-tags: ["azure-container-apps", "scaling", "keda", "container-apps", "devops"]
+category: app-paas
+tags: ["azure-container-apps", "containers", "autoscaling"]
 translationKey: set-application-scaling-rules-around-measurable-demand
 draft: false
 ---

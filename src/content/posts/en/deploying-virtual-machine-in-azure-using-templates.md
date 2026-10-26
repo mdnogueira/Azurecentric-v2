@@ -3,7 +3,7 @@ title: "Deploying virtual machine in Azure using templates"
 description: "You can also create Azure VMs by using Azure Resource Manager templates. This option relies on the capability to describe an Azure Resource Manager deployment by using an…"
 pubDate: 2016-10-10
 category: automation
-tags: [arm-templates]
+tags: ["arm-templates", "azure-resource-manager", "azure-virtual-machines"]
 translationKey: deploying-virtual-machine-in-azure-using-templates
 legacy: true
 legacyUrl: /2016/10/deploying-virtual-machine-in-azure-using-templates.html

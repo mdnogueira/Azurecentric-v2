@@ -3,7 +3,7 @@ title: "Classic Virtual Machines in Azure Resource Manager"
 description: "You can create still classic virtual machines from the Azure portal or by using Azure PowerShell. Although, Microsoft doesn’t recommend because it’s an old platform that they…"
 pubDate: 2016-09-22
 category: compute
-tags: [powershell]
+tags: ["azure-virtual-machines", "azure-resource-manager", "powershell", "azure-powershell"]
 translationKey: classic-virtual-machines-in-azure-resource-manager
 legacy: true
 legacyUrl: /2016/09/classic-virtual-machines-in-azure-resource-manager.html

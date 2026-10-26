@@ -3,7 +3,7 @@ title: "Resolve a Terraform state lock without losing deployment history"
 description: "Resolve Azure Resource Manager deployment name collisions by using unique identifiers and the What-If operation to verify changes."
 pubDate: 2026-10-06
 category: automation
-tags: ["bicep", "azure-resource-manager", "deployment", "what-if", "terraform"]
+tags: ["bicep", "azure-resource-manager", "deployment", "troubleshooting", "what-if"]
 translationKey: resolve-a-terraform-state-lock-without-losing-deployment-history
 draft: false
 ---

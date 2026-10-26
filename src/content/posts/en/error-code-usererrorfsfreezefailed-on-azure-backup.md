@@ -3,7 +3,7 @@ title: "Error code UserErrorFsFreezeFailed on Azure Backup"
 description: "Another day a costumer of mine, call me saying the backups that we enabled previously was troughing the following error:"
 pubDate: 2019-06-11
 category: backup-dr
-tags: [azure-backup, portal, docker, linux]
+tags: ["azure-backup", "troubleshooting", "backup", "linux"]
 translationKey: error-code-usererrorfsfreezefailed-on-azure-backup
 legacy: true
 legacyUrl: /2019/06/error-code-usererrorfsfreezefailed-on-azure-backup.html

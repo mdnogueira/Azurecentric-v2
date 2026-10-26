@@ -3,7 +3,7 @@ title: "How to migrate Azure Managed Disk to different subscription and region â
 description: "On a recent project, I was asked to help move some virtual machines from a MSDN Subscription to a CSP subscription. With this move, we use the opportunity to consolidate on aâ€¦"
 pubDate: 2018-11-06
 category: storage
-tags: [managed-disks, powershell, vhd]
+tags: ["azure-storage", "managed-disks", "migration", "vhd", "powershell"]
 translationKey: how-to-migrate-azure-managed-disk-to-different-subscription-and-region-part-i
 legacy: true
 legacyUrl: /2018/11/how-to-migrate-azure-managed-disk-to-different-subscription-and-region-part-i.html

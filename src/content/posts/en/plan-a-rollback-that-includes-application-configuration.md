@@ -2,8 +2,8 @@
 title: "Plan a rollback that includes application configuration"
 description: "Plan a rollback for App Service slots by managing sticky configuration and using swap with preview to validate settings before traffic switches."
 pubDate: 2026-08-03
-category: apps
-tags: ["azure-app-service", "deployment-slots", "rollback", "configuration-management", "swap-with-preview"]
+category: app-paas
+tags: ["azure-app-service", "rollback", "swap-with-preview", "deployment-slots"]
 translationKey: plan-a-rollback-that-includes-application-configuration
 draft: false
 ---

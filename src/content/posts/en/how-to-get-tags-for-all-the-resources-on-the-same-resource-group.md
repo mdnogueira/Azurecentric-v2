@@ -2,8 +2,8 @@
 title: "How to get Tags for all the resources on the same Resource Group"
 description: "When you heavily use Tags on your Azure Resources, is very easy to reach the limits of the Tags that Azure allow to use on each resource. On the other hand, to be consistent on…"
 pubDate: 2018-07-04
-category: governance
-tags: [azure-automation, powershell, tags]
+category: powershell
+tags: ["powershell", "resource-tags", "resource-groups", "azure-automation"]
 translationKey: how-to-get-tags-for-all-the-resources-on-the-same-resource-group
 legacy: true
 legacyUrl: /2018/07/how-to-get-tags-for-all-the-resources-on-the-same-resource-group.html

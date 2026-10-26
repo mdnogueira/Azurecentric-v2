@@ -3,7 +3,7 @@ title: "Creating Virtual Machines using the Azure ARM Portal"
 description: "Creating a new VM by using the Azure Portal is a relatively straightforward process. However, it involves several steps, which you should be familiar with to implement the most…"
 pubDate: 2016-12-06
 category: compute
-tags: [linux]
+tags: ["azure-virtual-machines", "linux"]
 translationKey: creating-virtual-machines-using-the-azure-arm-portal
 legacy: true
 legacyUrl: /2016/12/creating-virtual-machines-using-the-azure-arm-portal.html

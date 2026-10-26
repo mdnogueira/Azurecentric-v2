@@ -3,7 +3,7 @@ title: "Using Virtual Machine extensions to configure the OS on a VM"
 description: "When deploying Azure VMs, in addition to configuring the platform-specific settings (such as Azure Storage or networking parameters), you can also configure the operating…"
 pubDate: 2017-01-07
 category: automation
-tags: [azure-cli, linux, vm-extensions]
+tags: ["azure-cli", "vm-extensions", "azure-virtual-machines", "azure-storage", "linux"]
 translationKey: using-virtual-machine-extensions-to-configure-the-os-on-a-vm
 legacy: true
 legacyUrl: /2017/01/using-virtual-machine-extensions-to-configure-the-os-on-a-vm.html

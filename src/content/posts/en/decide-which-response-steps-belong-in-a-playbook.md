@@ -2,8 +2,8 @@
 title: "Decide which response steps belong in a playbook"
 description: "Decide which response steps belong in a playbook by distinguishing enrichment, orchestration, and response actions."
 pubDate: 2025-05-23
-category: governance
-tags: ["microsoft-sentinel", "playbooks", "automation", "soar", "logic-apps"]
+category: siem-xdr
+tags: ["microsoft-sentinel", "automation", "playbooks", "azure-logic-apps"]
 translationKey: decide-which-response-steps-belong-in-a-playbook
 draft: false
 ---

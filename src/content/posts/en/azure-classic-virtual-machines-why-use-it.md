@@ -3,7 +3,7 @@ title: "Azure Classic Virtual Machines – Why use it?"
 description: "Other day I was with on a customer that ask me why he should not create Azure classic virtual machines? He did create much of his IaaS infrastructure on the classic portal. He…"
 pubDate: 2017-03-15
 category: compute
-tags: []
+tags: ["azure-virtual-machines", "azure-load-balancer", "azure-virtual-network"]
 translationKey: azure-classic-virtual-machines-why-use-it
 legacy: true
 legacyUrl: /2017/03/azure-classic-virtual-machines-why-use-it.html

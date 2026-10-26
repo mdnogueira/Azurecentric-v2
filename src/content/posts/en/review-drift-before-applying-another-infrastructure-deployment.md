@@ -3,7 +3,7 @@ title: "Review drift before applying another infrastructure deployment"
 description: "Use Bicep What-If to review infrastructure drift and validate changes before committing them to Azure."
 pubDate: 2025-09-24
 category: automation
-tags: ["bicep", "azure-resource-manager", "infrastructure-as-code", "deployment", "what-if", "azure-cli"]
+tags: ["bicep", "deployment", "azure-cli", "what-if", "powershell", "azure-powershell"]
 translationKey: review-drift-before-applying-another-infrastructure-deployment
 draft: false
 ---

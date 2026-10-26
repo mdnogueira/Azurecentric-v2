@@ -3,7 +3,7 @@ title: "Move VM between VNETs in Azure"
 description: "This week I come into this scenario, I would like to move a virtual machine in azure between different VNETs. You might have different reasons to do it, but what is the best…"
 pubDate: 2017-07-20
 category: networking
-tags: [arm-templates, vhd]
+tags: ["azure-virtual-network", "vhd", "arm-templates"]
 translationKey: move-vm-between-vnets-in-azure
 legacy: true
 legacyUrl: /2017/07/move-vm-between-vnets-in-azure.html

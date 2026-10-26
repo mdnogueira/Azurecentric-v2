@@ -2,8 +2,8 @@
 title: "Prepare Azure administrators for mandatory multifactor authentication"
 description: "Prepare Azure administrators for mandatory multifactor authentication (MFA) enforcement starting October 2024."
 pubDate: 2024-08-19
-category: governance
-tags: ["conditional-access", "mfa", "entra-id", "security", "azure-portal"]
+category: identity-access
+tags: ["multifactor-authentication", "microsoft-entra-id", "conditional-access"]
 translationKey: prepare-azure-administrators-for-mandatory-multifactor-authentication
 draft: false
 ---

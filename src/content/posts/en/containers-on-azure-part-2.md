@@ -3,7 +3,7 @@ title: "Containers on Azure – Part 2"
 description: "On the previous post (see here), I talked about the concept of Containers, Azure Container Service and Azure Service Fabric. Now that you know the concept and have an idea how…"
 pubDate: 2017-05-16
 category: apps
-tags: [service-fabric, failover-cluster, linux, docker]
+tags: ["containers", "service-fabric", "azure-virtual-machines", "docker", "linux"]
 translationKey: containers-on-azure-part-2
 legacy: true
 legacyUrl: /2017/05/containers-on-azure-part-2.html

@@ -3,7 +3,7 @@ title: "Use Windows Admin Center for a defined administration task"
 description: "Connect a Windows Server 2022 node to Windows Admin Center, handling authentication and connection verification."
 pubDate: 2024-07-22
 category: windows-server
-tags: ["windows-admin-center", "windows-server-2022", "management", "gateway", "authentication"]
+tags: ["windows-server", "windows-admin-center", "authentication", "gateway", "management", "windows-server-2022"]
 translationKey: use-windows-admin-center-for-a-defined-administration-task
 draft: false
 ---

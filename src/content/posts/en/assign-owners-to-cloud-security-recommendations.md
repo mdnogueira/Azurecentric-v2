@@ -2,8 +2,8 @@
 title: "Assign owners to cloud security recommendations"
 description: "Assign owners to security recommendations using Defender for Cloud governance rules to drive accountability and track remediation SLAs."
 pubDate: 2025-12-17
-category: governance
-tags: ["defender-for-cloud", "governance", "security-posture", "remediation", "azure-policy"]
+category: cloud-security
+tags: ["defender-for-cloud", "governance", "remediation"]
 translationKey: assign-owners-to-cloud-security-recommendations
 draft: false
 ---

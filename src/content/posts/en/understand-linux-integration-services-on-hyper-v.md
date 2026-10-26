@@ -3,7 +3,7 @@ title: "Understand Linux integration services on Hyper-V"
 description: "Verify Linux Hyper-V integration services are active on Windows Server 2022 using kernel modules and daemons."
 pubDate: 2024-06-08
 category: hyper-v
-tags: []
+tags: ["hyper-v", "integration-services", "linux", "windows-server"]
 translationKey: understand-linux-integration-services-on-hyper-v
 draft: false
 ---

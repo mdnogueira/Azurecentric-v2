@@ -3,7 +3,7 @@ title: "Check connectivity with Azure Network Watcher"
 description: "Use Connection troubleshoot to diagnose a single connectivity failure between an Azure VM and a destination, interpreting the hop-by-hop results."
 pubDate: 2025-02-20
 category: networking
-tags: ["network-watcher", "connection-troubleshoot", "azure-virtual-machines", "networking", "troubleshooting"]
+tags: ["azure-network-watcher", "troubleshooting", "azure-virtual-machines", "connection-troubleshoot"]
 translationKey: check-connectivity-with-azure-network-watcher
 draft: false
 ---

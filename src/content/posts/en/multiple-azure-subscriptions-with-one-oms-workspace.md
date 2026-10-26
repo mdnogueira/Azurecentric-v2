@@ -2,8 +2,8 @@
 title: "Multiple Azure Subscriptions with one OMS Workspace"
 description: "I was this week at one of my costumers, and one of the topics that came to the conversation was, how I can connect several Azure subscriptions within the same tenant to OMS?"
 pubDate: 2017-08-16
-category: governance
-tags: [subscriptions]
+category: operations
+tags: ["log-analytics", "azure-subscriptions"]
 translationKey: multiple-azure-subscriptions-with-one-oms-workspace
 cover: ../../../assets/old/posts/2017/08/OMS1.png
 coverAlt: "Multiple Azure Subscriptions with one OMS Workspace"

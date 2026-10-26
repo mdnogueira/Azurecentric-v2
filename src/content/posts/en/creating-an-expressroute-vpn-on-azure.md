@@ -3,7 +3,7 @@ title: "Creating an ExpressRoute VPN on Azure"
 description: "To understand deeper what are the options you have to connect your datacenter/organization with Azure, I recommend read this older post. On this post I want to share what do…"
 pubDate: 2017-06-09
 category: networking
-tags: [expressroute, hybrid]
+tags: ["expressroute", "vpn"]
 translationKey: creating-an-expressroute-vpn-on-azure
 legacy: true
 legacyUrl: /2017/06/creating-an-expressroute-vpn-on-azure.html

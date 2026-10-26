@@ -3,7 +3,7 @@ title: "Investigate a storage request that returns an authorisation error"
 description: "Troubleshoot Azure Storage authorisation errors by identifying the auth method, checking account settings, and verifying data-plane permissions."
 pubDate: 2024-09-08
 category: storage
-tags: ["azure-storage", "authorization", "troubleshooting", "microsoft-entra-id", "sas", "shared-key"]
+tags: ["troubleshooting", "azure-storage", "authorization", "sas", "shared-key", "microsoft-entra-id"]
 translationKey: investigate-a-storage-request-that-returns-an-authorisation-error
 draft: false
 ---

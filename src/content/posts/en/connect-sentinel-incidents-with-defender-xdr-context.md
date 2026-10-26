@@ -2,8 +2,8 @@
 title: "Connect Sentinel incidents with Defender XDR context"
 description: "Connect Defender XDR incidents to Sentinel: enable the connector, manage sync limits, and migrate automation rules."
 pubDate: 2025-11-02
-category: governance
-tags: ["microsoft-sentinel", "defender-xdr", "incident-management", "security-operations", "azure-portal", "kql"]
+category: siem-xdr
+tags: ["microsoft-defender-xdr", "microsoft-sentinel", "migration", "kql"]
 translationKey: connect-sentinel-incidents-with-defender-xdr-context
 draft: false
 ---

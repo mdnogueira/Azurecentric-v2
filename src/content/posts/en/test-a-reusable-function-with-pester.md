@@ -2,8 +2,8 @@
 title: "Test a reusable function with Pester"
 description: "Test a PowerShell function with Pester by packaging it as a module for predictable scoping and isolation."
 pubDate: 2025-12-02
-category: automation
-tags: ["powershell", "pester", "testing", "modules", "scripting"]
+category: powershell
+tags: ["pester", "powershell", "modules", "testing"]
 translationKey: test-a-reusable-function-with-pester
 draft: false
 ---

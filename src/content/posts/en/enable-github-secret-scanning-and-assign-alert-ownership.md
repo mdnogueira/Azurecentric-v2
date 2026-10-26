@@ -2,8 +2,8 @@
 title: "Enable GitHub secret scanning and assign alert ownership"
 description: "Enable GitHub Secret Scanning and push protection, then assign alert ownership via security configurations."
 pubDate: 2024-11-28
-category: governance
-tags: ["github-advanced-security", "secret-scanning", "push-protection", "security-configurations", "devops"]
+category: cloud-security
+tags: ["github-advanced-security", "secret-scanning", "alerts", "github", "push-protection", "security-configurations"]
 translationKey: enable-github-secret-scanning-and-assign-alert-ownership
 draft: false
 ---

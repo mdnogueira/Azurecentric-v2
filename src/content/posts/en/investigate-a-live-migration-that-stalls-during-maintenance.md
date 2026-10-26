@@ -2,8 +2,8 @@
 title: "Investigate a live migration that stalls during maintenance"
 description: "Troubleshoot stalled live migrations in Windows Server 2025 by verifying SMB bandwidth limits and cluster network selection."
 pubDate: 2026-03-27
-category: backup-dr
-tags: ["windows-server", "hyper-v", "live-migration", "smb", "failover-clustering"]
+category: high-availability
+tags: ["failover-clustering", "live-migration", "migration", "troubleshooting", "smb", "windows-server"]
 translationKey: investigate-a-live-migration-that-stalls-during-maintenance
 draft: false
 ---

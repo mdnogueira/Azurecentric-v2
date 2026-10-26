@@ -3,7 +3,7 @@ title: "Choose a VPN gateway around connectivity requirements"
 description: "Select an Azure VPN Gateway SKU and topology by matching throughput, tunnel count, and availability requirements."
 pubDate: 2025-04-20
 category: networking
-tags: ["azure-vpn-gateway", "networking", "high-availability", "bgp", "sku-selection"]
+tags: ["azure-vpn-gateway", "vpn", "bgp", "high-availability"]
 translationKey: choose-a-vpn-gateway-around-connectivity-requirements
 draft: false
 ---

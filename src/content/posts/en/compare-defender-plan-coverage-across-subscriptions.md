@@ -2,8 +2,8 @@
 title: "Compare Defender plan coverage across subscriptions"
 description: "Audit Defender plan coverage across subscriptions by verifying scope, permissions, and workspace linkage."
 pubDate: 2024-04-18
-category: governance
-tags: ["defender-for-cloud", "cspm", "defender-for-servers", "azure-subscriptions", "log-analytics", "security-posture"]
+category: cloud-security
+tags: ["defender-for-cloud", "log-analytics", "cspm", "defender-for-servers", "security-posture"]
 translationKey: compare-defender-plan-coverage-across-subscriptions
 draft: false
 ---

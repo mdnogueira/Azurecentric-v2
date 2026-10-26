@@ -2,8 +2,8 @@
 title: "Review cluster event logs during a node failure"
 description: "Diagnose Windows Server node failures using Failover Clustering events and, where applicable, Storage Spaces Direct Health Service faults."
 pubDate: 2025-10-15
-category: backup-dr
-tags: ["failover-clustering", "windows-server", "troubleshooting", "health-service", "event-logs"]
+category: high-availability
+tags: ["failover-clustering", "event-logs", "windows-server", "health-service", "troubleshooting"]
 translationKey: review-cluster-event-logs-during-a-node-failure
 draft: false
 ---

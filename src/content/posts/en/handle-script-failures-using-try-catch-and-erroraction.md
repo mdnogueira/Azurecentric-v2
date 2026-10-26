@@ -2,8 +2,8 @@
 title: "Handle script failures using try, catch and ErrorAction"
 description: "Use try/catch and ErrorAction Stop to handle script failures predictably in PowerShell 7.4."
 pubDate: 2024-07-19
-category: automation
-tags: ["powershell", "error-handling", "try-catch", "scripting", "best-practices"]
+category: powershell
+tags: ["error-handling", "powershell", "try-catch", "troubleshooting"]
 translationKey: handle-script-failures-using-try-catch-and-erroraction
 draft: false
 ---

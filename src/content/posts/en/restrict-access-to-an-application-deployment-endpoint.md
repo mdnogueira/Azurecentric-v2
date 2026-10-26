@@ -2,8 +2,8 @@
 title: "Restrict access to an application deployment endpoint"
 description: "Secure App Service deployment endpoints by combining private endpoints with disabled public network access, avoiding the trap of relying on access restrictions for private traffic."
 pubDate: 2026-06-11
-category: apps
-tags: ["azure-app-service", "private-endpoints", "access-restrictions", "network-security", "deployment"]
+category: app-paas
+tags: ["azure-app-service", "deployment", "private-endpoints", "access-restrictions"]
 translationKey: restrict-access-to-an-application-deployment-endpoint
 draft: false
 ---

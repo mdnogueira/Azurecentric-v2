@@ -2,8 +2,8 @@
 title: "Separate configuration, execution and reporting in PowerShell"
 description: "Structure PowerShell scripts to separate configuration, execution, and reporting for better performance and maintainability."
 pubDate: 2026-08-31
-category: automation
-tags: ["powershell", "performance", "scripting", "best-practices", "architecture"]
+category: powershell
+tags: ["powershell", "performance"]
 translationKey: separate-configuration-execution-and-reporting-in-powershell
 draft: false
 ---

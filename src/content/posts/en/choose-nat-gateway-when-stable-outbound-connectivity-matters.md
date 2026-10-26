@@ -3,7 +3,7 @@ title: "Choose NAT Gateway when stable outbound connectivity matters"
 description: "Why NAT Gateway is the preferred explicit outbound method for stable egress, and how to configure it with private subnets."
 pubDate: 2026-06-27
 category: networking
-tags: ["nat-gateway", "azure-virtual-network", "outbound-connectivity", "private-subnets", "snat"]
+tags: ["azure-nat-gateway", "outbound-connectivity", "private-subnets", "snat", "azure-virtual-network", "troubleshooting"]
 translationKey: choose-nat-gateway-when-stable-outbound-connectivity-matters
 draft: false
 ---

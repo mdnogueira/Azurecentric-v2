@@ -3,7 +3,7 @@ title: "Azure Site Recovery Planning Considerations – Part 3 – For Hyper-V V
 description: "On these post series, I want to cover some of the planning considerations that I usually use, when I’m designing/planning with my costumers, an ASR deployment/infrastructure. I…"
 pubDate: 2017-06-19
 category: backup-dr
-tags: [azure-site-recovery, architecture, hybrid, hyper-v, private-cloud, scvmm]
+tags: ["azure-site-recovery", "hyper-v", "scvmm"]
 translationKey: azure-site-recovery-planning-considerations-part-3-for-hyper-v-virtual-machines-in-scvmm-clouds
 legacy: true
 legacyUrl: /2017/06/azure-site-recovery-planning-considerations-part-3-for-hyper-v-virtual-machines-in-scvmm-clouds.html

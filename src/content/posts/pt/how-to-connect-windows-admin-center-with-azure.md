@@ -2,8 +2,8 @@
 title: "Como ligar o Windows Admin Center ao Azure"
 description: "Passo a passo para registar o Windows Admin Center (WAC) no seu tenant do Azure: device code, login, permissões e como confirmar o Tenant ID correto quando tem mais do que um."
 pubDate: 2019-10-16
-category: automation
-tags: [hybrid, subscriptions, windows-admin-center]
+category: windows-server
+tags: ["windows-server", "windows-admin-center"]
 translationKey: how-to-connect-windows-admin-center-with-azure
 cover: ../../../assets/old/posts/2019/10/WAC1.png
 coverAlt: "Como ligar o Windows Admin Center ao Azure"

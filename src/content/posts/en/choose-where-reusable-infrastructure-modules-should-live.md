@@ -3,7 +3,7 @@ title: "Choose where reusable infrastructure modules should live"
 description: "Decide between Bicep private registries and template specs by evaluating tooling constraints and artifact requirements."
 pubDate: 2025-04-14
 category: automation
-tags: ["bicep", "infrastructure-as-code", "azure-container-registry", "template-specs", "devops"]
+tags: ["bicep", "azure-container-registry", "template-specs"]
 translationKey: choose-where-reusable-infrastructure-modules-should-live
 draft: false
 ---

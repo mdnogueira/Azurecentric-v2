@@ -3,7 +3,7 @@ title: "RTM for Windows Server 2012 R2!"
 description: "Today Microsoft announce a big milestone: Windows Server 2012 R2 has been released to manufacturing!"
 pubDate: 2013-08-27
 category: cloud
-tags: []
+tags: ["cloud-computing", "windows-server"]
 translationKey: rtm-for-windows-server-2012-r2
 legacy: true
 legacyUrl: /2013/08/rtm-for-windows-server-2012-r2.html

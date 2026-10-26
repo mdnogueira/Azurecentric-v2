@@ -2,8 +2,8 @@
 title: "Run a Well-Architected review with the operations team"
 description: "Run a Well-Architected review by mapping service-specific reliability guides to operational responsibilities and verifying RPO/RTO assumptions."
 pubDate: 2026-07-06
-category: governance
-tags: []
+category: well-architected
+tags: ["well-architected-framework", "rpo-rto", "backup"]
 translationKey: run-a-well-architected-review-with-the-operations-team
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "How much it cost Azure?"
 description: "Cloud technologies generally enable you to minimize or eliminate capital expenditures completely. They also might help customers lower their operational costs. These principles…"
 pubDate: 2016-08-15
 category: governance
-tags: []
+tags: ["cost-management"]
 translationKey: how-much-it-cost-azure
 cover: ../../../assets/old/posts/2016/08/AzurePricing.png
 coverAlt: "How much it cost Azure?"

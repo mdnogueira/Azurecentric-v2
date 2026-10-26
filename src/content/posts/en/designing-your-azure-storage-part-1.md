@@ -3,7 +3,7 @@ title: "Designing your Azure Storage – Part 1"
 description: "On a previous post, I describe the different methods of Azure Storage deployment (see here)."
 pubDate: 2017-03-08
 category: storage
-tags: [architecture]
+tags: ["azure-storage", "blob-storage"]
 translationKey: designing-your-azure-storage-part-1
 legacy: true
 legacyUrl: /2017/03/designing-your-azure-storage-part-1.html

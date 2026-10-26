@@ -3,7 +3,7 @@ title: "Dynamic Optimization on SCVMM 2012"
 description: "SCVMM 2012 introduced the ability to constantly monitor and rebalance load on clusters by using “Dynamic Optimization”. How Dynamic Optimization works, will help understand its…"
 pubDate: 2013-02-12
 category: windows-server
-tags: [scvmm, dynamic-optimization]
+tags: ["windows-server", "scvmm", "dynamic-optimization"]
 translationKey: dynamic-optimization-on-scvmm-2012
 legacy: true
 legacyUrl: /2013/02/dynamic-optimization-on-scvmm-2012.html

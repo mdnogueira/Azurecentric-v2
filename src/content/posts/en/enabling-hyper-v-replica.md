@@ -3,7 +3,7 @@ title: "Enabling Hyper-V Replica"
 description: "Hyper-V Replica is implemented as part of the Hyper-V Role. The Hyper-V Role can be enabled on a standalone Hyper-V server or on servers that are members of a Failover Cluster.…"
 pubDate: 2012-08-30
 category: hyper-v
-tags: [hyper-v-replica]
+tags: ["hyper-v-replica", "hyper-v", "failover-clustering"]
 translationKey: enabling-hyper-v-replica
 cover: ../../../assets/old/posts/2012/08/rep3.png
 coverAlt: "Enabling Hyper-V Replica"

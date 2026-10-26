@@ -2,8 +2,8 @@
 title: "Troubleshoot a Sentinel connector that stopped sending data"
 description: "Troubleshoot a Microsoft Sentinel data connector that has stopped sending data using health monitoring."
 pubDate: 2024-08-11
-category: governance
-tags: []
+category: siem-xdr
+tags: ["microsoft-sentinel", "troubleshooting", "alerts"]
 translationKey: troubleshoot-a-sentinel-connector-that-stopped-sending-data
 draft: false
 ---

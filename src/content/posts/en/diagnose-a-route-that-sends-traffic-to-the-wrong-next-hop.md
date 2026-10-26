@@ -3,7 +3,7 @@ title: "Diagnose a route that sends traffic to the wrong next hop"
 description: "Diagnose why VM traffic takes the wrong path using effective routes and Network Watcher next hop."
 pubDate: 2024-09-02
 category: networking
-tags: ["azure-network-watcher", "virtual-network", "routing", "troubleshooting", "azure-cli"]
+tags: ["networking", "azure-network-watcher", "routing", "azure-virtual-network", "azure-cli", "troubleshooting"]
 translationKey: diagnose-a-route-that-sends-traffic-to-the-wrong-next-hop
 draft: false
 ---

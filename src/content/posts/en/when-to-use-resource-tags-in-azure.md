@@ -3,7 +3,7 @@ title: "When to use Resource Tags in Azure"
 description: "First, Tags in Azure, and almost in any other platform/application, are used to help you organize in a logical way, all the resources. So, if you have a model of subscriptions…"
 pubDate: 2017-02-25
 category: governance
-tags: [tags]
+tags: ["resource-tags"]
 translationKey: when-to-use-resource-tags-in-azure
 cover: ../../../assets/old/posts/2017/02/AzureSubs1.png
 coverAlt: "When to use Resource Tags in Azure"

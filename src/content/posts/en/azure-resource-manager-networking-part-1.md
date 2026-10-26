@@ -3,7 +3,7 @@ title: "Azure Resource Manager Networking – Part 1"
 description: "Usually when we talk about Azure Networking, our focus has been on Azure virtual networks and resources that facilitate deployment of virtual machines into virtual networks.…"
 pubDate: 2017-05-18
 category: networking
-tags: []
+tags: ["azure-resource-manager", "azure-virtual-network", "azure-load-balancer", "azure-application-gateway", "azure-vpn-gateway", "dns"]
 translationKey: azure-resource-manager-networking-part-1
 legacy: true
 legacyUrl: /2017/05/azure-resource-manager-networking-part-1.html

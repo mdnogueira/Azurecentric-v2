@@ -3,7 +3,7 @@ title: "Hyper-V Best Practices Analyzer"
 description: "Sometimes when you deploy an Hyper-V Server you don’t know if you miss any configuration or if you are following the best practices regarding security, configuration or even…"
 pubDate: 2013-10-19
 category: hyper-v
-tags: [best-practices-analyzer]
+tags: ["hyper-v", "best-practices-analyzer", "powershell"]
 translationKey: hyper-v-best-practices-analyzer
 legacy: true
 legacyUrl: /2013/10/hyper-v-best-practices-analyzer.html

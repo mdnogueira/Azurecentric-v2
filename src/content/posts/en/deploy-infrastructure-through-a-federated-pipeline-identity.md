@@ -3,7 +3,7 @@ title: "Deploy infrastructure through a federated pipeline identity"
 description: "Deploy Bicep via Azure Pipelines using federated identity and bicepparam files."
 pubDate: 2025-02-12
 category: automation
-tags: ["azure-pipelines", "bicep", "federated-identity", "ci-cd", "azure-cli"]
+tags: ["bicep", "workload-identity-federation", "azure-pipelines", "azure-cli"]
 translationKey: deploy-infrastructure-through-a-federated-pipeline-identity
 draft: false
 ---

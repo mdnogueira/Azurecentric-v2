@@ -2,8 +2,8 @@
 title: "Use Copilot for Security alongside Defender investigations"
 description: "Use Security Copilot sample prompts to query Defender and Sentinel incidents, with clear boundaries on their illustrative nature."
 pubDate: 2025-10-30
-category: governance
-tags: []
+category: security-copilot
+tags: ["microsoft-security-copilot", "microsoft-sentinel", "troubleshooting"]
 translationKey: use-copilot-for-security-alongside-defender-investigations
 draft: false
 ---

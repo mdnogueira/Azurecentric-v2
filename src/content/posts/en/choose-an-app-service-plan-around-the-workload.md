@@ -2,8 +2,8 @@
 title: "Choose an App Service plan around the workload"
 description: "Understand the App Service plan as a shared compute and scaling boundary before choosing a tier, combining applications or adding deployment slots."
 pubDate: 2024-01-10
-category: apps
-tags: [app-service, scaling, application-design, cost-management]
+category: app-paas
+tags: ["azure-app-service", "deployment-slots", "autoscaling"]
 translationKey: choose-an-app-service-plan-around-the-workload
 draft: false
 ---

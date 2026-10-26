@@ -2,8 +2,8 @@
 title: "Apply diagnostic settings consistently across Azure resources"
 description: "Configure Azure Monitor diagnostic settings consistently using resources, category groups, and automation."
 pubDate: 2025-11-24
-category: governance
-tags: ["azure-monitor", "diagnostic-settings", "log-analytics", "azure-storage", "arm-templates"]
+category: operations
+tags: ["azure-monitor", "diagnostic-settings", "azure-storage", "log-analytics", "arm-templates", "troubleshooting"]
 translationKey: apply-diagnostic-settings-consistently-across-azure-resources
 draft: false
 ---
