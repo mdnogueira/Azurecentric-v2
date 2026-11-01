@@ -42,6 +42,7 @@ const cover = post.data.cover;
   back={localePath(lang, '/posts')}
   type="article"
   publishedTime={post.data.pubDate.toISOString()}
+  contentLanguage={post.data.language}
   image={cover ? undefined : undefined}
 >
   <div class="progress" aria-hidden="true"><div data-progress></div></div>

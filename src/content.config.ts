@@ -23,6 +23,8 @@ const posts = defineCollection({
       // Optional. Overrides the URL slug (default: the file name). Keep it short and stable.
       slug: z.string().regex(/^[a-z0-9-]+$/).optional(),
       description: z.string().max(200),
+      // Optional per-article locale; folder names still determine EN/PT routing.
+      language: z.enum(['en-CA', 'pt-PT']).optional(),
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       category: z.string().refine((key) => Object.hasOwn(categories, key), 'Use a category registered in site.config.mjs'),

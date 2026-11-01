@@ -1,0 +1,96 @@
+{
+  "series": "Defender for Cloud in practice",
+  "prepared_on": "2026-11-01",
+  "language_pair": [
+    "en-CA",
+    "pt-PT"
+  ],
+  "source_language": "en-CA",
+  "publication_timezone": "America/New_York",
+  "weekly_release": "Wednesday 11:00 Eastern; GitHub Actions dispatch/build/deploy timing is best effort.",
+  "approval_scope": "User approved the layout/Canadian English/signature and explicitly instructed publishing original EN and corresponding PT-PT translations. Later unwritten episodes remain unapproved.",
+  "episode_count_planned": 52,
+  "written_episodes": [
+    {
+      "episode": 1,
+      "translationKey": "defender-for-cloud-series-01-cnapp-in-plain-english",
+      "publish_at": "2026-11-04T11:00:00-05:00",
+      "status": "approved; repository delivery pending",
+      "versions": [
+        {
+          "language": "en-CA",
+          "file": "src/content/posts/en/defender-for-cloud-series-01-cnapp-in-plain-english.md",
+          "url": "/posts/defender-for-cloud-series-01-cnapp-in-plain-english",
+          "sha256": "612c2789597f8f096b949fef01b71357a0d6195664afd9dceb250f6700fd9c4a",
+          "body_sha256": "410f3477f3dc1c26c21beeb17ea4ee265da492bcdddf7a5494312b3b856e9a0d",
+          "signature": "Cheers,  \n**Marcos Nogueira**  \n[Connect with me on LinkedIn](https://www.linkedin.com/in/mdnoga/)"
+        },
+        {
+          "language": "pt-PT",
+          "file": "src/content/posts/pt/defender-for-cloud-series-01-cnapp-in-plain-english.md",
+          "url": "/pt/posts/defender-for-cloud-series-01-cnapp-in-plain-english",
+          "sha256": "d0a3819efeaec68b593db8ad93af25aaa285969d9145cc44d6d5734181d7083e",
+          "body_sha256": "4ff5f44160c6cd1f832fe6af0f437b51c73ed8fd0780fe6b0d8d39013bb4b53a",
+          "signature": "Até à próxima,  \n**Marcos Nogueira**  \n[Ligue-se a mim no LinkedIn](https://www.linkedin.com/in/mdnoga/)"
+        }
+      ]
+    }
+  ],
+  "unwritten_episodes": "2–52 remain outlines; do not publish placeholders or infer content approval.",
+  "publication_gate": "Only approved files have draft:false; pubDate gates visibility. Both Episode 1 versions share the same timestamp.",
+  "schedule_reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule",
+  "source_references": [
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-cloud-security-posture-management",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-devops-introduction",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction"
+  ],
+  "translation_review": {
+    "performed_on": "2026-11-01",
+    "method": "Local-model first pass rewritten and checked against the approved English for PT-PT terminology, meaning, source links, tables, numbered steps, scenario and disclaimers.",
+    "fixes": "Restored valid YAML delimiters; corrected literal translations and a verb typo; used PT-PT vocabulary and a natural Portuguese signature.",
+    "graphics": "Existing full public Microsoft Learn illustration retained; Portuguese alt text supplied. Image text is the original English documentation graphic.",
+    "lab_execution": "not_run; no new technical claims or performed demonstrations added."
+  },
+  "visibility_note": "Before 4 November both versions are absent from production. After the release build both canonical pages and the locale links must be present.",
+  "validation": {
+    "source_versions": 2,
+    "same_translation_key": true,
+    "same_release_timestamp": true,
+    "source_links_preserved": true,
+    "image_and_thumbnail_shared_only_within_episode": true,
+    "pt_PT_terms_reviewed": true,
+    "matched_section_table_and_step_structure": true,
+    "before_release": {
+      "english_hidden": true,
+      "portuguese_hidden": true,
+      "sitemap_hidden": true
+    },
+    "release_build_pages": [
+      {
+        "url": "/posts/defender-for-cloud-series-01-cnapp-in-plain-english",
+        "locale": "en-CA",
+        "title": "What Defender for Cloud actually is: CNAPP in plain English"
+      },
+      {
+        "url": "/pt/posts/defender-for-cloud-series-01-cnapp-in-plain-english",
+        "locale": "pt-PT",
+        "title": "O que é realmente o Defender for Cloud: CNAPP em linguagem simples"
+      }
+    ],
+    "localized_metadata_and_switch_links": true,
+    "one_listing_entry_per_language": true,
+    "weekly_timezone": "America/New_York",
+    "weekly_time": "Wednesday 11:00",
+    "later_episodes_unwritten": 51,
+    "errors": []
+  },
+  "build_checks": {
+    "before_release": "passed: both versions and sitemap entries excluded",
+    "after_release": "passed: both pages, localised metadata, language switches and unique locale listing entries",
+    "production_build": "passed; 1159 pages under a release-time fixture",
+    "test_fixture": "The frozen clock is local validation only and is not included in the repository changes.",
+    "search": "passed; 1186 pages across the existing English and Portuguese indexes"
+  }
+}
