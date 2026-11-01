@@ -9,7 +9,7 @@ translationKey: defender-for-cloud-series-01-cnapp-in-plain-english
 draft: false
 ---
 
-*Defender for Cloud na prática · Episódio 1 de 52*
+*Episódio 1 da série Segurança na Cloud – Microsoft Defender*
 
 Uma recomendação sobre um recurso na cloud, um alerta de atividade suspeita e um problema identificado num repositório podem fazer parte da mesma análise de segurança. Isso não significa que exijam a mesma resposta ou a intervenção da mesma pessoa.
 

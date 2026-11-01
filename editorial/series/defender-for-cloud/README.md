@@ -6,6 +6,10 @@ New series posts declare `language: en-CA` or `language: pt-PT`. The existing lo
 
 Episode 1 is approved for the planned 4 November 2026, 11:00 Eastern release. Both files have `draft: false` and a future `pubDate`. The weekly website build follows `America/New_York`; the existing six-hour feed rebuild remains available. GitHub scheduling and deployment can be delayed, so the timestamp is a release target, not a minute-level availability guarantee. Nothing is live until the repository change is merged and the release build deploys after the timestamp.
 
-Only Episode 1 is complete. The remaining 51 articles and their translations must be written, checked and approved before they are added for publication. Do not create empty future posts or publish the outline as an article.
+Only Episode 1 is complete. Later articles and their translations must be written, checked and approved before they are added for publication. Do not create empty future posts or publish the outline as an article.
 
 Signatures link to https://www.linkedin.com/in/mdnoga/ . English uses “Cheers” and Portuguese uses “Até à próxima”. No real tenant data, internal slides, fabricated testing claims or new credentials are introduced.
+
+The public series name is “Cloud Security – Microsoft Defender” (PT: “Segurança na Cloud – Microsoft Defender”). Show episode numbers without a total. With Episode 2, add dedicated EN/PT series pages describing the Wednesday cadence and listing released entries, separately from ordinary blog content.
+
+The public series name is “Cloud Security – Microsoft Defender” (PT: “Segurança na Cloud – Microsoft Defender”). Show episode numbers without a total. With Episode 2, add dedicated EN/PT series pages describing the Wednesday cadence and listing released entries, separately from ordinary blog content.

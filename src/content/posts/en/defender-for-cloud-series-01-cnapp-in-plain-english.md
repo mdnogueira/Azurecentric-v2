@@ -9,7 +9,7 @@ translationKey: defender-for-cloud-series-01-cnapp-in-plain-english
 draft: false
 ---
 
-*Defender for Cloud in practice · Episode 1 of 52*
+*Episode 1 of the series Cloud Security – Microsoft Defender*
 
 A recommendation about a cloud resource, a suspicious activity alert and a finding from a repository can all belong to the same security conversation. They do not necessarily need the same response, or the same person to deal with them.
 

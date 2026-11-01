@@ -1,5 +1,5 @@
 {
-  "series": "Defender for Cloud in practice",
+  "series": "Cloud Security – Microsoft Defender",
   "prepared_on": "2026-11-01",
   "language_pair": [
     "en-CA",
@@ -9,34 +9,33 @@
   "publication_timezone": "America/New_York",
   "weekly_release": "Wednesday 11:00 Eastern; GitHub Actions dispatch/build/deploy timing is best effort.",
   "approval_scope": "User approved the layout/Canadian English/signature and explicitly instructed publishing original EN and corresponding PT-PT translations. Later unwritten episodes remain unapproved.",
-  "episode_count_planned": 52,
   "written_episodes": [
     {
       "episode": 1,
       "translationKey": "defender-for-cloud-series-01-cnapp-in-plain-english",
       "publish_at": "2026-11-04T11:00:00-05:00",
-      "status": "approved; repository delivery pending",
+      "status": "approved; committed to main for future publication",
       "versions": [
         {
           "language": "en-CA",
           "file": "src/content/posts/en/defender-for-cloud-series-01-cnapp-in-plain-english.md",
           "url": "/posts/defender-for-cloud-series-01-cnapp-in-plain-english",
-          "sha256": "612c2789597f8f096b949fef01b71357a0d6195664afd9dceb250f6700fd9c4a",
-          "body_sha256": "410f3477f3dc1c26c21beeb17ea4ee265da492bcdddf7a5494312b3b856e9a0d",
+          "sha256": "493d53ce5aade06ff1c71f860488c408d44cfdcff432475a3a2f5c1f7dbe7373",
+          "body_sha256": "7fad443d1c80839d81513fa8a0ccb8c9fd9686a6a76dca8342a9110dda319a1a",
           "signature": "Cheers,  \n**Marcos Nogueira**  \n[Connect with me on LinkedIn](https://www.linkedin.com/in/mdnoga/)"
         },
         {
           "language": "pt-PT",
           "file": "src/content/posts/pt/defender-for-cloud-series-01-cnapp-in-plain-english.md",
           "url": "/pt/posts/defender-for-cloud-series-01-cnapp-in-plain-english",
-          "sha256": "d0a3819efeaec68b593db8ad93af25aaa285969d9145cc44d6d5734181d7083e",
-          "body_sha256": "4ff5f44160c6cd1f832fe6af0f437b51c73ed8fd0780fe6b0d8d39013bb4b53a",
+          "sha256": "f4ad16742cedcca8b3982910bbf350eae02ea799c0174736dcf906358e6d3209",
+          "body_sha256": "0609816db3983d31566577d5116f64ebe528dfc4294c7fd233e826d0092fd870",
           "signature": "Até à próxima,  \n**Marcos Nogueira**  \n[Ligue-se a mim no LinkedIn](https://www.linkedin.com/in/mdnoga/)"
         }
       ]
     }
   ],
-  "unwritten_episodes": "2–52 remain outlines; do not publish placeholders or infer content approval.",
+  "unwritten_episodes": "Later articles require writing and individual approval; do not publish placeholders.",
   "publication_gate": "Only approved files have draft:false; pubDate gates visibility. Both Episode 1 versions share the same timestamp.",
   "schedule_reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule",
   "source_references": [
@@ -83,7 +82,6 @@
     "one_listing_entry_per_language": true,
     "weekly_timezone": "America/New_York",
     "weekly_time": "Wednesday 11:00",
-    "later_episodes_unwritten": 51,
     "errors": []
   },
   "build_checks": {
@@ -92,5 +90,12 @@
     "production_build": "passed; 1159 pages under a release-time fixture",
     "test_fixture": "The frozen clock is local validation only and is not included in the repository changes.",
     "search": "passed; 1186 pages across the existing English and Portuguese indexes"
+  },
+  "editorial_direction": {
+    "public_label_en": "Episode 1 of the series Cloud Security – Microsoft Defender",
+    "public_label_pt": "Episódio 1 da série Segurança na Cloud – Microsoft Defender",
+    "hide_total_episode_count": true,
+    "episode_2_series_hub": "Create dedicated EN and PT series pages introducing the topic, linking released articles, and explaining that a new series article appears every Wednesday over the coming weeks. Keep separate from ordinary blog posts.",
+    "avoid_unannounced_related_formats": true
   }
 }
