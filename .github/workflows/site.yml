@@ -8,6 +8,9 @@ on:
     # Weekly approved-article release build. Future pubDate still gates visibility.
     - cron: '0 11 * * 3'
       timezone: 'America/New_York'
+    # Cybersecurity in Practice: approved Friday articles.
+    - cron: '0 11 * * 5'
+      timezone: 'America/New_York'
   workflow_dispatch:
 
 permissions:

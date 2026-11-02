@@ -1,0 +1,62 @@
+{
+  "series": "Cybersecurity in Practice",
+  "series_pt_PT": "Cibersegurança na Prática",
+  "episode": 1,
+  "translationKey": "cybersecurity-in-practice-01-where-to-start",
+  "approved_on": "2026-11-02",
+  "approval": "User reviewed the EN/PT-PT previews and approved with \"Yes looks good\".",
+  "display_date": "2026-10-30T11:00:00-04:00",
+  "cadence": "Friday 11:00 America/New_York; dispatch/build/deployment can be delayed.",
+  "versions": [
+    {
+      "language": "en-CA",
+      "file": "src/content/posts/en/cybersecurity-in-practice-01-where-to-start.md",
+      "sha256": "2ab790e40f5a5d1aab5ed0cb695a0472cdc9bb3988a22b3113b17405178af228",
+      "body_sha256": "6f288435411518d4b80eb24ed11d185ede1501e4b48eb016637f96df442fb9e3"
+    },
+    {
+      "language": "pt-PT",
+      "file": "src/content/posts/pt/cybersecurity-in-practice-01-where-to-start.md",
+      "sha256": "d35af4dd99ea6c5a193928a0990d27de69a765a9ebcf92523271fcb1ecb69825",
+      "body_sha256": "44f9f4c9b58dea7a32db5dd9268879b993bb447e228ca5039aa4fd67a7c004b1"
+    }
+  ],
+  "image": {
+    "file": "public/images/series/cybersecurity-in-practice/episode-01-business-service-map.svg",
+    "type": "original editorial diagram; hypothetical service; lead image and thumbnail for this episode only"
+  },
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/security/principles",
+      "claims_checked": "CIA concerns and security design principles"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/adoption/adoption",
+      "claims_checked": "Organization-wide security modernization"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/pillars",
+      "claims_checked": "Five workload design pillars"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/adoption/mcra",
+      "claims_checked": "Architecture reference scope"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
+      "claims_checked": "Three Zero Trust principles"
+    },
+    {
+      "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+      "claims_checked": "Concurrent CSF functions and governance; comparison is editorial, not an official mapping"
+    }
+  ],
+  "scenario": "fictional; no customer outcome or executed lab claimed",
+  "phase_provenance": "User confirmed experience-based phase model in this conversation",
+  "phase_validation": "Experience-based Assess/Plan/Protect/Detect/Respond/Recover model. Governance, ownership and learning span the work; activities overlap. NIST comparison is editorial, not an official one-to-one mapping.",
+  "later_articles": "Require research, writing, translation and individual approval before publication.",
+  "public_series_rules": {
+    "no_total_episode_count": true,
+    "episode_2_hub": "Create separate EN/PT series pages explaining Friday cadence and listing released articles, separate from ordinary blog posts."
+  }
+}
