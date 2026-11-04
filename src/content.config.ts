@@ -34,6 +34,8 @@ const posts = defineCollection({
       translationKey: z.string(),
       cover: image().optional(),
       coverAlt: z.string().optional(),
+      // Explicit author choice for a different image already inside this article.
+      thumbnailImageIndex: z.number().int().min(1).max(20).optional(),
       draft: z.boolean().default(false),
       readingTime: z.number().optional(),
       // Set by scripts/migrate-jekyll.py on posts imported from the old blog.

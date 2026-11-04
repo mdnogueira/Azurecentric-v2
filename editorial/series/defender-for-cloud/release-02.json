@@ -1,0 +1,51 @@
+{
+  "series": "Cloud Security – Microsoft Defender",
+  "episode": 2,
+  "approved_on": "2026-11-04",
+  "approval": "User approved the articles and explicitly requested the second inline image as the Defender Episode 2 thumbnail.",
+  "publish_at": "2026-11-11T11:00:00-05:00",
+  "timezone": "America/New_York",
+  "publication": "Scheduled by future pubDate; GitHub dispatch, build and deployment can be delayed.",
+  "versions": [
+    {
+      "series": "Cloud Security – Microsoft Defender",
+      "episode": 2,
+      "language": "en",
+      "title": "Secure score that drives action, not a weekly percentage",
+      "file": "defender-02.en.md",
+      "url": "/posts/defender-for-cloud-series-02-secure-score-that-drives-action",
+      "status": "approved; prepared for repository release",
+      "sha256": "17e041e2438265d5aa71bc3d30435815d0b45ed99c732a8d889bba99826ed5ab",
+      "publication_file": "src/content/posts/en/defender-for-cloud-series-02-secure-score-that-drives-action.md",
+      "body_sha256": "c33436097b3f6ac1ac1a8c59bc2d7d00bea5731e60485f1adccb40be6a3c7b0a",
+      "approved_on": "2026-11-04"
+    },
+    {
+      "series": "Cloud Security – Microsoft Defender",
+      "episode": 2,
+      "language": "pt",
+      "title": "Uma pontuação de segurança que conduz a ações, não apenas a uma percentagem semanal",
+      "file": "defender-02.pt.md",
+      "url": "/pt/posts/defender-for-cloud-series-02-secure-score-that-drives-action",
+      "status": "approved; prepared for repository release",
+      "sha256": "46a37bace9bcec3c5fa30631971ec181e7aa691994d42e72eb934292c4273228",
+      "publication_file": "src/content/posts/pt/defender-for-cloud-series-02-secure-score-that-drives-action.md",
+      "body_sha256": "1f2434cbc17e89f285cae0ac03258bc5951e29967c9892b340549746a392dc0a",
+      "approved_on": "2026-11-04"
+    }
+  ],
+  "sources": [
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/review-security-recommendations",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/risk-prioritization"
+  ],
+  "scenario": "Explicitly illustrative; no observed customer/test results claimed.",
+  "series_page": "/series/cloud-security-microsoft-defender",
+  "next_articles": "Prepare only the following week with fresh sources, then request individual bilingual approval.",
+  "thumbnail": {
+    "selection": "second inline image in each language",
+    "file": "/images/series/defender-for-cloud/episode-02-classic-secure-score-learn.png",
+    "body_order_unchanged": true,
+    "scope": "Author-requested exception for Episode 2 only; first-image default remains for other posts."
+  }
+}

@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getLang, localePath, formatDate } from '../../i18n/utils';
+import { postsFor, postSlug } from '../../lib/posts';
+export function getStaticPaths() {
+  return ['cloud-security-microsoft-defender','cybersecurity-in-practice'].map(series=>({params:{series}}));
+}
+const lang=getLang(Astro.currentLocale);
+const pt=lang==='pt';
+const defender=Astro.params.series==='cloud-security-microsoft-defender';
+const title=defender?(pt?'Segurança na Cloud – Microsoft Defender':'Cloud Security – Microsoft Defender'):(pt?'Cibersegurança na Prática':'Cybersecurity in Practice');
+const description=defender
+ ? (pt?'Uma série prática sobre o Defender for Cloud: da postura de segurança à proteção das cargas de trabalho, passando pela investigação e pela remediação.':'A practical series about Defender for Cloud, from security posture and workload protection to investigation and remediation.')
+ : (pt?'Uma série prática que parte dos fundamentos da cibersegurança e avança para a arquitetura, a identidade, a proteção de dados e as operações de segurança.':'A practical series moving from cybersecurity fundamentals into architecture, identity, data protection and security operations.');
+const cadence=defender?(pt?'Um novo artigo todas as quartas-feiras, nas próximas semanas.':'A new article every Wednesday over the coming weeks.'):(pt?'Um novo artigo todas as sextas-feiras, nas próximas semanas.':'A new article every Friday over the coming weeks.');
+const prefix=defender?'defender-for-cloud-series-':'cybersecurity-in-practice-';
+const posts=(await postsFor(lang)).filter(p=>p.data.translationKey.startsWith(prefix)).sort((a,b)=>a.data.pubDate.valueOf()-b.data.pubDate.valueOf());
+---
+<Base title={title} description={description} active="posts" back={localePath(lang,'/posts')} noindex={import.meta.env.DEV}>
+ <main class="series-wrap">
+  <p class="eyebrow">{pt?'SÉRIE DE ARTIGOS':'ARTICLE SERIES'}</p>
+  <h1>{title}</h1>
+  <p class="intro">{description}</p>
+  <p>{cadence}</p>
+  <p>{pt?'Esta página reúne os artigos desta série, para que possa acompanhar os temas pela ordem em que são apresentados. Cada artigo desenvolve uma questão concreta, com exemplos, fontes e uma ação prática.':'This page brings the series articles together so you can follow the topics in order. Each article develops a concrete question, with examples, sources and a practical next action.'}</p>
+  <div class="episodes">{posts.map((p,i)=><a href={localePath(lang,`/posts/${postSlug(p)}`)} class="episode"><span>{pt?'Episódio':'Episode'} {i+1}</span><h2>{p.data.title}</h2><p>{p.data.description}</p><time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate,lang)}</time></a>)}</div>
+  <p class="signature">Marcos Nogueira · <a href="https://www.linkedin.com/in/mdnoga/">LinkedIn</a></p>
+ </main>
+</Base>
+<style>
+ .series-wrap{max-width:900px;margin:auto;padding:56px 24px 80px}.eyebrow{font-size:.8rem;letter-spacing:.13em;opacity:.7}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin:12px 0 24px}.intro{font-size:1.3rem}p{line-height:1.7}.episodes{display:grid;gap:18px;margin:36px 0}.episode{display:block;padding:24px;border:1px solid var(--border,#50667e);border-radius:16px;color:inherit;text-decoration:none}.episode:hover{background:rgba(110,170,200,.09)}.episode span,time{font-size:.85rem;opacity:.75}.episode h2{font-size:1.35rem;margin:8px 0}.episode p{margin:8px 0 16px}.signature{margin-top:40px}
+</style>

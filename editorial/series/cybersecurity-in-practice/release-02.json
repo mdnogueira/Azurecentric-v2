@@ -1,0 +1,45 @@
+{
+  "series": "Cybersecurity in Practice",
+  "episode": 2,
+  "approved_on": "2026-11-04",
+  "approval": "User approved the articles and explicitly requested the second inline image as the Defender Episode 2 thumbnail.",
+  "publish_at": "2026-11-06T11:00:00-05:00",
+  "timezone": "America/New_York",
+  "publication": "Scheduled by future pubDate; GitHub dispatch, build and deployment can be delayed.",
+  "versions": [
+    {
+      "series": "Cybersecurity in Practice",
+      "episode": 2,
+      "language": "en",
+      "title": "The CIA triad: three questions to ask about the same service",
+      "file": "cybersecurity-02.en.md",
+      "url": "/posts/cybersecurity-in-practice-02-cia-triad",
+      "status": "approved; prepared for repository release",
+      "sha256": "16446152aa6589092b3eb3b4d1930f518c7403e1bad282b5f8ed560c7f52d93b",
+      "publication_file": "src/content/posts/en/cybersecurity-in-practice-02-cia-triad.md",
+      "body_sha256": "c1d24ca530925c362c36efa5a4692ee0553b7c68eff8f44ed3b63bb642cdc8f3",
+      "approved_on": "2026-11-04"
+    },
+    {
+      "series": "Cybersecurity in Practice",
+      "episode": 2,
+      "language": "pt",
+      "title": "A tríade CIA: três perguntas sobre o mesmo serviço",
+      "file": "cybersecurity-02.pt.md",
+      "url": "/pt/posts/cybersecurity-in-practice-02-cia-triad",
+      "status": "approved; prepared for repository release",
+      "sha256": "bf61571d4959c2cd1da99c035ac63b33479a268f950e49535a50063c93feade0",
+      "publication_file": "src/content/posts/pt/cybersecurity-in-practice-02-cia-triad.md",
+      "body_sha256": "c78ee93b21f5b540d4b0b2e3f0d033c8ff3cf5c003f9287bbf63fc47c86d3ead",
+      "approved_on": "2026-11-04"
+    }
+  ],
+  "sources": [
+    "https://learn.microsoft.com/en-us/azure/well-architected/security/principles",
+    "https://learn.microsoft.com/en-us/azure/well-architected/security/data-classification",
+    "https://learn.microsoft.com/en-us/azure/well-architected/security/tradeoffs"
+  ],
+  "scenario": "Explicitly illustrative; no observed customer/test results claimed.",
+  "series_page": "/series/cybersecurity-in-practice",
+  "next_articles": "Prepare only the following week with fresh sources, then request individual bilingual approval."
+}

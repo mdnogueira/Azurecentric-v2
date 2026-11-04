@@ -21,8 +21,9 @@ function htmlImage(value) {
   }
 }
 
-/** Select the first content image in document order, never a frontmatter override. */
-export function firstArticleImage(tree, file) {
+/** Select a content image in document order; the first is the site-wide default. */
+export function firstArticleImage(tree, file, imageIndex = 1) {
+  let remaining = imageIndex;
   const definitions = new Map();
   const key = (value) => value.trim().replace(/\s+/g, ' ').toLowerCase();
   function collect(node) {
@@ -31,14 +32,14 @@ export function firstArticleImage(tree, file) {
   }
   collect(tree);
   function find(node) {
-    if (node.type === 'image' && node.url?.trim()) return { src: node.url.trim(), alt: node.alt ?? '' };
+    if (node.type === 'image' && node.url?.trim() && --remaining === 0) return { src: node.url.trim(), alt: node.alt ?? '' };
     if (node.type === 'imageReference') {
       const src = definitions.get(key(node.identifier));
-      if (src) return { src, alt: node.alt ?? '' };
+      if (src && --remaining === 0) return { src, alt: node.alt ?? '' };
     }
     if (node.type === 'html') {
       const image = htmlImage(node.value);
-      if (image) return image;
+      if (image && --remaining === 0) return image;
     }
     for (const child of node.children ?? []) {
       const image = find(child);
@@ -60,6 +61,12 @@ export default function remarkFirstArticleImage() {
     file.data.astro ??= {};
     file.data.astro.frontmatter ??= {};
     file.data.astro.frontmatter.firstArticleImage = firstArticleImage(tree, file);
+    const selectedIndex = file.data.astro.frontmatter.thumbnailImageIndex;
+    if (selectedIndex !== undefined) {
+      const selected = firstArticleImage(tree, file, selectedIndex);
+      if (!selected) throw new Error('The selected thumbnail image is missing from ' + file.path);
+      file.data.astro.frontmatter.selectedArticleThumbnail = selected;
+    }
   };
 }
 

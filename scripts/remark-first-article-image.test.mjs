@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { firstArticleImage } from './remark-first-article-image.mjs';
+import remarkFirstArticleImage, { firstArticleImage } from './remark-first-article-image.mjs';
 const file = { cwd: process.cwd(), path: 'src/content/posts/en/example.md' };
 const root = (...children) => ({ type: 'root', children });
 const image = (url, alt = '') => ({ type: 'image', url, alt });
@@ -26,5 +26,22 @@ test('a cover field does not override the only thumbnail rule', () => {
 });
 test('external images need no local-file lookup', () => {
  assert.equal(firstArticleImage(root(image('https://example.com/first.png')), file).src, 'https://example.com/first.png');
+});
+
+test('an explicit second-image choice retains the first-image default for other articles', () => {
+ const tree = root(image('/diagram.svg', 'Diagram'), image('/score.png', 'Score screenshot'));
+ const selectedFile = { ...file, data: { astro: { frontmatter: { thumbnailImageIndex: 2 } } } };
+ remarkFirstArticleImage()(tree, selectedFile);
+ assert.equal(selectedFile.data.astro.frontmatter.selectedArticleThumbnail.src, '/score.png');
+ assert.equal(selectedFile.data.astro.frontmatter.firstArticleImage.src, '/diagram.svg');
+ const ordinaryFile = { ...file, data: { astro: { frontmatter: {} } } };
+ remarkFirstArticleImage()(tree, ordinaryFile);
+ assert.equal(ordinaryFile.data.astro.frontmatter.firstArticleImage.src, '/diagram.svg');
+ assert.equal(ordinaryFile.data.astro.frontmatter.selectedArticleThumbnail, undefined);
+});
+
+test('a missing selected image fails instead of substituting an unrelated picture', () => {
+ const selectedFile = { ...file, data: { astro: { frontmatter: { thumbnailImageIndex: 2 } } } };
+ assert.throws(() => remarkFirstArticleImage()(root(image('/only.png')), selectedFile), /selected thumbnail image is missing/);
 });
 

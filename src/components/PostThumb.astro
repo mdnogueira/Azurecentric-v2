@@ -7,7 +7,7 @@ import type { Post } from '../lib/posts';
 interface Props { post: Post; width: number; height: number; class?: string; sizes?: string }
 const { post, width, height, class: cls, sizes } = Astro.props;
 const { remarkPluginFrontmatter } = await render(post);
-const first = remarkPluginFrontmatter.firstArticleImage as
+const first = (remarkPluginFrontmatter.selectedArticleThumbnail ?? remarkPluginFrontmatter.firstArticleImage) as
   { src: string; alt: string; assetPath?: string } | undefined;
 const assets = import.meta.glob<ImageMetadata>('/src/assets/**/*.{avif,gif,jpeg,jpg,png,svg,webp}', {
   eager: true,
