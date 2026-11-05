@@ -1,0 +1,38 @@
+{
+  "series": "Cybersecurity in Practice",
+  "episode": 3,
+  "approved_on": "2026-11-05",
+  "approval": "Marcos approved the exact EN/PT-PT article and localized diagrams in this chat with \"approved\", following the paired review request.",
+  "review_revision": 1,
+  "review_package_hash": "de2f491c1a71ae0ef8d31fb356328576df0f39ccef57a1c7985b9e3e690309b3",
+  "publish_at": "2026-11-13T11:00:00-05:00",
+  "timezone": "America/New_York",
+  "publication": "Scheduled by future pubDate; release build and deployment may be delayed.",
+  "versions": [
+    {
+      "language": "en-CA",
+      "path": "src/content/posts/en/cybersecurity-in-practice-03-authentication-vs-authorization.md",
+      "approved_draft_sha256": "44685f07b7e00a8098ab463487018d56dbe0d967ce80422074f7da20739a3a6f",
+      "release_sha256": "4177abe4e67872232ee91065515e5ae76de0c1ce19aeaed8b01ebe3fc545332a",
+      "body_sha256": "4e39553ba796965bb35675328f2b3df66e9b23805509fae2cb9b13c691e9d095"
+    },
+    {
+      "language": "pt-PT",
+      "path": "src/content/posts/pt/cybersecurity-in-practice-03-authentication-vs-authorization.md",
+      "approved_draft_sha256": "2f4a1e43440a1c80011ed3c269857547783ff2e36f31836b100d7e6e02146f0a",
+      "release_sha256": "06d8e72565bcc3b2ec5e2a038df7797d584c7ea820c40eca968627958b3e04f9",
+      "body_sha256": "8830e94c33838349908d0d0824f55a868ab7accb8965b286b0ac918473998d8d"
+    }
+  ],
+  "sources": [
+    "https://learn.microsoft.com/en-us/entra/identity-platform/authentication-vs-authorization",
+    "https://learn.microsoft.com/en-us/aspnet/core/security/authorization/resource-based?view=aspnetcore-10.0",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/claims-validation",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access"
+  ],
+  "scenario": "Fictional portal and suggested synthetic-account exercise; no executed lab or customer result claimed.",
+  "thumbnail": "First body image in each language; original localized access-decision diagram.",
+  "series_page": "/series/cybersecurity-in-practice"
+}
