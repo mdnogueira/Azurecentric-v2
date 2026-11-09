@@ -1,0 +1,41 @@
+{
+  "article_id": "3f3da57c716d4946",
+  "approved_on": "2026-11-09",
+  "approval": "Marcos directly requested: Approved. Publish the Windows Server TAP article in English and Portuguese with the original Microsoft graphic. Exact r2 pair approved in this chat.",
+  "approved_review_revision": 2,
+  "approved_review_hash": "c190f17c665a2b48127f0a6bf293adece696b0d108a8dff5e2c14161cc2056f3",
+  "publish_at": "2026-11-09T23:15:02+00:00",
+  "original_source_published_at": "2026-11-09T20:03:09+00:00",
+  "first_review_delivered_at": "2026-11-09T23:12:33+00:00",
+  "versions": [
+    {
+      "path": "src/content/posts/en/windows-server-tap-validate-preview-builds.md",
+      "approved_draft_sha256": "6237aaa4b71cdd3217c38dd967a2031b4fabbcab061d98052ca4a9080d9f6ad9",
+      "release_sha256": "ba15d2b8299d055d04cd42d8ee7047d2b018c7f9877712b8767f924cb2195fff",
+      "body_sha256": "d70612b7801ed53273f9a2738e514fbe34b6b2ecab2ed01a91b688c29e951b3e"
+    },
+    {
+      "path": "src/content/posts/pt/windows-server-tap-validate-preview-builds.md",
+      "approved_draft_sha256": "c1f73062362bd5fc898d2461fc6e3ba83c082a4f0d098368d9abbab60142cc4b",
+      "release_sha256": "05a9a732b4bff3ad9c7c627e301e9e7ac4c7207ad538de34293b05545fd65ad2",
+      "body_sha256": "5e2adc14889dc2d8a935d3ba6304ddc74c8bec921c5c4501c4fd34882dc2e636"
+    }
+  ],
+  "image": {
+    "local_path": "/images/news/windows-server-tap-20261109.jpg",
+    "sha256": "a55dc98cf37408e1195963d4756b2b1806a220ae1b69ae7d3fa01e773cdce72e",
+    "format": "original Microsoft JPEG, unmodified",
+    "placement": "first body image and thumbnail in both languages",
+    "source": "https://techcommunity.microsoft.com/t5/windows-server-news-and-best/your-experience-matters-help-shape-what-s-next-for-windows/ba-p/4571788"
+  },
+  "sources": [
+    "https://techcommunity.microsoft.com/t5/windows-server-news-and-best/your-experience-matters-help-shape-what-s-next-for-windows/ba-p/4571788",
+    "https://learn.microsoft.com/en-us/windows-server/get-started/get-started-with-windows-server-insiders-preview"
+  ],
+  "article_state": "approved for publication; deployment verification pending",
+  "limitations": [
+    "No TAP participation, test, deployment, upgrade or customer results claimed.",
+    "No named TAP build, production support entitlement, fee, licensing entitlement, geographic eligibility or SLA specified in the announcement. Confirm with Microsoft before committing.",
+    "Insider document is dated 2024-11-22; its build limitations are not attributed to current TAP."
+  ]
+}
