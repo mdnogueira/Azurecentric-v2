@@ -1,0 +1,45 @@
+{
+  "article_id": "60766a311b4548f0",
+  "approved_on": "2026-11-10",
+  "approval": "Marcos directly requested: Approved. Publish the Dependabot article in English and Portuguese with the original GitHub graphic. Exact r2 pair approved in this chat.",
+  "approved_review_revision": 2,
+  "approved_review_hash": "24284a414c9aadf964b8422a9939046b2998c3501d3f855c6f285055c6315af0",
+  "publish_at": "2026-11-10T16:44:20+00:00",
+  "original_source_published_at": "2026-11-10T14:20:05+00:00",
+  "first_review_delivered_at": "2026-11-10T16:41:30+00:00",
+  "versions": [
+    {
+      "path": "src/content/posts/en/dependabot-alerts-inactive-repositories.md",
+      "approved_draft_sha256": "5ef7d2f7ae704970cbd577ed43b88f4f576fe2ad7febf66826b98b401b782557",
+      "release_sha256": "414458f8c4a8556f5bf2200ed5042567fa18090504a689f4f1ca8b296e52dca5",
+      "body_sha256": "ed505a8315112abf677774bb5d95ffefc9d914fa213a03e46787deed5465a36e"
+    },
+    {
+      "path": "src/content/posts/pt/dependabot-alerts-inactive-repositories.md",
+      "approved_draft_sha256": "4ec341ed8118821b2ac1c55930ab943951c74e21c0b9d2173fc3579f2ff71841",
+      "release_sha256": "0209973012d14219bc6c2d0759a3399df04e760d8f7528a262f221708ffcb253",
+      "body_sha256": "f7f3d0806fb84aaccd020375df169be7e28710815a74e304aeddf7578e0b9ecf"
+    }
+  ],
+  "image": {
+    "local_path": "/images/news/dependabot-inactive-repositories-20261110.png",
+    "sha256": "f864090e7438933f6e1fb8edc286ec5584ca15c314f03860d060f4266fa52c6a",
+    "format": "original GitHub PNG, unmodified",
+    "placement": "first body image and thumbnail in both languages",
+    "source": "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories"
+  },
+  "sources": [
+    "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories",
+    "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts",
+    "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration",
+    "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-code-security-and-analysis-for-your-enterprise",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-devops-introduction",
+    "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-dependabot-alerts"
+  ],
+  "article_state": "approved for publication; deployment verification pending",
+  "limitations": [
+    "Future announced start is 8 December 2026; no claim the change is already active or a new preview/GA feature.",
+    "No repository, policy, dependency, Azure connector, Sentinel ingestion, API or webhook tests performed; unsupported first-pass integration claims removed.",
+    "Archived alerts are distinguished from archived repositories. A restrictive policy is not proof alerts are enabled."
+  ]
+}
