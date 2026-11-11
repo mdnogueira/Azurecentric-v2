@@ -1,0 +1,41 @@
+{
+  "article_id": "ab45860365bf4a7b",
+  "approval": "Approved. Publish the PowerShell 7.7 article in English and Portuguese with the diagrams from revision 2.",
+  "approved_review_revision": 2,
+  "approved_review_hash": "8ffc6338c653b0311ce2642302b829f6c8d1ad40f2349d7c7669b1550a15ce49",
+  "publish_at": "2026-11-11T00:16:31+00:00",
+  "original_source_published_at": "2026-11-10T21:05:06+00:00",
+  "first_review_delivered_at": "2026-11-11T00:11:33+00:00",
+  "versions": [
+    {
+      "path": "src/content/posts/en/powershell-77-ga-automation-validation.md",
+      "approved_draft_sha256": "4c9eb935382b5babb215dcc191829c0fc7e34c399d04654c46b51526c8789c9a",
+      "release_sha256": "623e079ec379d59e1c5b0ef5194ffed48cbb78842a3d3437f8c81456ec872761"
+    },
+    {
+      "path": "src/content/posts/pt/powershell-77-ga-automation-validation.md",
+      "approved_draft_sha256": "383d07212051dcc9943e0875c7c783b85ca976e8e4f66ef3666a01db7bdbafa9",
+      "release_sha256": "efc061f895baab4885996f12f5be23eb83006e563cfc98059a2081b57badbedd"
+    }
+  ],
+  "diagrams": {
+    "public/images/news/powershell-77-validation-en.svg": "f7122b5b20ec5f5ce1267e751f0e1ce7ce4482564d970b93293edff0d82a1235",
+    "public/images/news/powershell-77-validation-pt.svg": "13674d4c9690bfd7884f5f5125cc0b6ee21585c86e85ad20039043ea12f16715"
+  },
+  "sources": [
+    "https://devblogs.microsoft.com/powershell/announcing-powershell-7-7/",
+    "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-77",
+    "https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-support-lifecycle",
+    "https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows",
+    "https://github.com/PowerShell/PowerShell/releases/tag/v7.7.0",
+    "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.6",
+    "https://learn.microsoft.com/en-us/dotnet/api/system.guid.newguid"
+  ],
+  "article_state": "approved for publication; deployment verification pending",
+  "limitations": [
+    "GA status, STS and .NET 11 are confirmed by original announcement and actual v7.7.0 release; Learn lifecycle/What's New still have preview labels. No final STS end date or GA module inventory asserted.",
+    "Windows MSI absence is scoped to 7.7.0. MSIX/ZIP limitations require workload-specific review; no package installed or winget channel availability tested.",
+    "No 7.7 execution, migration, performance, policy, remoting or customer tests claimed. Inline command references only; pilot worksheet and CSV scenario are hypothetical.",
+    "Constrained language is not presented as a standalone security boundary. Neither v4 nor v7 GUIDs are recommended as secrets."
+  ]
+}
