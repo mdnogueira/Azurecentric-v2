@@ -1,0 +1,39 @@
+{
+  "article_id": "7c457d897f0b47ce",
+  "approval": "All the articles are approved. Clarified: all the other articles, not the series. Applies to the previously reviewed CodeQL revision 2 English/Portuguese pair and diagrams.",
+  "approved_review_revision": 2,
+  "approved_review_hash": "7ebd2bab679c1250e326d13b9089db77e7196baa7245ad6274b7952ce7f4ba0c",
+  "publish_at": "2026-11-12T21:19:15+00:00",
+  "original_source_published_at": "2026-11-04T20:04:52+00:00",
+  "first_review_delivered_at": "2026-11-04T23:08:21+00:00",
+  "versions": [
+    {
+      "path": "src/content/posts/en/codeql-2-27-4-accuracy-metadata.md",
+      "approved_draft_sha256": "ee4ceb0ff8c0ba5b573f84755033bf767e9d45493890c91df072b0f50e11757f",
+      "release_sha256": "2220a45e1316bfdf9ad7e2688a3ff9db5f960987410517f04257ab29bcbc8f96"
+    },
+    {
+      "path": "src/content/posts/pt/codeql-2-27-4-accuracy-metadata.md",
+      "approved_draft_sha256": "f4a48a469209d790f1856e59b9e906b51654e318cd783822f74426e833f46c81",
+      "release_sha256": "762656557268e3f6835fb30d1c8c6ab2d6551c4a35b3b8cb99c0c5a103e3c29c"
+    }
+  ],
+  "diagrams": {
+    "public/images/news/codeql-2-27-4-review-lanes.svg": "c2b166eeae53c13826eba759a22fd7197c95f315b8d3c73a67925a2a7aabc6b5",
+    "public/images/news/codeql-2-27-4-review-lanes.pt.svg": "fcd6cd7040442107a752201f457d8e8615362f05da846e34a936dddb8816d333"
+  },
+  "sources": [
+    "https://github.blog/changelog/2026-11-04-codeql-2-27-4-improves-accuracy-and-query-metadata/",
+    "https://codeql.github.com/docs/codeql-overview/codeql-changelog/codeql-cli-2.27.4/",
+    "https://cwe.mitre.org/data/definitions/730.html",
+    "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support",
+    "https://docs.github.com/en/billing/concepts/product-billing/github-advanced-security"
+  ],
+  "article_state": "approved for publication; deployment verification pending",
+  "limitations": [
+    "No actual repository analysis or deployment was run. Suggested review worksheet and Java scenario are illustrative.",
+    "Hosted CodeQL deployment statement is vendor guidance, not proof a particular repository ran this version. No GHES release availability is asserted.",
+    "Frontmatter date records draft preparation for preview and must be set to the approved publication time at release. Neither draft is published.",
+    "PT-PT uses the same verified sources and meaning, with a localized original diagram. Local model first-pass translation was independently corrected."
+  ]
+}

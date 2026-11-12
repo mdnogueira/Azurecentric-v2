@@ -1,0 +1,23 @@
+{
+  "id": "weekly-defender-03-20261118",
+  "review_revision": 1,
+  "review_package_hash": "10ca429352d7fe55bbe5fcf81606b91da4e8264ef74e9e1d7401ba021c1e99f3",
+  "approval_note": "Even the series articles are approved.",
+  "scope": "Both EN/PT-PT series pairs discussed in the publication calendar, including their prepared article illustrations. Publish on existing intended Wednesday/Friday dates.",
+  "approved_at": "2026-11-12T21:20:40+00:00",
+  "intended_publish_at": "2026-11-18T11:00:00-05:00",
+  "approved_file_sha256": {
+    "src/content/posts/en/defender-for-cloud-series-03-foundational-or-defender-cspm.md": "aec5030b312309ddfbf0daa6fb852b70938fdf69dff565cb2557762fb8116566",
+    "src/content/posts/pt/defender-for-cloud-series-03-foundational-or-defender-cspm.md": "c4f3a79e1dd548123d7d88a7b53ee1ad7e83f0dd2533cd2b168fcad76fe1124b",
+    "public/images/series/defender-for-cloud/episode-03-plan-decision.pt.svg": "fa2880ce6d3a013536d8d1f8a10b16ed7dfb8804cf116325bbbc2bcb147baf8f",
+    "public/images/series/defender-for-cloud/episode-03-plan-decision.svg": "6bfaa0a8dbd00c1621495b8748fd128abcfecd5583472a782b1de6c2a0f894e0"
+  },
+  "release_file_sha256": {
+    "src/content/posts/en/defender-for-cloud-series-03-foundational-or-defender-cspm.md": "55ab3d2d7bfd531ab622bb54077540c0a1a4978566de23bb97c54e98fa98b1ee",
+    "src/content/posts/pt/defender-for-cloud-series-03-foundational-or-defender-cspm.md": "41ae5a8e0844db9c134a479774a6f9ff45519f64a90a81a375055344d34ef353",
+    "public/images/series/defender-for-cloud/episode-03-plan-decision.pt.svg": "fa2880ce6d3a013536d8d1f8a10b16ed7dfb8804cf116325bbbc2bcb147baf8f",
+    "public/images/series/defender-for-cloud/episode-03-plan-decision.svg": "6bfaa0a8dbd00c1621495b8748fd128abcfecd5583472a782b1de6c2a0f894e0"
+  },
+  "state": "approved_scheduled_pending_repository_commit",
+  "published": false
+}

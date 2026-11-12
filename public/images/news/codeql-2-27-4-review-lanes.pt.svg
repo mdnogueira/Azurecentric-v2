@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+<title id="title">CodeQL: três verificações antes de interpretar uma alteração</title>
+<desc id="desc">Reveja separadamente a análise, os metadados e os resultados do pipeline. Menos alertas, por si só, não demonstram uma correção na aplicação. Ilustração conceptual original.</desc>
+<rect width="1440" height="810" fill="#091a2b"/>
+<g font-family="Arial, sans-serif">
+<text x="70" y="83" fill="#6dd5ed" font-size="22" letter-spacing="3">AZURECENTRIC · CODEQL 2.27.4</text>
+<text x="70" y="153" fill="#ffffff" font-size="47" font-weight="700">O que mudou por trás do alerta?</text>
+<text x="70" y="201" fill="#bacbda" font-size="25">Três verificações independentes antes de considerar um alerta resolvido</text>
+<rect x="70" y="265" width="410" height="320" rx="20" fill="#123248" stroke="#35728a"/>
+<rect x="515" y="265" width="410" height="320" rx="20" fill="#123248" stroke="#35728a"/>
+<rect x="960" y="265" width="410" height="320" rx="20" fill="#123248" stroke="#35728a"/>
+<g fill="#6dd5ed" font-size="25" font-weight="700"><text x="102" y="318">01 · ANÁLISE</text><text x="547" y="318">02 · METADADOS</text><text x="992" y="318">03 · PIPELINE</text></g>
+<g fill="white" font-size="31" font-weight="700"><text x="102" y="380">Siga o fluxo do código</text><text x="547" y="380">Verifique as etiquetas</text><text x="992" y="380">Examine os artefactos</text></g>
+<g fill="#d6e2eb" font-size="25">
+<text x="102" y="440">Mesmo commit e âmbito?</text><text x="102" y="483">Comportamento diferente?</text><text x="102" y="542" fill="#6dd5ed">Guarde a evidência do alerta.</text>
+<text x="547" y="440">Mesma regra, outra CWE?</text><text x="547" y="483">O agrupamento mudou?</text><text x="547" y="542" fill="#6dd5ed">Explique as alterações.</text>
+<text x="992" y="440">Resultados e diagnósticos?</text><text x="992" y="483">Avisos e conteúdo do pacote?</text><text x="992" y="542" fill="#6dd5ed">Confirme a execução completa.</text>
+</g>
+<rect x="70" y="640" width="1300" height="101" rx="15" fill="#173f50"/>
+<text x="103" y="700" fill="#ffffff" font-size="32" font-weight="700">Menos alertas exigem uma explicação, além da percentagem.</text>
+<text x="70" y="780" fill="#9cb5c8" font-size="18">Modelo de revisão sugerido · Ilustração conceptual · Sem resultados de testes num repositório</text>
+</g></svg>

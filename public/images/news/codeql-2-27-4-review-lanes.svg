@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+<title id="title">CodeQL: three checks before interpreting a changed result</title>
+<desc id="desc">Review analysis behaviour, reporting metadata and pipeline output separately. A lower alert count alone does not demonstrate an application fix. Original conceptual illustration; not a product screenshot.</desc>
+<rect width="1440" height="810" fill="#091a2b"/>
+<g font-family="Arial, sans-serif">
+<text x="70" y="83" fill="#6dd5ed" font-size="22" letter-spacing="3">AZURECENTRIC · CODEQL 2.27.4</text>
+<text x="70" y="153" fill="#ffffff" font-size="47" font-weight="700">What changed behind the alert?</text>
+<text x="70" y="201" fill="#bacbda" font-size="25">Three independent checks before calling a finding resolved</text>
+<rect x="70" y="265" width="410" height="320" rx="20" fill="#123248" stroke="#35728a"/>
+<rect x="515" y="265" width="410" height="320" rx="20" fill="#123248" stroke="#35728a"/>
+<rect x="960" y="265" width="410" height="320" rx="20" fill="#123248" stroke="#35728a"/>
+<g fill="#6dd5ed" font-size="25" font-weight="700"><text x="102" y="318">01 · ANALYSIS</text><text x="547" y="318">02 · METADATA</text><text x="992" y="318">03 · PIPELINE</text></g>
+<g fill="white" font-size="31" font-weight="700"><text x="102" y="380">Follow the code flow</text><text x="547" y="380">Check the labels</text><text x="992" y="380">Inspect the artefacts</text></g>
+<g fill="#d6e2eb" font-size="25">
+<text x="102" y="440">Same commit and scope?</text><text x="102" y="483">Different query behaviour?</text><text x="102" y="542" fill="#6dd5ed">Keep the finding evidence.</text>
+<text x="547" y="440">Same rule, different CWE?</text><text x="547" y="483">Dashboard grouping changed?</text><text x="547" y="542" fill="#6dd5ed">Explain reporting changes.</text>
+<text x="992" y="440">Output and diagnostics?</text><text x="992" y="483">Pack warnings and contents?</text><text x="992" y="542" fill="#6dd5ed">Confirm the run is complete.</text>
+</g>
+<rect x="70" y="640" width="1300" height="101" rx="15" fill="#173f50"/>
+<text x="103" y="700" fill="#ffffff" font-size="32" font-weight="700">A lower alert count needs an explanation, not just a percentage.</text>
+<text x="70" y="780" fill="#9cb5c8" font-size="18">Suggested practitioner review model · Conceptual illustration · No repository test results shown</text>
+</g></svg>

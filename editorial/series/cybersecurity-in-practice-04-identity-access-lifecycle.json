@@ -1,0 +1,23 @@
+{
+  "id": "weekly-cybersecurity-04-20261120",
+  "review_revision": 1,
+  "review_package_hash": "bb35181aeb6d8a7205552975596409861ffd67bed3c1f6bdd68f61a4b06fc6ad",
+  "approval_note": "Even the series articles are approved.",
+  "scope": "Both EN/PT-PT series pairs discussed in the publication calendar, including their prepared article illustrations. Publish on existing intended Wednesday/Friday dates.",
+  "approved_at": "2026-11-12T21:20:40+00:00",
+  "intended_publish_at": "2026-11-20T11:00:00-05:00",
+  "approved_file_sha256": {
+    "src/content/posts/en/cybersecurity-in-practice-04-identity-access-lifecycle.md": "16b03a3fe0e9e90c914a12a15e97e7338ec6c73762768ac1e33fba0ed94b76df",
+    "src/content/posts/pt/cybersecurity-in-practice-04-identity-access-lifecycle.md": "ba81e49154cf99eeaec7b70c5d2ed4d4248577eba537d7b9dccdd9e7d830dd28",
+    "public/images/series/cybersecurity-in-practice/episode-04-access-lifecycle.pt.svg": "7bb41a248aed642fb8699d571caf7f06e88b1d7fa7834c5ebd8e36d495dedbef",
+    "public/images/series/cybersecurity-in-practice/episode-04-access-lifecycle.svg": "d9a71c8a6b8d7ef15c3d141ad0fdc39caaf356326a51378ac08c3d22751408e6"
+  },
+  "release_file_sha256": {
+    "src/content/posts/en/cybersecurity-in-practice-04-identity-access-lifecycle.md": "78408ac9839b47abf477ac18c01094d2b3ac6e627e2c1724002fabae9af7c0dc",
+    "src/content/posts/pt/cybersecurity-in-practice-04-identity-access-lifecycle.md": "cdec44f2b3b88df964309286654be3a88c7b2e1565db2d44f89cf6ca276533a9",
+    "public/images/series/cybersecurity-in-practice/episode-04-access-lifecycle.pt.svg": "7bb41a248aed642fb8699d571caf7f06e88b1d7fa7834c5ebd8e36d495dedbef",
+    "public/images/series/cybersecurity-in-practice/episode-04-access-lifecycle.svg": "d9a71c8a6b8d7ef15c3d141ad0fdc39caaf356326a51378ac08c3d22751408e6"
+  },
+  "state": "approved_scheduled_pending_repository_commit",
+  "published": false
+}
